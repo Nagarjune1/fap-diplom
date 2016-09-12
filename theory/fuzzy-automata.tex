@@ -1,0 +1,327 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[czech]{babel}
+
+\include{headers}
+
+%opening
+\title{Fuzzy automaty}
+\author{Martin Jašek}
+\date{26. října 2014 --- ??}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Základní pojmy}\label{basic-concepts}
+V této kapitole budou zopakovány základní pojmy (a především jejich značení) potřebné pro studium problematiky automatů. Pokud není řečeno jinak, definice a značení jsou převzaty z \cite{belohlavek-fuz-rel-syss}.
+
+\subsection{Množiny, relace, funkce}
+\subsubsection*{Množiny}
+Jako množinu označujeme kolekci objektů a značíme je velkými písmeny ($M$, $A$, $B$, $\dots$). Pokud objekt $x$ náleží do množiny $M$, píšeme $x \in M$. V opačném případě píšeme $x \notin M$ a říkáme, že objekt $x$ nenáleží do množiny $M$. Velikost (mohutnost, počet prvků) množiny $M$ značíme $|M|$. Prázdnou množinu značíme $\emptyset$. Rovnost množin $M$ a $N$ značíme $M = N$. Podmnožinou $M$ množiny $N$ značíme $M \subseteq N$. 
+Pro množiny $M$ a $N$ dále zavádíme $M \cap N$ (průnik) $M \cup N $ (sjednocení) $M \setminus N$ (rozdíl) a $\overline{M}$ (doplněk).
+
+Potenční množinu množiny $M$ (systém množin, který je tvořen všemi podmnožinami množiny $M$) značíme $2^M$. Symbol $\mathbb{N}$ ($\mathbb{N}_0$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$) značí množinu všech přirozených (přirozených včetně nuly, celých, racionálních, reálných) čísel.
+
+\subsubsection*{Relace}
+Kartézský součin množin $M_1, \dots, M_n$ značíme $M_1 \times \dots \times M_n$ a jeho libovolnou podmnožinu nazýváme ($n$-ární) relace a značíme ji velkými písmeny ($R, S, T$). Pro $n=2$ nazýváme relaci binární, pro $R \subseteq M \times M$ pak binární relací $R$ na množině $M$. Binární relace $R$ na množině $M$ je:
+\begin{itemize}
+ \item reflexivní, pokud pro každé $x \in M$ platí: $ \langle x, x \rangle \in R $
+ \item irreflexivní, pokud neexistuje žádné $x \in M$ takové, že: $ \langle x, x \rangle \in R $
+ \item symetrická, pokud pro každé $x, y \in M$ platí: jestliže $ \langle x, y \rangle \in R$ pak $\langle y, x \rangle \in R$
+ \item antisymetrická, pokud pro každé $x \in M$ platí: jestliže $ \langle x, y \rangle \in R$ a $\langle y, x \rangle \in R$ pak x = y 
+ \item asymetrická, pokud neexistuje žádné $x, y \in M$ takové, že: jestliže $ \langle x, y \rangle \in R$ pak $\langle y, x \rangle \in R$
+ \item tranzitivní, pokud pro každé $x, y, z \in M$ platí: $ \langle x, y \rangle \in R$ a $\langle y, z \rangle \in R$,  pak $\langle x, z \rangle \in R$
+ \item úplná, pokud pro každé $x, y \in M$ platí: $ \langle x, y \rangle \in R$ nebo $\langle y, x \rangle \in R$
+\end{itemize}
+
+\RLY{Uzávěry? Budu je používat?}
+
+Složení relací $R$ a $S$ značíme $R \circ S$ a inverzní relaci $R^{-1}$ k relaci $R$.
+
+\subsubsection*{Funkce}
+Relaci $f$ nazýváme zobrazení (funkce) z množiny $X$ (množin $X_1, \dots, X_n$) do množiny $Y$ pokud pro každé $x \in X$ ($\langle x_1, \dots, x_n \rangle \in X_1 \times \dots \times X_n$) existuje právě jedno $y \in Y$ takové, že $\langle x, y \rangle \in f$ ($\langle x_1, \dots, x_n, y \rangle \in f$). Funkci $f$ zkráceně zapisujeme $f: X \rightarrow Y$ ($f: X_1 \times \dots \times X_n \rightarrow Y$) případně $y = f(x)$ ($y = f(x_1, \dots, x_n)$).
+
+\subsubsection*{Ekvivalence a rozklady}
+Symetrická, reflexivní a tranzitivní relace $\equiv$ se nazývá ekvivalence. Rozklad $\Pi$ množiny $M$ je systém neprázdných dizjunktních podmnožin množiny $M$. Třída rozkladu $\Pi$ prvku $x \in M$ se značí $\left[ x \right]_\Pi$.
+
+\subsection{Uspořádání, uspořádané množiny, svazy}
+Reflexivní, antisymetrická a tranzitivní relace $\leq \;\; \subset M \times M$ se nazývá (částečné) uspořádání. Místo $\langle x, y\rangle \in \;\; \leq$ píšeme $x \leq y$. Dvojice $\langle M, \leq \rangle$ se nazývá uspořádaná množina. Pokud pro každé $x, y \in M$ platí buď $x \leq y$ nebo $y \leq x$, pak $\langle M, \leq \rangle$ nazýváme úplné uspořádání (řetěz).
+
+Mějme množinu $N \subset M$. Prvek $x \in N$ se nazývá minimální (maximální), pokud pro každé $y \in N$ takové, že $x \leq y$ ($y \leq x$), platí $x = y$. Prvek $x \in N$ se nazývá nejmenší (největší), pokud neexistuje žádné $y \in N$ takové, že $y \leq x$ ($x \leq y$). Pokud existuje nejmenší (největší) prvek, budeme jej značit $0$ ($1$).
+
+Dolní kužel $\mathcal{L}(A)$ (horní kužel $\mathcal{U}(A)$) je množina všech $x \in M$ takových, pro které platí $x \leq y$ ($y \leq x$) pro každé $y \in A$. Pokud má $\mathcal{L}(A)$ ($\mathcal{U}(A)$) největší (nejmenší) prvek, nazývá se A infimum (suprémum) a značí se $\inf A$ nebo $\bigwedge A$ ($\sup A$ nebo $\bigvee A$).
+
+Pokud má $\langle M, \leq \rangle$ infimum i suprémum pro každou neprázdnou $A \subseteq M$, nazývá se svaz. Pokud svaz má infimum i suprémum pro každou $A \subseteq M$ nazývá se úplný. 
+
+\TODO{hustě uspořádáný svaz\RLY}
+
+
+\subsection{Symboly, řetězce a jazyky}
+ V této kapitole budou zadefinovány a rozebrány základní pojmy z teorie automatů. Značení bylo přejato z \cite{kozen-automata-and-computability}. 
+
+\subsubsection*{Abeceda}
+Základním pojmem při studiu automatů je abeceda. Abeceda je neprázdná množina symbolů a značí se velkými řeckými písmeny (nejčastěji $\Sigma$). Abecedou může být například \uv{všechna velká písmena latinky}, množina $\left\{\neg, \rightarrow, (, ), \varphi_1, \dots, \varphi_n \right\}$ (abeceda formulí výrokové logiky) nebo např. číslice $0$ -- $9$ a symboly plus, mínus a tečka.  
+
+\subsubsection*{Řetezec}
+Posloupnost $u = a_1 a_2 \dots a_n$ kde $a_1,  a_2, \dots, a_n \in \Sigma$ se nazývá řetězec $u$ nad abecedou $\Sigma$. Číslo $n$ je pak délka řetězce $u$, která se také značí $|u|$. Řetězec, který má nulovou délku, značíme $\varepsilon$. Řetězcem nad abecedou všech velkých písmen latinky pak může být například $KMI$ nebo $INFORMATIKA$.
+
+Řetězec $u \circ v = a_1 \dots a_n b_1 \dots b_m$ (častěji však $uv$) se nazývá zřetězení (konkatenace) řetězců $u = a_1 \dots a_n$ a $v = b_1 \dots b_m$ a má délku $|uv| = n + m$. Jako $n$-tá mocnina $u^n$ řetězce $u$ se označuje řetezec:
+$$
+  u^n = \begin{dcases}
+    \varepsilon & \text{pokud } n = 0\\
+    u u^{n-1} & \text{jinak}
+  \end{dcases}
+$$
+
+Symbolem $\Sigma^*$ se značí množina všech řetězců nad abecedou $\Sigma$ (včetně $\varepsilon$). Symbol $\Sigma^+$ pak značí všechny řetězce nad abecedou $\Sigma$ vyjma $\varepsilon$. %Symbol $\Sigma^*$ se nazývá Kleeneho uzávěř, $\Sigma^+$ pak pozitivní uzávěř.
+
+\subsubsection*{Jazyk}
+Pojmem (formální) jazyk se označuje určitá vybraná množina $L$ řetězců nad abecedou $\Sigma$. Jazyk $L$ nad abecedou $\Sigma$ je tedy podmnožina $\Sigma^*$. 
+
+Nad jazyky $L$, $L_1$ a $L_2$ nad abecedami $\Sigma$, $\Sigma_1$ a $\Sigma_2$ se zavádí:
+$$
+\begin{array}{ll}
+  L_1 L_2 		= \left\{ u v \,|\, u \in L_1, v \in L_2 \right\}	& \text{zřetězení (produkt)}	\\ \\
+  L^n 			= \begin{dcases}
+      \left\{ \varepsilon \right\} 	& \text{pokud } n = 0 \\
+      L L^{n-1} 			& \text{jinak}
+    \end{dcases} 								& \text{$n$-tá mocnina}		\\ \\
+  
+  L^* 	= \bigcup\limits_{i=0}^{\infty} L^i						& \text{Kleeneho uzávěr}	\\ \\
+  L^+ 	= \bigcup\limits_{i=1}^{\infty} L^i						& \text{pozitivní uzávěr}
+\end{array}
+$$
+
+\TODO{ještě něco?}
+
+
+\section{Bivalentní automaty}
+V této kapitole je intuitivně zaveden pojem \uv{automat}. Poté následuje formální definice klasického, bivaletního konečného automatu, a to jak deterministického, tak nederministického. Pro úplnnost bude také uveden konečný bivaletní stroj. Definice a pojmy související s konečnými bivalentními automaty byly převzaty z \cite{kozen-automata-and-computability}, terminologie související s konečnými bivalentními stroji byla přejata z \cite{modeson-malik-fuzz-aut-and-langs}.
+
+Poznámka: Jak bude v následujích kapitolách ukázáno, mezi pojmy \uv{konečný bivaletní automat} a \uv{konečný bivaletní stroj} je určitý rozdíl. Pro zjednodušení však budou souhrnně nazývány \uv{bivalentní automaty}.
+
+Důkladné nastudování těchto pojmů je důležité, protože jak fuzzy automaty, tak pravděpodobností automaty z bivalentních automatů vycházejí a sdílejí z velké části jejich principy.
+
+\subsection{Výpočetní modely, stavové stroje}
+Před tím, než bude automat zadefinován formálně je vhodné si nejprve uvědomit jeho intuitivní význam. Automat je jeden z mnoha formálních nástrojů pro řešení problémů. Takovýmto nástrojům se obecně říká výpočetní modely.
+
+Výpočetní model je obecný formální mechanizmus, který řeší rozhodovací problém. Rozhodovací problém $P$ je problém určení, zda-li řetězec $u$ (vstupní instance problému $P$) náleží do množiny přípustných řešení pro problém $P$\TODO{zdroj?}. Kromě automatů se mezi výpočetní modely řadí například Turingův stroj a $\lambda$-kalkul.
+
+Dalším označením, které automat nese je stavový stroj. Stavový stroj je systém (nemusí to být výpočetní model), u kterého lze uvažovat nějaký vnitřní stav. Mezi těmito stavy poté bývají definovány přechody, pomocí kterých systém přechází z jednoho stavu do jiného (nebo stávajícího). Mezi stavové stroje lze kromě automatů zařadit například Turingův stroj nebo buněčný automat \cite{kozen-automata-and-computability}. 
+
+\subsection{Konečný bivaletní stroj}
+Jak bude ukázáno v následující kapitole, konečný bivalentní automat je speciálním případem konečného bivalentního stroje. Je tedy na místě začít nadefinováním konečného bivaletního stroje.
+
+Konečný bivaletní stroj je výpočetní model, který disponuje vstupní a výstupní páskou. Na vstupní pásce jsou čteny symboly vstupní abecedy, podle kterých se rozhodují přechody mezi stavy a také, jaké symboly budou zapsány na výstupní pásku. Výstupem chodu konečného bivaletního stroje je tedy řetězec nad výstupní abecedou.
+
+\begin{definition}[Konečný bivalentní stroj\cite{modeson-malik-fuzz-aut-and-langs}]\label{finite-bivalent-machine}
+Konečný bivaletní stroj je šestice $\mathcal{M} = \langle Q, \Sigma, \Upsilon,  \delta, \sigma, s \rangle$ kde
+$$
+\begin{array}{l}
+  Q \text{ je konečná množina stavů} \\
+  \Sigma \text{ je konečná vstupní abeceda} \\
+  \Upsilon \text{ je konečná výstupní abeceda} \\
+  \delta: Q \times \Sigma \rightarrow Q  \text{  je přechodová funkce} \\
+  \sigma: Q \times \Sigma \rightarrow \Upsilon  \text{  je výstupní funkce} \\
+  s \in Q \text{ je počáteční stav} \\
+\end{array}
+$$
+\end{definition}
+
+Poznámka: Takto definovaný automat je ve skutečnosti Mealeho automat \cite{mealy-meth-for-synth-seq-circs}.
+
+Přechodová funkce $\delta$ nám říká, že nachází-li se stroj $\mathcal{M}$ ve stavu $q \in Q$ a na vstupu je $x \in \Sigma$, tak stroj přejde do stavu $q' \in Q$ takového, že $\delta(q, x) = q'$. Obdobně - výstupní funkce $\sigma$ na výstup zapíše symbol $y \in \Upsilon$ právě když se automat $\mathcal{M}$ nachází ve stavu $q \in Q$, na vstupu je symbol $x \in \Sigma$ a $\sigma(q, x) = y$. 
+
+Takto získáme přechod pro jeden vstupní symbol. Jak probíhá výpočet stroje pro celé slovo, tedy jak pro vstupní slovo stroj určí výstupní slovo určuje následující definice:
+
+\begin{definition}[Výstupní řetězec\cite{modeson-malik-fuzz-aut-and-langs}]\label{output-string-of-finite-bivalent-machine}
+Mějme konečný bivaletní stroj $\mathcal{M} = \langle Q, \Sigma, \Upsilon,  \delta, \sigma, s \rangle$. Pak řetězec $y = y_1 \dots y_n \in \Upsilon^*$ se nazývá výstupní řetězec automatu $\mathcal{M}$ pro vstupní řetězec $x = x_1 \dots x_n \in \Sigma^*$ pokud existují stavy $q_0, \dots, q_n \in Q$ takové, že:
+$$
+\begin{array}{ll}
+  q_0 = q  \\
+  q_i = f(q_{i-1}, x_i)	& \text{ pro } i = 1, \dots n	\\
+  y_i = g(q_{i-1}, x_i)	& \text{ pro } i = 1, \dots n	\\
+\end{array}
+$$
+\end{definition}
+
+Stroj $\mathcal{M}$ na svém vstupu čte řetězec $x$. Stroj postupně čte jednotivé symboly řětězce $x$ a mění svou konfiguraci na základě přechodové a výstupní funkce následovně: Pro symbol vstupní abecedy $x_i$ přejde ze stavu $q_{i-1}$ do stavu $q_i$ pokud $\delta(q_{i-1}, x) = q_i$ a na výstup zapíše $y_i$ z výstupní abecedy, pokud $\sigma(q_{i-1}, x_i) = y_i$. Výsledkem je slovo $y$ zapsané na výstupu.
+
+\TODO{Příklad?}
+
+\subsection{Konečný bivalentní automat}
+
+Uvažujme nyní stroj $\mathcal{M} = \langle Q, \Sigma, \Upsilon,  \delta, \sigma, s \rangle$, jehož výstupní abeceda je dvouprvkovová a obsahuje hodnoty nula a jedna, tedy $\Upsilon = \{0, 1\}$. Dále předpokládejme, že všechny stavy $q_i \in Q$ spluňují vlastnost, že při přechodu do stavu $q_i$ je nývstup zaspána $0$ nebo $1$ a tato hodnota je stejná pro všechny přechody do tohoto stavu. Podle toho, zda-li je tato hodnota $0$ nebo $1$ můžeme o stavu $q_i$ říci, zda-li je koncový nebo nekoncový. 
+
+Dle \cite{modeson-malik-fuzz-aut-and-langs} je takovýto stroj konečným bivalentním automatem. Pro účely této práce však bude použita definice z \cite{kozen-automata-and-computability}, která je však s definicí pomocí stroje na první pohled ekvivalentní.
+
+Následuje nadefinování konečného deterministického automatu.
+
+\subsection{Konečný \uv{bivalentní} determistický automat}
+
+
+\begin{definition}[Konečný deterministcký automat\cite{xxx}]\label{kda}
+  \TODO{FJAA}
+\end{definition}
+
+
+Dále se zavádí pojmy konfigurace a výpočet.
+
+\begin{definition}[Konfigurace\cite{xxx}]\label{machine-configuration}
+Konfigurace $c$ konečného stroje $\mathcal{M}$ je libovolný prvek z množiny $\Sigma^* \times Q$.
+
+\TODO{značení, zdroj = FJAA}
+\end{definition}
+
+\begin{definition}[Výpočet\cite{xxx}]\label{machine-computation}
+Výpočet $c$ konečného stroje $\mathcal{M}$ je posloupnost konfigurací $c_1, c_2, \dots c_n$.
+\end{definition}
+
+
+\section{Fuzzy automaty}
+\subsection{Potřebné pojmy z teorie fuzzy množin}
+V této kapitole se nachází výpis základních definic z teorie fuzzy logiky a fuzzy množin nutný pro práci s fuzzy automaty. Definice byly přejaty z \cite{zadeh-fuzzy-sets} a značení případně upraveno tak, aby korespondovalo se značením v kapitole \ref{basic-concepts}.
+
+Fuzzy množina je kolekce objektů zobecňujcí \uv{klasickou} množinu. Uvažuje se nad univerzem $X$ (nebo jeho libovolnou neprázdnou\RLY podmnožinou) a u každého objektu z tohoto univerza se uvádí, jak moc do fuzzy množiny náleží. K tomu slouží tzv. charakteristická funkce. To je zobrazení $f_A$ z univerza $X$ do intervalu $\left[0, 1\right]$\footnote{obecně do libovolného svazu\RLY}. 
+
+Pokud je pro $x \in X$ $f_A(x) = 0$, pak objekt do fuzzy množiny $A$ jistě nenáleží, pokud je $f_A(x) = 1$, pak objekt do fuzzy množiny $A$ jistě náleží \TODO{jak je český překlad?}. Pokud je $0 < f_A(x) < 1$, pak říkáme, že objekt $x$ do fuzzy množiny $A$ náleží ve stupni $f_A(x)$.
+
+Pokud je $f_A(x) = 0$ pro každé $x \in X$, pak fuzzy množinu $A$ nazýváme prázdnou fuzzy množinou. Dvě fuzzy množiny $A$ a $B$ se rovnají, pokud $f_A = f_B$ (pro každé $x \in X$ platí $f_A(x) = f_B(x)$). Fuzzy množina $A$ je podmnožinou fuzzy množiny $B$ (píšeme $A \subseteq B$) pokud je $f_A \leq f_B$.
+
+Mějme fuzzy množiny $A$ a $B$ s charakteristickými funkcemi $f_A$ a $f_B$. Pak definujeme $A \cap B$ (průnik fuzzy množin), $A \cup B$ (sjednocení fuzzy množin) a $\overline{A}$(doplněk fuzzy množiny) jako fuzzy množiny s charakteristickými funkcemi $f_{A \cap B}$ a $f_{A \cup B}$, $f_{\overline{A}}$ takovýmito:
+% nad univerzem $X$
+$$
+\begin{array}{l}
+  f_{A \cap B}(x) = min(f_A(x), f_B(x))	\\
+  f_{A \cup B}(x) = max(f_A(x), f_B(x))	\\
+  f_{\overline{A}}(x) = 1 - f_A(x)		
+\end{array}
+$$
+
+Množina všech $\lattL$-množin nad univerzem $X$ se značí $\lattL^X$.
+
+\TODO{Pro průnik a sjednocení platí De Morganovy zákony a zákony distributivity.\RLY \TODO{a tak dále}}
+
+\TODO{Fuzzy relace, fuzzy zobrazení}
+
+\cite{klir-yuan-fuzzy-sets-and-logic}
+
+\begin{definition}[Max-min kompozice\cite{belohlavek-determinism}, strana 2]\label{max-min-composition}
+\TODO{nějak to pořešit, moc nerozumím zápisu té definice}
+Max-min kompozice $\lattL$-relací $R \in \lattL^X$ a $T \in \lattL^Z$ je relace $R \circ T  \in \lattL^{X \times Z}$ taková, že
+$$
+  (R \circ T) (\langle x, z \rangle) = \bigvee_{y \in Y} (R(x, y) \wedge S(y, z))
+$$
+pro libovolná $\langle x, z \rangle \in X \times Z$.
+ 
+\end{definition}
+
+
+\subsection{Nedeterministický fuzzy automat}
+Nyní přejdeme k definici fuzzy automatu. Vzhledem k tomu, že teorie fuzzy množin pracuje s určitou formou neurčitosti, bude proto vhodné definovat nejprve fuzzy automat nedeterministický.
+
+Stejně tak, jako jsou fuzzy množiny ozbecněním klasických množin, očekáváme, že i fuzzy automat bude zobecněním klasického automatu. Součastně však stále vyžadujeme jeho konečnost. Jeho abeceda i množina stavů tedy musí být konečné \uv{klasické} množiny. Stupně pravdivosti se proto budou uvažovat pouze u počátečních a koncových stavů a u přechodové funkce.
+ 
+\begin{definition}[Fuzzy automat\cite{belohlavek-fuz-rel-syss}]\label{fuzzy-automata}
+Mějme konečný\RLY reziduovaný svaz $\lattL$ a konečnou abecedu $\Sigma$. Pak $\lattL$-automat $\mathcal{M}$ nad abecedou $\Sigma$ je pětice $\mathcal{M} = \langle Q, \Sigma, Q_I, Q_F, \delta \rangle$ kde
+\begin{itemize}
+ \item[] $Q$ je konečná množina stavů
+ %viz text \item[] $\Sigma$ je konečna abeceda
+ \item[] $Q_I$ je $\lattL$-množina nad $Q$ počátečních stavů
+ \item[] $Q_F$ je $\lattL$-množina nad $Q$ koncových stavů
+ \item[] $\delta$ je $\lattL$-relace $\lattL^{Q \times \Sigma \times Q}$\RLY (přechodová funkce)
+\end{itemize}
+\end{definition}
+
+Tato definice je v souladu s našimi požadavky. Každému stavu $q$ z konečné množiny stavů $Q$ je přiřazen stupeň $Q_I(q)$, v jakém je tento stav počáteční a stupeň $Q_F(q)$ jeho koncovosti. Přechodová funkce $\delta$ má význam: \uv{Po přečtení symbolu $a$ přejdi ze stavu $q$ do stavu $q'$ ve stupni pravdivosti $\delta(q, a, q')$}.
+
+Vzhledem k podobě definice nedeterminisitckého fuzzy automatu a klasického automatu 
+
+
+
+\begin{definition}[Rozšířená přechodová funkce\cite{xxx}]\label{extended-transit-function}
+ Pro $\lattL$-automat $\mathcal{M}$ s přechodovou funkcí $\delta$ definujeme rozšířenou přechodovu funkci jako $\lattL$-relaci $\delta^* \subseteq Q \times \Sigma^* \times Q$ definovanou:
+ $$
+  \delta^*(q, \alpha\ q') = \bigvee_{q_0 = q, q_1, \dots, q_n = q' \in Q} \delta(q_0, s_1, q_1) \wedge \dots \wedge \delta(q_{n-1}, s_n, q_n)
+ $$
+ kde $a = s_1s_2\dots s_n$ a $s_1, \dots, s_n \in \Sigma$.
+\end{definition}
+
+
+
+\begin{definition}[Jazyk rozpoznávaný automatem\cite{xxx}]\label{language-recognized-by-automata}
+ Pro $\lattL$-automat $\mathcal{M}$ definujeme $\lattL$-jazyk $\mathcal{L}(\mathcal{M})$ rozpoznávaný automatem $\mathcal{M}$ jako $\lattL$-množinu:
+ 
+ $$
+ (\mathcal{L}(\mathcal{M}))(\alpha) = \bigvee_{q, q' \in Q} Q_I(q) \wedge \delta(q, \alpha, q') \wedge Q_F(q')
+ $$
+\end{definition}
+
+
+\begin{note}
+  Místo \textit{$\lattL$-automat $\mathcal{M}$} se bude nadále používat značení \textit{automat $\mathcal{M}$} (za předpokladu, že není nutné uvádět $\lattL$).
+\end{note}
+
+
+\TODO{bacha na značení jazyka (v textechech o automatech). !!!}
+
+\subsection{Deterministický fuzzy automat}
+Obdobně, jako u klasických automatů, lze i u fuzzy automatů zavést deterministický automat. Je zjevné, že k dosažení determinizbu bude nutné omezit množinu počátečních stavů jen na právě jeden stav.
+
+\subsection{Nedeterminstický fuzzy automat s $\epsilon$-přechody}
+Viz \cite{cao-ezawa-nondet-fuzz-aut}.
+
+\newpage
+\section{A tak dále ...}
+\subsection{Zajímavaé aplikace?}
+L-Systémy (Lindenbayer?)(grafické znázornění stonků?). HP Modely (predikce modelů proteinových struktur?) [Learning Classifier Systems in Data Mining.
+Larry Bull, Ester Bernadó-Mansilla, John Holmes. 2008]. 
+\subsection{Další zdroje:}
+Původní zmíňka \cite{wee-adaptive-algs-and-fuz-set-concept}, Definice Fuzzy množin NEpoužít z \cite{zadeh-fuzzy-set} (použít \cite{belohlavek-fuzz-rel-syss}?). BelKru \cite{belohlavek-krupka-minimalization}
+
+Bělohlávek - determiniszmus fuzzy matu: \cite{belohlavek-determinism}.
+
+Další materiály na fuzzy množiny: [ 51, 108, 110, 114, 115, 266 ].
+
+Pseudoautomaton (45)
+Automaton (46)
+
+Max-min autmata (48+++)
+Asynchronous max-product automaton (111+)
+Max-product automaton (114+)
+
+Fuzzy automaton (393)
+Fuzzy tree automation (158), 
+Fuzzy finite state machine (237)
+Finite fuzzy automaton (463, 404, 367)
+Finite quasi-fuzzy autmaton (384)
+Subfuzzy finite state machine (305)
+Partial fuzzy automation (325)
+$\lattL$-automaton (415)
+
+Probablistic automata (173 - 175)
+Probabilistic pushdown automaton (218+)
+Probalistic pseudoautomaton (223)
+Determinstic pseudoautomaton (233)
+
+
+Weighted automaton (449)
+Subautomaton (503)
+automnaton with tolerance (504)
+
+
+https://www.researchgate.net/figure/4151164\_fig7\_Fig-7-State-Transition-Graph-of-the-Fuzzy-Automaton
+
+https://books.google.cz/books?id=8ONbAwAAQBAJ\&pg=PA44\&lpg=PA44\&dq=max-min+fuzzy+automata\&source=bl\&ots=5Wat8DeC1l\&sig=hA8wcbWeXOtuOen2YF5gD9kMbmM\&hl=cs\&sa=X\&ved=0ahUKEwjJ-tnBs-vJAhXJvxQKHVmCCokQ6AEIVTAH\#v=onepage\&q=automata\&f=false
+
+
+\newpage
+\bibliography{resources}
+\bibliographystyle{plain}
+
+
+\end{document}

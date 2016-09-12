@@ -1,0 +1,511 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  8 AUG 2016 01:04
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**fuzzy-automata.tex
+(./fuzzy-automata.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 29 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count87
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2014/09/25 3.9l The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-czech/czech.ldf
+Language: czech 2008/07/06 v3.1a Czech support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2014/09/25 3.9l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count89
+Package babel Info: Making - an active character on input line 226.
+))
+\@input{headers.aux}
+\openout2 = `headers.aux'.
+
+(./headers.tex (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2009/07/02 v2.20.1
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks25
+\ex@=\dimen104
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks26
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks27
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks28
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2014/07/16 v1.15 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen113
+\calc@Bdimen=\dimen114
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count104
+\calc@Cskip=\skip51
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count105
+\l_MT_multwidth_dim=\dimen115
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen116
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen117
+\l_MT_above_intertext_sep=\dimen118
+\l_MT_below_intertext_sep=\dimen119
+\l_MT_above_shortintertext_sep=\dimen120
+\l_MT_below_shortintertext_sep=\dimen121
+)
+\c@definition=\count106
+\c@note=\count107
+)
+(./fuzzy-automata.aux)
+\openout1 = `fuzzy-automata.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+ (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count108
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen122
+\scratchbox=\box28
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen123
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks32
+))) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+(./fuzzy-automata.toc)
+\tf@toc=\write3
+\openout3 = `fuzzy-automata.toc'.
+
+ [1
+
+
+
+{/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (30.32127pt too wide) in paragraph at lines 27--28
+[]\OT1/cmr/m/n/10 Poten^^Tcn^^S^^P mno^^Tzinu mno^^Tziny $\OML/cmm/m/it/10 M$ \
+OT1/cmr/m/n/10 (syst^^Sem mno^^Tzin, kter^^Sy je tvo^^Tren v^^Tsemi podmno^^Tzi
+nami
+ []
+
+
+Overfull \hbox (9.27583pt too wide) in paragraph at lines 27--28
+\OT1/cmr/m/n/10 mno^^Tziny $\OML/cmm/m/it/10 M$\OT1/cmr/m/n/10 ) zna^^Tc^^S^^Pm
+e $2[]$. Sym-bol $\U/msb/m/n/10 N$ \OT1/cmr/m/n/10 ($\U/msb/m/n/10 N[]$\OT1/cmr
+/m/n/10 , $\U/msb/m/n/10 Z$\OT1/cmr/m/n/10 , $\U/msb/m/n/10 Q$\OT1/cmr/m/n/10 ,
+ $\U/msb/m/n/10 R$\OT1/cmr/m/n/10 ) zna^^Tc^^S^^P mno^^Tzinu v^^Tsech p^^Triroz
+en^^Sych
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
+ [2]
+Overfull \hbox (5.73108pt too wide) in paragraph at lines 52--53
+\OT1/cmr/m/n/10 uspo^^Tr^^Sad^^San^^S^^P. M^^S^^Psto $\OMS/cmsy/m/n/10 h\OML/cm
+m/m/it/10 x; y\OMS/cmsy/m/n/10 i 2  ^^T$ \OT1/cmr/m/n/10 p^^S^^P^^Tseme $\OML/c
+mm/m/it/10 x \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 y$\OT1/cmr/m/n/10 . Dvo-jice
+ $\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 M; \OMS/cmsy/m/n/10 ^^Ti$ \OT1/cmr/m/n/10 
+se naz^^Syv^^Sa uspo^^Tr^^Sadan^^Sa
+ []
+
+
+Overfull \hbox (21.20876pt too wide) in paragraph at lines 67--68
+\OT1/cmr/m/n/10 m^^Wu^^Tze b^^Syt nap^^Tr^^S^^Pklad []v^^Tsechna velk^^Sa p^^S^
+^Psmena la-tinky\, mno^^Tzina $[]$
+ []
+
+[3] [4]
+Overfull \hbox (5.80745pt too wide) in paragraph at lines 117--118
+\OT1/cmr/m/n/10 Jak bude uk^^Saz^^Sano v n^^Sasleduj^^S^^Pc^^S^^P ka-pi-tole, k
+one^^Tcn^^Sy bi-va-lentn^^S^^P au-to-mat je speci^^Saln^^S^^Pm
+ []
+
+
+Overfull \hbox (6.94632pt too wide) in paragraph at lines 119--120
+[]\OT1/cmr/m/n/10 Kone^^Tcn^^Sy bi-va-letn^^S^^P stroj je v^^Sypo^^Tcetn^^S^^P 
+mo-del, kter^^Sy dis-po-nuje vstupn^^S^^P a v^^Systupn^^S^^P
+ []
+
+
+Overfull \hbox (4.72954pt too wide) in paragraph at lines 119--120
+\OT1/cmr/m/n/10 p^^Sasku. V^^Systupem chodu kone^^Tcn^^Seho bi-va-letn^^S^^Pho 
+stroje je tedy ^^Tret^^Tezec nad v^^Systupn^^S^^P
+ []
+
+
+Overfull \hbox (8.86287pt too wide) in paragraph at lines 139--140
+\OT1/cmr/m/n/10 pro cel^^Se slovo, tedy jak pro vstupn^^S^^P slovo stroj ur^^Tc
+^^S^^P v^^Systupn^^S^^P slovo ur^^Tcuje n^^Sasleduj^^S^^Pc^^S^^P
+ []
+
+
+Overfull \hbox (39.35211pt too wide) in paragraph at lines 142--143
+\OT1/cmr/bx/n/10 Definice 2.2 \OT1/cmr/m/n/10 (V^^Systupn^^S^^P ^^Tret^^Tezec[[
+]])\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 M^^Tejme kone^^Tcn^^Sy bi-va-letn^^S^^P 
+stroj $\OMS/cmsy/m/n/10 M \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 
+Q; \OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^G\OML/cmm/m/it/10 ; 
+^^N; ^^[; s\OMS/cmsy/m/n/10 i$\OT1/cmr/m/it/10 .
+ []
+
+[5]
+
+LaTeX Warning: Citation `xxx' on page 6 undefined on input line 167.
+
+
+Overfull \hbox (2.50513pt too wide) in paragraph at lines 168--169
+\OT1/cmr/bx/n/10 Definice 2.3 \OT1/cmr/m/n/10 (Kone^^Tcn^^Sy de-ter-mi-nistck^^
+Sy automat[[]])\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 (zde bude do-pln^^Teno: FJAA
+) 
+ []
+
+
+LaTeX Warning: Citation `xxx' on page 6 undefined on input line 174.
+
+
+LaTeX Warning: Citation `xxx' on page 6 undefined on input line 180.
+
+[6]
+Overfull \hbox (8.44739pt too wide) in paragraph at lines 227--228
+[]\OT1/cmr/m/n/10 Stejn^^Te tak, jako jsou fuzzy mno^^Tziny oz-becn^^Ten^^S^^Pm
+ kla-sick^^Sych mno^^Tzin, o^^Tcek^^Sav^^Same,
+ []
+
+
+Overfull \hbox (0.86841pt too wide) in paragraph at lines 227--228
+\OT1/cmr/m/n/10 vy^^Tzadujeme jeho kone^^Tcnost. Jeho abe-ceda i mno^^Tzina sta
+v^^Wu tedy mus^^S^^P b^^Syt kone^^Tcn^^Se
+ []
+
+
+Overfull \hbox (16.45175pt too wide) in paragraph at lines 227--228
+[]\OT1/cmr/m/n/10 kla-sick^^Se\ mno^^Tziny. Stupn^^Te prav-di-vosti se proto bu
+-dou uva^^Tzovat pouze u po^^Tc^^Sate^^Tcn^^S^^Pch
+ []
+
+
+Overfull \hbox (30.72565pt too wide) in paragraph at lines 230--231
+\OT1/cmr/m/it/10 kone^^Tcnou abe-cedu $\OT1/cmr/m/n/10 ^^F$\OT1/cmr/m/it/10 . P
+ak $\U/msb/m/n/10 L$\OT1/cmr/m/it/10 -automat $\OMS/cmsy/m/n/10 M$ \OT1/cmr/m/i
+t/10 nad abe-ce-dou $\OT1/cmr/m/n/10 ^^F$ \OT1/cmr/m/it/10 je p^^Tetice $\OMS/c
+msy/m/n/10 M \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Q; \OT1/cmr/m
+/n/10 ^^F\OML/cmm/m/it/10 ; Q[]; Q[]; ^^N\OMS/cmsy/m/n/10 i$
+ []
+
+
+Overfull \hbox (1.52843pt too wide) in paragraph at lines 242--243
+[]\OT1/cmr/m/n/10 Vzhledem k po-dob^^Te de-fi-nice ne-de-ter-mi-ni-sitck^^Seho 
+fuzzy au-to-matu a kla-sick^^Seho
+ []
+
+
+LaTeX Warning: Citation `xxx' on page 7 undefined on input line 246.
+
+
+Overfull \hbox (6.33865pt too wide) in paragraph at lines 247--248
+\OT1/cmr/bx/n/10 Definice 3.3 \OT1/cmr/m/n/10 (Roz^^Ts^^S^^P^^Tren^^Sa p^^Trech
+odov^^Sa funkce[[]])\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 Pro $\U/msb/m/n/10 L$\O
+T1/cmr/m/it/10 -automat $\OMS/cmsy/m/n/10 M$ \OT1/cmr/m/it/10 s p^^Trechodovou
+ []
+
+[7]
+
+LaTeX Warning: Citation `xxx' on page 8 undefined on input line 256.
+
+[8]
+
+LaTeX Warning: Citation `zadeh-fuzzy-set' on page 9 undefined on input line 284
+.
+
+
+LaTeX Warning: Citation `belohlavek-fuzz-rel-syss' on page 9 undefined on input
+ line 284.
+
+
+Overfull \hbox (23.82571pt too wide) in paragraph at lines 317--318
+[]\OT1/cmr/m/n/10 https://www.researchgate.net/figure/4151164[]fig7[]Fig-7-Stat
+e-Transition-Graph-
+ []
+
+
+Overfull \hbox (56.83435pt too wide) in paragraph at lines 319--320
+[]\OT1/cmr/m/n/10 https://books.google.cz/books?id=8ONbAwAAQBAJ&pg=PA44&lpg=PA4
+4&dq=max-
+ []
+
+
+Overfull \hbox (235.44583pt too wide) in paragraph at lines 319--320
+\OT1/cmr/m/n/10 min+fuzzy+automata&source=bl&ots=5Wat8DeC1l&sig=hA8wcbWeXOtuOen
+2YF5gD9kMbmM&hl=cs&sa=X&ved=0ahUKEwjJ-
+ []
+
+
+Overfull \hbox (5.38979pt too wide) in paragraph at lines 319--320
+\OT1/cmr/m/n/10 tnBs-vJAhXJvxQKHVmCCokQ6AEIVTAH#v=onepage&q=automata&f=false 
+ []
+
+[9] (./fuzzy-automata.bbl) [10] (./fuzzy-automata.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4741 strings out of 494422
+ 63444 string characters out of 6164715
+ 135376 words of memory out of 5000000
+ 7905 multiletter control sequences out of 15000+600000
+ 12547 words of font info for 48 fonts, out of 8000000 for 9000
+ 360 hyphenation exceptions out of 8191
+ 51i,15n,27p,569b,670s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on fuzzy-automata.pdf (10 pages, 239598 bytes).
+PDF statistics:
+ 113 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

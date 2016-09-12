@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fuzzy-automaton version="0.3">
+    <logic class="cz.upol.automaton.fuzzyLogic.rationalLogics.LukasiewiczLogic">
+        <!--Łukasiewicz Logic-->
+    </logic>
+    <alphabet class="cz.upol.automaton.ling.alphabets.AllStringsAlphabet">
+        <!--Alphabet of all symbols-->
+    </alphabet>
+    <states>
+        <state finite-in="0.0" initial-in="0.3333" label="q0" position-x="116.0" position-y="80.0"/>
+        <state finite-in="0.2" initial-in="0.1" label="q1" position-x="306.0" position-y="228.0"/>
+        <state finite-in="0.9" initial-in="0.0" label="q2''" position-x="357.0" position-y="59.0"/>
+        <state finite-in="0.0" initial-in="0.0" label="q3" position-x="116.0" position-y="246.0"/>
+    </states>
+    <delta>
+        <transition degree="0.6" from="q0" over="c" to="q2''"/>
+        <transition degree="0.3" from="q1" over="b" to="q2''"/>
+        <transition degree="0.5" from="q0" over="a" to="q2''"/>
+        <transition degree="0.2" from="q0" over="a" to="q1"/>
+        <transition degree="0.7" from="q1" over="b" to="q1"/>
+        <transition degree="0.4" from="q2''" over="c" to="q1"/>
+        <transition degree="0.2" from="q3" over="a" to="q0"/>
+    </delta>
+</fuzzy-automaton>

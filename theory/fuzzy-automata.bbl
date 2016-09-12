@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+
+\bibitem{belohlavek-fuz-rel-syss}
+Radim Bělohlávek.
+\newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
+\newblock Kluwer, New York, 2002.
+
+\bibitem{belohlavek-krupka-minimalization}
+Radim Bělohlávek and Michal Krupka.
+\newblock On approximate minimalization of fuzzy automata.
+\newblock {\em Journal of Multiple-Valued Logic and Soft Computing}, 2009.
+
+\bibitem{klir-yuan-fuzzy-sets-and-logic}
+George~J. Klir and Bo~Yuan.
+\newblock {\em Fuzzy Sets and Fuzzy Logic: Theory and Applications}.
+\newblock Prentice Hall P T R, 1995.
+
+\bibitem{kozen-automata-and-computability}
+Dexter~C. Kozen.
+\newblock {\em Automata and Computability}.
+\newblock Springer Science \& Business Media, 1977.
+
+\bibitem{mealy-meth-for-synth-seq-circs}
+G.~H. Mealy.
+\newblock A method for synthesizing sequential circuits.
+\newblock 1955.
+
+\bibitem{modeson-malik-fuzz-aut-and-langs}
+John~N. Mordeson and Davender~S. Malik.
+\newblock {\em Fuzzy Automata and Languages: Theory and Applications}.
+\newblock Chapman and Hall/CRC, 2002.
+
+\bibitem{belohlavek-determinism}
+Bělohlávek Radim.
+\newblock Determinism and fuzzy automata.
+\newblock {\em Information Sciences}, 2002.
+
+\bibitem{wee-adaptive-algs-and-fuz-set-concept}
+William~G. Wee.
+\newblock Organization of adaptive algorithm and application of the fuzzy sets
+  concept to pattern classification (disertační práce).
+\newblock {\em Prude University}, 1967.
+
+\bibitem{cao-ezawa-nondet-fuzz-aut}
+Yoshinori~Ezawa. Yongzhi~Cao.
+\newblock Nondeterministic fuzzy automata.
+\newblock {\em Information Sciences}, 2012.
+
+\bibitem{zadeh-fuzzy-sets}
+Lotfi~A. Zadeh.
+\newblock Fuzzy sets *.
+\newblock {\em Published by Elsevier}, 1965.
+
+\end{thebibliography}

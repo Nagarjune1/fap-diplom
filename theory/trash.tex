@@ -1,0 +1,29 @@
+Konečný automat je stroj, jehož výstupní abeceda je dvojprvková. Klademe $\Upsilon = \left\{ 0, 1 \right\}$.
+\begin{definition}[Konečný automat\cite{modeson-malik-fuzz-aut-and-langs}]\label{finite-automata}
+Konečný automat $\mathcal{A}$ je konečný stroj $\langle Q, \Sigma, \Upsilon,  \delta, \sigma, s \rangle$ kde $\Upsilon = \left\{ 0, 1 \right\}$.
+\end{definition}
+
+Z definice konečného automatu je vidět, že jeho výstupem je řetězec symbolů $1$ a $0$. Tohoto faktu bude využito při konstrukci konečného determistického automatu.
+
+Uvažujme nyní automat $\mathcal{A}$ \TODO{to by chtělo obrázek}, spplňující vlastnost:
+$$
+\begin{array}{c}
+\text{Pro libovolné dva stavy } q, q' \in Q \text{ a symboly } x, x' \in \Sigma \text{ platí:}\\
+\text{jestliže } \delta(q, x) = \delta(q', x') \text{ pak } \sigma(q, x) = \sigma(q', x')
+\end{array}
+$$
+%zobrazí-li se každá dvojice $\langle q \in Q , x \in \Sigma \rangle$ v $\delta$ na nějaké $q' \in Q$, pak se $\langle q, x \rangle$ v $\sigma$ zobrazí pokaždé na $1$ nebo $0$.
+Pro takovýto automat vytvoříme nové zobrazení $\sigma': Q \rightarrow \left\{ 0, 1 \right\}$ a definujme jej následovně:
+$$
+  \sigma'(q') = \begin{dcases}
+    1 	& \text{pokud $\sigma(q, x) = 1$ pro všechny $q \in Q$ a $x \in \Sigma$ takové, že $\delta(q, x) = q'$} \\
+    0	& \text{jinak}
+  \end{dcases}
+$$
+Nyní můžeme zavést množinu $F$ jako množinu \uv{koncových stavů}:
+$$
+  F = \left\{ q \in Q | \sigma'(q) = 1 \right\}
+$$
+Stav $q$ je tedy koncový právě tehdy, pokud automat $\mathcal{A}$ přechodem z libovolného (jiného nebo téže) stavu $q'$ zapsal na výstup $1$. 
+
+Množinu $F$ koncových stavů nyní použijeme k zadefinování konečného deterministického automatu.

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration version="0.1">
+    <viewer-configuration>
+        <position prop-name="arrow-label-padding" x="31" y="15"/>
+        <number prop-name="arrow-padding" value="25"/>
+        <number prop-name="arrow-size" value="6"/>
+        <format format="PNG" prop-name="format"/>
+        <position prop-name="loop-center" x="-18" y="18"/>
+        <position prop-name="loop-label-padding" x="-18" y="38"/>
+        <number prop-name="loop-radius" value="12"/>
+        <number prop-name="state-midcirc-distance" value="0"/>
+        <number prop-name="state-radius" value="20"/>
+    </viewer-configuration>
+    <positioning-configuration>
+        <position prop-name="first-position" x="60" y="60"/>
+        <position prop-name="generated-positions-offset" x="90" y="90"/>
+        <position prop-name="next-position-offset" x="40" y="65"/>
+        <number prop-name="edge-click-range" value="12"/>
+        <number prop-name="generated-positions-distance" value="120"/>
+        <number prop-name="min-states-distance" value="60"/>
+        <number prop-name="state-click-range" value="20"/>
+    </positioning-configuration>
+    <normal-viewer-colors>
+        <color prop-name="background" rgba="#FFFFFF"/>
+        <color prop-name="edge-arrow" rgba="#00FF00"/>
+        <color prop-name="edge-label" rgba="#00FF00"/>
+        <color prop-name="finite-text" rgba="#00FFFF"/>
+        <color prop-name="initial-text" rgba="#00FF00"/>
+        <color prop-name="label-background" rgba="#FFFFFF00"/>
+        <color prop-name="state-background" rgba="#FFFF00"/>
+        <color prop-name="state-circle" rgba="#00FF00"/>
+        <color prop-name="state-label" rgba="#00FF00"/>
+    </normal-viewer-colors>
+    <selected-viewer-colors>
+        <color prop-name="background" rgba="#FFFF00"/>
+        <color prop-name="edge-arrow" rgba="#FF8080"/>
+        <color prop-name="edge-label" rgba="#FF0000"/>
+        <color prop-name="finite-text" rgba="#FF0000"/>
+        <color prop-name="initial-text" rgba="#FF0000"/>
+        <color prop-name="label-background" rgba="#FFFFFF00"/>
+        <color prop-name="state-background" rgba="#FFFF00"/>
+        <color prop-name="state-circle" rgba="#FF0000"/>
+        <color prop-name="state-label" rgba="#FF0000"/>
+    </selected-viewer-colors>
+    <disabled-viewer-colors>
+        <color prop-name="background" rgba="#C0C0C0"/>
+        <color prop-name="edge-arrow" rgba="#404040"/>
+        <color prop-name="edge-label" rgba="#404040"/>
+        <color prop-name="finite-text" rgba="#404040"/>
+        <color prop-name="initial-text" rgba="#404040"/>
+        <color prop-name="label-background" rgba="#C0C0C0"/>
+        <color prop-name="state-background" rgba="#000000"/>
+        <color prop-name="state-circle" rgba="#404040"/>
+        <color prop-name="state-label" rgba="#404040"/>
+    </disabled-viewer-colors>
+    <colour-export-colors>
+        <color prop-name="background" rgba="#FF808000"/>
+        <color prop-name="edge-arrow" rgba="#00FF00"/>
+        <color prop-name="edge-label" rgba="#00FF00"/>
+        <color prop-name="finite-text" rgba="#00FF00"/>
+        <color prop-name="initial-text" rgba="#00FF00"/>
+        <color prop-name="label-background" rgba="#FFFFFF00"/>
+        <color prop-name="state-background" rgba="#FFFF00"/>
+        <color prop-name="state-circle" rgba="#00FF00"/>
+        <color prop-name="state-label" rgba="#00FF00"/>
+    </colour-export-colors>
+    <black-white-export-colors>
+        <color prop-name="background" rgba="#FFFFFF"/>
+        <color prop-name="edge-arrow" rgba="#000000"/>
+        <color prop-name="edge-label" rgba="#000000"/>
+        <color prop-name="finite-text" rgba="#000000"/>
+        <color prop-name="initial-text" rgba="#000000"/>
+        <color prop-name="label-background" rgba="#FFFFFF"/>
+        <color prop-name="state-background" rgba="#000000"/>
+        <color prop-name="state-circle" rgba="#000000"/>
+        <color prop-name="state-label" rgba="#000000"/>
+    </black-white-export-colors>
+</configuration>
