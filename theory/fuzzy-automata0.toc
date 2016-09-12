@@ -1,3 +1,0 @@
-\select@language {czech}
-\contentsline {section}{\numberline {1}Fuzzy automaty}{2}
-\contentsline {section}{\numberline {2}Aplikace fuzzy automat\IeC {\r u}}{2}

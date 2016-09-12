@@ -1,6 +1,0 @@
-@ARTICLE(fuzz-aut-and-langs,
-    AUTHOR	= {Mordeson, John N.},	
-    TITLE	= {Fuzzy automata and languages: theory and applications},
-    JOURNAL	= JCP,
-    YEAR	= {19xx},
-    ISBN	= {1584882255})
