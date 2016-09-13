@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  14 SEP 2016 01:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  14 SEP 2016 01:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,38 +306,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-{/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
+{/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (13.00175pt too wide) in paragraph at lines 100--101
+[]\OT1/cmr/m/n/10 Na konci zmi^^Tnuj^^S^^P, ^^Tze pou^^Tzit^^S^^P fuzzy au-to-m
+atu v t^^Techto si-tuac^^S^^Pch p^^Trin^^Sa^^Ts^^S^^P p^^Tredev^^Ts^^S^^Pm
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 146.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
-
-Overfull \hbox (4.95135pt too wide) in paragraph at lines 46--46
-[]\OT1/cmr/bx/n/12 Application of Fuzzy Au-to-mata The-ory and Knowledge
- []
-
-
-Overfull \hbox (4.16258pt too wide) in paragraph at lines 46--46
-\OT1/cmr/bx/n/12 Based Neu-ral Ne-tworks for De-ve-lo-p-ment of Ba-sic Lear-
- []
-
-[2]
-Overfull \hbox (13.00175pt too wide) in paragraph at lines 72--73
-[]\OT1/cmr/m/n/10 Na konci zmi^^Tnuj^^S^^P, ^^Tze pou^^Tzit^^S^^P fuzzy au-to-m
-atu v t^^Techto si-tuac^^S^^Pch p^^Trin^^Sa^^Ts^^S^^P p^^Tredev^^Ts^^S^^Pm
- []
-
-[3]
-Overfull \hbox (61.83519pt too wide) in paragraph at lines 126--127
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 146.
+ [3]
+Overfull \hbox (61.83519pt too wide) in paragraph at lines 157--158
 []\OT1/cmr/m/n/10 Social Co-gni-tive Lear-ning The-ory and other The-o-ries and
  Mo-dels, https://www.learning-
  []
 
 
-Overfull \hbox (95.94977pt too wide) in paragraph at lines 127--128
+Overfull \hbox (95.94977pt too wide) in paragraph at lines 158--159
 []\OT1/cmr/m/n/10 Zadeh: Fuzzy al-go-ri-thms, http://www.sciencedirect.com/scie
 nce/article/pii/S0019995868902118 
  []
@@ -468,7 +457,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on fapa.pdf (6 pages, 116109 bytes).
+Output written on fapa.pdf (6 pages, 117690 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
