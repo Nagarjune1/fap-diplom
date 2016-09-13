@@ -1,4 +1,11 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Bel-DetFuzzAut}
+R.~Bělohlávek.
+\newblock Determinism and fuzzy automata.
+\newblock {\em Information Sciences}, 2002.
+\newblock anotace:
+  http://www.sciencedirect.com/science/article/pii/S0020025502001925.
 
 \bibitem{Fu-SynMethPattRec}
 K.~S. Fu.
@@ -25,6 +32,13 @@ S.~C.~Kremer M.~Doostfatemeh.
 \newblock {\em International Journal of Approximate Reasoning}, 2004.
 \newblock http://bit.ly/2cXJXBC.
 
+\bibitem{GupSar-FuzzAutDecProc}
+George N.~Saridis Madan M.~Gupta.
+\newblock {\em Fuzzy automata and decision processes}.
+\newblock Elsevier, 1977.
+\newblock
+  https://www.amazon.com/Fuzzy-Automata-Decision-Processes-Madan/dp/0444002316.
+
 \bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
 Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
 \newblock Application of fuzzy automata theory and knowledge based neural
@@ -44,11 +58,41 @@ A.~Paz.
 \newblock Academic Press, 1971.
 \newblock náhled http://bit.ly/2cCjidd (google books).
 
+\bibitem{LeeLee-FuzzNeuNet}
+Edward T.~Lee Samuel C.~Lee.
+\newblock Fuzzy neural networks.
+\newblock {\em Mathematical Biosciences}, 1975.
+\newblock anotace:
+  http://www.sciencedirect.com/science/article/pii/002555647590125X.
+
+\bibitem{SupBisAkh-AppIntFuzzSetMedDiag}
+Akhil Ranjan~Roy Supriya Kumar~De, Ranjit~Biswas.
+\newblock An application of intuitionistic fuzzy sets in medical diagnosis.
+\newblock {\em Fuzzy Sets and Systems}, 2001.
+\newblock abstrakt:
+  http://www.sciencedirect.com/science/article/pii/S0165011498002358.
+
 \bibitem{WeeFu-FormFuzzzAutItsAppModLearSyss}
 K.~S.~Fu William G.~Wee.
 \newblock A formulation of fuzzy automata and its application as a model of
   learning systems.
 \newblock {\em IEEE Transactions on Systems Science and Cybernetics}, 5, 1969.
 \newblock online?, abstrakt: http://bit.ly/2cXBoqw.
+
+\bibitem{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}
+Witold~Pedrycz Yongming~Li.
+\newblock Fuzzy finite automata and fuzzy regular expressions with membership
+  values in lattice-ordered monoids.
+\newblock {\em Fuzzy Sets and Systems}, 2005.
+\newblock anotace:
+  http://www.sciencedirect.com/science/article/pii/S0165011405001600.
+
+\bibitem{LiPed-MinLattFinAutAppDecoLattLang}
+Witold~Pedrycz Yongming~Li.
+\newblock Minimization of lattice finite automata and its application to the
+  decomposition of lattice languages.
+\newblock {\em Fuzzy Sets and Systems}, 2007.
+\newblock anotace:
+  http://www.sciencedirect.com/science/article/pii/S0165011407001121.
 
 \end{thebibliography}

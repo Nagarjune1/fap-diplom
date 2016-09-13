@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  13 SEP 2016 23:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  14 SEP 2016 01:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,56 +330,148 @@ Overfull \hbox (13.00175pt too wide) in paragraph at lines 72--73
 atu v t^^Techto si-tuac^^S^^Pch p^^Trin^^Sa^^Ts^^S^^P p^^Tredev^^Ts^^S^^Pm
  []
 
-
-Overfull \hbox (61.83519pt too wide) in paragraph at lines 88--89
+[3]
+Overfull \hbox (61.83519pt too wide) in paragraph at lines 126--127
 []\OT1/cmr/m/n/10 Social Co-gni-tive Lear-ning The-ory and other The-o-ries and
  Mo-dels, https://www.learning-
  []
 
-[3] (./fapa.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 15--21
+
+Overfull \hbox (95.94977pt too wide) in paragraph at lines 127--128
+[]\OT1/cmr/m/n/10 Zadeh: Fuzzy al-go-ri-thms, http://www.sciencedirect.com/scie
+nce/article/pii/S0019995868902118 
+ []
+
+[4] (./fapa.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+[]\OT1/cmr/m/n/10 R. B^^Telohl^^Savek.  De-ter-mi-nism and fuzzy au-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/cmr/m/n/10 mata.  \OT1/cmr/m/it/10 In-for-mation Sciences\OT1/cmr/m/n/10 ,
+ 2002.  ano-tace:
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 22--28
 []\OT1/cmr/m/n/10 Szilveszter Kov^^Sacs.  Fuzzy re-a-so-ning and fuzzy au-to-ma
 ta in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
 \OT1/cmr/m/n/10 user adap-tive sys-tems.  \OT1/cmr/m/it/10 De-part-ment of In-f
 or-mation Tech-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--21
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
 \OT1/cmr/m/it/10 no-logy, Uni-ver-sity of Miskolc\OT1/cmr/m/n/10 , 2002.  http:
 //users.iit.uni-
  []
 
 
-Overfull \hbox (73.72339pt too wide) in paragraph at lines 29--35
+Overfull \hbox (2.22292pt too wide) in paragraph at lines 22--28
+\OT1/cmr/m/n/10 miskolc.hu/ szkovacs/Research/UserAdaptiveApplications/HunKorea
+n02fl-
+ []
+
+
+Overfull \hbox (78.7234pt too wide) in paragraph at lines 43--49
 \OT1/cmr/m/n/10 http://www.davidpublishing.com/davidpublishing/upfile/6/23/2011
 /2011062376920049.pdf. 
  []
 
-) [4] (./fapa.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--67
+[]\OT1/cmr/m/n/10 Edward T. Lee Sa-muel C. Lee.  Fuzzy neu-ral ne-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--67
+\OT1/cmr/m/n/10 tworks.  \OT1/cmr/m/it/10 Mathe-ma-ti-cal Bi-os-ciences\OT1/cmr
+/m/n/10 , 1975.  ano-tace:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--74
+[]\OT1/cmr/m/n/10 Akhil Ra-n-jan Roy Supriya Ku-mar De, Ra-n-jit Bis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--74
+\OT1/cmr/m/n/10 was.  An ap-pli-cation of in-tu-i-ti-o-nis-tic fuzzy sets in me
+-di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--74
+\OT1/cmr/m/n/10 cal di-a-gno-sis.  \OT1/cmr/m/it/10 Fuzzy Sets and Sys-tems\OT1
+/cmr/m/n/10 , 2001.  abs-trakt:
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 76--81
+\OT1/cmr/m/n/10 its ap-pli-cation as a mo-del of lear-ning sys-tems.  \OT1/cmr/
+m/it/10 IEEE Transacti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--89
+[]\OT1/cmr/m/n/10 Witold Pedrycz Yong-ming Li.  Fuzzy fi-nite au-to-mata and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--89
+\OT1/cmr/m/n/10 fuzzy re-gu-lar ex-pres-si-ons with mem-ber-ship va-lues in lat
+tice-
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 83--89
+\OT1/cmr/m/n/10 ordered mo-no-ids.  \OT1/cmr/m/it/10 Fuzzy Sets and Sys-tems\OT
+1/cmr/m/n/10 , 2005.  ano-tace:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+[]\OT1/cmr/m/n/10 Witold Pedrycz Yong-ming Li.  Mi-ni-mi-zation of lat-tice fi-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+\OT1/cmr/m/n/10 nite au-to-mata and its ap-pli-cation to the de-com-posi-tion o
+f
+ []
+
+
+Underfull \hbox (badness 6493) in paragraph at lines 91--97
+\OT1/cmr/m/n/10 lat-tice lan-gu-ages.  \OT1/cmr/m/it/10 Fuzzy Sets and Sys-tems
+\OT1/cmr/m/n/10 , 2007.  ano-tace:
+ []
+
+[5]) [6] (./fapa.aux) ) 
 Here is how much of TeX's memory you used:
- 4719 strings out of 494422
- 62888 string characters out of 6164715
- 132303 words of memory out of 5000000
- 7884 multiletter control sequences out of 15000+600000
+ 4726 strings out of 494422
+ 63066 string characters out of 6164715
+ 131332 words of memory out of 5000000
+ 7891 multiletter control sequences out of 15000+600000
  11849 words of font info for 46 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
  51i,7n,27p,329b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on fapa.pdf (4 pages, 110529 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on fapa.pdf (6 pages, 116109 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

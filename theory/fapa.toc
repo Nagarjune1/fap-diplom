@@ -6,4 +6,11 @@
 \contentsline {subsection}{\numberline {1.4}A Formulation of Fuzzy Automata and Its Application as a Model of Learning Systems \cite {WeeFu-FormFuzzzAutItsAppModLearSyss}}{3}
 \contentsline {subsection}{\numberline {1.5}A model for Finite-state probabilistic systems \cite {BruFu-ModelFinStateProbSyss}}{3}
 \contentsline {subsection}{\numberline {1.6}Syntactic Methods in Pattern Recognition \cite {Fu-SynMethPattRec}}{3}
-\contentsline {section}{\numberline {2}T\IeC {\v r}eba by se mohlo hodit}{3}
+\contentsline {subsection}{\numberline {1.7}An application of intuitionistic fuzzy sets in medical diagnosis \cite {SupBisAkh-AppIntFuzzSetMedDiag}}{3}
+\contentsline {subsection}{\numberline {1.8}Fuzzy automata and decision processes\cite {GupSar-FuzzAutDecProc}}{3}
+\contentsline {subsection}{\numberline {1.9}Fuzzy finite automata and fuzzy regular expressions with membership values in lattice-ordered monoids \cite {LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}}{3}
+\contentsline {subsection}{\numberline {1.10}Fuzzy Neural Networks \cite {LeeLee-FuzzNeuNet}}{3}
+\contentsline {subsection}{\numberline {1.11}Minimization of lattice finite automata and its application to the decomposition of lattice languages \cite {LiPed-MinLattFinAutAppDecoLattLang}}{3}
+\contentsline {subsection}{\numberline {1.12}An introductory survey of fuzzy control ??}{4}
+\contentsline {subsection}{\numberline {1.13}Determinism and fuzzy automata \cite {Bel-DetFuzzAut}}{4}
+\contentsline {section}{\numberline {2}T\IeC {\v r}eba by se mohlo hodit}{4}
