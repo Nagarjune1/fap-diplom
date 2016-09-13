@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
 Database file #1: resources.bib
-You've used 1 entry,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            503 strings with 4109 characters,
-and the built_in function-call counts, 235 in all, are:
-= -- 19
-> -- 7
+            551 strings with 5676 characters,
+and the built_in function-call counts, 1819 in all, are:
+= -- 176
+> -- 68
 < -- 0
-+ -- 3
-- -- 2
-* -- 10
-:= -- 47
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 3
++ -- 30
+- -- 20
+* -- 75
+:= -- 343
+add.period$ -- 30
+call.type$ -- 8
+change.case$ -- 31
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 12
-empty$ -- 23
-format.name$ -- 2
-if$ -- 47
+cite$ -- 8
+duplicate$ -- 86
+empty$ -- 152
+format.name$ -- 20
+if$ -- 371
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 8
+int.to.str$ -- 8
+missing$ -- 11
+newline$ -- 49
+num.names$ -- 16
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 3
+purify$ -- 26
 quote$ -- 0
-skip$ -- 6
+skip$ -- 56
 stack$ -- 0
-substring$ -- 5
-swap$ -- 1
+substring$ -- 42
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 2
+type$ -- 26
 warning$ -- 0
-while$ -- 2
-width$ -- 2
-write$ -- 12
+while$ -- 16
+width$ -- 9
+write$ -- 95

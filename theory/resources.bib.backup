@@ -36,47 +36,20 @@
   journal = {IEEE Transactions on Systems Science and Cybernetics},
   volume  = {5},
   year    = 1969,
-  note    = {online?, abstrakt: http://bit.ly/2cXBoqw}, 
-}
-
-@ARTICLE{BruFu-ModelFinStateProbSyss,
-  author  = {G. D. Bruce, K. S. Fu}, 
-  title   = {A model for Finite-state probabilistic systems},
-  journal = {Proc. 1st Ann. Allerton Conf. Circuit and Systems Theory},
-  year    = 1963,
   note    = {online?}, 
 }
 
-
-
-@BOOK{Fu-SynMethPattRec,
-    AUTHOR	= {K. S. Fu},
-    TITLE	= {Syntactic Methods in Pattern Recognition },
-    PUBLISHER	= {Elsevier},
-    YEAR	= {1974},
-    ISBN	= {}}
-
-
-
-@BOOK{Paz-IntroProbAut,
-  author  = {A. Paz}, 
-  title   = {Introduction to Probabilistic Automata},
-  publisher = {Academic Press},
-  year    = 1971,
-  note    = {náhled http://bit.ly/2cCjidd (google books)}, 
+@ARTICLE{,
+  author  = {G. D. Bruce, K. S. Fu}, 
+  title   = {A model for Finite-state probabilistic systems},
+  journal = {Proc. 1st Ann. Allerton Conf. Circuit and Systems Theory},
+  year    = 1936,
+  note    = {online?}, 
 }
 
+%ARTICLE {
 
-
-@ARTICLE{DooKre-NewDirFuzzAut,
-  author  = {M. Doostfatemeh, S. C. Kremer}, 
-  title   = {New directions in fuzzy automata},
-  journal = {International Journal of Approximate Reasoning},
-  year    = 2004,
-  note    = {http://bit.ly/2cXJXBC}, 
 }
-
-
 
 ARTICLE{,
   author  = {}, 

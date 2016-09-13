@@ -21,11 +21,11 @@
 \subsection{Další čtení}
 \begin{itemize}
  \item Morderson, Malik: Fuzzy Automata and Languages: Theory and Applications \cite{MorMal-FuzzAutAndLangs}
- \item Introduction to Probabilistic Automata \cite{Paz-IntroProbAut}, samostatná kapitola se seznamem vybraných aplikací pravděpodobnostních automatů
- \item New directions in fuzzy automata \cite{DooKre-NewDirFuzzAut}: Nový pohled na automaty, v anotaci mluví o tom, jak dlouho se automaty již studují, takže by se tam mohl odkazovat na nějaké aplikace. Aplication driven methodology?
- \item ...
- \item ...
- \item ...
+ \item A. Paz: Introduction to Probabilistic Automata \cite{Paz-IntroProbAut}, samostatná kapitola se seznamem vybraných aplikací pravděpodobnostních automatů
+ \item 
+ \item sdf
+ \item 
+ \item sdf
  
 \end{itemize}
 
@@ -35,8 +35,7 @@
 Řídící systémy, adaptivní systémy? Každopádně, bude to něco na principu fuzzy regulátorů. Nejspíš to bude fungovat tak, že vstupní řetězec bude posloupnost real--time událostí vně systému. A on na ně bude nějak reagovat. A něco dělat.
 
 \begin{definition}
- \TODO{Fuzzy reazoning}
- \TODO{Fuzzy state transition rulebase}
+ Fuzzy reazoning (odvozování), Fuzzy state transition rulebase.
 \end{definition}
 
 V příkladu uvádí nástroj pro výběr nejlepší židle. Uživatelé jsou požádání o označení jak moc na ně působí zvolené židle (co do modernosti, pohodlnnosti, ceny, ...) a systém vygeneruje uspořádání židlí od \uv{nejlepší} po \uv{nejhorší}.
@@ -48,8 +47,7 @@ Víc toho nevím, protože text působí hodně odborně a vyžaduje tak znalost
 Zkombinováním neuronové sítě a fuzzy automatu vznikla tzv. Fuzzy  Automata  based  Neural  Network (FANN). Prý znalostní pravidla převádí na fuzzy automaty a z nich poté konstruuje FANN.
 
 \begin{definition}
- \TODO{Model of Learning}
- \TODO{Knowledge rule}
+ Model of Learning. Knowledge rule.
 \end{definition}
 
 
@@ -64,21 +62,14 @@ Autoři FANN demonstrují na Urban Trafic modeling.
 Originální paper bohužel není k dispozici. Ale dle anotace je to jeden z prvních článků vůbec. Podobá se stochastickému automatu.
 
 \begin{definition}
- \TODO{Stochastický automat}
+ Stochastický automat.
 \end{definition}
-
-Autoři předvádějí použití \uv{fuzzy automatu} jako model strojového učení (používají zastaralý výraz \uv{Model of learning system}). Dále uvádějí hypotézu použití jako automatická kontrola a pattern recognizition \TODO{jak se to řekne česky?}.
-
-Na konci zmiňují, že použití fuzzy automatu v těchto situacích přináší především jednoduchost (návrhu i průběhu výpočtu).
 
 
 \subsection{A model for Finite-state probabilistic systems \cite{BruFu-ModelFinStateProbSyss}}
 
 ale prý se na tento článek odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1.
 
-\subsection{Syntactic Methods in Pattern Recognition \cite{Fu-SynMethPattRec}}
-
-Knížka (celá) o pattern recognizition pomocí formálních jazyků. Bohužel jen klasických automatů případně stochastických.
 
 
 

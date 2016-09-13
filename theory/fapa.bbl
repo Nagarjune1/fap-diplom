@@ -1,8 +1,54 @@
 \begin{thebibliography}{1}
 
-\bibitem{Bel-FuzRelSyss}
-Radim Bělohlávek.
-\newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
-\newblock Kluwer, New York, 2002.
+\bibitem{Fu-SynMethPattRec}
+K.~S. Fu.
+\newblock {\em Syntactic Methods in Pattern Recognition}.
+\newblock Elsevier, 1974.
+
+\bibitem{BruFu-ModelFinStateProbSyss}
+K.~S.~Fu G.~D.~Bruce.
+\newblock A model for finite-state probabilistic systems.
+\newblock {\em Proc. 1st Ann. Allerton Conf. Circuit and Systems Theory}, 1963.
+\newblock online?
+
+\bibitem{Kov-ReasFuzzAutInUsrAdpSyss}
+Szilveszter Kovács.
+\newblock Fuzzy reasoning and fuzzy automata in user adaptive systems.
+\newblock {\em Department of Information Technology, University of Miskolc},
+  2002.
+\newblock
+  http://users.iit.uni-miskolc.hu/~szkovacs/Research/UserAdaptiveApplications/HunKorean02fl-PR.pdf.
+
+\bibitem{DooKre-NewDirFuzzAut}
+S.~C.~Kremer M.~Doostfatemeh.
+\newblock New directions in fuzzy automata.
+\newblock {\em International Journal of Approximate Reasoning}, 2004.
+\newblock http://bit.ly/2cXJXBC.
+
+\bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
+Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
+\newblock Application of fuzzy automata theory and knowledge based neural
+  networks for development of basic learning model.
+\newblock {\em Computer Technology and Application 2}, 2011.
+\newblock
+  http://www.davidpublishing.com/davidpublishing/upfile/6/23/2011/2011062376920049.pdf.
+
+\bibitem{MorMal-FuzzAutAndLangs}
+John~N. Mordeson and Davender~S. Malik.
+\newblock {\em Fuzzy Automata and Languages: Theory and Applications}.
+\newblock Chapman and Hall/CRC, 2002.
+
+\bibitem{Paz-IntroProbAut}
+A.~Paz.
+\newblock {\em Introduction to Probabilistic Automata}.
+\newblock Academic Press, 1971.
+\newblock náhled http://bit.ly/2cCjidd (google books).
+
+\bibitem{WeeFu-FormFuzzzAutItsAppModLearSyss}
+K.~S.~Fu William G.~Wee.
+\newblock A formulation of fuzzy automata and its application as a model of
+  learning systems.
+\newblock {\em IEEE Transactions on Systems Science and Cybernetics}, 5, 1969.
+\newblock online?, abstrakt: http://bit.ly/2cXBoqw.
 
 \end{thebibliography}
