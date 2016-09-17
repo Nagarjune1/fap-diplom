@@ -18,19 +18,28 @@
 
 \section{Vybrané aplikace, poznámky}
 
-\subsection{Další čtení}
-\begin{itemize}
- \item Morderson, Malik: Fuzzy Automata and Languages: Theory and Applications \cite{MorMal-FuzzAutAndLangs}
- \item Introduction to Probabilistic Automata \cite{Paz-IntroProbAut}, samostatná kapitola se seznamem vybraných aplikací pravděpodobnostních automatů
- \item New directions in fuzzy automata \cite{DooKre-NewDirFuzzAut}: Nový pohled na automaty, v anotaci mluví o tom, jak dlouho se automaty již studují, takže by se tam mohl odkazovat na nějaké aplikace. Aplication driven methodology?
- \item ...
- \item ...
- \item ...
- 
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy jazyky, gramatiky a regulární výrazy}
 
 
-\subsection{Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems \cite{Kov-ReasFuzzAutInUsrAdpSyss}}
+\subsubsection*{Fuzzy finite automata and fuzzy regular expressions with membership values in lattice-ordered monoids \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}}
+
+Fuzzy regulární výrazy, to je taky tak trochu aplikace, ne? Bohužel tento článek taky není k dispozici ...
+
+
+\subsubsection*{Minimization of lattice finite automata and its application to the decomposition of lattice languages \cite{LiPed-MinLattFinAutAppDecoLattLang}}
+
+Tady se asi trošku zabředne trochu víc do matematiky, ale -- uvidíme. Uvidíme, co vyleze z dekompozice fuzzy jazyků.
+
+\begin{definition}
+ \TODO{lattice language} ($\sim$ fuzzy jazyk nad svazem)?
+\end{definition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy regulátory a řídící systémy}
+
+\subsubsection*{Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems \cite{Kov-ReasFuzzAutInUsrAdpSyss}}
 
 Řídící systémy, adaptivní systémy? Každopádně, bude to něco na principu fuzzy regulátorů. Nejspíš to bude fungovat tak, že vstupní řetězec bude posloupnost real--time událostí vně systému. A on na ně bude nějak reagovat. A něco dělat.
 
@@ -43,7 +52,32 @@ V příkladu uvádí nástroj pro výběr nejlepší židle. Uživatelé jsou po
 
 Víc toho nevím, protože text působí hodně odborně a vyžaduje tak znalost základních pojmů.
 
-\subsection{Application of Fuzzy Automata Theory and Knowledge Based Neural Networks for Development of Basic Learning Model \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}}
+
+\subsubsection*{A model for Finite-state probabilistic systems \cite{BruFu-ModelFinStateProbSyss}}
+
+Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale kromě anotace jsem se o něm nedozvěděl nic víc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pattern recognition}
+
+
+\subsubsection*{Syntactic Methods in Pattern Recognition \cite{Fu-SynMethPattRec}}
+
+Knížka (celá) o pattern recognizition pomocí formálních jazyků. Bohužel jen klasických automatů případně stochastických.
+
+
+\subsection{Fractionally Fuzzy Grammars \cite{MorMal-FuzzAutAndLangs} 10.7, \cite{PalYau-FracFuzzGramAppPatRec}}
+
+Fractionally fuzzy grammar je speciální fuzzy gramatika, která se dobře hodí pro patern recognition. Prý jsou \uv{powerfull} a součastně \uv{easily parsed}. \TODO{V \cite{MorMal-FuzzAutAndLangs}, 10.7 je několik odkazů na další zdroje, prozkoumat!}.
+
+V článku \cite{PalYau-FracFuzzGramAppPatRec} je pojem Fractionally fuzzy grammar (nejspíš) zaveden.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strojové učení, Fuzzy neuronové sítě}
+
+\subsubsection*{Application of Fuzzy Automata Theory and Knowledge Based Neural Networks for Development of Basic Learning Model \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}}
 
 Zkombinováním neuronové sítě a fuzzy automatu vznikla tzv. Fuzzy  Automata  based  Neural  Network (FANN). Prý znalostní pravidla převádí na fuzzy automaty a z nich poté konstruuje FANN.
 
@@ -59,7 +93,7 @@ Autoři FANN demonstrují na Urban Trafic modeling.
  je problém modelace infrastruktury, predikce budoucího vývoje. Inteligentní řízení provozu a podob.
 \end{definition}
 
-\subsection{A Formulation of Fuzzy Automata and Its Application as a Model of Learning Systems \cite{WeeFu-FormFuzzzAutItsAppModLearSyss}}
+\subsubsection*{A Formulation of Fuzzy Automata and Its Application as a Model of Learning Systems \cite{WeeFu-FormFuzzzAutItsAppModLearSyss}}
 
 Originální paper bohužel není k dispozici. Ale dle anotace je to jeden z prvních článků vůbec. Podobá se stochastickému automatu.
 
@@ -72,32 +106,67 @@ Autoři předvádějí použití \uv{fuzzy automatu} jako model strojového uče
 Na konci zmiňují, že použití fuzzy automatu v těchto situacích přináší především jednoduchost (návrhu i průběhu výpočtu).
 
 
-\subsection{A model for Finite-state probabilistic systems \cite{BruFu-ModelFinStateProbSyss}}
+\subsubsection*{Fuzzy Neural Networks \cite{LeeLee-FuzzNeuNet}}
 
-Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale kromě anotace jsem se o něm nedozvěděl nic víc.
-
-\subsection{Syntactic Methods in Pattern Recognition \cite{Fu-SynMethPattRec}}
-
-Knížka (celá) o pattern recognizition pomocí formálních jazyků. Bohužel jen klasických automatů případně stochastických.
+To bude nejspíš podobné jako \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}. 
 
 
-\subsection{An application of intuitionistic fuzzy sets in medical diagnosis \cite{SupBisAkh-AppIntFuzzSetMedDiag}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bioinformatika a medicína}
+
+
+
+
+\subsubsection*{An application of intuitionistic fuzzy sets in medical diagnosis \cite{SupBisAkh-AppIntFuzzSetMedDiag}}
 
 Zní to příšerně, ale nejspíš to bude vycházet z \cite{GupSar-FuzzAutDecProc}.
 
 
-\subsection{Fuzzy automata and decision processes\cite{GupSar-FuzzAutDecProc}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ostatní aplikace a zdroje}
+
+\subsubsection*{Fuzzy automata and decision processes\cite{GupSar-FuzzAutDecProc}}
 
 To zní lákavě, ale bohužel online není prakticky ani anotace.
 
-\subsection{Fuzzy finite automata and fuzzy regular expressions with membership values in lattice-ordered monoids \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}}
 
-Bohužel toho k tomuhle taky moc nemám ...
+\subsubsection*{An introductory survey of fuzzy control ??}
+
+Podívat se na tohle, jestli se tam vůbec mluví o použití (fuzzy) automatů:
+
+http://www.sciencedirect.com/science/article/pii/002002558590026X
 
 
-\section{Třeba by se mohlo hodit}
+\subsubsection*{Determinism and fuzzy automata \cite{Bel-DetFuzzAut}}
+
+Článek určitě zajímavý do teoretické části, ale dost možná se bude zmiňovat o (alespoň!) některých aplikacích.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Jiná literatura}
+
+\subsection{Další čtení}
+\begin{itemize}
+ \item Morderson, Malik: Fuzzy Automata and Languages: Theory and Applications \cite{MorMal-FuzzAutAndLangs}
+ \item Introduction to Probabilistic Automata \cite{Paz-IntroProbAut}, samostatná kapitola se seznamem vybraných aplikací pravděpodobnostních automatů
+ \item New directions in fuzzy automata \cite{DooKre-NewDirFuzzAut}: Nový pohled na automaty, v anotaci mluví o tom, jak dlouho se automaty již studují, takže by se tam mohl odkazovat na nějaké aplikace. Aplication driven methodology?
+ \item ...
+ \item ...
+ \item ...
+ 
+\end{itemize}
+
+\subsection{Třeba by se mohlo hodit}
 \begin{itemize}
  \item Social Cognitive Learning Theory and other Theories and Models, https://www.learning-theories.com/
+ \item Zadeh: Fuzzy algorithms, http://www.sciencedirect.com/science/article/pii/S0019995868902118
+ \item Inverse fuzzy automata and inverse fuzzy languages, http://www.afmi.or.kr/articles\_in\_%20press/2013-03/AFMI-H-121231/AFMI-H-121231.pdf
+ \item Entropies of probabilistic grammars, http://www.sciencedirect.com/science/article/pii/S0019995874907992
+ \item Pattern Recognition and Machine Learning, http://bit.ly/2cD2FO3
+ \item Applied Automata Theory (hlavně pravděpodobnostní) http://bit.ly/2cCHJ8i
+ \item PRISM: A Tool for Automatic Verification of Probabilistic Systems, http://eprints.gla.ac.uk/43841/1/43841.pdf
 \end{itemize}
 
 \newpage
