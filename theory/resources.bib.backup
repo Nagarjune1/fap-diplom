@@ -44,14 +44,14 @@
   title   = {A model for Finite-state probabilistic systems},
   journal = {Proc. 1st Ann. Allerton Conf. Circuit and Systems Theory},
   year    = 1963,
-  note    = {online?}, 
+  note    = {existuje vůbec?}, 
 }
 
 
 
 @BOOK{Fu-SynMethPattRec,
     AUTHOR	= {K. S. Fu},
-    TITLE	= {Syntactic Methods in Pattern Recognition },
+    TITLE	= {Syntactic Methods in Pattern Recognition},
     PUBLISHER	= {Elsevier},
     YEAR	= {1974},
     ISBN	= {}}
@@ -97,7 +97,7 @@
   title   = {Fuzzy finite automata and fuzzy regular expressions with membership values in lattice-ordered monoids},
   journal = {Fuzzy Sets and Systems},
   year    = 2005,
-  note    = {anotace: http://www.sciencedirect.com/science/article/pii/S0165011405001600}, 
+  note    = {}, 
 }
 
 @ARTICLE{LeeLee-FuzzNeuNet,
@@ -105,7 +105,7 @@
   title   = {Fuzzy Neural Networks},
   journal = {Mathematical Biosciences},
   year    = 1975,
-  note    = {anotace: http://www.sciencedirect.com/science/article/pii/002555647590125X}, 
+  note    = {není k dispozici, jen k zakoupení}, 
 }
 
 @ARTICLE{LiPed-MinLattFinAutAppDecoLattLang,
@@ -113,7 +113,7 @@
   title   = {Minimization of lattice finite automata and its application to the decomposition of lattice languages},
   journal = {Fuzzy Sets and Systems},
   year    = 2007,
-  note    = {anotace: http://www.sciencedirect.com/science/article/pii/S0165011407001121}, 
+  note    = {}, 
 }
 
 @ARTICLE{Bel-DetFuzzAut,
@@ -121,20 +121,166 @@
   title   = {Determinism and fuzzy automata},
   journal = {Information Sciences},
   year    = 2002,
-  note    = {anotace: http://www.sciencedirect.com/science/article/pii/S0020025502001925}, 
+  note    = {}, 
 }
 
-ARTICLE{,
-  author  = {}, 
+@ARTICLE{PalYau-FracFuzzGramAppPatRec,
+  author  = {G.F. DePalma, S.S. Yau}, 
   title   = {FRACTIONALLY FUZZY GRAMMARS WITH APPLICATION TO PATTERN RECOGNITION},
   journal = {US–Japan Seminar on Fuzzy Sets and their Applications},
-  year    = ,
-  note    = {anotace: http://www.sciencedirect.com/science/article/pii/B9780127752600500190}, 
+  year    = 1974,
+  note    = {článek jako e-book: http://bit.ly/2cumxjz}, 
+}
+
+%nalazeno na proquest
+
+@ARTICLE{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc,
+  author  = {José R. González de Mendívil, José R. Garitagoitia}, 
+  title   = {Fuzzy languages with infinite range accepted by fuzzy automata: Pumping Lemma and determinization procedure},
+  journal = {Fuzzy sets and Systems},
+  year    = 2014,
+  note    = {}, 
+}
+
+@BOOK{KanLee-FuzzSwiAutTheApp,
+  author  = {Abraham Kandel and Samuel C. Lee}, 
+  title   = {Fuzzy Switching and Automata: Theory and Applications},
+  publisher = {Society for Industrial and Applied Mathematics},
+  year    = 1981,
+  note    = {není k dispozici, prošla už vůbec revizí?}, 
+}
+
+@ARTICLE{RamGir-ConvFinAutFuzzAutStrComp,
+  author  = {Dr. V. Ramaswamy, H. A. Girijamma}, 
+  title   = {Conversion of Finite Automata to Fuzzy Automata for String Comparison},
+  journal = {International Journal of Computer Applications},
+  year    = 2012,
+  note    = {}, 
+}
+
+@ARTICLE{NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma,
+  author  = {Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa}, 
+  title   = {Fuzzy cellular learning automata for lesion detection in retina images},
+  journal = {Journal of Intelligent \& Fuzzy Systems},
+  year    = 2014,
+  note    = {není k dispozici, jen k zakoupení}, 
+}
+
+@ARTICLE{WuaPanHan-FuzzAutSysAppTarRecBasImaProc,
+  author  = {Qing-E Wua, Xue-Min Pangc, Zhen-Yu Hana}, 
+  title   = {Fuzzy automata system with application to target recognition based on image processing},
+  journal = {Computers \& Mathematics with Applications},
+  year    = 2011,
+  note    = {}, 
 }
 
 
+@ARTICLE{StaCir-ConsFuzzAutFuzzRegExp,
+  author  = {Stamenkovic, Aleksandar; Ciric, Miroslav}, 
+  title   = {Construction of fuzzy automata from fuzzy regular expressions},
+  journal = {Fuzzy Sets and Systems},
+  year    = 2012,
+  note    = {}, 
+}
+
+@ARTICLE{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr,
+  author  = {Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F.}, 
+  title   = {Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience},
+  journal = {Springer Science \& Business Media},
+  year    = 2004,
+  note    = {}, 
+}
+
+@ARTICLE{HuaHuWanCheTas-AdaVehPathPlanSys,
+  author  = {Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al.}, 
+  title   = {An Adaptive Vehicle Path Planning System},
+  journal = {IACSIT Press},
+  year    = 2015,
+  note    = {}, 
+}
+
+@ARTICLE{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms,
+  author  = {Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F.}, 
+  title   = {Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols},
+  journal = {IEEE Transactions on Fuzzy Systems},
+  year    = 2003,
+  note    = {není k dispozici, jen k zakoupení}, 
+}
+
+@ARTICLE{RavChoTri-IntFuzzAutApprStrMatch,
+  author  = {K.M. Ravi, A. Choubey, K.K. Tripati}, 
+  title   = {Intuitionistic Fuzzy Automaton for Approximate String Matching},
+  journal = {Fuzzy Information and Engeneering},
+  year    = 2014,
+  note    = {}, 
+}
 
 
+@ARTICLE{Lee-FuzzTreeAutSyntPattRec,
+  author  = {Lee, E T}, 
+  title   = {Fuzzy tree automata and syntactic pattern recognition},
+  journal = {IEEE TRANS. PATTERN ANALY. AND MACH. INTELLIG.},
+  year    = 1982,
+  note    = {}, 
+}
+
+
+@BOOK{Hua-SyntPattRecSeisOilExp,
+  author  = {Kou-Yuan Huang}, 
+  title   = {Syntactic Pattern Recognition for Seismic Oil Exploration},
+  publisher = {World Scientific},
+  year    = 2002,
+  note    = {náhled e-knihy: http://bit.ly/2cR4rtO}, 
+}
+
+
+@BOOK{BezKelKriPal-FuzzModAlgPattRecImaProc,
+  author  = {James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal}, 
+  title   = {Fuzzy Models and Algorithms for Pattern Recognition and Image Processing},
+  publisher = {Springer},
+  year    = 2005,
+  note    = {náhled e-knihy: http://bit.ly/2cghCXg}, 
+}
+
+@ARTICLE{ChaJos-NoteFuzzTreeAut,
+  author  = {S. R. Chaudhari, Mukta N. Joshi}, 
+  title   = {A Note on Fuzzy Tree Automata},
+  journal = {International Journal of Computer Applications},
+  year    = 2012,
+  note    = {}, 
+}
+
+@ARTICLE{Bel-DoExaShaFuzzSetMatt,
+  author  = {R. Bělohlávek}, 
+  title   = {Do exact shapes of fuzzy sets matter?},
+  journal = {International Journal of General Systems},
+  year    = 2007,
+  note    = {}, 
+}
+
+@ARTICLE{Xia-RSImaProcAut,
+  author  = {Xian-feng, Yu}, 
+  title   = {RS image processing automata},
+  journal = {IET Conference Proceedings},
+  year    = 2012,
+  note    = {}, 
+}
+
+@ARTICLE{Yin-FormModCompWords,
+  author  = {Ying, Mingsheng}, 
+  title   = {A formal model of computing with words},
+  journal = {IEEE Transactions on Fuzzy Systems},
+  year    = 2002,
+  note    = {není k dispozici, jen ke koupi}, 
+}
+
+@ARTICLE{QiuWan-ProbModCompWords,
+  author  = {Daowen Qiu, Huaiqing Wang}, 
+  title   = {A probabilistic model of computing with words},
+  journal = {Elsevier},
+  year    = 2005,
+  note    = {}, 
+}
 
 
 BOOK{,

@@ -1,11 +1,34 @@
 \begin{thebibliography}{10}
 
+\bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
+J~R; J. R. Gonzalez De Mendivil; Villadangos J; Farina-F. Astrain, J
+  J;~Garitagoitia.
+\newblock Approximate string matching using deformed fuzzy automata: A learning
+  experience.
+\newblock {\em Springer Science \& Business Media}, 2004.
+
 \bibitem{Bel-DetFuzzAut}
 R.~Bělohlávek.
 \newblock Determinism and fuzzy automata.
 \newblock {\em Information Sciences}, 2002.
 \newblock anotace:
   http://www.sciencedirect.com/science/article/pii/S0020025502001925.
+
+\bibitem{Bel-DoExaShaFuzzSetMatt}
+R.~Bělohlávek.
+\newblock Do exact shapes of fuzzy sets matter?
+\newblock {\em International Journal of General Systems}, 2007.
+
+\bibitem{QiuWan-ProbModCompWords}
+Huaiqing~Wang Daowen~Qiu.
+\newblock A probabilistic model of computing with words.
+\newblock {\em Elsevier}, 2005.
+
+\bibitem{RamGir-ConvFinAutFuzzAutStrComp}
+H.~A.~Girijamma Dr. V.~Ramaswamy.
+\newblock Conversion of finite automata to fuzzy automata for string
+  comparison.
+\newblock {\em International Journal of Computer Applications}, 2012.
 
 \bibitem{Fu-SynMethPattRec}
 K.~S. Fu.
@@ -16,7 +39,14 @@ K.~S. Fu.
 K.~S.~Fu G.~D.~Bruce.
 \newblock A model for finite-state probabilistic systems.
 \newblock {\em Proc. 1st Ann. Allerton Conf. Circuit and Systems Theory}, 1963.
-\newblock online?
+\newblock existuje vůbec?
+
+\bibitem{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}
+J~R G; Echanobe J; Astrain J J; Farina-F. Garitagoitia, J R; de~Mendivil.
+\newblock Deformed fuzzy automata for correcting imperfect strings of fuzzy
+  symbols.
+\newblock {\em IEEE Transactions on Fuzzy Systems}, 2003.
+\newblock není k dispozici, jen k zakoupení.
 
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.
@@ -25,6 +55,36 @@ S.S.~Yau G.F.~DePalma.
 \newblock anotace:
   http://www.sciencedirect.com/science/article/pii/B9780127752600500190.
 
+\bibitem{HuaHuWanCheTas-AdaVehPathPlanSys}
+Kai-Wen; Wang Yu-Wu; Chen Heng-Ming; Tasi Han-Wen; et~al. Huang,
+  Chenn-Jung;~Hu.
+\newblock An adaptive vehicle path planning system.
+\newblock {\em IACSIT Press}, 2015.
+
+\bibitem{Hua-SyntPattRecSeisOilExp}
+Kou-Yuan Huang.
+\newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
+\newblock World Scientific, 2002.
+\newblock náhled e-knihy: http://bit.ly/2cR4rtO.
+
+\bibitem{BezKelKriPal-FuzzModAlgPattRecImaProc}
+Raghu Krisnapuram Nikhil~Pal James C.~Bezdek, James~Keller.
+\newblock {\em Fuzzy Models and Algorithms for Pattern Recognition and Image
+  Processing}.
+\newblock Springer, 2005.
+\newblock náhled e-knihy: http://bit.ly/2cghCXg.
+
+\bibitem{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}
+José R.~Garitagoitia José R. González~de Mendívil.
+\newblock Fuzzy languages with infinite range accepted by fuzzy automata:
+  Pumping lemma and determinization procedure.
+\newblock {\em Fuzzy sets and Systems}, 2014.
+
+\bibitem{RavChoTri-IntFuzzAutApprStrMatch}
+K.K.~Tripati K.M.~Ravi, A.~Choubey.
+\newblock Intuitionistic fuzzy automaton for approximate string matching.
+\newblock {\em Fuzzy Information and Engeneering}, 2014.
+
 \bibitem{Kov-ReasFuzzAutInUsrAdpSyss}
 Szilveszter Kovács.
 \newblock Fuzzy reasoning and fuzzy automata in user adaptive systems.
@@ -32,6 +92,11 @@ Szilveszter Kovács.
   2002.
 \newblock
   http://users.iit.uni-miskolc.hu/~szkovacs/Research/UserAdaptiveApplications/HunKorean02fl-PR.pdf.
+
+\bibitem{Lee-FuzzTreeAutSyntPattRec}
+E~T Lee.
+\newblock Fuzzy tree automata and syntactic pattern recognition.
+\newblock {\em IEEE TRANS. PATTERN ANALY. AND MACH. INTELLIG.}, 1982.
 
 \bibitem{DooKre-NewDirFuzzAut}
 S.~C.~Kremer M.~Doostfatemeh.
@@ -59,11 +124,30 @@ John~N. Mordeson and Davender~S. Malik.
 \newblock {\em Fuzzy Automata and Languages: Theory and Applications}.
 \newblock Chapman and Hall/CRC, 2002.
 
+\bibitem{NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma}
+Bakhtiar; Adenihvand Karim; Mohammadi Mohammad; Mirzamohammad~Mahsa Nejad, Hadi
+  Chahkandi;~Azadbakht.
+\newblock Fuzzy cellular learning automata for lesion detection in retina
+  images.
+\newblock {\em Journal of Intelligent \& Fuzzy Systems}, 2014.
+\newblock není k dispozici, jen k zakoupení.
+
 \bibitem{Paz-IntroProbAut}
 A.~Paz.
 \newblock {\em Introduction to Probabilistic Automata}.
 \newblock Academic Press, 1971.
 \newblock náhled http://bit.ly/2cCjidd (google books).
+
+\bibitem{WuaPanHan-FuzzAutSysAppTarRecBasImaProc}
+Zhen-Yu~Hana Qing-E~Wua, Xue-Min~Pangc.
+\newblock Fuzzy automata system with application to target recognition based on
+  image processing.
+\newblock {\em Computers \& Mathematics with Applications}, 2011.
+
+\bibitem{ChaJos-NoteFuzzTreeAut}
+Mukta N.~Joshi S.~R.~Chaudhari.
+\newblock A note on fuzzy tree automata.
+\newblock {\em International Journal of Computer Applications}, 2012.
 
 \bibitem{LeeLee-FuzzNeuNet}
 Edward T.~Lee Samuel C.~Lee.
@@ -71,6 +155,11 @@ Edward T.~Lee Samuel C.~Lee.
 \newblock {\em Mathematical Biosciences}, 1975.
 \newblock anotace:
   http://www.sciencedirect.com/science/article/pii/002555647590125X.
+
+\bibitem{StaCir-ConsFuzzAutFuzzRegExp}
+Miroslav Stamenkovic, Aleksandar;~Ciric.
+\newblock Construction of fuzzy automata from fuzzy regular expressions.
+\newblock {\em Fuzzy Sets and Systems}, 2012.
 
 \bibitem{SupBisAkh-AppIntFuzzSetMedDiag}
 Akhil Ranjan~Roy Supriya Kumar~De, Ranjit~Biswas.
@@ -85,6 +174,17 @@ K.~S.~Fu William G.~Wee.
   learning systems.
 \newblock {\em IEEE Transactions on Systems Science and Cybernetics}, 5, 1969.
 \newblock online?, abstrakt: http://bit.ly/2cXBoqw.
+
+\bibitem{Xia-RSImaProcAut}
+Yu~Xian-feng.
+\newblock Rs image processing automata.
+\newblock {\em IET Conference Proceedings}, 2012.
+
+\bibitem{Yin-FormModCompWords}
+Mingsheng Ying.
+\newblock A formal model of computing with words.
+\newblock {\em IEEE Transactions on Fuzzy Systems}, 2002.
+\newblock není k dispozici, jen ke koupi.
 
 \bibitem{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}
 Witold~Pedrycz Yongming~Li.

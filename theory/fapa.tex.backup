@@ -35,6 +35,14 @@ Tady se asi trošku zabředne trochu víc do matematiky, ale -- uvidíme. Uvidí
  \TODO{lattice language} ($\sim$ fuzzy jazyk nad svazem)?
 \end{definition}
 
+\subsubsection*{Fuzzy languages with infinite range accepted by fuzzy automata: Pumping Lemma and determinization procedure \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}}
+
+Fuzzy pumping lemma. Podívat se na to.
+
+\subsubsection*{Conversion of Finite Automata to Fuzzy Automata for String Comparison \cite{RamGir-ConvFinAutFuzzAutStrComp}}
+Převod klasického bivalentního automatu na fuzzy automat pomocí podobnostní funkce.
+
+\subsubsection*{Construction of fuzzy automata from fuzzy regular expressions \cite{StaCir-ConsFuzzAutFuzzRegExp}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy regulátory a řídící systémy}
@@ -59,7 +67,7 @@ Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Pattern recognition}
+\subsection{Pattern recognition (řetězců i obrazů)}
 
 
 \subsubsection*{Syntactic Methods in Pattern Recognition \cite{Fu-SynMethPattRec}}
@@ -72,6 +80,19 @@ Knížka (celá) o pattern recognizition pomocí formálních jazyků. Bohužel 
 Fractionally fuzzy grammar je speciální fuzzy gramatika, která se dobře hodí pro patern recognition. Prý jsou \uv{powerfull} a součastně \uv{easily parsed}. \TODO{V \cite{MorMal-FuzzAutAndLangs}, 10.7 je několik odkazů na další zdroje, prozkoumat!}.
 
 V článku \cite{PalYau-FracFuzzGramAppPatRec} je pojem Fractionally fuzzy grammar (nejspíš) zaveden.
+
+\subsubsection*{Fuzzy cellular learning automata for lesion detection in retina images \cite{NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma}}
+\subsubsection*{Fuzzy Automata System with Application to target recognition based on image processing \cite{WuaPanHan-FuzzAutSysAppTarRecBasImaProc}}
+\subsubsection*{Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols \cite{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}}
+
+\subsubsection*{Intuitionistic Fuzzy Automaton for Approximate String Matching \cite{RavChoTri-IntFuzzAutApprStrMatch}}
+
+\subsubsection*{Fuzzy tree automata and syntactic pattern recognisition\cite{Lee-FuzzTreeAutSyntPattRec}}
+To bude něco na způsob R-stromů. Z pattern se udělá strom, který je rozpoznáván fuzzy tree automatem.
+
+\subsubsection*{Syntactic Pattern Recognition for Seismic Oil Exploration \cite{Hua-SyntPattRecSeisOilExp}}
+Používají pattern recognisition pomocí automatů (m.j. pomocí tree automatů) k hledání ložisk ropy.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,6 +146,9 @@ Zní to příšerně, ale nejspíš to bude vycházet z \cite{GupSar-FuzzAutDecP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ostatní aplikace a zdroje}
 
+\subsubsection*{An Adaptive Vehicle Path Planning System \cite{HuaHuWanCheTas-AdaVehPathPlanSys}}
+Super!
+
 \subsubsection*{Fuzzy automata and decision processes\cite{GupSar-FuzzAutDecProc}}
 
 To zní lákavě, ale bohužel online není prakticky ani anotace.
@@ -147,26 +171,30 @@ http://www.sciencedirect.com/science/article/pii/002002558590026X
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Jiná literatura}
 
-\subsection{Další čtení}
+\subsection{Další čtení a potencionální zdroje}
 \begin{itemize}
  \item Morderson, Malik: Fuzzy Automata and Languages: Theory and Applications \cite{MorMal-FuzzAutAndLangs}
  \item Introduction to Probabilistic Automata \cite{Paz-IntroProbAut}, samostatná kapitola se seznamem vybraných aplikací pravděpodobnostních automatů
  \item New directions in fuzzy automata \cite{DooKre-NewDirFuzzAut}: Nový pohled na automaty, v anotaci mluví o tom, jak dlouho se automaty již studují, takže by se tam mohl odkazovat na nějaké aplikace. Aplication driven methodology?
+ \item Inverse fuzzy automata and inverse fuzzy languages, http://www.afmi.or.kr/articles\_in\_%20press/2013-03/AFMI-H-121231/AFMI-H-121231.pdf
+ \item Entropies of probabilistic grammars, http://www.sciencedirect.com/science/article/pii/S0019995874907992
+ \item Pattern Recognition and Machine Learning, http://bit.ly/2cD2FO3
+ \item Applied Automata Theory (hlavně pravděpodobnostní) http://bit.ly/2cCHJ8i
+ \item PRISM: A Tool for Automatic Verification of Probabilistic Systems, http://eprints.gla.ac.uk/43841/1/43841.pdf,
+ \item verifikace a checking of nondeterminism pravděpodobnostních systémů tak nějak jakože všeobecně
+ \item A Bibliography on Fuzzy Automata, Grammars and Lanuages, anotace: http://doc.utwente.nl/64296/1/MI-95-46.pdf
+ \item Approximate String Matching by Fuzzy Automata, anotace: http://link.springer.com/chapter/10.1007/978-3-642-00563-3\_29
+ \item Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience, anotace: http://link.springer.com/article/10.1023/B%3AFODM.0000022042.64558.1d
  \item ...
  \item ...
  \item ...
  
 \end{itemize}
 
-\subsection{Třeba by se mohlo hodit}
+\subsection{Třeba by mohlo být užitečné ...}
 \begin{itemize}
  \item Social Cognitive Learning Theory and other Theories and Models, https://www.learning-theories.com/
  \item Zadeh: Fuzzy algorithms, http://www.sciencedirect.com/science/article/pii/S0019995868902118
- \item Inverse fuzzy automata and inverse fuzzy languages, http://www.afmi.or.kr/articles\_in\_%20press/2013-03/AFMI-H-121231/AFMI-H-121231.pdf
- \item Entropies of probabilistic grammars, http://www.sciencedirect.com/science/article/pii/S0019995874907992
- \item Pattern Recognition and Machine Learning, http://bit.ly/2cD2FO3
- \item Applied Automata Theory (hlavně pravděpodobnostní) http://bit.ly/2cCHJ8i
- \item PRISM: A Tool for Automatic Verification of Probabilistic Systems, http://eprints.gla.ac.uk/43841/1/43841.pdf
 \end{itemize}
 
 \newpage
