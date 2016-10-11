@@ -39,38 +39,157 @@ Tady se asi trošku zabředne trochu víc do matematiky, ale -- uvidíme. Uvidí
 
 Fuzzy pumping lemma. Podívat se na to.
 
-\subsubsection*{Conversion of Finite Automata to Fuzzy Automata for String Comparison \cite{RamGir-ConvFinAutFuzzAutStrComp}}
-Převod klasického bivalentního automatu na fuzzy automat pomocí podobnostní funkce.
+
 
 \subsubsection*{Construction of fuzzy automata from fuzzy regular expressions \cite{StaCir-ConsFuzzAutFuzzRegExp}}
 
 \subsubsection*{A probabilistic model of computing with words \cite{QiuWan-ProbModCompWords}}
 Nový pohled na pravděpodobnostní automaty. Nepracují se symboly, ale celými slovy abecedy. Prý protože u slov je přirozenější uvažovat pravděpodobnosti výskytu. Slovo je v jejich případě rozložením pravděpodobnosti. Co to sakra ...?
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fuzzy regulátory a řídící systémy}
 
-\subsubsection*{Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems \cite{Kov-ReasFuzzAutInUsrAdpSyss}}
+\subsubsection*{Characterization of Fuzzy Regular Languages, \cite{RamGir-CharFuzzRegLang}}
+Vztah fuzzy regulárních jazyků a fuzzy automatů. 
 
-Řídící systémy, adaptivní systémy? Každopádně, bude to něco na principu fuzzy regulátorů. Nejspíš to bude fungovat tak, že vstupní řetězec bude posloupnost real--time událostí vně systému. A on na ně bude nějak reagovat. A něco dělat.
+\subsubsection*{Fuzzy pushdown automata, \cite{BucPas-FuzzPushAut}}
 
-\begin{definition}
- \TODO{Fuzzy reazoning}
- \TODO{Fuzzy state transition rulebase}
+Článek, který bohužel nejspíš není k dispozici, nicméně v abstraktu padá jedna důležitá myšlenka:
+
+%It is shown that the B-fuzzy pushdown automata can accept context-sensitive languages by setting a threshold, while the (fuzzy) pushdown automata can accept only context-free languages.
+B-fuzzy automaty přijímají kontextově závislé jazyky tak, že se jim nastaví práh. \uv{Obyčejné} fuzzy zásobníkové automaty přijímají jen bezkontextová jazyky.
+
+\subsection{Pattern recognition (řetězců, základní techniky)}
+
+\begin{definition}[Problém Pattern recognition]
+\TODO{zjistit, co to vlastně PŘESNĚ doopravdy je}
 \end{definition}
 
-V příkladu uvádí nástroj pro výběr nejlepší židle. Uživatelé jsou požádání o označení jak moc na ně působí zvolené židle (co do modernosti, pohodlnnosti, ceny, ...) a systém vygeneruje uspořádání židlí od \uv{nejlepší} po \uv{nejhorší}.
+\begin{definition}[Syntactic Pattern recognition]
+Mělo by to být něco ve smyslu, že patternem je klasický řetězec z terminálů (a né třeba gramatika).
+\end{definition}
 
-Víc toho nevím, protože text působí hodně odborně a vyžaduje tak znalost základních pojmů.
+
+\TODO{rozbrat vzdálenosti (Hammingova, Levenshteinova)}
 
 
-\subsubsection*{A model for Finite-state probabilistic systems \cite{BruFu-ModelFinStateProbSyss}}
+\subsubsection*{Conversion of Finite Automata to Fuzzy Automata for String Comparison \cite{RamGir-ConvFinAutFuzzAutStrComp}}
 
-Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale kromě anotace jsem se o něm nedozvěděl nic víc.
+Jedná se o pravděpodobně nejjednodušší zavedení fuzzy automatu pro pattern recognition.
+
+Mějme klasický bivalentní automat $M = (Q, \Sigma, q_0, \delta, F)$ a funkci $g_s: \Sigma \times \Sigma \rightarrow [0,1]$ (podobnost symbolů). Označme $\delta_a (q_i, q_j)$ jako $\delta(q_i, a, q_j)$.
+
+Pak můžeme zkonstruovat fuzzy automat $M' = (Q, f, I, F')$ takový, že $I$ a $F'$ jsou počáteční a koncové stavy ($I(q_0) = 1$, $I(q_i) = 0$ pro $i > 0$, $F'(q_n) = 1$, $F(q_i) = 0$ pro $i < n$) a $f$ je fuzzy přechodová funkce:
+$$
+  f(q_i, a, q_j) = \bigvee_{x \in \Sigma} (g_s(a, x) \wedge \delta_x(q_i, q_j))
+$$
+
+Toť vše. Nevýhody jsou zřejmé -- $M'$ nám například nepokryje vložení nebo naopak odebrání symbolu.
+
+\subsubsection*{Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}}
+
+Mějme fuzzy automat s $\epsilon$ přechody. Je dokázáno (viz např. článek), že rozpoznává stejný jazyk jako některý NFA (bez $\epsilon$ přechodů).
+
+Autoři dále zavádějí nový pohled na rozdíly mezi dvěma řetězci. Používájí k tomu relaci $E = (\Sigma \cup \{ \epsilon \})^2$ porovnávající dvojici symbolů (resp. symbol nebo prázdný řetězec). 
+
+\begin{definition}[Editační operace]
+Mějme relaci $E = (\Sigma \cup \{ \epsilon \})^2$ (pospanou výše). Pak každou dvojici $z \in E$ nazvěme editační operace. Speciálně pak, $(x, y) \in E$ znamená nahrazení symbolu $x$ symbolem $y$, $(x, \epsilon) \in E$ znamená odebrání symbolu $x$ a naopak $(\epsilon, y) \in E$ pak vložení symbolu $y$ (pro všechny $x, y \neq \epsilon$). 
+
+Máme-li editační operaci $(x, y) = z \in E$, pak označme $x = z^\downarrow$ a $y = z^\uparrow$.
+\end{definition}
+
+Podíváme-li se na $E$ jako na množinu (uspořádaných dvojic), můžeme ji tak považovat za abecedu. $E^+$ pak značí řetězce nad touto abecedou, tedy posloupnosti editačních operací dvou řetězců. Pomocí takovéto posloupnosti editačních operací můžeme popsat způsob, jak z jednoho řetězce vytvořit jiný. Takovéto posloupnosti editačních operací se říká vyrovnání řetězců.
+
+\begin{definition}[Vyrovnání]
+Máme-li řetězec $\omega$, který vznikl z řetězce $\alpha$ použitím posloupnosti $z \in E^+$ editačních sybolů, nazýváme vyrovnáním $\alpha$ k $\omega$.
+\end{definition}
+
+\begin{definition}[Množina vyrovnání]
+Množinou $G(\alpha, \omega)$ vyrovnání rozumíme množinu všech vyrovnání $\alpha$ k $\omega$. \TODO{opsat přesnou definici (def. 7, str. 5)}
+\end{definition}
+Množina $G(\alpha, \omega)$ nám reprezenuje všechny možné způsoby, jak přetransformovat řetězec $\alpha$ na řetězec $\omega$. 
+
+Nyní mějme fuzzy relaci $R$ nad $E$ (\TODO{reflexivita, symetrie a T-transitivita $R$}). Tato relace každé editační operaci $z \in E$ přiřazuje hodnotu \uv{váhy}. Na základě této fuzzy relace můžeme určit stupeň podobnosti dvojice řetězců $\alpha$ a $\omega$. Definujeme proto fuzzy zobrazení $S_{\Sigma, R, T}$ nad $\Sigma^*$ jako fuzzy míru mezi dvěma řetězci:
+\begin{definition}[Fuzzy míra]
+Fuzzy míra řetězci $\alpha$ a $\omega$ je fuzzy relace $S_{\Sigma, R, T}$ nad $\Sigma^*$ taková, že ... \TODO{opsat přesně} přes všechna $z \in G(\alpha, \omega)$ počítá maximum z $t$-normy $R(z_i)$ pro všechny editační operace $z_i \in z$.
+\end{definition}
+
+Nyní je třeba zkonstruovat automat (fuzzy automat s $\epsilon$-přechody). \TODO{opsat a okomentovat tu dlouhou definici}. Je dokázáno, že výpočet tohoto automatu koresponduje s fuzzy mírou $S_{\Sigma, R, T}$ definovanou výše.
+
+
+\subsubsection*{Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols \cite{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}}
+
+\begin{definition}[Fuzzy symbol]
+Fuzzy symbol je fuzzy množina všech symbolů abecedy. Její membership funkce je definována jako podobnost aktuálního symbolu s pozorovacným symbolem. Značí se typicky $\widetilde{y}$ pro pozorovaný symbol $y$.
+\end{definition}
+
+Používá následující algoritmus: Nejdříve se sestaví slovník, kde pro každou (výstupní) třídu se vytvoří (resp. vybere jeden z objektů v této třídě) její reprezentant. Poté se pro vstupní řetězec se počítá \uv{počet} transformací (přidání, odebrání nebo záměn symbolů) tak, abychom získali jednotlivé reprezentanty. Výslednou třídou vstupního řetězce se pak stane ta, jejiž reprezentant má ke vstupnímu řetězci \uv{nejblíž} (tj. vyžadoval nejméně transformací).
+
+Otázkou však je, jak tyto transformace zpočítat. Základní technika, zvaná recognition rate \TODO{dohledat více informací o RR}, má však jisté nevýhody.  Např. věty uvažuje samostatně, bez kontextu okolních vět. Stejně tak slova. Proto se zavádí použití fuzzy symbolů.
+
+Přechodem z \uv{běžných} symbolů na fuzzy symboly nám však přestává dostačovat klasický automat. Je proto nutné použít mocnější náststroj. Autoři proto používají fuzzy deformovaný automat.
+
+Fuzzy deformovaný automat je zobecnění klasického automatu. Pro naše účely je vhodné vytvořit jej z automatu rozpoznávající řětězec vzoru (patternu). 
+
+\begin{definition}[Automat rozpoznávající $\omega$, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} str. 2]
+  Mějme řetězec $\omega$ nad abecedou $\Sigma$. Automat rozpoznávající $\omega$ je pak konečný automat $M(\omega) = \langle Q, \Sigma, \delta, q_0, \{ q_n \} \rangle$ takový, že jeho množina stavů $Q$ se sestává z právě $n$ (kde $n$ je délka řetězce $\omega$) stavů $q_0, \dots, q_n$, dále $q_0$ je počáteční a $q_n$ koncový stav a $\delta$ je přechodová funkce $Q \times Q \times \Sigma \rightarrow \{0, 1\}$. Přechodová funkce je definována následovně:
+  $$
+  \delta(q_{k-1}, q_k, a_k) = 
+  \begin{cases}
+      1	&\text{pokud $a_k$ je $k$-tý symbol v řetězci $\omega$} \\
+      0	&\text{jinak}
+  \end{cases}
+  $$
+\end{definition}
+
+Takto definovaný automat zřejmě bude rozpoznávat jen a jen řetězec $\omega$ a žádný jiný. Nyní z něj sestavíme fuzzy deformovaný automat.
+
+\begin{definition}[Fuzzy deformovaný automat, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} str. 2]
+  Mějme automat $M(\omega)$ přijímající $\omega$. Pak definujeme fuzzy deformovaný automat $MD(\omega)$ jako $\langle Q, \Sigma, \mu, \sigma, \eta, \widetilde{\mu} \rangle$, kde:
+  \begin{itemize}
+   \item $Q$ je množina stavů přejatá z $M(\omega)$,
+   \item $\Sigma$ je abeceda přejatá z $M(\omega)$,
+   \item $\sigma: Q \rightarrow [0, 1]$ jsou počáteční stavy (tedy $\sigma(q_0) = 1$ a $\sigma(q_i) = 0$ pro všechna ostatní $q_0 \neq q_i \in Q$),  
+   \item $\eta:   Q \rightarrow [0, 1]$ jsou koncové stavy (tedy $\sigma(q_n) = 1$ a $\sigma(q_i) = 0$ pro všechna ostatní $q_n \neq q_i \in Q$),
+   \item $\mu:    Q \times Q \times (\Sigma \cup \{ \epsilon \}) \rightarrow [0, 1]$, fuzzy přechodová funkce: 
+    $$
+      \mu(q, p, a)
+      \begin{cases}
+	= 1  		&\text{pokud $\delta(q, p, a) = 1$, $q, p \in Q$ a $a \in \Sigma$} \\
+	\in [0, 1]  	&\text{pokud $a = \epsilon$} \\
+	\in [0, 1] 	&\text{pokud $a \in \Sigma$} \\
+	\in [0, 1] 	&\text{pokud $p = q$} \\
+	= 0 		&\text{jinak}
+      \end{cases}
+    $$
+    \item $\widetilde{\mu}: \mathcal{F}(Q) \times \mathcal{F}(\Sigma) \rightarrow Q \times [0, 1]$ je funkce pro výpočet následujícího stavu definována následovně \TODO{zkontrolovat, jestli jsem to pochopil dobře}:
+    $$
+    \widetilde{\mu}(\widetilde{P}, \widetilde{y}) = \{ \langle p, \mu \rangle \mid
+      \mu = \bigoplus_{q \in Q} ( \bigoplus_{x \in \Sigma} ( 
+	\mu(q, p, x) \otimes \mu_{\widetilde{y}} (x) )
+      \otimes \mu_{\widetilde{P}}(q) )
+      \text{ $\forall p \in Q$} \}
+    $$
+  \end{itemize}
+\end{definition}
+
+\TODO{rozebrat stupňovitost, stupně pravdivosti jednotlivých elementů a taak}
+
+V definici přechodové funkce $\mu$ můžeme pozorovat zavedení kýžené transformace. Pokud se symbol na vstupu shoduje se symbolem ve vzoru (na stejném místě), aplikuje se pravidlo přejaté z přechodové funkce $\delta$ původního automatu. Není-li ze vstupu přečten žádný symbol (tj. $a = \epsilon$), pak nám tím přechodová funkce dovoluje symbol vzoru z pozorovaného slova vynechat. Naopak, pokud přečteme symbol, ale nepřesuneme se do jiného stavu, pak sledované slovo oproti vzoru obsahuje symbol $a$ navíc. Pokud jsme přečetli symbol $a$, který však ale nesplňuje podmínku s pravidlem $\delta$, pak pzorované slovo obsahuje na dané pozici jiný symbol, než vzorové slovo. Pokud žádná z těchto situací nenastane, pak ji odmítneme. 
+
+
+\subsubsection*{Intuitionistic Fuzzy Automaton for Approximate String Matching \cite{RavChoTri-IntFuzzAutApprStrMatch}}
+
+Uvažuje se intuistionický přístup. \TODO{zjistit, co to ten intuistionický přístup vlastně je} Jde o to, že se kromě zobrazení podobnosti, uvažuje také zobrazení nepodobnosti. To je prý lepší, než klasické fuzzy (s jednou membership funkcí).
+
+V článku poté definují fuzzy jazyk (triviální), fuzzy regulérní jazyk, intuistionický fuzzy jazyk (místo jedné membership funkce má dvě) a následně intuistonický fuzzy regulární jazyk. Na základě techto pojmů poté definují fuzzy intuistonický automat. Jdou na to přes automat rozpoznávající $\omega$, podobně jako v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}. Dále však ale definují fuzzy automat, což zřejmě bude jen jiné označení pro fuzzy deformovaný automatu z onoho článku.
+
+Následně je definován fuzzy intuistonický automat. Ten má každou z memership funkcí adekvátně zdvojenu (\TODO{přepsat definici z článku, str. 32)}. Stejně tak, celý výpočet neuvažuje jednu hodnotu stupně, ale dvojici hodnot. Stejně tak vypadá i (intuistionický fuzzy) jazyk.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Pattern recognition (řetězců i obrazů)}
+\subsection{Pattern recognition (ostatní)}
+
+
 
 
 \subsubsection*{Syntactic Methods in Pattern Recognition \cite{Fu-SynMethPattRec}}
@@ -78,29 +197,32 @@ Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale
 Knížka (celá) o pattern recognizition pomocí formálních jazyků. Bohužel jen klasických automatů případně stochastických.
 
 
-\subsubsection*{Fractionally Fuzzy Grammars \cite{MorMal-FuzzAutAndLangs} 10.7, \cite{PalYau-FracFuzzGramAppPatRec}}
+\subsubsection*{Fractionally Fuzzy Grammars \cite{PalYau-FracFuzzGramAppPatRec} (popř. \cite{MorMal-FuzzAutAndLangs} 10.7)}
 
 Fractionally fuzzy grammar je speciální fuzzy gramatika, která se dobře hodí pro patern recognition. Prý jsou \uv{powerfull} a součastně \uv{easily parsed}. \TODO{V \cite{MorMal-FuzzAutAndLangs}, 10.7 je několik odkazů na další zdroje, prozkoumat!}.
 
 V článku \cite{PalYau-FracFuzzGramAppPatRec} je pojem Fractionally fuzzy grammar (nejspíš) zaveden.
 
-\subsubsection*{Fuzzy cellular learning automata for lesion detection in retina images \cite{NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma}}
+\subsubsection*{(Fuzzy cellular learning automata for lesion detection in retina images \cite{NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma})}
+
 \subsubsection*{Fuzzy Automata System with Application to target recognition based on image processing \cite{WuaPanHan-FuzzAutSysAppTarRecBasImaProc}}
-\subsubsection*{Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols \cite{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}}
 
-\subsubsection*{Intuitionistic Fuzzy Automaton for Approximate String Matching \cite{RavChoTri-IntFuzzAutApprStrMatch}}
+Pokročilejší technika pro pattern recognition. Využívají pro rozpoznávání otisků prstů.
 
-\subsubsection*{Fuzzy tree automata and syntactic pattern recognisition\cite{Lee-FuzzTreeAutSyntPattRec}}
+
+
+\subsubsection*{Fuzzy tree automata and syntactic pattern recognisition\cite{Lee-FuzzTreeAutSyntPattRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}}
 To bude něco na způsob R-stromů. Z pattern se udělá strom, který je rozpoznáván fuzzy tree automatem.
-
-\subsubsection*{Syntactic Pattern Recognition for Seismic Oil Exploration \cite{Hua-SyntPattRecSeisOilExp}}
-Používají pattern recognisition pomocí automatů (m.j. pomocí tree automatů) k hledání ložisk ropy.
 
 \subsubsection*{Fuzzy Models and Algorithms for Pattern Recognition and Image Processing \cite{BezKelKriPal-FuzzModAlgPattRecImaProc}}
 Megaknížka o tom, že se fuzzy modely používají pro pattern recognition. O automatech tam toho moc není. Ale na straně 545 popisují kýženou historii výzkumu aplikací fuzzy automatů v oblasti pattern recognition.
 
 \subsubsection*{RS image processing automata \cite{Xia-RSImaProcAut}}
 Nový druh (\uv{fuzzy}) automatu vytvořený pro image processing. Stavy jsou matice se vzory a přechody mezi nimi jsou vlastně maticové operace na ně postupně aplikované. Zajímavé...
+
+\subsubsection*{Syntactic Pattern Recognition for Seismic Oil Exploration \cite{Hua-SyntPattRecSeisOilExp}}
+Používají pattern recognisition pomocí automatů (m.j. pomocí tree automatů) k hledání ložisk ropy.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Strojové učení, Fuzzy neuronové sítě}
@@ -139,6 +261,32 @@ Na konci zmiňují, že použití fuzzy automatu v těchto situacích přináš�
 To bude nejspíš podobné jako \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}. 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy regulátory a řídící systémy}
+
+\subsubsection*{Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems \cite{Kov-ReasFuzzAutInUsrAdpSyss}}
+
+Řídící systémy, adaptivní systémy? Každopádně, bude to něco na principu fuzzy regulátorů. Nejspíš to bude fungovat tak, že vstupní řetězec bude posloupnost real--time událostí vně systému. A on na ně bude nějak reagovat. A něco dělat.
+
+\begin{definition}
+ \TODO{Fuzzy reazoning}
+ \TODO{Fuzzy state transition rulebase}
+\end{definition}
+
+V příkladu uvádí nástroj pro výběr nejlepší židle. Uživatelé jsou požádání o označení jak moc na ně působí zvolené židle (co do modernosti, pohodlnnosti, ceny, ...) a systém vygeneruje uspořádání židlí od \uv{nejlepší} po \uv{nejhorší}.
+
+Víc toho nevím, protože text působí hodně odborně a vyžaduje tak znalost základních pojmů.
+
+
+\subsubsection*{A model for Finite-state probabilistic systems \cite{BruFu-ModelFinStateProbSyss}}
+
+Na tento článek se odkazuje \cite{MorMal-FuzzAutAndLangs} v kapitole 10.1. Ale kromě anotace jsem se o něm nedozvěděl nic víc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bioinformatika a medicína}
 
@@ -169,7 +317,8 @@ http://www.sciencedirect.com/science/article/pii/002002558590026X
 
 
 
-
+\subsubsection*{Fuzzy evolutionary cellular automata \cite{Rich-FuzEvoCellAut}}
+Jedná se vůbec o fuzzy automat? Resp. Mluví se tam o fuzzy teorie a celulárním automatu. Tak nevím.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,11 +369,27 @@ http://search.proquest.com/computerscience/docview/963845527/55737592510249A1PQ/
  \item Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience, anotace: http://link.springer.com/article/10.1023/B%3AFODM.0000022042.64558.1d
  \item Klasická automata theory: J.E. Hopcroft, J.D. Ullman, Introduction to Automata Theory, Languages, and Computation, Addison-Wesley, Reading,
 MA, 1979
- \item Latent Dependency Forest Models, https://www.researchgate.net/publication/307931171_Latent_Dependency_Forest_Models
- \item ...
- \item ...
- \item ...
- 
+ \item Latent Dependency Forest Models, https://www.researchgate.net/publication/307931171\_Latent\_Dependency\_Forest\_Models
+ \end{itemize}
+
+Knížky, které se zmiňují o fuzzy teorii, automatech a/nebo aplikacích:
+\begin{itemize}
+ \item Cornelius T Leondes: Fuzzy theory systems. 1999.  
+ \item Rudolf Seising: The Fuzzification of systems : the genesis of fuzzy set theory and its initial applications - developments up to the 1970s. 2007
+ \item C B Setzer; N A Warsi: Fuzzy automata and pattern matching : final report. 1986
+ \item Chichester, West Sussex: Foundations of fuzzy control : a practical approach. 2013
+ \item John H Lilly: Fuzzy control and identification. 2010
+ \item Hugh M Cartwright; Nawwaf Kharma: Using artificial intelligence in chemistry and biology : a practical guide, 2008
+ \item Stan Openshaw; Robert J Abrahart: GeoComputation, 2000
+ \item Friedrich Recknagel: Ecological informatics : scope, techniques, and applications, 2006
+ \item Roberto Cipolla; Sebastiano Battiato; Giovanni Maria Farinella: Computer vision : detection, recognition and reconstruction, 2010
+
+ \item National Research Council (U.S.). Transportation Research Board: Traffic flow theory and characteristics. Volume 2, 2015
+ \item John N Mordeson; D S Malik; Shiquan Cheng: Fuzzy mathematics in medicine
+ \item Ali Saghafinia: Applications of various fuzzy sliding mode controllers in induction motor drives, 2016
+ \item David M Forrester: Fuzzy cellular automata in conjunctive normal form., 2011
+ \item Jelena Ignjatović, Miroslav Ćirić, Stojan Bogdanović: Determinization of fuzzy automata with membership values in complete residuated lattices, 2008
+ \item Miroslav Ćirić, Jelena Ignjatović, Nada Damljanović, Milan Bašić: Bisimulations for fuzzy automata (2012)
 \end{itemize}
 
 \subsection{Třeba by mohlo být užitečné ...}

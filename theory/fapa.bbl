@@ -11,8 +11,6 @@ J~R; J. R. Gonzalez De Mendivil; Villadangos J; Farina-F. Astrain, J
 R.~Bělohlávek.
 \newblock Determinism and fuzzy automata.
 \newblock {\em Information Sciences}, 2002.
-\newblock anotace:
-  http://www.sciencedirect.com/science/article/pii/S0020025502001925.
 
 \bibitem{Bel-DoExaShaFuzzSetMatt}
 R.~Bělohlávek.
@@ -30,10 +28,17 @@ H.~A.~Girijamma Dr. V.~Ramaswamy.
   comparison.
 \newblock {\em International Journal of Computer Applications}, 2012.
 
+\bibitem{RamGir-CharFuzzRegLang}
+Mrs. Girijamma. H.~A. Dr. V.~Ramaswamy.
+\newblock Characterization of fuzzy regular languages.
+\newblock {\em IJCSNS International Journal of Computer Science and Network
+  Security}, 2008.
+
 \bibitem{Fu-SynMethPattRec}
 K.~S. Fu.
 \newblock {\em Syntactic Methods in Pattern Recognition}.
 \newblock Elsevier, 1974.
+\newblock není k dispozici, jen placená.
 
 \bibitem{BruFu-ModelFinStateProbSyss}
 K.~S.~Fu G.~D.~Bruce.
@@ -46,14 +51,14 @@ J~R G; Echanobe J; Astrain J J; Farina-F. Garitagoitia, J R; de~Mendivil.
 \newblock Deformed fuzzy automata for correcting imperfect strings of fuzzy
   symbols.
 \newblock {\em IEEE Transactions on Fuzzy Systems}, 2003.
-\newblock není k dispozici, jen k zakoupení.
+\newblock K dispozici na IEEExplore.
 
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.
 \newblock Fractionally fuzzy grammars with application to pattern recognition.
 \newblock {\em US–Japan Seminar on Fuzzy Sets and their Applications}, 1974.
-\newblock anotace:
-  http://www.sciencedirect.com/science/article/pii/B9780127752600500190.
+\newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
+  MorMal-FuzzAutAndLangs 10.7.
 
 \bibitem{HuaHuWanCheTas-AdaVehPathPlanSys}
 Kai-Wen; Wang Yu-Wu; Chen Heng-Ming; Tasi Han-Wen; et~al. Huang,
@@ -66,6 +71,18 @@ Kou-Yuan Huang.
 \newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
 \newblock World Scientific, 2002.
 \newblock náhled e-knihy: http://bit.ly/2cR4rtO.
+
+\bibitem{BucPas-FuzzPushAut}
+Anca~Pascu Irina~Bucurescu.
+\newblock Fuzzy pushdown automata.
+\newblock {\em International Journal of Computer Mathematics}, 2007.
+\newblock nejspíš není k dispozici.
+
+\bibitem{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}
+J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
+\newblock Fuzzy automata with $\epsilon$-moves compute fuzzy measures between
+  strings.
+\newblock {\em Fuzzy Sets and Systems 157}, 2005.
 
 \bibitem{BezKelKriPal-FuzzModAlgPattRecImaProc}
 Raghu Krisnapuram Nikhil~Pal James C.~Bezdek, James~Keller.
@@ -97,27 +114,24 @@ Szilveszter Kovács.
 E~T Lee.
 \newblock Fuzzy tree automata and syntactic pattern recognition.
 \newblock {\em IEEE TRANS. PATTERN ANALY. AND MACH. INTELLIG.}, 1982.
+\newblock K dispozici na IEEExplore.
 
 \bibitem{DooKre-NewDirFuzzAut}
 S.~C.~Kremer M.~Doostfatemeh.
 \newblock New directions in fuzzy automata.
 \newblock {\em International Journal of Approximate Reasoning}, 2004.
-\newblock http://bit.ly/2cXJXBC.
 
 \bibitem{GupSar-FuzzAutDecProc}
 George N.~Saridis Madan M.~Gupta.
 \newblock {\em Fuzzy automata and decision processes}.
 \newblock Elsevier, 1977.
-\newblock
-  https://www.amazon.com/Fuzzy-Automata-Decision-Processes-Madan/dp/0444002316.
+\newblock není k dispozici, ani náhled.
 
 \bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
 Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
 \newblock Application of fuzzy automata theory and knowledge based neural
   networks for development of basic learning model.
 \newblock {\em Computer Technology and Application 2}, 2011.
-\newblock
-  http://www.davidpublishing.com/davidpublishing/upfile/6/23/2011/2011062376920049.pdf.
 
 \bibitem{MorMal-FuzzAutAndLangs}
 John~N. Mordeson and Davender~S. Malik.
@@ -136,13 +150,22 @@ Bakhtiar; Adenihvand Karim; Mohammadi Mohammad; Mirzamohammad~Mahsa Nejad, Hadi
 A.~Paz.
 \newblock {\em Introduction to Probabilistic Automata}.
 \newblock Academic Press, 1971.
-\newblock náhled http://bit.ly/2cCjidd (google books).
+\newblock není k dispozici, náhled: http://bit.ly/2cCjidd.
 
 \bibitem{WuaPanHan-FuzzAutSysAppTarRecBasImaProc}
 Zhen-Yu~Hana Qing-E~Wua, Xue-Min~Pangc.
 \newblock Fuzzy automata system with application to target recognition based on
   image processing.
 \newblock {\em Computers \& Mathematics with Applications}, 2011.
+
+\bibitem{Rich-FuzEvoCellAut}
+James~Neal Richter.
+\newblock Fuzzy evolutionary cellular automata, 2003.
+
+\bibitem{MogZadAme-NewDirInFuzzTreeAut}
+M.~M.~ZAHEDI S.~MOGHARI and R.~AMERI.
+\newblock New direction in fuzzy tree automata.
+\newblock {\em Iranian Journal of Fuzzy Systems}, 2011.
 
 \bibitem{ChaJos-NoteFuzzTreeAut}
 Mukta N.~Joshi S.~R.~Chaudhari.
@@ -153,8 +176,7 @@ Mukta N.~Joshi S.~R.~Chaudhari.
 Edward T.~Lee Samuel C.~Lee.
 \newblock Fuzzy neural networks.
 \newblock {\em Mathematical Biosciences}, 1975.
-\newblock anotace:
-  http://www.sciencedirect.com/science/article/pii/002555647590125X.
+\newblock K dispozici na sciencedirect, ale nejde stáhnout.
 
 \bibitem{StaCir-ConsFuzzAutFuzzRegExp}
 Miroslav Stamenkovic, Aleksandar;~Ciric.
@@ -173,7 +195,7 @@ K.~S.~Fu William G.~Wee.
 \newblock A formulation of fuzzy automata and its application as a model of
   learning systems.
 \newblock {\em IEEE Transactions on Systems Science and Cybernetics}, 5, 1969.
-\newblock online?, abstrakt: http://bit.ly/2cXBoqw.
+\newblock K dispozici na IEEExplore.
 
 \bibitem{Xia-RSImaProcAut}
 Yu~Xian-feng.
@@ -184,22 +206,18 @@ Yu~Xian-feng.
 Mingsheng Ying.
 \newblock A formal model of computing with words.
 \newblock {\em IEEE Transactions on Fuzzy Systems}, 2002.
-\newblock není k dispozici, jen ke koupi.
+\newblock K dispozici na IEEExplore.
 
 \bibitem{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}
 Witold~Pedrycz Yongming~Li.
 \newblock Fuzzy finite automata and fuzzy regular expressions with membership
   values in lattice-ordered monoids.
 \newblock {\em Fuzzy Sets and Systems}, 2005.
-\newblock anotace:
-  http://www.sciencedirect.com/science/article/pii/S0165011405001600.
 
 \bibitem{LiPed-MinLattFinAutAppDecoLattLang}
 Witold~Pedrycz Yongming~Li.
 \newblock Minimization of lattice finite automata and its application to the
   decomposition of lattice languages.
 \newblock {\em Fuzzy Sets and Systems}, 2007.
-\newblock anotace:
-  http://www.sciencedirect.com/science/article/pii/S0165011407001121.
 
 \end{thebibliography}

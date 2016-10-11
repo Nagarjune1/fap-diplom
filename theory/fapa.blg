@@ -3,12 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
 Database file #1: resources.bib
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
+Warning--entry type for "Rich-FuzEvoCellAut" isn't style-file defined
+--line 297 of file resources.bib
 Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
@@ -18,6 +14,12 @@ while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal" for entry BezKelKriPal-FuzzModAlgPattRecImaProc
 while executing---line 1049 of file plain.bst
@@ -51,45 +53,45 @@ Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenih
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
 while executing---line 1090 of file plain.bst
-You've used 32 entries,
+You've used 37 entries,
             2118 wiz_defined-function locations,
-            683 strings with 10667 characters,
-and the built_in function-call counts, 6868 in all, are:
-= -- 677
-> -- 236
+            705 strings with 11169 characters,
+and the built_in function-call counts, 7899 in all, are:
+= -- 773
+> -- 277
 < -- 0
-+ -- 107
-- -- 68
-* -- 267
-:= -- 1302
-add.period$ -- 114
-call.type$ -- 32
-change.case$ -- 124
++ -- 124
+- -- 80
+* -- 309
+:= -- 1492
+add.period$ -- 126
+call.type$ -- 37
+change.case$ -- 145
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 332
-empty$ -- 575
-format.name$ -- 68
-if$ -- 1394
+cite$ -- 37
+duplicate$ -- 379
+empty$ -- 665
+format.name$ -- 80
+if$ -- 1604
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 38
-newline$ -- 181
-num.names$ -- 64
-pop$ -- 134
+int.to.str$ -- 37
+missing$ -- 42
+newline$ -- 203
+num.names$ -- 74
+pop$ -- 162
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 114
 quote$ -- 0
-skip$ -- 220
+skip$ -- 257
 stack$ -- 0
-substring$ -- 167
-swap$ -- 32
+substring$ -- 192
+swap$ -- 37
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 136
 warning$ -- 0
-while$ -- 64
-width$ -- 34
-write$ -- 359
+while$ -- 74
+width$ -- 39
+write$ -- 403
 (There were 24 error messages)
