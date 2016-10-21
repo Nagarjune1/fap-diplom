@@ -53,45 +53,45 @@ Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenih
 while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
 while executing---line 1090 of file plain.bst
-You've used 37 entries,
+You've used 39 entries,
             2118 wiz_defined-function locations,
-            705 strings with 11169 characters,
-and the built_in function-call counts, 7899 in all, are:
-= -- 773
-> -- 277
+            717 strings with 11574 characters,
+and the built_in function-call counts, 8307 in all, are:
+= -- 813
+> -- 291
 < -- 0
-+ -- 124
-- -- 80
-* -- 309
-:= -- 1492
-add.period$ -- 126
-call.type$ -- 37
-change.case$ -- 145
++ -- 130
+- -- 84
+* -- 325
+:= -- 1570
+add.period$ -- 132
+call.type$ -- 39
+change.case$ -- 153
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 379
-empty$ -- 665
-format.name$ -- 80
-if$ -- 1604
+cite$ -- 39
+duplicate$ -- 399
+empty$ -- 699
+format.name$ -- 84
+if$ -- 1686
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 42
-newline$ -- 203
-num.names$ -- 74
-pop$ -- 162
+int.to.str$ -- 39
+missing$ -- 44
+newline$ -- 213
+num.names$ -- 78
+pop$ -- 170
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 120
 quote$ -- 0
-skip$ -- 257
+skip$ -- 271
 stack$ -- 0
-substring$ -- 192
-swap$ -- 37
+substring$ -- 202
+swap$ -- 39
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
+type$ -- 144
 warning$ -- 0
-while$ -- 74
-width$ -- 39
-write$ -- 403
+while$ -- 78
+width$ -- 41
+write$ -- 423
 (There were 24 error messages)

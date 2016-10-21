@@ -184,6 +184,11 @@ V článku poté definují fuzzy jazyk (triviální), fuzzy regulérní jazyk, i
 
 Následně je definován fuzzy intuistonický automat. Ten má každou z memership funkcí adekvátně zdvojenu (\TODO{přepsat definici z článku, str. 32)}. Stejně tak, celý výpočet neuvažuje jednu hodnotu stupně, ale dvojici hodnot. Stejně tak vypadá i (intuistionický fuzzy) jazyk.
 
+\subsubsection*{Vlastní nápady}
+\begin{itemize}
+ \item Fuzzy pattern matching BZK jazyků (např. automatická korekce chyby při zápisu aritmetického výrazu)
+ \item něco na zůsob fuzzy lexikálního analyzátoru (pro slovo rozpozná pattern a slovo adekvátně zatřídí) $\Rightarrow$ slití automatů (rozpoznávajících jednotlivé patterny) $\Rightarrow$ vznikne velký automat $\Rightarrow$ fuzzy minimalizace. Jaký by to mělo dopad na správnost klasifikace?
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -225,15 +230,37 @@ Používají pattern recognisition pomocí automatů (m.j. pomocí tree automat�
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strojové učení, Fuzzy neuronové sítě}
+\subsection{Neuronové sítě a fuzzy neuronové sítě}
+
+\begin{definition}[Neuronová síť]
+Neuronová síť je ... \TODO{z nějakého pěkného zdroje doplnit}
+\end{definition}
+
+\begin{definition}[Knowledge based neuronová síť \cite{TowSha-KnowBas-ArtNeuNet}]
+Knowledge based neuronová síť \TODO{jak se to řekne česky?} je neuronová síť, jejiž počáteční konfigurace není vygenerována náhodně, ale sestavena ze znalostní báze.
+\end{definition}
+
+\begin{definition}[Rekurentní neuronová síť]
+ \TODO{zjistit, asi neuronovka, která umožňuje při průchodu impulzu návrat zpět}
+\end{definition}
+
+
+\subsubsection*{Fuzzy Finite-State Automata Can Be Deterministically Encoded Into Recurent Neural Networks, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}}
+
+Bylo prokázáno (vyjmenována hromada zdrojů na straně 4), že konečný automat může být reprezentován rekurentní neuronovou sítí. 
+
+
 
 \subsubsection*{Application of Fuzzy Automata Theory and Knowledge Based Neural Networks for Development of Basic Learning Model \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}}
 
-Zkombinováním neuronové sítě a fuzzy automatu vznikla tzv. Fuzzy  Automata  based  Neural  Network (FANN). Prý znalostní pravidla převádí na fuzzy automaty a z nich poté konstruuje FANN.
+Článek je poněkud nepřehledný, doporočuji nahradit \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} nebo zkusit vyhledat ještě jiný. Nicméně:
+
+Z fuzzy automatu byla zkonstruována neuronová síť zvaná Fuzzy  Automata  based  Neural  Network (FANN). Prý znalostní pravidla převádí na fuzzy automaty a z nich poté konstruuje FANN.
 
 \begin{definition}
  \TODO{Model of Learning}
  \TODO{Knowledge rule}
+ \TODO{Rule extraction}
 \end{definition}
 
 
@@ -243,6 +270,14 @@ Autoři FANN demonstrují na Urban Trafic modeling.
  je problém modelace infrastruktury, predikce budoucího vývoje. Inteligentní řízení provozu a podob.
 \end{definition}
 
+\subsubsection*{Fuzzy Neural Networks \cite{LeeLee-FuzzNeuNet}}
+
+To bude nejspíš podobné jako \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strojové učení (ostatní)}
+
 \subsubsection*{A Formulation of Fuzzy Automata and Its Application as a Model of Learning Systems \cite{WeeFu-FormFuzzzAutItsAppModLearSyss}}
 
 Originální paper bohužel není k dispozici. Ale dle anotace je to jeden z prvních článků vůbec. Podobá se stochastickému automatu.
@@ -251,16 +286,12 @@ Originální paper bohužel není k dispozici. Ale dle anotace je to jeden z prv
  \TODO{Stochastický automat}
 \end{definition}
 
-Autoři předvádějí použití \uv{fuzzy automatu} jako model strojového učení (používají zastaralý výraz \uv{Model of learning system}). Dále uvádějí hypotézu použití jako automatická kontrola a pattern recognizition \TODO{jak se to řekne česky?}.
+Autoři předvádějí použití \uv{fuzzy automatu} jako model strojového učení (používají zastaralý\RLY výraz \uv{Model of learning system}). Dále uvádějí hypotézu použití jako automatická kontrola a pattern recognizition \TODO{jak se to řekne česky?}.
 
 Na konci zmiňují, že použití fuzzy automatu v těchto situacích přináší především jednoduchost (návrhu i průběhu výpočtu).
 
-
-\subsubsection*{Fuzzy Neural Networks \cite{LeeLee-FuzzNeuNet}}
-
-To bude nejspíš podobné jako \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}. 
-
-
+\subsubsection*{Redukce přeučení pomocí fuzzy minimalizace automatu konečného jazyka}
+Nebo tak něco. Zkrátka vezmeme dataset jako konečný jazyk. Zkonstruujeme mu automat, ten fuzzy-zminimalizujeme, takže získáme nějaký přibližný model těchto dat.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy regulátory a řídící systémy}
@@ -300,6 +331,9 @@ Zní to příšerně, ale nejspíš to bude vycházet z \cite{GupSar-FuzzAutDecP
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ostatní aplikace a zdroje}
+
+\subsubsection*{Zmíňka o sadě aplikací v \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}}
+V \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} na straně 4 mluví o tom, že fuzzy gramatiky mají široké použití (od analýzy rentgenových snímků, přes návrh elektronických obvodů až po návrh GUI). A ještě spoustu dalších. Včetně odkazů na zdroje!
 
 \subsubsection*{An Adaptive Vehicle Path Planning System \cite{HuaHuWanCheTas-AdaVehPathPlanSys}}
 Super!
@@ -370,6 +404,9 @@ http://search.proquest.com/computerscience/docview/963845527/55737592510249A1PQ/
  \item Klasická automata theory: J.E. Hopcroft, J.D. Ullman, Introduction to Automata Theory, Languages, and Computation, Addison-Wesley, Reading,
 MA, 1979
  \item Latent Dependency Forest Models, https://www.researchgate.net/publication/307931171\_Latent\_Dependency\_Forest\_Models
+ \item A Bibliography on Fuzzy Automata, Grammars and Languages (mega seznam článků): http://doc.utwente.nl/64296/1/MI-95-46.pdf
+ 
+ 
  \end{itemize}
 
 Knížky, které se zmiňují o fuzzy teorii, automatech a/nebo aplikacích:
@@ -390,6 +427,7 @@ Knížky, které se zmiňují o fuzzy teorii, automatech a/nebo aplikacích:
  \item David M Forrester: Fuzzy cellular automata in conjunctive normal form., 2011
  \item Jelena Ignjatović, Miroslav Ćirić, Stojan Bogdanović: Determinization of fuzzy automata with membership values in complete residuated lattices, 2008
  \item Miroslav Ćirić, Jelena Ignjatović, Nada Damljanović, Milan Bašić: Bisimulations for fuzzy automata (2012)
+ \item Jianhua Jin, Qingguo Li: Fuzzy grammar theory based on lattices (2012)
 \end{itemize}
 
 \subsection{Třeba by mohlo být užitečné ...}

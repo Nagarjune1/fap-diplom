@@ -17,6 +17,12 @@ R.~Bělohlávek.
 \newblock Do exact shapes of fuzzy sets matter?
 \newblock {\em International Journal of General Systems}, 2007.
 
+\bibitem{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}
+C.~L.~Giles Ch. W.~Omlin, K. K.~Thornber.
+\newblock Fuzzy finite-state automata can be deterministically encoded into
+  recurent neural networks.
+\newblock {\em University of Technical Report}, 1996.
+
 \bibitem{QiuWan-ProbModCompWords}
 Huaiqing~Wang Daowen~Qiu.
 \newblock A probabilistic model of computing with words.
@@ -52,6 +58,11 @@ J~R G; Echanobe J; Astrain J J; Farina-F. Garitagoitia, J R; de~Mendivil.
   symbols.
 \newblock {\em IEEE Transactions on Fuzzy Systems}, 2003.
 \newblock K dispozici na IEEExplore.
+
+\bibitem{TowSha-KnowBas-ArtNeuNet}
+Jude W.~Shavlik Geoffrey G.~Towell.
+\newblock Knowledge-based artificial neural networks.
+\newblock {\em Artificial Intelligence}, 1992.
 
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.
