@@ -2,96 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
+I found no \citation commands---while reading file fapa.aux
 Database file #1: resources.bib
-Warning--entry type for "Rich-FuzEvoCellAut" isn't style-file defined
---line 297 of file resources.bib
-Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal" for entry BezKelKriPal-FuzzModAlgPattRecImaProc
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F." for entry AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Huang, Chenn-Jung; Hu, Kai-Wen; Wang, Yu-Wu; Chen, Heng-Ming; Tasi, Han-Wen; et al." for entry HuaHuWanCheTas-AdaVehPathPlanSys
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal" for entry BezKelKriPal-FuzzModAlgPattRecImaProc
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa" for entry NejAzaAdeMohMir-FuzzCellLeaAutLesDetRetIma
-while executing---line 1090 of file plain.bst
-You've used 39 entries,
+You've used 0 entries,
             2118 wiz_defined-function locations,
-            717 strings with 11574 characters,
-and the built_in function-call counts, 8307 in all, are:
-= -- 813
-> -- 291
+            497 strings with 3990 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
 < -- 0
-+ -- 130
-- -- 84
-* -- 325
-:= -- 1570
-add.period$ -- 132
-call.type$ -- 39
-change.case$ -- 153
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 399
-empty$ -- 699
-format.name$ -- 84
-if$ -- 1686
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 44
-newline$ -- 213
-num.names$ -- 78
-pop$ -- 170
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 0
 quote$ -- 0
-skip$ -- 271
+skip$ -- 1
 stack$ -- 0
-substring$ -- 202
-swap$ -- 39
+substring$ -- 0
+swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 144
+type$ -- 0
 warning$ -- 0
-while$ -- 78
-width$ -- 41
-write$ -- 423
-(There were 24 error messages)
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

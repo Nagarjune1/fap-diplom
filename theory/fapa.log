@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  17 OCT 2016 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  21 OCT 2016 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -309,195 +309,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 
-{/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (2.3974pt too wide) in paragraph at lines 87--87
-[]\OT1/cmr/bx/n/10 Fuzzy au-to-mata with $\OML/cmm/m/it/10 ^^O$\OT1/cmr/bx/n/10
- -moves com-pute fuzzy me-a-su-res be-tween strings
- []
+{/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./fapa.bbl
 
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-Overfull \hbox (13.68707pt too wide) in paragraph at lines 108--109
-[]\OT1/cmr/m/n/10 Mno^^Tzina $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 ; !\OT1/cmr/m/n/10 )$ n^^Sam re-pre-ze-nuje v^^Tsechny mo^^Tzn^^Se zp^^Wuso
-by, jak p^^Tretransformovat
- []
-
-[3]
-Overfull \hbox (17.69516pt too wide) in paragraph at lines 128--129
-[]\OT1/cmr/m/n/10 P^^Trechodem z []b^^Te^^Tzn^^Sych\ sym-bol^^Wu na fuzzy sym-b
-oly n^^Sam v^^Tsak p^^Trest^^Sav^^Sa dosta^^Tcovat
- []
-
-
-Overfull \hbox (7.4307pt too wide) in paragraph at lines 128--129
-\OT1/cmr/m/n/10 kla-sick^^Sy au-to-mat. Je proto nutn^^Se pou^^Tz^^S^^Pt mocn^^
-Tej^^Ts^^S^^P n^^Saststroj. Auto^^Tri proto pou^^Tz^^S^^Pvaj^^S^^P
- []
-
-
-Overfull \hbox (13.81001pt too wide) in paragraph at lines 133--134
-\OT1/cmr/m/it/10 dou $\OT1/cmr/m/n/10 ^^F$\OT1/cmr/m/it/10 . Au-to-mat roz-pozn
-^^Savaj^^S^^Pc^^S^^P $\OML/cmm/m/it/10 !$ \OT1/cmr/m/it/10 je pak kone^^Tcn^^Sy
- au-to-mat $\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/1
-0 ) = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 Q; \OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10
- ; ^^N; q[]; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q[]\OMS/cmsy/m/n/10 gi$
- []
-
-
-Overfull \hbox (31.78975pt too wide) in paragraph at lines 146--147
-\OT1/cmr/m/it/10 p^^Trij^^S^^Pmaj^^S^^Pc^^S^^P $\OML/cmm/m/it/10 !$\OT1/cmr/m/i
-t/10 . Pak de-fi-nu-jeme fuzzy de-for-mo-van^^Sy au-to-mat $\OML/cmm/m/it/10 MD
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 jako $\O
-MS/cmsy/m/n/10 h\OML/cmm/m/it/10 Q; \OT1/cmr/m/n/10 ^^F\OML/cmm/m/it/10 ; ^^V; 
-^^[; ^^Q; []\OMS/cmsy/m/n/10 i$\OT1/cmr/m/it/10 ,
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 148.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
- [4]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
- [5] [6] [7]
-Overfull \hbox (13.00175pt too wide) in paragraph at lines 291--292
-[]\OT1/cmr/m/n/10 Na konci zmi^^Tnuj^^S^^P, ^^Tze pou^^Tzit^^S^^P fuzzy au-to-m
-atu v t^^Techto si-tuac^^S^^Pch p^^Trin^^Sa^^Ts^^S^^P p^^Tredev^^Ts^^S^^Pm
- []
-
-[8]
-Overfull \hbox (137.33449pt too wide) in paragraph at lines 374--375
-\OT1/cmr/m/n/10 http://search.proquest.com/computerscience/docview/1784418314/5
-5737592510249A1PQ/6?accountid=16730 
- []
-
-
-Overfull \hbox (132.33447pt too wide) in paragraph at lines 377--378
-\OT1/cmr/m/n/10 http://search.proquest.com/computerscience/docview/963845527/55
-737592510249A1PQ/5?accountid=16730 
- []
-
-[9]
-Overfull \hbox (54.78522pt too wide) in paragraph at lines 394--395
-[]\OT1/cmr/m/n/10 Inverse fuzzy au-to-mata and in-verse fuzzy lan-gu-ages, http
-://www.afmi.or.kr/articles[]in[] 
- []
-
-
-Overfull \hbox (144.19655pt too wide) in paragraph at lines 395--396
-[]\OT1/cmr/m/n/10 Entropies of pro-ba-bi-lis-tic gra-m-mars, http://www.science
-direct.com/science/article/pii/S0019995874907992 
- []
-
-
-Overfull \hbox (16.91751pt too wide) in paragraph at lines 397--398
-[]\OT1/cmr/m/n/10 Applied Au-to-mata The-ory (hlavn^^Te pravd^^Tepodobnostn^^S^
-^P) http://bit.ly/2cCHJ8i 
- []
-
-
-Overfull \hbox (164.64003pt too wide) in paragraph at lines 398--399
-[]\OT1/cmr/m/n/10 PRISM: A Tool for Au-to-ma-tic Ve-ri-fi-cation of Pro-ba-bi-l
-is-tic Sys-tems, http://eprints.gla.ac.uk/43841/1/43841.pdf, 
- []
-
-
-Overfull \hbox (144.22775pt too wide) in paragraph at lines 401--402
-[]\OT1/cmr/m/n/10 Approximate String Matching by Fuzzy Au-to-mata, ano-tace: ht
-tp://link.springer.com/chapter/10.1007/978-
- []
-
-
-Overfull \hbox (220.12444pt too wide) in paragraph at lines 405--406
-[]\OT1/cmr/m/n/10 Latent De-pen-dency Fo-rest Mo-dels, https://www.researchgate
-.net/publication/307931171[]Latent[]Dependency[]Forest[]Models 
- []
-
-[10]
-Overfull \hbox (61.83519pt too wide) in paragraph at lines 434--435
-[]\OT1/cmr/m/n/10 Social Co-gni-tive Lear-ning The-ory and other The-o-ries and
- Mo-dels, https://www.learning-
- []
-
-
-Overfull \hbox (95.94977pt too wide) in paragraph at lines 435--436
-[]\OT1/cmr/m/n/10 Zadeh: Fuzzy al-go-ri-thms, http://www.sciencedirect.com/scie
-nce/article/pii/S0019995868902118 
- []
-
-[11] (./fapa.bbl (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-[12]
-Underfull \hbox (badness 8151) in paragraph at lines 117--123
-[]\OT1/cmr/m/n/10 Szilveszter Kov^^Sacs.  Fuzzy re-a-so-ning and fuzzy au-to-ma
-ta in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--123
-\OT1/cmr/m/n/10 user adap-tive sys-tems.  \OT1/cmr/m/it/10 De-part-ment of In-f
-or-mation Tech-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--123
-\OT1/cmr/m/it/10 no-logy, Uni-ver-sity of Miskolc\OT1/cmr/m/n/10 , 2002.  http:
-//users.iit.uni-
- []
-
-
-Overfull \hbox (2.22292pt too wide) in paragraph at lines 117--123
-\OT1/cmr/m/n/10 miskolc.hu/ szkovacs/Research/UserAdaptiveApplications/HunKorea
-n02fl-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 198--203
-[]\OT1/cmr/m/n/10 Akhil Ra-n-jan Roy Supriya Ku-mar De, Ra-n-jit Bis-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--203
-\OT1/cmr/m/n/10 was.  An ap-pli-cation of in-tu-i-ti-o-nis-tic fuzzy sets in me
--di-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--203
-\OT1/cmr/m/n/10 cal di-a-gno-sis.  \OT1/cmr/m/it/10 Fuzzy Sets and Sys-tems\OT1
-/cmr/m/n/10 , 2001.  abs-trakt:
- []
-
-) [14] (./fapa.aux) ) 
+) [3] (./fapa.aux) ) 
 Here is how much of TeX's memory you used:
- 5034 strings out of 494422
- 67203 string characters out of 6164715
- 135751 words of memory out of 5000000
- 8192 multiletter control sequences out of 15000+600000
- 12547 words of font info for 48 fonts, out of 8000000 for 9000
+ 4730 strings out of 494422
+ 63701 string characters out of 6164715
+ 127751 words of memory out of 5000000
+ 7898 multiletter control sequences out of 15000+600000
+ 9497 words of font info for 36 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
- 51i,12n,27p,812b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmti10.pfb>
-Output written on fapa.pdf (14 pages, 211760 bytes).
+ 51i,7n,27p,329b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on fapa.pdf (3 pages, 49983 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 34 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
