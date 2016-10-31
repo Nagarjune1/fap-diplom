@@ -1,3 +1,29 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{RamGir-ConvFinAutFuzzAutStrComp}
+H.~A.~Girijamma Dr. V.~Ramaswamy.
+\newblock Conversion of finite automata to fuzzy automata for string
+  comparison.
+\newblock {\em International Journal of Computer Applications}, 2012.
+
+\bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
+J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
+  Villadangos;~F. Farina.
+\newblock Approximate string matching using deformed fuzzy automata: A learning
+  experience.
+\newblock {\em Springer Science \& Business Media}, 2004.
+
+\bibitem{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}
+J~R G; Echanobe J; Astrain J J; Farina~F. Garitagoitia, J R; de~Mendivil.
+\newblock Deformed fuzzy automata for correcting imperfect strings of fuzzy
+  symbols.
+\newblock {\em IEEE Transactions on Fuzzy Systems}, 2003.
+\newblock K dispozici na IEEExplore.
+
+\bibitem{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}
+J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
+\newblock Fuzzy automata with $\epsilon$-moves compute fuzzy measures between
+  strings.
+\newblock {\em Fuzzy Sets and Systems 157}, 2005.
 
 \end{thebibliography}

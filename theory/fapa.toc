@@ -1,2 +1,7 @@
 \select@language {czech}
-\contentsline {section}{\numberline {1}N\IeC {\v e}co}{2}
+\contentsline {section}{\numberline {1}Definice a zna\IeC {\v c}en\IeC {\'\i }}{2}
+\contentsline {section}{\numberline {2}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } textov\IeC {\'y}ch vzor\IeC {\r u}}{3}
+\contentsline {subsection}{\numberline {2.1}Form\IeC {\'a}ln\IeC {\'\i } zaveden\IeC {\'\i } probl\IeC {\'e}mu}{3}
+\contentsline {subsection}{\numberline {2.2}Motivace k pou\IeC {\v z}it\IeC {\'\i } fuzzy automat\IeC {\r u}}{4}
+\contentsline {subsection}{\numberline {2.3}Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{4}
+\contentsline {subsection}{\numberline {2.4}Fuzzy symboly}{5}
