@@ -5,3 +5,4 @@
 \contentsline {subsection}{\numberline {2.2}Motivace k pou\IeC {\v z}it\IeC {\'\i } fuzzy automat\IeC {\r u}}{4}
 \contentsline {subsection}{\numberline {2.3}Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{4}
 \contentsline {subsection}{\numberline {2.4}Fuzzy symboly}{5}
+\contentsline {subsection}{\numberline {2.5}Deformovan\IeC {\'y} fuzzy automat}{7}

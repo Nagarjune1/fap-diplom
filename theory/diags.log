@@ -1,8 +1,8 @@
-This is MetaPost, version 1.999 (TeX Live 2015/dev/Debian) (kpathsea version 6.2.1dev)  31 OCT 2016 22:17
+This is MetaPost, version 1.999 (TeX Live 2015/dev/Debian) (kpathsea version 6.2.1dev)  6 NOV 2016 16:23
 **diags.mp
 (/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
 (/usr/share/texlive/texmf-dist/metapost/base/plain.mp
 Preloading the plain mem file, version 1.005) ) (./diags.mp (./automata.mp)
-[0] [1] [2] [3] [4] [5] [6] [7] [8] )
-9 output files written: diags0.mps .. diags8.mps
+[0] [1] [2] [3] )
+4 output files written: diags0.mps .. diags3.mps
 
