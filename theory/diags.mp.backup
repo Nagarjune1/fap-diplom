@@ -53,8 +53,8 @@ beginfig(1);	% deformovaný automat, náhrada $x$ za $y$
     
 endfig;
 
-
-beginfig(2);	% deformovaný automat, vložení $x$
+￼
+beginfig(2);	% deformovaný automat, vložení ￼$￼￼￼x$
     
   with spacing((40,60)) matrix.a(2,4);
   

@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{Bel-FuzRelSyss}
+Radim Bělohlávek.
+\newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
+\newblock Kluwer, New York, 2002.
+
 \bibitem{RamGir-ConvFinAutFuzzAutStrComp}
 H.~A.~Girijamma Dr. V.~Ramaswamy.
 \newblock Conversion of finite automata to fuzzy automata for string

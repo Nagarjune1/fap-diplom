@@ -12,11 +12,13 @@
 
 %Definice, věta, důkaz!
 \newtheorem{definition}{Definice}
+\newtheorem{theorem}{Věta}
 \newtheorem{note}{Poznámka}
 \newtheorem{example}{Příklad}
 
 
 \numberwithin{definition}{section}
+\numberwithin{theorem}{section}
 \numberwithin{note}{section}
 \numberwithin{example}{section}
 
@@ -30,3 +32,12 @@
 
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\str}[1]{{\ttfamily#1}}
+
+
+% Speciální nastavení
+
+% vycentrované floating objekty
+% http://tex.stackexchange.com/questions/2651/should-i-use-center-or-centering-for-figures-and-tables
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother

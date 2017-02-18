@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  23 JAN 2017 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  18 FEB 2017 01:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -179,8 +179,9 @@ Package: cases 2002/05/02 ver 2.5
 \bigstrutjot=\dimen122
 )
 \c@definition=\count106
-\c@note=\count107
-\c@example=\count108
+\c@theorem=\count107
+\c@note=\count108
+\c@example=\count109
 ) (./fapa.aux
 
 LaTeX Warning: Label `def-PreFunFuzzStav' multiply defined.
@@ -226,20 +227,20 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count109
+\Gread@gobject=\count110
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
+\scratchcounter=\count111
 \scratchdimen=\dimen123
 \scratchbox=\box28
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\nofMPsegments=\count112
+\nofMParguments=\count113
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count113
+\MPscratchCnt=\count114
 \MPscratchDim=\dimen124
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks32
 ))) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -317,13 +318,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/home/martin/.texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (1.78622pt too wide) in paragraph at lines 82--83
+Overfull \hbox (1.01582pt too wide) in paragraph at lines 83--84
+\OT1/cmr/bx/n/10 Definice 1.9 \OT1/cmr/m/n/10 (Ja-zyk roz-pozn^^Savan^^Sy au-to
+-ma-tem)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 M^^Tejme ne-de-ter-mi-nis-tick^^Sy 
+fuzzy
+ []
+
+
+Overfull \hbox (1.78622pt too wide) in paragraph at lines 101--102
 []\OT1/cmr/m/n/10 Typick^^Sym p^^Tr^^S^^Pkladem je nap^^Tr. de-tekce obli^^Tcej
 e na fo-to-gra-fii, tedy roz-pozn^^Sav^^San^^S^^P
  []
 
 
-Overfull \hbox (2.42401pt too wide) in paragraph at lines 82--83
+Overfull \hbox (2.42401pt too wide) in paragraph at lines 101--102
 \OT1/cmr/m/n/10 vzor^^Wu v ob-ra-zov^^Sych da-tech. Vzory je v^^Tsak mo^^Tzn^^S
 e roz-pozn^^Savat v t^^Sem^^Te^^Tr jak^^Sychkoliv
  []
@@ -331,59 +339,116 @@ e roz-pozn^^Savat v t^^Sem^^Te^^Tr jak^^Sychkoliv
 [3] [4]
 File: diags0.mps Graphic file (type mps)
  [MP to PDF] (./diags0.mps)
-Overfull \hbox (8.86304pt too wide) in paragraph at lines 133--138
+Overfull \hbox (0.52968pt too wide) in paragraph at lines 152--157
 \OT1/cmr/m/n/10 do^^Tsli, po-kud bychom au-to-mat zkon-stru-o-vali kon-verz^^S^
-^P gra-ma-tiky nebo re-gul^^Sernm^^S^^Pho
+^P gra-ma-tiky nebo re-gul^^Sern^^S^^Pho
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 157.
+[5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 176.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 176.
 
-Overfull \hbox (4.69621pt too wide) in paragraph at lines 168--169
+Overfull \hbox (4.69621pt too wide) in paragraph at lines 187--188
 []\OT1/cmr/m/n/10 Nyn^^S^^P m^^Same k dis-po-zici fuzzy au-to-mat, kter^^Sy ost
 ^^Tre roz-pozn^^Sav^^Sa vzo-rov^^Sy ^^Tret^^Tezec.
  []
 
-[5]
-Overfull \hbox (0.45775pt too wide) in paragraph at lines 182--183
+
+Overfull \hbox (0.45775pt too wide) in paragraph at lines 201--202
 []\OT1/cmr/m/n/10 M^^Same-li de-fi-nov^^San fuzzy sym-bol pro v^^Tsechny sym-bo
 ly $\temp y$ \OT1/cmr/m/n/10 z abe-cedy $^^F$, m^^Wu^^Tzeme
  []
 
 [6]
-Overfull \hbox (0.3695pt too wide) in paragraph at lines 215--216
+Overfull \hbox (0.3695pt too wide) in paragraph at lines 234--235
 \OT1/cmr/m/n/10 jin^^Seho ^^Tret^^Tezce au-to-mat ne-zkon^^Tc^^S^^P v kon-cov^^
 Sem stavu. Nicm^^Sen^^Te, d^^S^^Pky pozm^^Ten^^Ten^^Semu
  []
 
+[7]
+Overfull \hbox (1.80737pt too wide) in paragraph at lines 265--266
+\OT1/cmr/m/n/10 vy-rovn^^San^^S^^P jed-not-liv^^Sa, ale mno^^Tzinu v^^Tsech mo^
+^Tzn^^Sych vy-rovn^^San^^S^^P mezi dvo-jic^^S^^P ^^Tret^^Tezc^^Wu. 
+ []
+
+[8] [9]
+Overfull \hbox (1.46251pt too wide) in paragraph at lines 346--347
+[]\OT1/cmr/m/it/10 (zde bude do-pln^^Teno: sazba sym-bol^^Wu v ma-te-ma-tick^^S
+em m^^Sodu vs. ver-ba-tim ^^Tret^^Tezce
+ []
+
+[10]
+Overfull \hbox (12.35283pt too wide) in paragraph at lines 378--379
+[]\OT1/cmr/m/it/10 P^^Trechodov^^Sy di-a-gram to-hoto au-to-matu je k na-le-zen
+^^S^^P na obr^^Sazku 2[]. V p^^Trechodov^^Sem
+ []
+
+
+Overfull \hbox (3.38878pt too wide) detected at line 400
+\temp M[]\OT1/cmr/m/n/10 (\temp \OT1/cmr/m/n/10 ) = \temp ^^V[]\OT1/cmr/m/n/10
+ (\temp ^^[; abc\OT1/cmr/m/n/10 )(\temp q[]\OT1/cmr/m/n/10 ) = []([]([]([](\tem
+p ^^[; ^^O\OT1/cmr/m/n/10 )\temp ; a\OT1/cmr/m/n/10 )\temp ; b\OT1/cmr/m/n/10 )
+\temp ; c\OT1/cmr/m/n/10 )(\temp q[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\temp
+ q[]=\OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 (\temp q[]\OT1/cmr/m/n/
+10 ) = 1
+ []
+
+
+Overfull \hbox (17.10289pt too wide) detected at line 411
+\temp M[]\OT1/cmr/m/n/10 (\temp \OT1/cmr/m/n/10 ) = \temp ^^V[]\OT1/cmr/m/n/10
+ (\temp ^^[; ab\OT1/cmr/m/n/10 )(\temp q[]\OT1/cmr/m/n/10 ) = []([]([](\temp ^^
+[; ^^O\OT1/cmr/m/n/10 )\temp ; a\OT1/cmr/m/n/10 )\temp ; b\OT1/cmr/m/n/10 )(\te
+mp q[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\temp q[]=\OT1/cmr/m/n/10 1\temp ; 
+q[]=\OT1/cmr/m/n/10 0\temp :\OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 
+(\temp q[]\OT1/cmr/m/n/10 ) = 0\temp ; \OT1/cmr/m/n/10 1
+ []
+
+
+Overfull \hbox (35.12962pt too wide) detected at line 447
+\temp S[]\OT1/cmr/m/n/10 (\temp \OT1/cmr/m/n/10 ) = \temp R\OT1/cmr/m/n/10 (\t
+emp a; a\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ \temp R\OT1/cmr/m/n/10 (\temp b; b\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ \temp R\OT1/cmr/m/n/10 (\temp a; ^^O\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ \temp R\OT1/cmr/m/n/10 (\temp c; c\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+ \temp R\OT1/cmr/m/n/10 (\temp a; ^^O\OT1/cmr/m/n/10 ) = 1 \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 0\temp ; \OT1/cmr/m/n/10 2 \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 
+ \OT1/cmr/m/n/10 0\temp ; \OT1/cmr/m/n/10 2 = 0\temp ; \OT1/cmr/m/n/10 04
+ []
+
+[11]
+File: diags4.mps Graphic file (type mps)
+ [MP to PDF] (./diags4.mps)
 File: diags1.mps Graphic file (type mps)
-[MP to PDF] (./diags1.mps)
+ [MP to PDF] (./diags1.mps)
 File: diags2.mps Graphic file (type mps)
- [MP to PDF] (./diags2.mps)
+ [MP to PDF]
+(./diags2.mps)
 File: diags3.mps Graphic file (type mps)
  [MP to PDF] (./diags3.mps)
-Overfull \hbox (93.59189pt too wide) in paragraph at lines 227--239
-[][] 
+Overfull \hbox (93.59189pt too wide) in paragraph at lines 491--503
+ [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7] (./fapa.bbl) [8] (./fapa.aux)
+[12] (./fapa.bbl) [13] (./fapa.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4868 strings out of 494422
- 64446 string characters out of 6164715
- 137998 words of memory out of 5000000
- 8008 multiletter control sequences out of 15000+600000
+ 4888 strings out of 494422
+ 64708 string characters out of 6164715
+ 142788 words of memory out of 5000000
+ 8025 multiletter control sequences out of 15000+600000
  13932 words of font info for 53 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
  51i,13n,27p,810b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -401,10 +466,10 @@ onts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on fapa.pdf (8 pages, 207214 bytes).
+Output written on fapa.pdf (13 pages, 237350 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

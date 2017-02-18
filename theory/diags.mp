@@ -19,6 +19,7 @@ beginfig(0);	% automat rozpoznávající hello
   size := 15;
   incominglength := 25;
   loopsize := 15;
+  lblpos := 0.5;
   
   with spacing((40,60)) matrix.a(2,7);
   
@@ -30,11 +31,11 @@ beginfig(0);	% automat rozpoznávající hello
   node_double.a[1][6](btex $q_5$ etex);
  
   incoming(0, "") (a[1][1]) 180;  
-  arrow.top(.4, btex $ h $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
-  arrow.top(.4, btex $ e $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
-  arrow.top(.4, btex $ l $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
-  arrow.top(.4, btex $ l $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
-  arrow.top(.4, btex $ o $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
+  arrow.top(lblpos, btex $ h $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ e $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+  arrow.top(lblpos, btex $ l $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+  arrow.top(lblpos, btex $ l $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
+  arrow.top(lblpos, btex $ o $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
   
 endfig;
 
@@ -47,13 +48,12 @@ beginfig(1);	% deformovaný automat, náhrada $x$ za $y$
   node.a[1][2](btex $q_{i+1}$ etex);
  
   arrowcolor:=black; arrowlabelcolor:=black;
-  arrow.top(.4, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
   arrowcolor:=red; arrowlabelcolor:=red;
-  arrow.top(.4, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+  arrow.top(lblpos, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
     
 endfig;
 
-￼
 beginfig(2);	% deformovaný automat, vložení ￼$￼￼￼x$
     
   with spacing((40,60)) matrix.a(2,4);
@@ -65,9 +65,9 @@ beginfig(2);	% deformovaný automat, vložení ￼$￼￼￼x$
   node.a[1][3](btex $q_{i+1}$ etex);
  
   arrowcolor:=red; arrowlabelcolor:=red;
-  arrow.top(.4, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
-  arrow.top(.4, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
-  arrow.top(.4, btex $ x $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+  arrow.top(lblpos, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
     
 endfig;
 
@@ -80,10 +80,42 @@ beginfig(3); % deformovaný automat, odebrání $x$
   node.a[1][2](btex $q_{i+1}$ etex);
  
   arrowcolor:=black; arrowlabelcolor:=black;
-  arrow.top(.4, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
   arrowcolor:=red; arrowlabelcolor:=red;
-  arrow.top(.4, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+  arrow.top(lblpos, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
     
+endfig;
+
+
+beginfig(4);	% automat na bázi editačních operací rozpoznávající abc/1
+    
+  with spacing((80,60)) matrix.a(2,5);
+  loopsize := 30;
+  
+  bordercolor := black; nodelabelcolor := black;
+  node.a[1][1](btex $q_0$ etex);
+  node.a[1][2](btex $q_1$ etex);
+  node.a[1][3](btex $q_2$ etex);
+  node.a[1][4](btex $q_3$ etex);
+  
+  arrowcolor := red; arrowlabelcolor := red;
+  arrow.top(lblpos, btex $ a/1 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ b/1 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+  arrow.top(lblpos, btex $ c/1 $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+  
+  arrowcolor := black; arrowlabelcolor := black;
+  loop.top(lblpos, btex $ a/0.2, \epsilon/1 $ etex) (a[1][1]) 90;
+  loop.top(lblpos, btex $ a/0.2, \epsilon/1 $ etex) (a[1][2]) 90;
+  loop.top(lblpos, btex $ a/0.2, \epsilon/1 $ etex) (a[1][3]) 90;
+  loop.top(lblpos, btex $ a/0.2, \epsilon/1 $ etex) (a[1][4]) 90;
+  
+  arrow.bot(lblpos, btex $ a/0.5, c/0.5$ etex) (a[1][2],a[1][3]) a[1][2].c{down}..{up}a[1][3].c;
+  arrow.bot(lblpos, btex $ b/0.5$ etex) (a[1][1],a[1][2]) a[1][1].c{down}..{up}a[1][2].c;
+  arrow.bot(lblpos, btex $ b/0.5, \epsilon/0.1$ etex) (a[1][3],a[1][4]) a[1][3].c{down}..{up}a[1][4].c;
+ 
+  %%arrow.bot(lblpos, btex $ \epsilon/0.1$ etex) (a[1][3],a[1][4]) a[1][3].c{0,-4}..{0,+4}a[1][4].c;
+  
+  
 endfig;
 
 % 
@@ -103,11 +135,11 @@ endfig;
 % 	node_double.a[1][6](btex $q_5$ etex);
 %  
 %   incoming(0, "") (a[1][1]) 180;
-%   arrow.top(.4, btex $ h/1 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
-%   arrow.top(.4, btex $ e/1 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
-%   arrow.top(.4, btex $ l/1 $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
-%   arrow.top(.4, btex $ l/1 $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
-%   arrow.top(.4, btex $ o/1 $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
+%   arrow.top(lblpos, btex $ h/1 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+%   arrow.top(lblpos, btex $ e/1 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+%   arrow.top(lblpos, btex $ l/1 $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+%   arrow.top(lblpos, btex $ l/1 $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
+%   arrow.top(lblpos, btex $ o/1 $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
 %   
 % endfig;
 % 
@@ -130,17 +162,17 @@ endfig;
 %  
 % 
 %   incoming(0, "") (a[1][1]) 180;
-%   arrow.top(.4, btex $ h/1 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
-%   arrow.top(.4, btex $ e/1 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
-%   arrow.top(.4, btex $ a/0.6 $ etex) (a[1][2],a[1][3]) a[1][2].c{0, +10}..{0, -10}a[1][3].c;
+%   arrow.top(lblpos, btex $ h/1 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+%   arrow.top(lblpos, btex $ e/1 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+%   arrow.top(lblpos, btex $ a/0.6 $ etex) (a[1][2],a[1][3]) a[1][2].c{0, +10}..{0, -10}a[1][3].c;
 % 
-% 	arrow.top(.4, btex $ l/1 $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
-%   arrow.top(.4, btex $ l/1 $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
-%   arrow.bot(.4, btex $ \epsilon/0.7 $ etex) (a[1][4],a[1][5]) a[1][4].c{0, -10}..{0, +10}a[1][5].c;
+% 	arrow.top(lblpos, btex $ l/1 $ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+%   arrow.top(lblpos, btex $ l/1 $ etex) (a[1][4],a[1][5]) a[1][4].c..a[1][5].c;
+%   arrow.bot(lblpos, btex $ \epsilon/0.7 $ etex) (a[1][4],a[1][5]) a[1][4].c{0, -10}..{0, +10}a[1][5].c;
 %   
-% 	arrow.top(.4, btex $ o/1 $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
-% 	arrow.top(.4, btex $ \epsilon/1 $ etex) (a[1][6],a[1][7]) a[1][6].c..a[1][7].c;
-% 	arrow.top(.4, btex $ w/0.4 $ etex) (a[1][6],a[1][7]) a[1][6].c{0, +10}..{0, -10}a[1][7].c;
+% 	arrow.top(lblpos, btex $ o/1 $ etex) (a[1][5],a[1][6]) a[1][5].c..a[1][6].c;
+% 	arrow.top(lblpos, btex $ \epsilon/1 $ etex) (a[1][6],a[1][7]) a[1][6].c..a[1][7].c;
+% 	arrow.top(lblpos, btex $ w/0lblpos $ etex) (a[1][6],a[1][7]) a[1][6].c{0, +10}..{0, -10}a[1][7].c;
 %   
 % endfig;
 %  

@@ -1,8 +1,8 @@
 %!PS
-%%BoundingBox: 29 -71 131 -31 
-%%HiResBoundingBox: 29.65 -70.35 130.35 -31.33441 
+%%BoundingBox: 29 -71 131 -30 
+%%HiResBoundingBox: 29.65 -70.35 130.35 -30.79185 
 %%Creator: MetaPost 1.999
-%%CreationDate: 2016.11.06:1623
+%%CreationDate: 2017.02.18:0052
 %%Pages: 1
 %*Font: cmmi10 9.96265 9.96265 0f:800000000000000000000244a06
 %*Font: cmr7 6.97385 6.97385 2b:87e
@@ -58,7 +58,7 @@ newpath 68.14484 -60 moveto
 64.38615 -58.63193 lineto
 65.59683 -59.19649 66.8545 -59.65425 68.14484 -60 curveto
  closepath stroke
-55.23589 -57 moveto
+57.05046 -57 moveto
 (\017) cmmi10 9.96265 fshow
 newpath 42.19637 -50.24185 moveto
 48.88213 -37.16733 69.00482 -36.61078 76.83449 -48.57225 curveto stroke
@@ -71,7 +71,7 @@ newpath 76.83449 -48.57225 moveto
 75.48949 -44.80525 lineto
 75.96935 -46.04944 76.41783 -47.3055 76.83449 -48.57225 curveto
  closepath stroke
-52.4011 -35.62392 moveto
+56.46552 -35.08136 moveto
 (y) cmmi10 9.96265 fshow
 newpath 90 -60 moveto
 108.14484 -60 lineto stroke
@@ -84,7 +84,7 @@ newpath 108.14484 -60 moveto
 104.38615 -58.63193 lineto
 105.59683 -59.19649 106.8545 -59.65425 108.14484 -60 curveto
  closepath stroke
-94.41089 -57 moveto
+96.22546 -57 moveto
 (x) cmmi10 9.96265 fshow
 showpage
 %%EOF
