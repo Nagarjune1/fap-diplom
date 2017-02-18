@@ -134,6 +134,8 @@ Klasická teorie automatů vznikla jako nástroj pro zpracování textových ře
 
 V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automat rozpoznávající $\omega$}
 Klíčovým pro rozpoznávání vzorů (chceme-li využívat fuzzy automaty) je bivalentní automat rozpoznávající vzorový řetězec. Tedy automat takový, který přijímá jedinný řetězec $\omega$ a všechny ostatní zamítá. Nyní si takovýto automat zkonstruujeme.
 
@@ -187,6 +189,21 @@ Nyní tento automat převedeme na ekvivalentní fuzzy automat. Tedy na automat r
 Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řetězec. V následujících podkapitolách následuje výčet několika technik, které tuto ostrost odstraňují a nahrazují podobností.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Podobnost symbolů}
+nejzákladnější technika pro zanesení podobnostního rozpoznávání je s pomocí podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém. 
+
+Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $g_S: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $g_S(x, y) = 0$, pak se zjevně jedná o naprosto rozdílné symboly. Naopak, pokud bude $g_S(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $g_S$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+
+Máme-li k dispozici relaci $g_S$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, automat pracující s relací $g_S$ je možné zkonstruovat pro libovolný (konečný) automat. Vzhledem k tomu, že v této kapitole pracujeme s rozpoznáváním textového vzoru, budeme uvažovat konečný automat rozpoznávající $\omega$ (dle definice \ref{def-AutRozpOme}). Nyní k němu sestavíme fuzzy automat pracující s $g_S$.
+
+
+\begin{definition}[Automat rozpoznávající $\omega$ pracující s $g_S$]
+Uvažujme, že máme nedeterminstický automat $A$ rozpoznávající $\omega$ a relaci podobnosti symbolů $g_S$. Pak k automatu $A$ můžeme zkonstruovat automat $A'$, který navíc pracuje s $g_S$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutRozpOme} 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy symboly}
 Nejzákladnějším způsobem, jak zanést neurčitost do rozpoznávání vzorů, je použití fuzzy symbolů. Idea pro použití fuzzy symbolů byla přejata z \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} a vychází z \cite{RamGir-ConvFinAutFuzzAutStrComp}.
 
@@ -236,7 +253,7 @@ Nyní máme zkonstruován požadovaný automat. Podíváme-li se na jeho rozpozn
 Automat tak dobře zvládá rozpoznat řetězce, u kterých došlo k záměně podobným symbolem. Na druhou stranu, tato technika se nehodí na situace, kdy by mohl být do řetězce vložen, nebo naopak odebrán symbol (nebo více symbolů). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Editační operace}
+\subsection{Editační operace}
 Další technikou pro podobnostní porovnávání pozorovaného a vzorového řetězce je s využitím editačních operací. Tato technika byla přejata z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}. Základní idea této techniky spočívá v trojici jednoduchých editačních operací, jejiž složením jsme schopni popsat transformaci pozorovaného řetězce na vzorový. Množství transformace pak udává podobnost pozorovaného a vzorového řetězce.
 
 Následuje formální definice editačních operací a pojmů s nimi souvisejících. Následně přejdeme ke konstrukci automatu, který s nimi bude schopen pracovat.
@@ -473,9 +490,9 @@ Máme nadefinován fuzzy automat rozpoznávající jazyk $\mathcal{L}(\omega)$. 
  \end{figure}
 \end{example}
 
+Je vidět, že automat zkonstruován dle editačních operací je značně silný nástroj. Umožňuje nám velmi pohodlně popsat, jak moc mohou být konkrétní editační operace akceptovány. Editační operace vložení symbolu, náhrada symbolu a odebrání symbolu jsou pro popis modifikace vzorového řetězce přirozené.
 
-
-
+Nevýhodou této techniky je, že jednotlivé editační operace jsou akceptovány bez ohledu na jejich výskyt v řetězci. Automat akceptuje nastanuvší editační operaci pokaždé, kde může nastat, ve stejném stupni. Často je však třeba v jiném stupni stejnou editační operaci přijímat např. na začátku a na konci řetězce pokaždé však v jiném stupni. Tento požadavek však automat zkonstruovaný pomocí editačních operací neumí zpracovat. Řešením může být například použití následující techniky.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

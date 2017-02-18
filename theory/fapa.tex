@@ -134,6 +134,8 @@ Klasická teorie automatů vznikla jako nástroj pro zpracování textových ře
 
 V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automat rozpoznávající $\omega$}
 Klíčovým pro rozpoznávání vzorů (chceme-li využívat fuzzy automaty) je bivalentní automat rozpoznávající vzorový řetězec. Tedy automat takový, který přijímá jedinný řetězec $\omega$ a všechny ostatní zamítá. Nyní si takovýto automat zkonstruujeme.
 
@@ -185,6 +187,35 @@ Nyní tento automat převedeme na ekvivalentní fuzzy automat. Tedy na automat r
 \end{definition}
 
 Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řetězec. V následujících podkapitolách následuje výčet několika technik, které tuto ostrost odstraňují a nahrazují podobností.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Podobnost symbolů}
+nejzákladnější technika pro zanesení podobnostního rozpoznávání je s pomocí podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém. 
+
+Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $g_s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $g_s(x, y) = 0$, pak se zjevně jedná o naprosto rozdílné symboly. Naopak, pokud bude $g_s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $g_s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+
+Máme-li k dispozici relaci $g_s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, automat pracující s relací $g_s$ je možné zkonstruovat pro libovolný (konečný) automat. Vzhledem k tomu, že v této kapitole pracujeme s rozpoznáváním textového vzoru, budeme uvažovat konečný automat rozpoznávající $\omega$ (dle definice \ref{def-AutRozpOme}). Nyní k němu sestavíme fuzzy automat pracující s $g_s$.
+
+\begin{definition}[Automat rozpoznávající $\omega$ pracující s $g_s$]
+Uvažujme, že máme nedeterminstický automat $A$ rozpoznávající $\omega$ a relaci podobnosti symbolů $g_s$. Pak k automatu $A$ můžeme zkonstruovat automat $A'$, který navíc pracuje s $g_s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutRozpOme} s tím rozdílem, že přechodová funkce $\mu'$ bude definována pro všechna $y \in \Sigma$ následovně:
+$$
+ \mu'(q_i, x, q_j)(y) = (g_s (x, y) \wedge \delta_y (q_i, q_j))
+$$
+ kde pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$: $\delta_x(q_i, q_j) = 
+  \begin{cases}
+   1 & \text{ pokud } q_j \in \delta(q_i, x)		\\
+   0 & \text{ pokud } q_j \notin \delta(q_i, x)
+  \end{cases}
+ $.
+ 
+ \TODO{mám tu definici $\mu'$ dobře?}
+ 
+ \TODO{provádí se fuzzyfikace KNA. Nezavést ji v teoretické části jako pojem a pak ho jen všude používat?}
+\end{definition}
+
+Definice je vcelku přímočará. U každého přechodu, který je v původním automatu $A$ definován, je navíc kontrolována podobnost symbolu $y$ (aktuální symbol v pozorovaném řetězci) se symbolem $x$ (aktuální očekávaný symbol dle vzorového řetězce). ...
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy symboly}
