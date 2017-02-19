@@ -312,40 +312,44 @@ Následuje jednoduchý příklad takového automatu.
   \end{figure}
 \end{example}
 
-
-
+Z příkladu jasně vyplývá, že automat pracující s $g_s$ je schopen akceptovat pouze náhradu symbolu jiným symbolem. Bude-li pozorovaný řetězec oproti vzorovému obsahovat vložený symbol nebo naopak z něj bude symbol odebrán, tento typ automatu selže. Na druhou stranu jeho princip i konstrukce jsou jednoduché a snadno se s nimi pracuje.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy symboly}
-Nejzákladnějším způsobem, jak zanést neurčitost do rozpoznávání vzorů, je použití fuzzy symbolů. Idea pro použití fuzzy symbolů byla přejata z \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} a vychází z \cite{RamGir-ConvFinAutFuzzAutStrComp}.
+Fuzzy symbol je technika využjívající podobnosti symbolů. Ve své podstatě se jedná o téže techniku jak v předchozí podkapitole, jen je na ni nahlíženo jinak. Oproti podobnosti symbolů je použití fuzzy symbolů komplikovanější, avšak umožňuje jednoduše tuto techniku kombinovat s jinými. Princip fuzzy symbolů byl přejat z \cite{Ech-DefSyssConPre}.
 
-Fuzzy symbol je nástroj, který akceptuje nepřesnost na úrovni jednotlivých symbolů. Fuzzy symbol reprezentuje relaci podobnosti symbolů.
+Mějme abecedu $\Sigma$ a relaci $p$ podobnosti symbolů (stejně jako relace $g_s$ v předchozí podkapitole). Fuzzy symbolem symbolu $x \in \Sigma$ označujeme fuzzy množinu symbolů takových, které jsou podle relace $p$ symbolu $x$ \uv{podobné}.
 
-Mějme abecedu $\Sigma$ a pro každé dva symboly z této abecedy číslo z intervalu $[0, 1]$ udávající jejich podobnost. Například, symbol reprezentující malé psací \str{i} bude mít vyšší podobnost s malým psacím \str{e} než s malým psacím \str{m}. Tuto podobnost můžeme realizovat jako fuzzy relaci nad $\Sigma \times \Sigma$. Tento způsob je použit v \cite{RamGir-ConvFinAutFuzzAutStrComp}. Vzhledem k tomu, že očekáváme použití automatů, bude však vhodnější držet se symbolů a abeced. Zavádí se proto speciální třída symbolů, tzv. fuzzy symboly, a s nimi související pojmy.
-
-\begin{definition}[Fuzzy symbol \cite{GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms}]
-Mějme abecedu $\Sigma$ a nějaký symbol $y$ z této abecedy. Fuzzy symbol $\widetilde{y}$ symbolu $y$ je fuzzy množina nad abecedou $\Sigma$ popisující podobnost symbolů. Tedy, pro každé $x, y \in \Sigma$ je $\widetilde{y}(x)$ rovna stupni podobnosti $x$ a $y$. Mělo by platit, že $\widetilde{y}(y) = 1$.
+\begin{definition}[Fuzzy symbol]
+Mějme abecedu $\Sigma$ a fuzzy relaci $p \subseteq \Sigma \times \Sigma$. Pak pro každý symbol $y \in \Sigma$ definujeme fuzzy symbol $\widetilde{y}$ symbolu $y$ jako fuzzy množinu nad $\Sigma$ takovou, že pro všechna $x \in \Sigma$ platí
+$$
+\widetilde{y}(x) = p(y, x)
+$$
 \end{definition}
 
-Máme-li definován fuzzy symbol pro všechny symboly $y$ z abecedy $\Sigma$, můžeme tak nadefinovat abecedu fuzzy symbolů.
+Vzhledem k tomu, že fuzzy symbol máme definován pro všechny $y \in \Sigma$, můžeme množinu všech takových fuzzy symbolů nazvat abecedou fuzzy symbolů.
 
 \begin{definition}[Abeceda fuzzy symbolů]
-Mějme abecedu $\Sigma$ a fuzzy symboly $\widetilde{y}$ pro všechna $y \in \Sigma$. Pak množinu všech těchto fuzzy symbolů nazvěme abeceda fuzzy symbolů a označme $\widetilde{\Sigma}$. Tedy $\widetilde{\Sigma} = \{ \widetilde{y} \mid y \in \Sigma \}$.
+Mějme abecedu $\Sigma$ a fuzzy symboly $\widetilde{y}$ pro všechna $y \in \Sigma$. Pak množinu všech těchto fuzzy symbolů nazvěme abeceda fuzzy symbolů abecedy $\Sigma$ a označme $\widetilde{\Sigma}$. Tedy $\widetilde{\Sigma} = \{ \widetilde{y} \mid y \in \Sigma \}$.
 \end{definition}
 
-Nyní máme k dispozici abecedu pracující s fuzzy symboly. S touto abecedou můžeme pracovat jak jsme zvyklí, tedy používat operace definované nad abecedami. Máme tak také možnost sestrojit řetězec fuzzy symbolů nad touto abecedou. Pro náše účely bude výhodné, abychom dokázali převést řetězec nad abecedou $\Sigma$ na odpovídající řetězec nad abecedou $\widetilde{\Sigma}$.
+Máme-li abecedu fuzzy symbolů $\widetilde{\Sigma}$, můžeme pracovat s řetězci $\widetilde{\alpha} \in \widetilde{\Sigma}^*$ nad touto abecedou. Ještě si však doplníme, jak vytvořit k řetězci $\alpha \in \Sigma^*$ jemu odpovídající řetězec fuzzy symbolů $\widetilde{\alpha} \in \widetilde{\Sigma}^*$.
+
+\TODO{sjednotit značení $\omega$ vs. $\alpha$, když se používá jen jeden obecný řetězec}
 
 \begin{definition}[Řetězec fuzzy symbolů]
-Mějme abecedu $\Sigma$ a nějaký řetězec $\alpha = a_1 \dots a_n$ nad touto abecedou (tj. $\alpha \in \Sigma^*$). Pak definujme $\widetilde{\alpha} = \widetilde{a_1} \dots \widetilde{a_n}$ jako řetězec fuzzy symbolů řetězce $\alpha$.
+Mějme abecedu $\Sigma$ a nějaký řetězec $a_1 \dots a_n = \alpha \in \Sigma^*$. Pak definujme $\widetilde{\alpha} = \widetilde{a_1} \dots \widetilde{a_n}$ jako řetězec fuzzy symbolů řetězce $\alpha$.
 \end{definition}
 
-Nyní máme nadefinováno vše potřebné a můžeme tedy zkonstruovat automat, který rozpoznává vzorový řetězec, a to s ohledem na podobnost symbolů. Idea je jednoduchá -- vezmeme fuzzy automat rozpoznávající $\omega$, jeho abecedu nahradíme abecedou fuzzy symbolů a patřičně předefinujeme některé další pojmy.
+V této fázi jsme schopni plnohodnotně pracovat s řetězci fuzzy symbolů a konstruovat je z řetězců nad abecedou $\Sigma$. Nyní přejdeme k návrhu fuzzy automatu, který bude s fuzzy symboly pracovat. Stejně jako u podobnosti symbolů i fuzzy symboly mohou být aplikovány na libovolný typ automatu. Vytvoříme proto automat pracující s fuzzy symboly nejdříve obecně, pro libovolný automat $A$. 
 
-\begin{definition}[Automat pracující s fuzzy symboly]
-  Mějme abecedu $\Sigma$. Pak na základě podobností symbolů v $\Sigma$ sestavíme abecedu $\widetilde{\Sigma}$ fuzzy symbolů. Pak automat pracující s fuzzy symboly je fuzzy automat definovaný v definici \ref{def-ZaklDefNedFuzzAut}, ve které je $\Sigma$ nahrazena $\widetilde{\Sigma}$.
+\begin{definition}[Automat pracující s fuzzy symboly] \label{def-AutPracFuzzSym}
+  Mějme nedeterministický fuzzy automat automat $A$. Pak fuzzy automat $\widetilde{A}$ pracující s fuzzy symboly vytvoříme tak, že v definici automatu $A$ nahradíme $\Sigma$ za $\widetilde{\Sigma}$.
+  
+  \TODO{může to tak být? a co související pojmy}
 \end{definition}
 
-U takovéhoto automatu pochopitelně dojde ke změne způsobu výpočtu. Proces jeho výpočtu se tak změní ve fázi výpočtu přechodové funkce fuzzy stavů. Připomeňme, že ta je definována (definice \ref{def-PreFunFuzzStav}) jako fuzzy relace $\widehat{\mu}$ přiřazující každému fuzzy stavu $V$ a fuzzy symbolu $x$ fuzzy stav dle předpisu
+Formální zavedení automatu pracujícího s fuzzy symboly je intutivní, jedná se jen o formalitu. Abychom však využili potenciál fuzzy symbolů, je třeba pozměnit výpočet automatu. Proces jeho výpočtu se změní ve fázi výpočtu přechodové funkce fuzzy stavů. Připomeňme, že ta je definována (definice \ref{def-PreFunFuzzStav}) jako fuzzy relace $\widehat{\mu}$ přiřazující každému fuzzy stavu $V$ a fuzzy symbolu $x$ fuzzy stav dle předpisu
 $$
  \widehat{\mu}(V, x) = V \circ \mu[x]
 $$
@@ -355,14 +359,13 @@ $$
  \widehat{\mu}(V, x) = V \circ \bigvee_{y \in \Sigma} (\mu[x] \wedge \widetilde{x}(y))
 $$
 
-Nyní můžeme zkonstruovat automat rozpoznávající $\omega$ pracující s fuzzy symboly.
+Tím, že je změna zakořeněna ve výpočtu automatu, nám umožňuje další práci se samotným automatem. Můžeme tedy bez problémů zkonstruovat automat rozpoznávající $\omega$ pracující s fuzzy symboly.
+
 \begin{definition}[Automat rozpoznávající $\omega$ pracující s fuzzy symboly]
-  Mějme abecedu $\Sigma$ a vzorový řetězec $\omega$. Pak na základě podobností symbolů v $\Sigma$ sestavíme abecedu $\widetilde{\Sigma}$ fuzzy symbolů. Pak automat pracující s fuzzy symboly je fuzzy automat rozpoznávající $\omega$ definovaný v definici \ref{def-FuzzAutRozpOme}, ve které je $\Sigma$ nahrazena $\widetilde{\Sigma}$.
+ Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a abecedu fuzzy symbolů $\widetilde{\Sigma}$. Dle definice \ref{def-FuzzAutRozpOme} můžeme zkonstruovat fuzzy automat $A(\omega)$ rozpoznávající $\omega$. Pak automat $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly můžeme vytvořit podle definice \ref{def-AutPracFuzzSym}.
 \end{definition}
 
-Nyní máme zkonstruován požadovaný automat. Podíváme-li se na jeho rozpoznávací charakteristiku, je zjevné, jaké řetězce tento automat rozpoznává. Tento automat rozpoznává vzorový řetězec ve stupni 1 (za předpokladu, že byla dodržena vlastnost $\widetilde{y}(y) = 1$ pro všechna $y \in \alpha$). Při zpracování jakéhokoliv jiného řetězce automat nezkončí v koncovém stavu. Nicméně, díky pozměněnému výpočtu přechodové funkce fuzzy stavů je i v takové situaci schopen řetězec přijmout v nenulovém stupni. K tomu dojde právě v případě, kdy se vzorový a pozorovaný řetězec na odpovídajících pozicích líší, ale tyto symboly jsou si podobné. Připomeňme, že tato podobnost je dána hodnotou stupně fuzzy symbolu.
 
-Automat tak dobře zvládá rozpoznat řetězce, u kterých došlo k záměně podobným symbolem. Na druhou stranu, tato technika se nehodí na situace, kdy by mohl být do řetězce vložen, nebo naopak odebrán symbol (nebo více symbolů). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Editační operace}
