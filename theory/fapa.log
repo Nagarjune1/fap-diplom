@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  19 FEB 2017 05:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  19 FEB 2017 06:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,7 +441,19 @@ Overfull \hbox (93.59189pt too wide) in paragraph at lines 633--645
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] [16] (./fapa.bbl
+[15]
+Overfull \hbox (22.05742pt too wide) in paragraph at lines 652--653
+\temp ^^Tze pro kla-sic-kou te-o-rii au-to-mat^^Wu je to trivi^^Saln^^S^^P prob
+l^^Sem, kter^^Sy v^^Tsak kv^^Wuli nep^^Tresnostem
+ []
+
+
+Overfull \hbox (4.73058pt too wide) in paragraph at lines 654--655
+\temp stejn^^Sem prin-cipu, jen se li^^Ts^^S^^P ve form^^Saln^^S^^Pm za-ve-den^
+^S^^P. Tech-nika s vyu^^Tzit^^S^^Pm edita^^Tcn^^S^^Pch
+ []
+
+[16] (./fapa.bbl
 Underfull \hbox (badness 1122) in paragraph at lines 28--30
 []\temp Jos^^Se R. Ga-ri-ta-go-i-tia Car-los F. Alastru-eya Ja-vier Echa-nobe, 
 Jos^^Se R.
@@ -455,7 +467,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4904 strings out of 494422
  64916 string characters out of 6164715
- 145178 words of memory out of 5000000
+ 145167 words of memory out of 5000000
  8034 multiletter control sequences out of 15000+600000
  14100 words of font info for 54 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
@@ -476,7 +488,7 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on fapa.pdf (17 pages, 265801 bytes).
+Output written on fapa.pdf (17 pages, 267014 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream

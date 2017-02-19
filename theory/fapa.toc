@@ -7,4 +7,5 @@
 \contentsline {subsection}{\numberline {2.4}Podobnost symbol\IeC {\r u}}{7}
 \contentsline {subsection}{\numberline {2.5}Fuzzy symboly}{9}
 \contentsline {subsection}{\numberline {2.6}Edita\IeC {\v c}n\IeC {\'\i } operace}{11}
-\contentsline {subsection}{\numberline {2.7}Deformovan\IeC {\'y} fuzzy automat}{15}
+\contentsline {subsection}{\numberline {2.7}Deformovan\IeC {\'y} automat}{15}
+\contentsline {subsection}{\numberline {2.8}Shrnut\IeC {\'\i }}{16}
