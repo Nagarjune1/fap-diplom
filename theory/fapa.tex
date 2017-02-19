@@ -623,12 +623,11 @@ Nevýhodou této techniky je, že jednotlivé editační operace jsou akceptová
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Deformovaný fuzzy automat}
-Další ze způsobů, jak přijímat řetězec podobný vzorovému je s využitím deformovaného (fuzzy) automatu. Deformovaný automat je automat, který umožňuje příjímání i jíných řetězců, než vzorových. A to takových, které byly předem stanoveným způsobem upraveny, neboli zdeformovány. 
-% Mezi tyto deformace patří náhrada symbolu, vložení symbolu a odebrání symbolu. Například řetězec \str{hallo} vznikl záměnou \str{e} za \str{a} v řetězci \str{hello}. Obdobně, řetězec \str{hellow} vznikl přidáním \str{w} na konec a řetězec \str{helo} odebráním (prvního nebo druhého) symbolu \str{l}.
+Dalším ze způsobů, jak přijímat řetězec podobný vzorovému je s využitím deformovaného (fuzzy) automatu. Tato technika využívá tzv. deformovaného automatu, neboli automatu který byl stanoveným způsobem upraven, neboli deformován. Tato technika byla přejata z \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}.
 
-% Obdobně, řetězec \str{ahoj} mohl vzniknout z řetězce \str{hello} náhradou prvních 4 symbolů a odebráním \str{o}. Nebo stejně tak mohl vzniknout například vložením \str{a} na začátek, nahrazením \str{e} za \str{o}, \str{l} za \str{j} a odebráním \str{l} a \str{o}.
+Jako deformace může být použita prakticky jakákoliv úprava automatu. Mějme fuzzy automat $A$. Provedením deformace $x$ získáme deformovaný automat $A'$, který rozpoznává jiný jazyk, než automat $A$. Mezi nejzákladnější tři deformace patří náhrada symbolu, vložení symbolu před symbol a odebrání symbolu. Možných deformací existuje nekonečně mnoho. Mezi další deformace může patřit například (pro nějaké $x, y, z \in \Sigma$ a $i \geq 0$): \uv{náhrada symbolu $x$ na $i$-té pozici symboly $yz$}, \uv{odebrání všech výskytů symbolu $x$, které se nachází před symbolem $y$} nebo \uv{vložení sudého počtu symbolů $y$ mezi symboly $x$ a $z$}.
 
-Uvažujme tedy nyní, že máme vzorový řětězec $\omega$. Sestrojme k němu automat $A(\omega)$ rozpoznávající $\omega$ (dle definice \ref{def-AutRozpOme}). Nyní bude následovat postup, jak k němu zkonstruovat deformovaný automat $A'(\omega)$. Pro zjednodušení nyní předpokládejme, že automat bude obsahovat akceptovat pouze jednu z výše jmenovaných deformací. Má-li k deformaci dojít na $i$-té pozici vzorového řetězce, pak je třeba zkonstruovat $Q'$ a $\delta'$ automatu $A'(\omega)$ pomocí pravidel uvedených v tabulce \ref{tbl-DefAut}.
+Provedeme-li deformaci fuzzy automatu rozpoznávající $\omega$, můžeme se na trojici základních deformací podívat konkrétně. Ukázka toho, jak by vypadal deformovaný automat po provedení jedné ze základních deformací je vyobrazeno v tabulce \ref{tbl-DefAutDef}.
 
 \begin{table}[h]
  \begin{tabular}{|l|l|}
@@ -643,9 +642,11 @@ Uvažujme tedy nyní, že máme vzorový řětězec $\omega$. Sestrojme k němu 
     $\delta' = \delta \cup (q_i, \epsilon, q_{i+1})$, $Q' = Q$	 & \\
   \hline
  \end{tabular}
- \caption{Konstrukce deformovaného automatu}\label{tbl-DefAut}
+ \caption{Deformace deformovaného automatu}\label{tbl-DefAutDef}
+ \TODO{pozor, toto je pro konečné automaty, ne pro fuzzy automaty!}
 \end{table}
 
+Je vidět, že deformace mohou být účinným nástrojem pro rozpoznávání modifikovaných pozorovaných řetězců. Na druhou stranu, deformování automatu vyžaduje znalost fungování automatů. Často také může nastat situace, kdy výsledný zdeformovaný automat bude více, než deformovaný automat rozpoznávající $\omega$, automatem reprezentující samostatný netriviální vzor.
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  19 FEB 2017 05:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.11.29)  19 FEB 2017 05:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,32 +434,32 @@ File: diags2.mps Graphic file (type mps)
 (./diags2.mps)
 File: diags3.mps Graphic file (type mps)
  [MP to PDF] (./diags3.mps)
-Overfull \hbox (93.59189pt too wide) in paragraph at lines 634--646
+Overfull \hbox (93.59189pt too wide) in paragraph at lines 633--645
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15] (./fapa.bbl
-Underfull \hbox (badness 1122) in paragraph at lines 21--23
+[15] [16] (./fapa.bbl
+Underfull \hbox (badness 1122) in paragraph at lines 28--30
 []\temp Jos^^Se R. Ga-ri-ta-go-i-tia Car-los F. Alastru-eya Ja-vier Echa-nobe, 
 Jos^^Se R.
  []
 
-) [16] (./fapa.aux)
+) [17] (./fapa.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4903 strings out of 494422
- 64862 string characters out of 6164715
- 142897 words of memory out of 5000000
- 8033 multiletter control sequences out of 15000+600000
+ 4904 strings out of 494422
+ 64916 string characters out of 6164715
+ 145178 words of memory out of 5000000
+ 8034 multiletter control sequences out of 15000+600000
  14100 words of font info for 54 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
- 51i,14n,27p,618b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,14n,27p,730b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -476,10 +476,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on fapa.pdf (16 pages, 263765 bytes).
+Output written on fapa.pdf (17 pages, 265801 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
