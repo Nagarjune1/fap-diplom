@@ -118,6 +118,29 @@ beginfig(4);	% automat na bázi editačních operací rozpoznávající abc/1
   
 endfig;
 
+beginfig(5);	% automat rozpoznávající abc pracující s g_s
+  
+  size := 15;
+  incominglength := 25;
+  loopsize := 15;
+  lblpos := 0.5;
+  
+  with spacing((120,60)) matrix.a(2,5);
+  
+  node.a[1][1](btex $q_0$ etex);
+  node.a[1][2](btex $q_1$ etex);
+  node.a[1][3](btex $q_2$ etex);
+  node.a[1][4](btex $q_3$ etex);
+   
+  arrow.top(lblpos, btex $ a/1$ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ b/1$ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+  arrow.top(lblpos, btex $ c/1$ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+
+  arrow.bot(lblpos, btex $ b/0,5, c/0,3 $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.bot(lblpos, btex $ a/0,5, c/0,5, d/0,3 $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+  arrow.bot(lblpos, btex $ a/0,3, b/0,5, d/0,5$ etex) (a[1][3],a[1][4]) a[1][3].c..a[1][4].c;
+endfig;
+
 % 
 % beginfig(1);
 % 

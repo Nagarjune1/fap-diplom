@@ -93,6 +93,55 @@ Značení je převzato z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} a l
 \end{definition}
 
 \TODO{Tady by asi bylo vhodné rozebrat $\epsilon$-uzávěry}
+
+\subsubsection*{Konstrukce fuzzy automatu z konečného automatu}
+V praxi se často setkáme z problémem, kdy máme k dispozici konečný bivalentní automat avšak my potřebujeme pro naši práci fuzzy automat. Je tedy třeba zkonstruovat takový fuzzy automat, který rozpoznává odpovídající jazyk odpovídající jazyku rozpoznávaném naším bivalentním automatem. 
+
+Důležité je zmínit, že nelze zkonstruovat fuzzy automat, rozpoznávající stejný jazyk neboť fuzzy automat rozpoznává fuzzy jazyk, zatímco bivaletní automat klasický \uv{bivalentní} jazyk. Můžeme však sestavit automat takový, který přijímá řetězce ve stupni $0$ nebo $1$ podle toho, jestli je přijímal bivaletní automat.
+
+Formálně řečeno, pro konečný (nedeterministický) bivalentní automat $A$ budeme konstruovat nedeterministický fuzzy automat $A'$ takový, že bude pro všechna $x \in \Sigma^*$ splněna následující rovnost:
+$$
+ \mathcal{L}(A')(\omega) = 
+  \begin{cases}
+   1 & \text{ pokud } \omega \in \mathcal{L}(A) \\
+   0 & \text{ pokud } \omega \notin \mathcal{L}(A)
+  \end{cases}
+$$
+
+\begin{note}
+ Postup budeme provádět pro nedeterministické automaty. To jednak proto, že nedeterministické automaty jsou obecnější, než deterministické, a navíc, protože jsou v praxi využívány častěji. \TODO{ozdrojovat, klidně někde, kde rozebírám determinizmus vs. nedeterminizmus}
+\end{note}
+
+Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i množina stavů automatu zůstanou zachovány, lišit se tedy bude pouze množina počátečních a koncových stavů a přechodová funkce. \TODO{fuzzy subset $I$, $F$ a $\delta$? nebo tak něco, z teorie fuzzy množin?}
+
+\begin{definition}[Fuzzy automat bivalentního automatu] \label{def-FuzzAutBivAut}
+  Mějme řetězec konečný nedeterministický automatu $A = ( Q, \Sigma, \delta, I, F )$. Pak nedetermintistický fuzzy automat přijímájící korespondující jazyk je automat $A' = ( Q, \Sigma, \mu, \sigma, \epsilon )$ kde pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$:
+  \begin{itemize}
+   \item $\sigma(q_i) =
+    \begin{cases}
+     1 & \text{ pokud } q_i \in I \\
+     0 & \text{ pokud } q_i \notin I
+    \end{cases}$
+    
+   \item $\eta(q_i) =
+    \begin{cases}
+     1 & \text{ pokud } q_i \in F \\
+     0 & \text{ pokud } q_i \notin F
+    \end{cases}$
+    
+    \item $\mu(q_i, x, q_j) = 
+     \begin{cases}
+      1 & \text{ pokud } q_j \in \delta(q_i, x) \\
+      0 & \text{ pokud } q_j \notin \delta(q_i, x)
+     \end{cases}$
+  \end{itemize}
+\end{definition}
+
+\TODO{rozebrat, jestli tento automat skutečně dělá to, co má? Asi by to chtělo}
+
+\TODO{vymyslet nějaký pěkný příklad}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rozpoznávání textových vzorů}
 
@@ -134,7 +183,7 @@ Klasická teorie automatů vznikla jako nástroj pro zpracování textových ře
 
 V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
 
-
+\TODO{a co pravděpodobnostní?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automat rozpoznávající $\omega$}
 Klíčovým pro rozpoznávání vzorů (chceme-li využívat fuzzy automaty) je bivalentní automat rozpoznávající vzorový řetězec. Tedy automat takový, který přijímá jedinný řetězec $\omega$ a všechny ostatní zamítá. Nyní si takovýto automat zkonstruujeme.
@@ -151,13 +200,18 @@ Takovýto automat označme jako \term{automat rozpoznávající} $\omega$.
   $$
 \end{definition}
 
-Tato definice automatu je vcelku intuitivní. K stejnému výsledku bychom došli, pokud bychom automat zkonstruovali konverzí gramatiky nebo regulérního výrazu. Příklad automatu rozpoznávající řetězec \str{hello} naleznete na obrázku \ref{diag-AutRozpHell}.
-\begin{figure}
- \includegraphics{diags0}
- \caption{Automat rozpoznávající \str{hello}} \label{diag-AutRozpHell}
-\end{figure}
+Tato definice automatu je vcelku intuitivní. K stejnému výsledku bychom došli, pokud bychom automat zkonstruovali konverzí gramatiky nebo regulérního výrazu. 
 
-Nyní tento automat převedeme na ekvivalentní fuzzy automat. Tedy na automat rozpoznávající řetězec $\omega$ ve stupni $1$ a všechny ostatní ve stupni $0$. Vzhledem k tomu, že budeme konstruovat fuzzy automat nedeterministický, bude vhodné si nejdříve přetransformovat deterministický automat z předchozí definice na nedeterministický.
+\begin{example}
+ Příklad automatu rozpoznávající řetězec $\omega = $ \str{hello} se nachází na obrázku \ref{diag-AutRozpHell}.  
+
+  \begin{figure}
+    \includegraphics{diags0}
+    \caption{Automat rozpoznávající \str{hello}} \label{diag-AutRozpHell}
+  \end{figure}
+\end{example}
+
+My však budeme potřebovat fuzzy automat rozpoznávající $\omega$. To znamená, že musíme nejdříve automat z předchozí definice převést na nedeterministický a poté dle definice \ref{def-FuzzAutBivAut} k němu zkonstruovat odpovídající fuzzy automat.
 
 \begin{definition}[Automat rozpoznávající $\omega$ (nedeterministický)] \label{def-AutRozpOme}
   Mějme řetězec $\omega$ nad abecedou $\Sigma$ z předchozí definice. Nedeterministický automat rozpoznávající $\omega$ je pak konečný automat $A'(\omega) = ( Q, \Sigma, \delta, I, F )$ takový, že jeho množina stavů $Q$ je stejná jako v předchozí definici, dále $I = \{ q_0 \}$ je množina počátečních a $F = \{ q_n \}$ množina koncových stavů a $\delta$ je přechodová funkce definována pro všechna $0 \leq k < n$ následovně:
@@ -171,9 +225,10 @@ Nyní tento automat převedeme na ekvivalentní fuzzy automat. Tedy na automat r
 \end{definition}
 
 %TODO: Ekvivalentní definice je zavedena v \cite[str. 2]{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}.
+Následuje vytvoření fuzzy automatu.
 
 \begin{definition}[Fuzzy automat rozpoznávající $\omega$] \label{def-FuzzAutRozpOme}
-  Mějme řetězec $\omega$ nad abecedou $\Sigma$ délky $n$ z předchozí definice. Automat rozpoznávající $\omega$ je pak fuzzy automat $A''(\omega) = ( Q, \Sigma, \mu, \sigma, \epsilon )$ takový, že jeho množina stavů $Q$ je stejná jako v předchozí definici, a dále
+  Mějme řetězec $\omega$ nad abecedou $\Sigma$ délky $n$. Fuzzy automat rozpoznávající $\omega$ je pak automat $A''(\omega)$ vytvořený z nedeterministického automatu rozpoznávající $\omega$ (definice \ref{def-AutRozpOme}) dle definice \ref{def-FuzzAutBivAut}. Bude to tedy automat $A''(\omega) = ( Q, \Sigma, \mu, \sigma, \epsilon )$ kde
   \begin{itemize}
    \item $\sigma(q_0) = 1$ a $\sigma(q_i) = 0$ pro všechna $i > 0$
    \item $\epsilon(q_n) = 1$ a $\epsilon(q_i) = 0$ pro všechna $i < n$
@@ -186,19 +241,76 @@ Nyní tento automat převedeme na ekvivalentní fuzzy automat. Tedy na automat r
   \end{itemize}
 \end{definition}
 
-Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řetězec. V následujících podkapitolách následuje výčet několika technik, které tuto ostrost odstraňují a nahrazují podobností.
+Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řetězec. V následujících podkapitolách následuje výčet několika technik, které tuto ostrost (pomocí dalších informací) odstraňují a nahrazují podobností.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Podobnost symbolů}
-nejzákladnější technika pro zanesení podobnostního rozpoznávání je s pomocí podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém. 
+Nejzákladnější technika pro zanesení neostrého (stupňovitého) rozpoznávání je s využitím podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém.
 
-Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $g_S: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $g_S(x, y) = 0$, pak se zjevně jedná o naprosto rozdílné symboly. Naopak, pokud bude $g_S(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $g_S$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $g_s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $g_s(x, y) = 0$, pak se jedná o naprosto rozdílné symboly. Naopak, pokud bude $g_s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $g_s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
 
-Máme-li k dispozici relaci $g_S$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, automat pracující s relací $g_S$ je možné zkonstruovat pro libovolný (konečný) automat. Vzhledem k tomu, že v této kapitole pracujeme s rozpoznáváním textového vzoru, budeme uvažovat konečný automat rozpoznávající $\omega$ (dle definice \ref{def-AutRozpOme}). Nyní k němu sestavíme fuzzy automat pracující s $g_S$.
+\begin{example}
+ Jako příklad podobnostní relace (nad abecedou písmen anglické abecedy) může posloužit například vzdálenost patřičných kláves na klávesnici. V takovém případě by určitě platilo kupříkladu $g_s(a,s) > g_s(a, d) > g_s(a, l)$. Protože klávesy \str{A} a \str{S} jsou si blíž (a tudíž symboly $a$ a $s$ jsou si \uv{podobnější}) než například \str{A} a \str{D} či \str{A} a \str{L}.
+ 
+ Jiným příkladem může být například vizuální podobnost napsaných (malých psacích) písmen. V takovém případě by zřejmě platilo $g_s(a, o) > g_s(m, t)$, protože malá psací písmena \str{a} a \str{o} jsou si vizuálně podobnější než \str{m} a \str{t}, která vypadají úplně rozdílně.
+\end{example}
 
+Máme-li k dispozici relaci $g_s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, tato technika může pracovat s libovolným konečným automatem. Podíváme se proto nejdříve, jak využít relaci $g_s$ obecně. Následně ji aplikujeme na automat rozpoznávající $\omega$, čímž získáme nástroj pro podobnostní rozpoznávání textového vzoru.
 
-\begin{definition}[Automat rozpoznávající $\omega$ pracující s $g_S$]
-Uvažujme, že máme nedeterminstický automat $A$ rozpoznávající $\omega$ a relaci podobnosti symbolů $g_S$. Pak k automatu $A$ můžeme zkonstruovat automat $A'$, který navíc pracuje s $g_S$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutRozpOme} 
+\begin{definition}[Automat pracující s $g_s$] \label{def-AutPracGS}
+Uvažujme, že máme nedeterminstický automat $A$ a relaci podobnosti symbolů $g_s$. Pak k automatu $A$ můžeme zkonstruovat fuzzy automat $A'$, který navíc pracuje s $g_s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutBivAut} s tím rozdílem, že přechodová funkce $\mu$ bude definována pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$ následovně:
+$$
+ \mu(q_i, x, q_j) = \bigvee_{y \in \Sigma} (g_s (x, y) \wedge \delta_y (q_i, q_j))
+$$
+ kde $\delta_x(q_i, q_j) = 
+  \begin{cases}
+   1 & \text{ pokud } q_j \in \delta(q_i, x)		\\
+   0 & \text{ pokud } q_j \notin \delta(q_i, x)
+  \end{cases}
+ $ pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$.
+\end{definition}
+
+Definice je vcelku přímočará. Pro každý přechod ze stavu $q_i$ do stavu $q_j$ přes symbol $x$, procházíme přechody původního automatu. Obsahovala-li přechodová funkce původního automatu přechod ze stavu $q_i$ přes symbol $y$ do stavu $q_j$, pak je $g_s (x, y) \wedge \delta_y (q_i, q_j)$ rovno podobnosti $x$ a $y$. V opačném případě je roven nule. Hodnota tohoto výrazu je díky spojení přes všechny symboly maximalizována.
+
+Nyní aplikujeme tento způsob konstrukce fuzzy automatu na automat rozpoznávající $\omega$.
+
+\begin{definition}[Automat rozpoznávající $\omega$ pracující s $g_s$]
+ Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a fuzzy relaci $g_s$ nad touto abecedou. Dle definice \ref{def-AutRozpOme} můžeme zkonstruovat nedeterministický bivalentní automat $A(\omega)$ rozpoznávající $\omega$. Jako automat rozpoznávající $\omega$ pracující s $g_s$ označme nedeterministický fuzzy automat $A'(\omega)$, který byl z automatu $A(\omega)$ vytvořen podle definice \ref{def-AutPracGS}.
+\end{definition}
+
+\TODO{neměl by se takovýto automat místo $A'(\omega)$ značit třeba $A_{g_s}(\omega)$? }
+
+Následuje jednoduchý příklad takového automatu.
+
+\begin{example}
+ Mějme abecedu $\Sigma = \{ a, b, c, d \}$. Dále uvažujme relaci podobnosti symbolů $g_s$ takovou, že
+ \begin{itemize}
+  \item každý symbol je podobný sám sobě ve stupni $1$
+  \item každý symbol je podobný symbolu ve stupni $0,5$ jedná-li se o symboly reprezentující sousedící písmena abecedy
+  \item každý symbol je podobný symbolu ve stupni $0,3$ jedná-li se o symboly reprezentující ob-jedno písmeno sousedící písmena abecedy
+  \item všechny ostatní dvojice symbolů jsou si podobny ve stupni $0$
+ \end{itemize}
+ Tuto relaci můžeme zapsat do matice (sloupce i řádky odpovídají po řadě symbolům $a, b, c, d$):
+ $$
+ g_s = 
+  \begin{pmatrix}
+   1,0 	& 0,5	& 0,3	& 0,0 	\\
+   0,5	& 1,0 	& 0,5	& 0,3	\\
+   0,3	& 0,5	& 1,0 	& 0,5	\\
+   0,0 	& 0,3	& 0,5	& 1,0 	\\
+  \end{pmatrix}
+ $$
+ Nyní mějme vzorový řetězec $\omega = abc$. Pak můžeme podle předchozí definice sestavit automat $A(\omega)$ rozpoznávající $\omega$ pracující s $g_s$. Přechodový diagram takového automatu je na obrázku \ref{diag-AutRozpABCPracGS}.
+ 
+ Tento automat evidentně rozpoznává řetězec \str{abc} ve stupni $1$. Pokud v pozorovaném řetězci nahradíme symbol \str{a} za \str{b}, bude jej automat přijímat ve stupni $0,5$. Pokud nahradíme \str{b} za \str{d}, bude jej automat přijímat ve stupni $0,3$.
+ 
+ Pokud na začátek pozorovaného řetězce vložíme symbol \str{a} (tedy $\alpha = $ \str{aabc}), automat jej přijme ve stupni $0$. Stejnětak, pokud odebereme symbol \str{c} z konce vzorového řetězce (tedy $\alpha = $ \str{ab}). Pokud vložíme symbol \str{a} na začátek a současně odebereme \str{c} z konce vzorového řetězce, obdržíme pozorovaný řetězec $\alpha = $ \str{aab}. Tento řetězec bude přijat ve stupni $0,5$ \TODO{$1 \otimes 0,5 \otimes 0,5$, záleží tedy na $\otimes$}.
+ 
+  \begin{figure}
+    \includegraphics{diags5}
+    \caption{Automat rozpoznávající \str{abc} pracující s $g_s$} \label{diag-AutRozpABCPracGS}
+  \end{figure}
+\end{example}
 
 
 
