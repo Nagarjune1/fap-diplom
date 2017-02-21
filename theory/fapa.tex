@@ -28,6 +28,9 @@ Fuzzy množiny a relace budou po vzoru \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMe
 
 \subsubsection*{Deterministický bivalentní automat}
 \TODO{zdroj: Eilenberg S.: Automata, Languages and Machines, Vol. A, Academic Press, New York, 1974. Pokud ji někde seženu (odkazuje se na ni Bel v \cite{Bel-FuzRelSyss}}
+
+\TODO{co citování definic? půlku jsem si vymyslel ...}
+
 \begin{definition}
  Konečný deterministický (bivalentní) automat je pětice $A = ( Q, \Sigma, \delta, q_0, F )$, kde $Q$ je konečná množina stavů, $\Sigma$ je vstupní abeceda, $\delta: Q \times \Sigma \rightarrow Q$ je přechodová funkce, $q_0 \in Q$ je počátační stav a $F \subseteq Q$ je množina koncových stavů.
 \end{definition}
@@ -94,6 +97,15 @@ Značení je převzato z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} a l
 
 \TODO{Tady by asi bylo vhodné rozebrat $\epsilon$-uzávěry}
 
+\subsubsection*{Reprezentace fuzzy automatu}
+\TODO{dohledat zdroje}
+
+\TODO{Značení fuzzy množiny $\sigma = \{ x/0.5 \}$ vs. $\sigma(x) = 0.5$} 
+
+Přechodový diagram: Notace s lomítky např. zde: \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
+
+Tabulka: stav $\times$ symbol nebo stav $\times$ stav \cite{DooKre-NewDirFuzzAut}?
+
 \subsubsection*{Konstrukce fuzzy automatu z konečného automatu}
 V praxi se často setkáme z problémem, kdy máme k dispozici konečný bivalentní automat avšak my potřebujeme pro naši práci fuzzy automat. Je tedy třeba zkonstruovat takový fuzzy automat, který rozpoznává odpovídající jazyk odpovídající jazyku rozpoznávaném naším bivalentním automatem. 
 
@@ -139,7 +151,45 @@ Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i 
 
 \TODO{rozebrat, jestli tento automat skutečně dělá to, co má? Asi by to chtělo}
 
-\TODO{vymyslet nějaký pěkný příklad}
+\TODO{vymyslet nějaký fakt pěkný příklad}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fuzzy automaty, gramatiky a jazyky}
+\TODO{nějak to uvést. Budou pojmy jako regulérní jazyk a gramatika popsány v nějaké předchozí kapitole?}
+
+\TODO{pojem \uv{Lattice language}}
+
+\TODO{značení: \uv{Fuzzy množina $\phi$} vs. \uv{$L$-množina $\phi: X \rightarrow L$}; \uv{fuzzy podmnožina} vs. \uv{fuzzy množina nad}}
+% asi k ničemu: DooKre-NewDirFuzzAut \cite{DooKre-NewDirFuzzAut}, 
+% asi zbytečně vědátorské, nám stačí jazyk nad [0,1]: PalYau-FracFuzzGramAppPatRec \cite{PalYau-FracFuzzGramAppPatRec}?,
+% okay: GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc},
+% fjuuh: StaCir-ConsFuzzAutFuzzRegExp \cite{StaCir-ConsFuzzAutFuzzRegExp},
+% blbost, nic tam není: RamGir-CharFuzzRegLang \cite{RamGir-CharFuzzRegLang},
+
+
+\subsection{Jazyk rozpoznávaný fuzzy automatem}
+Věta 6.3 \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon} (pro lattice monoid, není to někde jen pro $[0,1]$?).
+
+Dle definice 4 \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} je fuzzy regulární jazyk fuzzy podmnožina bivalentního.
+
+Automat s bivalentní $\mu$ and $\eta$ (a fuzzy $\sigma$) taky rozpoznává fuzzy regulérní jazyk \cite{PalYau-FracFuzzGramAppPatRec}. Neřešil něco takového i Bel? Jinak řečeno, support konečný automat \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
+
+\subsection{Fuzzy a bivalentní regulérní jazyky}
+Univerzum fuzzy jazyka je regulérní jazyk, pozorování 6.1 \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}.
+
+Stejně tak, zaříznutý jazyk ($a$-řez jazyka) je také regulérní, věta 2.2 \cite{PalYau-FracFuzzGramAppPatRec}. 
+
+Pumping lemma pro fuzzy regulérní jazyky, lemma 4-7 pro různé typy automatů \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
+
+Uzávěrové vlastnosti fuzzy regulérních jazyků, např. \cite{PalYau-FracFuzzGramAppPatRec}.
+\subsection{Fuzzy regulární výrazy}
+LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon, definice 5.1, 5.2 (+ opsat důkaz, že $[0, 1]$ je lattice monoid) \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}.
+
+Algoritmus převodu reg na aut, \cite{StaCir-ConsFuzzAutFuzzRegExp}. Ale zdá se mi to až moc složité.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,7 +233,7 @@ Klasická teorie automatů vznikla jako nástroj pro zpracování textových ře
 
 V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
 
-\TODO{a co pravděpodobnostní?}
+\TODO{a co pravděpodobnostní?} \TODO{Protože například: \uv{pozorovaný řetězec se se vzorovým shoduje ve stupni $x$} ale \uv{je pravděpodobnost $y$, že uživatel zadal požadovaný řetězec}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automat rozpoznávající $\omega$}
 Klíčovým pro rozpoznávání vzorů (chceme-li využívat fuzzy automaty) je bivalentní automat rozpoznávající vzorový řetězec. Tedy automat takový, který přijímá jedinný řetězec $\omega$ a všechny ostatní zamítá. Nyní si takovýto automat zkonstruujeme.

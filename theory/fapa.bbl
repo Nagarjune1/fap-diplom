@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Bel-FuzRelSyss}
 Radim Bělohlávek.
@@ -11,12 +11,25 @@ H.~A.~Girijamma Dr. V.~Ramaswamy.
   comparison.
 \newblock {\em International Journal of Computer Applications}, 2012.
 
+\bibitem{RamGir-CharFuzzRegLang}
+Mrs. Girijamma. H.~A. Dr. V.~Ramaswamy.
+\newblock Characterization of fuzzy regular languages.
+\newblock {\em IJCSNS International Journal of Computer Science and Network
+  Security}, 2008.
+
 \bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
 J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
   Villadangos;~F. Farina.
 \newblock Approximate string matching using deformed fuzzy automata: A learning
   experience.
 \newblock {\em Springer Science \& Business Media}, 2004.
+
+\bibitem{PalYau-FracFuzzGramAppPatRec}
+S.S.~Yau G.F.~DePalma.
+\newblock Fractionally fuzzy grammars with application to pattern recognition.
+\newblock {\em US–Japan Seminar on Fuzzy Sets and their Applications}, 1974.
+\newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
+  MorMal-FuzzAutAndLangs 10.7.
 
 \bibitem{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}
 J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
@@ -27,5 +40,27 @@ J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
 \bibitem{Ech-DefSyssConPre}
 José R. Garitagoitia Carlos F.~Alastrueya Javier~Echanobe, José R.
   Gonzáles~Mendívil.
+
+\bibitem{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}
+José R.~Garitagoitia José R. González~de Mendívil.
+\newblock Fuzzy languages with infinite range accepted by fuzzy automata:
+  Pumping lemma and determinization procedure.
+\newblock {\em Fuzzy sets and Systems}, 2014.
+
+\bibitem{DooKre-NewDirFuzzAut}
+S.~C.~Kremer M.~Doostfatemeh.
+\newblock New directions in fuzzy automata.
+\newblock {\em International Journal of Approximate Reasoning}, 2004.
+
+\bibitem{StaCir-ConsFuzzAutFuzzRegExp}
+Miroslav Stamenkovic, Aleksandar;~Ciric.
+\newblock Construction of fuzzy automata from fuzzy regular expressions.
+\newblock {\em Fuzzy Sets and Systems}, 2012.
+
+\bibitem{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}
+Witold~Pedrycz Yongming~Li.
+\newblock Fuzzy finite automata and fuzzy regular expressions with membership
+  values in lattice-ordered monoids.
+\newblock {\em Fuzzy Sets and Systems}, 2005.
 
 \end{thebibliography}
