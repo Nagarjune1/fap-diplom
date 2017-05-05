@@ -12,4 +12,4 @@
 \contentsline {subsection}{\numberline {2.1}N\IeC {\v e}co k teorii (r\IeC {\r u}zn\IeC {\'e} definice automat\IeC {\r u}, determinizmus, minimalizace, ekvivalence, ...)}{9}
 \contentsline {subsection}{\numberline {2.2}Koncepce (fuzzy a/vs. pravd\IeC {\v e}podobnostn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }stup)}{9}
 \contentsline {subsection}{\numberline {2.3}Dal\IeC {\v s}\IeC {\'\i } \IeC {\v c}ten\IeC {\'\i } a potencion\IeC {\'a}ln\IeC {\'\i } zdroje}{10}
-\contentsline {subsection}{\numberline {2.4}T\IeC {\v r}eba by mohlo b\IeC {\'y}t u\IeC {\v z}ite\IeC {\v c}n\IeC {\'e} ...}{11}
+\contentsline {subsection}{\numberline {2.4}T\IeC {\v r}eba by mohlo b\IeC {\'y}t u\IeC {\v z}ite\IeC {\v c}n\IeC {\'e} ...}{12}

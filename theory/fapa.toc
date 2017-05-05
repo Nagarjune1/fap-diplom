@@ -1,7 +1,7 @@
 \select@language {czech}
 \contentsline {section}{\numberline {1}Definice a zna\IeC {\v c}en\IeC {\'\i }}{2}
 \contentsline {section}{\numberline {2}Fuzzy automaty, gramatiky a jazyky}{4}
-\contentsline {subsection}{\numberline {2.1}Jazyk rozpozn\IeC {\'a}van\IeC {\'y} fuzzy automatem}{4}
+\contentsline {subsection}{\numberline {2.1}Jazyk rozpozn\IeC {\'a}van\IeC {\'y} fuzzy automatem}{5}
 \contentsline {subsection}{\numberline {2.2}Fuzzy a bivalentn\IeC {\'\i } regul\IeC {\'e}rn\IeC {\'\i } jazyky}{5}
 \contentsline {subsection}{\numberline {2.3}Fuzzy regul\IeC {\'a}rn\IeC {\'\i } v\IeC {\'y}razy}{5}
 \contentsline {section}{\numberline {3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } textov\IeC {\'y}ch vzor\IeC {\r u}}{5}
@@ -13,3 +13,6 @@
 \contentsline {subsection}{\numberline {3.6}Edita\IeC {\v c}n\IeC {\'\i } operace}{11}
 \contentsline {subsection}{\numberline {3.7}Deformovan\IeC {\'y} automat}{16}
 \contentsline {subsection}{\numberline {3.8}Shrnut\IeC {\'\i }}{17}
+\contentsline {section}{\numberline {4}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{17}
+\contentsline {subsection}{\numberline {4.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{17}
+\contentsline {subsection}{\numberline {4.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{18}

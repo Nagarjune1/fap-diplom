@@ -161,16 +161,18 @@ Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i 
 
 \TODO{pojem \uv{Lattice language}}
 
-\TODO{značení: \uv{Fuzzy množina $\phi$} vs. \uv{$L$-množina $\phi: X \rightarrow L$}}
+\TODO{značení: \uv{Fuzzy množina $\phi$} vs. \uv{$L$-množina $\phi: X \rightarrow L$}; \uv{fuzzy podmnožina} vs. \uv{fuzzy množina nad}}
 % asi k ničemu: DooKre-NewDirFuzzAut \cite{DooKre-NewDirFuzzAut}, 
 % asi zbytečně vědátorské, nám stačí jazyk nad [0,1]: PalYau-FracFuzzGramAppPatRec \cite{PalYau-FracFuzzGramAppPatRec}?,
-GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc},
-StaCir-ConsFuzzAutFuzzRegExp \cite{StaCir-ConsFuzzAutFuzzRegExp},
-RamGir-CharFuzzRegLang \cite{RamGir-CharFuzzRegLang},
+% okay: GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc},
+% fjuuh: StaCir-ConsFuzzAutFuzzRegExp \cite{StaCir-ConsFuzzAutFuzzRegExp},
+% blbost, nic tam není: RamGir-CharFuzzRegLang \cite{RamGir-CharFuzzRegLang},
 
 
 \subsection{Jazyk rozpoznávaný fuzzy automatem}
 Věta 6.3 \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon} (pro lattice monoid, není to někde jen pro $[0,1]$?).
+
+Dle definice 4 \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} je fuzzy regulární jazyk fuzzy podmnožina bivalentního.
 
 Automat s bivalentní $\mu$ and $\eta$ (a fuzzy $\sigma$) taky rozpoznává fuzzy regulérní jazyk \cite{PalYau-FracFuzzGramAppPatRec}. Neřešil něco takového i Bel? Jinak řečeno, support konečný automat \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
 
@@ -179,10 +181,13 @@ Univerzum fuzzy jazyka je regulérní jazyk, pozorování 6.1 \cite{LiPed-FuzzFi
 
 Stejně tak, zaříznutý jazyk ($a$-řez jazyka) je také regulérní, věta 2.2 \cite{PalYau-FracFuzzGramAppPatRec}. 
 
+Pumping lemma pro fuzzy regulérní jazyky, lemma 4-7 pro různé typy automatů \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
+
 Uzávěrové vlastnosti fuzzy regulérních jazyků, např. \cite{PalYau-FracFuzzGramAppPatRec}.
 \subsection{Fuzzy regulární výrazy}
 LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon, definice 5.1, 5.2 (+ opsat důkaz, že $[0, 1]$ je lattice monoid) \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}.
 
+Algoritmus převodu reg na aut, \cite{StaCir-ConsFuzzAutFuzzRegExp}. Ale zdá se mi to až moc složité.
 
 
 
@@ -476,7 +481,7 @@ V tento okamžik máme formálně zavedena vyrovnání řetězců. Můžeme tedy
 
 Pro uřčení podobnosti na základě vyrovnání řetězců budeme potřebovat znát míry pravdivosti editačních operací. Vstupem pro výpočet podobnosti řetězců tak bude navíc binární fuzzy relace $R$ nad množinou všech editačních operací ($E$), udávající stupeň akceptovatelnosti kadždé z možných editačních operací. S touto znalostí můžeme nadefinovat relaci podobnosti řetězců, tzv. fuzzy míru dvojice řetězců $\alpha$ a $\omega$.
 
-\TODO{Musí být $R$ reflexivní a symetrická (def. automatu to vyžaduje, ale je to nutné?). A co T-tranzitivita?}
+\TODO{Musí být $R$ reflexivní a symetrická (def. automatu to vyžaduje, ale je to nutné?). A co T-tranzitivita?} \TODO{Takové relaci se říká relace podobnosti (proximity relation)}
 
 \begin{definition}[Fuzzy míra\cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}]\label{def-FuzzMir}
  Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$. Pak jako fuzzy míru mezi řetězci $\alpha, \omega \in \Sigma^*$ (značenou $S_{\Sigma, R, \otimes}$) označme fuzzy relaci danou následujícím předpisem:

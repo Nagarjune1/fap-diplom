@@ -11,18 +11,17 @@ H.~A.~Girijamma Dr. V.~Ramaswamy.
   comparison.
 \newblock {\em International Journal of Computer Applications}, 2012.
 
-\bibitem{RamGir-CharFuzzRegLang}
-Mrs. Girijamma. H.~A. Dr. V.~Ramaswamy.
-\newblock Characterization of fuzzy regular languages.
-\newblock {\em IJCSNS International Journal of Computer Science and Network
-  Security}, 2008.
-
-\bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
+\bibitem{AstGariGonVillFar+-ApprStrMatUsiDefFuzzAutLearExpr}
 J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
   Villadangos;~F. Farina.
 \newblock Approximate string matching using deformed fuzzy automata: A learning
   experience.
 \newblock {\em Springer Science \& Business Media}, 2004.
+
+\bibitem{AndAbdAsm-ApprPattMatcFuzzLog}
+Abdulwahed~Almarimi Gabriela~Andrejková and Asmaa Mahmoud.
+\newblock Approximate pattern matching using fuzzy logic.
+\newblock {\em CEUR Workshop Proceedings}, 2003.
 
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.

@@ -5,6 +5,11 @@ The style file: plain.bst
 Database file #1: resources.bib
 Warning--entry type for "Rich-FuzEvoCellAut" isn't style-file defined
 --line 297 of file resources.bib
+I was expecting a `,' or a `}'---line 343 of file resources.bib
+ :   
+ :   title   = {Deformed systems for contextual postprocessing},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F." for entry GarMenEchAstFar-DefFuzzAutCorImpStrFuzzSyms
@@ -86,4 +91,4 @@ warning$ -- 0
 while$ -- 78
 width$ -- 41
 write$ -- 423
-(There were 20 error messages)
+(There were 21 error messages)

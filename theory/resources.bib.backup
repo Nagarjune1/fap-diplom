@@ -55,8 +55,8 @@
     PUBLISHER	= {Elsevier},
     YEAR	= {1974},
     ISBN	= {},
-    note	= {není k dispozici, jen placená}}
-
+    note	= {}
+}
 
 
 @BOOK{Paz-IntroProbAut,
@@ -168,7 +168,7 @@
 }
 
 @ARTICLE{WuaPanHan-FuzzAutSysAppTarRecBasImaProc,
-  author  = {Qing-E Wua, Xue-Min Pangc, Zhen-Yu Hana}, 
+  author  = {Qing-E Wu, Xue-Min Pang, Zhen-Yu Han}, 
   title   = {Fuzzy automata system with application to target recognition based on image processing},
   journal = {Computers \& Mathematics with Applications},
   year    = 2011,
@@ -185,7 +185,7 @@
 }
 
 @ARTICLE{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr,
-  author  = {Astrain, J J; Garitagoitia, J R; J. R. Gonzalez De Mendivil; Villadangos, J; Farina, F.}, 
+  author  = {J. J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J. Villadangos; F. Farina}, 
   title   = {Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience},
   journal = {Springer Science \& Business Media},
   year    = 2004,
@@ -240,7 +240,7 @@
   title   = {Syntactic Pattern Recognition for Seismic Oil Exploration},
   publisher = {World Scientific},
   year    = 2002,
-  note    = {náhled e-knihy: http://bit.ly/2cR4rtO}, 
+  note    = {}, 
 }
 
 
@@ -320,8 +320,123 @@
   note    = {}, 
 }
 
+@ARTICLE{BucPas-FuzzPushAut,
+  author  = {Irina Bucurescu, Anca Pascu}, 
+  title   = {Fuzzy pushdown automata},
+  journal = {International Journal of Computer Mathematics},
+  year    = 2007,
+  note    = {nejspíš není k dispozici}, 
+}
+
+@ARTICLE{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet,
+  author  = {Ch. W. Omlin, K. K. Thornber, C. L. Giles}, 
+  title   = {Fuzzy Finite-State Automata Can Be Deterministically Encoded Into Recurent Neural Networks},
+  journal = {University of Technical Report},
+  year    = 1996,
+  note    = {}, 
+}
+
+%další vlna zdrojů
+
+@ARTICLE{Ech-DefSyssConPre,
+  author  = {Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya}
+  title   = {Deformed systems for contextual postprocessing},
+  journal = {Fuzzy Sets and Systems},
+  year    = 1998,
+  note    = {}, 
+}
 
 
+% zdroje netýkající se fuzzy automatů
+
+@ARTICLE{TowSha-KnowBas-ArtNeuNet,
+  author  = {Geoffrey G. Towell, Jude W. Shavlik}, 
+  title   = {Knowledge-Based Artificial Neural Networks},
+  journal = {Artificial Intelligence},
+  year    = 1992,
+  note    = {}, 
+}
+
+@ARTICLE{EsLiu-FuzzTreeAut,
+  author  = {Zoltán Ésik, Guangwu Liu}, 
+  title   = {Fuzzy tree automata},
+  journal = {Fuzzy Sets and Systems},
+  year    = 2007,
+  note    = {}, 
+}
+
+
+@ARTICLE{AndAbdAsm-ApprPattMatcFuzzLog,
+  author  = {Gabriela Andrejková, Abdulwahed Almarimi and Asmaa Mahmoud}, 
+  title   = {Approximate Pattern Matching using Fuzzy Logic},
+  journal = {CEUR Workshop Proceedings},
+  year    = 2003,
+  note    = {}, 
+}
+
+
+@ARTICLE{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap,
+  author  = {Conrad Power, Alvin Simms, Roger White}, 
+  title   = {Hierarchical fuzzy pattern matching for the regional comparison of land use maps},
+  journal = {International Journal of Geographical Information Science},
+  year    = 2010,
+  note    = {}, 
+}
+@ARTICLE{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm,
+  author  = {Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos}, 
+  title   = {A Fuzzy Cellular Automata Modeling Approach -- Accessing Urban Growth Dynamics in Linguistic Terms},
+  journal = {Computational Science and Its Applications},
+  year    = 2010,
+  note    = {}, 
+}
+
+@BOOK{SetWar-FuzzAutPattMatc,
+  author  = {Setzer, C. B., Warsi, N. A.}, 
+  title   = {Fuzzy automata and pattern matching},
+  publisher = {Atlanta Univ.; Dept. of Mathematical and Computer Sciences.; GA, United States},
+  year    = 1986,
+  note    = {}, 
+}
+
+@ARTICLE{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro,
+  author  = {Dhiraj Kumar Patel, Prof. Sagar A. More}, 
+  title   = {Edge Detection Technique by Fuzzy Logic and Cellular Learning Automata using Fuzzy Image Processing},
+  journal = {International Conference on Computer Communication and Informatics},
+  year    = 2013,
+  note    = {}, 
+}
+
+@ARTICLE{Rig-FauDetIsoBasFuzzAut,
+  author  = {Gerasimos G. Rigatos}, 
+  title   = {Fault detection and isolation based on fuzzy automata},
+  journal = {Information Sciences},
+  year    = 2009,
+  note    = {}, 
+}
+
+@ARTICLE{BlaDelPeg-FuzzAutIndUsNeuNet,
+  author  = {A. Blanco, M. Delgado, M. C. Pegalajar}, 
+  title   = {Fuzzy automaton induction using neural network},
+  journal = {International Journal of Approximate Reasoning},
+  year    = 2001,
+  note    = {}, 
+}
+
+@ARTICLE{BaiTri-PattRecUsiTemFuzzAut,
+  author  = {Gonzalo Bailadora, Gracián Triviño}, 
+  title   = {Pattern recognition using temporal fuzzy automata},
+  journal = {Fuzzy Sets and Systems},
+  year    = 2010,
+  note    = {}, 
+}
+
+@BOOK{NacWekVilKer-FuzzFiltImaProc,
+  author  = {Mike Nachtegael, Dietrich Van der Weken, Dimitri Van De Ville, Etienne E. Kerre (Eds.)}, 
+  title   = {Fuzzy Filters for Image Processing},
+  publisher = {Springer},
+  year    = 2003,
+  note    = {}, 
+}
 
 
 BOOK{,

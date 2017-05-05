@@ -17,34 +17,34 @@ Warning--empty journal in Ech-DefSyssConPre
 Warning--empty year in Ech-DefSyssConPre
 You've used 11 entries,
             2118 wiz_defined-function locations,
-            557 strings with 6299 characters,
-and the built_in function-call counts, 2276 in all, are:
-= -- 216
-> -- 77
+            557 strings with 6294 characters,
+and the built_in function-call counts, 2312 in all, are:
+= -- 219
+> -- 83
 < -- 0
-+ -- 33
-- -- 22
-* -- 96
-:= -- 436
++ -- 35
+- -- 24
+* -- 100
+:= -- 442
 add.period$ -- 32
 call.type$ -- 11
-change.case$ -- 42
+change.case$ -- 43
 chr.to.int$ -- 0
 cite$ -- 14
 duplicate$ -- 112
 empty$ -- 193
-format.name$ -- 22
-if$ -- 454
+format.name$ -- 24
+if$ -- 461
 int.to.chr$ -- 0
 int.to.str$ -- 11
 missing$ -- 12
 newline$ -- 57
 num.names$ -- 22
-pop$ -- 53
+pop$ -- 54
 preamble$ -- 1
-purify$ -- 33
+purify$ -- 34
 quote$ -- 0
-skip$ -- 73
+skip$ -- 74
 stack$ -- 0
 substring$ -- 55
 swap$ -- 10
