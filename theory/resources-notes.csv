@@ -268,3 +268,8 @@ maybe	GooHarLee-ImpAppAut20	Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen	I
 maybe	GooHarLee-ImpAppAut21	Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen	Implementation and Application of Automata 21	not fuzzy, but applications!
 maybe	GooHarLee-ImpAppAut22	Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen	Implementation and Application of Automata 22	not fuzzy, but applications!
 okay	San-ProGraAut	EUGENE S. SANTOS 	Probabilistic Grammars and Automata	probabilistic, grammar
+okay	San-RedMaxMach	E.S. Santos	On reduction of max–min machines	theory, minimalisation, original
+okay	San-MaxProdMac			theory, minimalisation, definition, original
+maybe	San-GenForSeqMac			theory, definition general
+maybe	Miz-FuzAutFuzGra			theory, grammars
+maybe	AfoGol-MinUniFreDecRegLan			theory, regex, decomposition

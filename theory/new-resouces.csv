@@ -238,7 +238,7 @@ already done	EsiLiu-FuzzTreeAut	 	Zoltán Ésik, Guangwu Liu	 	Fuzzy tree automa
 --	-- Kov-ReasFuzzAutInUsrAdpSyss	 		 	
 --	-- LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon	 		 	
 already done	San-MaxAut	 	E.S. Santos	 	Maximin automata
-not found	San-RedMaxMach	 	E.S. Santos	 	On reduction of max–min machines
+ok	San-RedMaxMach	 	E.S. Santos	 	On reduction of max–min machines
 ok	San-FuzAutLang	 	E.S. Santos	 	Fuzzy automata and languages
 not found	San-RegFuzExp	 	E.S. Santos	 	Regular fuzzy expressions
 not found	Wee-GenAdaAlgAppFuzSetCon+	 	W.G. Wee	 	On generalizations of adaptive algorithm and application of the fuzzy sets concept to pattern classification
@@ -480,8 +480,8 @@ ok	GooHarLee-ImpAppAut21		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Im
 ok	GooHarLee-ImpAppAut22		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Implementation and Application of Automata 22
 -- aditional resource					
 ok	San-ProGraAut		EUGENE S. SANTOS 		Probabilistic Grammars and Automata
-					
-					
+ok	San-MaxProdMac		E. S. Santos		Max-product machines
+ok	Miz-FuzAutFuzGra		MASAHABU MIZUMOTO,		FUZZI AUTOMATA AND FUZZY GRAMMARS
 					
 					
 					
