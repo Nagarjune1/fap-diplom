@@ -481,10 +481,10 @@ ok	GooHarLee-ImpAppAut22		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Im
 -- aditional resource					
 ok	San-ProGraAut		EUGENE S. SANTOS 		Probabilistic Grammars and Automata
 ok	San-MaxProdMac		E. S. Santos		Max-product machines
+ok	San-GenForSeqMac		E. S. Santos		General Formulation of Sequential Machines
 ok	Miz-FuzAutFuzGra		MASAHABU MIZUMOTO,		FUZZI AUTOMATA AND FUZZY GRAMMARS
-					
-					
-					
+ok	AfoGol-MinUniFreDecRegLan		Sergey Afonin and Denis Golomazov		Minimal Union-free Decompositions of Regular Languages
+downloadme!	CaoChe-FuzPetNetModComWord		Yongzhi Cao, Guoqing Chen		A Fuzzy Petri Nets Model for Computing With Words
 					
 					
 		 		 	

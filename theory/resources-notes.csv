@@ -112,7 +112,7 @@ xxx	Zad-ConLingVarAppApprRea	Zadeh, L.A	The concept of a linguistic variable and
 xxx	Koh-SelOrgMap	T. Kohonen	The self-organizing map	nor automata and fuzzy
 need more read	GilOmlTho-EquKnoRep+	C. LEE GILES; CHRISTIAN W. OMLIN; KARVEL K. THORNBER	Equivalence in knowledge representation: automata, recurrent neural networks, and dynamical fuzzy systems	learning
 maybe	OmlThoGil-RepFuzFinStaAuConRecNeuNet	C. Omlin, K.K. Thornber, C. Giles	Representation of fuzzy finite-state automata in continuous recurrent neural networks	learning, neunet
-okay	Gil+-LeaExtFinStaAutSecOrdRecNeuNet	C.L. Giles, C.B. Miller, D. Chen, H.H. Chen, G.Z. Sun, Y.C. Lee	Learning and extracting finite state automata with second-order recurrent neural networks	learning, neunet
+maybe	Gil+-LeaExtFinStaAutSecOrdRecNeuNet	C.L. Giles, C.B. Miller, D. Chen, H.H. Chen, G.Z. Sun, Y.C. Lee	Learning and extracting finite state automata with second-order recurrent neural networks	learning, neunet, but not fuzzy
 xxx	Adl-FuzSetTheMedDia	K.P. Adlassing	Fuzzy set theory in medical diagnosis	not automata
 xxx	Coi-IntMonConDynPhySys	E. Coiera	Intelligent monitoring and control of dynamic physiological systems	nor automata and fuzzy
 need more read	WufQin-FuzAutSysApp	Wuf, E. Qing	Fuzzy automata system with application	image, not exactly automata
@@ -126,7 +126,7 @@ xxx	MacSha-RefDomTheExprFinStaAut	R. Maclin, J. Shavlik	Refining domain theories
 xxx	KicLem-AppFuzConWarWatPla	W.J.M. Kickert, H. van Nauta Lemke	Application of a fuzzy controller in a warm water plant	not automata
 xxx	MenLip-FusSpecFinStaMach	S. Mensch, H. Lipp	Fuzzy specification of finite-state machines	not automata
 xxx	Sen-FuzComGraIntIntDes	H. Senay	Fuzzy command grammars for intelligent interface design	not automata
-need more read	PedGac-LeaFuzzAut	W. Pedrycz, A. Gacek	Learning of fuzzy automata	learning! Automata
+super	PedGac-LeaFuzzAut	W. Pedrycz, A. Gacek	Learning of fuzzy automata	learning! Automata
 maybe	Rei-FuzAutLif	C.A. Reiter	Fuzzy automata and life	cellular
 maybe	SriTiw-TopoFuzAut	A.K. Srivastava, S.P. Tiwari	A topology for fuzzy automata	theory
 okay	BlaDelPeg-FuzzGraIntUsiNeuNet	A. Blanco, M. Delgado, M. Pegalajar	Fuzzy grammar inference using neural networks	neunet, learning, 

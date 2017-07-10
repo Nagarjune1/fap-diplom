@@ -4,7 +4,6 @@
 
 \include{headers}
 
-%opening
 \title{Nové poznámky k diplomce}
 \author{Martin Jašek}
 \date{5. červenec 2017 --- ??}
@@ -15,7 +14,25 @@
 \tableofcontents
 \newpage
 
-\section{}
+\section{Aktuální seznam nalezených technik}
+
+\begin{itemize}
+ \item deformace a modifikace klasického automatu pro rozpoznávání řetězců
+ \item převod Fuzzy automatu na neuronovou síť
+ \item fuzzy buněčné automaty
+ \item Fuzzy Tree automaty
+ \item učení automatu (PedGac-LeaFuzzAut)
+\end{itemize}
+
+\section{Aktuální seznam reálných aplikací}
+\begin{itemize}
+ \item Podobnostní porovnávání řetězců, určení nejpodobnějšího (deformace a modifikace klasického automatu pro rozpoznávání řetězců)
+ \item hledání hran (pomocí buněčných automatů)
+ \item rozpoznávání domečku (pomocí Fuzzy Tree automatu)
+ \item Petriho sítě (???)
+ \item urban trafic problem (???)
+ \item city growt problem (???)
+\end{itemize}
 
 \section{Další možné aplikace}
 \begin{itemize}
@@ -23,9 +40,19 @@
  \item Lindenmayer system
  \item Fuzzy DNA Motifs ?
  \item zobecnit jakékoliv aplikace klasických automatů?
- \item zaměřit se i na buněčné?
  \item uměle se snažit vpasovat automaty na klasické fuzzy problémy?
- \item co třeba porovnávání množin (nebo množin množin)?
+ \item zaměřit se i na buněčné?
+ \item co třeba porovnávání množin (nebo množin množin)? $\Rightarrow$ Fuzzy Tree automaty? (má to logicky smysl? množiny jsou exaktní, proč přibližné porovnávání?)
+ \item přechodové systémy, distribuované systémy, něco s nima?
+ \item teorie her? nějaký model pro AI hráče?
+ \item výpočty, aproximace, rozklad? (čísel z $[0,1]$)
+ \item problém inference gramatiky (z jazyka)
+ \item výpočty s celými slovy
+\end{itemize}
+
+\section{Vlastní návrhy}
+\begin{itemize}
+ \item fuzzy \uv{binární} klasifikace (detekce síl hesla), de facto se jedná o problém inference gramatiky
  
 \end{itemize}
 
