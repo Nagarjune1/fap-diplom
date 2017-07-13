@@ -132,7 +132,7 @@ maybe	SriTiw-TopoFuzAut	A.K. Srivastava, S.P. Tiwari	A topology for fuzzy automa
 okay	BlaDelPeg-FuzzGraIntUsiNeuNet	A. Blanco, M. Delgado, M. Pegalajar	Fuzzy grammar inference using neural networks	neunet, learning, 
 xxx	Kle-RepEveNervNetFinAut	S.C. Kleene	Representation of events in nerve nets and finite automata	not fuzzy
 xxx	Eil-AutLangMach	S. Eilenberg	Automata, Languages, and Machines	not fuzzy
-need more read	GecSte-TreeAut	F. Gécseg, M. Steinby	Tree Automata	tree
+xxx	GecSte-TreeAut	F. Gécseg, M. Steinby	Tree Automata	tree, not fuzzy
 xxx	BerReu-RecForPowSerTre	J. Berstel, C. Reutenauer	Recognizable formal power series on trees	not fuzzy
 need more read	NasHon-FuzEveReaProbAut	M. Nasu and N. Honda	Fuzzy events realized by probabilistic automata	fuzzy and probablistic automata, theory, definition, approach
 okay	Bel-DetFuzAut	R. Bělohlávek	Determinism and fuzzy automata	theory, definition, determinism
@@ -273,3 +273,4 @@ okay	San-MaxProdMac			theory, minimalisation, definition, original
 maybe	San-GenForSeqMac			theory, definition general
 maybe	Miz-FuzAutFuzGra			theory, grammars
 maybe	AfoGol-MinUniFreDecRegLan			theory, regex, decomposition
+	CaoChe-FuzPetNetModComWord			

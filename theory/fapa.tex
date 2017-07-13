@@ -24,7 +24,7 @@ Tato kapitola zatím poslouží jako \uv{skladiště} pro definice a zavedení z
 Abecedy budou značeny standardně, tedy velkými řeckými písmeny (typicky $\Sigma$). Řetězce pak malými písmeny ($\omega, \alpha, \dots$). Jazyky velkými kaligrafickými písmeny. Jazyk přijímaný automatem $A$ bude značen $\mathcal{L}(A)$.
 
 \subsubsection*{Fuzzy teorie}
-Fuzzy množiny a relace budou po vzoru \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} nejčastěji malými řeckými písmeny. Množinu všech fuzzy podmnožin množiny $S$ budeme značit $\fsubsets{S}$.
+Fuzzy množiny a relace budou po vzoru \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} nejčastěji malými řeckými písmeny (obdobně jako jejich členské (angl. \uv{membership}) funkce). Množinu všech fuzzy podmnožin množiny $S$ budeme značit $\fsubsets{S}$.
 
 \subsubsection*{Deterministický bivalentní automat}
 \TODO{zdroj: Eilenberg S.: Automata, Languages and Machines, Vol. A, Academic Press, New York, 1974. Pokud ji někde seženu (odkazuje se na ni Bel v \cite{Bel-FuzRelSyss}}
@@ -189,7 +189,118 @@ LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon, definice 5.1, 5.2 (+ opsat důkaz, �
 
 Algoritmus převodu reg na aut, \cite{StaCir-ConsFuzzAutFuzzRegExp}. Ale zdá se mi to až moc složité.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Další varianty fuzzy automatů}
+V této kapitole budou rozebrány další výpočetní modely, které jsou založeny na fuzzy automatech. Tyto výpočetní modely sice přichází o jednoduchost \uv{klasických} fuzzy automatů, nicméně jsou blíže k reálným aplikacím a proto je na místě se jimi zabývat.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy zásobníkové automaty}
+\TODO{tohle vzít asi jen teoreticky, v aplikacích se vlastně ani moc nepoužívají}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy tree automaty}
+Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání řetězců, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat vybranné jazyky popsané bezkontextovými gramatikami.
+
+Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole vycházeno z \cite{MorMal-FuzzyAutLang}.
+
+Fuzzy automaty pracují se speciálními strukturami symbolů, tzv. stromy. Následuje tedy definice stromů.
+
+\begin{definition}[Doména stromu]
+  Mějme abacedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
+  \begin{itemize}
+   \item jestliže $w \in U$ a $w = uv$ pak $u \in U$ pro všechna $u, v, w \in \Sigma^+$ (tj. množina je prefixově uzavřena)
+   \item $wn \in U$ a $m \leq n$ implikuje $wm \in U$, pro všechna $w \in \Sigma^+$ a $m, n \in \Sigma$
+  \end{itemize}
+\end{definition}
+ Doména stromu je vlastně množina řetězců, které formují prefixový strom. Množnu $U$ tak rozložit na množinu $\overline{U}$ listových uzlů jako
+$$
+ \overline{U} = \{ w \in U | \text{$U$ neobsahuje žádný řetězec $w' \neq w$ s prefixem $w$} \}
+$$
+a množninu vnitřních uzlů jako $U \setminus \overline{U}$.
+\begin{definition}[Částečně spořádaná abeceda]
+  Částečně spořádaná abeceda je dvojice $(N, T)$, kde $N$ a $T$ jsou dvě disjunktní konečné abecedy (tj. $N \cap T = \emptyset$).
+\end{definition}
+
+\begin{definition}[Strom]
+ Strom $t$ nad částečně spořádnou abecedou $(N, T)$ je zobrazení z domény $U$ stromu do $(N \cup T) $ (psáno $t: U \rightarrow (N, T)$) takové, že
+ \begin{itemize}
+  \item $t(w) \in N$ pokud $w \in U \setminus \overline{U}$
+  \item $t(w) \in T$ pokud $w \in \overline{U}$
+ \end{itemize}
+\end{definition}
+Takto nadefinovaný strom lze snadno graficky ztvárnit. Stačí si uvědomit, jak se vyobrazují prefixové stromy (tím se zobrazí doména stromu $t$) a následně se přeznačí všechny uzly $w$ hodnotou $t(w)$.
+
+\begin{example} \label{ex:trees}
+ Příklady stromů nad částenčě spořádanou abecedou $(N, T)$, kde $N = \{m, r, s\}$ a $T = \{ x, y \}$ jsou na obrázku \ref{img:RootTree}.
+\end{example}
+
+\begin{figure}
+ \includegraphics{trees0}
+ \caption{Kořenové stromy termů z příkladu \ref{ex:terms}} \label{img:RootTree}
+\end{figure}
+
+Automaty jsou však modely, které pracují s řetězci, tedy (lineárními) posloupnostmi symbolů. Je proto třeba zavést způsob, jak zakódovat stromy do řetězců. Řetězcům, které kódují stromy budeme říkat pseudotermy.
+%\footnote{Term zde bude chápán v podobném významu jako například v predikátové logice}
+
+\begin{definition}[Pseudoterm]
+ Označme $D_{(N,T)}^p$ nejmenší podmnožinu $(N \cup T \cup \{ (, ) \})^*$ splňující následující podmínky:
+ \begin{itemize}
+  \item $T \subset D_{(N,T)}^p$
+  \item pokud $n > 0$, $A \in N$ a $t_1, \dots, t_n \in D_{(N,T)}^p$, pak $A(t_1 \dots t_n) \in D_{(N,T)}^p$ 
+ \end{itemize}
+ Prvky množiny $D_{(N,T)}^p$ nazývejme pseudotermy.
+\end{definition}
+
+\begin{example} \label{ex:terms}
+ Pro částečně spořádanou abecedu s předchozího příkladu mohou být pseudotermy například: $y$, $S(x)$, $M(x x)$, $R(M(y S(x)) y)$
+\end{example}
+
+Nyní je třeba ukázat, že mezi stromy a pseudotermy platí vzájemně jednoznačný vztah.
+
+\begin{theorem}
+ Ke každému pseudotermu $p(t) \in D_{(N,T)}^p$ existuje odpovídající strom $t$.
+\end{theorem}
+\begin{proof}
+ Existenci stromu dokážeme přes strukturu pseudotermu:
+ \begin{itemize}
+  \item je-li pseudoterm atomický, tj. $p(t) = a$, kde $a \in T$, pak doménou stromu $t$ je množina $\{ \epsilon \}$ a $t(\epsilon) = a$
+  \item pokud je pseudoterm ve tvaru $p(t) = A({t_1}^p \dots {t_m}^p)$, pak doménou stromu $t$ je množina $\bigcup_{i \leq m} \{ i w | w \in domain(t_i) \} \cup \{ \epsilon \}$ a 
+  $$
+   t(w) = 
+   \begin{cases}
+    A	& \text{ pokud $w = \epsilon$}	\\
+    t_i(w')	& \text{ pokud je $w = i w'$ a $w$ je v doméně $t$}
+   \end{cases}
+  $$
+ \end{itemize}
+\end{proof}
+
+\begin{notation*}
+ Množinu všech stromů nad $(N,T)$ značme $D_{(N,T)}$ a jednotlivé stromy $t \in D_{(N,T)}$. Množinu všech pseudotermů značme $D_{(N,T)}^p$ a pseudoterm korespondující stromu $t$ značme $p(t)$.
+\end{notation*}
+
+\begin{definition}[Fuzzy jazyk stromů]
+ Fuzzy množinu $T$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
+\end{definition}
+
+
+
+% Nyní můžeme přejít k definici fuzy tree automatu a souvisejících pojmů.
+% \begin{definition}[Fuzzy tree automat]
+%  Fuzzy tree automat $A$ spořádané abecedy $\Phi$ je trojice $(Q, \mu, q_0)$, kde
+%  \begin{itemize}
+%   \item $Q$ je množina neterminálních uzlů
+%   \item $q_0 \in Q$ je počáteční neterminál
+%   \item $\mu: Q \times T(\Phi, Q) \rightarrow [0, 1]$ je množina fuzzy přepisovacích pravidel 
+%  \end{itemize}
+% \end{definition}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Buněčné fuzzy automaty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -703,10 +814,11 @@ V této kapitole byl zaveden pojem rozpoznávání textových vzorů. Bylo ukáz
 
 Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná na prosté nahrazování podobných symbolů. Technika fuzzy symbolů funguje na stejném principu, jen se liší ve formálním zavedení. Technika s využitím editačních operací umožňuje specifikovat stupeň akceptance základních editačních operací (vložení symbolu, odebrání symbolu, náhrada symbolu). Poslední technika, deformovaný automat, umožňuje libovolnou transformaci automatu, vedoucí až k libovolnému vzoru.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \section{Konkrétní příklady}
 \subsection{Rozpoznávní ručně psaného textu}

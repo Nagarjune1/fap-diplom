@@ -11,7 +11,7 @@ H.~A.~Girijamma Dr. V.~Ramaswamy.
   comparison.
 \newblock {\em International Journal of Computer Applications}, 2012.
 
-\bibitem{AstGariGonVillFar+-ApprStrMatUsiDefFuzzAutLearExpr}
+\bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
 J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
   Villadangos;~F. Farina.
 \newblock Approximate string matching using deformed fuzzy automata: A learning
@@ -29,6 +29,11 @@ S.S.~Yau G.F.~DePalma.
 \newblock {\em US–Japan Seminar on Fuzzy Sets and their Applications}, 1974.
 \newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
   MorMal-FuzzAutAndLangs 10.7.
+
+\bibitem{Hua-SyntPattRecSeisOilExp}
+Kou-Yuan Huang.
+\newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
+\newblock World Scientific, 2002.
 
 \bibitem{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}
 J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
@@ -50,6 +55,16 @@ José R.~Garitagoitia José R. González~de Mendívil.
 S.~C.~Kremer M.~Doostfatemeh.
 \newblock New directions in fuzzy automata.
 \newblock {\em International Journal of Approximate Reasoning}, 2004.
+
+\bibitem{MogZadAme-NewDirInFuzzTreeAut}
+M.~M.~ZAHEDI S.~MOGHARI and R.~AMERI.
+\newblock New direction in fuzzy tree automata.
+\newblock {\em Iranian Journal of Fuzzy Systems}, 2011.
+
+\bibitem{ChaJos-NoteFuzzTreeAut}
+Mukta N.~Joshi S.~R.~Chaudhari.
+\newblock A note on fuzzy tree automata.
+\newblock {\em International Journal of Computer Applications}, 2012.
 
 \bibitem{StaCir-ConsFuzzAutFuzzRegExp}
 Miroslav Stamenkovic, Aleksandar;~Ciric.

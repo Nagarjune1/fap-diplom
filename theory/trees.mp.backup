@@ -1,0 +1,51 @@
+outputtemplate:="%j%c.mps";
+
+
+
+beginfig(0);	%ctverice korenovych stromu pro termy 
+  %% s(p)
+  pair As, Ap;
+  As := (50, 50); Ap := (50, 40);
+  
+  dotlabel.urt(btex $s$ etex, As);
+  dotlabel.urt(btex $p$ etex, Ap);
+  
+  draw As--Ap;
+
+  %% s(m(p, s(x)), y)
+  pair Bs, Bm, Bp, Bss, Bx, By;
+  Bs := (150, 50); Bm := (125, 40); Bp := (115, 30); Bss := (135, 30); Bx := (135, 20); By := (175, 40); 
+  
+  dotlabel.urt(btex $s$ etex, Bs);
+  dotlabel.urt(btex $m$ etex, Bm);
+  dotlabel.urt(btex $s$ etex, Bss);
+  dotlabel.urt(btex $x$ etex, Bx);
+  dotlabel.urt(btex $p$ etex, Bp);
+  dotlabel.urt(btex $y$ etex, By);
+  
+  draw Bs--Bm;	draw Bs--By;
+  draw Bm--Bss;	draw Bm--Bp;
+  draw Bss--Bx;	
+  
+  %% r(x, x)
+  pair Cr, Cx, Cxx;
+  Cr := (250, 50); Cx := (225, 40); Cxx := (275, 40); 
+  
+  dotlabel.urt(btex $r$ etex, Cr);
+  dotlabel.urt(btex $x$ etex, Cx);
+  dotlabel.urt(btex $x$ etex, Cxx);
+  
+  draw Cr--Cx;	draw Cr--Cxx;
+  
+  
+  %% y
+  pair Dy;
+  Dy := (350, 50); 
+  
+  dotlabel.urt(btex $y$ etex, Dy);
+  
+endfig;
+
+end.
+
+
