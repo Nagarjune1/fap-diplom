@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.8)  13 JUL 2017 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.8)  16 JUL 2017 00:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -184,11 +184,32 @@ Package: showlabels 2013/12/06 v1.6.6
 Package: `showlabels' v1.6.6 <2013/12/06>
 with amsmath equation tags
 \SL@labelposition=\count106
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 )
-\c@definition=\count107
-\c@theorem=\count108
-\c@note=\count109
-\c@example=\count110
+\c@ContinuedFloat=\count107
+)
+\c@subfigure=\count108
+\c@subtable=\count109
+)
+\c@definition=\count110
+\c@theorem=\count111
+\c@note=\count112
+\c@example=\count113
 ) (./fapa.aux
 
 LaTeX Warning: Label `def-PreFunFuzzStav' multiply defined.
@@ -234,20 +255,20 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count111
+\Gread@gobject=\count114
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen123
+\scratchcounter=\count115
+\scratchdimen=\dimen130
 \scratchbox=\box28
-\nofMPsegments=\count113
-\nofMParguments=\count114
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen124
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen131
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks32
 ))) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -297,9 +318,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\Gin@req@height=\dimen125
-\Gin@req@width=\dimen126
+\Gin@req@height=\dimen132
+\Gin@req@width=\dimen133
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
@@ -356,94 +380,64 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
  [4]
-
-LaTeX Warning: Citation `Com+-TreeAutTecApp' on page 5 undefined on input line 
-205.
-
-
-LaTeX Warning: Citation `Bez+-FuzModAlgPatRecImProc' on page 5 undefined on inp
-ut line 205.
-
-
-LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 5 undefined on input l
-ine 205.
-
-
-LaTeX Warning: Citation `EsiLiu-FuzzTreeAut' on page 5 undefined on input line 
-205.
-
-
-LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 5 undefined on input line
- 205.
-
-
-LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 5 undefined on input line
- 205.
-
-[5]
-File: trees0.mps Graphic file (type mps)
- [MP to PDF] (./trees0.mps) [6]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 267.
-
-Overfull \hbox (1.78622pt too wide) in paragraph at lines 311--312
+Overfull \hbox (1.78622pt too wide) in paragraph at lines 203--204
 []\OT1/cmr/m/n/10 Typick^^Sym p^^Tr^^S^^Pkladem je nap^^Tr. de-tekce obli^^Tcej
 e na fo-to-gra-fii, tedy roz-pozn^^Sav^^San^^S^^P
  []
 
 
-Overfull \hbox (2.42401pt too wide) in paragraph at lines 311--312
+Overfull \hbox (2.42401pt too wide) in paragraph at lines 203--204
 \OT1/cmr/m/n/10 vzor^^Wu v ob-ra-zov^^Sych da-tech. Vzory je v^^Tsak mo^^Tzn^^S
 e roz-pozn^^Savat v t^^Sem^^Te^^Tr jak^^Sychkoliv
  []
 
-[7]
-Overfull \hbox (10.41849pt too wide) in paragraph at lines 347--349
+[5]
+Overfull \hbox (10.41849pt too wide) in paragraph at lines 239--241
 []\OT1/cmr/m/it/9 (zde bude do-pln^^Teno: a co pravd^^Tepodobnostn^^S^^P?)   (z
 de bude do-pln^^Teno: Proto^^Tze nap^^Tr^^S^^Pklad:
  []
 
-[8]
-Overfull \hbox (0.52968pt too wide) in paragraph at lines 364--365
+[6]
+Overfull \hbox (0.52968pt too wide) in paragraph at lines 256--257
 \OT1/cmr/m/n/10 do^^Tsli, po-kud bychom au-to-mat zkon-stru-o-vali kon-verz^^S^
 ^P gra-ma-tiky nebo re-gul^^Sern^^S^^Pho
  []
 
 File: diags0.mps Graphic file (type mps)
-[MP to PDF] (./diags0.mps) [9]
-Overfull \hbox (4.69621pt too wide) in paragraph at lines 405--406
+[MP to PDF] (./diags0.mps) [7]
+Overfull \hbox (4.69621pt too wide) in paragraph at lines 297--298
 []\OT1/cmr/m/n/10 Nyn^^S^^P m^^Same k dis-po-zici fuzzy au-to-mat, kter^^Sy ost
 ^^Tre roz-pozn^^Sav^^Sa vzo-rov^^Sy ^^Tret^^Tezec.
  []
 
-[10] [11]
+[8]
 File: diags5.mps Graphic file (type mps)
  [MP to PDF] (./diags5.mps)
-Overfull \hbox (32.40999pt too wide) in paragraph at lines 471--472
+Overfull \hbox (32.40999pt too wide) in paragraph at lines 363--364
  [][] 
  []
 
-[12]
+[9] [10]
 File: diags6.mps Graphic file (type mps)
  [MP to PDF] (./diags6.mps)
-Overfull \hbox (32.40999pt too wide) in paragraph at lines 535--536
+Overfull \hbox (32.40999pt too wide) in paragraph at lines 427--428
  [][] 
  []
 
-[13]
-Overfull \hbox (1.80737pt too wide) in paragraph at lines 569--570
+[11]
+Overfull \hbox (1.80737pt too wide) in paragraph at lines 461--462
 \temp vy-rovn^^San^^S^^P jed-not-liv^^Sa, ale mno^^Tzinu v^^Tsech mo^^Tzn^^Sych
  vy-rovn^^San^^S^^P mezi dvo-jic^^S^^P ^^Tret^^Tezc^^Wu. 
  []
 
-[14] [15] [16]
-Overfull \hbox (12.35283pt too wide) in paragraph at lines 682--683
+[12] [13] [14]
+Overfull \hbox (12.35283pt too wide) in paragraph at lines 574--575
 []\OT1/cmr/m/it/10 P^^Trechodov^^Sy di-a-gram to-hoto au-to-matu je k na-le-zen
-^^S^^P na obr^^Sazku 5[]. V p^^Trechodov^^Sem
+^^S^^P na obr^^Sazku 4[]. V p^^Trechodov^^Sem
  []
 
 
-Overfull \hbox (3.38878pt too wide) detected at line 704
+Overfull \hbox (3.38878pt too wide) detected at line 596
 \temp M[]\temp (\temp \temp ) = \temp ^^V[]\temp (\temp ^^[; abc\temp )(\temp 
 q[]\temp ) = []([]([]([](\temp ^^[; ^^O\temp )\temp ; a\temp )\temp ; b\temp )\
 temp ; c\temp )(\temp q[]\temp ) = \temp f\temp q[]=\temp 1\temp g\temp (\temp 
@@ -451,7 +445,7 @@ q[]\temp ) = 1
  []
 
 
-Overfull \hbox (17.10289pt too wide) detected at line 715
+Overfull \hbox (17.10289pt too wide) detected at line 607
 \temp M[]\temp (\temp \temp ) = \temp ^^V[]\temp (\temp ^^[; ab\temp )(\temp q
 []\temp ) = []([]([](\temp ^^[; ^^O\temp )\temp ; a\temp )\temp ; b\temp )(\tem
 p q[]\temp ) = \temp f\temp q[]=\temp 1\temp ; q[]=\temp 0\temp :\temp 1\temp g
@@ -459,7 +453,7 @@ p q[]\temp ) = \temp f\temp q[]=\temp 1\temp ; q[]=\temp 0\temp :\temp 1\temp g
  []
 
 
-Overfull \hbox (35.12962pt too wide) detected at line 751
+Overfull \hbox (35.12962pt too wide) detected at line 643
 \temp S[]\temp (\temp \temp ) = \temp R\temp (\temp a; a\temp ) \temp 
  \temp R\temp (\temp b; b\temp ) \temp 
  \temp R\temp (\temp a; ^^O\temp ) \temp 
@@ -471,9 +465,8 @@ Overfull \hbox (35.12962pt too wide) detected at line 751
  \temp 0\temp ; \temp 2 = 0\temp ; \temp 04
  []
 
-[17]
 File: diags4.mps Graphic file (type mps)
- [MP to PDF] (./diags4.mps)
+[MP to PDF] (./diags4.mps) [15]
 File: diags1.mps Graphic file (type mps)
  [MP to PDF] (./diags1.mps)
 File: diags2.mps Graphic file (type mps)
@@ -481,29 +474,120 @@ File: diags2.mps Graphic file (type mps)
 (./diags2.mps)
 File: diags3.mps Graphic file (type mps)
  [MP to PDF] (./diags3.mps)
-Overfull \hbox (93.59189pt too wide) in paragraph at lines 794--806
+Overfull \hbox (93.59189pt too wide) in paragraph at lines 686--698
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18]
-Overfull \hbox (22.05742pt too wide) in paragraph at lines 813--814
+
+Overfull \hbox (22.05742pt too wide) in paragraph at lines 705--706
 \temp ^^Tze pro kla-sic-kou te-o-rii au-to-mat^^Wu je to trivi^^Saln^^S^^P prob
 l^^Sem, kter^^Sy v^^Tsak kv^^Wuli nep^^Tresnostem
  []
 
-
-Overfull \hbox (4.73058pt too wide) in paragraph at lines 815--816
+[16]
+Overfull \hbox (4.73058pt too wide) in paragraph at lines 707--708
 \temp stejn^^Sem prin-cipu, jen se li^^Ts^^S^^P ve form^^Saln^^S^^Pm za-ve-den^
 ^S^^P. Tech-nika s vyu^^Tzit^^S^^Pm edita^^Tcn^^S^^Pch
  []
 
-[19] [20] (./fapa.bbl
+
+LaTeX Warning: Citation `Com+-TreeAutTecApp' on page 17 undefined on input line
+ 717.
+
+
+LaTeX Warning: Citation `Bez+-FuzModAlgPatRecImProc' on page 17 undefined on in
+put line 717.
+
+
+LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 17 undefined on input 
+line 717.
+
+
+LaTeX Warning: Citation `EsiLiu-FuzzTreeAut' on page 17 undefined on input line
+ 717.
+
+
+LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 17 undefined on input lin
+e 717.
+
+
+LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 17 undefined on input lin
+e 717.
+
+[17]
+Overfull \hbox (6.86183pt too wide) in paragraph at lines 721--722
+[]\temp Terminologie v n^^Sasleduj^^S^^Pc^^S^^Pch pod-ka-pi-tol^^Sach bude de-m
+on-strov^^Sana na p^^Tr^^S^^Pkladech
+ []
+
+
+Overfull \hbox (6.81299pt too wide) in paragraph at lines 721--722
+\temp syn-taxe jed-no-duch^^Seho al-ge-braick^^Seho kal-kulu. Tento kal-kul bud
+e dis-po-no-vat dv^^Tema
+ []
+
+File: trees0.mps Graphic file (type mps)
+[MP to PDF] (./trees0.mps)
+File: trees1.mps Graphic file (type mps)
+ [MP to PDF] (./trees1.mps)
+File: trees2.mps Graphic file (type mps)
+ [MP to PDF] (./trees2.mps) [18]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 800.
+
+Overfull \hbox (27.6111pt too wide) in paragraph at lines 824--824
+[]\OT1/cmr/bx/n/12 Definice fuzzy tree au-to-matu a ja-zyka j^^S^^Pm roz-pozn^^
+Savan^^Seho 
+ []
+
+
+Overfull \hbox (15.50137pt too wide) in paragraph at lines 826--827
+\OT1/cmr/bx/n/10 Definice 3.20 \temp (Fuzzy tree au-to-mat)\OT1/cmr/bx/n/10 . \
+OT1/cmr/m/it/10 Fuzzy tree au-to-mat $\temp A$ \OT1/cmr/m/it/10 je p^^Tetice $\
+temp (\temp Q; T; N; ^^V; F\temp )$\OT1/cmr/m/it/10 ,
+ []
+
+[19]
+Overfull \hbox (1.66646pt too wide) in paragraph at lines 894--895
+\OT1/cmr/m/it/10 nujme fuzzy p^^Trechodovou funkci strom^^Wu jako zob-ra-zen^^S
+^^P $\temp ^^V[] \temp : \temp Q \OMS/cmsy/m/n/10 ! \temp [0\temp ; \temp 1]$ \
+OT1/cmr/m/it/10 n^^Sasledovn^^Te: 
+ []
+
+[20]
+
+LaTeX Warning: Reference `fig:Trees:third' on page 21 undefined on input line 9
+45.
+
+
+LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 21 undefined on input 
+line 962.
+
+
+Overfull \hbox (7.70181pt too wide) in paragraph at lines 962--963
+\temp ge-o-me-t-rick^^Se tvary. Tech-niku de-mon-struj^^S^^P na probl^^Semu roz
+-pozn^^Sav^^San^^S^^P jed-no-duch^^Seho
+ []
+
+[21]
+Overfull \hbox (34.45732pt too wide) in paragraph at lines 973--974
+[]\temp Jmenovan^^Sym vlast-nos-tem byly p^^Tri^^Trazeny ne-ter-min^^Saln^^S^^P
+ sym-boly $\temp Env; Surf; Ext; Tail$
+ []
+
+
+Overfull \hbox (153.4508pt too wide) in paragraph at lines 973--974
+\temp a ter-min^^Saln^^S^^P sym-boly po ^^Trad^^Te $\temp water; land; air; lea
+ther; scales; hair; feather; leg; hand; wing; fin; notail; short; long$\temp .
+ []
+
+[22] [23] (./fapa.bbl
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)) [21] (./fapa.aux)
+)) [24] (./fapa.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -515,13 +599,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5267 strings out of 494422
- 69494 string characters out of 6164717
- 146430 words of memory out of 5000000
- 8379 multiletter control sequences out of 15000+600000
+ 6374 strings out of 494422
+ 89432 string characters out of 6164717
+ 162944 words of memory out of 5000000
+ 9471 multiletter control sequences out of 15000+600000
  16157 words of font info for 62 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
- 51i,14n,27p,730b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,14n,42p,730b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -532,23 +616,27 @@ onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pf
-b>
-Output written on fapa.pdf (21 pages, 361388 bytes).
+cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on fapa.pdf (24 pages, 420354 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

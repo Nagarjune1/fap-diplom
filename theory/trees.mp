@@ -2,8 +2,7 @@ outputtemplate:="%j%c.mps";
 
 
 
-beginfig(0);	%ctverice korenovych stromu pro termy 
-  %% S(x)
+beginfig(0);	%korenovy strom S(x)
   pair As, Ap;
   As := (15, 60); Ap := (15, 40);
   
@@ -11,23 +10,25 @@ beginfig(0);	%ctverice korenovych stromu pro termy
   dotlabel.ulft(btex $x$ etex, Ap);
   
   draw As--Ap;
-
-  %% R(M(x S(y)), x)
-  pair Br, Bm, Bp, Bs, Bx, By;
-  Br := (75, 60); Bm := (60, 40); Bp := (45, 20); Bs := (75, 20); Bx := (75, 00); By := (90, 40); 
+endfig;
   
-  dotlabel.ulft(btex $R$ etex, Br);
+beginfig(1);	%korenovy strom R(M(x S(y)), x)
+  pair Bp, Bm, By, Bs, Bx, Byy;
+  Bp := (75, 60); Bm := (60, 40); By := (45, 20); Bs := (75, 20); Bx := (75, 00); Byy := (90, 40); 
+  
+  dotlabel.ulft(btex $P$ etex, Bp);
   dotlabel.ulft(btex $M$ etex, Bm);
   dotlabel.urt(btex $S$ etex, Bs);
   dotlabel.urt(btex $x$ etex, Bx);
-  dotlabel.ulft(btex $y$ etex, Bp);
-  dotlabel.urt(btex $y$ etex, By);
+  dotlabel.ulft(btex $y$ etex, By);
+  dotlabel.urt(btex $y$ etex, Byy);
   
-  draw Br--Bm;	draw Br--By;
-  draw Bm--Bs;	draw Bm--Bp;
+  draw Bp--Bm;	draw Bp--Byy;
+  draw Bm--Bs;	draw Bm--By;
   draw Bs--Bx;	
-  
-  %% M(x, x)
+endfig;
+
+beginfig(2);	%korenovy strom M(x, x)
   pair Cm, Cx, Cxx;
   Cm := (135, 60); Cx := (120, 40); Cxx := (150, 40); 
   
@@ -36,7 +37,8 @@ beginfig(0);	%ctverice korenovych stromu pro termy
   dotlabel.urt(btex $x$ etex, Cxx);
   
   draw Cm--Cx;	draw Cm--Cxx;
-  
+endfig;
+
 %   
 %   %% y
 %   pair Dy;
@@ -44,7 +46,7 @@ beginfig(0);	%ctverice korenovych stromu pro termy
 %   
 %   dotlabel.ulft(btex $y$ etex, Dy);
 %   
-endfig;
+% endfig;
 
 end.
 
