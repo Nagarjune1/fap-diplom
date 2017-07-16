@@ -708,120 +708,139 @@ Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fuzzy tree automaty}
+\section{Fuzzy tree automaty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zavedení}
-Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání řetězců, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat vybranné jazyky popsané bezkontextovými gramatikami \TODO{fakt?}.
+Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání řetězců, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat některé bezkontextové jazyky.
 
 Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole vycházeno z \cite{MorMal-FuzzyAutLang}.
 
-Fuzzy automaty pracují se speciálními strukturami symbolů, tzv. stromy. JE tedy třeba začít definicí stromů. Následuje jejich zakódování do řetězců a v následující podkapitole samotná definice fuzzy tree automatu. Následně budou rozbrány základní vlastnosti fuzzy tree automatů. Na konci budou demonstrovány na příkladu rozpoznávání vzorů.
+Fuzzy automaty pracují se speciálními strukturami symbolů, tzv. stromy. K těmto stromům je navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních aplikací fuzzy automatů.
 
-Terminologie v následujících podkapitolách bude demonstrována na příkladech syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$ a konstantou $c$. Dále pak unárním operátorem $S$ (\uv{sinus}) a unárními i binárními operátory $P$ (\uv{plus}) a $M$ (\uv{mínus}). \TODO{zmínit fuzzyness (například $S(x, y)/ 0.3$)}
+Následující dvě podkapitoly budou doprovázeny příklady. Pro snažší pochopení a vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stromy a termy}
 \begin{definition}[Doména stromu]
-  Mějme abacedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
+  Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
   \begin{itemize}
    \item jestliže $w \in U$ a $w = uv$ pak $u \in U$ pro všechna $u, v, w \in \Sigma^+$ (tj. množina je prefixově uzavřena)
    \item $wn \in U$ a $m \leq n$ implikuje $wm \in U$, pro všechna $w \in \Sigma^+$ a $m, n \in \Sigma$
   \end{itemize}
 \end{definition}
- Doména stromu je vlastně množina řetězců, které formují prefixový strom. Množnu $U$ tak rozložit na množinu $\overline{U}$ listových uzlů jako
+ Na doménu stromu můžeme nahlížet jako na množina řetězců, které formují prefixový strom. Množinu $U$ tak lze rozložit na množinu $\overline{U}$ listových uzlů 
 $$
- \overline{U} = \{ w \in U | \text{$U$ neobsahuje žádný řetězec $w' \neq w$ s prefixem $w$} \}
+ \overline{U} = \{ w \in U | w u \notin U \text{ pro všechna } u \in \Sigma^+ \}
 $$
-a množninu vnitřních uzlů jako $U \setminus \overline{U}$.
+a množninu $U \setminus \overline{U}$ vnitřních uzlů.
+
 \begin{definition}[Částečně spořádaná abeceda]
   Částečně spořádaná abeceda je dvojice $(N, T)$, kde $N$ a $T$ jsou dvě disjunktní konečné abecedy (tj. $N \cap T = \emptyset$).
 \end{definition}
 
-\begin{definition}[Strom]
+\begin{definition}[Strom] \label{def:Tree}
  Strom $t$ nad částečně spořádnou abecedou $(N, T)$ je zobrazení z domény $U$ stromu do $(N \cup T) $ (psáno $t: U \rightarrow (N, T)$) takové, že
  \begin{itemize}
   \item $t(w) \in N$ pokud $w \in U \setminus \overline{U}$
   \item $t(w) \in T$ pokud $w \in \overline{U}$
  \end{itemize}
+ Místo $t(w)$ budeme psát jen $t$.
 \end{definition}
+Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu daného doménou $U$. To znamená, že strom dle definice \ref{def:Tree} je v korespondenci s pojmem \uv{strom} (resp. \uv{kořenový strom}) z teorie grafů. Z tohoto důvodu si pro jednoduchost můžeme odpustit definici souvisejících pojmů z teorie grafů pro strom z definice \ref{def:Tree}. Díky tomu můžeme stromy graficky zobrazovat, hovořit o jejich uzlech, potomcích, podstromech, vnitřních a listových uzlech bez nutnosti formálního nadefinování.
 
-Takto nadefinovaný strom lze snadno graficky ztvárnit. Stačí si uvědomit, jak se vyobrazují prefixové stromy (tím se zobrazí doména stromu $t$) a následně se přeznačí všechny uzly $w$ hodnotou $t(w)$.
-
-\TODO{nejen grafická podoba je vlastně docela intuitivní, ale i pojmy jako kořen, potomci, podstromy, a podob. Raděj to nějak zmínit.}
-
-\begin{example} \label{ex:trees}
- Příklady stromů nad částenčě spořádanou abecedou $(N, T)$, kde $N = \{M, P, S\}$ a $T = \{ x, y \}$ jsou na obrázku \ref{img:RootTree}.
+\begin{example} \label{ex:Trees}
+ Označme $T = \{ x, y \}$ a $N = \{ S, M \}$. Definujme doménu $U_1$ stromu pro abecedu $\Sigma = \mathbb{N}$ jako množinu řetězců $U_1 = \{ \epsilon, 1, 11, 12, 121, 2 \}$. Pak $\overline{U_1} = \{ 11, 121, 2 \}$. Strom $t_1: U_1 \rightarrow (T, N)$ nad $(T, N)$ pak může vypadat například takto:
+ $$
+ \begin{array}{lll}
+   t_1(\epsilon) = M	& t_1(1) = M	& t_1(12) = S \\
+   t_1(11) = x		& t_1(121) = y	& t_1(2) = x \\
+  \end{array}
+ $$
+ Grafické znázornění stromu $t_1$ je na obrázku \ref{img:Tree:first}. Další ukázky stromů jsou na zbylých podobrázcích obrázku \ref{img:Tree}.  
 \end{example}
 
 \begin{figure}
   \begin{subfigure}[t]{0.3\textwidth} \centering
    \includegraphics{trees0}
-   \caption{}
+   \caption{} \label{img:Tree:first}
   \end{subfigure}
 %  
   \begin{subfigure}[t]{0.3\textwidth} \centering
    \includegraphics{trees1}
-   \caption{}
+   \caption{} \label{img:Tree:second}
   \end{subfigure}
 %  
   \begin{subfigure}[t]{0.3\textwidth} \centering
    \includegraphics{trees2}
-   \caption{}
+   \caption{} \label{img:Tree:third}
   \end{subfigure}
   
- \caption{Kořenové stromy termů z příkladu \ref{ex:terms}} \label{img:RootTree}
+ \caption{Stromy k příkladu \ref{ex:Trees}} \label{img:Tree}
 \end{figure}
 
-Automaty jsou však modely, které pracují s řetězci, tedy (lineárními) posloupnostmi symbolů. Je proto třeba zavést způsob, jak zakódovat stromy do řetězců. Řetězcům, které kódují stromy budeme říkat pseudotermy.
-%\footnote{Term zde bude chápán v podobném významu jako například v predikátové logice}
+Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale občas vhodné mít lineární strukturu pro zápis téhož. Nadefinujeme si proto pseutermy, protějšky termů predikátové logiky.
 
 \begin{definition}[Pseudoterm]
- Označme $D_{(N,T)}^p$ nejmenší podmnožinu $(N \cup T \cup \{ (, ) \})^*$\footnote{Předpokládáme, že symboly závorek, $($ a $)$ nejsou součástí $N \cup T$} splňující následující podmínky:
+ Označme $D_{(N,T)}^p$ nejmenší podmnožinu\footnote{
+    pseudotermy mohou býz zřejmě generovány bezkontextovou gramatikou}
+%    $D_{(N,T)}$ je bezkontextový jazyk: gramatika jej generující by mohla vypadat například takto: $(\{ S, N_T, N_N, L \}, T \cup N \cup \{ (, ) \}, P, S)$, kde $P = \{ S \rightarrow T_T | T_N ( L ), T_T \rightarrow T_1 | \dots | T_n, T_N \rightarrow N_1 | \dots | N_k, L \rightarrow S L | \epsilon \}$.}
+ $(N \cup T \cup \{ (, ) \})^*$ splňující následující podmínky\footnote{
+    Předpokládáme, že symboly závorek, $($ a $)$ nejsou součástí $N \cup T$}:
  \begin{itemize}
   \item $T \subset D_{(N,T)}^p$
   \item pokud $n > 0$, $A \in N$ a $t_1, \dots, t_n \in D_{(N,T)}^p$, pak $A(t_1 \dots t_n) \in D_{(N,T)}^p$ 
  \end{itemize}
- Prvky množiny $D_{(N,T)}^p$ nazývejme pseudotermy.
+ Prvky množiny $t^p \in D_{(N,T)}^p$ nazývejme pseudotermy.
 \end{definition}
 
-\begin{example} \label{ex:terms}
- Pro částečně spořádanou abecedu s předchozího příkladu mohou být pseudotermy například: $y$, $S(x)$, $M(x x)$, $P(M(y S(x)) y)$
+\begin{example} \label{ex:PseTerms}
+ Pro částečně spořádanou abecedu $(N, T)$ s předchozího příkladu můžeme za termy označit například: $t^p_1 = y$, $t^p_2 = S(x)$, $t^p_3 = M(x x)$, $t^p_4 = M(M(x S(y)) x)$.
 \end{example}
 
-Nyní je třeba ukázat, že mezi stromy a pseudotermy platí vzájemně jednoznačný vztah.
+Mezi stromy a pseudotermy platí vzájemně převoditelný vztah. To bude nyní dokázáno.
+
+\begin{theorem}
+ Pro každý strom $t \in D_{(N,T)}$ nad částečně spořádanou abecedou $(N, T)$ existuje odpovídající pseudoterm $p(t)$.
+\end{theorem}
+\begin{proof}
+ Existenci pseudotermu dokážeme podle toho, zda-li je $t$ strom tvořený listovým nebo vnitřním uzlem. Je-li kořenový uzel stromu $t$ listový, tj. $t = a$, kde $a \in T$, pak $p(t) = a$. V opačném případě, tj. reprezentuje-li kořen stromu $t$ vnitřní uzel $t = X$, kde $X \in N$, pak $p(t) = X(p(t_1) \dots p(t_n))$, kde $t_1, \dots, t_n$ jsou podstromy stromu $t$.
+\end{proof}
 
 \begin{theorem}
  Ke každému pseudotermu $p(t) \in D_{(N,T)}^p$ existuje odpovídající strom $t$.
 \end{theorem}
 \begin{proof}
- Existenci stromu dokážeme přes strukturu pseudotermu:
+ Opět dokážeme strukturálně:
  \begin{itemize}
   \item je-li pseudoterm atomický, tj. $p(t) = a$, kde $a \in T$, pak doménou stromu $t$ je množina $\{ \epsilon \}$ a $t(\epsilon) = a$
-  \item pokud je pseudoterm ve tvaru $p(t) = A({t_1}^p \dots {t_m}^p)$, pak doménou stromu $t$ je množina $\bigcup_{i \leq m} \{ i w | w \in domain(t_i) \} \cup \{ \epsilon \}$ a 
+  \item pokud je pseudoterm ve tvaru $p(t) = A(t_1^p \dots t_m^p)$, pak doménou stromu $t$ je množina $\bigcup_{i \leq m} \{ i w | w \in domain(t_i) \} \cup \{ \epsilon \}$ a 
   $$
    t(w) = 
    \begin{cases}
-    A	& \text{ pokud $w = \epsilon$}	\\
+    A		& \text{ pokud $w = \epsilon$}	\\
     t_i(w')	& \text{ pokud je $w = i w'$ a $w$ je v doméně $t$}
    \end{cases}
   $$
  \end{itemize}
 \end{proof}
 
-\TODO{Nějak odúvodnit, proč je ten vztah opravdu jednoznačný.}
+\begin{example} 
+ Pseudoterm $t^p_4$ z předchozího příkladu odpovídá stromu na obrázku \ref{img:Tree:first} a pseudoterm $t^p_3$ stromu \ref{img:Tree:third} (a naopak).
+\end{example}
 
-\begin{notation*}
- Množinu všech stromů nad $(N,T)$ značme $D_{(N,T)}$ a jednotlivé stromy $t \in D_{(N,T)}$. Množinu všech pseudotermů značme $D_{(N,T)}^p$ a pseudoterm korespondující stromu $t$ značme $p(t)$.
-\end{notation*}
+Množinu stromů můžeme nazývat jazyk stromů. Fuzzy množinu stromů pak fuzzy jazyk stromů.
 
 \begin{definition}[Fuzzy jazyk stromů]
- Fuzzy množinu $T$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
+ Fuzzy množinu $\tau$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
 \end{definition}
 
 Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a listovými uzly. Termy jsou jejich zakódováním do řetězců. Máme tak nadefinován fuzzy jazyk stromů. Nyní se podíváme na fuzzy tree automaty, mechanizmy, které umožňují fuzzy jazyky stromů rozpoznávat.
 
-\subsection{Definice fuzzy tree automatu a jazyka jím rozpoznávaného}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy tree automat a jazyk jím rozpoznávaný}
+Začněme definicí fuzzy tree automatu.
+
 \begin{definition}[Fuzzy tree automat]
  Fuzzy tree automat $A$ je pětice $(Q, T, N, \mu, F)$, kde:
  \begin{itemize}
@@ -833,13 +852,10 @@ Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a 
  \end{itemize}
 \end{definition}
 
-\TODO{zmínit, že je nedeterministický}
-
-
-Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud má uzel $X$ $k$ potomků se stavy $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}.
+Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde při vstupu $a$. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud je na vstupu $X$ a automat se nachází ve stavech $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}. Vzhledem k tomu, že automat se může nacházet ve více stavech současně, jeho výpočet bude zcela určitě nedeterministický.
 
 \begin{example}
- Uvažujme množiny $N$ a $T$ stejné, jako v předchozích příkladech ($N = \{ M, P, S \}$ a $T = \{ x, y, c \}$). Stanovme $Q = \{ q_0, q_1, q_2 \}$. Fuzy množinu $F$ položme rovnu $\{ q_0 / 1 \}$ a zobrazení $\mu$ je v tabulce \ref{tab:MuOfFuzTreAut}. Pak $A = (Q, T, N, \mu, F)$ je fuzzy tree automatem.
+ Uvažujme množiny $N$ a $T$ stejné, jako v předchozích příkladech. Stanovme $Q = \{ q_1, q_2 \}$. Fuzy množinu $F$ položme rovnu $\{ q_2 \}$ a zobrazení $\mu$ je zaznačeno v tabulce \ref{tab:MuOfFuzTreAut}. Pak $A = (Q, T, N, \mu, F)$ je fuzzy tree automatem.
 \end{example}
 
 \begin{table}
@@ -887,7 +903,6 @@ Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminá
   \caption{Příklad přechodové funkce $\mu$ fuzzy tree automatu} \label{tab:MuOfFuzTreAut}
 \end{table}
 
-
 Nyní se podíváme na stromy a jazyk stromů, které fuzzy tree automat rozpoznává.
 
 \begin{definition}[Fuzzy přechodová funkce stromů]
@@ -901,20 +916,6 @@ Nyní se podíváme na stromy a jazyk stromů, které fuzzy tree automat rozpozn
   $$
   \item pokud $t = a$, kde $a \in T$, pak $\mu_t = \mu_a$. 
  \end{itemize}
-
-% Toto jsem z MorMal-FuzzyAutLang nepochopil, q_1 \dots q_n je tam podle mě totálně zbytečně... :-O
-%
-%  Pro strom $t \in D_{(N,T)}$ definujme fuzzy přechodovou funkci stromů jako zobrazení $\mu_t: \{ f | f: Q^* \times Q \rightarrow  [0,1] \} \rightarrow [0,1]$ následovně:
-%  \begin{itemize}
-%   \item Pokud stromu $t$ odpovídá pseudoterm $p(t) = X(t_1 \dots t_k)$, pak 
-%   \begin{align*}
-%     \mu_t(q_1 \dots q_n, q) 
-%       &= \mu_{X(t_1 \dots t_k)}(q_1 \dots q_n, q) \\
-%       &= \bigvee_{i=1}^{k} \left( \mu_X(q_1 \dots q_k, q) \wedge \bigwedge_{j=1}^{k} \mu_{t_j}(q_1 \dots q_n, q_j) \right)
-%   \end{align*}
-%   \item pokud $t = a$, kde $a \in T$, pak $\mu_t = \mu_a$. 
-%  \end{itemize}
- 
 \end{definition}
 
 Fuzzy přechodová funkce stromů je obdobou fuzzy rozšířené přechodové funkce. Pokud je vstupní strom atomický je přechod realizován pomocí fuzzy přechodové funkce $\mu$. Pokud vstupní strom není atomický, je přechod realizován ve stupni, který je dán stupňem přechodu neterminálního symbolu a stupňů příslušných podstromů.
@@ -923,26 +924,17 @@ Stupeň, ve kterém je strom $t$ automatem přijímán, pak lze určit vztahem
 $$
  A(t) = \bigvee\nolimits_{q \in F} \mu_t(q)
 $$
-% $$
-%  A(t) = \bigvee\nolimits_{q \in F} \mu_t(\epsilon, q)
-% $$
-
 
 \begin{definition}[Jazyk rozpoznávaný]
  Fuzzy množinu $D(A)$ nad $D_{(N,T)}$ danou předpisem
  $$
   D(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(q) \right\}
  $$
-%  $$
-%   D(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(\epsilon, q) \right\}
-%  $$
  nazvěme fuzzy jazyk rozpoznávaný fuzzy tree automatem.
 \end{definition}
 
-\TODO{termy jsou snadno generovatelné BZK gramatikou, takže FTA rozpoznává BZK jazyk}
-
 \begin{example}
- Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (s levým podstromem $t_{1,1}$ a pravým podstromem $t_{1,2}$ kořene) z obrázku \ref{fig:Trees:third} platí $\mu_{t_1}(q_2)$:
+ Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (s levým podstromem $t_{1,1}$ a pravým podstromem $t_{1,2}$ kořene) z obrázku \ref{img:Tree:third} platí $\mu_{t_1}(q_2)$:
  \begin{align*}
   \mu_{t_1}(q_2) 
     &= 		\left( \mu_M(q_1 q_1, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_1) \right) \\
@@ -954,9 +946,34 @@ $$
  \TODO{dalších pár stromů}
 \end{example}
 
-\TODO{Věta: Pro každý fuzzy jazyk stromů existuje fuzzy tree automat, který ho rozpoznává. ?}
+Podobně jako u klasických automatů, i u tree automatů platí, že vždy existuje automat, který rozpoznává daný (fuzzy) jazyk.
+\begin{theorem}
+ Pro jaždý fuzzy jazyk stromů existuje fuzzy tree automat, který ho rozpoznává.
+\end{theorem}
+
+V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
+
+\begin{definition}[Automat rozpoznávající strom]
+  Mějme strom $t \in D_{(N, T)}$ a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
+  \begin{itemize}
+   \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
+   \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
+   \item $\mu_X(w, q_{t'}) = 1$ pro všechny $t' \in sub(t)$, kde $w = q_1 \dots q_k$ a stromu $t_i$ odpovídá pseudoterm $p(t') = X(t_1 \dots t_k)$
+   \item $F = \{ q_t \}$ (koncovým stavem je stav odpovídající celému stromu $t$)
+  \end{itemize}
+\end{definition}
+
+Takovýto automat zřejmě rozpoznává jazyk $T = \{ (t, 1) \}$. 
+
+V následujících podkapitolách budou fuzzy tree automaty demonstrovány na konkrétních příkladech.
 
 \subsection{Použití fuzy tree automatů}
+Fuzzy tree automaty je možné použít všude tam, kde je třeba rozpoznávat určitým způsobem stromově strukturovaná data. Konečnost množiny $\mathcal{Q}$, pro kterou je definována přechodová funkce $\mu_X$ neterminálů $X \in N$ však přináší omezení na aritu každého uzlu, která tak vždy musí být konečným číslem.
+
+Konečnost množiny $\mathcal{Q}$ však teoreticky nemusí být nutná. Teoreticky by šlo jako vzory funkce $\mu_X$ namísto konkrétních řetězců nad $Q$ použít například regulérní výraz popisující celou třídu takových řetězců (například \regex{(q0 | q1)+}). To by však zkomplikovalo implementaci takového automatu a proto toto rozšíření nebude uvažováno.
+
+Důležité však je, že automat umožňuje rozpoznávat rekurzivní stromy. Rekurze je dosaženo (opakovaným) přechodem ze stavu do téže stavu v nenulovém stupni. 
+
 \subsubsection*{Geometrické tvary}
 
 V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree automatů rozpoznávat složené geometrické tvary. Techniku demonstrují na problému rozpoznávání jednoduchého nákresu domu a kostela.
@@ -967,10 +984,30 @@ Autoři pak navrhují strom reprezentující takovýto objekt domu a konstruují
 
 Obdobným způsobem autoři nadefinovali strom reprezentující jednoduchou budou kostela jako \u{dům, který má na špičku střechy připevněn kříž}.
 
+\subsubsection*{Detekce úplných $m$-árních stromů}
+Dalším způsobem, jak lze používat fuzzy tree automaty je rozpoznávání úplných $m$-árních stromů. Úplný $m$-ární strom je takový, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly). My však můžeme můžeme vlastnost \uv{být úplný $m$-ární} snadno fuzzifikovat.
+
+Uvažujme strom $t$, který je tvořen vnitřními uzly $I$ (konkrétní uzly značme $I_1, \dots, I_n$) a listovými uzly $o$ (konkrétní uzly značme $o_1, \dots, o_k$). Označme $N = \{ I \}$ a $T = \{ o \}$. Strom $t$ je pak prvkem množiny $D_{(N, T)}$.
+
+Zaveďme fuzzy množinu $\alpha_m: I_1, \dots I_n \rightarrow [0,1]$ úplných $m$-árních uzlů předpisem:
+$$
+  \alpha_m(I_i) = \frac{|children(I_i)|}{m}
+$$
+kde $children(I_i)$ značí počet potomků uzlu $I_i$. Stupeň, ve kterém je strom úplný $m$-ární pak určíme jako infimum z $\tau_m(I_i)$ všech jeho vnitřní uzlů $I_i$. Pak můžeme definovat fuzzy množinu $\tau_m$ úplných $m$-árních stromů pro každý $t \in D_{(N, T)}$:
+$$
+  \tau_m(t) = \bigwedge_{i = 1}^{n} \alpha_m(I_i)
+$$
+
+Nyní zkonstruujme automat $A$ rozpoznávající fuzzy množinu $\tau_m$. Automat bude mít jeden stav $q_1$ a přechodovou funkci $\mu_o(q_1) = 1$ a 
+$$
+  \mu_I(w, q_1) = \frac{|w|}{m}
+$$
+pro $w \in \{ q_1, q_1 q_1, \dots q_1 ^m \}$. Množina koncových stavů $F$ bude rovna $\{ q_1 \}$.
+
 \subsubsection*{Jednoduchá klasifikace zvířat}
 Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
 
-Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, notail, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a $Tail$. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín je na obrázku \TODO{obrázek!!!}.
+Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.
 
 
 
