@@ -23,6 +23,7 @@
 
 	<modules>
 		<module>core</module>
+		<module>fuzzy-tree-automata</module>
 	</modules>
 
 	<properties>
