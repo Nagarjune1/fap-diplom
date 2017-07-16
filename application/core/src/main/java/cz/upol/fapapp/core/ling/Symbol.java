@@ -1,6 +1,8 @@
 package cz.upol.fapapp.core.ling;
 
-public class Symbol {
+public class Symbol implements Comparable<Symbol> {
+	public static final Symbol EMPTY = new Symbol("\\epsilon");	//TODO epsilon
+
 	private final String value;
 
 	public Symbol(String value) {
@@ -40,5 +42,10 @@ public class Symbol {
 	@Override
 	public String toString() {
 		return "Sym(" + value + ")";
+	}
+
+	@Override
+	public int compareTo(Symbol o) {
+		return this.value.compareTo(o.value);
 	}
 }

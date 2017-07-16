@@ -17,12 +17,18 @@ public class Relation<T extends Tuple> {
 		return tuples;
 	}
 
+	public T getOne() {
+		return tuples.stream().findAny().get();
+	}
+
 	@Override
 	public String toString() {
 		return "Relation:" + tuples + "";
 	}
-	
+
 	public static abstract class Tuple {
+		
+		
 	}
 
 }

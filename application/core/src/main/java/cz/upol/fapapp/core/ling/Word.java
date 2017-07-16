@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Word {
+	public static final Word EMPTY = new Word();
+
 	private final List<Symbol> symbols;
 
 	public Word(List<Symbol> symbols) {
@@ -19,6 +21,14 @@ public class Word {
 
 	public List<Symbol> getSymbols() {
 		return symbols;
+	}
+
+	public int getLength() {
+		return symbols.size();
+	}
+
+	public Symbol at(int index) {
+		return symbols.get(index);
 	}
 
 	@Override

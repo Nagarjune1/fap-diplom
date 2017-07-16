@@ -3,28 +3,26 @@ package cz.upol.fapapp.core.fuzzy;
 import java.util.Map;
 import java.util.Set;
 
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 
 public class FuzzySet<E> extends BinaryRelation<E, Degree> {
 
 	public FuzzySet(Set<FuzzyTuple<E>> tuples) {
-		super(cast(tuples));
+		super(CollectionsUtils.cast(tuples));
 	}
 
 	public FuzzySet(Map<E, Degree> map) {
 		super(map);
 	}
 
-	private static <E> Set<Couple<E, Degree>> cast(Set<FuzzyTuple<E>> tuples) {
-		Set<FuzzyTuple<E>> fuzzys = tuples;
-		Object object = fuzzys;
-
-		@SuppressWarnings("unchecked")
-		Set<Couple<E, Degree>> couples = (Set<Couple<E, Degree>>) object;
-
-		return couples;
+	public Degree degreeOf(E element) {
+		return tuples.stream() //
+				.filter((t) -> t.getDomain().equals(element)) //
+				.map((t) -> t.getTarget()) //
+				.findAny().orElse(Degree.ZERO);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "FuzzySet" + tuples + "";

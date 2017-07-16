@@ -17,6 +17,15 @@ public class BinaryRelation<DT, TT> extends Relation<Couple<DT, TT>> {
 		super(mapToCouples(map));
 	}
 
+	public TT get(DT domain) {
+		return tuples.stream() //
+				.filter((t) -> t.getDomain().equals(domain)) //
+				.map((t) -> t.getTarget()) //
+				.findAny().orElseThrow(() -> {
+					return new IllegalStateException("Not found " + domain + " in " + this);
+				});
+	}
+
 	private static <DT, TT> Set<Couple<DT, TT>> mapToCouples(Map<DT, TT> map) {
 		return map.entrySet().stream() //
 				.map((e) -> new Couple<>(e.getKey(), e.getValue())) //
