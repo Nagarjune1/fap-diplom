@@ -4,50 +4,35 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import cz.upol.fapapp.core.automata.BaseAutomata;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
-import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.MathUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
-import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 import cz.upol.fapapp.fta.data.AtomicTree;
 import cz.upol.fapapp.fta.data.BaseTree;
 import cz.upol.fapapp.fta.data.CompositeTree;
 
-public class FuzzyTreeAutomata implements BaseAutomata {
-	private final Set<State> states;
-	private final Alphabet nonterminals;
-	private final Alphabet terminals;
-	private final Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction;
-	private final Set<State> finalStates;
-
+public class FuzzyTreeAutomata extends BaseFuzzyTreeAutomata {
 	public FuzzyTreeAutomata(Set<State> states, Alphabet nonterminals, Alphabet terminals,
 			Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction, Set<State> finalStates) {
-		super();
-
-		CollectionsUtils.checkDisjoint(nonterminals, terminals);
-		// TODO check transition function
-		CollectionsUtils.checkSubset(finalStates, states);
-
-		this.states = states;
-		this.nonterminals = nonterminals;
-		this.terminals = terminals;
-		this.transitionFunction = transitionFunction;
-		this.finalStates = finalStates;
+		super(states, nonterminals, terminals, transitionFunction, finalStates);
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+
+	@Override
 	public Degree accept(BaseTree tree) {
-		return MathUtils.bigSupremum(finalStates, (s) -> //
-		extendedMu(tree, s) //
-		);
+		return MathUtils.bigSupremum(finalStates, (s) -> {//
+			return extendedMu(tree, s); //
+		});
 	}
 
-	private Degree extendedMu(BaseTree tree, State state) {
+	@Override
+	protected Degree extendedMu(BaseTree tree, State state) {
 		Symbol label = tree.getLabel();
 
 		if (tree instanceof AtomicTree) {
@@ -78,7 +63,9 @@ public class FuzzyTreeAutomata implements BaseAutomata {
 		}
 	}
 
-	private Set<Word> subsetsOfLength(int length) {
+	///////////////////////////////////////////////////////////////////////////
+
+	protected Set<Word> subsetsOfLength(int length) {
 		Set<Word> words = new HashSet<>();
 
 		transitionFunction.forEach((s, r) -> {
@@ -101,30 +88,6 @@ public class FuzzyTreeAutomata implements BaseAutomata {
 		return new Symbol(state.getLabel());
 	}
 
-	@Override
-	public String toString() {
-		return "FuzzyTreeAutomata [states=" + states + ", nonterminals=" + nonterminals + ", terminals=" + terminals
-				+ ", transitionFunction=" + transitionFunction + ", finalStates=" + finalStates + "]";
-	}
+	///////////////////////////////////////////////////////////////////////////
 
-	public static class FTAmuTuple extends Couple<Word, FuzzyState> {
-
-		public FTAmuTuple(Word over, FuzzyState to) {
-			super(over, to);
-		}
-
-		public Word getOver() {
-			return getDomain();
-		}
-
-		public FuzzyState getTo() {
-			return getTarget();
-		}
-
-		@Override
-		public String toString() {
-			return "FTAmuTuple [over=" + getOver() + ", to=" + getTo() + "]";
-		}
-
-	}
 }

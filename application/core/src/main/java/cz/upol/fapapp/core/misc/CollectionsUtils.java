@@ -2,10 +2,13 @@
 package cz.upol.fapapp.core.misc;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.fuzzy.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.FuzzySet.FuzzyTuple;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
@@ -54,5 +57,16 @@ public class CollectionsUtils {
 						"Not subset, subset does't contain " + e + " (" + subset + " and " + superset + ")");
 			}
 		});
+	}
+
+	public static <E> FuzzySet<E> singletonFuzzySet(E element) {
+		return singletonFuzzySet(element, Degree.ONE);
+	}
+
+	public static <E> FuzzySet<E> singletonFuzzySet(E element, Degree degree) {
+		Map<E, Degree> map = new HashMap<>();
+		map.put(element, degree);
+
+		return new FuzzySet<>(map);
 	}
 }

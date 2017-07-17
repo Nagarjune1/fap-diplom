@@ -16,4 +16,8 @@ public class FuzzyState extends FuzzySet<State> {
 		super(map);
 	}
 
+	public FuzzyState(FuzzySet<State> fuzzySet) {
+		super(fuzzySet.toMap());
+	}
+
 }

@@ -26,10 +26,21 @@ public class BinaryRelation<DT, TT> extends Relation<Couple<DT, TT>> {
 				});
 	}
 
+	public Map<DT, TT> toMap() {
+		return couplesToMap(tuples);
+	}
+
 	private static <DT, TT> Set<Couple<DT, TT>> mapToCouples(Map<DT, TT> map) {
 		return map.entrySet().stream() //
 				.map((e) -> new Couple<>(e.getKey(), e.getValue())) //
 				.collect(Collectors.toSet());
+	}
+
+	private static <DT, TT> Map<DT, TT> couplesToMap(Set<Couple<DT, TT>> couples) {
+		return couples.stream() //
+				.collect(Collectors.toMap( //
+						(c) -> c.getDomain(), //
+						(c) -> c.getTarget()));
 	}
 
 	@Override

@@ -1,8 +1,8 @@
 package cz.upol.fapapp.core.ling;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Word {
 	public static final Word EMPTY = new Word();
@@ -11,12 +11,12 @@ public class Word {
 
 	public Word(List<Symbol> symbols) {
 		super();
-		this.symbols = symbols;
+		this.symbols = concat(symbols);
 	}
 
 	public Word(Symbol... symbols) {
 		super();
-		this.symbols = new ArrayList<>(Arrays.asList(symbols));
+		this.symbols = concat(Arrays.asList(symbols));
 	}
 
 	public List<Symbol> getSymbols() {
@@ -29,6 +29,12 @@ public class Word {
 
 	public Symbol at(int index) {
 		return symbols.get(index);
+	}
+
+	private List<Symbol> concat(List<Symbol> symbols) {
+		return symbols.stream()//
+				.filter((s) -> !s.equals(Symbol.EMPTY))//
+				.collect(Collectors.toList());
 	}
 
 	@Override

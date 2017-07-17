@@ -1,6 +1,6 @@
 package cz.upol.fapapp.fta.automata;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
-import cz.upol.fapapp.fta.automata.FuzzyTreeAutomata.FTAmuTuple;
+import cz.upol.fapapp.fta.automata.BaseFuzzyTreeAutomata.FTAmuTuple;
 import cz.upol.fapapp.fta.data.AtomicTree;
 import cz.upol.fapapp.fta.data.BaseTree;
 import cz.upol.fapapp.fta.data.CompositeTree;
