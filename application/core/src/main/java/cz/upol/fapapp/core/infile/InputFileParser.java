@@ -11,6 +11,7 @@ public class InputFileParser {
 
 	private static final String COMMENT = "#";
 	private static final String PADDING = "\t";
+	private static final String PADDING_REGEX = "\t[ \t]*";
 	private static final String OPTIONAL = ":";
 	private static final String SEPARATOR_REGEX = "[,: \t][ \t]*";
 
@@ -19,7 +20,6 @@ public class InputFileParser {
 	public InputFileParser() {
 	}
 	///////////////////////////////////////////////////////////////////////////
-
 
 	public InputFileData parse(File file) throws IOException {
 		String content = readFileContent(file);
@@ -38,7 +38,7 @@ public class InputFileParser {
 	}
 
 	private void processLine(InputFileData data, String line) {
-		if (line.startsWith(COMMENT) || line.isEmpty()) {
+		if (line.isEmpty() || line.matches(PADDING_REGEX) || line.startsWith(COMMENT)) {
 			return;
 
 		} else if (line.startsWith(PADDING)) {
@@ -55,13 +55,12 @@ public class InputFileParser {
 	}
 	///////////////////////////////////////////////////////////////////////////
 
-	
 	protected static String processGroupOpeningLine(String line) {
 		return removeOptionalFromEnd(line, OPTIONAL);
 	}
 
 	protected static LineItems processPaddedLine(String line) {
-		String unpadded = removeFromBegin(line, PADDING);
+		String unpadded = removeRegexFromBegin(line, PADDING_REGEX);
 
 		String parts[] = unpadded.split(SEPARATOR_REGEX);
 		List<String> list = Arrays.asList(parts);
@@ -77,6 +76,10 @@ public class InputFileParser {
 		}
 	}
 
+	protected static String removeRegexFromBegin(String from, String regex) {
+		return from.replaceFirst(regex, "");
+	}
+
 	protected static String removeOptionalFromEnd(String from, String what) {
 		if (from.endsWith(what)) {
 			int fromIndex = from.length() - what.length();
@@ -86,8 +89,6 @@ public class InputFileParser {
 		}
 	}
 
-	
-	
 	///////////////////////////////////////////////////////////////////////////
 
 	public static String readFileContent(File file) throws IOException {

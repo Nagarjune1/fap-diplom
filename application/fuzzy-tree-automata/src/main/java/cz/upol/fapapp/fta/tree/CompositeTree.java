@@ -36,7 +36,7 @@ public class CompositeTree extends BaseTree {
 	@Override
 	public void validate(Alphabet nonterminals, Alphabet terminals) {
 		if (!nonterminals.contains(this.getLabel())) {
-			throw new IllegalArgumentException("Not a inner node (" + getLabel() + " is not in " + terminals + ")");
+			throw new IllegalArgumentException("Not a inner node (" + getLabel() + " is not in " + nonterminals + ")");
 		}
 
 		children.forEach((c) -> c.validate(nonterminals, terminals));

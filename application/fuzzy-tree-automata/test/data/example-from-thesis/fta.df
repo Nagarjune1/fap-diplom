@@ -1,0 +1,28 @@
+type:
+	Fuzzy tree automata
+
+states:
+	q_1 q_2
+
+nonterminals:
+	M, S
+
+terminals:
+	x, y
+
+transition function:
+	x:	epsilon				-> q_1/1
+	y:	epsilon				-> q_1/1
+
+	S:	q_1					-> q_1/0,	q_2/1
+	S:	q_2					-> q_1/0,	q_2/0.4
+	S:	q_1 q_1				-> q_1/0,	q_2/0.3
+
+	M:	q_1					-> q_1/0.1,	q_2/0.8
+	M:	q_2					-> q_1/0,	q_2/0.5
+	M:	q_1 q_1				-> q_1/0,	q_2/0.6
+	M:	q_1	q_2				-> q_1/0,	q_2/1
+	M:	q_2 q_1				-> q_1/0,	q_2/0.7
+	
+final states
+	q_2

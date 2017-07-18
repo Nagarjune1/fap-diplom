@@ -1,0 +1,21 @@
+type:
+	Fuzzy tree automata
+
+states:
+	q_1
+
+nonterminals:
+	I
+
+terminals:
+	o
+
+transition function:
+	o:	epsilon				-> q_1/1
+	I:	q_1					-> q_1/0.25
+	I:	q_1 q_1				-> q_1/0.5
+	I:	q_1	q_1 q_1			-> q_1/0.75
+	I:	q_1	q_1 q_1 q_1		-> q_1/1
+	
+final states
+	q_1

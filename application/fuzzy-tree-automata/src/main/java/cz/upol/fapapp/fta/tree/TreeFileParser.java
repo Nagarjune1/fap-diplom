@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import cz.upol.fapapp.core.infile.InputFileData;
 import cz.upol.fapapp.core.infile.InputFileObjectParser;
 import cz.upol.fapapp.core.infile.LineItems;
+import cz.upol.fapapp.core.infile.ObjectParserTools;
+import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.CollectionsUtils;
@@ -37,57 +39,142 @@ public class TreeFileParser extends InputFileObjectParser<BaseTree> {
 
 	@Override
 	public BaseTree process(InputFileData data) {
+		Alphabet nonterminals = null;
+		Alphabet terminals = null;
+		BaseTree tree = null;
+
 		for (String key : data.listKeys()) {
+			List<LineItems> lines = data.getItemsOf(key);
+
 			switch (key) {
 			case InputFileData.TYPE_KEY:
 				break;
-			// TODO terminals and nonterminals
+
+			case "nonterminals":
+				nonterminals = processNonterminals(lines);
+				break;
+
+			case "terminals":
+				terminals = processTerminals(lines);
+				break;
+
 			case TYPE:
 			case "pseudoterm":
-				List<LineItems> lines = data.getItemsOf(key);
-				return processLines(lines);
+				tree = processTree(lines);
+				break;
+
 			default:
-				Logger.get().warning("Unkown key " + key);
+				Logger.get().warning("Unknown key " + key);
 			}
 		}
 
-		CollectionsUtils.checkNotNull(TYPE, null);
+		CollectionsUtils.checkNotNull("nonterminals", nonterminals);
+		CollectionsUtils.checkNotNull("terminals", terminals);
+		CollectionsUtils.checkNotNull(TYPE, tree);
 
-		// TODO check terminals and nonterminals
-		return null;
+		tree.validate(nonterminals, terminals);
+		return tree;
 	}
 
-	private BaseTree processLines(List<LineItems> lines) {
-		List<String> tokens = linesToTokensList(lines);
+	private Alphabet processNonterminals(List<LineItems> lines) {
+		return ObjectParserTools.parseMultilinedAlphabet(lines);
+	}
+
+	private Alphabet processTerminals(List<LineItems> lines) {
+		return ObjectParserTools.parseMultilinedAlphabet(lines);
+	}
+
+	private BaseTree processTree(List<LineItems> lines) {
+		List<String> tokens = tokenizeLines(lines);
+		return processTokens(tokens);
+	}
+
+	protected BaseTree processTokens(List<String> tokens) {
 		Queue<String> queue = new LinkedList<>(tokens);
-		return processTokens(queue);
+		BaseTree tree = processTokens(queue);
+
+		if (!queue.isEmpty()) {
+			throw new IllegalArgumentException("Unexpected " + queue + " at the end");
+		}
+
+		return tree;
 	}
 
 	///////////////////////////////////////////////////////////////////////////
 
 	protected BaseTree processTokens(Queue<String> remaining) {
+		if (remaining.isEmpty() || isOpeningParenthesis(remaining.peek()) || isClosingParenthesis(remaining.peek())) {
+			throw new IllegalArgumentException(
+					"Excepted symbol" + (remaining.isEmpty() ? "" : ", found: " + remaining.peek()));
+		}
+
 		String label = remaining.poll();
 		Symbol symbol = new Symbol(label);
 
-		if (!"(".equals(remaining.peek())) {
+		if (remaining.isEmpty()) {
 			return new AtomicTree(symbol);
-		} else {
-			remaining.poll();
-
-			List<BaseTree> children = new LinkedList<>();
-			while (!")".equals(remaining.peek())) {
-				BaseTree child = processTokens(remaining);
-				children.add(child);
-			}
-			remaining.poll();
-
-			return new CompositeTree(symbol, children);
 		}
+
+		String next = remaining.peek();
+		if (!isOpeningParenthesis(next)) {
+			return processWithNextNotParenthesis(symbol);
+		}
+
+		if (isOpeningParenthesis(next)) {
+			return processWithNextOpeningParenthesis(remaining, label, symbol);
+		}
+
+		return null;
+	}
+
+	private BaseTree processWithNextNotParenthesis(Symbol symbol) {
+		return new AtomicTree(symbol);
+	}
+
+	private BaseTree processWithNextOpeningParenthesis(Queue<String> remaining, String label, Symbol symbol) {
+		String openingParenthesis = remaining.poll();
+		String closingParenthesis = PARENTHESIS.get(openingParenthesis);
+
+		List<BaseTree> children = new LinkedList<>();
+
+		while (true) {
+			BaseTree child = processTokens(remaining);
+			children.add(child);
+
+			if (remaining.isEmpty()) {
+				throw new IllegalArgumentException("Missing " + closingParenthesis);
+			}
+
+			String willBeNext = remaining.peek();
+			if (isClosingParenthesis(willBeNext)) {
+				String realClosingParenthesis = willBeNext;
+				if (closingParenthesis.equals(realClosingParenthesis)) {
+					remaining.poll();
+					break;
+				} else {
+					throw new IllegalArgumentException(
+							"Unexpected " + realClosingParenthesis + " (expected " + closingParenthesis + ") at: "
+									+ label + " " + openingParenthesis + " ... " + realClosingParenthesis);
+				}
+			}
+		}
+
+		return new CompositeTree(symbol, children);
 	}
 
 	///////////////////////////////////////////////////////////////////////////
 
-	private static List<String> linesToTokensList(List<LineItems> lines) {
+	private boolean isOpeningParenthesis(String token) {
+		return PARENTHESIS.containsKey(token);
+	}
+
+	private boolean isClosingParenthesis(String token) {
+		return PARENTHESIS.containsValue(token);
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+
+	private static List<String> tokenizeLines(List<LineItems> lines) {
 		return lines.stream() //
 				.flatMap((l) -> l.getItems().stream()) //
 				.collect(Collectors.toList());

@@ -70,13 +70,13 @@ public class InputFileTest {
 	@Test
 	public void testProcessPaddedLine() {
 		LineItems items1 = new LineItems("foo", "bar", "baz");
-		assertEquals(items1, InputFileParser.processPaddedLine("foo, bar, baz"));
+		assertEquals(items1, InputFileParser.processPaddedLine("	foo, bar, baz"));
 
 		LineItems items2 = new LineItems("42", "foo", "bar", "baz");
-		assertEquals(items2, InputFileParser.processPaddedLine("42: foo		bar		baz"));
+		assertEquals(items2, InputFileParser.processPaddedLine("	42: foo		bar		baz"));
 
 		LineItems items3 = new LineItems("foo", "bar", "baz");
-		assertEquals(items3, InputFileParser.processPaddedLine("foo,bar,baz"));
+		assertEquals(items3, InputFileParser.processPaddedLine("	foo,bar,baz"));
 	}
 
 	@Test
