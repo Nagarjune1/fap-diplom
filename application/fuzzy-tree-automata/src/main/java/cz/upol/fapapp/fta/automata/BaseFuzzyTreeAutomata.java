@@ -1,7 +1,9 @@
 package cz.upol.fapapp.fta.automata;
 
+import java.io.PrintStream;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.automata.BaseAutomata;
 import cz.upol.fapapp.core.automata.FuzzyState;
@@ -10,10 +12,10 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
-import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
-import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
+import cz.upol.fapapp.core.sets.CollectionsUtils;
 import cz.upol.fapapp.fta.data.BaseTree;
+import cz.upol.fapapp.fta.data.CompositeTree;
 
 public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 
@@ -62,15 +64,48 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 			Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction, Set<State> finalStates) {
 
 		CollectionsUtils.checkDisjoint(nonterminals, terminals);
-		checkTransitionFunction(transitionFunction);
+		checkTransitionFunction(states, nonterminals, terminals, transitionFunction);
 		CollectionsUtils.checkSubset(finalStates, states);
 
 	}
 
-	private static void checkTransitionFunction(Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction) {
-		// TODO Auto-generated method stub
+	private static void checkTransitionFunction(Set<State> states, Alphabet nonterminals, Alphabet terminals,
+			Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction) {
 
+		Alphabet statesAlphabet = alphabetOfStateSymbols(states);
+		transitionFunction.forEach((s, t) -> {
+			CollectionsUtils.checkInSetsJoin(s, nonterminals, terminals);
+			t.getTuples().forEach((c) -> {
+				Word word = c.getDomain();
+				CollectionsUtils.checkWord(word, statesAlphabet);
+				if (nonterminals.contains(s)) {
+					CollectionsUtils.checkIsNotEmptyWord(word);
+				} else {
+					CollectionsUtils.checkIsEmptyWord(word);
+				}
+
+				FuzzyState fuzzyState = c.getTarget();
+				CollectionsUtils.checkFuzzyState(fuzzyState, states);
+			});
+		});
 	}
+
+	private static Alphabet alphabetOfStateSymbols(Set<State> states) {
+		return new Alphabet(states.stream() //
+				.map((s) -> new Symbol(s.getLabel())) //
+				.collect(Collectors.toSet())); //
+	}
+
+	public void checkTree(BaseTree tree) {
+		Symbol label = tree.getLabel();
+		CollectionsUtils.checkInSet(label, alphabetOfStateSymbols(states));
+
+		if (tree instanceof CompositeTree) {
+			CompositeTree composite = (CompositeTree) tree;
+			composite.getChildren().forEach((t) -> checkTree(t));
+		}
+	}
+
 	///////////////////////////////////////////////////////////////////////////
 
 	protected abstract Degree extendedMu(BaseTree tree, State state);
@@ -134,27 +169,11 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 				+ ", transitionFunction=" + transitionFunction + ", finalStates=" + finalStates + "]";
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-
-	public static class FTAmuTuple extends Couple<Word, FuzzyState> {
-
-		public FTAmuTuple(Word over, FuzzyState to) {
-			super(over, to);
-		}
-
-		public Word getOver() {
-			return getDomain();
-		}
-
-		public FuzzyState getTo() {
-			return getTarget();
-		}
-
-		@Override
-		public String toString() {
-			return "FTAmuTuple [over=" + getOver() + ", to=" + getTo() + "]";
-		}
-
+	@Override
+	public void print(PrintStream to) {
+		FTAInputFileComposer composer = new FTAInputFileComposer();
+		String string = composer.compose((FuzzyTreeAutomata) this);
+		to.println(string);
 	}
 
 }

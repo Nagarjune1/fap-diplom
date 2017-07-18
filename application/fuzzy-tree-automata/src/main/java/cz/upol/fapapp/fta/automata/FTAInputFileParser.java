@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
@@ -86,28 +87,25 @@ public class FTAInputFileParser extends InputFileObjectParser<FuzzyTreeAutomata>
 	}
 
 	private Map<Symbol, BinaryRelation<Word, FuzzyState>> processTransitionFunction(List<LineItems> lines) {
-		Map<Symbol, BinaryRelation<Word, FuzzyState>> resultMap = new HashMap<>();
+		Map<String, Map<Word, FuzzyState>> pseudoresult = new HashMap<>();
 
-		String currentOver = null;
-		Map<Word, FuzzyState> currentTransitionMap = null;
 		for (LineItems line : lines) {
-			if (!line.getIth(0).equals(currentOver)) {
-				currentOver = line.getIth(0);
-
-				Symbol overSymbol = ObjectParserTools.parseSymbol(currentOver);
-				currentTransitionMap = new HashMap<>();
-				BinaryRelation<Word, FuzzyState> currentTransition = new BinaryRelation<>(currentTransitionMap);
-
-				resultMap.put(overSymbol, currentTransition);
+			String over = line.getIth(0);
+			Map<Word, FuzzyState> transs = pseudoresult.get(over);
+			if (transs == null) {
+				transs = new HashMap<>();
+				pseudoresult.put(over, transs);
 			}
 
 			Word word = processOver(line);
 			FuzzyState fuzzyState = processFuzzyState(line, word);
 
-			currentTransitionMap.put(word, fuzzyState);
+			if (fuzzyState != null) {
+				transs.put(word, fuzzyState);
+			}
 		}
 
-		return resultMap;
+		return toRelation(pseudoresult);
 	}
 
 	private Word processOver(LineItems line) {
@@ -119,7 +117,7 @@ public class FTAInputFileParser extends InputFileObjectParser<FuzzyTreeAutomata>
 				break;
 			}
 			String over = overOrRest;
-			Symbol symbol = ObjectParserTools.parseSymbol(over);
+			Symbol symbol = ObjectParserTools.parseEmptyableSymbol(over);
 			overSymbols.add(symbol);
 		}
 
@@ -128,10 +126,17 @@ public class FTAInputFileParser extends InputFileObjectParser<FuzzyTreeAutomata>
 	}
 
 	private FuzzyState processFuzzyState(LineItems line, Word word) {
-		int fuzzyStateFrom = 1 + word.getLength() + 1;
+		int fuzzyStateFrom = line.firstIndexOf(OVER_TO_TO_SEPARATOR_TOKEN) + 1;
 		LineItems fuzzyStateStr = line.rest(fuzzyStateFrom);
 		FuzzyState fuzzyState = ObjectParserTools.parseFuzzyState(fuzzyStateStr);
 		return fuzzyState;
+	}
+
+	private Map<Symbol, BinaryRelation<Word, FuzzyState>> toRelation(Map<String, Map<Word, FuzzyState>> pseudoresult) {
+		return pseudoresult.keySet().stream() //
+				.collect(Collectors.toMap( //
+						(s) -> new Symbol(s), //
+						(s) -> new BinaryRelation<>(pseudoresult.get(s))));
 	}
 
 	private Set<State> processFinalStates(List<LineItems> lines) {

@@ -1,6 +1,7 @@
 package cz.upol.fapapp.core.fuzzy;
 
-public class Degree {
+public class Degree implements Comparable<Degree> {
+
 	public static final Degree ZERO = new Degree(0.0);
 	public static final Degree ONE = new Degree(1.0);
 
@@ -18,6 +19,17 @@ public class Degree {
 	public double getValue() {
 		return value;
 	}
+
+	@Override
+	public int compareTo(Degree o) {
+		return Double.compare(this.value, o.value);
+	}
+
+	public boolean isLessOrEqual(Degree o) {
+		return this.compareTo(o) < 0;
+	}
+
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {
@@ -48,6 +60,8 @@ public class Degree {
 		return "Deg(" + value + ")";
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+
 	public static Degree supremum(Degree first, Degree second) {
 		double firstValue = first.getValue();
 		double secondValue = second.getValue();
@@ -63,4 +77,5 @@ public class Degree {
 		double value = Math.min(firstValue, secondValue);
 		return new Degree(value);
 	}
+
 }

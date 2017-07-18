@@ -2,6 +2,7 @@ package cz.upol.fapapp.core.infile;
 
 import java.util.List;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
@@ -14,45 +15,75 @@ import cz.upol.fapapp.core.ling.Word;
 
 public class ObjectParserTools {
 
-	public static Symbol parseSymbol(String str) {
-		if (Symbol.EMPTY.getValue().equals(str)) {
+	public static Symbol parseEmptyableSymbol(String symbolStr) {
+		if (Symbol.EMPTY.getValue().equals(symbolStr)) {
 			return Symbol.EMPTY;
 		} else {
-			return new Symbol(str);
+			return parseSymbol(symbolStr);
 		}
 	}
+
+	public static Symbol parseSymbol(String symbolStr) {
+		return new Symbol(symbolStr);
+	}
+
+	public static Degree parseDegree(String degreeStr) {
+		try {
+			double degreeDouble = Double.parseDouble(degreeStr);
+			return new Degree(degreeDouble);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Not a degree: " + degreeStr);
+		}
+	}
+
+	public static State parseState(String stateStr) {
+		return new State(stateStr);
+	}
+
+	private static <E> FuzzyTuple<E> parseFuzzyTuple(String token, Function<String, E> mapper) {
+		String parts[] = token.split("/");
+
+		if (parts.length < 2) {
+			throw new IllegalArgumentException("Missing degree in " + token);
+		}
+		if (parts.length > 2) {
+			throw new IllegalArgumentException("Unnescessary / in " + token);
+		}
+
+		String objStr = parts[0];
+		String degreeStr = parts[1];
+
+		E obj = mapper.apply(objStr);
+		Degree degree = parseDegree(degreeStr);
+
+		return new FuzzyTuple<>(obj, degree);
+	}
+
+	/////////////////////////////////////////////////////////////////////////
 
 	public static Alphabet parseMultilinedAlphabet(List<LineItems> lines) {
 		return new Alphabet(lines.stream() //
 				.flatMap((l) -> l.getItems().stream()) //
-				.map((s) -> new Symbol(s)) //
+				.map((s) -> parseSymbol(s)) //
 				.collect(Collectors.toSet()));
 	}
 
 	public static Set<State> parseMultilinedStates(List<LineItems> lines) {
 		return lines.stream() //
 				.flatMap((l) -> l.getItems().stream()) //
-				.map((s) -> new State(s)) //
+				.map((s) -> parseState(s)) //
 				.collect(Collectors.toSet());
 	}
 
 	public static FuzzyState parseFuzzyState(LineItems items) {
-		return new FuzzyState(items.getItems().stream().map((i) -> {
-			// TODO OOOO validate & check !!!! also improvised solution
-			String parts[] = i.split("/");
-			if (parts.length != 2) {
-				System.err.println("Missing or uneccessary / in " + i);
-				return null;
-			}
-			String stateStr = parts[0];
-			String degreeStr = parts[1];
-
-			State state = new State(stateStr);
-			Degree degree = new Degree(Double.parseDouble(degreeStr));
-
-			return new FuzzyTuple<>(state, degree);
-		}).collect(Collectors.toSet()));
+		return new FuzzyState(items.getItems().stream() //
+				.map((i) -> parseFuzzyTuple(i, (s) -> parseState(s))) //
+				.collect(Collectors.toSet())); //
 	}
+
+	/////////////////////////////////////////////////////////////////////////
+
+	/////////////////////////////////////////////////////////////////////////
 
 	public static LineItems statesToLine(Set<State> states) {
 		return new LineItems(states.stream() //

@@ -3,8 +3,8 @@ package cz.upol.fapapp.core.fuzzy;
 import java.util.Map;
 import java.util.Set;
 
-import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
+import cz.upol.fapapp.core.sets.CollectionsUtils;
 
 public class FuzzySet<E> extends BinaryRelation<E, Degree> {
 

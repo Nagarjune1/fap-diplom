@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import cz.upol.fapapp.core.misc.Logger;
+
 public class InputFileData {
 	public static final String TYPE_KEY = "type";
 	
@@ -21,7 +23,7 @@ public class InputFileData {
 			throw new IllegalArgumentException("Type specifier is empty");
 		}
 		if (types.size() > 1) {
-			System.err.println("Warning: more than one type specifier");
+			Logger.get().warning("more than one type specifier");
 		}
 
 		LineItems items = types.get(0);
@@ -39,6 +41,7 @@ public class InputFileData {
 	public void start(String newGroupName) {
 		this.data.put(newGroupName, new LinkedList<>());
 	}
+
 
 	public void add(String groupName, LineItems line) {
 		List<LineItems> items = this.data.get(groupName);

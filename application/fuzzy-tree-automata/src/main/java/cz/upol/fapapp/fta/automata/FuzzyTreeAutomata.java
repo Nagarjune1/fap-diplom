@@ -10,6 +10,7 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.misc.MathUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 import cz.upol.fapapp.fta.data.AtomicTree;
@@ -17,6 +18,7 @@ import cz.upol.fapapp.fta.data.BaseTree;
 import cz.upol.fapapp.fta.data.CompositeTree;
 
 public class FuzzyTreeAutomata extends BaseFuzzyTreeAutomata {
+	
 	public FuzzyTreeAutomata(Set<State> states, Alphabet nonterminals, Alphabet terminals,
 			Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction, Set<State> finalStates) {
 		super(states, nonterminals, terminals, transitionFunction, finalStates);
@@ -26,8 +28,11 @@ public class FuzzyTreeAutomata extends BaseFuzzyTreeAutomata {
 
 	@Override
 	public Degree accept(BaseTree tree) {
+		checkTree(tree);
 		return MathUtils.bigSupremum(finalStates, (s) -> {//
-			return extendedMu(tree, s); //
+			Degree degree = extendedMu(tree, s); //
+			Logger.get().moreinfo("Run of tree to " + s + " in degree " + degree);
+			return degree;
 		});
 	}
 

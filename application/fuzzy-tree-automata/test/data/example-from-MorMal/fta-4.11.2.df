@@ -1,0 +1,22 @@
+type:
+	Fuzzy tree automata
+
+states:
+	s_lambda, s_xi, s_eta
+
+nonterminals:
+	A
+
+terminals:
+	a
+
+transition function:
+	a:	epsilon				->	s_lambda/0.8,	s_xi/0.7,	s_eta/1.0
+	A:	s_lambda			->	s_lambda/1.0,	s_xi/0, 	s_eta/0  
+	A:	s_xi				->	s_lambda/0, 	s_xi/1.0,	s_eta/0  
+	A:	s_eta				->	s_lambda/0, 	s_xi/0, 	s_eta/1.0
+	A:	s_lambda s_lambda	->	s_lambda/0.2,	s_xi/0.8,	s_eta/0  
+	A:	s_lambda s_xi s_eta	->	s_lambda/0, 	s_xi/0, 	s_eta/1.0
+
+final states
+	s_eta

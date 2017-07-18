@@ -25,6 +25,10 @@ public class LineItems implements Iterable<String> {
 		}
 	}
 
+	public int firstIndexOf(String item) {
+		return items.indexOf(item);
+	}
+	
 	public LineItems rest(int fromIndex) {
 		if (fromIndex < items.size()) {
 			List<String> sublist = items.subList(fromIndex, items.size());

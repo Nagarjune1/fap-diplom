@@ -1,7 +1,7 @@
 package cz.upol.fapapp.core.ling;
 
 public class Symbol implements Comparable<Symbol> {
-	public static final Symbol EMPTY = new Symbol("\\epsilon");	//TODO epsilon
+	public static final Symbol EMPTY = new Symbol("epsilon");	//TODO epsilon
 
 	private final String value;
 

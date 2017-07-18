@@ -13,7 +13,7 @@ public class InputFileComposer {
 	private static final CharSequence DELIMITER_OF_LINE_ITEMS = " ";
 	private static final Object AFTER_KEY = ":";
 	private static final Object PADDING = "\t";
-	private static final Object ITEMS_SEPARATOR = ",\t";
+	private static final Object ITEMS_SEPARATOR = "\t";
 
 	///////////////////////////////////////////////////////////////////////////
 

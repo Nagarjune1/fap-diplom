@@ -56,27 +56,27 @@ public class FTAInputFileComposer extends InputFileObjectComposer<FuzzyTreeAutom
 
 	private void processTransitionFunction(Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction,
 			InputFileData data) {
-		
+
 		data.start("transition function");
-		
-		for (Entry<Symbol, BinaryRelation<Word, FuzzyState>> entry: transitionFunction.entrySet()) {
+
+		for (Entry<Symbol, BinaryRelation<Word, FuzzyState>> entry : transitionFunction.entrySet()) {
 			Symbol currentSymbol = entry.getKey();
-			
-			List<String> items = new LinkedList<>();
-			items.add(currentSymbol.getValue());
-			
-			for (Couple<Word, FuzzyState> couple: entry.getValue().getTuples()) {
+
+			for (Couple<Word, FuzzyState> couple : entry.getValue().getTuples()) {
+				List<String> items = new LinkedList<>();
+				items.add(currentSymbol.getValue());
+
 				LineItems word = ObjectParserTools.wordToLine(couple.getDomain());
 				items.addAll(word.getItems());
-				
+
 				items.add(FTAInputFileParser.OVER_TO_TO_SEPARATOR_TOKEN);
-				
+
 				LineItems fuzzyState = ObjectParserTools.fuzzyStateToLine(couple.getTarget());
 				items.addAll(fuzzyState.getItems());
+
+				LineItems line = new LineItems(items);
+				data.add("transition function", line);
 			}
-			
-			LineItems line = new LineItems(items);
-			data.add("transition function", line);	
 		}
 	}
 
