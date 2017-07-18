@@ -14,8 +14,7 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 import cz.upol.fapapp.core.sets.CollectionsUtils;
-import cz.upol.fapapp.fta.data.BaseTree;
-import cz.upol.fapapp.fta.data.CompositeTree;
+import cz.upol.fapapp.fta.tree.BaseTree;
 
 public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 
@@ -73,11 +72,14 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 			Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction) {
 
 		Alphabet statesAlphabet = alphabetOfStateSymbols(states);
+
 		transitionFunction.forEach((s, t) -> {
 			CollectionsUtils.checkInSetsJoin(s, nonterminals, terminals);
+			
 			t.getTuples().forEach((c) -> {
 				Word word = c.getDomain();
 				CollectionsUtils.checkWord(word, statesAlphabet);
+
 				if (nonterminals.contains(s)) {
 					CollectionsUtils.checkIsNotEmptyWord(word);
 				} else {
@@ -90,20 +92,20 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 		});
 	}
 
-	private static Alphabet alphabetOfStateSymbols(Set<State> states) {
-		return new Alphabet(states.stream() //
-				.map((s) -> new Symbol(s.getLabel())) //
-				.collect(Collectors.toSet())); //
+	///////////////////////////////////////////////////////////////////////////
+
+	protected static State stateOfSymbol(Symbol symbol) {
+		return new State(symbol.getValue());
 	}
 
-	public void checkTree(BaseTree tree) {
-		Symbol label = tree.getLabel();
-		CollectionsUtils.checkInSet(label, alphabetOfStateSymbols(states));
+	protected static Symbol symbolOfState(State state) {
+		return new Symbol(state.getLabel());
+	}
 
-		if (tree instanceof CompositeTree) {
-			CompositeTree composite = (CompositeTree) tree;
-			composite.getChildren().forEach((t) -> checkTree(t));
-		}
+	protected static Alphabet alphabetOfStateSymbols(Set<State> states) {
+		return new Alphabet(states.stream() //
+				.map((s) -> symbolOfState(s)) //
+				.collect(Collectors.toSet())); //
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -171,7 +173,7 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 
 	@Override
 	public void print(PrintStream to) {
-		FTAInputFileComposer composer = new FTAInputFileComposer();
+		FTAFileComposer composer = new FTAFileComposer();
 		String string = composer.compose((FuzzyTreeAutomata) this);
 		to.println(string);
 	}

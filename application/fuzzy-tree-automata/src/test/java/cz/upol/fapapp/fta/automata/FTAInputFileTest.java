@@ -25,7 +25,7 @@ public class FTAInputFileTest {
 	public void testJustToNotToFailOnVariousCombinations() {
 		String input = createInputFileA();
 
-		FTAInputFileParser parser = new FTAInputFileParser();
+		FTAFileParser parser = new FTAFileParser();
 		FuzzyTreeAutomata fta = parser.parse(input);
 
 		System.out.println(fta);
@@ -35,7 +35,7 @@ public class FTAInputFileTest {
 	public void testSomeIncorrectInputs() {
 
 		try {
-			FTAInputFileParser parser = new FTAInputFileParser();
+			FTAFileParser parser = new FTAFileParser();
 			parser.parse(createInputX());
 			fail("event not a FTA");
 		} catch (IllegalArgumentException e) {
@@ -43,7 +43,7 @@ public class FTAInputFileTest {
 		}
 
 		try {
-			FTAInputFileParser parser = new FTAInputFileParser();
+			FTAFileParser parser = new FTAFileParser();
 			parser.parse(createInputY());
 			fail("not a state in transition function");
 		} catch (IllegalArgumentException e) {
@@ -51,7 +51,7 @@ public class FTAInputFileTest {
 		}
 
 		try {
-			FTAInputFileParser parser = new FTAInputFileParser();
+			FTAFileParser parser = new FTAFileParser();
 			parser.parse(createInputZ());
 			fail("not a word over states");
 		} catch (IllegalArgumentException e) {
@@ -61,8 +61,8 @@ public class FTAInputFileTest {
 
 	@Test
 	public void testComposeAndParseBack() {
-		FTAInputFileParser parser = new FTAInputFileParser();
-		FTAInputFileComposer composer = new FTAInputFileComposer();
+		FTAFileParser parser = new FTAFileParser();
+		FTAFileComposer composer = new FTAFileComposer();
 
 		FuzzyTreeAutomata expectedAutomata = createAutomataB();
 
@@ -91,8 +91,8 @@ public class FTAInputFileTest {
 
 	@Test
 	public void testBi() {
-		FTAInputFileParser parser = new FTAInputFileParser();
-		FTAInputFileComposer composer = new FTAInputFileComposer();
+		FTAFileParser parser = new FTAFileParser();
+		FTAFileComposer composer = new FTAFileComposer();
 
 		FuzzyTreeAutomata expectedAutomata = createAutomataB();
 		String file = composer.compose(expectedAutomata);

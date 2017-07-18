@@ -1,4 +1,4 @@
-package cz.upol.fapapp.fta.data;
+package cz.upol.fapapp.fta.tree;
 
 import cz.upol.fapapp.core.ling.Alphabet;
 

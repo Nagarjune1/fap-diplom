@@ -1,5 +1,6 @@
-package cz.upol.fapapp.fta.data;
+package cz.upol.fapapp.fta.tree;
 
+import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 
 public abstract class BaseTree {
@@ -13,6 +14,11 @@ public abstract class BaseTree {
 	public Symbol getLabel() {
 		return label;
 	}
+
+	///////////////////////////////////////////////////////////////////////////
+
+	public abstract void validate(Alphabet nonterminals, Alphabet terminals);
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {
@@ -43,5 +49,7 @@ public abstract class BaseTree {
 	public String toString() {
 		return "BaseTree [label=" + label + "]";
 	}
+
+	///////////////////////////////////////////////////////////////////////////
 
 }

@@ -16,14 +16,16 @@ import cz.upol.fapapp.core.infile.ObjectParserTools;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.BinaryRelation;
+import cz.upol.fapapp.core.sets.CollectionsUtils;
 
-public class FTAInputFileParser extends InputFileObjectParser<FuzzyTreeAutomata> {
+public class FTAFileParser extends InputFileObjectParser<FuzzyTreeAutomata> {
 
 	protected static final String TYPE = "Fuzzy tree automata";
 	protected static final String OVER_TO_TO_SEPARATOR_TOKEN = "->";
 
-	public FTAInputFileParser() {
+	public FTAFileParser() {
 		super(TYPE);
 	}
 
@@ -64,11 +66,16 @@ public class FTAInputFileParser extends InputFileObjectParser<FuzzyTreeAutomata>
 				finalStates = processFinalStates(lines);
 				break;
 			default:
-				System.err.println("Warningn: Unknown key" + key);
-
+				Logger.get().warning("Unknown key " + key);
 			}
 		}
 
+		CollectionsUtils.checkNotNull("states", states);
+		CollectionsUtils.checkNotNull("nonterminals", nonterminals);
+		CollectionsUtils.checkNotNull("terminals", terminals);
+		CollectionsUtils.checkNotNull("transition function", transitionFunction);
+		CollectionsUtils.checkNotNull("final states", finalStates);
+		
 		return new FuzzyTreeAutomata(states, nonterminals, terminals, transitionFunction, finalStates);
 	}
 

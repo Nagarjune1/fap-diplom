@@ -35,8 +35,14 @@ public class CollectionsUtils {
 
 	/////////////////////////////////////////////////////////////////
 
+	public static <E> void checkNotNull(String key, E object) {
+		if (object == null) {
+			throw new IllegalArgumentException("Missing " + key);
+		}
+	}
+
 	public static <E> void checkInSet(E element, Set<E> set) {
-		if (set.contains(element)) {
+		if (!set.contains(element)) {
 			throw new IllegalArgumentException("Not in set, set " + set + " does not contain " + element);
 		}
 	}
@@ -83,7 +89,8 @@ public class CollectionsUtils {
 	public static void checkWord(Word word, Alphabet alphabet) {
 		word.getSymbols().forEach((s) -> {
 			if (!alphabet.contains(s)) {
-				throw new IllegalArgumentException("Word " + word + " is not a word of alphabet " + alphabet + " because of " + s);
+				throw new IllegalArgumentException(
+						"Word " + word + " is not a word of alphabet " + alphabet + " because of " + s);
 			}
 		});
 	}

@@ -1,9 +1,10 @@
-package cz.upol.fapapp.fta.data;
+package cz.upol.fapapp.fta.tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 
 public class CompositeTree extends BaseTree {
@@ -30,6 +31,18 @@ public class CompositeTree extends BaseTree {
 	public BaseTree child(int i) {
 		return children.get(i);
 	}
+
+	/////////////////////////////////////////////////////////////////
+	@Override
+	public void validate(Alphabet nonterminals, Alphabet terminals) {
+		if (!nonterminals.contains(this.getLabel())) {
+			throw new IllegalArgumentException("Not a inner node (" + getLabel() + " is not in " + terminals + ")");
+		}
+
+		children.forEach((c) -> c.validate(nonterminals, terminals));
+	}
+
+	/////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {

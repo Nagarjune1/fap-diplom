@@ -6,11 +6,11 @@ import java.io.IOException;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.fta.automata.FTAInputFileParser;
+import cz.upol.fapapp.fta.automata.FTAFileParser;
 import cz.upol.fapapp.fta.automata.FuzzyTreeAutomata;
-import cz.upol.fapapp.fta.data.AtomicTree;
-import cz.upol.fapapp.fta.data.BaseTree;
-import cz.upol.fapapp.fta.data.CompositeTree;
+import cz.upol.fapapp.fta.tree.AtomicTree;
+import cz.upol.fapapp.fta.tree.BaseTree;
+import cz.upol.fapapp.fta.tree.CompositeTree;
 
 public class TreeOnFTaRunner {
 
@@ -32,7 +32,7 @@ public class TreeOnFTaRunner {
 	}
 
 	private static Degree run(File automataFile, File treeFile) {
-		FTAInputFileParser automataParser = new FTAInputFileParser();
+		FTAFileParser automataParser = new FTAFileParser();
 		FuzzyTreeAutomata automata;
 		try {
 			automata = automataParser.parse(automataFile);

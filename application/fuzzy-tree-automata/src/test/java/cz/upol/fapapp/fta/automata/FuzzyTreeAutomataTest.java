@@ -17,9 +17,9 @@ import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 import cz.upol.fapapp.core.sets.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
-import cz.upol.fapapp.fta.data.AtomicTree;
-import cz.upol.fapapp.fta.data.BaseTree;
-import cz.upol.fapapp.fta.data.CompositeTree;
+import cz.upol.fapapp.fta.tree.AtomicTree;
+import cz.upol.fapapp.fta.tree.BaseTree;
+import cz.upol.fapapp.fta.tree.CompositeTree;
 
 public class FuzzyTreeAutomataTest {
 

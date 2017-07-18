@@ -33,5 +33,42 @@ public abstract class InputFileObjectParser<T> {
 		return process(data);
 	}
 
+	/**
+	 * This method should look like:
+	 * 
+	 * <pre>
+	 * public RetType process(InputFileData data) {
+	 * 	Type1 value1 = null;
+	 * 	Type2 value2 = null;
+	 * 
+	 * 	for (String key : data.listKeys()) {
+	 * 		List<LineItems> lines = data.getItemsOf(key);
+	 * 
+	 * 		switch (key) {
+	 * 		case InputFileData.TYPE_KEY:
+	 * 			break;
+	 * 		case "type1":
+	 * 		case "values of type 1":
+	 * 			value1 = processValue1(lines);
+	 * 			break;
+	 * 		case "type2":
+	 * 		case "values of type 2":
+	 * 			value2 = processValue2(lines);
+	 * 			break;
+	 * 		default:
+	 * 			Logger.get().warning("Unknown key " + key);
+	 * 		}
+	 * 	}
+	 * 
+	 * 	CollectionsUtils.checkNotNull("type1", value1);
+	 * 	// value2 is optional
+	 * 
+	 * 	return new RetType(value1, value2);
+	 * }
+	 * </pre>
+	 * 
+	 * @param data
+	 * @return
+	 */
 	public abstract T process(InputFileData data);
 }

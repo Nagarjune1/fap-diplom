@@ -18,10 +18,10 @@ import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 
-public class FTAInputFileComposer extends InputFileObjectComposer<FuzzyTreeAutomata> {
+public class FTAFileComposer extends InputFileObjectComposer<FuzzyTreeAutomata> {
 
-	public FTAInputFileComposer() {
-		super(FTAInputFileParser.TYPE);
+	public FTAFileComposer() {
+		super(FTAFileParser.TYPE);
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class FTAInputFileComposer extends InputFileObjectComposer<FuzzyTreeAutom
 				LineItems word = ObjectParserTools.wordToLine(couple.getDomain());
 				items.addAll(word.getItems());
 
-				items.add(FTAInputFileParser.OVER_TO_TO_SEPARATOR_TOKEN);
+				items.add(FTAFileParser.OVER_TO_TO_SEPARATOR_TOKEN);
 
 				LineItems fuzzyState = ObjectParserTools.fuzzyStateToLine(couple.getTarget());
 				items.addAll(fuzzyState.getItems());
