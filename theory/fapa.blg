@@ -13,6 +13,7 @@ Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
 Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
 Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
 Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
+Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
@@ -22,7 +23,7 @@ Warning--empty journal in Ech-DefSyssConPre
 Warning--empty year in Ech-DefSyssConPre
 You've used 14 entries,
             2118 wiz_defined-function locations,
-            582 strings with 6906 characters,
+            584 strings with 6944 characters,
 and the built_in function-call counts, 2973 in all, are:
 = -- 281
 > -- 110

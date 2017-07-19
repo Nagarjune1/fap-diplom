@@ -300,20 +300,20 @@ Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řet�
 \subsection{Podobnost symbolů}
 Nejzákladnější technika pro zanesení neostrého (stupňovitého) rozpoznávání je s využitím podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém.
 
-Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $g_s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $g_s(x, y) = 0$, pak se jedná o naprosto rozdílné symboly. Naopak, pokud bude $g_s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $g_s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $s(x, y) = 0$, pak se jedná o naprosto rozdílné symboly. Naopak, pokud bude $s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
 
 \begin{example}
- Jako příklad podobnostní relace (nad abecedou písmen anglické abecedy) může posloužit například vzdálenost patřičných kláves na klávesnici. V takovém případě by určitě platilo kupříkladu $g_s(a,s) > g_s(a, d) > g_s(a, l)$. Protože klávesy \str{A} a \str{S} jsou si blíž (a tudíž symboly $a$ a $s$ jsou si \uv{podobnější}) než například \str{A} a \str{D} či \str{A} a \str{L}.
+ Jako příklad podobnostní relace (nad abecedou písmen anglické abecedy) může posloužit například vzdálenost patřičných kláves na klávesnici. V takovém případě by určitě platilo kupříkladu $s(a,s) > s(a, d) > s(a, l)$. Protože klávesy \str{A} a \str{S} jsou si blíž (a tudíž symboly $a$ a $s$ jsou si \uv{podobnější}) než například \str{A} a \str{D} či \str{A} a \str{L}.
  
- Jiným příkladem může být například vizuální podobnost napsaných (malých psacích) písmen. V takovém případě by zřejmě platilo $g_s(a, o) > g_s(m, t)$, protože malá psací písmena \str{a} a \str{o} jsou si vizuálně podobnější než \str{m} a \str{t}, která vypadají úplně rozdílně.
+ Jiným příkladem může být například vizuální podobnost napsaných (malých psacích) písmen. V takovém případě by zřejmě platilo $s(a, o) > s(m, t)$, protože malá psací písmena \str{a} a \str{o} jsou si vizuálně podobnější než \str{m} a \str{t}, která vypadají úplně rozdílně.
 \end{example}
 
-Máme-li k dispozici relaci $g_s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, tato technika může pracovat s libovolným konečným automatem. Podíváme se proto nejdříve, jak využít relaci $g_s$ obecně. Následně ji aplikujeme na automat rozpoznávající $\omega$, čímž získáme nástroj pro podobnostní rozpoznávání textového vzoru.
+Máme-li k dispozici relaci $s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, tato technika může pracovat s libovolným konečným automatem. Podíváme se proto nejdříve, jak využít relaci $s$ obecně. Následně ji aplikujeme na automat rozpoznávající $\omega$, čímž získáme nástroj pro podobnostní rozpoznávání textového vzoru.
 
-\begin{definition}[Automat pracující s $g_s$] \label{def-AutPracGS}
-Uvažujme, že máme nedeterminstický automat $A$ a relaci podobnosti symbolů $g_s$. Pak k automatu $A$ můžeme zkonstruovat fuzzy automat $A'$, který navíc pracuje s $g_s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutBivAut} s tím rozdílem, že přechodová funkce $\mu$ bude definována pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$ následovně:
+\begin{definition}[Automat pracující s $s$] \label{def-AutPracGS}
+Uvažujme, že máme nedeterminstický automat $A$ a relaci podobnosti symbolů $s$. Pak k automatu $A$ můžeme zkonstruovat fuzzy automat $A'$, který navíc pracuje s $s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutBivAut} s tím rozdílem, že přechodová funkce $\mu$ bude definována pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$ následovně:
 $$
- \mu(q_i, x, q_j) = \bigvee_{y \in \Sigma} (g_s (x, y) \wedge \delta_y (q_i, q_j))
+ \mu(q_i, x, q_j) = \bigvee_{y \in \Sigma} (s (x, y) \wedge \delta_y (q_i, q_j))
 $$
  kde $\delta_x(q_i, q_j) = 
   \begin{cases}
@@ -323,20 +323,20 @@ $$
  $ pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$.
 \end{definition}
 
-Definice je vcelku přímočará. Pro každý přechod ze stavu $q_i$ do stavu $q_j$ přes symbol $x$, procházíme přechody původního automatu. Obsahovala-li přechodová funkce původního automatu přechod ze stavu $q_i$ přes symbol $y$ do stavu $q_j$, pak je $g_s (x, y) \wedge \delta_y (q_i, q_j)$ rovno podobnosti $x$ a $y$. V opačném případě je roven nule. Hodnota tohoto výrazu je díky spojení přes všechny symboly maximalizována.
+Definice je vcelku přímočará. Pro každý přechod ze stavu $q_i$ do stavu $q_j$ přes symbol $x$, procházíme přechody původního automatu. Obsahovala-li přechodová funkce původního automatu přechod ze stavu $q_i$ přes symbol $y$ do stavu $q_j$, pak je $s (x, y) \wedge \delta_y (q_i, q_j)$ rovno podobnosti $x$ a $y$. V opačném případě je roven nule. Hodnota tohoto výrazu je díky spojení přes všechny symboly maximalizována.
 
 Nyní aplikujeme tento způsob konstrukce fuzzy automatu na automat rozpoznávající $\omega$.
 
-\begin{definition}[Automat rozpoznávající $\omega$ pracující s $g_s$]
- Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a fuzzy relaci $g_s$ nad touto abecedou. Dle definice \ref{def-AutRozpOme} můžeme zkonstruovat nedeterministický bivalentní automat $A(\omega)$ rozpoznávající $\omega$. Jako automat rozpoznávající $\omega$ pracující s $g_s$ označme nedeterministický fuzzy automat $A'(\omega)$, který byl z automatu $A(\omega)$ vytvořen podle definice \ref{def-AutPracGS}.
+\begin{definition}[Automat rozpoznávající $\omega$ pracující s $s$]
+ Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a fuzzy relaci $s$ nad touto abecedou. Dle definice \ref{def-AutRozpOme} můžeme zkonstruovat nedeterministický bivalentní automat $A(\omega)$ rozpoznávající $\omega$. Jako automat rozpoznávající $\omega$ pracující s $s$ označme nedeterministický fuzzy automat $A'(\omega)$, který byl z automatu $A(\omega)$ vytvořen podle definice \ref{def-AutPracGS}.
 \end{definition}
 
-\TODO{neměl by se takovýto automat místo $A'(\omega)$ značit třeba $A_{g_s}(\omega)$? }
+\TODO{neměl by se takovýto automat místo $A'(\omega)$ značit třeba $A_{s}(\omega)$? }
 
 Následuje jednoduchý příklad takového automatu.
 
 \begin{example} \label{ex-AutRozpOmePodSym}
- Mějme abecedu $\Sigma = \{ a, b, c, d \}$. Dále uvažujme relaci podobnosti symbolů $g_s$ takovou, že
+ Mějme abecedu $\Sigma = \{ a, b, c, d \}$. Dále uvažujme relaci podobnosti symbolů $s$ takovou, že
  \begin{itemize}
   \item každý symbol je podobný sám sobě ve stupni $1$
   \item každý symbol je podobný symbolu ve stupni $0,5$ jedná-li se o symboly reprezentující sousedící písmena abecedy
@@ -345,7 +345,7 @@ Následuje jednoduchý příklad takového automatu.
  \end{itemize}
  Tuto relaci můžeme zapsat do matice (sloupce i řádky odpovídají po řadě symbolům $a, b, c, d$):
  $$
- g_s = 
+ s = 
   \begin{pmatrix}
    1,0 	& 0,5	& 0,3	& 0,0 	\\
    0,5	& 1,0 	& 0,5	& 0,3	\\
@@ -353,7 +353,7 @@ Následuje jednoduchý příklad takového automatu.
    0,0 	& 0,3	& 0,5	& 1,0 	\\
   \end{pmatrix}
  $$
- Nyní mějme vzorový řetězec $\omega = abc$. Pak můžeme podle předchozí definice sestavit automat $A(\omega)$ rozpoznávající $\omega$ pracující s $g_s$. Přechodový diagram takového automatu je na obrázku \ref{diag-AutRozpABCPracGS}.
+ Nyní mějme vzorový řetězec $\omega = abc$. Pak můžeme podle předchozí definice sestavit automat $A(\omega)$ rozpoznávající $\omega$ pracující s $s$. Přechodový diagram takového automatu je na obrázku \ref{diag-AutRozpABCPracGS}.
  
  Tento automat evidentně rozpoznává řetězec \str{abc} ve stupni $1$. Pokud v pozorovaném řetězci nahradíme symbol \str{a} za \str{b}, bude jej automat přijímat ve stupni $0,5$. Pokud nahradíme \str{b} za \str{d}, bude jej automat přijímat ve stupni $0,3$.
  
@@ -361,17 +361,17 @@ Následuje jednoduchý příklad takového automatu.
  
   \begin{figure}
     \includegraphics{diags5}
-    \caption{Automat rozpoznávající \str{abc} pracující s $g_s$} \label{diag-AutRozpABCPracGS}
+    \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpABCPracGS}
   \end{figure}
 \end{example}
 
-Z příkladu jasně vyplývá, že automat pracující s $g_s$ je schopen akceptovat pouze náhradu symbolu jiným symbolem. Bude-li pozorovaný řetězec oproti vzorovému obsahovat vložený symbol nebo naopak z něj bude symbol odebrán, tento typ automatu selže. Na druhou stranu jeho princip i konstrukce jsou jednoduché a snadno se s nimi pracuje.
+Z příkladu jasně vyplývá, že automat pracující s $s$ je schopen akceptovat pouze náhradu symbolu jiným symbolem. Bude-li pozorovaný řetězec oproti vzorovému obsahovat vložený symbol nebo naopak z něj bude symbol odebrán, tento typ automatu selže. Na druhou stranu jeho princip i konstrukce jsou jednoduché a snadno se s nimi pracuje.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy symboly}
 Fuzzy symbol je technika využjívající podobnosti symbolů. Ve své podstatě se jedná o téže techniku jak v předchozí podkapitole, jen je na ni nahlíženo jinak. Oproti podobnosti symbolů je použití fuzzy symbolů komplikovanější, avšak umožňuje jednoduše tuto techniku kombinovat s jinými. Princip fuzzy symbolů byl přejat z \cite{Ech-DefSyssConPre}.
 
-Mějme abecedu $\Sigma$ a relaci $p$ podobnosti symbolů (stejně jako relace $g_s$ v předchozí podkapitole). Fuzzy symbolem symbolu $x \in \Sigma$ označujeme fuzzy množinu symbolů takových, které jsou podle relace $p$ symbolu $x$ \uv{podobné}.
+Mějme abecedu $\Sigma$ a relaci $p$ podobnosti symbolů (stejně jako relace $s$ v předchozí podkapitole). Fuzzy symbolem symbolu $x \in \Sigma$ označujeme fuzzy množinu symbolů takových, které jsou podle relace $p$ symbolu $x$ \uv{podobné}.
 
 \begin{definition}[Fuzzy symbol]
 Mějme abecedu $\Sigma$ a fuzzy relaci $p \subseteq \Sigma \times \Sigma$. Pak pro každý symbol $y \in \Sigma$ definujeme fuzzy symbol $\widetilde{y}$ symbolu $y$ jako fuzzy množinu nad $\Sigma$ takovou, že pro všechna $x \in \Sigma$ platí
@@ -421,11 +421,11 @@ Tím, že je změna zakořeněna ve výpočtu automatu, nám umožňuje další 
 Postup konstrukce takovéhoto automatu je opět vcelku intuitivní. Následuje demonstrace na příkladu.
 
 \begin{example}
- Mějme abecedu $\Sigma$, vzorový řetězec a podobnostní relaci $p = g_s$ stejné jako v příkladu \ref{ex-AutRozpOmePodSym}. Na obrázku \ref{diag-AutRozpOmePraFuzSym} je zobrazen diagram automatu $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
+ Mějme abecedu $\Sigma$, vzorový řetězec a podobnostní relaci $p = s$ stejné jako v příkladu \ref{ex-AutRozpOmePodSym}. Na obrázku \ref{diag-AutRozpOmePraFuzSym} je zobrazen diagram automatu $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
  
  \begin{figure}
     \includegraphics{diags6}
-    \caption{Automat rozpoznávající \str{abc} pracující s $g_s$} \label{diag-AutRozpOmePraFuzSym}
+    \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpOmePraFuzSym}
   \end{figure}
 \end{example}
 
@@ -712,13 +712,13 @@ Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zavedení}
-Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání řetězců, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat některé bezkontextové jazyky.
+Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání dat, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat vybrané bezkontextové jazyky.
 
-Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole vycházeno z \cite{MorMal-FuzzyAutLang}.
+Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
 
-Fuzzy automaty pracují se speciálními strukturami symbolů, tzv. stromy. K těmto stromům je navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních aplikací fuzzy automatů.
+Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. stromy. pro snadnější práci s nimi bylo navrženo je navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy automatů.
 
-Následující dvě podkapitoly budou doprovázeny příklady. Pro snažší pochopení a vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
+Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stromy a termy}
@@ -729,7 +729,7 @@ Následující dvě podkapitoly budou doprovázeny příklady. Pro snažší poc
    \item $wn \in U$ a $m \leq n$ implikuje $wm \in U$, pro všechna $w \in \Sigma^+$ a $m, n \in \Sigma$
   \end{itemize}
 \end{definition}
- Na doménu stromu můžeme nahlížet jako na množina řetězců, které formují prefixový strom. Množinu $U$ tak lze rozložit na množinu $\overline{U}$ listových uzlů 
+ Na doménu stromu můžeme nahlížet jako na množinu řetězců, které formují prefixový strom. Množinu $U$ tak lze rozložit na množinu $\overline{U}$ listových uzlů 
 $$
  \overline{U} = \{ w \in U | w u \notin U \text{ pro všechna } u \in \Sigma^+ \}
 $$
@@ -747,7 +747,8 @@ a množninu $U \setminus \overline{U}$ vnitřních uzlů.
  \end{itemize}
  Místo $t(w)$ budeme psát jen $t$.
 \end{definition}
-Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu daného doménou $U$. To znamená, že strom dle definice \ref{def:Tree} je v korespondenci s pojmem \uv{strom} (resp. \uv{kořenový strom}) z teorie grafů. Z tohoto důvodu si pro jednoduchost můžeme odpustit definici souvisejících pojmů z teorie grafů pro strom z definice \ref{def:Tree}. Díky tomu můžeme stromy graficky zobrazovat, hovořit o jejich uzlech, potomcích, podstromech, vnitřních a listových uzlech bez nutnosti formálního nadefinování.
+\TODO{Takto definovaný strom však teoreticky může být nekonečný. Co s tím?}
+Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu daného doménou $U$. Strom dle definice \ref{def:Tree} je v korespondenci s pojmem \uv{strom} (resp. \uv{kořenový strom}) z teorie grafů. Z tohoto důvodu si pro jednoduchost můžeme odpustit definici souvisejících pojmů z teorie grafů pro strom z definice \ref{def:Tree}. Můžeme tak stromy graficky zobrazovat, hovořit o jejich potomcích, podstromech, vnitřních a listových uzlech bez nutnosti formálního nadefinování.
 
 \begin{example} \label{ex:Trees}
  Označme $T = \{ x, y \}$ a $N = \{ S, M \}$. Definujme doménu $U_1$ stromu pro abecedu $\Sigma = \mathbb{N}$ jako množinu řetězců $U_1 = \{ \epsilon, 1, 11, 12, 121, 2 \}$. Pak $\overline{U_1} = \{ 11, 121, 2 \}$. Strom $t_1: U_1 \rightarrow (T, N)$ nad $(T, N)$ pak může vypadat například takto:
@@ -779,11 +780,10 @@ Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu da
  \caption{Stromy k příkladu \ref{ex:Trees}} \label{img:Tree}
 \end{figure}
 
-Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale občas vhodné mít lineární strukturu pro zápis téhož. Nadefinujeme si proto pseutermy, protějšky termů predikátové logiky.
+Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale občas vhodné mít lineární strukturu pro zápis téhož. Nadefinujeme si proto pseudotermy, protějšky termů predikátové logiky\footnote{Oproti termům predikátové logiky mají však jiný pohled na nulární funktory, které u pseudotermu neexistují}.
 
 \begin{definition}[Pseudoterm]
- Označme $D_{(N,T)}^p$ nejmenší podmnožinu\footnote{
-    pseudotermy mohou býz zřejmě generovány bezkontextovou gramatikou}
+ Označme $D_{(N,T)}^p$ nejmenší podmnožinu
 %    $D_{(N,T)}$ je bezkontextový jazyk: gramatika jej generující by mohla vypadat například takto: $(\{ S, N_T, N_N, L \}, T \cup N \cup \{ (, ) \}, P, S)$, kde $P = \{ S \rightarrow T_T | T_N ( L ), T_T \rightarrow T_1 | \dots | T_n, T_N \rightarrow N_1 | \dots | N_k, L \rightarrow S L | \epsilon \}$.}
  $(N \cup T \cup \{ (, ) \})^*$ splňující následující podmínky\footnote{
     Předpokládáme, že symboly závorek, $($ a $)$ nejsou součástí $N \cup T$}:
@@ -793,6 +793,10 @@ Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale ob
  \end{itemize}
  Prvky množiny $t^p \in D_{(N,T)}^p$ nazývejme pseudotermy.
 \end{definition}
+
+\begin{note}
+  Definice pseudotermu lze snadno přepsat do gramatiky. Vzhledem k tomu, že taková gramatika bude jistě bezkontextová, bude jazyk $D_{(N, T)}$ bezkontextový. Tento fakt bude mít důsledek na konstrukci fuzzy tree automatu.
+\end{note}
 
 \begin{example} \label{ex:PseTerms}
  Pro částečně spořádanou abecedu $(N, T)$ s předchozího příkladu můžeme za termy označit například: $t^p_1 = y$, $t^p_2 = S(x)$, $t^p_3 = M(x x)$, $t^p_4 = M(M(x S(y)) x)$.
@@ -829,13 +833,13 @@ Mezi stromy a pseudotermy platí vzájemně převoditelný vztah. To bude nyní 
  Pseudoterm $t^p_4$ z předchozího příkladu odpovídá stromu na obrázku \ref{img:Tree:first} a pseudoterm $t^p_3$ stromu \ref{img:Tree:third} (a naopak).
 \end{example}
 
-Množinu stromů můžeme nazývat jazyk stromů. Fuzzy množinu stromů pak fuzzy jazyk stromů.
+Máme tedy prokázano, že mezi pseudotermy a stromy platí vzájemná převoditelnost. Označíme si nyní množinu stromů jako jazyk a fuzzy množinu stromů jako fuzzy jazyk. Obdobným způsobem bychom mohli nadefinovat i jazyk pseudotermů, ale ten nebudeme potřebovat.
 
 \begin{definition}[Fuzzy jazyk stromů]
  Fuzzy množinu $\tau$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
 \end{definition}
 
-Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a listovými uzly. Termy jsou jejich zakódováním do řetězců. Máme tak nadefinován fuzzy jazyk stromů. Nyní se podíváme na fuzzy tree automaty, mechanizmy, které umožňují fuzzy jazyky stromů rozpoznávat.
+%Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a listovými uzly. Termy jsou jejich zakódováním do řetězců. Máme tak nadefinován fuzzy jazyk stromů. Nyní se podíváme na fuzzy tree automaty, mechanizmy, které umožňují fuzzy jazyky stromů rozpoznávat.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy tree automat a jazyk jím rozpoznávaný}
@@ -852,7 +856,7 @@ Začněme definicí fuzzy tree automatu.
  \end{itemize}
 \end{definition}
 
-Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde při vstupu $a$. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud je na vstupu $X$ a automat se nachází ve stavech $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}. Vzhledem k tomu, že automat se může nacházet ve více stavech současně, jeho výpočet bude zcela určitě nedeterministický.
+Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde při vstupu $a$. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud je na vstupu $X$ a automat se nachází ve stavech $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}. 
 
 \begin{example}
  Uvažujme množiny $N$ a $T$ stejné, jako v předchozích příkladech. Stanovme $Q = \{ q_1, q_2 \}$. Fuzy množinu $F$ položme rovnu $\{ q_2 \}$ a zobrazení $\mu$ je zaznačeno v tabulce \ref{tab:MuOfFuzTreAut}. Pak $A = (Q, T, N, \mu, F)$ je fuzzy tree automatem.
@@ -903,12 +907,12 @@ Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminá
   \caption{Příklad přechodové funkce $\mu$ fuzzy tree automatu} \label{tab:MuOfFuzTreAut}
 \end{table}
 
-Nyní se podíváme na stromy a jazyk stromů, které fuzzy tree automat rozpoznává.
+Na přechodovou funkci se můžeme také podívat pohledem syntaktické analýzy zdola nahoru. Přechodové funkce $\mu_X$ ($X \in N$) realizují operaci \uv{redukce} a přechodové funkce $\mu_a$ ($a \in T$) operaci \uv{přesun}. Můžeme tedy říci, že jazyk stromů (resp. jazyk jim odpovídajících pseudotermů) je fuzzy bezkontextový. Předtím je ale třeba ukázat, že fuzzy tree automaty skutečně přijímají fuzzy jazyky stromů.
 
 \begin{definition}[Fuzzy přechodová funkce stromů]
  Pro strom $t \in D_{(N,T)}$ definujme fuzzy přechodovou funkci stromů jako zobrazení $\mu_t: Q \rightarrow [0,1]$ následovně:
  \begin{itemize}
-  \item Pokud stromu $t$ odpovídá pseudoterm $p(t) = X(t_1 \dots t_k)$, pak 
+  \item Pokud stromu $t$ odpovídá pseudoterm $p(t) = X(p(t_1) \dots p(t_k))$, pak 
   $$
     \mu_t(q) 
       = \mu_{X(t_1 \dots t_k)}(q) \\
@@ -918,7 +922,7 @@ Nyní se podíváme na stromy a jazyk stromů, které fuzzy tree automat rozpozn
  \end{itemize}
 \end{definition}
 
-Fuzzy přechodová funkce stromů je obdobou fuzzy rozšířené přechodové funkce. Pokud je vstupní strom atomický je přechod realizován pomocí fuzzy přechodové funkce $\mu$. Pokud vstupní strom není atomický, je přechod realizován ve stupni, který je dán stupňem přechodu neterminálního symbolu a stupňů příslušných podstromů.
+Fuzzy přechodová funkce stromů je obdobou fuzzy rozšířené přechodové funkce. Pokud je vstupní strom atomický ($t = a$) je přechod realizován pomocí fuzzy přechodové funkce $\mu_a$. Pokud vstupní strom není atomický, je přechod realizován ve stupni, který je dán stupňem přechodu neterminálního symbolu a stupňů příslušných podstromů.
 
 Stupeň, ve kterém je strom $t$ automatem přijímán, pak lze určit vztahem
 $$
@@ -926,15 +930,16 @@ $$
 $$
 
 \begin{definition}[Jazyk rozpoznávaný]
- Fuzzy množinu $D(A)$ nad $D_{(N,T)}$ danou předpisem
+\TODO{značení fuzzy jazyka}
+ Fuzzy množinu $L(A)$ nad $D_{(N,T)}$ danou předpisem
  $$
-  D(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(q) \right\}
+  L(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(q) \right\}
  $$
  nazvěme fuzzy jazyk rozpoznávaný fuzzy tree automatem.
 \end{definition}
 
 \begin{example}
- Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (s levým podstromem $t_{1,1}$ a pravým podstromem $t_{1,2}$ kořene) z obrázku \ref{img:Tree:third} platí $\mu_{t_1}(q_2)$:
+ Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (kde $t_{1,1}$ značí levý podstrom kořene a $t_{1,2}$ pravý podstrom) z obrázku \ref{img:Tree:third} platí $\mu_{t_1}(q_2)$:
  \begin{align*}
   \mu_{t_1}(q_2) 
     &= 		\left( \mu_M(q_1 q_1, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_1) \right) \\
@@ -943,18 +948,21 @@ $$
     &= \left( 0,6 \wedge 1 \wedge 1 \right) \vee \left( 1 \wedge 1 \wedge 0 \right) \vee \left( 0,7 \wedge 0 \wedge 1 \right) 
     = 0,6
  \end{align*}
- \TODO{dalších pár stromů}
+ Pak tedy $A(t_1) = 0,6$. Pro stromy $t_2$ a $t_3$ z obrázku \ref{img:Tree:first} a \ref{img:Tree:first} platí $A(t_2) = 0.7$ a $A(t_3) = 1$.
 \end{example}
 
-Podobně jako u klasických automatů, i u tree automatů platí, že vždy existuje automat, který rozpoznává daný (fuzzy) jazyk.
+Podobně jako u klasických automatů, i u tree automatů platí, že pro každý fuzzy jazyk stromů existuje automat, který tento jazyk rozpoznává.
 \begin{theorem}
  Pro jaždý fuzzy jazyk stromů existuje fuzzy tree automat, který ho rozpoznává.
 \end{theorem}
+\begin{proof}
+ K dispozici v \cite{MorMal-FuzzyLangThe}.
+\end{proof}
 
 V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
 
 \begin{definition}[Automat rozpoznávající strom]
-  Mějme strom $t \in D_{(N, T)}$ a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
+  Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
   \begin{itemize}
    \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
    \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
@@ -972,39 +980,182 @@ Fuzzy tree automaty je možné použít všude tam, kde je třeba rozpoznávat u
 
 Konečnost množiny $\mathcal{Q}$ však teoreticky nemusí být nutná. Teoreticky by šlo jako vzory funkce $\mu_X$ namísto konkrétních řetězců nad $Q$ použít například regulérní výraz popisující celou třídu takových řetězců (například \regex{(q0 | q1)+}). To by však zkomplikovalo implementaci takového automatu a proto toto rozšíření nebude uvažováno.
 
-Důležité však je, že automat umožňuje rozpoznávat rekurzivní stromy. Rekurze je dosaženo (opakovaným) přechodem ze stavu do téže stavu v nenulovém stupni. 
+Důležité však je, že automat umožňuje rozpoznávat rekurzivní stromy. Rekurze je dosaženo (opakovaným) přechodem ze stavu do téže stavu (v nenulovém stupni). 
 
-\subsubsection*{Geometrické tvary}
+\subsection{Detekce úplných $m$-árních stromů}
+Základní technikou, jak lze využít fuzzy tree automaty je přímo práce se stromy. Ukážeme si, že s pomocí fuzzy tree automatů lze snadno rozpoznávat úplné $m$-ární stromy. 
 
-V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree automatů rozpoznávat složené geometrické tvary. Techniku demonstrují na problému rozpoznávání jednoduchého nákresu domu a kostela.
+\begin{definition}[Úplný strom]
+ Úplný $m$-ární strom je takový strom, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly).
+\end{definition}
 
-Dům totiž popisují jako \uv{obdélník, jehož horní strana splývá se základnou rovnoramenného trojúhelníku}. Vlastnosti \uv{být obdélník}, \uv{být rovnoramenný trojúhelník} a \uv{mít splývající hrany} se dají poměrně snadno fuzzyfikovat. Například, určení stupně rovnoramennosti trojúhelníku lze spočítat jako poměr obou úhlů svíranými základnou a oběma rameny.
-
-Autoři pak navrhují strom reprezentující takovýto objekt domu a konstruují fuzzy tree automat, který tento strom rozpoznává. Automat správně rozpoznává objekt domu sestavený dle požadavků ve stupni $1$. Strom, který reprezentuje objekt se \uv{střechou} ve tvaru pravoúhlého trojúhelníku je pak rozpoznáván ve stupni menším než $1$ (v závislosti na sklonu střechy).
-
-Obdobným způsobem autoři nadefinovali strom reprezentující jednoduchou budou kostela jako \u{dům, který má na špičku střechy připevněn kříž}.
-
-\subsubsection*{Detekce úplných $m$-árních stromů}
-Dalším způsobem, jak lze používat fuzzy tree automaty je rozpoznávání úplných $m$-árních stromů. Úplný $m$-ární strom je takový, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly). My však můžeme můžeme vlastnost \uv{být úplný $m$-ární} snadno fuzzifikovat.
-
-Uvažujme strom $t$, který je tvořen vnitřními uzly $I$ (konkrétní uzly značme $I_1, \dots, I_n$) a listovými uzly $o$ (konkrétní uzly značme $o_1, \dots, o_k$). Označme $N = \{ I \}$ a $T = \{ o \}$. Strom $t$ je pak prvkem množiny $D_{(N, T)}$.
-
-Zaveďme fuzzy množinu $\alpha_m: I_1, \dots I_n \rightarrow [0,1]$ úplných $m$-árních uzlů předpisem:
+Vlastnost \uv{být úplným $m$-árním stromem} lze poměrně jednoduše fuzzyfikovat. Pro každý vnitřní uzel $v$ o $n$ potomcích určeme míru jeho úplnosti. Jinými slovy stupeň pravdivosti výroku \uv{uzel $v$ má $m$ potomků}. Tuto míru označme $\alpha_i$ a můžeme ji určit následujícím vztahem
 $$
-  \alpha_m(I_i) = \frac{|children(I_i)|}{m}
-$$
-kde $children(I_i)$ značí počet potomků uzlu $I_i$. Stupeň, ve kterém je strom úplný $m$-ární pak určíme jako infimum z $\tau_m(I_i)$ všech jeho vnitřní uzlů $I_i$. Pak můžeme definovat fuzzy množinu $\tau_m$ úplných $m$-árních stromů pro každý $t \in D_{(N, T)}$:
-$$
-  \tau_m(t) = \bigwedge_{i = 1}^{n} \alpha_m(I_i)
+  \alpha_v = \frac{n}{m}
 $$
 
-Nyní zkonstruujme automat $A$ rozpoznávající fuzzy množinu $\tau_m$. Automat bude mít jeden stav $q_1$ a přechodovou funkci $\mu_o(q_1) = 1$ a 
+Pro strom $t$ tvořený nelistovým uzlem $v$ pak můžeme stupeň $\alpha_t$ pravdivosti výroku \uv{$t$ je $m$-ární úplný strom} stanovit jako minimum pravdivosti výroku \uv{uzel $n$ má $m$-potomků} a pravivosti \uv{strom $t'$ je $m$-ární úplný strom} pro všechny jeho podstromy $t' \in t$.
+
+Všechny atomické stromy tuto vlastnost splňují ve stupni $1$. Můžeme tak napsat:
+$$
+  \alpha_t = 
+    \begin{dcases}
+      1 				& \text{ pokud je $t$ tvořen listovým uzlem} \\
+      \alpha_v \wedge \bigwedge_{t' \in t} \alpha_{t'} 	& \text{ pokud je $t$ tvořen nelistovým uzlem $v$}
+    \end{dcases}
+$$
+
+Nyí je třeba vyjádřit tento problém v terminologii fuzzy tree automatů. Uvažujme, že strom $t$ je tvořen vnitřními uzly $I$ a listovými uzly $o$. Pak fuzzy jazyk $m$-árních úplných stromů bude fuzzy jazyk stromů nad $D_{(N,T)}$, kde $N = \{ I \}$ a $T = \{ o \}$. Zbývá tedy navrhnout fuzzy tree automat, který takový jazyk bude rozpoznávat.
+
+Automat bude mít jeden stav $Q = \{ q_1 \}$ a přechodovou funkci $\mu_o(q_1) = 1$ a 
 $$
   \mu_I(w, q_1) = \frac{|w|}{m}
 $$
-pro $w \in \{ q_1, q_1 q_1, \dots q_1 ^m \}$. Množina koncových stavů $F$ bude rovna $\{ q_1 \}$.
+pro všechna $w \in \{ {q_1}^i |  1 \leq i \leq m \}$. Množina koncových stavů $F$ bude rovna $\{ q_1 \}$.
 
-\subsubsection*{Jednoduchá klasifikace zvířat}
+Dokážeme nyní, že automat $A = (Q, N, T, \mu, F)$ rozpoznává fuzzy jazyk úplných $m$-árních stromů. 
+
+\begin{theorem}
+ Fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde $Q$, $N$, $T$, $\mu$ a $F$ jsou popsány výše, rozpoznává fuzzy jazyk úplných $m$-árních stromů.
+\end{theorem}
+\begin{proof}
+ Jazyk automatu $A$ je roven $L(A) = \left\{ (t, c) | c = \mu_t(q_1) \right\}$ (automat $A$ má jen jeden koncový stav). Hodnota $\mu_t(q_1)$ záleží na tom, zda-li je $t$ tvořen listovým uzlem nebo ne.
+
+ Je-li $t$ tvořen listovým uzlem $o$, tj. $t = o$, pak $\mu_t = \mu_o = 1$.
+  
+ Strom $t$ je tvořen vnitřním uzlem $v$ a $p(t) = I(p(t_1) \dots p(t_k))$. Existuje jedno jediné $w \in \mathcal{Q}$ takové, že $|w| = k$: $w = {q_1}^k$. Pak $\mu_t = \mu_I(w, q_1) \wedge \bigwedge_{j=1}^{k} \mu_{t_j}(q_1)$. Protože $q \in Q$ a $Q = \{ q_1 \}$, pak $\mu_I(w, q) = \mu_I(w, q_1) = \frac{k}{m} = \alpha_v$. $\bigwedge_{j = 1}^{k} \mu_{t_j}(q_1)$ je infimum přes všech $k$ podstromů stromu $t$, takže $\bigwedge_{t' \in t} \mu_{t'}(q_1)$.
+  
+ Předpokládejme, že platí $\mu_t(q_1) = \alpha_t$ pro všechny atomické stromy $t = a$, kde $a \in T$. Pak $\mu_t(q_1) = \alpha_v \wedge \bigwedge_{t' \in t} \mu_{t'}(q_1) = \alpha_v \wedge \bigwedge_{t' \in t} \alpha_{t'} = \alpha_t$ pro všechny stromy $t$ tvořené vnitřními uzly. Pak tedy $\mu_t(q_1) = \alpha_t$ pro všechny $t \in D_{(N, T)}$.
+\end{proof}
+
+Soubory automatu a ukázkových vstupních stromů jsou k nalezení v adresáři \impl{fuzzy-tree-automata}{m-ary-trees}.
+
+\subsection{Složené geometrické útvary}
+
+V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree automatů rozpoznávat složené geometrické útvary. Složený geometrický útvar je chápán jako strom, jehož listové uzly reprezentují \uv{primitivní geometrické objekty} (čtverec, kruh, trojúhelník, aj.). Jeho vnitřní uzly pak popisují vzájemný vztah či vlastnost (např. vzájemnou polohu) jednotlivých podobjektů.
+
+
+\begin{example}
+  Na obrázku \ref{img:Geoms} je vyobrazen složený geometrický útvar vyobrazující \uv{budovu kostela} a jemu odpovídající strom.
+\end{example}
+
+\begin{figure}[htp]
+ \centering
+ 
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics{trees11}
+ \end{subfigure}
+ %
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics{trees12}
+ \end{subfigure}
+ 
+ \caption{Příklad složeného geometrického tvaru a jeho stromu} \label{img:Geoms}
+\end{figure}
+
+V příkladu, který autoři uvádějí, konstruují strom pro náčrt jednoduchého domu a následně kostela. Dům je tvořen čtvercem (\uv{budova}) a \uv{nad ním} se nachází rovnoramenný trojúhelník (\uv{střecha}). Kostel pak lze vyjádřit jako \uv{dům, nad kterým se nachází kříž}.
+
+Pro rozpozánávání takovýchto stromů fuzzy tree automatem je nutné tyto pojmy nejdříve formalizovat. Jakmile budeme mít pevně stanoveny jednotlivé pojmy, budeme moci provést jejich fuzzyfikaci a následně sestavit fuzzy tree automat, který stromy rozpoznává.
+
+Uvažujme primitivní geometrický útvar $g$. Konkrétní podoba útvaru $g$ bude dána jeho typem. Například mnohoúhelníky budeme reprezentovat jako posloupnosti jejich vrcholů, kružncie bude reprezentována jako střed a poloměr. Připomeňme si nejdříve matematické definice některých základních primitivních geometrických tvarů. \TODO{je to nutné zdrojovat?}
+
+\begin{notation*}
+ Pro mnohoúhelník $g$ označme $\alpha_X$ jako velikost úhlu při vrcholu $X \in g$.
+\end{notation*}
+
+\begin{definition}[Obdélník]
+ Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélník, pokud platí
+ $$
+  \alpha_A = \alpha_B = \alpha_C = \alpha_D ( = 90° )
+ $$
+\end{definition}
+
+\begin{definition}[Čtverec]
+ Mějme obdélník $g = A B C D$. Pak tento obdélník je čtverec, pokud
+ $$
+  |A B| = |B C| = |C D| = |D A|
+ $$
+\end{definition}
+
+\begin{definition}[Rovnoramenný trojúhelník]
+  Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný, pokud
+  $$
+    \alpha_A = \alpha_B
+  $$
+  Stranu $AB$ nazývejme základna, strany $AC$ a $BC$ ramena.
+\end{definition}
+
+Obdobným způsobem bychom ve výčtu mohli pokračovat. Pro užití fuzzy tree automatů však bude vhodné nehovořit o \uv{útvar $g$ je/není obdélník}, ale \uv{útvar $g$ je obdélníkem ve stupni $c$}.
+
+Označme $\varepsilon: \mathbb{R}_0^+ \times \mathbb{R}_0^+ \rightarrow [0,1]$ jako fuzzy ekvivalenci reálných čísel danou předpisem:
+$$
+  \varepsilon(x, y) =
+    \begin{dcases}
+     \frac{x}{y}	& \text{pokud $x \leq y$}	\\
+     \frac{y}{x}	& \text{pokud $x > y$}
+    \end{dcases}
+$$
+s tím, že $\frac{0}{0} = 1$. Zřejmě platí $\epsilon(x, x) = 1$ pro všechna $x \in \mathbb{R}_0^+$.
+
+S využitím fuzzy ekvivalence $\varepsilon$ tka můžeme předchozí tři definice \uv{fuzzyfikovat}:
+
+\begin{definition}[\uv{Fuzzy} obdélník]
+ Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélníkem ve stupni $\gamma_r(g)$, kde
+ $$
+  \gamma_r(g) = \varepsilon(\alpha_A, \alpha_B) 
+  \wedge \varepsilon(\alpha_B, \alpha_C)
+  \wedge \varepsilon(\alpha_C, \alpha_D)
+  \wedge \varepsilon(\alpha_D, \alpha_A)
+ $$
+\end{definition}
+
+\begin{definition}[\uv{Fuzzy} čtverec]
+ Mějme geometrický útvar $g = A B C D$, který je obdélníkem ve stupni $\gamma_r(g)$. Pak tento obdélník je čtvercem ve stupni $\gamma_s(g)$, kde
+ $$
+ \gamma_s(g) = \gamma_r(g)
+  \wedge \varepsilon(|A B|, |B C|) 
+  \wedge \varepsilon(|B C|, |C D|)
+  \wedge \varepsilon(|C D|, |D A|)
+  \wedge \varepsilon(|D A|, |A B|)
+ $$
+\end{definition}
+
+\begin{definition}[\uv{Fuzzy} rovnoramenný trojúhelník]
+  Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný ve stupni $\gamma_i(g)$, kde
+  $$
+    \gamma_i(g) = \varepsilon(\alpha_A, \alpha_B)
+  $$
+\end{definition}
+
+Máme tedy fuzzifikovány vlastnosti primitivních geometrických útvarů. Nyní je třeba navrhnout fuzzyfikace jejich vzájemných vztahů. Pro vztah \uv{být nad} máme například:
+
+\begin{definition}[Vztah \uv{být nad}\footnote{Zde si dovolujeme značné zjednodušení. Vztah \uv{být nad} by měl být popsán například s využitím porovnávání y-ových souřadnic bodů. }]
+ Mějme obdélník $r = A B C D$ a trojúhelník $q_t = E F G$. Pak \uv{trojúhleník $r$ je nad obdélníkem $q_t$ (a horní hrana $q_r$ splývá se základnou $t$)} právě tehdy, když:
+ $$
+  top(r) = base(t)
+ $$
+ kde $top(r) \in \{ AB, BC, CD, DA \}$ je \uv{horní strana} obdélníku $r$ a $base(t) \in \{ EF, FG, GA \}$ je základna trojúhelníku $t$.
+ 
+ Mějme geometrický útvar $r' = A B C D$, který je obdélníkem ve stupni $\gamma_r(r')$ a trojúhelník $q'_t = E F G$. Pak \uv{trojúhleník $r'$ je nad obdélníkem $q'_t$ (a horní hrana $q'_r$ splývá se základnou $t'$)} ve stupni $\gamma_T(r', t')$, kde
+ $$
+  \gamma_T(r', t') = \gamma_r(r') \wedge \varepsilon(top(r'), base(t'))
+ $$
+ a kde $\varepsilon(XY, ZW) = \varepsilon(X, Z) \wedge \varepsilon(Y, W)$ je fuzzy ekvivalence úseček a $\varepsilon(X, Y) = \bigwedge_{i} \varepsilon(X_i, Y_i)$ je fuzzy ekvivalence vrcholů.
+\end{definition}
+
+Máme tedy formálně popsány a fuzzifikovány vlastnosti primitivních gemetrických tvarů a (alespoň jednu) vlastnost popisující složený geometrický tvar. Položme $T = \{ r, s, t, i \}$ jako terminály symbolizující obdélník, čtverec, (obecný) trojúhelník a rovnoramenný trojúhelník. Dále stanovme $N = \{ T \}$. Pak pseudoterm $p(t_H) = T(i, s)$ nad $(N, T)$ symbolizuje dům popsaný výše.
+
+Označme $A_H = (Q, N, T, \mu, F)$ jako fuzzy tree automat rozpoznávající strom $t_H$. Označme $A'_H = (Q, N, T, \mu', F)$, kde $\mu'$ vznikla z $\mu$ nahrazením všech $1$ (pro všechna $X \in (N \cup T)$) výrazem $\gamma_X$.
+
+\begin{example}
+ Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A'$ bude nějak vypadat. \TODO{domyslet to nějak!}.
+\end{example}
+
+Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
+
+I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
+
+\subsection{Jednoduchá klasifikace zvířat}
 Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
 
 Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.

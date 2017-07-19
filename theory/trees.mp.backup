@@ -1,50 +1,121 @@
 outputtemplate:="%j%c.mps";
 
-
-
-beginfig(0);	%ctverice korenovych stromu pro termy 
-  %% s(p)
-  pair As, Ap;
-  As := (50, 50); Ap := (50, 40);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(0);	%korenovy strom R(M(x S(y)), x)
+  pair Bp, Bm, By, Bs, Bx, Byy;
+  Bp := (75, 60); Bm := (60, 40); By := (45, 20); Bs := (75, 20); Bx := (75, 00); Byy := (90, 40); 
   
-  dotlabel.urt(btex $s$ etex, As);
-  dotlabel.urt(btex $p$ etex, Ap);
+  dotlabel.ulft(btex $M$ etex, Bp);
+  dotlabel.ulft(btex $M$ etex, Bm);
+  dotlabel.urt(btex $S$ etex, Bs);
+  dotlabel.urt(btex $y$ etex, Bx);
+  dotlabel.ulft(btex $x$ etex, By);
+  dotlabel.urt(btex $x$ etex, Byy);
+  
+  draw Bp--Bm;	draw Bp--Byy;
+  draw Bm--Bs;	draw Bm--By;
+  draw Bs--Bx;	
+endfig;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(1);	%korenovy strom S(x)
+  pair As, Ap;
+  As := (15, 60); Ap := (15, 40);
+  
+  dotlabel.ulft(btex $S$ etex, As);
+  dotlabel.ulft(btex $x$ etex, Ap);
   
   draw As--Ap;
-
-  %% s(m(p, s(x)), y)
-  pair Bs, Bm, Bp, Bss, Bx, By;
-  Bs := (150, 50); Bm := (125, 40); Bp := (115, 30); Bss := (135, 30); Bx := (135, 20); By := (175, 40); 
+endfig;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(2);	%korenovy strom M(x, x)
+  pair Cm, Cx, Cxx;
+  Cm := (135, 60); Cx := (120, 40); Cxx := (150, 40); 
   
-  dotlabel.urt(btex $s$ etex, Bs);
-  dotlabel.urt(btex $m$ etex, Bm);
-  dotlabel.urt(btex $s$ etex, Bss);
-  dotlabel.urt(btex $x$ etex, Bx);
-  dotlabel.urt(btex $p$ etex, Bp);
-  dotlabel.urt(btex $y$ etex, By);
-  
-  draw Bs--Bm;	draw Bs--By;
-  draw Bm--Bss;	draw Bm--Bp;
-  draw Bss--Bx;	
-  
-  %% r(x, x)
-  pair Cr, Cx, Cxx;
-  Cr := (250, 50); Cx := (225, 40); Cxx := (275, 40); 
-  
-  dotlabel.urt(btex $r$ etex, Cr);
-  dotlabel.urt(btex $x$ etex, Cx);
+  dotlabel.ulft(btex $M$ etex, Cm);
+  dotlabel.ulft(btex $x$ etex, Cx);
   dotlabel.urt(btex $x$ etex, Cxx);
   
-  draw Cr--Cx;	draw Cr--Cxx;
-  
-  
-  %% y
-  pair Dy;
-  Dy := (350, 50); 
-  
-  dotlabel.urt(btex $y$ etex, Dy);
-  
+  draw Cm--Cx;	draw Cm--Cxx;
 endfig;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(2);	%korenovy strom M(x, x)
+  pair Cm, Cx, Cxx;
+  Cm := (135, 60); Cx := (120, 40); Cxx := (150, 40); 
+  
+  dotlabel.ulft(btex $M$ etex, Cm);
+  dotlabel.ulft(btex $x$ etex, Cx);
+  dotlabel.urt(btex $x$ etex, Cxx);
+  
+  draw Cm--Cx;	draw Cm--Cxx;
+endfig;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+beginfig(11);	%kostel s dvemi vezmi
+  
+  path Tover, RoofT, Main, RoofM;
+  Tover := (30, 0) -- (50, 0) -- (50, 100) -- (30, 100) -- cycle;
+  RoofT := (30, 100) -- (50, 100) -- (40, 120) -- cycle;
+  
+  Main :=  (50, 0) -- (120, 0) -- (120, 50) -- (50, 50) -- cycle;
+  RoofM := (50, 50) -- (120, 50) -- (85, 70) -- cycle;
+  
+  draw Tover;
+  draw RoofT;
+  
+  draw Main;
+  draw RoofM;
+ 
+  draw Tover shifted (90, 0);
+  draw RoofT shifted (90, 0);
+endfig;
+
+beginfig(12);	%strom kostelu
+  
+  pair NR, NlT, NmT, NrT, NlB, NmB, NrB, NlR, NmR, NrR;
+  
+  NR := (100, 60);	
+  NlT := (40, 40);	NmT := (100, 40);	NrT := (160, 40);	
+  NlB := (100, 60);	NmB := (100, 60);	NrB := (100, 60);	
+  NlR := (100, 60);	NmR := (100, 60);	NrR := (100, 60);	
+  
+  
+  dotlabel.ulft(btex $M$ etex, Bp);
+  dotlabel.ulft(btex $M$ etex, Bm);
+  dotlabel.urt(btex $S$ etex, Bs);
+  dotlabel.urt(btex $y$ etex, Bx);
+  dotlabel.ulft(btex $x$ etex, By);
+  dotlabel.urt(btex $x$ etex, Byy);
+  
+  draw Bp--Bm;	draw Bp--Byy;
+  draw Bm--Bs;	draw Bm--By;
+  draw Bs--Bx;	
+endfig;
+
+% beginfig(11);	%strom tvoren pyramidou trojuhelniu (sierpinsky)
+%   pair T[][];
+%   
+%   T[1][1] = (40, 20);	T[1][2] = (80, 20);	T[1][3] = (60, 0);
+%   
+%   T[2][1] = (20, 40);	T[2][2] = (60, 40);	T[2][3] = (40, 20);
+%   T[3][1] = (60, 40);	T[3][2] = (100, 40);	T[3][3] = (80, 20);
+%   
+%   T[4][1] = (0, 60);	T[4][2] = (40, 60);	T[4][3] = (20, 40);
+%   T[5][1] = (40, 60);	T[5][2] = (80, 60);	T[5][3] = (60, 40);
+%   T[6][1] = (80, 60);	T[6][2] = (120, 60);	T[6][3] = (100, 40);
+%   
+% %   dotlabel.ulft(btex $M$ etex, Cm);
+% %   dotlabel.ulft(btex $x$ etex, Cx);
+% %   dotlabel.urt(btex $x$ etex, Cxx);
+%   
+%   draw T[1][1]--T[1][2]--T[1][3]--cycle;
+%   draw T[2][1]--T[2][2]--T[2][3]--cycle;
+%   draw T[3][1]--T[3][2]--T[3][3]--cycle;
+%   draw T[4][1]--T[4][2]--T[4][3]--cycle;
+%   draw T[5][1]--T[5][2]--T[5][3]--cycle;
+%   draw T[6][1]--T[6][2]--T[6][3]--cycle;
+%   
+% endfig;
 
 end.
 

@@ -1,0 +1,17 @@
+type:
+	tree
+
+nonterminals:
+	M, S
+
+terminals:
+	x, y
+	
+tree:
+	M ( 
+			M ( 
+				x 
+				S ( y ) 
+			) 
+			x 
+		)

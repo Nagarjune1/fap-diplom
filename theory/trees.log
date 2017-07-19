@@ -1,7 +1,8 @@
-This is MetaPost, version 1.999 (TeX Live 2015/dev/Debian) (kpathsea version 6.2.1dev)  16 JUL 2017 13:45
+This is MetaPost, version 1.999 (TeX Live 2015/dev/Debian) (kpathsea version 6.2.1dev)  19 JUL 2017 14:47
 **trees.mp
 (/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
 (/usr/share/texlive/texmf-dist/metapost/base/plain.mp
-Preloading the plain mem file, version 1.005) ) (./trees.mp [0] [1] [2] )
-3 output files written: trees0.mps .. trees2.mps
+Preloading the plain mem file, version 1.005) ) (./trees.mp [0] [1] [2] [2]
+[11] [12] )
+6 output files written: trees0.mps .. trees12.mps
 
