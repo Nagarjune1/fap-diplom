@@ -34,8 +34,7 @@ need more read	Ech+-DefSyssConPre	Javier Echanobe, José R. Gonzáles Mendívil,
 maybe	TowSha-KnowBas-ArtNeuNet	Geoffrey G. Towell, Jude W. Shavlik	Knowledge-Based Artificial Neural Networks	theory of neuet (seems short)
 maybe	EsiLiu-FuzzTreeAut	Zoltán Ésik, Guangwu Liu	Fuzzy tree automata	tree, lattice
 super	AndAbdAsm-ApprPattMatcFuzzLog	Gabriela Andrejková, Abdulwahed Almarimi and Asmaa Mahmoud	Approximate Pattern Matching using Fuzzy Logic	string matching,  but a different approach
-need more read	PowSimWhi-HieFuzzPattMatcRegCompLanUseMap	Conrad Power, Alvin Simms, Roger White	Hierarchical fuzzy pattern matching for the regional comparison of land use maps	urban grow, or what, maybe not cell
-need more read	ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm	Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos	A Fuzzy Cellular Automata Modeling Approach -- Accessing Urban Growth Dynamics in Linguistic Terms	urban grow, cell
+super	PowSimWhi-HieFuzzPattMatcRegCompLanUseMap	Conrad Power, Alvin Simms, Roger White	Hierarchical fuzzy pattern matching for the regional comparison of land use maps	images pattern matching, urban grow
 maybe	SetWar-FuzzAutPattMatc	Setzer, C. B., Warsi, N. A.	Fuzzy automata and pattern matching	should be super, but PDF mostly unreadable
 need more read	PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro	Dhiraj Kumar Patel, Prof. Sagar A. More	Edge Detection Technique by Fuzzy Logic and Cellular Learning Automata using Fuzzy Image Processing	cell?, idk, image
 super	Rig-FauDetIsoBasFuzzAut	Gerasimos G. Rigatos	Fault detection and isolation based on fuzzy automata	fault detection!, medical! (ECG)

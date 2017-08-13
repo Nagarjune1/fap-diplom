@@ -5,6 +5,13 @@ Radim Bělohlávek.
 \newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
 \newblock Kluwer, New York, 2002.
 
+\bibitem{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}
+Roger~White Conrad~Power, Alvin~Simms.
+\newblock Hierarchical fuzzy pattern matching for the regional comparison of
+  land use maps.
+\newblock {\em International Journal of Geographical Information Science},
+  2010.
+
 \bibitem{RamGir-ConvFinAutFuzzAutStrComp}
 H.~A.~Girijamma Dr. V.~Ramaswamy.
 \newblock Conversion of finite automata to fuzzy automata for string
@@ -50,6 +57,12 @@ José R.~Garitagoitia José R. González~de Mendívil.
 \newblock Fuzzy languages with infinite range accepted by fuzzy automata:
   Pumping lemma and determinization procedure.
 \newblock {\em Fuzzy sets and Systems}, 2014.
+
+\bibitem{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}
+Thomas~Hatzichristos Lefteris A.~Mantelas and Poulicos Prastacos.
+\newblock A fuzzy cellular automata modeling approach -- accessing urban growth
+  dynamics in linguistic terms.
+\newblock {\em Computational Science and Its Applications}, 2010.
 
 \bibitem{DooKre-NewDirFuzzAut}
 S.~C.~Kremer M.~Doostfatemeh.

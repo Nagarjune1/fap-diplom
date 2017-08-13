@@ -42,7 +42,7 @@ ok	TowSha-KnowBas-ArtNeuNet	 	Geoffrey G. Towell, Jude W. Shavlik	 	Knowledge-Ba
 ok	EsiLiu-FuzzTreeAut	 	Zoltán Ésik, Guangwu Liu	 	Fuzzy tree automata
 ok	AndAbdAsm-ApprPattMatcFuzzLog	 	Gabriela Andrejková, Abdulwahed Almarimi and Asmaa Mahmoud	 	Approximate Pattern Matching using Fuzzy Logic
 ok	PowSimWhi-HieFuzzPattMatcRegCompLanUseMap	 	Conrad Power, Alvin Simms, Roger White	 	Hierarchical fuzzy pattern matching for the regional comparison of land use maps
-ok	ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm	 	Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos	 	A Fuzzy Cellular Automata Modeling Approach -- Accessing Urban Growth Dynamics in Linguistic Terms
+ok	ManHatPra-FuzCelAutBasSheModUrGro+	 	Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos	 	A Fuzzy Cellular Automata Modeling Approach -- Accessing Urban Growth Dynamics in Linguistic Terms
 ok	SetWar-FuzzAutPattMatc	 	Setzer, C. B., Warsi, N. A.	 	Fuzzy automata and pattern matching
 ok	PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro	 	Dhiraj Kumar Patel, Prof. Sagar A. More	 	Edge Detection Technique by Fuzzy Logic and Cellular Learning Automata using Fuzzy Image Processing
 ok	Rig-FauDetIsoBasFuzzAut	 	Gerasimos G. Rigatos	 	Fault detection and isolation based on fuzzy automata
@@ -251,14 +251,14 @@ ok	MalMor-FuzRegLang	 	D.S. Malik, J.N. Mordeson	 	On fuzzy regular languages
 already done	Yin-ForModComWord	 	M.S. Ying	 	A formal model of computing with words
 ok	Zad-FuzLangTheRelHumMachInt	 	L.A. Zadeh	 	Fuzzy languages and their relation to human and machine intelligence
 --	-- LiPed-MinLattFinAutAppDecoLattLang	 		 	
---	-- ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm	 		 	
+--	-- ManHatPra-FuzCelAutBasSheModUrGro+	 		 	
 ok	Kra-ArcIntCelAut	 	Krawczyk, R.J	 	Architectural Interpretation of Cellular Automata
 not found	MulHar-UrbAreDevStoCelAut	 	Mulianat, I., Hariadi, Y.	 	Urban Area Development in Stochastic Cellular Automata
 ok	BleCec+-ModUrbDynCellAut	 	Blecic, I., Cecchini, A., Prastacos, P., Trunfio, G.A., Verigos, E.	 	Modelling Urban Dynamics with Cellular Automata
 not found	KirLie-BasTooFuzMod	 	Kirschfink, H., Lieven, K.	 	Basic Tools for Fuzzy Modeling
 ok	Dra-CouFuzSetTheGisBaCelAutLanUseChaMod	 	Dragicevic, S.	 	Coupling Fuzzy Sets Theory and GIS-based Cellular Automata for Land Use Change Modeling
 ok	LiuPhi-DevCelAutModUrbGroIncFuzSetApp	 	Liu, Y., Phinn, S.R.	 	Developing a Cellular Automaton Model of Urban Growth Incorporating Fuzzy Set Approaches.
-ok	ManHatPra-FuzCelAutBasSheModUrGro+	 	Mantelas, L., Hatzichristos, T., Prastacos, P	 	A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth – A Pilot Application in Mesogia Area
+already done	ManHatPra-FuzCelAutBasSheModUrGro+	 	Mantelas, L., Hatzichristos, T., Prastacos, P	 	A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth – A Pilot Application in Mesogia Area
 ok	ManHatPra-ModUrbGroUsFuzCelAut	 	Mantelas, L., Hatzichristos, T., Prastacos, P	 	Modeling Urban Growth using Fuzzy Cellular Automata
 ok	ClaHopHay-SelModCelAutModHistUrbSanFraBayAre	 	Clarke, K.C., Hoppen, S., Gaydos, L.	 	A Self-Modifying Cellular Automaton Model of Historical Urbanization in the San Francisco Bay Area
 --	-- MogZadAme-NewDirInFuzzTreeAut	 		 	

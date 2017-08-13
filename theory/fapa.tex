@@ -1188,27 +1188,92 @@ surface water flows (Thomas and Nicholas 2002, Doeschl-Wilson and Ashmore
 2005, Coppola et al. 2007, Parsons and Fonstad 2007), flooding (Dalponte et al.
 2007) (píšou v LaiDraSch-IntMulEvCelAutMetLanSimMod).
 
-\subsection{Urban growt problém}
-Různé atributy se kódují do $[0,1]$ (kolik sousedních polí obsazeno, vzdálenost k nejbližší hlavní silnici/MHD, dtavební podmínky (podloží, svah, chráněné přírodní území), přelidněnost, vzdálenost do centra). Z nich se pak konstruuje přechodová funkce automatu (bo co to je). \cite{LiYe-NeuNetBasCelAutSim+} a \cite{YehLi-SimLanDevIntCelAutMulCriEv} kombinuje buněčné automaty s neuronovkama (ale ne fuzzy!).
+\subsection{Problém městského růstu (urban growt problem)}
+Problém městského růstu je problém z oblasti geoinformatiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve ozbecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní městský růst.
 
-Pravidla opsat z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} a \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}, \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}.
+Základní idea pro nasazení (fuzzy) automatů je následující: Bude-li stav zástavby reprezentovat stav (resp. obecně konfiguraci) automatu, pak růst zástavby bude odpovídat přechodům mezi těmito stavy (resp. konfiguracemi). Najdeme-li vhodný způsob, jak stav zástavby reprezentovat pomocí konfigurací automatu a budeme-li schopni navrhnout odpovídající přechodovou funkci, pak budeme moci modelovat rozvoj zástavby do budoucnosti.
 
-\cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} navrhuje použít pro návrh přechodovky algoritmus fuzzy-$k$ mean. \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp} demonstruje jednoduchá pravidla.
+Vzhledem k tomu, že města bývají často rozlehlá, bylo by nepraktické pro problém městského růstu klasický (nedeterministický) fuzzy automat. Bude proto výhodné využít buněčný fuzzy automat, který dokáže modelovat téměř neomezené množství buněk. To je v souladu s tím, že rozvoj městské zástavby probíhá (v ideálním případě) rovnoměrně. 
 
+\begin{note}
+  V souvislosti s problémem městského růstu se často opomíjí rozdíl mezi buněčnými automaty a fuzzy buněčnými automaty, vzhledem k tomu, že i řešení s pomocí \uv{klasických} buněčných automatů většinou pracují s určitou odstupňovaností. Obvykle se však nemluví o stupních pravdivosti, ale o určitých diskrétních hodnotách, u kterých často ani není vyžadováno uspořádání.
+\end{note}
 
-- Růst mega města Riyadh v Saudské Arábii: \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} (je fuzzy!).
-- Helensvale region, Gold Coast \cite{War+-StoConCelModUrbGro} (\TODO{kde? KAnada? USA?}). 
-- Ostrov Sv. Lucie v Karibiku \cite{WhiEng-CelAutBasIntDynRegMod}.
-- District of North Vancouver \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}.
-- Mesogia area (východ Attica basin) \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}.
-- San Francisco bay area \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre}. 
-- Tianhe district of Guangzhou \cite{Wu-CalStoCelAutAppRurUrbLanConv}.
+Praxe ukazuje, že (fuzzy) buněčné automaty mohou být skutečně použity pro modelování městského růstu. Pomocí těchto automatů byl například modelován rozvoj zástavby v městě Riyadh v Saudské Arábii \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, regionu Helensvale v Austrálii \cite{War+-StoConCelModUrbGro}, ostrova Sv. Lucie v Krabiském moři \cite{WhiEng-CelAutBasIntDynRegMod}, oblasti North Vancover v Kanadě \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}, oblasti Mesogia v Řecku \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}, oblasti Sanfranciského zálivu v Kalifornii \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} nebo části Tianhe města Guangzhou v jihovýchodní Číně \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
+%
+Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}.
 
+Pojďme se nyní podrobněji podívat, jak se konstruuje fuzzy buněčný automat pro problém městského růstu. Důležité je, že návrh buněčného automatu je v praxi značně empirická záležitost a neobejde se bez experta na urbanizaci a studovanou lokalitu. V první fázi je nutné získat urbanistická data o studované lokalitě. Taková data lze získat například pomocí satelitních snímků či z katastrálních záznamů. Data o zástavbě je posléze potřeba zakódovat do mřížek, které budou reprezentovat konfigurace buněčného automatu. Je tedy třeba stanovit jak měřítko (velikost parcely odpovídající jedné buňce automatu), tak i zobrazení, přiřazující zástavbě stupeň z intervalu $[0,1]$. Zobrazení přiřazující zástavbě stupeň může být stanoveno například jako
+\begin{itemize}
+ \item poměr zástavby a zeleně na parcele
+ \item (normalizovaný) počet obyvatel žijcích na parcele
+ \item (normalizovanou) výšku nejvyšší budovy
+ \item (normalizované) množství produkovaného hluku/světelného znečištění/výfukových plynů/...
+\end{itemize}
+Máme-li sestaveny konfigurace automatu reprezentující stavy zástavby v jednotlivých časových okamžicích, je třeba navrhnout přechodovou funkci. U buněčného automatu reprezenující městský růst je obvykle standartní přechodová funkce \TODO{jak se tomu říká oficiálně?} nedostačující. Růst zástavby obvykle závisí na mnohem více parametrech, než je aktuální stav zástavby na okolních parcelách. Mezi další ukazatele, které ovlivňují růst zástavby patří například:
+\begin{itemize}
+ \item vzdálenost od centra města (popř. škol, nákupních center, ...)
+ \item dopravní obslužnost (vzdálenost od hlavní silnice nebo zastávek hromadné dopravy)
+ \item atraktivita lokality (výhled na město, okolní zástavba, ...)
+ \item stavební podmínky (podloží, záplavová zóna, svah, ...)
+\end{itemize}
+Za posvšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží). To značně usnadňuje V závislosti na rozhodnutí experta a následném experimentálním ověření je třeba i tyto ukazatele \uv{fuzzifikovat}. Následně je možné sestavit pravidla definující přechodovou funkci automatu.
 
-Genetický algoritmus např. \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}
+\begin{example}
+ Označme $\upsilon(t, c)$, $\rho(t, c)$, $\tau(t, c)$, $\nu(r, c)$, $\sigma(t, c)$ 
+ jako \uv{stupeň zástavby}, \uv{stupěň vzdálenosti k hlavní silnici}, \uv{stupeň vzdálenosti k nejbližší zastávce autobusu}, \uv{stupeň obydlenosti sousedních $8$ buněk}, \uv{stupeň znečistění ovzduší} buňky $c$ v čase $t$.
+ Pak pravidla automatu by mohla vypadat například takto:
+ \begin{itemize}
+  \item $\upsilon(t + 1, c) = 1 - \sigma(t, c)$
+  \item pokud $\tau(t, c) \leq 0,2$ a $\rho(t, c) \leq 0,2$ pak $\upsilon(t + 1, c) = 0$, jinak $\upsilon(t + 1, c) = \tau(t, c) \vee \rho(t, c)$
+  \item $\upsilon(t + 1, c) = 
+    \begin{cases}
+      4 \mu(t, c) 		& \text{pokud $0 \leq \mu(t, c) < 1/4$} \\
+      1 			& \text{pokud $1/4 \leq \mu(t, c) < 3/4$} \\
+      4 (1 - \mu(t, c)) 	& \text{pokud $3/4 \leq \mu(t, c) \leq 1$} \\
+    \end{cases}
+   $
+  \item $\sigma(t + 1, c) = \nu(t, c) + (1 - \rho(t, c))$
+ \end{itemize}
+\end{example}
+Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm} a\cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. Ukázku toho, jak se chová automat při různých počátečních konfiguracích lze spatřit na obrázku \ref{img-VarTransRuls}. 
 
+\begin{figure}[]
+    \begin{subfigure}[t]{\textwidth} \centering
+      \includegraphics[width=\textwidth]{urban-growt-transitions-1}
+      \caption{Růst města bez dalších dodatečných podmínek} 
+    \end{subfigure}
+    \\
+    \begin{subfigure}[t]{\textwidth} \centering
+      \includegraphics[width=\textwidth]{urban-growt-transitions-2}
+      \caption{Růst města podél silnice} 
+    \end{subfigure}
+    \\
+    \begin{subfigure}[t]{\textwidth} \centering
+      \includegraphics[width=\textwidth]{urban-growt-transitions-3}
+      \caption{Růst města bržděn řekou} 
+    \end{subfigure}
 
+    \caption[Ukázky chování automatu]{(převzato z \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}) Ukázky chování automatu při různých počátečních konfiguracích. Šedě jsou znázorněny prázdné parcely, červeně zástavba, zeleně hlavní silnice a modře řeky.} \label{img-VarTransRuls}
+\end{figure}
 
+Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městského růstu. Na obrázku jsou pro porovnání zobrazeny jak vypočtené stavy zástavby, tak i skutečné (upravené satelitní snímky). Na snímcích je patrné, že simulace rozvoje mezi lety 1987 a 1997 dosáhla poměrně přesných výsledků. Stejně tak, v simulaci růstu mezi lety 1997 a 2005 naznačuje jen malý rozvoj. Při simulaci od roku 1987 do roku 2005 už jsou patrné větší odlišnosti (simulace nevyprodukovala tak výrazný růst, jaký doopravdy nastal).
+
+\begin{figure}[]
+    \begin{subfigure}[t]{\textwidth} \centering
+      \includegraphics[width=\textwidth]{urban-growt-city-1}
+      \caption{Skutečný stav zástavby v uvedeném roce. Červená značí zástavbu, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
+    \end{subfigure}
+    \\
+    \begin{subfigure}[t]{\textwidth} \centering
+      \includegraphics[width=\textwidth]{urban-growt-city-2}
+      \caption{Simulovaný stav zástavby. Modrá značí zástavbu na počátku sledovaného období, červená značí (novou) zástavbu na konci sledovaného období, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
+    \end{subfigure}
+
+    \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img-UrbGroProSample}
+\end{figure}
+
+Je potřba zdůraznit, že obyčejná sada přechodových pravidel bývá silně nedostačující. Pro obdržení optimálního výsledku je nutné přechodová pravidla rozšířit o další, sotisfikovanější nástroj nebo nástroje. V praxi se tak nejvíce používají umělé neuronové sítě \cite{LiYe-NeuNetBasCelAutSim+}, \cite{YehLi-SimLanDevIntCelAutMulCriEv}, genetické algoritmy \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, často však jejich kombinace. V \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} používají algoritmus fuzzy $k$-means pro určení okolních buněk pomocí shlukování. Návrh automatu tak vyžaduje značné množství experimentů a konzultací s expertem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
