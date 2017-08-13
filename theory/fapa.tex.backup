@@ -721,7 +721,9 @@ Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuz
 Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stromy a termy}
+\subsection{Stromy a pseudotermy}
+\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
+
 \begin{definition}[Doména stromu]
   Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
   \begin{itemize}
@@ -962,7 +964,7 @@ Podobně jako u klasických automatů, i u tree automatů platí, že pro každ�
 V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
 
 \begin{definition}[Automat rozpoznávající strom]
-  Mějme strom $t \in D_{(N, T)}$ a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
+  Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
   \begin{itemize}
    \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
    \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
@@ -1148,36 +1150,51 @@ Máme tedy formálně popsány a fuzzifikovány vlastnosti primitivních gemetri
 Označme $A_H = (Q, N, T, \mu, F)$ jako fuzzy tree automat rozpoznávající strom $t_H$. Označme $A'_H = (Q, N, T, \mu', F)$, kde $\mu'$ vznikla z $\mu$ nahrazením všech $1$ (pro všechna $X \in (N \cup T)$) výrazem $\gamma_X$.
 
 \begin{example}
- Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A' = $
+ Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A'$ bude nějak vypadat. \TODO{domyslet to nějak!}.
 \end{example}
 
+Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
 
-
-% 
-% Dům totiž popisují jako \uv{obdélník, jehož horní strana splývá se základnou rovnoramenného trojúhelníku}. Vlastnosti \uv{být obdélník}, \uv{být rovnoramenný trojúhelník} a \uv{mít splývající hrany} se dají poměrně snadno fuzzyfikovat. Například, určení stupně rovnoramennosti trojúhelníku lze spočítat jako poměr obou úhlů svíranými základnou a oběma rameny.
-% 
-% Autoři pak navrhují strom reprezentující takovýto objekt domu a konstruují fuzzy tree automat, který tento strom rozpoznává. Automat správně rozpoznává objekt domu sestavený dle požadavků ve stupni $1$. Strom, který reprezentuje objekt se \uv{střechou} ve tvaru pravoúhlého trojúhelníku je pak rozpoznáván ve stupni menším než $1$ (v závislosti na sklonu střechy).
-% 
-% Obdobným způsobem autoři nadefinovali strom reprezentující jednoduchou budou kostela jako \u{dům, který má na špičku střechy připevněn kříž}.
-
+I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
 
 \subsection{Jednoduchá klasifikace zvířat}
 Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
 
 Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.
 
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Buněčné fuzzy automaty}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zavedení}
+
+Studium buněčných automatů je dnes samostatná vědní oblast -- viz \cite{Wol-NewKinSci}.
+
+\cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
+
+Zaostřování obrázku: \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, resp. \cite{ZhaLiZha-EdgDetImaBasFuzCelAut} (tam to je vylepšeno pro zašumné obrázky).
+
+Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
+
+\subsection{Urban growt problém}
+Různé atributy se kódují do $[0,1]$ (kolik sousedních polí obsazeno, vzdálenost k nejbližší hlavní silnici/MHD, dtavební podmínky (podloží, svah, chráněné přírodní území)).
+
+
+Růst mega města v Saudské Arábii\TODO{konkrétně, jakého}: \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}. 
+
+Helensvale region, Gold Coast \cite{War+-StoConCelModUrbGro} (\TODO{kde? KAnada? USA?}). 
+
+Ostrov Sv. Lucie v Karibiku \cite{WhiEng-CelAutBasIntDynRegMod}.
+
+
+
+
+
+
+The Density Classification or Majority problem (poblém hledání shluků)?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

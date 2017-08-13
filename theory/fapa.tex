@@ -721,7 +721,9 @@ Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuz
 Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stromy a termy}
+\subsection{Stromy a pseudotermy}
+\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
+
 \begin{definition}[Doména stromu]
   Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
   \begin{itemize}
@@ -1160,18 +1162,55 @@ Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasi
 
 Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.
 
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Buněčné fuzzy automaty}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zavedení}
+
+Studium buněčných automatů je dnes samostatná vědní oblast -- viz \cite{Wol-NewKinSci}.
+
+\cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
+
+Zaostřování obrázku: \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, resp. \cite{ZhaLiZha-EdgDetImaBasFuzCelAut} (tam to je vylepšeno pro zašumné obrázky).
+
+Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
+
+
+The Density Classification or Majority problem (poblém hledání shluků)?
+
+
+For example, CA approaches have been applied in the
+context of geocomplexity to earthquakes (Rundle et al. 2000, Weatherley et al. 2000),
+lava flows (Crisci et al. 2008, Rongo et al. 2008), density currents (Salles et al. 2007),
+surface water flows (Thomas and Nicholas 2002, Doeschl-Wilson and Ashmore
+2005, Coppola et al. 2007, Parsons and Fonstad 2007), flooding (Dalponte et al.
+2007) (píšou v LaiDraSch-IntMulEvCelAutMetLanSimMod).
+
+\subsection{Urban growt problém}
+Různé atributy se kódují do $[0,1]$ (kolik sousedních polí obsazeno, vzdálenost k nejbližší hlavní silnici/MHD, dtavební podmínky (podloží, svah, chráněné přírodní území), přelidněnost, vzdálenost do centra). Z nich se pak konstruuje přechodová funkce automatu (bo co to je). \cite{LiYe-NeuNetBasCelAutSim+} a \cite{YehLi-SimLanDevIntCelAutMulCriEv} kombinuje buněčné automaty s neuronovkama (ale ne fuzzy!).
+
+Pravidla opsat z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} a \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}, \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}.
+
+\cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} navrhuje použít pro návrh přechodovky algoritmus fuzzy-$k$ mean. \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp} demonstruje jednoduchá pravidla.
+
+
+- Růst mega města Riyadh v Saudské Arábii: \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} (je fuzzy!).
+- Helensvale region, Gold Coast \cite{War+-StoConCelModUrbGro} (\TODO{kde? KAnada? USA?}). 
+- Ostrov Sv. Lucie v Karibiku \cite{WhiEng-CelAutBasIntDynRegMod}.
+- District of North Vancouver \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}.
+- Mesogia area (východ Attica basin) \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}.
+- San Francisco bay area \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre}. 
+- Tianhe district of Guangzhou \cite{Wu-CalStoCelAutAppRurUrbLanConv}.
+
+
+Genetický algoritmus např. \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

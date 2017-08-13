@@ -15,13 +15,14 @@
 \contentsline {subsection}{\numberline {3.8}Shrnut\IeC {\'\i }}{17}
 \contentsline {section}{\numberline {4}Fuzzy tree automaty}{17}
 \contentsline {subsection}{\numberline {4.1}Zaveden\IeC {\'\i }}{17}
-\contentsline {subsection}{\numberline {4.2}Stromy a termy}{18}
+\contentsline {subsection}{\numberline {4.2}Stromy a pseudotermy}{18}
 \contentsline {subsection}{\numberline {4.3}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{20}
 \contentsline {subsection}{\numberline {4.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{22}
 \contentsline {subsection}{\numberline {4.5}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{23}
 \contentsline {subsection}{\numberline {4.6}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{24}
 \contentsline {subsection}{\numberline {4.7}Jednoduch\IeC {\'a} klasifikace zv\IeC {\'\i }\IeC {\v r}at}{26}
 \contentsline {section}{\numberline {5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{26}
-\contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{27}
-\contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{27}
-\contentsline {subsection}{\numberline {6.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{27}
+\contentsline {subsection}{\numberline {5.1}Zaveden\IeC {\'\i }}{26}
+\contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{28}
+\contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{28}
+\contentsline {subsection}{\numberline {6.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{28}

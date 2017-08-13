@@ -25,7 +25,7 @@ okay	ChaJos-NoteFuzzTreeAut	S. R. Chaudhari, Mukta N. Joshi	A Note on Fuzzy Tree
 okay	Bel-DoExaShaFuzzSetMatt	R. Bělohlávek	Do exact shapes of fuzzy sets matter?	theory
 need more read	Xia-RSImaProcAut	Xian-feng, Yu	RS image processing automata	RS, image
 okay	QiuWan-ProbModCompWords	Daowen Qiu, Huaiqing Wang	A probabilistic model of computing with words	word, probabilistic, grammars (everything about probabilistic computing with words)
-maybe	Rich-FuzEvoCellAut	James Neal Richter	Fuzzy evolutionary cellular automata	cell!,
+maybe	Rich-FuzEvoCellAut	James Neal Richter	Fuzzy evolutionary cellular automata	cell!; but only evolutional and somehow creepy ...
 okay	Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs	J. Astrain, J.R. González de Mendívil, J.R. Garitagoitia	Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings	string matching
 maybe	RamGir-CharFuzzRegLang	Dr. V. Ramaswamy,  Mrs. Girijamma. H. A.	Characterization of Fuzzy Regular Languages	theory, languages
 okay	BucPas-FuzPusAut	Irina Bucurescu, Anca Pascu	Fuzzy pushdown automata	Theory, pushdown, 
@@ -274,3 +274,14 @@ maybe	San-GenForSeqMac			theory, definition general
 maybe	Miz-FuzAutFuzGra			theory, grammars
 maybe	AfoGol-MinUniFreDecRegLan			theory, regex, decomposition
 	CaoChe-FuzPetNetModComWord			
+	MarMeySol-HybMetGasDifModFuzCelAutImSha			
+	ZhaLiZha-EdgDetImaBasFuzCelAut			
+	Wol-NewKinSci			
+okay	BatXie-CellCity			cell, urban growt, not fuzzy
+okay	War+-StoConCelModUrbGro			cell, urban growt,
+okay	WhiEng-CelAutBasIntDynRegMod			cell, urban growt,
+super	LiYe-NeuNetBasCelAutSim+			cell, urban growt, learning, not fuzzy
+xxx	Wu-ExpGenPolUrbGroCelAutCit			cell, urban growt, not fuzzy and just theoretical or what
+super	Ahm+-CalFuzCelAutModUrbDynSauAr			cell, urban growt, with rules
+okay	YehLi-SimLanDevIntCelAutMulCriEv			cell, urban growt, learning, not fuzzy
+okay	LaiDraSch-IntMulEvCelAutMetLanSimMod			cell, urban growt, not fuzzzy

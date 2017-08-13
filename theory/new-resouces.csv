@@ -478,16 +478,23 @@ ok	GooHarLee-ImpAppAut19		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Im
 ok	GooHarLee-ImpAppAut20		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Implementation and Application of Automata 20
 ok	GooHarLee-ImpAppAut21		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Implementation and Application of Automata 21
 ok	GooHarLee-ImpAppAut22		Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen		Implementation and Application of Automata 22
--- aditional resource					
+-- aditional resources (fuzzy tree automata)					
 ok	San-ProGraAut		EUGENE S. SANTOS 		Probabilistic Grammars and Automata
 ok	San-MaxProdMac		E. S. Santos		Max-product machines
 ok	San-GenForSeqMac		E. S. Santos		General Formulation of Sequential Machines
 ok	Miz-FuzAutFuzGra		MASAHABU MIZUMOTO,		FUZZI AUTOMATA AND FUZZY GRAMMARS
 ok	AfoGol-MinUniFreDecRegLan		Sergey Afonin and Denis Golomazov		Minimal Union-free Decompositions of Regular Languages
 procesme	CaoChe-FuzPetNetModComWord		Yongzhi Cao, Guoqing Chen		A Fuzzy Petri Nets Model for Computing With Words
-					
-					
-		 		 	
-		 		 	
-		 		 	
-		 		 	
+downloadme	MarMeySol-HybMetGasDifModFuzCelAutImSha		F. Marchini, M. Meybodi, and V. Soleymani		A Hybrid Method based on Gas Diffusion Model and Fuzzy Cellular Automata for Image Sharpening.
+downloadme	ZhaLiZha-EdgDetImaBasFuzCelAut		K. Zhang, Z. Li, and X. Zhao		Edge detection of images based on fuzzy cellular automata
+downloadme	Wol-NewKinSci	 	S. Wolfram	 	A New Kind of Science
+-- additional resources (fuzzy cellular automata)		 			
+ok?	BatXie-CellCity	 	Batty, M. and Xie, Y.	 	From cells to cities.
+not found	WuWe-SimLanDevThoIntCelAut+	 	Wu, F. and Webster, C. J.	 	Simulation of land development through the integration of cellular automata and multi-criteria evaluation.
+ok?	War+-StoConCelModUrbGro		Ward, D. P., Murray, A. T. and Phinn, S. R.	 	A stochastically constrained cellular model of urban growth
+ok?	WhiEng-CelAutBasIntDynRegMod		White, R. and Engelen, G.		Cellular automata as the basis of integrated dynamic regional modelling.
+ok?	LiYe-NeuNetBasCelAutSim+		Li, X. and Yeh, A. G.		Neural-network based cellular automata for simulating multiple land use changes using GI
+ok?	Wu-ExpGenPolUrbGroCelAutCit		Wu, F.		An experiment on the generic polycentricity of urban growth in a cellular automatic city.
+ok?	Ahm+-CalFuzCelAutModUrbDynSauAr		Al-Ahmadi, K., See, L. M., Heppenstall, A. J. and Hogg, J.		Calibration of a fuzzy cellular automata model of urban dynamics in Saudi Arabia.
+ok?	YehLi-SimLanDevIntCelAutMulCriEv		Anthony Gar-On Yeh; Xia Li		Simulation of land development through the integration of cellular automata and multi-criteria evaluation.
+ok?	LaiDraSch-IntMulEvCelAutMetLanSimMod		Terence Lai , Suzana Dragićević & Margaret Schmidt		Integration of multicriteria evaluation and cellular automata methods for landslide simulation modelling

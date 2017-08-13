@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.8)  19 JUL 2017 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.8)  20 JUL 2017 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,28 +544,28 @@ File: trees2.mps Graphic file (type mps)
  [MP to PDF]
 (./trees2.mps) [19]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 820.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 822.
 
-Overfull \hbox (31.39072pt too wide) in paragraph at lines 836--837
+Overfull \hbox (31.39072pt too wide) in paragraph at lines 838--839
 []\temp M^^Same tedy prok^^Sazano, ^^Tze mezi pseu-do-termy a stromy plat^^S^^P
  vz^^Sajemn^^Sa p^^Trevoditelnost.
  []
 
 
-Overfull \hbox (9.7514pt too wide) in paragraph at lines 849--850
+Overfull \hbox (9.7514pt too wide) in paragraph at lines 851--852
 \OT1/cmr/bx/n/10 Definice 4.6 \temp (Fuzzy tree au-to-mat)\OT1/cmr/bx/n/10 . \O
 T1/cmr/m/it/10 Fuzzy tree au-to-mat $\temp A$ \OT1/cmr/m/it/10 je p^^Tetice $\t
 emp (\temp Q; T; N; ^^V; F\temp )$\OT1/cmr/m/it/10 ,
  []
 
-
-Overfull \hbox (3.7507pt too wide) in paragraph at lines 910--911
+[20]
+Overfull \hbox (3.7507pt too wide) in paragraph at lines 912--913
 []\temp Na p^^Trechodovou funkci se m^^Wu^^Tzeme tak^^Se pod^^S^^Pvat po-hle-de
 m syn-tak-tick^^Se anal^^Syzy
  []
 
-[20]
-Overfull \hbox (1.66646pt too wide) in paragraph at lines 913--914
+
+Overfull \hbox (1.66646pt too wide) in paragraph at lines 915--916
 \OT1/cmr/m/it/10 nujme fuzzy p^^Trechodovou funkci strom^^Wu jako zob-ra-zen^^S
 ^^P $\temp ^^V[] \temp : \temp Q \OMS/cmsy/m/n/10 ! \temp [0\temp ; \temp 1]$ \
 OT1/cmr/m/it/10 n^^Sasledovn^^Te: 
@@ -574,24 +574,24 @@ OT1/cmr/m/it/10 n^^Sasledovn^^Te:
 [21]
 
 LaTeX Warning: Citation `MorMal-FuzzyLangThe' on page 22 undefined on input lin
-e 959.
+e 961.
 
 
-Overfull \hbox (5.10173pt too wide) in paragraph at lines 965--966
+Overfull \hbox (5.10173pt too wide) in paragraph at lines 967--968
 \OT1/cmr/bx/n/10 Definice 4.9 \temp (Au-to-mat roz-pozn^^Savaj^^S^^Pc^^S^^P str
 om)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 M^^Tejme strom $\temp t \OMS/cmsy/m/n/10
  2 \temp D[]$ \OT1/cmr/m/it/10 ([]vzor\)
  []
 
 
-Overfull \hbox (6.94107pt too wide) in paragraph at lines 965--966
+Overfull \hbox (6.94107pt too wide) in paragraph at lines 967--968
 \OT1/cmr/m/it/10 a mno^^Tzinu $\temp sub\temp (\temp t\temp )$ \OT1/cmr/m/it/10
  v^^Tsech jeho pod-strom^^Wu. Pak jako fuzzy tree au-to-mat roz-pozn^^Savaj^^S^
 ^Pc^^S^^P
  []
 
 
-Overfull \hbox (1.86185pt too wide) in paragraph at lines 981--982
+Overfull \hbox (1.86185pt too wide) in paragraph at lines 983--984
 \temp To by v^^Tsak zkom-pli-ko-valo im-ple-men-taci ta-kov^^Seho au-to-matu a 
 proto toto roz^^Ts^^S^^P^^Tren^^S^^P
  []
@@ -599,16 +599,16 @@ proto toto roz^^Ts^^S^^P^^Tren^^S^^P
 [22] [23]
 
 LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 24 undefined on input 
-line 1035.
+line 1037.
 
 
-Overfull \hbox (10.47514pt too wide) in paragraph at lines 1035--1036
+Overfull \hbox (10.47514pt too wide) in paragraph at lines 1037--1038
 \temp tov^^Se uzly re-pre-zen-tuj^^S^^P []pri-mi-tivn^^S^^P ge-o-me-t-rick^^Se 
 ob-jekty\ (^^Tctverec, kruh, troj^^Suheln^^S^^Pk,
  []
 
 
-Overfull \hbox (1.20851pt too wide) in paragraph at lines 1035--1036
+Overfull \hbox (1.20851pt too wide) in paragraph at lines 1037--1038
 \temp aj.). Jeho vnit^^Trn^^S^^P uzly pak po-pi-suj^^S^^P vz^^Sajemn^^Sy vztah 
 ^^Tci vlast-nost (nap^^Tr. vz^^Sajemnou
  []
@@ -617,36 +617,63 @@ File: trees11.mps Graphic file (type mps)
 [MP to PDF] (./trees11.mps)
 File: trees12.mps Graphic file (type mps)
  [MP to PDF] (./trees12.mps)
-Overfull \hbox (31.63585pt too wide) in paragraph at lines 1050--1051
+Overfull \hbox (31.63585pt too wide) in paragraph at lines 1052--1053
 [][] 
  []
 
 
-Overfull \hbox (6.00594pt too wide) in paragraph at lines 1067--1068
+Overfull \hbox (6.00594pt too wide) in paragraph at lines 1069--1070
 \OT1/cmr/bx/n/10 Definice 4.11 \temp (Obd^^Seln^^S^^Pk)\OT1/cmr/bx/n/10 . \OT1/
 cmr/m/it/10 M^^Tejme ^^Tcty^^Tr^^Suheln^^S^^Pk $\temp g \temp = \temp ABCD$\OT1
 /cmr/m/it/10 . Pak tento ^^Tcty^^Tr^^Suheln^^S^^Pk
  []
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 1069.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 1071.
 
 [24] [25]
-Overfull \hbox (34.45732pt too wide) in paragraph at lines 1161--1162
+Overfull \hbox (34.45732pt too wide) in paragraph at lines 1163--1164
 []\temp Jmenovan^^Sym vlast-nos-tem byly p^^Tri^^Trazeny ne-ter-min^^Saln^^S^^P
  sym-boly $\temp Env; Surf; Ext; Tail$
  []
 
 
-Overfull \hbox (122.63411pt too wide) in paragraph at lines 1161--1162
+Overfull \hbox (122.63411pt too wide) in paragraph at lines 1163--1164
 \temp a ter-min^^Saln^^S^^P sym-boly po ^^Trad^^Te $\temp water; land; air; lea
 ther; scales; hair; feather; leg; hand; wing; fin; short; long$\temp .
  []
 
-[26] [27] (./fapa.bbl
+
+LaTeX Warning: Citation `Wol-NewKinSci' on page 26 undefined on input line 1172
+.
+
+
+LaTeX Warning: Citation `For-FuzCelAutConjNormForm' on page 26 undefined on inp
+ut line 1174.
+
+[26]
+
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 27 un
+defined on input line 1176.
+
+
+LaTeX Warning: Citation `ZhaLiZha-EdgDetImaBasFuzCelAut' on page 27 undefined o
+n input line 1176.
+
+
+Overfull \hbox (1.23387pt too wide) in paragraph at lines 1176--1177
+[]\temp Zaost^^Trov^^San^^S^^P obr^^Sazku: [[]], resp. [[]] (tam to je vy-lep^^
+Tseno pro za^^Tsumn^^Se obr^^Sazky). 
+ []
+
+
+LaTeX Warning: Citation `Wol-NewKinSci' on page 27 undefined on input line 1178
+.
+
+[27] [28] (./fapa.bbl
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)) [28] (./fapa.aux)
+)) [29] (./fapa.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -658,10 +685,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6394 strings out of 494422
- 89689 string characters out of 6164717
+ 6398 strings out of 494422
+ 89804 string characters out of 6164717
  163054 words of memory out of 5000000
- 9485 multiletter control sequences out of 15000+600000
+ 9489 multiletter control sequences out of 15000+600000
  16157 words of font info for 62 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
  51i,14n,42p,730b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -694,10 +721,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on fapa.pdf (28 pages, 458604 bytes).
+Output written on fapa.pdf (29 pages, 459931 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
+ 222 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
