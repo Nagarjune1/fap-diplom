@@ -1173,8 +1173,6 @@ Studium buněčných automatů je dnes samostatná vědní oblast -- viz \cite{W
 
 \cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
 
-Zaostřování obrázku: \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, resp. \cite{ZhaLiZha-EdgDetImaBasFuzCelAut} (tam to je vylepšeno pro zašumné obrázky).
-
 Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
 
 
@@ -1217,7 +1215,7 @@ Máme-li sestaveny konfigurace automatu reprezentující stavy zástavby v jedno
  \item atraktivita lokality (výhled na město, okolní zástavba, ...)
  \item stavební podmínky (podloží, záplavová zóna, svah, ...)
 \end{itemize}
-Za posvšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. podloží, vzdálenost od řek). To značně usnadňuje V závislosti na rozhodnutí experta a následném experimentálním ověření je třeba i tyto ukazatele \uv{fuzzifikovat}. Následně je možné sestavit pravidla definující přechodovou funkci automatu.
+Za posvšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží). To značně usnadňuje V závislosti na rozhodnutí experta a následném experimentálním ověření je třeba i tyto ukazatele \uv{fuzzifikovat}. Následně je možné sestavit pravidla definující přechodovou funkci automatu.
 
 \begin{example}
  Označme $\upsilon(t, c)$, $\rho(t, c)$, $\tau(t, c)$, $\nu(r, c)$, $\sigma(t, c)$ 
@@ -1236,6 +1234,7 @@ Za posvšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. 
   \item $\sigma(t + 1, c) = \nu(t, c) + (1 - \rho(t, c))$
  \end{itemize}
 \end{example}
+
 Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm} a\cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. Ukázku toho, jak se chová automat při různých počátečních konfiguracích lze spatřit na obrázku \ref{img-VarTransRuls}. 
 
 \begin{figure}[]
@@ -1259,9 +1258,6 @@ Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \
 
 Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městského růstu. Na obrázku jsou pro porovnání zobrazeny jak vypočtené stavy zástavby, tak i skutečné (upravené satelitní snímky). Na snímcích je patrné, že simulace rozvoje mezi lety 1987 a 1997 dosáhla poměrně přesných výsledků. Stejně tak, v simulaci růstu mezi lety 1997 a 2005 naznačuje jen malý rozvoj. Při simulaci od roku 1987 do roku 2005 už jsou patrné větší odlišnosti (simulace nevyprodukovala tak výrazný růst, jaký doopravdy nastal).
 
-
-
-
 \begin{figure}[]
     \begin{subfigure}[t]{\textwidth} \centering
       \includegraphics[width=\textwidth]{urban-growt-city-1}
@@ -1272,29 +1268,16 @@ Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městsk�
       \includegraphics[width=\textwidth]{urban-growt-city-2}
       \caption{Simulovaný stav zástavby. Modrá značí zástavbu na počátku sledovaného období, červená značí (novou) zástavbu na konci sledovaného období, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
     \end{subfigure}
-  
 
     \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img-UrbGroProSample}
 \end{figure}
 
+Je potřba zdůraznit, že obyčejná sada přechodových pravidel bývá silně nedostačující. Pro obdržení optimálního výsledku je nutné přechodová pravidla rozšířit o další, sotisfikovanější nástroj nebo nástroje. V praxi se tak nejvíce používají umělé neuronové sítě \cite{LiYe-NeuNetBasCelAutSim+}, \cite{YehLi-SimLanDevIntCelAutMulCriEv}, genetické algoritmy \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, často však jejich kombinace. V \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} používají algoritmus fuzzy $k$-means pro určení okolních buněk pomocí shlukování. Návrh automatu tak vyžaduje značné množství experimentů a konzultací s expertem.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hledání hran obrázku}
 
-
-
-Věnuje se tomu např.    
-
-
-
-\cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} navrhuje použít pro návrh přechodovky algoritmus fuzzy-$k$ mean.  \cite{LiYe-NeuNetBasCelAutSim+} a \cite{YehLi-SimLanDevIntCelAutMulCriEv} kombinuje buněčné automaty s neuronovkama (ale ne fuzzy!).
-
-
-
-
-
-Genetický algoritmus např. \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}
-
-
-
+Zaostřování obrázku: \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, resp. \cite{ZhaLiZha-EdgDetImaBasFuzCelAut} (tam to je vylepšeno pro zašumné obrázky).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
