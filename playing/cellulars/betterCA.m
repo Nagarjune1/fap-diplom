@@ -1,18 +1,26 @@
-function [B] = betterCA(steps, cell)
-% [] = betterCA(steps, cell)
+function [B] = betterCA(steps, cell, init)
+% [] = betterCA(steps, cell, init)
 % cell = @(c, round) (0 or 1)
 % https://cs.wikipedia.org/wiki/Hra_života#Algoritmus
 
-SIZE=100; % počet řádků a sloupců
+if ~exist('init','var')
+	WIDTH = 100; % počet řádků a sloupců
+	HEIGHT = 100;
+	U=rand(HEIGHT, WIDTH); % matice s náhodnými elementy
+	%U=1-(U .* U);
+	A=U; % počáteční matice se kterou se hraje
+else
+	A = init;
+	[WIDTH HEIGHT] = size(init);
+end
+
 t=steps; % čas
-U=rand(SIZE); % matice s náhodnými elementy
-%U=1-(U .* U);
-A=U; % počáteční matice se kterou se hraje
-B=zeros(SIZE); % pomocná matice, kam zapisuji další iterační stavy
+B=zeros(HEIGHT, WIDTH); % pomocná matice, kam zapisuji další iterační stavy
+
 for i=1:t
 %	disp(['Generation ', num2str(i)]);
-	for x=2:SIZE-1
-    for y=2:SIZE-1
+	for x=2:WIDTH-1
+    for y=2:HEIGHT-1
       N=[A(x-1,y-1), A(x-1,y), A(x-1,y+1); A(x,y-1), A(x,y), A(x,y+1); A(x+1,y-1), A(x+1,y), A(x+1,y+1)];
 			okoli=A(x-1,y-1)+A(x-1,y)+A(x-1,y+1)+A(x,y-1)+A(x,y+1)+A(x+1,y-1)+A(x+1,y)+A(x+1,y+1);
 			n=A(x-1,y-1)+A(x+0,y-1)+A(x+1,y-1);
