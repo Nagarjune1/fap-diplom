@@ -15,9 +15,6 @@ Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
 Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
 Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
 Warning--I didn't find a database entry for "Wol-NewKinSci"
-Warning--I didn't find a database entry for "For-FuzCelAutConjNormForm"
-Warning--I didn't find a database entry for "MarMeySol-HybMetGasDifModFuzCelAutImSha"
-Warning--I didn't find a database entry for "ZhaLiZha-EdgDetImaBasFuzCelAut"
 Warning--I didn't find a database entry for "AlAhHep+-ModUrbGroDynUsCelAutGIS"
 Warning--I didn't find a database entry for "Ahm+-CalFuzCelAutModUrbDynSauAr"
 Warning--I didn't find a database entry for "War+-StoConCelModUrbGro"
@@ -31,6 +28,9 @@ Warning--I didn't find a database entry for "Dra-CouFuzSetTheGisBaCelAutLanUseCh
 Warning--I didn't find a database entry for "LiuPhi-DevCelAutModUrbGroIncFuzSetApp"
 Warning--I didn't find a database entry for "LiYe-NeuNetBasCelAutSim+"
 Warning--I didn't find a database entry for "YehLi-SimLanDevIntCelAutMulCriEv"
+Warning--I didn't find a database entry for "MarMeySol-HybMetGasDifModFuzCelAutImSha"
+Warning--I didn't find a database entry for "ZhaLiZha-EdgDetImaBasFuzCelAut"
+Warning--I didn't find a database entry for "For-FuzCelAutConjNormForm"
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
 while executing---line 1049 of file plain.bst
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm

@@ -1166,25 +1166,88 @@ Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Buněčné fuzzy automaty}
 
+Buněčné (fuzzy) automaty jsou další z výpočetních modelů, které se svojí základní myšlenkou podobají (fuzzy) automatům. Jejich studiu se však věnuje samostatné matematické paradigma \cite{Wol-NewKinSci}. Oproti \uv{klasickým} fuzzy automatům mají totiž mnohem rozsáhlejší možnosti uplatnění. V této práci je jim proto věnována samostatná kapitola.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Zavedení}
+\subsection{\uv{Bivalentní} buněčný automat}
+Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. V určitém smyslu je lze považovat za zobecnění \uv{klasických} deterministických automatů takovým způsobem, že se jedná o $n$-dimenzionální mřížku tvořenou shodnými automaty.
 
-Studium buněčných automatů je dnes samostatná vědní oblast -- viz \cite{Wol-NewKinSci}.
+Pro naše účely bude zaveden buněčný automat tak, aby byl co možná nejobecnější. Následuje jeho definice.\TODO{ksakru, to ho nikdo nikdy nikde nedefinoval formálně??!§}
 
-\cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
+\begin{definition}[Bivalentní buněčný automat]
+\TODO{pozor, $\mu$ je FUZZY přechodová funkce, změnit (viz literatura, něco najít)!!!}
+  Pro přirozená čísla $n$ a $m$ a konečnou množinu $Q$ označme $A_{n,m} = (Q, \mu)$ jako $n$-dimenzionální buněčný automat velikosti $m$\footnote{Buněčné automaty se často definují jako nekonečné. Pro naše účely však budeme uvažovat buněčný automat konečný a to o čtvercové mřížce velikosti $m^n$ prvků. \TODO{zmínit i cyklickou mřížku a obdélníkovou?}}, kde $Q$ je konečný množina stavů a $\mu$ přechodová funkce: $\mu: Q \times Q^k \rightarrow Q$ pro $1 \leq k \leq m^n$.
+\end{definition}
 
-Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
+Prvku $q \in Q$ automatu $A$ na souřadnicích $i_1, \dots i_n \in m$ říkáme buňka. Buňky budeme namísto jejich souřadnic označovat písmenem $c$ (případně s indexy vyjadřující jejich souřadnice) a fakt, že buňka se nachází v automatu budeme značit $c \in A$.
+
+Přechodová funkce $\mu$ přiřazuje buňce $c$ a jejímu okolí velikosti $k$ nový stav. Funkci přiřazující buňce její okolí označme $round$. Existuje několik způsobů, jak volit okolí buňky $c$. Typicky se volí sousední buňky (\TODO{to má nějaký název, ocitovat. Prý Moore.}), tj. pro $n = 1$:
+$$
+ round(c_i) = (c_{i-1}, c_{i}, c_{i+1})
+$$
+
+kde $c_{-1}$ a $c_{m+1}$ se definuje jako nějaká pevně zvolená hodnota z $Q$. Pro $n = 2$: 
+\begin{align*}
+ round(c_{i,j}) = (
+  & c_{i-1, j-1}, c_{i, j-1}, c_{i+1, j-1},	\\
+  & c_{i-1, j  }, c_{i, j  }, c_{i+1, j  },	\\
+  & c_{i-1, j+1}, c_{i, j+1}, c_{i+1, j+1}	
+ )
+\end{align*}
+se stejným dodatkem jako u $n = 1$, tj. nedefinované hodnoty za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
+
+Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných automatů -- konfigurace buněčného automatu.
+
+\begin{definition}[Konfigurace buněčného automatu]
+ Zobrazení $C: [1, m]^n \rightarrow Q$ se nazývá konfigurace buněčného automatu.
+\end{definition}
+
+Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Vzhledem k tomu, že výpočet buněčného automatu je z definice nekonečný (přechodovou funkci lze aplikovat donekonečna), nemá smysl uvažovat koncovou konfiguraci. Dále pak můžeme zavést krok výpočtu, výpočet a konfiguraci dosažitelnou.
+
+\begin{definition}[Krok výpočtu a výpočet buněčného automatu]
+ Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ a pro všechny $c_{i_1, \dots, i_m} \in A$ platí:
+ $$
+  C'(c) = \mu(C(c), round(c))
+ $$
+ 
+ Reflexivní a tranzitivní uzávěr $\vdash^*$ \TODO{fakt?} relace $\vdash$ nazvěme výpočtem buněčného automatu.
+\end{definition}
+\begin{definition}[Konfigurace dosažitelná]
+ Mějme konfiguraci $C$ buněčného automatu. Pak o konfiguraci $C'$ říkáme, že je dosažitelná z konfigurace $C$, pokud existuje výpočet z $C$ k $C'$, tj.
+ $$
+  C \vdash^* C'
+ $$
+ V opačném případě říkáme, že konfigurace je nedosažitelná.
+\end{definition}
+
+Vzhledem k tomu, že přechodová funkce buněčného automatu je deterministická, je zřejmě determinstický i její výpočet, tj. pro každou konfiguraci $C$ existuje právě jedna konfigurace $C'$, pro kterou platí $C \vdash C'$. Relace $\vdash$ tak generuje posloupnost konfigurací. Označíme-li si počáteční konfiguraci $C^{(0)}$, pak můžeme výpočet automatu zapsat:
+$$
+  C^{(0)} \vdash C^{(1)} \vdash C^{(2)} \vdash \dots
+$$
+Pak $i$-tý prvek této posloupnosti nazývejme konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
+
+\TODO{popsat grafickou reprezentaci?}
+\TODO{uvažovat pouze dvoudimenzionální automat? jiný stejně ani nebudu potřebovat, nebo jo? A co hexagonální?}
+
+\begin{example}
+  Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) \TODO{ocitovat}. Jedná se o jednoduchý simulátor živé organizmu. 
+  
+  Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$ a dvoudimenzionální mřížku ($n = 2$). Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Přechodová funkce $\mu$ je dána následujícími pravidly: \TODO{ověřit, sypu z hlavy}
+  \begin{enumerate}
+   \item Je-li buňka $c$ živá a je v jejím okolí méně, než $3$ živé buňky, buňka umírá (ve smyslu \uv{samoty})
+   \item Je-li buňka $c$ živá a je v jejím okolí více, než $7$ živých buněk, buňka umírá (ve smyslu \uv{vyčerpání zdrojů})
+   \item Je-li buňka $c$ mrtvá, a v jejím okolí více, než $4$ živých buněk, je buňka oživena
+  \end{enumerate}
+  
+  Ukázka buněčného automatu $A$ realizující Hru života je na obrázku ??? \TODO{vložit obrázek}. 
+\end{example}
+
+\subsection{Buněčný fuzzy automat}
+Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým zobecněním bivalentního buněčného automatu. \TODO{oficiální definice?!}.
+
+Na úvod je třeba zdůraznit, že v literatuře bývá často opomíjen rozdíl mezi bivalentními buněčnými automaty a fuzzy buněčnými automaty. Pravděpodobná příčina je, že i běžné bivalentní buněčné automaty obvykle nepracují s binárními hodnotami, ale -- byť konečnou -- množinou hodnot. Navíc, často se vyskytují bivalentní buněčné automaty, které pracují s reálným intervalem $[0, 1]$, avšak nijak nevyužívají vlastností fuzzy logik nebo fuzzy množin. S buněčným fuzzy automatem, jakožto přímým zobecněním bivalentního fuzzy automatu je tak prakticky nemožné se setkat. V této kapitole proto bude za buněčný fuzzy automat považován každý buněčný automat, který pracuje s reálným intervalem $[0, 1]$.
 
 
-The Density Classification or Majority problem (poblém hledání shluků)? Simulování kapání vody na haldinu.
-
-
-For example, CA approaches have been applied in the
-context of geocomplexity to earthquakes (Rundle et al. 2000, Weatherley et al. 2000),
-lava flows (Crisci et al. 2008, Rongo et al. 2008), density currents (Salles et al. 2007),
-surface water flows (Thomas and Nicholas 2002, Doeschl-Wilson and Ashmore
-2005, Coppola et al. 2007, Parsons and Fonstad 2007), flooding (Dalponte et al.
-2007) (píšou v LaiDraSch-IntMulEvCelAutMetLanSimMod).
 
 \subsection{Problém městského růstu (urban growt problem)}
 Problém městského růstu je problém z oblasti geoinformatiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve ozbecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní městský růst.
@@ -1194,7 +1257,7 @@ Základní idea pro nasazení (fuzzy) automatů je následující: Bude-li stav 
 Vzhledem k tomu, že města bývají často rozlehlá, bylo by nepraktické pro problém městského růstu klasický (nedeterministický) fuzzy automat. Bude proto výhodné využít buněčný fuzzy automat, který dokáže modelovat téměř neomezené množství buněk. To je v souladu s tím, že rozvoj městské zástavby probíhá (v ideálním případě) rovnoměrně. 
 
 \begin{note}
-  V souvislosti s problémem městského růstu se často opomíjí rozdíl mezi buněčnými automaty a fuzzy buněčnými automaty, vzhledem k tomu, že i řešení s pomocí \uv{klasických} buněčných automatů většinou pracují s určitou odstupňovaností. Obvykle se však nemluví o stupních pravdivosti, ale o určitých diskrétních hodnotách, u kterých často ani není vyžadováno uspořádání.
+ 
 \end{note}
 
 Praxe ukazuje, že (fuzzy) buněčné automaty mohou být skutečně použity pro modelování městského růstu. Pomocí těchto automatů byl například modelován rozvoj zástavby v městě Riyadh v Saudské Arábii \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, regionu Helensvale v Austrálii \cite{War+-StoConCelModUrbGro}, ostrova Sv. Lucie v Krabiském moři \cite{WhiEng-CelAutBasIntDynRegMod}, oblasti North Vancover v Kanadě \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}, oblasti Mesogia v Řecku \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}, oblasti Sanfranciského zálivu v Kalifornii \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} nebo části Tianhe města Guangzhou v jihovýchodní Číně \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
@@ -1272,7 +1335,7 @@ Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městsk�
     \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img-UrbGroProSample}
 \end{figure}
 
-Je potřba zdůraznit, že obyčejná sada přechodových pravidel bývá silně nedostačující. Pro obdržení optimálního výsledku je nutné přechodová pravidla rozšířit o další, sotisfikovanější nástroj nebo nástroje. V praxi se tak nejvíce používají umělé neuronové sítě \cite{LiYe-NeuNetBasCelAutSim+}, \cite{YehLi-SimLanDevIntCelAutMulCriEv}, genetické algoritmy \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, často však jejich kombinace. V \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} používají algoritmus fuzzy $k$-means pro určení okolních buněk pomocí shlukování. Návrh automatu tak vyžaduje značné množství experimentů a konzultací s expertem.
+Je potřeba zdůraznit, že obyčejná sada přechodových pravidel bývá silně nedostačující. Pro obdržení optimálního výsledku je nutné přechodová pravidla rozšířit o další, sotisfikovanější nástroj nebo nástroje. V praxi se tak nejvíce používají umělé neuronové sítě \cite{LiYe-NeuNetBasCelAutSim+}, \cite{YehLi-SimLanDevIntCelAutMulCriEv}, genetické algoritmy \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, často však jejich kombinace. V \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} používají algoritmus fuzzy $k$-means pro určení okolních buněk pomocí shlukování. Návrh automatu tak vyžaduje značné množství experimentů a konzultací s expertem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hledání hran obrázku}
@@ -1280,6 +1343,26 @@ Hledání hran je jednou ze základních technik zpracování obrazu. Rozpoznáv
 
 
 Zaostřování obrázku: \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, resp. \cite{ZhaLiZha-EdgDetImaBasFuzCelAut} (tam to je vylepšeno pro zašumné obrázky).
+
+\subsection{Další povídání}
+
+
+
+
+\cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
+
+Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
+
+
+The Density Classification or Majority problem (poblém hledání shluků)? Simulování kapání vody na haldinu.
+
+
+For example, CA approaches have been applied in the
+context of geocomplexity to earthquakes (Rundle et al. 2000, Weatherley et al. 2000),
+lava flows (Crisci et al. 2008, Rongo et al. 2008), density currents (Salles et al. 2007),
+surface water flows (Thomas and Nicholas 2002, Doeschl-Wilson and Ashmore
+2005, Coppola et al. 2007, Parsons and Fonstad 2007), flooding (Dalponte et al.
+2007) (píšou v LaiDraSch-IntMulEvCelAutMetLanSimMod).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
