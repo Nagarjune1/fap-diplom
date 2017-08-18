@@ -4,10 +4,20 @@ function [y] = MyFuzzySharpener(c, neighs)
 	nc = c - 0.5;
 	nan = avgNeigh - 0.5;
 
-	COEF = 0.01;
-	y = max(0, min(1, ((2 .* nc .+ 0.5) .+ (COEF .* nan))));
 
+	%% tak taky noop (ale pro COEF == 0 zřejmě konverguje k pseudo labyrintu)
+	COEF = 0;
+	nyr = 0.5 .*  ((-2*nc + 1) .*  (1 .+ (sqrtr((-nc .- nan), COEF))));
+	nyl = -0.5 .* ((2*nc + 1)  .* (1 .+ (sqrtr(((nc) .- (-nan)), COEF)))) + 1;
 
+	ny = 1 - min(nyr, nyl);
+	y = ny + 0.0;
+	
+	%% nop
+%	COEF = 0.01;
+%	y = max(0, min(1, ((2 .* nc .+ 0.5) .+ (COEF .* nan))));
+
+	%% FUNGUJE, ALE MOC SLOŽITÉ
 %	COEF = 0;
 %	nyr = 0.5 .*  ((2*nc + 1) .*  (1 .+ (sqrtr((nc .- nan), COEF))));
 %	nyl = -0.5 .* ((-2*nc + 1) .* (1 .+ (sqrtr(((-nc) .- (-nan)), COEF)))) + 1;
@@ -15,6 +25,7 @@ function [y] = MyFuzzySharpener(c, neighs)
 %	ny = min(nyr, nyl);
 %	y = ny + 0.0;
 	
+ 	%% XXXXX
 
 	%ny = max(0, min(1, (nc .+ 0.5) .* (0.5 .+ sqrtr(nc .- nan))));
 	%ny = -0.4.*exp(((-nc) .* (-nan)) .- max(nc, nan));
