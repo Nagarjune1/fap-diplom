@@ -1170,38 +1170,56 @@ Buněčné (fuzzy) automaty jsou další z výpočetních modelů, které se svo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\uv{Bivalentní} buněčný automat}
-Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. V určitém smyslu je lze považovat za zobecnění \uv{klasických} deterministických automatů takovým způsobem, že se jedná o $n$-dimenzionální mřížku tvořenou shodnými automaty.
+Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. V určitém smyslu je lze považovat za zobecnění \uv{klasických} deterministických automatů takovým způsobem. Dá se říci, že se jedná o $n$-dimenzionální mřížku tvořenou instancemi jednoho automatu.
 
-Pro naše účely bude zaveden buněčný automat tak, aby byl co možná nejobecnější. Následuje jeho definice.\TODO{ksakru, to ho nikdo nikdy nikde nedefinoval formálně??!§}
+Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku, jiné konečnou se simulovanou nekonečností (odpovídající hrany jsou logicky propojeny\TODO{popsat to nějak lépe}) či konečné. Také se často kromě klasické čtvercové mřížky pracuje s s mřížkou trojúhelníkovou nebo šestiúhelníkovou.
+
+Vzhledem k tomu, že úkolem této práce není studovat obecné vlastnosti buněčných automatů ale jen jejich fuzifikace a následné použití v praxi, bude zde nadefinovanán pouze standardní dvoudimenzionální buněčný automat (pracující na čtvercové mřížce). Právě tento typ automatu totiž našel v praxi největší uplatnění. V této práci se také pro jednoduchost omezíme jen na automat se čtvercovou mřížkou velikosti $m$.
+
+Dvoudimenzionální buněčný automat je tedy mřížka $m \times m$ tvořena buňkami $c_{ij}$, $i, j \in [1,m]$. Každá buňka se nachází ve nějakém stavu $q$ z množiny $Q$. Přechody mezi těmito stavy jsou realizovány přechodovými pravidly. Ty popsiuje přechodová funkce $\mu$. Formálně tedy
 
 \begin{definition}[Bivalentní buněčný automat]
-  Pro přirozená čísla $n$ a $m$ a konečnou množinu $Q$ označme $A_{n,m} = (Q, \mu)$ jako $n$-dimenzionální buněčný automat velikosti $m$\footnote{Buněčné automaty se často definují jako nekonečné. Pro naše účely však budeme uvažovat buněčný automat konečný a to o čtvercové mřížce velikosti $m^n$ prvků. \TODO{zmínit i cyklickou mřížku a obdélníkovou?}}, kde $Q$ je konečný množina stavů a $\mu$ přechodová funkce: $\mu: Q \times Q^k \rightarrow Q$ pro $1 \leq k \leq m^n$.
+  Pro přirozené číslo $m$ a konečnou množinu $Q$ označme $A_{m} = (Q, \mu)$ jako dvoudimenzionální buněčný automat o rozměrech $m \times m$, kde $Q$ je konečná množina stavů a $\mu$ přechodová funkce: $\mu: Q \times Q^k \rightarrow Q$ pro nějaké $1 \leq k \leq m^2$.
 \end{definition}
 
-Prvku $q \in Q$ automatu $A$ na souřadnicích $i_1, \dots i_n \in m$ říkáme buňka. Buňky budeme namísto jejich souřadnic označovat písmenem $c$ (případně s indexy vyjadřující jejich souřadnice) a fakt, že buňka se nachází v automatu budeme značit $c \in A$.
+\begin{note}
+ Buněčný automat se obvykle definuje jen předpisem pro přechodovou funkci, resp. výpisem přechodových pravidel. My se však budeme držet konceptu klasických automatů a budeme buněčný automat definovat jako strukturu.
+\end{note}
 
-Přechodová funkce $\mu$ přiřazuje buňce $c$ a jejímu okolí velikosti $k$ nový stav. Funkci přiřazující buňce její okolí označme $round$. Existuje několik způsobů, jak volit okolí buňky $c$. Typicky se volí sousední buňky (\TODO{to má nějaký název, ocitovat}), tj. pro $n = 1$:
-$$
- round(c_i) = (c_{i-1}, c_{i}, c_{i+1})
-$$
-
-kde $c_{-1}$ a $c_{m+1}$ se definuje jako nějaká pevně zvolená hodnota z $Q$. Pro $n = 2$: 
+Fakt, že nějaká buňka $c$ se nachází ve stavu $q$ budeme značit prostým $c = q$. Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuálního stavu $q$ a stavu dalších $k$ buněk. V této práci se budeme vždy za tyto buňky uvažovat okolní buňky. Označme $round(c_{ij})$ jako okolí buňky $c_{ij}$. Nejpoužívanějším okolím, které se používá, je Mooreovo okolí, které je definováno jako sousedních $8$ buněk buňky $c_{ij}$:
 \begin{align*}
  round(c_{i,j}) = (
-  & c_{i-1, j-1}, c_{i, j-1}, c_{i+1, j-1},	\\
-  & c_{i-1, j  }, c_{i, j  }, c_{i+1, j  },	\\
-  & c_{i-1, j+1}, c_{i, j+1}, c_{i+1, j+1}	
+  & c_{i-1, j-1},	c_{i, j-1},	c_{i+1, j-1},	\\
+  & c_{i-1, j  },			c_{i+1, j  },	\\
+  & c_{i-1, j+1},	c_{i, j+1},	c_{i+1, j+1}	
  )
 \end{align*}
-se stejným dodatkem jako u $n = 1$, tj. nedefinované hodnoty za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
+s tím, že nedefinované hodnoty ($i,j < 1$ nebo naopak $i,j > m$) za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
+
+Přechodová funkce $\mu$ pak vypadá následovně:
+$$
+\mu(c, round(c)) = f(c, round(c))
+$$
+kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \uv{If--Then} pravidel.
+
+\begin{example}
+  Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) \TODO{ocitovat}. Jedná se o jednoduchý simulátor živé organizmu. 
+  
+  Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$ a dvoudimenzionální mřížku ($n = 2$). Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Přechodová funkce $\mu$ je dána následujícími pravidly: \TODO{ověřit, sypu z hlavy}
+  \begin{enumerate}
+   \item Je-li buňka $c$ živá a je v jejím okolí méně, než $3$ živé buňky, buňka umírá (ve smyslu \uv{samoty})
+   \item Je-li buňka $c$ živá a je v jejím okolí více, než $7$ živých buněk, buňka umírá (ve smyslu \uv{vyčerpání zdrojů})
+   \item Je-li buňka $c$ mrtvá, a v jejím okolí více, než $4$ živých buněk, je buňka oživena
+  \end{enumerate}
+\end{example}
 
 Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných automatů -- konfigurace buněčného automatu.
 
 \begin{definition}[Konfigurace buněčného automatu]
- Zobrazení $C: [1, m]^n \rightarrow Q$ se nazývá konfigurace buněčného automatu.
+ Zobrazení $C: [1,m] \times [1,m] \rightarrow Q$ se nazývá konfigurace buněčného automatu.
 \end{definition}
 
-Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Vzhledem k tomu, že výpočet buněčného automatu je z definice nekonečný (přechodovou funkci lze aplikovat donekonečna), nemá smysl uvažovat koncovou konfiguraci. Dále pak můžeme zavést krok výpočtu, výpočet a konfiguraci dosažitelnou.
+Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Koncová konfigurace však pro buněčné automaty neexistuje. Výpočet buněčného automatu je totiž z definice nekonečný. Můžeme však uvažovat konfiguraci dosažitelnou. Pro její zavední je však třeba nadefinovat výpočet buněčného automatu.
 
 \begin{definition}[Krok výpočtu a výpočet buněčného automatu]
  Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ a pro všechny $c_{i_1, \dots, i_m} \in A$ platí:
@@ -1211,6 +1229,7 @@ Podobně jako u klasických automatů můžeme hovořit o počáteční konfigur
  
  Reflexivní a tranzitivní uzávěr $\vdash^*$ \TODO{fakt?} relace $\vdash$ nazvěme výpočtem buněčného automatu.
 \end{definition}
+
 \begin{definition}[Konfigurace dosažitelná]
  Mějme konfiguraci $C$ buněčného automatu. Pak o konfiguraci $C'$ říkáme, že je dosažitelná z konfigurace $C$, pokud existuje výpočet z $C$ k $C'$, tj.
  $$
@@ -1225,28 +1244,31 @@ $$
 $$
 Pak $i$-tý prvek této posloupnosti nazývejme konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
 
-\TODO{popsat grafickou reprezentaci?}
-\TODO{uvažovat pouze dvoudimenzionální automat? jiný stejně ani nebudu potřebovat, nebo jo? A co hexagonální?}
+Výpočet buněčného automatu, resp. jeho konfigurace lze znázornit graficky. Zakresluje se jako bitmapa, kde jednotlivé pixely reprezentují stavy buněk na odpovídajících souřadnicích. Každému stavu je přiřazena barva, kterou je tento stav znázorněn. Pro zobrazení výpočtu se občas používá třírozměrné zobrazení (tj. voxelový obrázek), kde třetí rozměr odpovídá generaci.
 
-\begin{example}
-  Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) \TODO{ocitovat}. Jedná se o jednoduchý simulátor živé organizmu. 
-  
-  Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$ a dvoudimenzionální mřížku ($n = 2$). Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Přechodová funkce $\mu$ je dána následujícími pravidly: \TODO{ověřit, sypu z hlavy}
-  \begin{enumerate}
-   \item Je-li buňka $c$ živá a je v jejím okolí méně, než $3$ živé buňky, buňka umírá (ve smyslu \uv{samoty})
-   \item Je-li buňka $c$ živá a je v jejím okolí více, než $7$ živých buněk, buňka umírá (ve smyslu \uv{vyčerpání zdrojů})
-   \item Je-li buňka $c$ mrtvá, a v jejím okolí více, než $4$ živých buněk, je buňka oživena
-  \end{enumerate}
-  
-  Ukázka buněčného automatu $A$ realizující Hru života je na obrázku ??? \TODO{vložit obrázek}. 
+\begin{example}  
+  Ukázka buněčného automatu $A$ realizující Hru života je na obrázku ????? \TODO{vložit obrázek}. Černá barva symbolizuje mrtvou buňku, bílá pak živou. 
 \end{example}
 
 \subsection{Buněčný fuzzy automat}
+Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým zobecněním bivalentního buněčného automatu. Hlavním důvodem je bezesporu fakt, že přechodová funkce bivalentního buněčného automatu je determinstická a úplná. Tedy, že každá buňka vždy přejde ze stavu $q$ do nějakého stavu $q'$. Buňka se tedy musí nacházet vždy v právě jednom stavu. Nemůže nastat situace, že by buňka přešla \uv{do více stavů současně} (přechodová funkce by nebyla deterministická) nebo nepřešla do žádného (přechodová funkce by nebyla úplná).
 
+Vzhledem k tomu, že stejné chování budeme vyžadovat i u buněčného fuzzy automatu, \uv{odstupňování} přechodové funkce (zavední fuzzy přechodové funkce) by nemělo smysl\footnote{Teoreticky by bylo možné nahradit stav buňky fuzzy stavem buňky. Takováto úprava by však výrazně zvýšila výpočetní šložitost výpočtu automatu a znesnadnila grafické znázornění jeho konfigurací a proto zde nebude uvažován.}.
+
+Budeme proto buněčný fuzzy automat definovat jako klasický \uv{bivalentní} automat, jehož množina stavů je rovna intervalu $[0,1]$.
+
+
+
+
+
+
+\TODO{oficiální definice?!}. 
 
 Na úvod je třeba zdůraznit, že v literatuře bývá často opomíjen rozdíl mezi bivalentními buněčnými automaty a fuzzy buněčnými automaty. Pravděpodobná příčina je, že i běžné bivalentní buněčné automaty obvykle nepracují s binárními hodnotami, ale -- byť konečnou -- množinou hodnot. Navíc, často se vyskytují bivalentní buněčné automaty, které pracují s reálným intervalem $[0, 1]$, avšak nijak nevyužívají vlastností fuzzy logik nebo fuzzy množin. S buněčným fuzzy automatem, jakožto přímým zobecněním bivalentního fuzzy automatu je tak prakticky nemožné se setkat. V této kapitole proto bude za buněčný fuzzy automat považován každý buněčný automat, který pracuje s reálným intervalem $[0, 1]$.
 
 
+\subsection{Aplikace (fuzzzy) buněčných automatů}
+\TODO{vyjmenovat, kde všude se používají (faktj ako všude) a že obvykle je třeba sofistikovaná přechodovka. Např. učením, nebo pracující s celou mřížkou nebo tak.}
 
 \subsection{Problém městského růstu (urban growt problem)}
 Problém městského růstu je problém z oblasti geoinformatiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve ozbecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní městský růst.

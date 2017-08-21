@@ -23,10 +23,11 @@
 \contentsline {subsection}{\numberline {4.7}Jednoduch\IeC {\'a} klasifikace zv\IeC {\'\i }\IeC {\v r}at}{26}
 \contentsline {section}{\numberline {5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{26}
 \contentsline {subsection}{\numberline {5.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{27}
-\contentsline {subsection}{\numberline {5.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} fuzzy automat}{28}
-\contentsline {subsection}{\numberline {5.3}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{28}
-\contentsline {subsection}{\numberline {5.4}Hled\IeC {\'a}n\IeC {\'\i } hran obr\IeC {\'a}zku}{30}
-\contentsline {subsection}{\numberline {5.5}Dal\IeC {\v s}\IeC {\'\i } pov\IeC {\'\i }d\IeC {\'a}n\IeC {\'\i }}{33}
-\contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{34}
-\contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{34}
-\contentsline {subsection}{\numberline {6.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{34}
+\contentsline {subsection}{\numberline {5.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} fuzzy automat}{29}
+\contentsline {subsection}{\numberline {5.3}Aplikace (fuzzzy) bun\IeC {\v e}\IeC {\v c}n\IeC {\'y}ch automat\IeC {\r u}}{30}
+\contentsline {subsection}{\numberline {5.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{30}
+\contentsline {subsection}{\numberline {5.5}Hled\IeC {\'a}n\IeC {\'\i } hran obr\IeC {\'a}zku}{34}
+\contentsline {subsection}{\numberline {5.6}Dal\IeC {\v s}\IeC {\'\i } pov\IeC {\'\i }d\IeC {\'a}n\IeC {\'\i }}{34}
+\contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{35}
+\contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{35}
+\contentsline {subsection}{\numberline {6.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{35}
