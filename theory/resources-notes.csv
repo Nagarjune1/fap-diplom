@@ -143,11 +143,11 @@ okay	MalMor-FuzRegLang	D.S. Malik, J.N. Mordeson	On fuzzy regular languages	theo
 xxx	Zad-FuzLangTheRelHumMachInt	L.A. Zadeh	Fuzzy languages and their relation to human and machine intelligence	not automata
 xxx	Kra-ArcIntCelAut	Krawczyk, R.J	Architectural Interpretation of Cellular Automata	nor automata and fuzzy
 xxx	BleCec+-ModUrbDynCellAut	Blecic, I., Cecchini, A., Prastacos, P., Trunfio, G.A., Verigos, E.	Modelling Urban Dynamics with Cellular Automata	not fuzzy
-need more read	Dra-CouFuzSetTheGisBaCelAutLanUseChaMod	Dragicevic, S.	Coupling Fuzzy Sets Theory and GIS-based Cellular Automata for Land Use Change Modeling	urban grow, cell
+need more read	Dra-CouFuzSetTheGisBaCelAutLanUseChaMod	Dragicevic, S.	Coupling Fuzzy Sets Theory and GIS-based Cellular Automata for Land Use Change Modeling	urban grow, cell, not fuzzy
 need more read	LiuPhi-DevCelAutModUrbGroIncFuzSetApp	Liu, Y., Phinn, S.R.	Developing a Cellular Automaton Model of Urban Growth Incorporating Fuzzy Set Approaches.	urban grow, cell
 need more read	ManHatPra-FuzCelAutBasSheModUrGro+	Mantelas, L., Hatzichristos, T., Prastacos, P	A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth – A Pilot Application in Mesogia Area	urban grow, cell
 need more read	ManHatPra-ModUrbGroUsFuzCelAut	Mantelas, L., Hatzichristos, T., Prastacos, P	Modeling Urban Growth using Fuzzy Cellular Automata	urban grow, cell
-need more read	ClaHopHay-SelModCelAutModHistUrbSanFraBayAre	Clarke, K.C., Hoppen, S., Gaydos, L.	A Self-Modifying Cellular Automaton Model of Historical Urbanization in the San Francisco Bay Area	urban grow, cell
+need more read	ClaHopHay-SelModCelAutModHistUrbSanFraBayAre	Clarke, K.C., Hoppen, S., Gaydos, L.	A Self-Modifying Cellular Automaton Model of Historical Urbanization in the San Francisco Bay Area	urban grow, cell, not fuzzy
 xxx	Rab-HanMathLog	M. O. Rabin	Handbook of mathematical logic	not automata
 ????	Tho-HanTheComSci	W. Thomas	Handbook of theoretical computer science	wtfff? File not found
 xxx	BelKalZad-AbsPatClas	Bellman, R.E., Kalaba, R., and Zadeh, L.A.,	Abstract pattern classification	nor automata and fuzzy
@@ -272,15 +272,31 @@ okay	San-MaxProdMac			theory, minimalisation, definition, original
 maybe	San-GenForSeqMac			theory, definition general
 maybe	Miz-FuzAutFuzGra			theory, grammars
 maybe	AfoGol-MinUniFreDecRegLan			theory, regex, decomposition
-	CaoChe-FuzPetNetModComWord			
-	MarMeySol-HybMetGasDifModFuzCelAutImSha			
-	ZhaLiZha-EdgDetImaBasFuzCelAut			
-	Wol-NewKinSci			
+need more read	CaoChe-FuzPetNetModComWord			
+okay	MarMeySol-HybMetGasDifModFuzCelAutImSha			cell, image, sharpening, learning
+ref	Wol-NewKinSci			
 okay	BatXie-CellCity			cell, urban growt, not fuzzy
 okay	War+-StoConCelModUrbGro			cell, urban growt,
 okay	WhiEng-CelAutBasIntDynRegMod			cell, urban growt,
 super	LiYe-NeuNetBasCelAutSim+			cell, urban growt, learning, not fuzzy
-xxx	Wu-ExpGenPolUrbGroCelAutCit			cell, urban growt, not fuzzy and just theoretical or what
+ref	Wu-ExpGenPolUrbGroCelAutCit			cell, urban growt, not fuzzy and just theoretical or what
 super	Ahm+-CalFuzCelAutModUrbDynSauAr			cell, urban growt, with rules
 okay	YehLi-SimLanDevIntCelAutMulCriEv			cell, urban growt, learning, not fuzzy
 okay	LaiDraSch-IntMulEvCelAutMetLanSimMod			cell, urban growt, not fuzzzy
+okay	TofMar-CelAuMach+			theory, cell
+ref	Wol-CelAut			
+super	MraZimLapBaj-FuzCelAut+			cell, forrest fire, first official definition!
+ref	GhoEda-CombAprEdgDet+			
+ref	Pla-FuzCelModTrafDatFus			
+ref	Wol-CelAutModeComp			
+ref	DiwPatGup-CelAutBasEdDetBraTum			not fuzzy, edge detection, image, tumor, medical
+ref	MofSadRezMey-CelEdDetComCelAuCelLeaAu			not fuzzy, edge detection, image
+ref	NayPatMah-SurTwDimCelAutAppImProc			bibliography, image, not fuzzy
+super	WanJiaZhoDu-ImProcBasFuzCelAuMod			image, segmentation, pattern recognition
+okay	CheMyn-ModAlgBloDutCosWat+			urban grow, bio, prediction of some coral of what
+need more read	MajCha-FuzCelAutModPatClas			image, pattern matching or what
+super	SadRetKam-EfMetImpNoiRedImFuzCelAut			Cellular, image, noise
+xxx	SreBab-IdePromRegGenDNA+			not fuzzy
+okay	WasPar-PreSpaDisEleEnCon+			cell, urban growt, electicity prediction
+ref	RewCha-SimRecCelAutGenAlg			not fuzzy, cellular, crystals grow or what
+super	SahUguSah-SalPepNoiFilFuzCelAut			cell, noise

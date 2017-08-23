@@ -484,21 +484,36 @@ ok	San-MaxProdMac		E. S. Santos		Max-product machines
 ok	San-GenForSeqMac		E. S. Santos		General Formulation of Sequential Machines
 ok	Miz-FuzAutFuzGra		MASAHABU MIZUMOTO,		FUZZI AUTOMATA AND FUZZY GRAMMARS
 ok	AfoGol-MinUniFreDecRegLan		Sergey Afonin and Denis Golomazov		Minimal Union-free Decompositions of Regular Languages
-procesme	CaoChe-FuzPetNetModComWord		Yongzhi Cao, Guoqing Chen		A Fuzzy Petri Nets Model for Computing With Words
-downloadme	MarMeySol-HybMetGasDifModFuzCelAutImSha		F. Marchini, M. Meybodi, and V. Soleymani		A Hybrid Method based on Gas Diffusion Model and Fuzzy Cellular Automata for Image Sharpening.
-downloadme	ZhaLiZha-EdgDetImaBasFuzCelAut		K. Zhang, Z. Li, and X. Zhao		Edge detection of images based on fuzzy cellular automata
+ok	CaoChe-FuzPetNetModComWord		Yongzhi Cao, Guoqing Chen		A Fuzzy Petri Nets Model for Computing With Words
+ok	MarMeySol-HybMetGasDifModFuzCelAutImSha		F. Marchini, M. Meybodi, and V. Soleymani		A Hybrid Method based on Gas Diffusion Model and Fuzzy Cellular Automata for Image Sharpening.
+not found	ZhaLiZha-EdgDetImaBasFuzCelAut		K. Zhang, Z. Li, and X. Zhao		Edge detection of images based on fuzzy cellular automata
 -- additional resources (fuzzy cellular automata)		 			
-procesme	Wol-NewKinSci	 	S. Wolfram	 	A New Kind of Science
-ok?	BatXie-CellCity	 	Batty, M. and Xie, Y.	 	From cells to cities.
+ok	Wol-NewKinSci	 	S. Wolfram	 	A New Kind of Science
+ok	BatXie-CellCity	 	Batty, M. and Xie, Y.	 	From cells to cities.
 not found	WuWe-SimLanDevThoIntCelAut+	 	Wu, F. and Webster, C. J.	 	Simulation of land development through the integration of cellular automata and multi-criteria evaluation.
-ok?	War+-StoConCelModUrbGro		Ward, D. P., Murray, A. T. and Phinn, S. R.	 	A stochastically constrained cellular model of urban growth
-ok?	WhiEng-CelAutBasIntDynRegMod		White, R. and Engelen, G.		Cellular automata as the basis of integrated dynamic regional modelling.
-ok?	LiYe-NeuNetBasCelAutSim+		Li, X. and Yeh, A. G.		Neural-network based cellular automata for simulating multiple land use changes using GI
-ok?	Wu-ExpGenPolUrbGroCelAutCit		Wu, F.		An experiment on the generic polycentricity of urban growth in a cellular automatic city.
-ok?	Ahm+-CalFuzCelAutModUrbDynSauAr		Al-Ahmadi, K., See, L. M., Heppenstall, A. J. and Hogg, J.		Calibration of a fuzzy cellular automata model of urban dynamics in Saudi Arabia.
-ok?	YehLi-SimLanDevIntCelAutMulCriEv		Anthony Gar-On Yeh; Xia Li		Simulation of land development through the integration of cellular automata and multi-criteria evaluation.
-ok?	LaiDraSch-IntMulEvCelAutMetLanSimMod		Terence Lai , Suzana Dragićević & Margaret Schmidt		Integration of multicriteria evaluation and cellular automata methods for landslide simulation modelling
-procesme	TofMar-CelAuMach+		Tommaso Toffoli, Norman Margolus		Cellular Automata Machines: A New Environment for Modeling
-procesme	Wol-CelAut		Wolfram		Cellular Automata
-procesme	MraZimLapBaj-FuzCelAut+		 M. Mraz ; N. Zimic ; I. Lapanja ; I. Bajec		Fuzzy cellular automata: from theory to applications
-downloadme	Gut-CelAut-TheExp		Howard Gutowitz		Cellular Automata: Theory and Experiment
+ok	War+-StoConCelModUrbGro		Ward, D. P., Murray, A. T. and Phinn, S. R.	 	A stochastically constrained cellular model of urban growth
+ok	WhiEng-CelAutBasIntDynRegMod		White, R. and Engelen, G.		Cellular automata as the basis of integrated dynamic regional modelling.
+ok	LiYe-NeuNetBasCelAutSim+		Li, X. and Yeh, A. G.		Neural-network based cellular automata for simulating multiple land use changes using GI
+ok	Wu-ExpGenPolUrbGroCelAutCit		Wu, F.		An experiment on the generic polycentricity of urban growth in a cellular automatic city.
+ok	Ahm+-CalFuzCelAutModUrbDynSauAr		Al-Ahmadi, K., See, L. M., Heppenstall, A. J. and Hogg, J.		Calibration of a fuzzy cellular automata model of urban dynamics in Saudi Arabia.
+ok	YehLi-SimLanDevIntCelAutMulCriEv		Anthony Gar-On Yeh; Xia Li		Simulation of land development through the integration of cellular automata and multi-criteria evaluation.
+ok	LaiDraSch-IntMulEvCelAutMetLanSimMod		Terence Lai , Suzana Dragićević & Margaret Schmidt		Integration of multicriteria evaluation and cellular automata methods for landslide simulation modelling
+ok	TofMar-CelAuMach+		Tommaso Toffoli, Norman Margolus		Cellular Automata Machines: A New Environment for Modeling
+ok	Wol-CelAut		Wolfram		Cellular Automata
+ok	MraZimLapBaj-FuzCelAut+		 M. Mraz ; N. Zimic ; I. Lapanja ; I. Bajec		Fuzzy cellular automata: from theory to applications
+not found	Gut-CelAut-TheExp		Howard Gutowitz		Cellular Automata: Theory and Experiment
+ok	GhoEda-CombAprEdgDet+		Adeleh jafar gholibeik, M.A. Edalatirad		A Combined Approach for Edge Detection in Images with Gaussian and Salt-And-Pepper Noises Using Fuzzy Logic and Traditional Sobel
+ok	Pla-FuzCelModTrafDatFus		Bartłomiej PŁACZEK		FUZZY CELLULAR MODEL FOR TRAFFIC DATA FUSION 
+ok	Wol-CelAutModeComp		Wolfram		Cellular Automata as models of complexity
+ok	DiwPatGup-CelAutBasEdDetBraTum		Manoj Diwakar ;  Pawan Kumar Patel ;  Kunal Gupta	 	Cellular automata based edge-detection for brain tumor
+ok	MofSadRezMey-CelEdDetComCelAuCelLeaAu		Mohammad Hasanzadeh Mofrad, Sana Sadeghi, Alireza Rezvanian, Mohammad Reza Meybodi	 	Cellular edge detection: Combining cellular automata and cellular learning automata
+ok	NayPatMah-SurTwDimCelAutAppImProc		Deepak Ranjan Nayak, Prashanta Kumar Patra, Amitav Mahapatra	 	A Survey on Two Dimensional Cellular Automata and Its Application in Image Processing
+ok	WanJiaZhoDu-ImProcBasFuzCelAuMod		Hong Wang ;  Junna Jiang ;  Lihui Zhou ;  Liping Du	 	Image Processing Based on Fuzzy Cellular Automata Model
+ok	CheMyn-ModAlgBloDutCosWat+		Quiwen Chen, Arthur E. Mynett	 	Modelling algal blooms in the Dutch coastal waters by integrated numerical and fuzzy cellular automata approaches
+ok	MajCha-FuzCelAutModPatClas		Pradipta MAJI  P. Pal CHAUDHURI  	 	Fuzzy Cellular Automata for Modeling Pattern Classifier
+ok	SadRetKam-EfMetImpNoiRedImFuzCelAut		Sana Sadeghi, Alireza Rezvanian, Ebrahim Kamrani	 	An efficient method for impulse noise reduction from images using fuzzy cellular automata
+ok	SreBab-IdePromRegGenDNA+		Kiran Sree, Ramesh Babu	 	Identification of Promoter Region in Genomic DNA Using Cellular Automata Based Text Clustering 
+ok	WasPar-PreSpaDisEleEnCon+		Wasilewski, J., Parol, M.	 	Prediction of spatial distribution of electric energy consumers with the use of fuzzy cellular automata
+ok	RewCha-SimRecCelAutGenAlg		R. Dewri, N. Chakraborti	 	Simulating recrystallization through cellular automata and genetic algorithms
+ok	SahUguSah-SalPepNoiFilFuzCelAut		U. Sahin, S. Uguz, F. Sahin	 	Salt and pepper noise filtering with fuzzy-cellular automata
+	PraCha-FuzCelAuModPatCla		Pradipta MAJI, P. Pal CHAUDHURI		Fuzzy Cellular Automata for Modeling Pattern Classifier

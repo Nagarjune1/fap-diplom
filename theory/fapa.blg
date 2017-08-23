@@ -15,22 +15,39 @@ Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
 Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
 Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
 Warning--I didn't find a database entry for "Wol-NewKinSci"
+Warning--I didn't find a database entry for "Wol-NewKiSci"
+Warning--I didn't find a database entry for "Wol-CelAut"
+Warning--I didn't find a database entry for "BatXie-CellCity"
+Warning--I didn't find a database entry for "Wu-ExpGenPolUrbGroCelAutCit"
+Warning--I didn't find a database entry for "For-FuzCelAutConjNormForm"
+Warning--I didn't find a database entry for "MraZimLapBaj-FuzCelAut+"
+Warning--I didn't find a database entry for "TofMar-CelAuMach+"
+Warning--I didn't find a database entry for "WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn"
+Warning--I didn't find a database entry for "DiwPatGup-CelAutBasEdDetBraTum"
+Warning--I didn't find a database entry for "MofSadRezMey-CelEdDetComCelAuCelLeaAu"
+Warning--I didn't find a database entry for "NayPatMah-SurTwDimCelAutAppImProc"
+Warning--I didn't find a database entry for "Pla-FuzCelModTrafDatFus"
+Warning--I didn't find a database entry for "CheMyn-ModAlgBloDutCosWat+"
+Warning--I didn't find a database entry for "MarMeySol-HybMetGasDifModFuzCelAutImSha"
+Warning--I didn't find a database entry for "ZhaLiZha-EdgDetImaBasFuzCelAut"
+Warning--I didn't find a database entry for "WanJiaZhoDu-ImProcBasFuzCelAuMod"
+Warning--I didn't find a database entry for "MajCha-FuzCelAutModPatClas"
+Warning--I didn't find a database entry for "SadRetKam-EfMetImpNoiRedImFuzCelAut"
+Warning--I didn't find a database entry for "SahUguSah-SalPepNoiFilFuzCelAut"
+Warning--I didn't find a database entry for "War+-StoConCelModUrbGro"
+Warning--I didn't find a database entry for "Wu-CalStoCelAutAppRurUrbLanConv"
+Warning--I didn't find a database entry for "TofMar-CelAuMach+.pdf"
+Warning--I didn't find a database entry for "LiYe-NeuNetBasCelAutSim+"
+Warning--I didn't find a database entry for "YehLi-SimLanDevIntCelAutMulCriEv"
 Warning--I didn't find a database entry for "AlAhHep+-ModUrbGroDynUsCelAutGIS"
 Warning--I didn't find a database entry for "Ahm+-CalFuzCelAutModUrbDynSauAr"
-Warning--I didn't find a database entry for "War+-StoConCelModUrbGro"
 Warning--I didn't find a database entry for "WhiEng-CelAutBasIntDynRegMod"
 Warning--I didn't find a database entry for "LaiDraSch-IntMulEvCelAutMetLanSimMod"
 Warning--I didn't find a database entry for "ManHatPra-FuzCelAutBasSheModUrGro+"
 Warning--I didn't find a database entry for "ManHatPra-ModUrbGroUsFuzCelAut"
 Warning--I didn't find a database entry for "ClaHopHay-SelModCelAutModHistUrbSanFraBayAre"
-Warning--I didn't find a database entry for "Wu-CalStoCelAutAppRurUrbLanConv"
 Warning--I didn't find a database entry for "Dra-CouFuzSetTheGisBaCelAutLanUseChaMod"
 Warning--I didn't find a database entry for "LiuPhi-DevCelAutModUrbGroIncFuzSetApp"
-Warning--I didn't find a database entry for "LiYe-NeuNetBasCelAutSim+"
-Warning--I didn't find a database entry for "YehLi-SimLanDevIntCelAutMulCriEv"
-Warning--I didn't find a database entry for "MarMeySol-HybMetGasDifModFuzCelAutImSha"
-Warning--I didn't find a database entry for "ZhaLiZha-EdgDetImaBasFuzCelAut"
-Warning--I didn't find a database entry for "For-FuzCelAutConjNormForm"
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
 while executing---line 1049 of file plain.bst
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
@@ -44,7 +61,7 @@ Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" h
 while executing---line 1090 of file plain.bst
 You've used 16 entries,
             2118 wiz_defined-function locations,
-            629 strings with 8561 characters,
+            663 strings with 9437 characters,
 and the built_in function-call counts, 3419 in all, are:
 = -- 324
 > -- 130
