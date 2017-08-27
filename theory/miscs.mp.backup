@@ -1,0 +1,63 @@
+outputtemplate:="%j%c.mps";
+
+beginfig(0);	% 8 dimms
+  
+  numeric s;
+  s=50;
+  
+  for i = 0 upto 3:
+    draw (0, i * s)   -- (3 * s, i * s);
+    draw (i * s, 0)   -- (i * s, 3 * s);
+  endfor;
+  
+%   for i = -1 upto +1:
+%     for j = -1 upto +1:
+%       dotlabel.top(btex $x$ etex, ((i + 1.5) * s, (j + 1.5) * s));
+%     endfor;
+%   endfor;
+   
+   vardef dimm(expr i, j, text) = 
+    label.top(text, ((i + 0.5) * s, (- j + 0.5) * s));
+    %label.bot(btex $c_{i-1,j-1}$ etex, 	(0.5 * s, 2.5 * s));
+   
+   enddef;
+   
+   dimm(-1, -1, btex $UL$ etex)
+   dimm(-1, -1, btex $UL$ etex)
+%    label.top(btex $UL$ etex, 		(0.5 * s, 2.5 * s));
+%    label.bot(btex $c_{i-1,j-1}$ etex, 	(0.5 * s, 2.5 * s));
+%    label.top(btex $U$ etex, 		(1.5 * s, 2.5 * s));
+%    label.bot(btex $c_{i,j-1}$ etex, 	(1.5 * s, 2.5 * s));
+%    label.top(btex $UR$ etex, 		(2.5 * s, 2.5 * s));
+%    label.bot(btex $c_{i+1,j-1}$ etex, 	(2.5 * s, 2.5 * s));
+%   
+%    label.top(btex $L$ etex, 		(0.5 * s, 1.5 * s));
+%    label.bot(btex $c_{i-1,j}$ etex, 	(0.5 * s, 1.5 * s));
+%    label.top(btex $ $ etex, 		(1.5 * s, 1.5 * s));
+%    label.bot(btex $c_{i,j}$ etex, 	(1.5 * s, 1.5 * s));
+%    label.top(btex $R$ etex, 		(2.5 * s, 1.5 * s));
+%    label.bot(btex $c_{i+1,j}$ etex, 	(2.5 * s, 1.5 * s));
+%    
+%    label.top(btex $BL$ etex, 		(0.5 * s, 0.5 * s));
+%    label.bot(btex $c_{i-1,j+1}$ etex, 	(0.5 * s, 0.5 * s));
+%    label.top(btex $B$ etex, 		(1.5 * s, 0.5 * s));
+%    label.bot(btex $c_{i,j+1}$ etex, 	(1.5 * s, 0.5 * s));
+%    label.top(btex $BR$ etex, 		(2.5 * s, 0.5 * s));
+%    label.bot(btex $c_{i+1,j+1}$ etex, 	(2.5 * s, 0.5 * s));
+%   
+%   draw (0, 1*s) -- (3*s, 1*s);
+%   draw (0, 2*s) -- (3*s, 2*s);
+%   draw (0, 3*s) -- (3*s, 3*s);
+% 
+%   draw (0, 0)   -- (3*s, 0);
+%   draw (0, 1*s) -- (3*s, 1*s);
+%   draw (0, 2*s) -- (3*s, 2*s);
+%   draw (0, 3*s) -- (3*s, 3*s);
+%   
+  
+
+endfig;
+
+end
+  
+  

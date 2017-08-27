@@ -15,6 +15,9 @@
 %% subfigures, https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
 \usepackage{subcaption}
 
+%% číslování řádků, https://texblog.org/2012/02/08/adding-line-numbers-to-documents/
+\usepackage{lineno}
+
 %Definice, věta, důkaz!
 \newtheorem{definition}{Definice}
 \newtheorem{theorem}{Věta}
@@ -50,3 +53,6 @@
 \makeatletter
 \g@addto@macro\@floatboxreset\centering
 \makeatother
+
+\linenumbers
+\modulolinenumbers[10]

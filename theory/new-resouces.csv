@@ -516,4 +516,6 @@ ok	SreBab-IdePromRegGenDNA+		Kiran Sree, Ramesh Babu	 	Identification of Promote
 ok	WasPar-PreSpaDisEleEnCon+		Wasilewski, J., Parol, M.	 	Prediction of spatial distribution of electric energy consumers with the use of fuzzy cellular automata
 ok	RewCha-SimRecCelAutGenAlg		R. Dewri, N. Chakraborti	 	Simulating recrystallization through cellular automata and genetic algorithms
 ok	SahUguSah-SalPepNoiFilFuzCelAut		U. Sahin, S. Uguz, F. Sahin	 	Salt and pepper noise filtering with fuzzy-cellular automata
-	PraCha-FuzCelAuModPatCla		Pradipta MAJI, P. Pal CHAUDHURI		Fuzzy Cellular Automata for Modeling Pattern Classifier
+ok??	PraCha-FuzCelAuModPatCla		Pradipta MAJI, P. Pal CHAUDHURI		Fuzzy Cellular Automata for Modeling Pattern Classifier
+ok	MaiAgg-StuComVarImDetEdTec		Raman Maini, Dr. Himanshu Aggarwal		Study and Comparison of Various Image Edge Detection Techniques
+ok??	Rus-ImaProHan		John C. Russ		The Image Processing Handbook, Sixth Edition

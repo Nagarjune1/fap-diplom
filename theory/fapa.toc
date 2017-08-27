@@ -13,22 +13,21 @@
 \contentsline {subsection}{\numberline {3.6}Edita\IeC {\v c}n\IeC {\'\i } operace}{12}
 \contentsline {subsection}{\numberline {3.7}Deformovan\IeC {\'y} automat}{17}
 \contentsline {subsection}{\numberline {3.8}Shrnut\IeC {\'\i }}{18}
-\contentsline {section}{\numberline {4}Fuzzy tree automaty}{18}
-\contentsline {subsection}{\numberline {4.1}Zaveden\IeC {\'\i }}{18}
+\contentsline {section}{\numberline {4}Fuzzy tree automaty}{19}
+\contentsline {subsection}{\numberline {4.1}Zaveden\IeC {\'\i }}{19}
 \contentsline {subsection}{\numberline {4.2}Stromy a pseudotermy}{19}
 \contentsline {subsection}{\numberline {4.3}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{21}
-\contentsline {subsection}{\numberline {4.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{23}
+\contentsline {subsection}{\numberline {4.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{24}
 \contentsline {subsection}{\numberline {4.5}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{24}
 \contentsline {subsection}{\numberline {4.6}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{25}
-\contentsline {subsection}{\numberline {4.7}Jednoduch\IeC {\'a} klasifikace zv\IeC {\'\i }\IeC {\v r}at}{27}
 \contentsline {section}{\numberline {5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{27}
 \contentsline {subsection}{\numberline {5.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{28}
 \contentsline {subsection}{\numberline {5.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{30}
 \contentsline {subsection}{\numberline {5.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{33}
 \contentsline {subsection}{\numberline {5.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{34}
-\contentsline {subsection}{\numberline {5.5}Obecn\IeC {\v e} ke zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{36}
+\contentsline {subsection}{\numberline {5.5}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{35}
 \contentsline {subsection}{\numberline {5.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{39}
-\contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{39}
+\contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{40}
 \contentsline {subsection}{\numberline {5.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{40}
 \contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{42}
 \contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{42}

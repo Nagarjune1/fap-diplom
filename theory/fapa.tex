@@ -708,6 +708,7 @@ Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Fuzzy tree automaty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -716,13 +717,13 @@ Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy p
 
 Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
 
-Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. stromy. pro snadnější práci s nimi bylo navrženo je navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy automatů.
+Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. stromy. Pro snadnější práci s nimi bylo navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy tree automatů.
 
 Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stromy a pseudotermy}
-\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
+%\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
 
 \begin{definition}[Doména stromu]
   Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
@@ -964,7 +965,7 @@ Podobně jako u klasických automatů, i u tree automatů platí, že pro každ�
 V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
 
 \begin{definition}[Automat rozpoznávající strom]
-  Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) a množinu $sub(t)$ všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
+  Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) kde $sub(t)$ značí množinu všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
   \begin{itemize}
    \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
    \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
@@ -1153,26 +1154,29 @@ Označme $A_H = (Q, N, T, \mu, F)$ jako fuzzy tree automat rozpoznávající str
  Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A'$ bude nějak vypadat. \TODO{domyslet to nějak!}.
 \end{example}
 
-Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
+Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze se svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
 
 I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
 
-\subsection{Jednoduchá klasifikace zvířat}
-Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
-
-Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.
+%TODO 
+% \subsection{Jednoduchá klasifikace zvířat}
+% Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
+% 
+% Jmenovaným vlastnostem byly přiřazeny neterminální symboly $Env, Surf, Ext, Tail$ a terminální symboly po řadě $water, land, air, leather, scales, hair, feather, leg, hand, wing, fin, short, long$. Zvíře jako celek je pak reprezentováno terminálem $Animal$, který má čtveřici potomků, a to právě $Env, Surf, Ext$ a volitelně $Tail$\TODO{další volitelné \uv{atributy}? umí plavat? ve slané/sladké vodě? loví? létá? ...}. Ukázka stromů reprezentující zvířata pes, pták, netopýr, tyranosaurus, ryba, žába, krokodýl, pavouk, (chlupatá tarantule/čmelák?), vydra/bobr, velryba/delfín, létající ryba je na obrázku \TODO{obrázek!!!}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Buněčné fuzzy automaty}
 
-Buněčné (fuzzy) automaty jsou další z výpočetních modelů, které se svojí základní myšlenkou podobají (fuzzy) automatům. Oproti \uv{klasickým} (fuzzy) automatům mají totiž značně rozsáhlejší možnosti uplatnění. Proto jim v této práci bude věnována samostatná kapitola.
+Buněčné (fuzzy) automaty jsou další z výpočetních modelů, které se svojí základní myšlenkou podobají (fuzzy) automatům. Oproti \uv{klasickým} (fuzzy) automatům mají však značně zajímavější možnosti uplatnění. Proto jim v této práci bude věnována samostatná kapitola.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\uv{Bivalentní} buněčný automat}
 Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. Dle \cite{Wol-NewKinSci} je jejich studium dokonce označováno za naprosto samostatné matematické paradigma. I přesto je v určitém smyslu je možné je považovat za zobecnění \uv{klasických} deterministických automatů. Dá se totiž říci, že se jedná o $n$-dimenzionální mřížku tvořenou instancemi téže konečného automatu.
 
-Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku (např. \cite{Wol-NewKiSci}, \cite{Wol-CelAut}, \cite{BatXie-CellCity}), jiné konečnou se simulovanou nekonečností (odpovídající hrany jsou logicky propojeny\TODO{popsat to nějak lépe}) či konečné (např. \cite{Wu-ExpGenPolUrbGroCelAutCit}). Také se často kromě klasické čtvercové mřížky pracuje s s mřížkou trojúhelníkovou nebo šestiúhelníkovou (např. \cite{For-FuzCelAutConjNormForm}).
+Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku (např. \cite{Wol-NewKiSci}, \cite{Wol-CelAut}, \cite{BatXie-CellCity})
+%, jiné konečnou se simulovanou nekonečností (odpovídající hrany jsou logicky propojeny\TODO{popsat to nějak lépe}) či 
+jiné zase konečnou (např. \cite{Wu-ExpGenPolUrbGroCelAutCit}). Také se často kromě klasické čtvercové mřížky pracuje s s mřížkou trojúhelníkovou nebo šestiúhelníkovou (např. \cite{For-FuzCelAutConjNormForm}).
 
 Vzhledem k tomu, že úkolem této práce není studovat obecné vlastnosti buněčných automatů ale jen jejich fuzifikace a následné použití v praxi, bude zde nadefinovanán pouze standardní dvoudimenzionální buněčný automat (pracující na čtvercové mřížce). Právě tento typ automatu totiž našel v praxi největší uplatnění. V této práci se také pro jednoduchost omezíme jen na automat se čtvercovou mřížkou velikosti $m$.
 
@@ -1183,15 +1187,19 @@ Dvoudimenzionální buněčný automat je tedy mřížka $m \times m$ tvořena b
 \end{definition}
 
 \begin{note}
- Buněčný automat se obvykle definuje jen předpisem pro přechodovou funkci, resp. výpisem přechodových pravidel. My se však budeme držet konceptu klasických automatů a budeme buněčný automat definovat jako strukturu. \TODO{Tady \cite{MraZimLapBaj-FuzCelAut+} je definice, ale je pro nás moc zbytečná a tak jsme si vymysleli svoji}.
+  Buněčný automat se obvykle definuje jen předpisem pro přechodovou funkci, resp. výpisem přechodových pravidel. My se však budeme držet konceptu klasických automatů a budeme buněčný automat definovat jako strukturu.
+%\TODO{Tady \cite{MraZimLapBaj-FuzCelAut+} je definice, ale je pro nás moc zbytečná a tak jsme si vymysleli svoji}.
 \end{note}
+\begin{notation*}
+  Kde to bude možné, budeme indexy $i,j$ vynechávat a namísto $c_{i,j}$ psát jen $c$. Fakt, že $c$ je buňkou automatu $A$ budeme značit $c \in A$. Fakt, že nějaká buňka $c$ se nachází ve stavu $q$ budeme značit $c = q$. 
+\end{notation*}
 
-Fakt, že nějaká buňka $c$ se nachází ve stavu $q$ budeme značit prostým $c = q$. Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuálního stavu $q$ a stavu dalších $k$ buněk. V této práci se budeme vždy za tyto buňky uvažovat okolní buňky. Označme $round(c_{ij})$ jako okolí buňky $c_{ij}$. Nejpoužívanějším okolím, které se používá, je Mooreovo okolí, které je definováno jako sousedních $8$ buněk buňky $c_{ij}$:
+Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuálního stavu $q$ a stavu dalších, tzv. okolních, $k$ buněk. Označme $round(c_{ij})$ jako okolí buňky $c_{ij}$. Nejpoužívanějším okolím, které se používá, je Mooreovo okolí o poloměru $1$, které je definováno jako sousedních $8$ buněk buňky $c_{ij}$:
 \begin{align*}
  round(c_{i,j}) = (
-  & c_{i-1, j-1},	c_{i, j-1},	c_{i+1, j-1},	\\
-  & c_{i-1, j  },			c_{i+1, j  },	\\
-  & c_{i-1, j+1},	c_{i, j+1},	c_{i+1, j+1}	
+  & c_{i-1, j-1},\ 	c_{i, j-1},\ 	c_{i+1, j-1},	\\
+  & c_{i-1, j  },\ 	\qquad \qquad\ 	c_{i+1, j  },	\\
+  & c_{i-1, j+1},\ 	c_{i, j+1},\ 	c_{i+1, j+1}	
  )
 \end{align*}
 s tím, že nedefinované hodnoty ($i,j < 1$ nebo naopak $i,j > m$) za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
@@ -1203,7 +1211,7 @@ $$
 kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \uv{If--Then} pravidel.
 
 \begin{example} \label{ex:GameOfLife}
-  Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) (např. \cite{TofMar-CelAuMach+}). Jedná se o jednoduchý simulátor živé organizmu. 
+  Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) (např. \cite{TofMar-CelAuMach+}). Jedná se o jednoduchý simulátor živého organizmu. 
   
   Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$ a dvoudimenzionální mřížku ($n = 2$). Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Přechodová funkce $\mu$ je dána následujícími pravidly:
   \begin{enumerate}
@@ -1216,15 +1224,16 @@ kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nov
   $$
     neighs_{i,j} = \left( \sum_{k,l \in \{-1, 0, +1\}} c_{i + k, j + l} \right) - c_{i,j}
   $$
-  jako počet živých buněk sousedících s $c_{i,j}$. Pak předchozí pravidla mohou být zapsána (kde $c' = \mu(c, round(c))$)
-  \begin{enumerate}
-   \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} < 2$ pak $c'_{i,j} = 0$
-   \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} > 3$ pak $c'_{i,j} = 0$
-   \item Je-li $c_{i,j} = 0$ a $neighs_{i,j} = 4$ pak $c'_{i,j} = 1$
-   \item Jinak $c'_{i,j} = c_{i,j}$
-  \end{enumerate}
+  jako počet živých buněk sousedících s $c_{i,j}$. 
+%   Pak předchozí pravidla mohou být zapsána (kde $c' = \mu(c, round(c))$)
+%   \begin{enumerate}
+%    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} < 2$ pak $c'_{i,j} = 0$
+%    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} > 3$ pak $c'_{i,j} = 0$
+%    \item Je-li $c_{i,j} = 0$ a $neighs_{i,j} = 4$ pak $c'_{i,j} = 1$
+%    \item Jinak $c'_{i,j} = c_{i,j}$
+%   \end{enumerate}
   
-  Přechodová funkce $\mu$ je tedy definována následovně:
+  Pak je přechodová funkce $\mu$ definována následovně:
   $$
     \mu(c_{i,j}, round(c_{i,j})) = 
       \begin{dcases}
@@ -1242,15 +1251,15 @@ Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných a
  Zobrazení $C: [1,m] \times [1,m] \rightarrow Q$ se nazývá konfigurace buněčného automatu.
 \end{definition}
 
-Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Koncová konfigurace však pro buněčné automaty neexistuje. Výpočet buněčného automatu je totiž z definice nekonečný. Můžeme však uvažovat konfiguraci dosažitelnou. Pro její zavední je však třeba nadefinovat výpočet buněčného automatu.
+Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Koncová konfigurace však pro buněčné automaty neexistuje. Výpočet buněčného automatu totiž nemá stanoven žádný konec. Můžeme však uvažovat konfiguraci dosažitelnou. Pro její zavední je však třeba nadefinovat výpočet buněčného automatu.
 
 \begin{definition}[Krok výpočtu a výpočet buněčného automatu]
- Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ ($(C, C') \in \vdash$) a pro všechny $c \in A$ platí:
+ Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ ($(C, C') \in \vdash$) a pro všechny $c_{i,j} \in A$ platí:
  $$
-  C'(c) = \mu(C(c), round(c))
+  C'(i,j) = \mu(C(i,j), round(c_{i,j}))
  $$
  
- Tranzitivní uzávěr $\vdash^*$ \TODO{fakt?} relace $\vdash$ nazvěme výpočtem buněčného automatu.
+ Reflexivní a tranzitivní uzávěr $\vdash^*$ relace $\vdash$ nazvěme výpočtem buněčného automatu.
 \end{definition}
 
 \begin{definition}[Konfigurace dosažitelná]
@@ -1261,17 +1270,16 @@ Podobně jako u klasických automatů můžeme hovořit o počáteční konfigur
  V opačném případě říkáme, že konfigurace je nedosažitelná.
 \end{definition}
 
-Vzhledem k tomu, že přechodová funkce buněčného automatu je deterministická, je zřejmě determinstický i její výpočet, tj. pro každou konfiguraci $C$ existuje právě jedna konfigurace $C'$, pro kterou platí $C \vdash C'$. Relace $\vdash$ tak generuje posloupnost konfigurací. Označíme-li si počáteční konfiguraci $C^{(0)}$, pak můžeme výpočet automatu zapsat:
+Vzhledem k tomu, že přechodová funkce buněčného automatu je deterministická, je zřejmě determinstický i její výpočet, tj. pro každou konfiguraci $C$ existuje právě jedna konfigurace $C'$, pro kterou platí $C \vdash C'$. Relace $\vdash$ tak generuje posloupnost konfigurací. Očíslujeme-li si tuto posloupnost, pak počáteční konfigurace výpočtu bude $C^{(0)}$ a posloupnost pak bude vypadat následovně:
 $$
   C^{(0)} \vdash C^{(1)} \vdash C^{(2)} \vdash \dots
 $$
-Pak $i$-tý prvek této posloupnosti nazývejme konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
+Nazývejme $i$-tý prvek této posloupnosti jako konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
 
-
-Výpočet buněčného automatu, resp. jeho konfigurace lze znázornit graficky. Zakresluje se jako bitmapa, kde jednotlivé pixely reprezentují stavy buněk na odpovídajících souřadnicích. Každému stavu je přiřazena barva, kterou je tento stav znázorněn. Pro zobrazení výpočtu se občas používá třírozměrné zobrazení (tj. voxelový obrázek), kde třetí rozměr odpovídá generaci.
+Konfigurace buněčného automatu se často zobrazuje graficky. Zakresluje se jako bitmapa, kde jednotlivé pixely reprezentují stavy buněk na odpovídajících souřadnicích. Každému stavu je přiřazena barva, kterou je tento stav znázorněn. Pro zobrazení výpočtu se občas používá třírozměrné zobrazení (tj. voxelový obrázek), kde třetí rozměr odpovídá generaci.
 
 \begin{example}  
-  Ukázka buněčného automatu $A$ realizující Hru života je na obrázku \ref{img:GameOfLife}. Černá barva symbolizuje mrtvou buňku, bílá pak živou. 
+  Ukázka výpočtu automatu $A_100$ realizující Hru života je na obrázku \ref{img:GameOfLife}. Černá barva symbolizuje mrtvou buňku, bílá pak živou. 
 \end{example}
 
 \begin{figure}[]
@@ -1296,7 +1304,7 @@ Výpočet buněčného automatu, resp. jeho konfigurace lze znázornit graficky.
   \caption{$t = 44$}
  \end{subfigure}
  
- \caption{Výpočet buněčného automatu \uv{Hra života} s náhodnou počáteční konfigurací} \label{img:GameOfLife}
+ \caption{Několik generací výpočtu buněčného automatu \uv{Hra života} s náhodnou počáteční konfigurací} \label{img:GameOfLife}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1305,7 +1313,7 @@ Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým
 
 Vzhledem k tomu, že stejné chování budeme vyžadovat i u buněčného fuzzy automatu, \uv{odstupňování} přechodové funkce (zavední fuzzy přechodové funkce) by nemělo smysl\footnote{Teoreticky by bylo možné nahradit stav buňky fuzzy stavem buňky. Takováto úprava by však výrazně zvýšila výpočetní šložitost výpočtu automatu a například také znesnadnila grafické znázornění jeho konfigurací a proto zde nebude uvažován.}.
 
-V praxi se lze setkat se dvěma způsoby, jak je buněčný fuzzy automat definován. První, jednodušší z nich, je prostý bivalentní buněčný automat, jehož množina stavů je rovna intervalu $[0,1]$. Takovýto automat budeme označovat jako $[0,1]$-buněčný fuzzy automat.
+Triviální způsob, jak zavést buněčný fuzzy automat je jako bivalentní buněčný automat, jehož množina stavů je rovna intervalu $[0,1]$. Takovýto automat budeme označovat jako $[0,1]$-buněčný fuzzy automat.
 
 \begin{definition}[\ensuremath{[0,1]}-buněčný fuzzy automat]
  Jako $[0,1]$-buněčný fuzzy automat velikosti $m$ budeme označovat bivalentní buněčný automat $A = (Q, \mu)$, kde $Q = [0,1]$.
@@ -1318,12 +1326,12 @@ Jedná se tedy jen o speciální případ klasického bivalentního buněčného
 \end{align*}
 Díky tomu je obejit předpoklad, že automat se smí nacházet pouze v jednom stavu současně.
 
-Druhý způsob, jak definovat buněčný fuzzy automat, používá libovolnou množinu stavů. Fuzzy přístup se zde závádí dodatečně pomocí fuzzy množin (resp. výroků se stupni pravdivosti). Množině stavů je přiřazena jedna nebo více fuzzy množin. Každá tato fuzzy množina určitým způsobem charakterizuje stavy v ní obsažené. Přechodová funkce pak nepracuje přímo se stavy, ale pouze z těmito fuzzy množinami. Stav, do kterého má automat přejít je pak určen z fuzzy množiny (množin) popisující tento stav.
+Druhý způsob, jak definovat buněčný fuzzy automat, může pracovat s libovolnou množinou stavů. Fuzzy přístup se zde závádí dodatečně pomocí fuzzy množin (resp. výroků se stupni pravdivosti). Množině stavů je přiřazena jedna nebo více fuzzy množin. Každá tato fuzzy množina určitým způsobem charakterizuje stavy v ní obsažené. Přechodová funkce pak nepracuje přímo se stavy, ale pouze z těmito fuzzy množinami. Stav, do kterého má automat přejít je pak určen z fuzzy množiny (množin) popisující tento stav.
 
 Takovýto buněčný fuzzy automat budeme nazývat buněčný automat s fuzzy logikou. Přechodová funkce $\mu$ tohoto automatu je určena množinou \uv{If -- Then}  pravidel. Zatímco u konečného buněčného automatu byla transformace množiny pravidel na přechodovou funkci triviální (viz příklad \ref{ex:GameOfLife}), při použití fuzzy logiky je situace složitější. Bude proto ještě před samotným nadefinováním automatu uveden postup pro konstrukci jeho přechodové funkce.
 
-\TODO{V CEL0 PRÁCI: ověřit konečné a neprázdné množiny !!!}
-\TODO{\uv{If -- Then} pravidla, odkud jsou, zdůraznit, že je to vlastně implikace. Jo a používají se všude možně (mj. např. v knowledge base a obecně data mining?), takže to nadefinovat asi někde nahoře v úvodních epizodách. Budu značit $pre$ (předpoklad) a $con$ (důsledek).}
+%\TODO{V CELÉ PRÁCI: ověřit konečné a neprázdné množiny !!!}\\
+%\TODO{\uv{If -- Then} pravidla, odkud jsou, zdůraznit, že je to vlastně implikace. Jo a používají se všude možně (mj. např. v knowledge base a obecně data mining?), takže to nadefinovat asi někde nahoře v úvodních epizodách. Budu značit $pre$ (předpoklad) a $con$ (důsledek).}
 
 
 
@@ -1341,7 +1349,7 @@ $$
   E_e(G) = con(g_i) \text{ kde $g_i \in G$ je takové, že $E_e(g_i) = \max_{g \in G} E_e(g)$}
 $$
 \TODO{ohodnocení pravidla vrací stav, ne stupeň pravdivosti. Chce to jiný termín, např. evaluace.}
-Tímto máme stanoveno, jak se aplikují fuzzzy přechodová pravidla, a můžeme tedy přistoupit k definici buněčného automatu s fuzzy logikou.
+Tímto máme stanoveno, jak se aplikují fuzzy přechodová pravidla, a můžeme tedy přistoupit k definici buněčného automatu s fuzzy logikou.
 
 \begin{definition}[Buněčný automat s fuzzy logikou]
   Označme strukturu $A = (Q, G, \mathcal{D})$, kde $Q$ je množina stavů, $G$ množina \uv{If -- Then} pravidel a $\mathcal{D}$ je fuzzy množina nad $Q$. Dále pak $(Q, \mu)$ formuje bivalentní buněčný automat s přechodovou funkcí $\mu$:
@@ -1371,79 +1379,63 @@ Tímto máme stanoveno, jak se aplikují fuzzzy přechodová pravidla, a můžem
 \end{example}
 
 
-Provedme-li srovnání obou definic buněčných fuzzy automatů, zjistíme, že jsme vlastně obdrželi dva značně rozdílné výpočetní modely. To se projevuje i na jejich uplatnění. $[0,1]$-Buněčný automat je vhodný více tam, kde je třeba mít přesnější kontrolu nad přechodovou funkcí. Tento typ automatu nám totiž dovoluje použít libovolnou matematickou funkci. Oproti tomu buněčný automat s fuzzy logikou najde uplatnění spíše tam, kde máma data popsána logicky. Přechodovou funkci totiž tvoří sada pravidel a formulí, které přechody popisují.
-
-
-%Je vidět, že buněčný fuzzy je automat je tak vlastně speciálním případem klasického bivalentního buněčného automatu. S tímto faktem je možné se často setkat i ve značném množství publikací. Spousta autorů výše definovaný buněčný fuzzy automat neoznačuje jako fuzzy buněčný automat. Obdobně, za fuzzy automaty bývají často považovány i automaty, jejiž přechodová funkce je tvořena reálným intervalem $[0, 100]$, či celočíselným intervalem $[0, 2^8 - 1]$. Buněčné fuzzy automaty tak často stavy neuvažují jako stupně pravdivosti (tvrzení ve tvaru \uv{buňka $c$ splňuje vlastnost $X$ ve stupni $q$}) ale jen jako číselnou hodnotu. To značně komplikuje vyhledávání jakýchkoliv informací o buněčných fuzzy automatech.
+Provedme-li srovnání obou definic buněčných fuzzy automatů, zjistíme, že jsme vlastně obdrželi dva značně rozdílné výpočetní modely. To se projevuje i na jejich uplatnění. $[0,1]$-Buněčný automat je vhodný více tam, kde pro popis přechodové funkce nevyžadujeme \uv{If -- Then} pravidla ale jen funkční předpis. Oproti tomu buněčný automat s fuzzy logikou najde uplatnění spíše tam, kde máma data popsána logicky. Často se však oba přístupy kombinují (typicky se používá buněčný automat s fuzzy logikou spolu s nepodmíněnými pravidly). 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Obecně k aplikacím}
 Buněčné automaty (obecně) nacházejí široké uplatnění v rozličných oblastech. Dle \cite{Wol-NewKinSci} se s nimi lze setkat v matematice, informatice, fyzice, biologii, společenských vědách, např. filozofii a umění. Používají se například pro simulace fyzikálních dějů (např. difuze, tok tekutin), krystalizace, biologickým, urbanistickým, enviromentalistickým a geografickým simulacím či ke generování fraktálů.
 
-Co se buněčných fuzzy automatů týče, jejich aplikace nejsou tak rozšířené. Jedním z důvodů, proč tomu tak je je velká podobnost bivalentních buněčných automatů a buněčných fuzzy automatů. Jak bylo uvedeno v předchozí podkapitole, $[0,1]$-buněčný fuzzy automat je jen speciálním případem klasického byvalentního. Obdobně, reprezentovat přechodovou funkci \uv{If -- Then} pravidly lze i bez použití fuzzy množin. Fuzzy množiny v tomto případě jen pravidla činí více srozumitelná.
+Co se buněčných fuzzy automatů týče, jejich aplikace nejsou tak rozšířené. Jedním z důvodů, proč tomu tak je, je velká podobnost bivalentních buněčných automatů a buněčných fuzzy automatů. Jak bylo uvedeno v předchozí podkapitole, $[0,1]$-buněčný fuzzy automat je jen speciálním případem klasického byvalentního. Obdobně, reprezentovat přechodovou funkci \uv{If -- Then} pravidly lze i bez použití fuzzy množin. Přechodová fuzzy pravidla jsou tak jen jiné pojmenování pro speciální třídu pravidel.
 
-Například \cite{WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn} používá čísla z intervalu $[0,1]$ jako vstupní informaci. Automat v \cite{BatXie-CellCity} vykazuje určitou náhodnost a bylo by tak možné považovat jej za pravděpodobnostní. \cite{DiwPatGup-CelAutBasEdDetBraTum} používá automat podobný buněčnému automatu s fuzzy logikou, který navíc pracuje se stavy na intervalu $[0,1]$. V \cite{MofSadRezMey-CelEdDetComCelAuCelLeaAu} je použit automat pracující na intervalu $[0,255]$, který by šel snadnou modifikací konvertován na $[0,1]$-buněčný fuzzy automat.
+Například \cite{WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn} používá čísla z intervalu $[0,1]$ jako vstupní informaci. \cite{DiwPatGup-CelAutBasEdDetBraTum} používá automat podobný buněčnému automatu s fuzzy logikou, který navíc pracuje se stavy na intervalu $[0,1]$. Obdobně, \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} používá buněčné automaty v kombinaci s určitou formou fuzzy logiky (avšak automat napovažují za buněčný fuzzy automat). V \cite{MofSadRezMey-CelEdDetComCelAuCelLeaAu} je použit automat pracující na intervalu $[0,255]$, který by šel snadnou modifikací konvertován na $[0,1]$-buněčný fuzzy automat. Automat v \cite{BatXie-CellCity} vykazuje určitou náhodnost a bylo by tak možné považovat jej za pravděpodobnostní.
   
 Další varianty buněčných automatů a jejich uplanění jsou vyjmenovány v \cite{NayPatMah-SurTwDimCelAutAppImProc}. Ve všech případech se uvažují vždy dvoudimenzionální bunečné automaty.
 
-Aplikace fuzzy automatů se dají rozdělit do dvou kategorií. Do první z nich spadají urbanistické simulace. Pomocí buněčných fuzzy automatů tak byly řešeny problémy hustoty dopravy \cite{Pla-FuzCelModTrafDatFus}, růstu mořských řas u pobřeží \cite{CheMyn-ModAlgBloDutCosWat+} či plánování elektrické rozvodné sítě \cite{CheMyn-ModAlgBloDutCosWat+}. Zdaleka nezčastější však bylo nasazení buněčných fuzzy automatů na řešení problému městského růstu. Z tohoto důvodu bude tomuto problému věnována samostatná podkapitola.
+Aplikace fuzzy automatů se dají rozdělit do dvou kategorií. Do první z nich spadají urbanistické simulace. Pomocí buněčných fuzzy automatů tak byly řešeny simulace hustoty dopravy \cite{Pla-FuzCelModTrafDatFus}, růstu mořských řas u pobřeží \cite{CheMyn-ModAlgBloDutCosWat+} či plánování elektrické rozvodné sítě \cite{CheMyn-ModAlgBloDutCosWat+}. Zdaleka nezčastější však bylo nasazení buněčných fuzzy automatů na řešení problému městského růstu. Z tohoto důvodu bude tomuto problému věnována samostatná podkapitola.
 
-Další oblastí, kde nalezly buněčné fuzzy automaty uplatnění je zpracování obrazu. Používají se například na zaostřování obrazů \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}\cite{ZhaLiZha-EdgDetImaBasFuzCelAut}, hledání hran \cite{NayPatMah-SurTwDimCelAutAppImProc}\cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, vyhledávání vzorů \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}\cite{MajCha-FuzCelAutModPatClas} či odstranění šumu \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut}\cite{SahUguSah-SalPepNoiFilFuzCelAut}\cite{NayPatMah-SurTwDimCelAutAppImProc}. Technikám zpracování obrazu pomocí buněčných fuzzy automatů bude věnována samostatná podkapitola.
+Další oblastí, kde nalezly buněčné fuzzy automaty uplatnění je zpracování obrazu. Používají se například na zaostřování obrazů \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}\cite{ZhaLiZha-EdgDetImaBasFuzCelAut}, hledání hran \cite{NayPatMah-SurTwDimCelAutAppImProc}\cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, vyhledávání vzorů \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}\cite{MajCha-FuzCelAutModPatClas} či odstranění šumu \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut}\cite{SahUguSah-SalPepNoiFilFuzCelAut}\cite{NayPatMah-SurTwDimCelAutAppImProc}. V následujcíích podkapitolách budou některé takové techniky rozebrány podrobněji.
 
-Co se pravděpodobnostních buněčných automatů týče, ty nacházejí uplatnění všude tam, kde je třeba dodat náhodnost. Kromě toho také pro městský růst \cite{War+-StoConCelModUrbGro} \cite{Wu-CalStoCelAutAppRurUrbLanConv}. Dále pak například pro náhodný generátor, generátor šumu, pohyb částic, difuze částic, nukleace (=vznik krystalů) \cite{TofMar-CelAuMach+.pdf}.
+Co se pravděpodobnostních buněčných automatů týče, ty nacházejí uplatnění všude tam, kde je třeba dodat náhodnost a nepravidelnost. Například pro problém simulace městského růstu\cite{War+-StoConCelModUrbGro} \cite{Wu-CalStoCelAutAppRurUrbLanConv}. Dále pak například pro náhodné generátory, generátory šumu, simulace pohybu částic, difuze částic či nukleace (vznik krystalů) \cite{TofMar-CelAuMach+.pdf}.
 
-Před studiem samotných aplikací je nutné dodat, že aplikace zde popsané jsou pouze teoretickým popisem sestaveným na základě použitých zdrojů. Každá z těchto aplikací vyžaduje precizní kalibraci a přizpůsobení na míru konkrétí instanci problému. Většina zdrojů proto automaticky kombinuje několik technik do hromady. Například \cite{LiYe-NeuNetBasCelAutSim+} \cite{YehLi-SimLanDevIntCelAutMulCriEv} využívají neuronové sítě, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} genetické algoritmy a \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} \cite{MofSadRezMey-CelEdDetComCelAuCelLeaAu} učící automat. Většinou je také nutná přítomnost experta na danou problematiku. 
+Před studiem samotných aplikací je nutné dodat, že aplikace zde popsané jsou pouze teoretickým popisem sestaveným na základě použitých zdrojů. Každá z těchto aplikací vyžaduje kalibraci parametrů (např. počet generací, návrh fuzzy množin) a přizpůsobení na míru konkrétní instance problému. Většina zdrojů proto automaticky kombinuje několik technik dohromady. Například \cite{LiYe-NeuNetBasCelAutSim+} \cite{YehLi-SimLanDevIntCelAutMulCriEv} využívají buněčné fuzzy automaty v kombinaci s neuronovými sítěmi, v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} s genetickýni algoritmy a \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} \cite{MofSadRezMey-CelEdDetComCelAuCelLeaAu} s pomocí učícího se automatu. \TODO{dohledat, vysvětlit a ocitovat, co to je učící se automat} Většinou je také nutná hluboká znalost dané problematiky, nejlépe přítomnost experta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Problém městského růstu (urban growt problem)}
-Problém městského růstu je problém z oblasti geoinformatiky, resp. urbanistiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve ozbecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní problém, tedy městský růst.
+Problém městského růstu je problém z oblasti urbanistiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve zobecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní problém, tedy městský růst.
 
-Základní idea pro nasazení (fuzzy) automatů je následující: Bude-li stav zástavby reprezentovat stav (resp. obecně konfiguraci) automatu, pak růst zástavby bude odpovídat přechodům mezi těmito stavy (resp. konfiguracemi). Najdeme-li vhodný způsob, jak stav zástavby reprezentovat pomocí konfigurací automatu a budeme-li schopni navrhnout odpovídající přechodovou funkci, pak budeme moci modelovat rozvoj zástavby do budoucnosti.
-
-Vzhledem k tomu, že města bývají často rozlehlá, bylo by nepraktické pro problém městského růstu klasický (nedeterministický) fuzzy automat. Bude proto výhodné využít buněčný fuzzy automat, který dokáže modelovat mřížku buněk. 
-
-Praxe ukazuje, že (fuzzy) buněčné automaty mohou být skutečně použity pro modelování městského růstu. Pomocí těchto automatů byl například modelován rozvoj zástavby v městě Riyadh v Saudské Arábii \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, regionu Helensvale v Austrálii \cite{War+-StoConCelModUrbGro}, ostrova Sv. Lucie v Krabiském moři \cite{WhiEng-CelAutBasIntDynRegMod}, oblasti North Vancover v Kanadě \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}, oblasti Mesogia v Řecku \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}, oblasti Sanfranciského zálivu v Kalifornii \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} nebo části Tianhe města Guangzhou v jihovýchodní Číně \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
+Buněčné fuzzy automaty byly již mnohokrát použity pro řešení tohoto problému. Pomocí těchto automatů byl například modelován rozvoj zástavby v městě Riyadh v Saudské Arábii \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, regionu Helensvale v Austrálii \cite{War+-StoConCelModUrbGro}, ostrova Sv. Lucie v Krabiském moři \cite{WhiEng-CelAutBasIntDynRegMod}, oblasti North Vancover v Kanadě \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}, oblasti Mesogia v Řecku \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}, oblasti Sanfranciského zálivu v Kalifornii \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} nebo části Tianhe města Guangzhou v jihovýchodní Číně \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
 %
 Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}.
 
-Pojďme se nyní podrobněji podívat, jak se konstruuje fuzzy buněčný automat pro problém městského růstu. Důležité je, že návrh buněčného automatu je v praxi značně empirická záležitost a neobejde se bez experta na urbanizaci a studovanou lokalitu. Z tohoto důvodu bude vhodné použít buněčný automat s fuzzy logikou. 
+Pojďme se nyní podívat, jak se buněčné fuzzy automaty pro řešení tohoto problému používají. Základní idea pro nasazení fuzzy automatů je následující: Stav zástavby reprezentujme jako konfiguraci fuzzy buněčného automatu. Pak růst zástavby bude odpovídat přechodům mezi těmito konfiguracemi.
 
-V první fázi je nutné získat urbanistická data o studované lokalitě. Taková data lze získat například pomocí satelitních snímků či z katastrálních záznamů. Data o zástavbě je posléze potřeba zakódovat do mřížek, které budou reprezentovat konfigurace buněčného automatu. Je tedy třeba stanovit jak měřítko (velikost parcely odpovídající jedné buňce automatu), tak i fuzzy množiny tyto data reprezentující. Příklady fuzzy množin mohou být
+V první fázi je nutné si sledovanou oblast (\uv{město}) rozdělit na dílčí parcely. Každé takové parcele pak bude odpovídat jedna buňka buněčného fuzzy automatu. U každé parcely je třeba zjistit rozličné ukazatele, např.:
 \begin{itemize}
- \item \uv{parcela je zastavěna} 
- \item \uv{na parcele žije hodně obyvatel}
- \item \uv{na parcele stojí vysoké budovy}
- \item \uv{parcela produkuje velké množství znečištění ovzduší/hluku}
+ \item je-li parcela zastavěna (popř. jak moc)
+ \item typ zástavby na parcele (např. rodinné domy, obytné domy, komerční prostory, prostory pro rekreaci, dopravní stavby, průmyslová zóna)
+ \item jak moc žije na parcele obyvatel
+ \item jak moc vysoké budovy stojí na parcele
+ \item jak velké produkuje parcela znečištění ovzduší/hluku
 \end{itemize}
+Nejčastěji se jako ukazatel používá informace o zastavěnosti parcely. Ta se totiž dá poměrně snadno stanovit s pomocí satelitních snímků sledované oblasti.
 
-Máme-li sestaveny konfigurace automatu reprezentující stavy zástavby v jednotlivých časových okamžicích, je třeba navrhnout přechodová pravidla. Růst zástavby však obvykle závisí na mnohem více parametrech, než je aktuální stav zástavby na okolních parcelách. Mezi další ukazatele, které ovlivňují růst zástavby patří například:
+Dále je třeba získat ukazatele, které mají vliv na růst zástavby. Mezi takovéto ukazatele patří například:
 \begin{itemize}
- \item vzdálenost od centra města (popř. škol, nákupních center, ...)
- \item dopravní obslužnost (vzdálenost od hlavní silnice nebo zastávek hromadné dopravy)
+ \item vzdálenost parcely od centra města (popř. škol, nákupních center, ...)
+ \item dopravní obslužnost parcely (vzdálenost od hlavní silnice nebo zastávek hromadné dopravy)
  \item atraktivita lokality (výhled na město, okolní zástavba, ...)
- \item stavební podmínky (podloží, záplavová zóna, svah, ...)
+ \item stavební podmínky (podloží, záplavová zóna, terén, ...)
 \end{itemize}
+Za povšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží).
 
-Za povšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží). V závislosti na rozhodnutí experta a následném experimentálním ověření je třeba i tyto ukazatele \uv{fuzzifikovat}. Následně je možné tyto ukazatele zakomponovat do přechodových pravidel automatu.
-
-\begin{example}
- Označme $\upsilon(t, c)$, $\rho(t, c)$, $\tau(t, c)$, $\nu(r, c)$, $\sigma(t, c)$ 
- jako \uv{stupeň zástavby}, \uv{stupěň vzdálenosti k hlavní silnici}, \uv{stupeň vzdálenosti k nejbližší zastávce autobusu}, \uv{stupeň obydlenosti sousedních $8$ buněk}, \uv{stupeň znečistění ovzduší} buňky $c$ v čase $t$.
- Pak pravidla automatu by mohla vypadat například takto:
- \begin{itemize}
-  \item $\upsilon(t + 1, c) = 1 - \sigma(t, c)$
-  \item pokud $\tau(t, c) \leq 0,2$ a $\rho(t, c) \leq 0,2$ pak $\upsilon(t + 1, c) = 0$, jinak $\upsilon(t + 1, c) = \tau(t, c) \vee \rho(t, c)$
-  \item $\upsilon(t + 1, c) = 
-    \begin{cases}
-      4 \mu(t, c) 		& \text{pokud $0 \leq \mu(t, c) < 1/4$} \\
-      1 			& \text{pokud $1/4 \leq \mu(t, c) < 3/4$} \\
-      4 (1 - \mu(t, c)) 	& \text{pokud $3/4 \leq \mu(t, c) \leq 1$} \\
-    \end{cases}
-   $
-  \item $\sigma(t + 1, c) = \nu(t, c) + (1 - \rho(t, c))$
- \end{itemize}
-\end{example}
+Následně je možné sestavit přechodová pravidla. Ta mohou být například:
+\begin{itemize}
+ \item Je-li vzdálenost parcely od centra města malá, pak růst zástavby bude velký
+ \item Je-li vzdálenost od hlavní silnice velmi malá, pak růst zástavby bude malý a množství hluku bude velké
+ \item Je-li vzdálenost od hlavní silnice velmi velká, pak růst zástavby bude malý
+ \item Není-li lokalita atraktivní, pak růst zástavby bude malý
+\end{itemize}
 
 Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm} a\cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. Ukázku toho, jak se chová automat při různých počátečních konfiguracích lze spatřit na obrázku \ref{img-VarTransRuls}. 
 
@@ -1482,74 +1474,120 @@ Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městsk�
     \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img-UrbGroProSample}
 \end{figure}
 
-Je potřeba zdůraznit, že obyčejná sada přechodových pravidel bývá silně nedostačující. Pro obdržení optimálního výsledku je nutné přechodová pravidla rozšířit o další, sotisfikovanější nástroj nebo nástroje. V praxi se tak nejvíce používají umělé neuronové sítě \cite{LiYe-NeuNetBasCelAutSim+}, \cite{YehLi-SimLanDevIntCelAutMulCriEv}, genetické algoritmy \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, často však jejich kombinace. V \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} používají algoritmus fuzzy $k$-means pro určení okolních buněk pomocí shlukování. Návrh automatu tak vyžaduje značné množství experimentů a konzultací s expertem.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Obecně ke zpracování obrazu}
-Zpracování obrazu je v dnešní době velmi populární informatická disciplína. Nasazení buněčných fuzzy automatů zde nachází značné uplatnění. Budeme-li jako obraz ke zpracování uvažovat šedotónový obrázek, můžeme stupně šedi jeho pixelů zakódovat do intervalu $[0,1]$.
+\subsection{Zpracování obrazu}
+Zpracování obrazu je v dnešní době velmi populární informatická disciplína. Jak bude ukázáno, nasazení buněčných fuzzy automatů zde nachází značné uplatnění.
 
-Díky tomu můžeme s obrazem pracovat jako s konfigurací buněčného (fuzzy) automatu. To je v souladu s tím, že buněčný automat může být použit pro konvoluci. \TODO{ocitovat} Konvoluce je technika pro obrazové filtry, která přiřazuje (novou) hodnotu pixelu na základě funkce aplikované na (stávající) hodnotu pixelu a jeho sousední buňky.
+Uvažujme obraz jako mřížku $m \times m$ pixelů s odstíny šedi jako hodnotami od $0$ do $1$. Hodnota $0$ značí černou, hodnota $1$ bílou. Jinými slovy, barva (resp. stupeň šedi) pixelu odpovídá stupni pravdivosti tvrzení \uv{pixel má bílou barvu}. Tato skutečnost nám umožňuje pracovat s obrazem pomocí fuzzy logiky.
 
-Například následující přechodová funkce buněčného (fuzzy) automatu
+Každý obraz tak můžeme považovat za konfiguraci buněčného fuzzy automatu s množinou stavů $Q = [0,1]$. Návrhem vhodné přechodové funkce tak můžeme vytvořit automat, který provádí určitou operaci pro úpravu obrazu. Typickou operací je tzv. obrazový filtr, který obrazu $m \times m$ přiřazuje obraz $m \times m$.
+
+Speciálním případem takového automatu je automat realizující konvoluční metodu \cite{Rus-ImaProHan}. Konvoluce je v základu obrazový filtr, který přiřazuje (novou) hodnotu pixelu na základě váženého součtu (stávající) hodnoty pixelu a hodnot pixelů sousedních. Váhy bývají reprezentovány tzv. konvoluční maticí. Například matice
 $$
-  \mu(c, round(c)) = \frac{\sum_{c' \in round(c)} c'}{|round(c)|}
+  B = \begin{pmatrix}
+       1 & 2 & 1 \\
+       2 & 4 & 2 \\
+       1 & 2 & 1 
+      \end{pmatrix}
 $$
-realizuje Gaussovské rozostření o poloměru $1$. \TODO{ověřit, zkontrolovat, ocitovat}
+je konvoluční maticí jednoduchého rozostření. Aplikuje se následujícím způsobem:
+$$
+  c'_{i,j} = \frac{1}{S} \sum_{k,l \in \{-1, 0, +1\}} B_{k+1, l+1} c_{i+k, j+l}
+$$
+kde $S$ je součet hodnot v matici $B$, tj. $16$.
 
-\TODO{ten můj super BE-filtr}.
+Další ukázkou grafického filtru pracujícího s využitím buněčného fuzzy automatu je například filtr pro zvýraznění tvarů. Je daný následujícím předpisem
+$$
+  c'_{i,j} = \max(0, \min(1, 
+    \begin{dcases}
+      \epsilon (c_{i,j} + 1) - 1	& \text{pokud $c_{i,j} > neighs_{i,j}$} \\
+      \epsilon c_{i,j}			& \text{pokud $c_{i,j} < neighs_{i,j}$} \\
+      c_{i,j}	& \text{pokud $c_{i,j} = neighs_{i,j}$} 
+    \end{dcases}
+    ))
+$$
+kde $\epsilon > 1$ je parametr udávají agresivitu zvýrazňování a $neighs_{i,j}$ je součet hodnot okolních buňek (viz příklad \ref{ex:GameOfLife}).
 
-V následujících podkapitolách budou prezentovány některé další techniky zpracování obrazu využívající buněčné fuzzy automaty.
+Ukázky aplikací obou filtrů jsou k nalezení na obrázku \ref{img:Filters}. V následujících podkapitolách budou prezentovány některé další (pokročilejší) techniky zpracování obrazu využívající buněčné fuzzy automaty.
+
+\begin{figure}[]
+ \includegraphics[width=\textwidth]{filters}
+ 
+ \caption{Ukázky jednoduchých filtrů. Vlevo původní obrázek, uprostřed obrázek po $5$ generacích jednoduchého rozostřovacího filtru a v pravo obrázek po $8$ generacích filtru pro zvýraznění tvarů ($\epsilon = 1,1$).} \label{img:Filters}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hledání hran}
-Hledání hran je jednou ze základních technik zpracování obrazu. Rozpoznávání hran je často klíčové pro rozpoznávání vzorů v obrazech. V dnešní době existuje značné množství technik pro rozpoznávání hran \cite{MaiAgg-StuComVarImDetEdTec}.  V \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} je popsán poměrně elegantní způsob, jak hledání hran vyřešit pomocí buněčných fuzzy automatů.
+Hledání hran je jednou ze základních technik zpracování obrazu. Hledání hran je často klíčové pro rozpoznávání vzorů v obrazech. V dnešní době existuje značné množství technik pro rozpoznávání hran \cite{MaiAgg-StuComVarImDetEdTec}. V \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} je popsán poměrně elegantní způsob, jak hledání hran vyřešit pomocí buněčných fuzzy automatů.
 
-Autoři vycházejí z následující úvahy: Buňkou prochází hrana, pokud má některá z jejich ($8$) sousedních buněk značně jinou barvu (stupeň šedi). Jednotlivé sousední buňky označme dle směru, ve kterém vzhledem k buňce $c$ je \uv{horní ($c_{U}$)}, \uv{horní levá ($c_{UL}$)}, \uv{levá ($c_{L}$)}, \uv{spodní levá ($c_{BL}$)}, \uv{dolní ($c_{B}$)}, \uv{dolní pravá ($c_{BR}$)}, \uv{pravá ($c_{R}$)} a \uv{horní pravá ($c_{UR}$)}.
+Označme osmici směrů dle obrázku \ref{img:Directions:8Directions}. Množinu těchto směrů nazvěme $dim$. Dále označme $c_X$ (kde $X \in dim$) jako sousední buňku buňky $c$ ve směru $X$.
 
-Nadefinujme fuzzy množinu \uv{buňka $c_{i,j}$ a její horní soused mají zcela rozdílnou barvu} předpisem:
+\begin{figure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=\textwidth]{miscs0}
+      \caption{8 směrů}  \label{img:Directions:8Directions}
+    \end{subfigure}%
+%
+    \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=\textwidth]{miscs1}
+      \caption{Ukázka hrany procházející buňkou. Ve směru $U$ (červené šipky) prochází hrana, ve směru $R$ (zelené šipky) neprochází.}  \label{img:Directions:Edges}
+    \end{subfigure}
+\end{figure}
+
+Autoři vycházejí z následující úvahy: Prochází-li buňkou $c$ hrana ve směru $X \in dim$, pak má buňka $c_X$ výrazně jinou barvu, než buňka $c$ (viz obrázek \ref{img:Directions:Edges}). Prochází-li buňkou $c$ hrana v alespoň jednom směru $X \in dim$, pak můžeme říci, že buňka obsahuje hranu.
+
+Nadefinujme fuzzy relaci \uv{buňky $c$ a $c'$ mají zcela rozdílnou barvu} předpisem:
 $$
-  \Delta_{U}(c_{i,j}) = 1 - | c_{i,j} - c_{i, j-1} |
+  \Delta(c, c') = 1 - | c - c' |
 $$
 
-Obdobným způsobem dodefinujme fuzzy množiny $\Delta_{UL}$, $\Delta_{L}$, $\Delta_{L}$, $\Delta_{BL}$, $\Delta_{B}$, $\Delta_{BR}$, $\Delta_{R}$ a $\Delta_{UR}$. Označme $\Delta'_{UL}, \dots, \Delta'_{UR}$ jako doplňky příslušných fuzzy množin.
-
-Pak můžeme stanovit pravidla určující fuzzy množiny $\epsilon_U$ ve smyslu \uv{buňkou $c_{i,j}$ prochází hrana zleva doprava} pomocí pravidel:
+Označme $\Delta'$ jako doplňek k $\Delta$, tedy \uv{buňky $c$ a $c'$ mají zcela shodnou barvu}. Pak můžeme stanovit fuzzy množiny $\epsilon_X$ (pro všechny $X \in dim$) ve smyslu \uv{buňkou $c$ prochází hrana ve směru $X$}. Pro $X = U$ by pravidla vypadala následovně:
 \begin{itemize}
- \item Pokud $c_{i-1,j} = \Delta'_{UL}$ a $c_{i,j} = \Delta'_{UL}$ a $c_{i+1,j} = \Delta'_{UL}$ pak $\epsilon_U(c_{i,j}) = 0$
- \item Pokud $c_{i-1,j} = \Delta_{UL}$ a $c_{i,j} = \Delta_{UL}$ a $c_{i+1,j} = \Delta_{UL}$ pak $\epsilon_U(c_{i,j}) = 1$
+ \item Pokud $\Delta'(c_{L}, c_{UL})$, $\Delta'(c, c_{U})$ a $\Delta'(c_{R}, c_{UR})$ pak $\epsilon_U(c) = 0$
+ \item Pokud $\Delta (c_{L}, c_{UL})$, $\Delta (c, c_{U})$ a $\Delta (c_{R}, c_{UR})$ pak $\epsilon_U(c) = 1$
 \end{itemize}
 
 Obdobným způsobem by se dodefinovaly zbývající fuzzy množiny $\epsilon_X$. Následně lze nadefinovat fuzzy množinu $\epsilon$ ve smyslu \uv{buňkou $c$ prochází hrana} pomocí pravidel:
 \begin{itemize}
- \item Pokud $c_{i,j} = \epsilon_{U}$ pak $\epsilon = 1$
+ \item Pokud $c = \epsilon_{U}$ pak $\epsilon = 1$
  \item $\dots$
- \item Pokud $c_{i,j} = \epsilon_{UR}$ pak $\epsilon = 1$
+ \item Pokud $c = \epsilon_{UR}$ pak $\epsilon = 1$
+ \item Jinak $\epsilon = 0$
 \end{itemize}
 
 Pomocí těchto pravidel tak lze sestavit buněčný fuzzy automat s fuzzy logikou, který rozpoznává hrany. 
 
-Hodnota stupně \uv{buňkou $c$ prochází hrana} může být dle \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} použita jako parametr $\alpha$ tzv. Gas Diffusion Modelu, jednu z technik zaostřování obrazu.
-
-
-%Zavádějí proto osmici fuzzy množin s významem \uv{buňka $c$ a buňka $c'$ mají rozdílnou barvu}. Vzhledem k tomu, že každá z těchto 
-
-% Autoři používají následující úvahu: Každá buňka, může být proložena čtyřmi přímkami. Každá z těchto přímek prochází buňkou v jednom ze 4 směrů, které jsou označeny odpovídajícími světovými stranami (viz obrázek \TODO{vložit obrázek}). Prochází-li ve směru přímky $p$ buňkou hrana, pak buňky vlevo/nahoře od přímky $p$ mají výrazně jiný odstín šedi, než buňky vpravo/dole od ní. Prostým rozdílem těchto hodnot tak lze nadefinovat fuzzy množiny \uv{buňkou $c$ prochází hrana ve směru $N$}, \dots, \uv{buňkou $c$ prochází hrana ve směru $SW$}.
-% 
-% Dále je třeba nadefinovat fuzzy množiny \uv{buňka obsahuje světlou barvu}. Poté je možné sestavit přechodovou funkci, která bude určovat fuzzy množinu \uv{buňkou prochází hrana} popř. \uv{buňkou neprochází hrana}. Pravidla budou mít následující formát (neformálně zapsáno):
-% \begin{itemize}
-%  \item Prochází-li buňkou $c$ hrana ve směru $N$ a 
-% \end{itemize}
-
+Dle \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} může být hodnota stupně \uv{buňkou $c$ prochází hrana} použita jako parametr $\alpha$ tzv. Gas Diffusion Modelu, jednu z technik zaostřování obrazu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ostraňování šumu}
-Odstraňování šumu je další častý problém, který je třeba při zpracování obrazů řešit. Pro studium technik odstraňování šumu se používá zašumnění tzv. šumem \uv{sůl a pepř}\TODO{a není to náhodou impulse noise?}. Takové zašumnění nahradí stanovený počet pixelů v obrazu buď bílou ($1$) nebo černou ($0$) barvou.
+Odstraňování šumu je další častý problém, který je třeba při zpracování obrazů řešit. Pro studium technik odstraňování šumu se používá zašumnění tzv. impulzním šumem popř. šumem \uv{sůl a pepř}. Zašumnění impulzním šumem nahradí stanovený počet pixelů náhodnými barvami. Šumění \uv{sůl a pepř} pak narazuje pixely buď bílou ($1$) nebo černou ($0$) barvou.
 
-V \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut} je prezentována technika, která kombinuje klasický bivalentní buněčný automat s buněčnýcm fuzzy automatem. 
+V \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut} je prezentována jednoduchá avšak efektivní technika, která kombinuje klasický bivalentní buněčný automat s buněčnýcm fuzzy automatem. 
 
-V první fázi je klasickým buněčným automatem šum detekován. Buňka obsahuje šum, pokud rozdíl její barvy od průměrné barvy jejich sousedů překračuje stanovenou mez. Tato mez může být stanovena statisticky, například na základě směrodatné odchylky. V druhé fázi je aplikován buněčný fuzzy automat, které buňky obsahující šum nahradí hodnotami spočtenými z jejich okolí. 
+V první fázi je klasickým buněčným automatem šum detekován. Buňka obsahuje šum, pokud rozdíl její barvy od průměrné barvy jejich sousedů překračuje stanovenou mez. Tato mez může být stanovena statisticky, například na základě směrodatné odchylky barev pixelů celého obrazu. V druhé fázi je aplikován buněčný fuzzy automat, který buňky obsahující šum nahradí hodnotami spočtenými z jejich okolí. 
 
-Jak autoři poukazují, tato technika je na odstraňování šumu velmi efektivní. Ukázky výsledků jsou na obrázku \TODO{vložit obrázek}. 
+Jak autoři poukazují, tato technika je na odstraňování šumu velmi efektivní. Ukázky výsledků jsou na obrázku \ref{img:Noises}. 
+
+\begin{figure}
+   \begin{subfigure}[t]{0.3\textwidth}
+      \includegraphics[width=\textwidth]{noises1}
+      \caption{Vstupní obraz}  
+    \end{subfigure}%
+%
+    \begin{subfigure}[t]{0.3\textwidth}
+      \includegraphics[width=\textwidth]{noises2}
+      \caption{Zašumněný obraz}
+    \end{subfigure}%
+%
+    \begin{subfigure}[t]{0.3\textwidth}
+      \includegraphics[width=\textwidth]{noises3}
+      \caption{Obraz s odstraněným šumem}
+    \end{subfigure}
+    
+    \caption{(převzato z \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut}) Ukázka odstraňování šumu} \label{img:Noises}
+\end{figure}
 
 Velmi podobný způsob ostranění šumu je popsán v \cite{SahUguSah-SalPepNoiFilFuzCelAut}. Zde však operace detekce šumu a jeho odstranění provádějí v jednom kroku.
 
@@ -1558,24 +1596,22 @@ Velmi podobný způsob ostranění šumu je popsán v \cite{SahUguSah-SalPepNoiF
 
 Ropoznávání vzorů je další z častých způsobů práce s obrazy. Obecně je problém definován (obdobně, jako rozpoznávání textových vzorů v kapitole \TODO{ref na kapitolu}) jako problém určení, zda-li obraz obsahuje předem stanovený vzor či ne. Obvykle nás také zajímá, kde přesně se vzor v obraze vyskytuje.
 
-Rozpoznávání vzorů v obrazech je však značně komplikované i pro buněčné fuzzy automaty. V \cite{MajCha-FuzCelAutModPatClas} je popsán způsob, který popisuje rozpoznávání vzorů v obrazu o výšce $1$ pomocí (jednodimenzionálního) buněčného automatu. Pomocí fuzzy množin reprezentující různé stupně šedi jsou sestavena pravidla, která popisují jak vzorový obraz, tak obrazy jemu podobné. Množina přechodových pravidel tak vyjmenovává všechny možné kombinace hodnot fuzzy množin pro všechny buňky v okolí. Vzhledem k tomu, že velikost okolí odpovídá velikosti vzoru, je tato technika prakticky nepoužitelná pro vzory větší, než jednotky pixelů.
+Rozpoznávání vzorů v obrazech je však značně komplikované i pro buněčné fuzzy automaty. V \cite{MajCha-FuzCelAutModPatClas} je popsán způsob, který popisuje rozpoznávání vzorů v obrazu velikosti $1 \times m$ pomocí (jednodimenzionálního) buněčného automatu. Pomocí fuzzy množin reprezentující různé stupně šedi jsou sestavena pravidla, která popisují jak vzorový obraz, tak obrazy jemu podobné. Množina přechodových pravidel tak vyjmenovává téměř všechny možné kombinace hodnot fuzzy množin pro všechny buňky v okolí. Velikost přechodové funkce je tak exponenciální vzhledem k velikosti okolí buňky. Vzhledem k tomu, že okolí buňky je vlastně předpisem pro vzor, je tato technika nepoužitelná pro vzory větší než jednotky pixelů.
 
-V \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod} byl uveden jiný způsob, pro rozpoznávání obrazových vzorů. Vzor nepovažují jako konkrétní kombinaci odstínů barev, ale jako část obrazu splňující určité vlastnosti.
+Zcela jiný přístup pužívají v \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}. Vzor nepovažují jako konkrétní kombinaci odstínů barev, ale jako část obrazu splňující určité vlastnosti.
 
-Autoři metodu doporučují na vyhledávání vzorů v lékařských snímcích (např. ultrazvuk, Röntgen). Techniku demonstrují na ultrazvukových snímcích vaječníků. Poukazují na to, že folikula\footnote{Folikula je dutinka ve vaječníku, v níž probíhá zrání vajíčka. \TODO{ocitovat: http://lekarske.slovniky.cz/pojem/folikul}} je na snímku tvořena svrnou víceméně stejné barvy, obklopena ostatní tkání (barevné přechody). Ukázka snímků je k disozici na obrázku \TODO{obrázek!!}. Obecně tak lze hovořit o \uv{popředí} (folikula) vystupující z \uv{pozadí}.
+Autoři metodu doporučují na vyhledávání vzorů v lékařských snímcích (např. ultrazvuk, Röntgen). Techniku demonstrují na ultrazvukových snímcích vaječníků. Poukazují na to, že folikula\footnote{Folikula je dutinka ve vaječníku, v níž probíhá zrání vajíčka. \TODO{ocitovat: http://lekarske.slovniky.cz/pojem/folikul}} je na snímku tvořena jednolitou svrnou stejné barvy, obklopena ostatní tkání (barevné přechody). Ukázka několika snímků je k dispozici na obrázku \ref{img:Follicles:Screens}. Obecně tak lze hovořit o \uv{popředí} (folikula) vystupující z \uv{pozadí}.
 
-K nalezení popředí používají dvojici buněčných fuzzy automatů (buněčných automatů s fuzzy logikou). První provádí tzv. imunitu. Má za úkol \uv{označit} buňky automatu, které reprezentují pixely folikuly. V další fázi je aplikován druhý automat provádějící tzv útok. Ten má za úkol odstranit (nastavit vlastnost \uv{být buňkou pixelu folikuly} na $0$) buňky, jež nezískaly dostatečnou imunitu.
+K nalezení popředí používají dvojici buněčných fuzzy automatů. První automat určuje hodnotu \uv{buňka je kandidát na buňku folikuly}. Druhý automat pak buňky, které nebyly označeny jako kandidáti, ostraňuje (nastavuje na $0$).
 
-Každá buňka automatu imunity disponuje kromě informace o stupni šedi také stupeň imunity. V počáteční konfiguraci je stupeň imunity u všech buněk nastaven na výchozí hodnotu ($0$). Poté je výpočtem automatu modifikován na patřičnou hodnotu. Autoři používají fuzzy množiny pro popis 5 stupňů šedi obrázku (\uv{velmi tmavá}, \uv{tmavá}, \uv{střední}, \uv{světlá} a \uv{velmi světlá}). Dále používají dvojici fuzzy množin pro popis stupně imunity (\uv{nízký stupeň imunity} a \uv{vysoký stupeň imunity}) a tři fuzzy množiny pro tzv. popis stavu buňky (\uv{buňka s nízkou imunitou}, \uv{buňka s vysokou imunitou} a \uv{generující vnější zprávu}). Fuzzy množina \uv{generoující vnější zprávu} však v textu není nijak popsána. Samotná přechodová funkce automatu je pak poměrně složitá a nebude zde rozebírána. Základní myšlenka však spočívá v tom, že má-li buňka okolní buňky podobné barvy, získává tím vyšší imunitu, než taková, která ne.
-
-Automat provádějící útok v textu není pro jeho jednoduchost popsán. Jeho funkce by však měla vypadat tak, že buňka, která nemá dostatečnou imunitu bude odstraněna. 
+Přechodová funkce první automatu je poměrně složitá, pracuje s 5 stupni šedi a třemi stupni kandidatury, takže zde nebude rozebírána. Druhý automat pak funguje elementárně. Buňky, jež nejsou označeny jako dostatečné kandidáty na folikuly, jsou odstraněny, ostatní ponechány.
 
 Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných folikul pomocí této techniky.
 
 \begin{figure}
   \begin{subfigure}[t]{\textwidth} \centering
     \includegraphics[width=\textwidth]{follicles-1}
-    \caption{Ultrazvukové snímky vaječníků} 
+    \caption{Ultrazvukové snímky vaječníků} \label{img:Follicles:Screens}
   \end{subfigure}
   \\
   \begin{subfigure}[t]{\textwidth} \centering
@@ -1583,67 +1619,8 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
     \caption{Rozpoznané folikuly}
   \end{subfigure}
  
-  \caption{(převzato z \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}, upraveno) Ukázky rozponávání folikul} \label{img:Follicles}
+  \caption{(převzato z \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}, upraveno) Ukázky rozpoznávání folikul} \label{img:Follicles}
 \end{figure}
-
-
-
-% 
-% Automat provádějící imunitu dispunuje celkem sedmi fuzzy množinami. Pět z nich je vstupních: $\varsigma_H, \varsigma_MH, \varsigma_MM, \varsigma_ML, \varsigma_L$, po řadě \uv{stupeň šedi buňky je} \uv{vysoký (bílá barva)}, \uv{středně vysoký (světle šedá barva)}, \uv{střední (středně šedá barva)}, \uv{středně nízký (tmavě šedá barva)}, \uv{nízký (černá barva)}. Dále pak dvě výstupní: $\varsigma'_H, \varsigma'_L$, ve smyslu \uv{buňka má vysokou imunitu} a \uv{buňka má nízkou imunitu}.
-% 
-% \begin{table}
-%   \begin{tabular}{|c|c|c|c||c|}
-%     \hline
-%     $\varsigma$	& $\varsigma(neigh)$	& $\varsigma'$	& $\varsigma'(neigh)$	&	$\varsigma'$	\\
-%     \hline \hline
-%     	$L$	&			&		&			&	$H$		\\
-%     \hline
-% 	$ML$	&	$H$		&		&			&	$H$		\\
-%     	$ML$	&			&		&	$H$		&	$H$		\\
-%     	$ML$	&			&		&	$G?$		&	$H$		\\
-%     \hline
-%     	$MM$	&	$H$		&		&			&	$H$		\\
-%     	$MM$	&	$MH \vee MM$	&		&			&	$H$		\\
-%     	$MM$	&	$ML \vee L$	&		&			&	$H$		\\
-%     	$MM$	& 	$\neg L$ 	&		&	$G?$		&	$G$		\\
-%     \hline
-%     	$MH$	&	$H$		&		&	$H?$		&	$H$		\\
-%     	$MH$	& $MH \vee MM \vee ML$	&		&	$H$		&	$H$		\\
-%     	$MH$	&	$ML \vee L$	&		&	$G?$		&	$H$		\\
-%     \hline
-%     	$H$	&			&		&			&	$L$		\\
-%     \hline
-%     	jinak	&			&		&			&	$L$		\\
-%     \hline
-%  \end{tabular}
-%   \caption{Přechodová funkce automatu imunity}
-% \end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Další povídání}
-% 
-% 
-% 
-% 
-% \cite{For-FuzCelAutConjNormForm} kóduje stavy sousedů do řetězce $0$ a $1$ (pro každého souseda 1 symbol). Přechodová funkce každé buňky je pak vlastně zobrazení z $\{ 0, 1 \}^m$ do $\{0, 1\}$. Tudíž, $\{ 0, 1 \}^m$ je vstupní abeceda a  $\{0, 1\}$ množina stavů KDA.
-% 
-% Generování růstu krystalů (sněhových vloček, super) \cite{Wol-NewKinSci}.
-% 
-% 
-% The Density Classification or Majority problem (poblém hledání shluků)? Simulování kapání vody na haldinu.
-% 
-% 
-% For example, CA approaches have been applied in the
-% context of geocomplexity to earthquakes (Rundle et al. 2000, Weatherley et al. 2000),
-% lava flows (Crisci et al. 2008, Rongo et al. 2008), density currents (Salles et al. 2007),
-% surface water flows (Thomas and Nicholas 2002, Doeschl-Wilson and Ashmore
-% 2005, Coppola et al. 2007, Parsons and Fonstad 2007), flooding (Dalponte et al.
-% 2007) (píšou v LaiDraSch-IntMulEvCelAutMetLanSimMod).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
