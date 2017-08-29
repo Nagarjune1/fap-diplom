@@ -13,7 +13,7 @@ public class BivalGameOfLifeMu implements CFATransitionFunction {
 
 	@Override
 	public CellState perform(int i, int j, CellState cell, CellNeighborhood neig) {
-		double sum = neig.sum();
+		double sum = neig.sum() - cell.getValue();
 
 		if (ALIVE.equals(cell) && sum < 2) {
 			return DEAD;
@@ -23,7 +23,7 @@ public class BivalGameOfLifeMu implements CFATransitionFunction {
 			return DEAD;
 		}
 
-		if (DEAD.equals(cell) && sum == 4) {
+		if (DEAD.equals(cell) && sum == 3) {
 			return ALIVE;
 		}
 

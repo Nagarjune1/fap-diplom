@@ -24,6 +24,7 @@
 	<modules>
 		<module>core</module>
 		<module>fuzzy-tree-automata</module>
+		<module>cellular-fuzzy-automata</module>
 	</modules>
 
 	<properties>

@@ -24,6 +24,11 @@ public class CommonConfiguration implements CFAConfiguration {
 	}
 
 	@Override
+	public int getSize() {
+		return m;
+	}
+
+	@Override
 	public TwoDimArray<CellState> toArray() {
 		return cells;
 	}
@@ -42,15 +47,15 @@ public class CommonConfiguration implements CFAConfiguration {
 	public CellNeighborhood getNeighbors(int atI, int atJ) {
 		CellNeighborhood neighborhood = new CellNeighborhood();
 
-		for (int k = -1; k < +1; k++) {
-			for (int l = -1; l < +1; l++) {
+		for (int k = -1; k <= +1; k++) {
+			for (int l = -1; l <= +1; l++) {
 				int row = atI + k;
 				int col = atJ + l;
 
 				CellState cell;
-				if (row < 0 || row > m) {
+				if (row < 0 || row >= m) {
 					cell = defaultCell();
-				} else if (col < 0 || col > m) {
+				} else if (col < 0 || col >= m) {
 					cell = defaultCell();
 				} else {
 					cell = cells.get(row, col);
@@ -73,4 +78,11 @@ public class CommonConfiguration implements CFAConfiguration {
 		return new CommonConfiguration(m, defaultCell);
 	}
 
+	@Override
+	public String toString() {
+		return "CommonConfiguration [m=" + m + ", defaultCell=" + defaultCell + ", cells=" + (cells.toString().length() > 50 ? cells.toString().substring(0, 50) : cells.toString()) + "]";
+	}
+
+	
+	
 }

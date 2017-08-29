@@ -1,5 +1,7 @@
 package cz.upol.fapapp.core.infile;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
@@ -14,6 +16,22 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 
 public class ObjectParserTools {
+	
+	public static int parseInt(String intStr) {
+		try {
+			return Integer.parseInt(intStr);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Not a (int) number: " + intStr);
+		}
+	}
+	
+	public static double parseDouble(String doubleStr) {
+		try {
+			return Double.parseDouble(doubleStr);
+		} catch (Exception e) {
+			throw new IllegalArgumentException("Not a (double) number: " + doubleStr);
+		}
+	}
 
 	public static Symbol parseEmptyableSymbol(String symbolStr) {
 		if (Symbol.EMPTY.getValue().equals(symbolStr)) {
@@ -85,29 +103,47 @@ public class ObjectParserTools {
 
 	/////////////////////////////////////////////////////////////////////////
 
-	public static LineItems statesToLine(Set<State> states) {
-		return new LineItems(states.stream() //
-				.map((s) -> s.getLabel()) //
-				.collect(Collectors.toList()));
+	public static LineItems intsToLine(Integer... ints) {
+		return intsToLine(Arrays.asList(ints));
+	}
 
+	public static LineItems intsToLine(List<Integer> ints) {
+		return collectionToLine(ints, //
+				(i) -> Integer.toString(i));
+	}
+
+	public static LineItems doublesToLine(List<Double> doubles) {
+		return collectionToLine(doubles, //
+				(d) -> Double.toString(d));
+	}
+
+	/////////////////////////////////////////////////////////////////////////
+
+	public static LineItems statesToLine(Set<State> states) {
+		return collectionToLine(states, //
+				(s) -> s.getLabel());
 	}
 
 	public static LineItems symbolsToLine(Set<Symbol> symbols) {
-		return new LineItems(symbols.stream() //
-				.map((s) -> s.getValue()) //
-				.collect(Collectors.toList()));
-
+		return collectionToLine(symbols, //
+				(s) -> s.getValue());
 	}
 
 	public static LineItems wordToLine(Word word) {
-		return new LineItems(word.getSymbols().stream() //
-				.map((s) -> s.getValue()) //
-				.collect(Collectors.toList()));
+		return collectionToLine(word.getSymbols(), //
+				(s) -> s.getValue());
 	}
 
 	public static LineItems fuzzyStateToLine(FuzzyState fuzzyState) {
-		return new LineItems(fuzzyState.getTuples().stream() //
-				.map((t) -> t.getDomain().getLabel() + "/" + t.getTarget().getValue()) //
+		return collectionToLine(fuzzyState.getTuples(), //
+				(t) -> t.getDomain().getLabel() + "/" + t.getTarget().getValue());
+	}
+
+	/////////////////////////////////////////////////////////////////////////
+
+	private static <E> LineItems collectionToLine(Collection<E> collection, Function<E, String> toStringFunction) {
+		return new LineItems(collection.stream() //
+				.map((i) -> toStringFunction.apply(i)) //
 				.collect(Collectors.toList()));
 	}
 

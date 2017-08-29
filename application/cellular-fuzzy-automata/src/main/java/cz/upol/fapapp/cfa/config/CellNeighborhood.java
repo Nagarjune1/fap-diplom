@@ -9,7 +9,7 @@ public class CellNeighborhood {
 
 	public CellNeighborhood() {
 		super();
-		this.cells = new TwoDimArray<>(-1, +1);
+		this.cells = new TwoDimArray<>(-1, +1 + 1);
 	}
 
 	public CellNeighborhood(TwoDimArray<CellState> cells) {
@@ -34,6 +34,7 @@ public class CellNeighborhood {
 		for (CellState cell : cells) {
 			sum += cell.getValue();
 		}
+		
 		return sum;
 	}
 

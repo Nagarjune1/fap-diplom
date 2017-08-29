@@ -6,6 +6,8 @@ import cz.upol.fapapp.cfa.misc.TwoDimArray;
 public interface CFAConfiguration {
 
 	public TwoDimArray<CellState> toArray();
+	
+	public int getSize();
 
 	public void setCell(int i, int j, CellState cell);
 

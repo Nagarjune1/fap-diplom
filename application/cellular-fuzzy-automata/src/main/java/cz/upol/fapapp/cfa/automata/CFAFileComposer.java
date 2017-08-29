@@ -10,13 +10,13 @@ import cz.upol.fapapp.core.infile.LineItems;
 
 public class CFAFileComposer extends InputFileObjectComposer<CellularFuzzyAutomata> {
 
-	public static final String TYPE = "Cellular Fuzzy Automata";
+
 
 
 	private final TwoDimArrComposer<CellState> arrComp;
 
 	public CFAFileComposer() {
-		super(TYPE);
+		super(CFAFileParser.TYPE);
 
 		arrComp = new TwoDimArrComposer<>("Configuration", //
 				(c) -> Double.toString(c.getValue()));

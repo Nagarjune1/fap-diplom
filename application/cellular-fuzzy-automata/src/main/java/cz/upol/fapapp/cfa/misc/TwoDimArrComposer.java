@@ -7,6 +7,7 @@ import java.util.function.Function;
 import cz.upol.fapapp.core.infile.InputFileData;
 import cz.upol.fapapp.core.infile.InputFileObjectComposer;
 import cz.upol.fapapp.core.infile.LineItems;
+import cz.upol.fapapp.core.infile.ObjectParserTools;
 
 public class TwoDimArrComposer<E> extends InputFileObjectComposer<TwoDimArray<E>> {
 
@@ -20,6 +21,19 @@ public class TwoDimArrComposer<E> extends InputFileObjectComposer<TwoDimArray<E>
 
 	@Override
 	protected void process(TwoDimArray<E> arr, InputFileData data) {
+		processSize(arr.getMinIndex(), arr.getMaxIndex(), data);
+		processData(arr, data);
+	}
+
+	/**************************************************************************/
+
+	private void processSize(int minIndex, int maxIndex, InputFileData data) {
+		data.start("size");
+		LineItems line = ObjectParserTools.intsToLine(minIndex, maxIndex);
+		data.add("size", line);
+	}
+
+	private void processData(TwoDimArray<E> arr, InputFileData data) {
 		data.start("data");
 		putItems("data", arr, data);
 	}

@@ -41,6 +41,10 @@ public class LineItems implements Iterable<String> {
 	public List<String> getItems() {
 		return items;
 	}
+	
+	public int count() {
+		return items.size();
+	}
 
 	@Override
 	public Iterator<String> iterator() {
