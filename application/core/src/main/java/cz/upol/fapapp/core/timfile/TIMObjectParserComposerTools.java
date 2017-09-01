@@ -1,4 +1,4 @@
-package cz.upol.fapapp.core.infile;
+package cz.upol.fapapp.core.timfile;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,9 +14,10 @@ import cz.upol.fapapp.core.fuzzy.FuzzySet.FuzzyTuple;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.Logger;
 
-public class ObjectParserTools {
-	
+public class TIMObjectParserComposerTools {
+
 	public static int parseInt(String intStr) {
 		try {
 			return Integer.parseInt(intStr);
@@ -24,7 +25,7 @@ public class ObjectParserTools {
 			throw new IllegalArgumentException("Not a (int) number: " + intStr);
 		}
 	}
-	
+
 	public static double parseDouble(String doubleStr) {
 		try {
 			return Double.parseDouble(doubleStr);
@@ -32,6 +33,8 @@ public class ObjectParserTools {
 			throw new IllegalArgumentException("Not a (double) number: " + doubleStr);
 		}
 	}
+
+	/////////////////////////////////////////////////////////////////////////
 
 	public static Symbol parseEmptyableSymbol(String symbolStr) {
 		if (Symbol.EMPTY.getValue().equals(symbolStr)) {
@@ -79,70 +82,100 @@ public class ObjectParserTools {
 
 	/////////////////////////////////////////////////////////////////////////
 
-	public static Alphabet parseMultilinedAlphabet(List<LineItems> lines) {
-		return new Alphabet(lines.stream() //
-				.flatMap((l) -> l.getItems().stream()) //
+	public static String findItemName(TIMFileData data, String... itemNames) {
+		for (String itemName : itemNames) {
+			if (data.hasItem(itemName)) {
+				return itemName;
+			}
+		}
+
+		throw new IllegalArgumentException("Missing item (one of): " + Arrays.toString(itemNames));
+	}
+
+	public static List<LineElements> findElements(TIMFileData data, String... itemNames) {
+		String itemName = findItemName(data, itemNames);
+		return data.getElementsOf(itemName);
+	}
+
+	public static LineElements findElementsMerged(TIMFileData data, String... itemNames) {
+		String itemName = findItemName(data, itemNames);
+		return data.getElementsMerged(itemName);
+	}
+
+	public static String findSingleItem(TIMFileData data, String... itemNames) {
+		String itemName = findItemName(data, itemNames);
+		List<LineElements> lines = data.getElementsOf(itemName);
+
+		// TODO if lines is empty ...
+		if (lines.size() != 1 || lines.get(0).count() != 1) {
+			Logger.get().warning("Required exactly one element of item " + itemName + ", ignoring rest");
+		}
+
+		return lines.get(0).getIth(0);
+	}
+
+	/////////////////////////////////////////////////////////////////////////
+
+	public static Alphabet parseAlphabet(LineElements elements) {
+		return new Alphabet(elements.getElements().stream() //
 				.map((s) -> parseSymbol(s)) //
 				.collect(Collectors.toSet()));
 	}
 
-	public static Set<State> parseMultilinedStates(List<LineItems> lines) {
-		return lines.stream() //
-				.flatMap((l) -> l.getItems().stream()) //
+	public static Set<State> parseStates(LineElements elements) {
+		return elements.getElements().stream() //
 				.map((s) -> parseState(s)) //
 				.collect(Collectors.toSet());
 	}
 
-	public static FuzzyState parseFuzzyState(LineItems items) {
-		return new FuzzyState(items.getItems().stream() //
+	public static FuzzyState parseFuzzyState(LineElements elements) {
+		return new FuzzyState(elements.getElements().stream() //
 				.map((i) -> parseFuzzyTuple(i, (s) -> parseState(s))) //
 				.collect(Collectors.toSet())); //
 	}
 
 	/////////////////////////////////////////////////////////////////////////
 
-	/////////////////////////////////////////////////////////////////////////
-
-	public static LineItems intsToLine(Integer... ints) {
+	public static LineElements intsToLine(Integer... ints) {
 		return intsToLine(Arrays.asList(ints));
 	}
 
-	public static LineItems intsToLine(List<Integer> ints) {
+	public static LineElements intsToLine(List<Integer> ints) {
 		return collectionToLine(ints, //
 				(i) -> Integer.toString(i));
 	}
 
-	public static LineItems doublesToLine(List<Double> doubles) {
+	public static LineElements doublesToLine(List<Double> doubles) {
 		return collectionToLine(doubles, //
 				(d) -> Double.toString(d));
 	}
 
 	/////////////////////////////////////////////////////////////////////////
 
-	public static LineItems statesToLine(Set<State> states) {
+	public static LineElements statesToLine(Set<State> states) {
 		return collectionToLine(states, //
 				(s) -> s.getLabel());
 	}
 
-	public static LineItems symbolsToLine(Set<Symbol> symbols) {
+	public static LineElements symbolsToLine(Set<Symbol> symbols) {
 		return collectionToLine(symbols, //
 				(s) -> s.getValue());
 	}
 
-	public static LineItems wordToLine(Word word) {
+	public static LineElements wordToLine(Word word) {
 		return collectionToLine(word.getSymbols(), //
 				(s) -> s.getValue());
 	}
 
-	public static LineItems fuzzyStateToLine(FuzzyState fuzzyState) {
+	public static LineElements fuzzyStateToLine(FuzzyState fuzzyState) {
 		return collectionToLine(fuzzyState.getTuples(), //
 				(t) -> t.getDomain().getLabel() + "/" + t.getTarget().getValue());
 	}
 
 	/////////////////////////////////////////////////////////////////////////
 
-	private static <E> LineItems collectionToLine(Collection<E> collection, Function<E, String> toStringFunction) {
-		return new LineItems(collection.stream() //
+	private static <E> LineElements collectionToLine(Collection<E> collection, Function<E, String> toStringFunction) {
+		return new LineElements(collection.stream() //
 				.map((i) -> toStringFunction.apply(i)) //
 				.collect(Collectors.toList()));
 	}

@@ -1,9 +1,7 @@
 package cz.upol.fapapp.core.automata;
 
-import java.io.PrintStream;
+import cz.upol.fapapp.core.misc.Printable;
 
-public interface BaseAutomata {
-	
-	public void print(PrintStream to);
+public interface BaseAutomata extends Printable {
 
 }
