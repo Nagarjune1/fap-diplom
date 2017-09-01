@@ -2,9 +2,10 @@ package cz.upol.fapapp.cfa.automata;
 
 import org.junit.Test;
 
-import cz.upol.fapapp.cfa.config.CFAConfiguration;
-import cz.upol.fapapp.cfa.config.ConfigGenerator;
-import cz.upol.fapapp.cfa.mu.BivalGameOfLifeMu;
+import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.comp.CellularAutomataComputation;
+import cz.upol.fapapp.cfa.comp.ConfigGenerator;
+import cz.upol.fapapp.cfa.mu.BivalGameOfLifeImpl;
 import cz.upol.fapapp.core.misc.Logger;
 
 public class CellularFuzzyAutomataTest {
@@ -14,17 +15,19 @@ public class CellularFuzzyAutomataTest {
 
 	@Test
 	public void testToNextGeneration() {
-		BivalGameOfLifeMu gol = new BivalGameOfLifeMu();
+		BivalGameOfLifeImpl gol = new BivalGameOfLifeImpl();
 
-		CFAConfiguration initConfig = GEN.generateBival(SIZE, BivalGameOfLifeMu.DEAD, 42);
-		CellularFuzzyAutomata automata = new CellularFuzzyAutomata(SIZE, gol, initConfig);
+		CFAConfiguration initConfig = GEN.generateBival(SIZE, 42, 0.5);
+		CellularFuzzyAutomata automata = new CellularFuzzyAutomata(SIZE, gol, gol);
+		CellularAutomataComputation comp = new CellularAutomataComputation(automata, initConfig);
 
 		automata.print(System.out);
+		comp.print(System.out);
 
-		automata.toNextGeneration();
+		comp.toNextGeneration();
 		automata.print(System.out);
 
-		automata.toNextGeneration();
+		comp.toNextGeneration();
 		automata.print(System.out);
 
 		// TODO: test IMPLEMENTME

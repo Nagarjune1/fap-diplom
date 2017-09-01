@@ -1,6 +1,5 @@
 package cz.upol.fapapp.cfa.mains;
 
-import cz.upol.fapapp.core.misc.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,8 +9,7 @@ import javafx.stage.Stage;
 public class CFASimulatorApp extends Application {
 
 	public static void main(String[] args) {
-
-		Logger.get().setVerbose(true);// XXX logging
+		
 
 		Application.launch(args);
 	}

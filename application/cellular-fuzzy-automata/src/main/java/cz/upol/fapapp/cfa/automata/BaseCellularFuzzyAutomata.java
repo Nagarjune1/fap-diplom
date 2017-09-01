@@ -2,22 +2,24 @@ package cz.upol.fapapp.cfa.automata;
 
 import java.io.PrintStream;
 
-import cz.upol.fapapp.cfa.config.CFAConfiguration;
+import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.mu.CFAOuterCellSupplier;
 import cz.upol.fapapp.cfa.mu.CFATransitionFunction;
 import cz.upol.fapapp.core.automata.BaseAutomata;
+import cz.upol.fapapp.core.misc.Printable;
 
 public abstract class BaseCellularFuzzyAutomata implements BaseAutomata {
 
 	protected final int size;
 	protected final CFATransitionFunction mu;
+	protected final CFAOuterCellSupplier outers;
 
-	public BaseCellularFuzzyAutomata(int size, CFATransitionFunction mu) {
+	public BaseCellularFuzzyAutomata(int size, CFATransitionFunction mu, CFAOuterCellSupplier outers) {
 		super();
 		this.size = size;
 		this.mu = mu;
+		this.outers = outers;
 	}
-
-	/**************************************************************************/
 
 	public int getSize() {
 		return size;
@@ -27,23 +29,27 @@ public abstract class BaseCellularFuzzyAutomata implements BaseAutomata {
 		return mu;
 	}
 
-	/**************************************************************************/
-
-	public abstract CFAConfiguration getCurrentConfig();
-
-	public abstract int getCurrentGeneration();
-
-	public abstract void toNextGeneration();
-
-	public abstract void toNextGenerations(int count);
+	public CFAOuterCellSupplier getOuters() {
+		return outers;
+	}
 
 	/**************************************************************************/
+
+	public abstract CFAConfiguration computeNextGeneration(CFAConfiguration currentConfig);
+
+	/**************************************************************************/
+
+	@Override
+	public String toString() {
+		return "BaseCellularFuzzyAutomata [size=" + size + ", mu=" + mu + ", outers=" + outers + "]";
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((mu == null) ? 0 : mu.hashCode());
+		result = prime * result + ((outers == null) ? 0 : outers.hashCode());
 		result = prime * result + size;
 		return result;
 	}
@@ -62,21 +68,19 @@ public abstract class BaseCellularFuzzyAutomata implements BaseAutomata {
 				return false;
 		} else if (!mu.equals(other.mu))
 			return false;
+		if (outers == null) {
+			if (other.outers != null)
+				return false;
+		} else if (!outers.equals(other.outers))
+			return false;
 		if (size != other.size)
 			return false;
 		return true;
 	}
 
 	@Override
-	public String toString() {
-		return "BaseCellularFuzzyAutomata [size=" + size + ", mu=" + mu + "]";
-	}
-
-	@Override
 	public void print(PrintStream to) {
-		CFAFileComposer composer = new CFAFileComposer();
-		String string = composer.compose((CellularFuzzyAutomata) this);
-		to.println(string);
+		Printable.print(to, new CFATIMComposer(), (CellularFuzzyAutomata) this);
 	}
 
 }

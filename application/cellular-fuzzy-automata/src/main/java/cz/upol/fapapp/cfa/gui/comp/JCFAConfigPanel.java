@@ -8,7 +8,7 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.config.CFAConfiguration;
+import cz.upol.fapapp.cfa.comp.CFAConfiguration;
 
 public class JCFAConfigPanel extends JComponent {
 

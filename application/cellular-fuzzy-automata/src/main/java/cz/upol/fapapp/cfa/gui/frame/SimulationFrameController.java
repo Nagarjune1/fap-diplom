@@ -5,13 +5,14 @@ import java.util.ResourceBundle;
 import java.util.function.Function;
 
 import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomata;
-import cz.upol.fapapp.cfa.config.CFAConfiguration;
-import cz.upol.fapapp.cfa.config.ConfigGenerator;
+import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.comp.ConfigGenerator;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import cz.upol.fapapp.cfa.gui.comp.FxCFAConfigPanel;
 import cz.upol.fapapp.cfa.gui.comp.ZoomPane;
-import cz.upol.fapapp.cfa.gui.task.CFAComputationTask;
-import cz.upol.fapapp.cfa.mu.BivalGameOfLifeMu;
+import cz.upol.fapapp.cfa.gui.misc.CFAComputationTask;
+import cz.upol.fapapp.cfa.mu.BivalGameOfLifeImpl;
+import cz.upol.fapapp.cfa.mu.CFAOuterCellSupplier;
 import cz.upol.fapapp.cfa.mu.CFATransitionFunction;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -24,7 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-
+@Deprecated
 public class SimulationFrameController implements Initializable {
 
 	private static final int DEFAULT_SIZE = 500;
@@ -59,9 +60,9 @@ public class SimulationFrameController implements Initializable {
 
 	public SimulationFrameController() {
 		// TODO specify by constructor
-		CFATransitionFunction mu = new BivalGameOfLifeMu();
-		CFAConfiguration initialConfig = new ConfigGenerator().generateBival(DEFAULT_SIZE, BivalGameOfLifeMu.ALIVE, 42);
-		automata = new CellularFuzzyAutomata(DEFAULT_SIZE, mu, initialConfig);
+		CFATransitionFunction mu = new BivalGameOfLifeImpl();
+		CFAOuterCellSupplier outer = new BivalGameOfLifeImpl();
+		automata = new CellularFuzzyAutomata(DEFAULT_SIZE, mu, outer);
 		
 
 	}
@@ -77,7 +78,7 @@ public class SimulationFrameController implements Initializable {
 		ObservableList<ColorModel> colors = FXCollections.observableArrayList(ColorModel.values());
 		cmbColors.setItems(colors);
 		cmbColors.setValue(FxCFAConfigPanel.DEFAULT_COLOR_MODEL);
-		configPane.getColor().bind(cmbColors.valueProperty());
+		configPane.colorProperty().bind(cmbColors.valueProperty());
 
 		updateAutomataInFrame();
 	}
@@ -89,7 +90,7 @@ public class SimulationFrameController implements Initializable {
 		task = new CFAComputationTask(automata);
 		// misc
 		task.getSpeed().bind(sliSpeed.valueProperty());
-		configPane.getConfig().bind(task.getConfig());
+		configPane.configProperty().bind(task.getConfig());
 		lblGeneration.textProperty().bind(task.getGeneration().asString());
 
 		// buttons
@@ -104,20 +105,23 @@ public class SimulationFrameController implements Initializable {
 	public void buttStopAction() {
 		Platform.runLater(() -> { //
 				task.cancel();
-				configPane.getConfig().unbind();
+				configPane.configProperty().unbind();
 				lblGeneration.textProperty().unbind();
 	});//
 
 	}
 
 	public void buttNextAction() {
-		automata.toNextGeneration();
+		//FIXME automata.toNextGeneration();
 		updateAutomataInFrame();
+		throw new UnsupportedOperationException("next of automata");
 	}
 
 	private void updateAutomataInFrame() {
-		configPane.getConfig().set(automata.getCurrentConfig());
-		lblGeneration.textProperty().set(Integer.toString(automata.getCurrentGeneration()));
+		throw new UnsupportedOperationException("update frame of automata");
+		
+		//FIXME  configPane.getConfig().set(automata.getCurrentConfig());
+		//FIXME  lblGeneration.textProperty().set(Integer.toString(automata.getCurrentGeneration()));
 	}
 
 	/**************************************************************************/

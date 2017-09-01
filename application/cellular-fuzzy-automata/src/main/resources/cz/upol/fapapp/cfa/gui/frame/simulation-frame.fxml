@@ -6,10 +6,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.upol.fapapp.cfa.gui.frame.SimulationFrameController">
    <top>
@@ -18,10 +20,6 @@
           <Button fx:id="buttRun" mnemonicParsing="false" onAction="#buttRunAction" text="Run" />
             <Button fx:id="buttStop" mnemonicParsing="false" onAction="#buttStopAction" text="Stop" />
             <Button fx:id="buttNext" mnemonicParsing="false" onAction="#buttNextAction" text="Next" />
-            <Label text="Zoom" />
-            <Spinner fx:id="spinZoom" accessibleRole="INCREMENT_BUTTON" editable="true" prefHeight="26.0" prefWidth="72.0" />
-            <Label text="Colors" />
-            <ComboBox fx:id="cmbColors" prefHeight="26.0" prefWidth="59.0" />
             <Label text="Speed" />
             <Slider fx:id="sliSpeed" blockIncrement="2.0" max="20.0" min="1.0" value="10.0" />
         </items>
@@ -36,13 +34,31 @@
       </ToolBar>
    </bottom>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <content>
-            <ZoomPane fx:id="zoomPane">
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <ZoomPane fx:id="zoomPane">
+                     <children>
+                        <FxCFAConfigPanel fx:id="configPane" />
+                     </children>
+                  </ZoomPane>
+               </content>
+            </ScrollPane>
+         </center>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <FxCFAConfigPanel fx:id="configPane" />
+                  <Label text="Colors" />
+                  <ComboBox prefWidth="150.0" />
+                  <Label layoutX="10.0" layoutY="10.0" text="Zoom" />
+                  <Spinner fx:id="spinZoom1" accessibleRole="INCREMENT_BUTTON" editable="true" prefHeight="26.0" prefWidth="72.0" />
+                  <Separator prefHeight="15.0" prefWidth="100.0" />
+                  <Button mnemonicParsing="false" text="Save" />
+                  <Button mnemonicParsing="false" text="Image" />
                </children>
-            </ZoomPane>
-         </content></ScrollPane>
+            </VBox>
+         </right>
+      </BorderPane>
    </center>
 </BorderPane>

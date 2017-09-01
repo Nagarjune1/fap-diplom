@@ -5,7 +5,7 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import cz.upol.fapapp.cfa.config.CFAConfiguration;
+import cz.upol.fapapp.cfa.comp.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import cz.upol.fapapp.cfa.gui.comp.JCFAConfigPanel;
 
