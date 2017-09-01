@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.fta.automata.FTAFileParser;
+import cz.upol.fapapp.fta.automata.FTATIMParser;
 import cz.upol.fapapp.fta.automata.FuzzyTreeAutomata;
 import cz.upol.fapapp.fta.tree.BaseTree;
-import cz.upol.fapapp.fta.tree.TreeFileParser;
+import cz.upol.fapapp.fta.tree.TreeTIMParser;
 
 public class TreeOnFTaRunner {
 
@@ -47,7 +47,7 @@ public class TreeOnFTaRunner {
 	}
 
 	private static Degree run(File automataFile, File treeFile) {
-		FTAFileParser automataParser = new FTAFileParser();
+		FTATIMParser automataParser = new FTATIMParser();
 		FuzzyTreeAutomata automata;
 		try {
 			automata = automataParser.parse(automataFile);
@@ -56,7 +56,7 @@ public class TreeOnFTaRunner {
 			return null;
 		}
 
-		TreeFileParser treeParser = new TreeFileParser();
+		TreeTIMParser treeParser = new TreeTIMParser();
 		BaseTree tree;
 		try {
 			tree = treeParser.parse(treeFile);

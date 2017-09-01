@@ -173,7 +173,7 @@ public abstract class BaseFuzzyTreeAutomata implements BaseAutomata {
 
 	@Override
 	public void print(PrintStream to) {
-		FTAFileComposer composer = new FTAFileComposer();
+		FTATIMComposer composer = new FTATIMComposer();
 		String string = composer.compose((FuzzyTreeAutomata) this);
 		to.println(string);
 	}
