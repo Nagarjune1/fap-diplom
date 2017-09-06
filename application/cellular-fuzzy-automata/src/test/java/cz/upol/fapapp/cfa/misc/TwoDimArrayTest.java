@@ -1,9 +1,15 @@
 package cz.upol.fapapp.cfa.misc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -23,6 +29,7 @@ public class TwoDimArrayTest {
 		checkOutOfBounds(arr);
 		checkValues(arr);
 		checkIterator(arr);
+		checkForEach(arr);
 	}
 
 
@@ -34,6 +41,7 @@ public class TwoDimArrayTest {
 		checkOutOfBounds(arr);
 		checkValues(arr);
 		checkIterator(arr);
+		checkForEach(arr);
 	}
 
 	@Test
@@ -90,14 +98,24 @@ public class TwoDimArrayTest {
 		
 		assertEquals("aux", iter.next());
 		assertFalse(iter.hasNext());
+	}
+	
+	
+	private void checkForEach(TwoDimArray<String> arr) {
+		List<String> strings = new ArrayList<>();
 		
+		arr.forEach((i, j, e) -> strings.add(e));
+		
+		List<String> values = Arrays.asList("foo", "bar", "baz", "aux");
+		
+		assertEquals(values, strings);
 		
 	}
 	
 	/**************************************************************************/
 
 	private TwoDimArray<String> createBySetters() {
-		TwoDimArray<String> arr = new TwoDimArray<>(0, 2);
+		TwoDimArray<String> arr = new TwoDimArray<>(0, 2, "XXX");
 
 		arr.set(0, 0, "foo");
 		arr.set(0, 1, "bar");
@@ -126,7 +144,7 @@ public class TwoDimArrayTest {
 	}
 
 	private TwoDimArray<Integer> createBiggerBySetters() {
-		TwoDimArray<Integer> arr = new TwoDimArray<>(-1, 4);
+		TwoDimArray<Integer> arr = new TwoDimArray<>(-1, 4, 999);
 
 		for (int i = -1; i < 4; i++) {
 			for (int j = -1; j < 4; j++) {

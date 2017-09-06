@@ -3,8 +3,8 @@ package cz.upol.fapapp.cfa.mains;
 import java.io.File;
 import java.util.List;
 
-import cz.upol.fapapp.cfa.comp.CFAConfTTIMParser;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMParser;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.frame.FxCFAConfigFrameController;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 import javafx.application.Application;
@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 public class ConfigDisplayerApp extends Application {
 
 	public static void main(String[] args) {
-		args = new String[] { "--verbose", "data/test/configs/lenna.timf" };
+		// args = new String[] { "--verbose", "data/test/configs/lenna.timf" };
 
 		Application.launch(args);
 	}
@@ -28,7 +28,7 @@ public class ConfigDisplayerApp extends Application {
 		String fileName = argsList.get(0);
 		File file = new File(fileName);
 
-		CFAConfiguration config = AppsMainsTools.runParser(file, new CFAConfTTIMParser("cells"));
+		CFAConfiguration config = AppsMainsTools.runParser(file, new CFAConfTIMParser());
 		if (config == null) {
 			return;
 		}

@@ -1,22 +1,25 @@
 package cz.upol.fapapp.cfa.comp;
 
+import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
-public class CFACompTIMComposer extends TIMObjectComposer<CellularAutomataComputation> {
+@Deprecated
+public class CFACompTIMComposer extends TIMObjectComposer<CFAComputation> {
 
 	private final CFAConfTIMComposer confComp;
 	
 	public CFACompTIMComposer() {
 		super(CFACompTIMParser.TYPE);
 		
-		confComp = new CFAConfTIMComposer("configuration");
+		confComp = new CFAConfTIMComposer();
 	}
 
 	@Override
-	protected void process(CellularAutomataComputation computation, TIMFileData data) {
+	protected void process(CFAComputation computation, TIMFileData data) {
 		processConfig(computation.getConfig(), data);
 		processGeneration(computation.getGeneration(), data);
 	}

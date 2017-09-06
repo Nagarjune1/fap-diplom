@@ -2,9 +2,8 @@ package cz.upol.fapapp.cfa.gui.comp;
 
 import java.awt.Color;
 
-import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
-import cz.upol.fapapp.cfa.comp.ConfigGenerator;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -29,11 +28,11 @@ public class FxCFAConfigPanel extends Canvas {
 		scaleProperty = new SimpleIntegerProperty(1);
 
 		configProperty.addListener(//
-				(o, oldVal, newVal) -> update());
+				(o) -> update());
 		colorProperty.addListener(//
-				(o, oldVal, newVal) -> update());
+				(o) -> update());
 		scaleProperty.addListener(//
-				(o, oldVal, newVal) -> update());
+				(o) -> update());
 
 		update();
 	}
@@ -72,18 +71,16 @@ public class FxCFAConfigPanel extends Canvas {
 
 	private void draw(CFAConfiguration config, GraphicsContext ctx, ColorModel colors, int scale) {
 
-		for (int i = 0; i < config.getSize(); i++) {
-			for (int j = 0; j < config.getSize(); j++) {
+		config.forEach((i, j, cell) -> {
 
-				CellState cell = config.getCell(i, j);
-				Color color = colors.convert(cell);
+			Color color = colors.convert(cell);
 
-				Paint paint = colorToColor(color);
-				ctx.setFill(paint);
+			Paint paint = colorToColor(color);
+			ctx.setFill(paint);
 
-				ctx.fillRect(i * scale, j * scale, 1 * scale, 1 * scale);
-			}
-		}
+			ctx.fillRect(i * scale, j * scale, 1 * scale, 1 * scale);
+		});
+
 	}
 
 	/**************************************************************************/

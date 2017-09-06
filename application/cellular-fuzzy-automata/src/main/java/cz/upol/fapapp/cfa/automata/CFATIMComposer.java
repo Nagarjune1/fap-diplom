@@ -1,11 +1,11 @@
 package cz.upol.fapapp.cfa.automata;
 
-import cz.upol.fapapp.cfa.mu.CFAOuterCellSupplier;
 import cz.upol.fapapp.cfa.mu.CFATransitionFunction;
+import cz.upol.fapapp.cfa.outers.CFAOuterCellSupplier;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
-
+@Deprecated
 public class CFATIMComposer extends TIMObjectComposer<CellularFuzzyAutomata> {
 
 	public CFATIMComposer() {

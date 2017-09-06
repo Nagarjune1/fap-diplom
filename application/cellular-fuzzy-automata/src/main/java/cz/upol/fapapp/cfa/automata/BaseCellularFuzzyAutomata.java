@@ -2,11 +2,10 @@ package cz.upol.fapapp.cfa.automata;
 
 import java.io.PrintStream;
 
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
-import cz.upol.fapapp.cfa.mu.CFAOuterCellSupplier;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.mu.CFATransitionFunction;
+import cz.upol.fapapp.cfa.outers.CFAOuterCellSupplier;
 import cz.upol.fapapp.core.automata.BaseAutomata;
-import cz.upol.fapapp.core.misc.Printable;
 
 public abstract class BaseCellularFuzzyAutomata implements BaseAutomata {
 
@@ -80,7 +79,7 @@ public abstract class BaseCellularFuzzyAutomata implements BaseAutomata {
 
 	@Override
 	public void print(PrintStream to) {
-		Printable.print(to, new CFATIMComposer(), (CellularFuzzyAutomata) this);
+		to.println(this.toString());
 	}
 
 }

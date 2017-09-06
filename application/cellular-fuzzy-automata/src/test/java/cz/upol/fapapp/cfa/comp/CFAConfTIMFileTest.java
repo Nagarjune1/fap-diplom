@@ -1,16 +1,19 @@
 package cz.upol.fapapp.cfa.comp;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import cz.upol.fapapp.cfa.automata.CellState;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMParser;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.misc.TwoDimArray;
 
 public class CFAConfTIMFileTest {
 
-	private final CFAConfTTIMParser parser = new CFAConfTTIMParser("cells");
-	private final CFAConfTIMComposer composer = new CFAConfTIMComposer("cells");
+	private final CFAConfTIMParser parser = new CFAConfTIMParser();
+	private final CFAConfTIMComposer composer = new CFAConfTIMComposer();
 
 	public CFAConfTIMFileTest() {
 	}
@@ -94,7 +97,7 @@ public class CFAConfTIMFileTest {
 	}
 
 	private CFAConfiguration createConfigA() {
-		TwoDimArray<CellState> cells = new TwoDimArray<>(0, 4);
+		TwoDimArray<CellState> cells = new TwoDimArray<>(0, 4, new CellState(0.0));
 		cells.set(0, 0, new CellState(0.1));
 		cells.set(0, 1, new CellState(0.2));
 		cells.set(0, 2, new CellState(0.3));
@@ -115,7 +118,7 @@ public class CFAConfTIMFileTest {
 		cells.set(3, 2, new CellState(0.07));
 		cells.set(3, 3, new CellState(0.08));
 
-		CFAConfiguration config = new CommonConfiguration(4, cells);
+		CFAConfiguration config = new CFAConfiguration(4, cells);
 		return config;
 	}
 }

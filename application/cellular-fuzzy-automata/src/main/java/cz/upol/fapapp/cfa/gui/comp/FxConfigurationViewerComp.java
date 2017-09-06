@@ -3,8 +3,8 @@ package cz.upol.fapapp.cfa.gui.comp;
 import java.io.File;
 import java.io.IOException;
 
-import cz.upol.fapapp.cfa.comp.CFAConfTIMComposer;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.misc.Imager;
 import cz.upol.fapapp.core.misc.AppsFxTools;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
@@ -54,6 +54,7 @@ public class FxConfigurationViewerComp extends BorderPane {
 		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
 		spinScale.setValueFactory(valueFactory);
 		configPane.scaleProperty().bind(spinScale.valueProperty());
+		
 
 	}
 
@@ -65,7 +66,7 @@ public class FxConfigurationViewerComp extends BorderPane {
 
 	public void buttSaveAction() {
 		CFAConfiguration object = configPane.configProperty().getValue();
-		TIMObjectComposer<CFAConfiguration> composer = new CFAConfTIMComposer("cells");
+		TIMObjectComposer<CFAConfiguration> composer = new CFAConfTIMComposer();
 		AppsFxTools.saveToTIMFile(this, object, composer);
 	}
 
@@ -86,7 +87,7 @@ public class FxConfigurationViewerComp extends BorderPane {
 
 		try {
 			imager.configToImage(config, imageFile, colors, scale);
-			AppsFxTools.showInfo("Saved", "Saved to " + imageFile);
+			AppsFxTools.showInfo("Saved", "Saved to " + imageFile.getName());
 		} catch (IOException e) {
 			AppsFxTools.showError("Export failed", e.getMessage());
 		}

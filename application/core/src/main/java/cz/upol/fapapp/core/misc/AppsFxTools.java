@@ -36,7 +36,7 @@ public class AppsFxTools {
 
 		try {
 			composer.compose(object, file);
-			showInfo("Saved", "Saved to " + file);
+			showInfo("Saved", "Saved to " + file.getName());
 		} catch (IOException e) {
 			showError("Cannot save TIM file", e.getMessage());
 		}
@@ -45,11 +45,11 @@ public class AppsFxTools {
 	/**************************************************************************/
 
 	public static File promtTIMFile(Node caller, boolean isOpen) {
-		return promtFile(caller, isOpen, "TIM files (*.timf)", "timf");
+		return promtFile(caller, isOpen, "TIM files (*.timf)", "*.timf");
 	}
 
 	public static File promtPNGFile(Node caller, boolean isOpen) {
-		return promtFile(caller, isOpen, "PNG image (*.png)", "png");
+		return promtFile(caller, isOpen, "PNG image (*.png)", "*.png");
 	}
 
 	private static File promtFile(Node caller, boolean isOpen, String formatDesc, String extension) {

@@ -142,4 +142,48 @@ public class AppsMainsTools {
 		}
 	}
 
+	/*************************************************************************/
+
+	public static int toInt(List<String> args, int index) throws IllegalArgumentException {
+		String value = null;
+		try {
+			value = args.get(index);
+			return Integer.parseInt(value);
+
+		} catch (IndexOutOfBoundsException e) {
+			throw new IllegalArgumentException("Missing argument at index " + index, e);
+
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException("Not int " + value + " at index " + index, e);
+		}
+	}
+
+	public static int toInt(List<String> args, int index, int dflt) {
+		String value = null;
+		try {
+			value = args.get(index);
+			return Integer.parseInt(value);
+
+		} catch (IndexOutOfBoundsException e) {
+			return dflt;
+
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException("Not int " + value + " at index " + index, e);
+		}
+	}
+
+	public static double toDouble(List<String> args, int index, double dflt) {
+		String value = null;
+		try {
+			value = args.get(index);
+			return Double.parseDouble(value);
+
+		} catch (IndexOutOfBoundsException e) {
+			return dflt;
+
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException("Not double " + value + " at index " + index, e);
+		}
+	}
+
 }

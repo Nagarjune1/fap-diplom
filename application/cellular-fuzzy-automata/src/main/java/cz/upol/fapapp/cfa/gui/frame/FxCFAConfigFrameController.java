@@ -3,7 +3,7 @@ package cz.upol.fapapp.cfa.gui.frame;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.comp.FxConfigurationViewerComp;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

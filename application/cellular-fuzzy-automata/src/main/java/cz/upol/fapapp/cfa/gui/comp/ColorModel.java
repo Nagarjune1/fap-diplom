@@ -1,14 +1,19 @@
 package cz.upol.fapapp.cfa.gui.comp;
 
 import java.awt.Color;
+import java.util.function.DoubleUnaryOperator;
 import java.util.function.Function;
 
 import cz.upol.fapapp.cfa.automata.CellState;
 
 public enum ColorModel {
 	GRAY(new GrayColorMapper()), //
-	HSV(new HSVColorMapper((float) 1.0, (float) 0.8)), //
-	RED(new RGBColorMapper(Color.RED)); //
+	RED_TO_RED_HSV(new HSVColorMapper((float) 1.0, (float) 0.8)), //
+	ORANGE_TO_PURPLE_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 0.1)), //
+	RED_TO_GREEN_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 0.0, 1.0/3.0)), //
+	GREEN_TO_BLUE_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 1/3.0, 2/3.0)), //
+	RED(new RGBColorMapper(Color.RED)), //
+	CYAN(new RGBColorMapper(Color.CYAN)); //
 
 	/**************************************************************************/
 
@@ -40,17 +45,35 @@ public enum ColorModel {
 
 		private final float brigtness;
 		private final float saturation;
+		private final DoubleUnaryOperator hueMapper;
 
-		public HSVColorMapper(float brigtness, float saturation) {
+		protected HSVColorMapper(float brigtness, float saturation, DoubleUnaryOperator hueMapper) {
 			super();
 			this.brigtness = brigtness;
 			this.saturation = saturation;
+			this.hueMapper = hueMapper;
+		}
+
+		public HSVColorMapper(float brigtness, float saturation) {
+			this(brigtness, saturation, //
+					(v) -> v);
+		}
+
+		public HSVColorMapper(float brigtness, float saturation, double padding) {
+			this(brigtness, saturation, //
+					(v) -> -2 * padding * v + v + padding);
+		}
+
+		public HSVColorMapper(float brigtness, float saturation, double hueOfZero, double hueOfOne) {
+			this(brigtness, saturation, //
+					(v) -> (hueOfOne - hueOfZero) * v + hueOfZero);
 		}
 
 		@Override
 		public Color apply(CellState cell) {
-			double val = cell.getValue();
-			float floatVal = (float) val;
+			double cellVal = cell.getValue();
+			double hueVal = hueMapper.applyAsDouble(cellVal);
+			float floatVal = (float) hueVal;
 
 			return Color.getHSBColor(floatVal, saturation, brigtness);
 		}

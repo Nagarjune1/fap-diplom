@@ -4,17 +4,15 @@ import java.io.File;
 import java.util.List;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.comp.CFACompTIMComposer;
-import cz.upol.fapapp.cfa.comp.CFAConfTIMComposer;
-import cz.upol.fapapp.cfa.comp.CellularAutomataComputation;
-import cz.upol.fapapp.cfa.comp.CommonConfiguration;
-import cz.upol.fapapp.cfa.comp.ConfigGenerator;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 
 public class ConfigGeneratorTool {
 
 	public static void main(String[] args) {
-		List<String> argsList = AppsMainsTools.checkArgs(args, 3, 4, () -> printHelp());
+		List<String> argsList = AppsMainsTools.checkArgs(args, 3, 3, () -> printHelp());
 		if (argsList == null) {
 			return;
 		}
@@ -22,32 +20,23 @@ public class ConfigGeneratorTool {
 		String fileStr = argsList.get(0);
 		String sizeStr = argsList.get(1);
 		String typeStr = argsList.get(2);
-		String genStr = (argsList.size() > 3 ? argsList.get(3) : null);
 
 		File file = new File(fileStr);
 		int size = Integer.parseInt(sizeStr);
-		Integer gen = (genStr != null ? Integer.parseInt(genStr) : null);
 
-		generate(file, size, typeStr, gen);
+		generate(file, size, typeStr);
 
 	}
 
-	private static void generate(File file, int size, String typeSpec, Integer generationOrNot) {
-		CommonConfiguration configuration = generateConfig(size, typeSpec);
+	private static void generate(File file, int size, String typeSpec) {
+		CFAConfiguration configuration = generateConfig(size, typeSpec);
 
-		if (generationOrNot == null) {
-			CFAConfTIMComposer composer = new CFAConfTIMComposer("cells");
-			AppsMainsTools.runComposer(file, configuration, composer);
+		CFAConfTIMComposer composer = new CFAConfTIMComposer();
+		AppsMainsTools.runComposer(file, configuration, composer);
 
-		} else {
-			CellularAutomataComputation computation = new CellularAutomataComputation(null, configuration);
-			CFACompTIMComposer composer = new CFACompTIMComposer();
-
-			AppsMainsTools.runComposer(file, computation, composer);
-		}
 	}
 
-	private static CommonConfiguration generateConfig(int size, String typeSpec) {
+	private static CFAConfiguration generateConfig(int size, String typeSpec) {
 		ConfigGenerator generator = new ConfigGenerator();
 		int seed = (int) System.currentTimeMillis();
 
@@ -77,10 +66,8 @@ public class ConfigGeneratorTool {
 	private static void printHelp() {
 		System.out.println("Config generator");
 		System.out.println("Usage:");
-		System.out.println("	ConfigGeneratorTool FILE.timf SIZE TYPE [GENERATION]");
-		System.out.println("		where TYPE one of zeros, ones, bival, bival-3/4, bival-1/4 or random");
-		System.out.println("		if GENERATION is specified, generates computation file");
-		System.out.println("		if not generates configuration file");
+		System.out.println("	ConfigGeneratorTool FILE.timf SIZE TYPE");
+		System.out.println("		where TYPE one of: zeros, ones, bival, bival-3/4, bival-1/4 or random");
 	}
 
 }

@@ -1,9 +1,9 @@
 package cz.upol.fapapp.cfa.automata;
 
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
-import cz.upol.fapapp.cfa.comp.CellNeighborhood;
-import cz.upol.fapapp.cfa.mu.CFAOuterCellSupplier;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CellNeighborhood;
 import cz.upol.fapapp.cfa.mu.CFATransitionFunction;
+import cz.upol.fapapp.cfa.outers.CFAOuterCellSupplier;
 
 public class CellularFuzzyAutomata extends BaseCellularFuzzyAutomata {
 
@@ -13,26 +13,22 @@ public class CellularFuzzyAutomata extends BaseCellularFuzzyAutomata {
 
 	/**************************************************************************/
 
-	
 	@Override
 	public CFAConfiguration computeNextGeneration(CFAConfiguration currentConfig) {
 		CFAConfiguration newConfig = currentConfig.cloneItself();
 
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				CellState cell = currentConfig.getCell(i, j);
-				CellNeighborhood neig = currentConfig.getNeighbors(i, j, outers);
+		mu.beforeNextGeneration(currentConfig);
 
-				CellState newCell = mu.perform(i, j, cell, neig);
-				newConfig.setCell(i, j, newCell);
-			}
-		}
+		currentConfig.forEach((i, j, cell) -> {
+			CellNeighborhood neig = currentConfig.getNeighbors(i, j, outers);
+
+			CellState newCell = mu.perform(i, j, cell, neig, currentConfig);
+			newConfig.setCell(i, j, newCell);
+		});
 
 		return newConfig;
 	}
-	
+
 	/**************************************************************************/
 
-	
-	
 }

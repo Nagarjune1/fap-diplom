@@ -8,8 +8,9 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 
+@Deprecated
 public class JCFAConfigPanel extends JComponent {
 
 	private static final long serialVersionUID = 2152556181110631253L;

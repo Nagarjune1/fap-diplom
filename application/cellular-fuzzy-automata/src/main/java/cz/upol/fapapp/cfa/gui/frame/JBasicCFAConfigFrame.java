@@ -5,10 +5,10 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import cz.upol.fapapp.cfa.gui.comp.JCFAConfigPanel;
-
+@Deprecated
 public class JBasicCFAConfigFrame extends JFrame {
 
 	private static final long serialVersionUID = 7746530314763833818L;

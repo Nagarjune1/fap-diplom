@@ -7,14 +7,10 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
-import cz.upol.fapapp.cfa.comp.CommonConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import cz.upol.fapapp.cfa.gui.comp.FxCFAConfigPanel;
-import cz.upol.fapapp.core.misc.AppsFxTools.RunnableWithException;
 import cz.upol.fapapp.core.misc.Logger;
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
@@ -42,20 +38,15 @@ public class Imager {
 	public void configToImage(CFAConfiguration config, File imageFile, ColorModel colors, int scale)
 			throws IOException {
 
-		// FIXME deadlocks or what
 		Logger.get().moreinfo("Rendering config to image " + imageFile);
-		runWithinFX(() -> {
-			Image image = convert(config, colors, scale);
-			saveImage(image, imageFile);
-		});
+
+		Image image = convert(config, colors, scale);
+		saveImage(image, imageFile);
 	}
 
 	/*************************************************************************/
 
 	private Image readImage(File imageFile) throws IOException {
-		// URI uri = imageFile.toURI();
-		// Image image = new Image(uri.toString());
-		// return image;
 		BufferedImage swimage = ImageIO.read(imageFile);
 		return SwingFXUtils.toFXImage(swimage, null);
 	}
@@ -71,27 +62,25 @@ public class Imager {
 		int size = inferImageSize(image);
 		PixelReader r = image.getPixelReader();
 
-		CFAConfiguration config = new CommonConfiguration(size);
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-
-				Color color = r.getColor(i, j);
-				double value = applyChanel(chanel, color);
-				CellState cell = new CellState(value);
-				config.setCell(i, j, cell);
-			}
-		}
+		CFAConfiguration config = new CFAConfiguration(size);
+		
+		config.forEach((i, j, xVal) -> {
+			Color color = r.getColor(i, j);
+			double value = applyChanel(chanel, color);
+			CellState cell = new CellState(value);
+			config.setCell(i, j, cell);
+		});
 
 		return config;
 	}
 
 	private Image convert(CFAConfiguration config, ColorModel colors, int scale) {
-		int size = config.getSize() * scale;
+		// int size = config.getSize() * scale;
 
 		FxCFAConfigPanel pane = new FxCFAConfigPanel();
 		pane.configProperty().set(config);
-		pane.setWidth(size); // TODO is needed?
-		pane.setHeight(size);
+		pane.colorProperty().setValue(colors);
+		pane.scaleProperty().setValue(scale);
 
 		// Parent parent = new VBox(pane);
 		// Scene scene = new Scene(parent, size, size);
@@ -135,41 +124,43 @@ public class Imager {
 
 	/**************************************************************************/
 
-	private <E extends Exception> void runWithinFX(RunnableWithException<E> run) throws E {
-
-		Thread thread = Thread.currentThread();
-		startFX();
-
-		try {
-			Platform.runLater(() -> {
-				try {
-					run.run();
-				} catch (Exception e) {
-					throw new RuntimeException(e);
-				} finally {
-					synchronized (thread) {
-						thread.notify();
-					}
-				}
-			});
-		} catch (Exception e) {
-			@SuppressWarnings("unchecked")
-			E cause = (E) e.getCause();
-			throw cause;
-		}
-
-		try {
-			synchronized (thread) {
-				thread.wait();
-			}
-		} catch (InterruptedException eIgnore) {
-		}
-
-		Platform.exit();
-	}
-
-	private void startFX() {
-		new JFXPanel();
-	}
+	// XXX
+	// private <E extends Exception> void runWithinFX(RunnableWithException<E>
+	// run) throws E {
+	//
+	// Thread thread = Thread.currentThread();
+	// startFX();
+	//
+	// try {
+	// Platform.runLater(() -> {
+	// try {
+	// run.run();
+	// } catch (Exception e) {
+	// throw new RuntimeException(e);
+	// } finally {
+	// synchronized (thread) {
+	// thread.notify();
+	// }
+	// }
+	// });
+	// } catch (Exception e) {
+	// @SuppressWarnings("unchecked")
+	// E cause = (E) e.getCause();
+	// throw cause;
+	// }
+	//
+	// try {
+	// synchronized (thread) {
+	// thread.wait();
+	// }
+	// } catch (InterruptedException eIgnore) {
+	// }
+	//
+	// Platform.exit();
+	// }
+	//
+	// private void startFX() {
+	// new JFXPanel();
+	// }
 
 }

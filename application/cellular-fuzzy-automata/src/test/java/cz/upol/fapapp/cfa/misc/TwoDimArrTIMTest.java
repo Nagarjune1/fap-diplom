@@ -113,7 +113,7 @@ public class TwoDimArrTIMTest {
 	}
 
 	private TwoDimArray<Integer> createArrayA() {
-		TwoDimArray<Integer> arr = new TwoDimArray<>(0, 3);
+		TwoDimArray<Integer> arr = new TwoDimArray<>(0, 3, 999);
 
 		arr.set(0, 0, 1);
 		arr.set(0, 1, 2);

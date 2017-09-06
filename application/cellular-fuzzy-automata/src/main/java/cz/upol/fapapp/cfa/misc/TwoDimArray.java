@@ -12,11 +12,11 @@ public class TwoDimArray<E> implements Iterable<E> {
 
 	private final Map<Integer, Map<Integer, E>> items;
 
-	public TwoDimArray(int minIndex, int maxIndex) {
+	public TwoDimArray(int minIndex, int maxIndex, E dflt) {
 		super();
 		this.minIndex = minIndex;
 		this.maxIndex = maxIndex;
-		this.items = initEmpty(minIndex, maxIndex);
+		this.items = initEmpty(minIndex, maxIndex, dflt);
 	}
 
 	public TwoDimArray(int minIndex, int maxIndex, Map<Integer, Map<Integer, E>> items) {
@@ -40,7 +40,6 @@ public class TwoDimArray<E> implements Iterable<E> {
 
 	/**************************************************************************/
 
-	
 	public E get(int i, int j) {
 		checkBounds(i, j);
 
@@ -74,14 +73,35 @@ public class TwoDimArray<E> implements Iterable<E> {
 		}
 	}
 
-	private static <E> Map<Integer, Map<Integer, E>> initEmpty(int minIndex, int maxIndex) {
+	private static <E> Map<Integer, Map<Integer, E>> initEmpty(int minIndex, int maxIndex, E dflt) {
 		Map<Integer, Map<Integer, E>> map = new HashMap<>();
 
 		for (int i = minIndex; i < maxIndex; i++) {
-			map.put(i, new HashMap<>());
+			HashMap<Integer, E> line = new HashMap<>();
+			map.put(i, line);
+
+			for (int j = minIndex; j < maxIndex; j++) {
+				line.put(j, dflt);
+			}
 		}
 
 		return map;
+	}
+
+	/**************************************************************************/
+
+	@Override
+	public Iterator<E> iterator() {
+		return new TwoDimArrIterator<>(this);
+	}
+
+	public void forEach(TwoDimArrForEach<E> function) {
+		for (int i = minIndex; i < maxIndex; i++) {
+			for (int j = minIndex; j < maxIndex; j++) {
+				E elem = get(i, j);
+				function.invoke(i, j, elem);
+			}
+		}
 	}
 
 	/**************************************************************************/
@@ -124,23 +144,19 @@ public class TwoDimArray<E> implements Iterable<E> {
 						.map((m) -> m.values().stream() //
 								.map((e) -> e.toString()) //
 								.collect(Collectors.joining(", "))) //
-
 						.collect(Collectors.joining("; ")) //
 				+ "]"; //
 	}
 
-	@Override
-	public Iterator<E> iterator() {
-		return new TwoDimArrIterator(this);
-	}
+	/**************************************************************************/
 
-	public class TwoDimArrIterator implements Iterator<E> {
+	public static class TwoDimArrIterator<E> implements Iterator<E> {
 		private Iterator<Map<Integer, E>> rowsIter;
 		private Iterator<E> colsIter;
 
 		public TwoDimArrIterator(TwoDimArray<E> arr) {
 			super();
-			rowsIter = items.values().iterator();
+			rowsIter = arr.items.values().iterator();
 			colsIter = startNewRow();
 		}
 
@@ -163,6 +179,11 @@ public class TwoDimArray<E> implements Iterable<E> {
 			Map<Integer, E> nextRow = rowsIter.next();
 			return nextRow.values().iterator();
 		}
+	}
+
+	@FunctionalInterface
+	public static interface TwoDimArrForEach<E> {
+		public void invoke(int i, int j, E elem);
 	}
 
 }

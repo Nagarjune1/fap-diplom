@@ -3,16 +3,18 @@ package cz.upol.fapapp.cfa.mains;
 import java.io.File;
 import java.util.List;
 
-import cz.upol.fapapp.cfa.comp.CFAConfTIMComposer;
-import cz.upol.fapapp.cfa.comp.CFAConfTTIMParser;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
+import cz.upol.fapapp.cfa.conf.CFAConfTIMParser;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import cz.upol.fapapp.cfa.gui.misc.Imager;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 import cz.upol.fapapp.core.misc.Logger;
+import javafx.application.Application;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-public class ImageConfigConverter {
+public class ImageConfigConverter extends Application {
 
 	private static final String IMAGE_EXTENSION = ".png";
 	private static final String CONFIG_EXTENSION = ".timf";
@@ -22,10 +24,18 @@ public class ImageConfigConverter {
 	private static final int SCALE = 1;
 
 	public static void main(String[] args) {
-		//args = new String[]{"--verbose", "data/test/images/random-100.png", "data/test/configs/random-config-100.timf"};//XXX
-		
-		
-		List<String> argsList = AppsMainsTools.checkArgs(args, 2, 2, () -> printHelp());
+//		args = new String[] { "--verbose", "data/test/images/random-100.png",
+//				"data/test/configs/random-config-100.timf" };// XXX debug
+
+		args = new String[] { "--verbose", "data/test/configs/random-config-100.timf",
+				"data/test/images/random-100.png" };// XXX debug
+
+		Application.launch(args);
+	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		List<String> argsList = AppsMainsTools.checkArgs(getParameters(), 2, 2, () -> printHelp());
 
 		String firstFileName = argsList.get(0);
 		String secondFileName = argsList.get(1);
@@ -50,19 +60,19 @@ public class ImageConfigConverter {
 		if (firstFileName.endsWith(CONFIG_EXTENSION) && secondFileName.endsWith(IMAGE_EXTENSION)) {
 			convertConfigToImage(firstFile, secondFile);
 		}
-		
+
 		System.exit(0);
 	}
 
 	/**************************************************************************/
 
-	private static void convertImageToConfig(File imageFile, File configFile) {
+	private void convertImageToConfig(File imageFile, File configFile) {
 		Logger.get().moreinfo("Converting image " + imageFile + " to config " + configFile);
 		try {
 			Imager imager = new Imager();
 			CFAConfiguration config = imager.imageToConfig(imageFile, CHANEL);
 
-			CFAConfTIMComposer composer = new CFAConfTIMComposer("cells");
+			CFAConfTIMComposer composer = new CFAConfTIMComposer();
 			composer.compose(config, configFile);
 		} catch (Exception e) {
 			Logger.get().error("Conversion failed: " + e.getMessage());
@@ -70,10 +80,10 @@ public class ImageConfigConverter {
 		}
 	}
 
-	private static void convertConfigToImage(File configFile, File imageFile) {
+	private void convertConfigToImage(File configFile, File imageFile) {
 		Logger.get().moreinfo("Converting config " + configFile + " to image " + imageFile);
 		try {
-			CFAConfTTIMParser parser = new CFAConfTTIMParser("cells");
+			CFAConfTIMParser parser = new CFAConfTIMParser();
 			CFAConfiguration config = parser.parse(configFile);
 
 			Imager imager = new Imager();
@@ -86,7 +96,7 @@ public class ImageConfigConverter {
 
 	/**************************************************************************/
 
-	private static void printHelp() {
+	private void printHelp() {
 		System.out.println("Image Config Converter");
 		System.out.println("Usage: ImageConfigConverter IMAGE.png CONFIG.timf");
 		System.out.println("       ImageConfigConverter CONFIG.timf IMAGE.png");

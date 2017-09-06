@@ -10,8 +10,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.comp.CFAConfiguration;
-import cz.upol.fapapp.cfa.comp.ConfigGenerator;
+import cz.upol.fapapp.cfa.conf.CFAConfiguration;
+import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import cz.upol.fapapp.cfa.gui.comp.ColorModel;
 import javafx.scene.paint.Color;
 

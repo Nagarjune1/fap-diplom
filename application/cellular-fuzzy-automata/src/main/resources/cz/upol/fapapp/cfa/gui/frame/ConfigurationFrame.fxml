@@ -9,12 +9,7 @@
 	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
 	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="cz.upol.fapapp.cfa.gui.frame.FxCFAConfigFrameController">
-	<top>
-		<ToolBar>
-			<Button mnemonicParsing="false" text="XXX"
-				BorderPane.alignment="TOP_CENTER" />
-		</ToolBar>
-	</top>
+	
 	<center>
 		<FxConfigurationViewerComp fx:id="configViewer"
 			BorderPane.alignment="CENTER" />
