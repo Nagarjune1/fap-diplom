@@ -29,6 +29,11 @@
 \contentsline {subsection}{\numberline {5.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{39}
 \contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{40}
 \contentsline {subsection}{\numberline {5.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{40}
-\contentsline {section}{\numberline {6}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{42}
-\contentsline {subsection}{\numberline {6.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{42}
-\contentsline {subsection}{\numberline {6.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{42}
+\contentsline {section}{\numberline {6}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{42}
+\contentsline {subsection}{\numberline {6.1}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{42}
+\contentsline {subsection}{\numberline {6.2}Learning automaty}{42}
+\contentsline {subsection}{\numberline {6.3}Fuzzy automaty a neuronovky}{42}
+\contentsline {section}{\numberline {7}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{43}
+\contentsline {section}{\numberline {8}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{43}
+\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{43}
+\contentsline {subsection}{\numberline {8.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{43}

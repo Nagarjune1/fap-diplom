@@ -5,6 +5,12 @@ Radim Bělohlávek.
 \newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
 \newblock Kluwer, New York, 2002.
 
+\bibitem{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}
+C.~L.~Giles Ch. W.~Omlin, K. K.~Thornber.
+\newblock Fuzzy finite-state automata can be deterministically encoded into
+  recurent neural networks.
+\newblock {\em University of Technical Report}, 1996.
+
 \bibitem{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}
 Roger~White Conrad~Power, Alvin~Simms.
 \newblock Hierarchical fuzzy pattern matching for the regional comparison of
@@ -36,6 +42,11 @@ J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
 Abdulwahed~Almarimi Gabriela~Andrejková and Asmaa Mahmoud.
 \newblock Approximate pattern matching using fuzzy logic.
 \newblock {\em CEUR Workshop Proceedings}, 2003.
+
+\bibitem{TowSha-KnowBas-ArtNeuNet}
+Jude W.~Shavlik Geoffrey G.~Towell.
+\newblock Knowledge-based artificial neural networks.
+\newblock {\em Artificial Intelligence}, 1992.
 
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.
@@ -75,6 +86,12 @@ Thomas~Hatzichristos Lefteris A.~Mantelas and Poulicos Prastacos.
 S.~C.~Kremer M.~Doostfatemeh.
 \newblock New directions in fuzzy automata.
 \newblock {\em International Journal of Approximate Reasoning}, 2004.
+
+\bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
+Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
+\newblock Application of fuzzy automata theory and knowledge based neural
+  networks for development of basic learning model.
+\newblock {\em Computer Technology and Application 2}, 2011.
 
 \bibitem{MogZadAme-NewDirInFuzzTreeAut}
 M.~M.~ZAHEDI S.~MOGHARI and R.~AMERI.

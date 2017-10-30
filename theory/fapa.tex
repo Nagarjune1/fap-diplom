@@ -1622,6 +1622,54 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
   \caption{(převzato z \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}, upraveno) Ukázky rozpoznávání folikul} \label{img:Follicles}
 \end{figure}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Strojové učení}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Neuronové sítě}
+
+Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení.  \TODO{nějaké další povídání} 
+čerpat odsud: \cite{TowSha-KnowBas-ArtNeuNet}?
+
+Jedním z možných dělení neuronových sítí je dle způsobu jejich konstrukce. Rozlišují se tak na neuronové sítě vzniklé učením a na ty, které operují na základě pevně stanovených pravidel. V této a následujících kapitolách budeme pracovat s hybridním modelem neuronové sítě, který budeme označovat jako znalostní neuronová síť.
+
+Znalostní neuronové sítě tak zřejmě budou čerpat z výhod obou přístupů. Na jednu stranu budou založené na znalostní bázi, která jim poskytne základní nástroje pro řešení daného problému. Na druhou stranu, učením se může taková síť lépe adaptovat na konkrétní instance problému či odstranit nedostatky znalostní báze.
+
+Jako znalostní bázi budeme považovat kolekci formulí výrokové logiky, konkrétně hornovských klauzulí. 
+
+
+
+
+
+bias
+backpropagation
+sigmoidal discriminant function
+second-order weight
+second-order recurrent neural network
+Neural network performance
+weight streight
+
+backpropagation algorithm (běžný algoritmus učení)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Learning automaty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy automaty a neuronovky}
+
+Bylo mnohokrát ukázano, že klasické konečné automaty mohou být reprezentovány neuronovými sítěmi (\cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}, str. 2).
+
+Tady je algoritmus pro převod automat na neuronovku: \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+
+%Stejně tak, existuje několik způsobů, jak sestavit neuronovou síť odpovídající fuzzy automatu.
+
+Věnuje se tomu například \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1629,6 +1677,16 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
+
+\section{Další návrhy na aplikace}
+V \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}: 
+Fuzzy grammars have been found to be useful in a variety
+of applications such as in the analysis of X-rays [43], in
+digital circuit design [34], and in the design of intelligent
+human-computer interfaces [49].
+
+
+
 
 \section{Konkrétní příklady}
 \subsection{Rozpoznávní ručně psaného textu}

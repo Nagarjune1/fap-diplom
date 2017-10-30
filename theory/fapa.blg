@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
 Database file #1: resources.bib
@@ -60,45 +60,45 @@ Warning--empty journal in Ech-DefSyssConPre
 Warning--empty year in Ech-DefSyssConPre
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
 while executing---line 1090 of file plain.bst
-You've used 17 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            671 strings with 9761 characters,
-and the built_in function-call counts, 3623 in all, are:
-= -- 344
-> -- 137
+            688 strings with 10451 characters,
+and the built_in function-call counts, 4271 in all, are:
+= -- 407
+> -- 164
 < -- 0
-+ -- 59
-- -- 40
-* -- 156
-:= -- 687
-add.period$ -- 50
-call.type$ -- 17
-change.case$ -- 68
++ -- 70
+- -- 48
+* -- 184
+:= -- 810
+add.period$ -- 59
+call.type$ -- 20
+change.case$ -- 81
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 174
-empty$ -- 300
-format.name$ -- 40
-if$ -- 726
+cite$ -- 23
+duplicate$ -- 204
+empty$ -- 351
+format.name$ -- 48
+if$ -- 856
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 19
-newline$ -- 87
-num.names$ -- 34
-pop$ -- 84
+int.to.str$ -- 20
+missing$ -- 22
+newline$ -- 102
+num.names$ -- 40
+pop$ -- 97
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 64
 quote$ -- 0
-skip$ -- 117
+skip$ -- 139
 stack$ -- 0
-substring$ -- 87
-swap$ -- 16
+substring$ -- 102
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 76
 warning$ -- 3
-while$ -- 34
-width$ -- 19
-write$ -- 169
+while$ -- 40
+width$ -- 22
+write$ -- 199
 (There were 5 error messages)
