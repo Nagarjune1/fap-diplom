@@ -1628,38 +1628,73 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Strojové učení}
 
+Strojové učení je technika pro přibližné řešení komplikovaných či složitých problémů. Spočívá v tom, že namísto přímého hledání algoritmu, který požadovaný problém řeší, navrhujeme algoritmus, jehož vstupem je popis problému (ve vhodném formátu) a výstupem je algoritmus pro řešení problému. Pro popis problému se typicky používá deklarativní přístup, tj. \uv{co má být při určitém vstupu výsledkem} namísto \uv{jak ze vstupu spočítat výsledek}.
+
+Je třeba mít na paměti, že správnost \uv{vygenerovaného algoritmu} závisí na správnosti popisu řešeného problému. Vzhledem k tomu, že strojové učení se používá pro komplikované problémy, popis problému vkládaný do patřičné techniky strojového učení bude zřejmě zjednodušený. Tím vzniká prostor pro nepřesnost řešení.
+
+Na druhou stranu, s použitím fuzzy či pravděpodobnostního přístupu můžeme tento fakt vzít v potaz. Vygenerovaný algoritmus tak sice nebude fungovat správně, nicméně jeho výsledkem bude moci být například \uv{$y$ je správným řešením s pravděpodobností $p$} či \uv{$z$ je správným řešením ve stupni $d$}. Propojení strojového učení s fuzzy nebo pravděpodobnostního přístupu by tak mělo být přínosem. Navíc, jak bude ukázáno, může být i přirozené.
+
+Mezi nejznáměnšjí techniky strojového učení patří například neuronové sítě, rozhodovací stromy či shlukování. Následuje popis neuronových sítí. Ty mají totiž nejlepší předpoklady pro provázání s fuzzy automaty a následné využití v praxi.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Neuronové sítě}
+Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk známých z biologie. Vygenerovaný algoritmus je tvořen sítí tzv. neuronů, které jsou propojeny v zpravidla rozsáhlou síť. Tato síť obsahuje spoustu parametrů, které jsou nastaveny tak, aby síť tvořila algoritmus řešící požadovaný problém. 
 
-Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení.  \TODO{nějaké další povídání} 
-čerpat odsud: \cite{TowSha-KnowBas-ArtNeuNet}?
+Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je převzat z \cite{FieRus-HanNeuCom}. Označme $X$ jako tzv. signální množinu, tj. množinu všech možných hodnot, kterých mohou nabýt signály přešenášené mezi neurony. Dále označme $S$ jako množinu stavů neuronů. V tomto textu budeme uvažovat pouze neurony diskrétní. Říkáme, že diskrétní neuron $s$ nabývá v čase $t \in \mathbb{N}$ stavu $s(t)$. Dále označnme $y(t)$ jako výstup neuronu $s$ v čase $t$.
 
-Jedním z možných dělení neuronových sítí je dle způsobu jejich konstrukce. Rozlišují se tak na neuronové sítě vzniklé učením a na ty, které operují na základě pevně stanovených pravidel. V této a následujících kapitolách budeme pracovat s hybridním modelem neuronové sítě, který budeme označovat jako znalostní neuronová síť.
+\begin{definition}[Diskrétní neuron]
+ Jako diskrétní neuron označujeme dvojici funkcí $f: X^n \times S \rightarrow S$ (přechodová funkce) a $g: S \rightarrow X$ (výstupní funkce) tak, že:
+ \begin{align*}
+  s(t) &= f(x_1(t - 1), \dots x_n(t - 1), s(t - 1)) \\
+  y(t) &= g(s(t))
+ \end{align*}
+\end{definition}
 
-Znalostní neuronové sítě tak zřejmě budou čerpat z výhod obou přístupů. Na jednu stranu budou založené na znalostní bázi, která jim poskytne základní nástroje pro řešení daného problému. Na druhou stranu, učením se může taková síť lépe adaptovat na konkrétní instance problému či odstranit nedostatky znalostní báze.
+\begin{note}
+ $x_1$, ..., $x_n$ v předchozí definici značí signály a to buď do sítě vstupující, nebo připojené na výstup jiných neuronů.
+\end{note}
 
-Jako znalostní bázi budeme považovat kolekci formulí výrokové logiky, konkrétně hornovských klauzulí. 
+Jako signální množinu $X$ budeme pokládat reálný interval $(0, 1)$, jako množinu $S$ stavů pak množinu všech reálných čísel. 
+\begin{example}
+ Pro jeden z nejznáměnších, tzv. McCulloch-Pittsův neuron $s_j$, vypadají funkce $f_j$ a $g_j$ neuronu $s_j$ následovně:
+ \begin{align*}
+  f_j(x_{1,j}(t), \dots x_{n,j}(t), s_j) &=  \sum_{i=1}^n w_{i,j} x_{i,j}(t) \\
+  g_j(x) &= 
+   \begin{dcases}
+    0 & \text{ pokud $x < \theta_j$} \\
+    1 & \text{ pokud $x \geq \theta_j$}
+   \end{dcases}
+ \end{align*}
+ kde $w_{1,j}, \dots, w_{n,j}$ jsou tzv. synaptické váhy neuronu $s_j$ a $\theta_j$ je jeho tzv. prahová hodnota. 
+ 
+ Symbolické grafické znázornění sítě McCulloch-Pittsových neuronů je k vidění na obrázku \ref{img:SimplNeuNet} Soubor těchto parametrů u všech neuronů celé sítě určuje chování celé sítě.
+\end{example}
+
+\begin{figure}
+ \centering
+ \includegraphics{neurals0}
+ \caption{Ukázka neuronové sítě} \label{img:SimplNeuNet}
+\end{figure}
+
+\subsection{Konstrukce neuronové sítě}
+Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je pomocí znalostní báze a druhý pomocí trénovacích dat. Jak znalostní báze, tak trénovací data nám zde plní ůčel popisu problému, který má neuronová síť řešit. V praxi se často používá kombinace obou přístupů.
+
+\TODO{někde nadefinovat if-then pravidla. Je to docela základní věc, takže asi někde hodně nahoře.}
+
+Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron:
+$$
+  y_j(t) = s_j(t) = x_{j,1}(t - 1) \wedge \dots \wedge x_{j,n}(t - 1)
+$$
+
+Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.\TODO{Co to vlastně je fuzzy If-Then pravidlo? Je to v souladu s tím, co už znám?} 
+
+Druhým způsobem, jak zkonstruovat neuronovou síť, je pomocí trénovacích dat. Tato technika se dále dělí na učení s učitelem a učení bez učitele. V tomto textu se spokojíme s popisem učení s učitelem.
+
+Hovoříme-li o trénovacích datech v souvislosti s učením s učitelem, pak jako trénovací data považujeme konečné zobrazení, které vstupům problému přiřazuje správné nebo očekávané výsledky. Na počátku se sestaví neuronová síť s náhodnými parametry a tzv. učení se její parametry postupně modifikují tak, aby byla schopna správně přiřazovat vstupům z trénovací množiny odpovídající výstupy.
+
+\TODO{backpropagation algorithm (běžný algoritmus učení)?}
 
 
-
-
-
-bias
-backpropagation
-sigmoidal discriminant function
-second-order weight
-second-order recurrent neural network
-Neural network performance
-weight streight
-
-backpropagation algorithm (běžný algoritmus učení)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Learning automaty}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automaty a neuronovky}
 
 Bylo mnohokrát ukázano, že klasické konečné automaty mohou být reprezentovány neuronovými sítěmi (\cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}, str. 2).
@@ -1669,6 +1704,27 @@ Tady je algoritmus pro převod automat na neuronovku: \cite{OmlThoGil-FuzzFinSta
 %Stejně tak, existuje několik způsobů, jak sestavit neuronovou síť odpovídající fuzzy automatu.
 
 Věnuje se tomu například \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+
+
+
+
+% 
+% 
+% bias
+% backpropagation
+% sigmoidal discriminant function
+% second-order weight
+% second-order recurrent neural network
+% Neural network performance
+% weight streight
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Learning automaty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,6 +1,6 @@
 -- initial wave,, ,, ,
 ok,MorMal-FuzzyAutAndLang, ,"Mordeson, John N. and Malik, Davender S.", ,Fuzzy Automata and Languages: Theory and Applications
-ok,Kov-ReasFuzzAutInUsrAdpSyss, ,Szilveszter Kovács, ,Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems
+ok,Kov-ReasFuzzAutInUsrAdpSyss, ,Szilveszter Kovï¿½cs, ,Fuzzy Reasoning and Fuzzy Automata in User Adaptive Systems
 ok,DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod, ,"Manuj Darbari, Hasan Ahmed and Vivek Kr. Singh", ,Application of Fuzzy Automata Theory and Knowledge Based Neural Networks for Development of Basic Learning Model
 ok,WeeFu-FormFuzAutAppModLeaSys, ,"William G. Wee, K. S. Fu", ,A Formulation of Fuzzy Automata and Its Application as a Model of Learning Systems
 not found,BruFu-ModFinStaProSys, ,"G. D. Bruce, K. S. Fu", ,A model for Finite-state probabilistic systems
@@ -12,9 +12,9 @@ not found,GuSar-FuzAutDecPro, ,"Madan M. Gupta, George N. Saridis", ,Fuzzy autom
 ok,LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon, ,"Yongming Li, Witold Pedrycz", ,Fuzzy finite automata and fuzzy regular expressions with membership values in lattice-ordered monoids
 not found,LeeLee-FuzNeuNet, ,"Samuel C. Lee, Edward T. Lee", ,Fuzzy Neural Networks
 ok,LiPed-MinLattFinAutAppDecoLattLang, ,"Yongming Li, Witold Pedrycz", ,Minimization of lattice finite automata and its application to the decomposition of lattice languages
-ok,Bel-DetAndFuzzAut, ,R. B?lohlávek, ,Determinism and fuzzy automata
+ok,Bel-DetAndFuzzAut, ,R. B?lohlï¿½vek, ,Determinism and fuzzy automata
 not found,DPYau-FraFuzGraAppPatRec, ,"G.F. DePalma, S.S. Yau", ,FRACTIONALLY FUZZY GRAMMARS WITH APPLICATION TO PATTERN RECOGNITION
-ok,GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc, ,"José R. González de Mendívil, José R. Garitagoitia", ,Fuzzy languages with infinite range accepted by fuzzy automata: Pumping Lemma and determinization procedure
+ok,GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc, ,"Josï¿½ R. Gonzï¿½lez de Mendï¿½vil, Josï¿½ R. Garitagoitia", ,Fuzzy languages with infinite range accepted by fuzzy automata: Pumping Lemma and determinization procedure
 not found,KanLee-FuzSwiAutTheApp, ,Abraham Kandel and Samuel C. Lee, ,Fuzzy Switching and Automata: Theory and Applications
 ok,RamGir-ConvFinAutFuzzAutStrComp, ,"Dr. V. Ramaswamy, H. A. Girijamma", ,Conversion of Finite Automata to Fuzzy Automata for String Comparison
 not found,Nej+-FuzCelLeaAutLesDecRetIm, ,"Nejad, Hadi Chahkandi; Azadbakht, Bakhtiar; Adenihvand, Karim; Mohammadi, Mohammad; Mirzamohammad, Mahsa", ,Fuzzy cellular learning automata for lesion detection in retina images
@@ -29,29 +29,29 @@ ok,MogZadAme-NewDirInFuzzTreeAut, ,"S. MOGHARI, M. M. ZAHEDI AND R. AMERI", ,NEW
 ok,Hua-SyntPattRecSeisOilExp, ,Kou-Yuan Huang, ,Syntactic Pattern Recognition for Seismic Oil Exploration
 ok,Bez+-FuzModAlgPatRecImProc, ,"James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal", ,Fuzzy Models and Algorithms for Pattern Recognition and Image Processing
 ok,ChaJos-NoteFuzzTreeAut, ,"S. R. Chaudhari, Mukta N. Joshi", ,A Note on Fuzzy Tree Automata
-ok,Bel-DoExaShaFuzzSetMatt, ,R. B?lohlávek, ,Do exact shapes of fuzzy sets matter?
+ok,Bel-DoExaShaFuzzSetMatt, ,R. B?lohlï¿½vek, ,Do exact shapes of fuzzy sets matter?
 ok,Xia-RSImaProcAut, ,"Xian-feng, Yu", ,RS image processing automata
 ok,QiuWan-ProbModCompWords, ,"Daowen Qiu, Huaiqing Wang", ,A probabilistic model of computing with words
 ok,Rich-FuzEvoCellAut, ,James Neal Richter, ,Fuzzy evolutionary cellular automata
-ok,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. Astrain, J.R. González de Mendívil, J.R. Garitagoitia", ,Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings
+ok,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. Astrain, J.R. Gonzï¿½lez de Mendï¿½vil, J.R. Garitagoitia", ,Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings
 ok,RamGir-CharFuzzRegLang, ,"Dr. V. Ramaswamy,  Mrs. Girijamma. H. A.", ,Characterization of Fuzzy Regular Languages
 ok,BucPas-FuzPusAut, ,"Irina Bucurescu, Anca Pascu", ,Fuzzy pushdown automata
 ok,OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet, ,"Ch. W. Omlin, K. K. Thornber, C. L. Giles", ,Fuzzy Finite-State Automata Can Be Deterministically Encoded Into Recurent Neural Networks
-ok,Ech+-DefSyssConPre, ,"Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya", ,Deformed systems for contextual postprocessing
+ok,Ech+-DefSyssConPre, ,"Javier Echanobe, Josï¿½ R. Gonzï¿½les Mendï¿½vil, Josï¿½ R. Garitagoitia, Carlos F. Alastrueya", ,Deformed systems for contextual postprocessing
 ok,TowSha-KnowBas-ArtNeuNet, ,"Geoffrey G. Towell, Jude W. Shavlik", ,Knowledge-Based Artificial Neural Networks
-ok,EsiLiu-FuzzTreeAut, ,"Zoltán Ésik, Guangwu Liu", ,Fuzzy tree automata
-ok,AndAbdAsm-ApprPattMatcFuzzLog, ,"Gabriela Andrejková, Abdulwahed Almarimi and Asmaa Mahmoud", ,Approximate Pattern Matching using Fuzzy Logic
+ok,EsiLiu-FuzzTreeAut, ,"Zoltï¿½n ï¿½sik, Guangwu Liu", ,Fuzzy tree automata
+ok,AndAbdAsm-ApprPattMatcFuzzLog, ,"Gabriela Andrejkovï¿½, Abdulwahed Almarimi and Asmaa Mahmoud", ,Approximate Pattern Matching using Fuzzy Logic
 ok,PowSimWhi-HieFuzzPattMatcRegCompLanUseMap, ,"Conrad Power, Alvin Simms, Roger White", ,Hierarchical fuzzy pattern matching for the regional comparison of land use maps
 ok,ManHatPra-FuzCelAutBasSheModUrGro+, ,"Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos", ,A Fuzzy Cellular Automata Modeling Approach -- Accessing Urban Growth Dynamics in Linguistic Terms
 ok,SetWar-FuzzAutPattMatc, ,"Setzer, C. B., Warsi, N. A.", ,Fuzzy automata and pattern matching
 ok,PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro, ,"Dhiraj Kumar Patel, Prof. Sagar A. More", ,Edge Detection Technique by Fuzzy Logic and Cellular Learning Automata using Fuzzy Image Processing
 ok,Rig-FauDetIsoBasFuzzAut, ,Gerasimos G. Rigatos, ,Fault detection and isolation based on fuzzy automata
 ok,BlaDelPeg-FuzzAutIndUsNeuNet, ,"A. Blanco, M. Delgado, M. C. Pegalajar", ,Fuzzy automaton induction using neural network
-ok,BaiTri-PattRecUsiTemFuzzAut, ,"Gonzalo Bailadora, Gracián Triviño", ,Pattern recognition using temporal fuzzy automata
+ok,BaiTri-PattRecUsiTemFuzzAut, ,"Gonzalo Bailadora, Graciï¿½n Triviï¿½o", ,Pattern recognition using temporal fuzzy automata
 ok,NacWekVilKer-FuzzFiltImaProc, ,"Mike Nachtegael, Dietrich Van der Weken, Dimitri Van De Ville, Etienne E. Kerre (Eds.)", ,Fuzzy Filters for Image Processing
 -- tabs from firefox,, ,, ,
 ok,VirZim-FuzzAutFuzzRel, ,"Jernej Virant, Niko Zimic", ,Fuzzy automata with fuzzy relief
-ok,BlaDelFlo-MethIndFuzzAutUsNeuNet, ,"A. Blanco, Miguel Delgado Calvo-Flores,  Maria del Carmen Pegalajar Jiménez", ,A method to induce fuzzy automata using neural networks
+ok,BlaDelFlo-MethIndFuzzAutUsNeuNet, ,"A. Blanco, Miguel Delgado Calvo-Flores,  Maria del Carmen Pegalajar Jimï¿½nez", ,A method to induce fuzzy automata using neural networks
 ok,Art-ForAutTheToBraThe, ,Michael A Arbib, ,From automata theory to brain theory
 ok,MulPit-LogCalIdeImmNervAct, ,"WS McCulloch, W.H. Pitts", ,A logical Calculus of Ideas Immanent in Nervous Activity
 ok,Neu-SelReprAut, ,John von Neumann, ,The Theory of Self-Reproducing Automata
@@ -59,19 +59,19 @@ ok,MacSha-RefiAlgKnoBasNeuNet, ,"Richard Maclin, Jude W. Shavlik", ,Refining Alg
 ok,Zad-FuzzLangTheRElHumMachInt, ,L. A. Zadeh, ,Fuzzy languages and their relation to human and machine intelligence
 -- aditional reading from notes.text,, ,, ,
 already done,Paz-IntProbAut, ,Azaria Paz, ,Introduction to Probabilistic Automata
-already done,DooKre-NewDirFuzzAut, ," Mansoor Doostfatemeh, , Stefan C. Kremer", ,New directions in fuzzy automata
+already done,DooKre-NewDirFuzzAut, ,"ï¿½Mansoor Doostfatemeh, , Stefan C. Kremer", ,New directions in fuzzy automata
 ok,SebJoh-InvFuzzAutInvFuzzLang, ,"Pamy Sebastian, T. P. Johnson", ,Inverse fuzzy automata and inverse fuzzy languages
 ok,Sou-EntProbGra, ,Stephen Soule, ,Entropies of probabilistic grammars
 ok,Bis-PatRecMachLea, , Christopher M. Bishop, ,Pattern Recognition and Machine Learning
 ok,Tou-AppAutThe, ,Julius T. Tou ?, ,Applied Automata Theory
 ok,HinKwiNorPar-PriTooAutVerProbSys, ,Andrew HintonMarta KwiatkowskaGethin NormanDavid Parker, ,PRISM: A Tool for Automatic Verification of Probabilistic Systems
 ok,Asv-BibFuzzAutGraLang, ,"Asveld, Peter R.J. ", ,"A Bibliography on Fuzzy Automata, Grammars and Lanuages"
-ok,SnaKepAbrHas-AproxStriMatchFuzzAut, ,Václav SnášelAleš KeprtAjith AbrahamAboul Ella Hassanien, ,Approximate String Matching by Fuzzy Automata
-already done,AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr, ,J. J. AstrainJ. R. GaritagoitiaJ. R. Gonzalez De MendivilJ. VilladangosF. Fariña, ,Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience
+ok,SnaKepAbrHas-AproxStriMatchFuzzAut, ,Vï¿½clav Snï¿½elAleï¿½ KeprtAjith AbrahamAboul Ella Hassanien, ,Approximate String Matching by Fuzzy Automata
+already done,AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr, ,J. J. AstrainJ. R. GaritagoitiaJ. R. Gonzalez De MendivilJ. VilladangosF. Fariï¿½a, ,Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience
 ok,HopUl-IntrAutTheLangComp, ,"J.E. Hopcroft, J.D. Ullman", ,"Introduction to Automata Theory, Languages, and Computation"
 ok,ChuJiaTu-LatDEpForMod, ,"Shanbo Chu, Yong Jiang, Kewei Tu", ,Latent Dependency Forest Models
 already done,Asv-BibFuzzAutGraLang, ,"Asveld, Peter R.J. ", ,"A Bibliography on Fuzzy Automata, Grammars and Languages"
-already done,SnaKepAbrHas-AproxStriMatchFuzzAut, ,"V´aclav Sn´a?sel1, Ale?s Keprt, Ajith Abraham, and Aboul Ella Hassanien", ,Approximate String Matching by Fuzzy Automata
+already done,SnaKepAbrHas-AproxStriMatchFuzzAut, ,"Vï¿½aclav Snï¿½a?sel1, Ale?s Keprt, Ajith Abraham, and Aboul Ella Hassanien", ,Approximate String Matching by Fuzzy Automata
 ok,InuShoFauSch-RecImpStrGenFuzConSenGra, ,"M. Inui, W. Shoaff, L. Fausett, M. Schneider", ,The recognition of imperfect strings generated by fuzzy context sensitive grammars
 ok,ChoRav-MinDetFinAutVagFinStaIntFuzFinSta, ,A. CHOUBEY AND K. M. RAVI., ,MINIMIZATION OF DETERMINISTIC FINITE AUTOMATA WITH VAGUE (FINAL) STATES AND INTUITIONISTIC FUZZY (FINAL) STATES
 ok,Sch-TolFuzKeySimSea, ,H.J. SCHEK, ,TOLERATING FUZZINESS IN KEYWORDS BY SIMILARITY SEARCHES
@@ -94,7 +94,7 @@ not found,MirMalChe-FuzMatMed, ,John N Mordeson; D S Malik; Shiquan Cheng, ,Fuzz
 not found,Sag-ApVarFuzSliModConIndMotDri, ,Ali Saghafinia, ,Applications of various fuzzy sliding mode controllers in induction motor drives
 ok,For-FuzCelAutConjNormForm, ,David M Forrester, ,Fuzzy cellular automata in conjunctive normal form
 ok,IgnCirBog-DetFuzAutMemValComResLat, ,"Jelena Ignjatovi?, Miroslav ?iri?, Stojan Bogdanovi?", ,Determinization of fuzzy automata with membership values in complete residuated lattices
-ok,CirIgnDamBas-BisFuzAut, ,"Miroslav ?iri?, Jelena Ignjatovi?, Nada Damljanovi?, Milan Baši?", ,Bisimulations for fuzzy automata
+ok,CirIgnDamBas-BisFuzAut, ,"Miroslav ?iri?, Jelena Ignjatovi?, Nada Damljanovi?, Milan Baï¿½i?", ,Bisimulations for fuzzy automata
 ok,JiaQin-FuzGraTheBasLat, ,"Jianhua Jin, Qingguo Li", ,Fuzzy grammar theory based on lattices
 not found,Xxx-SocConLeaTheOtTheMod, ,????, ,Social Cognitive Learning Theory and other Theories and Models
 ok,Zad-FuzzAlg, ,L. A. Zadeh, ,Fuzzy algorithms
@@ -103,10 +103,10 @@ already done,Tou-AppAutThe, ,Julius T. Tou (Eds.), ,Applied Automata Theory
 ok,KhoNer-AutThe-Appls, ,"Bakhadyr Khoussainov, Anil Nerode ", ,Automata Theory and its Applications
 ok,Gop-ComEngAppAuTheLo, ,Ganesh Gopalakrishnan, ,Computation Engineering: Applied Automata Theory and Logic
 already done,HopUl-IntrAutTheLangComp, ," Hopcroft, J. E., & Ullman, J. D.", ,"Introduction to Automata Theory, Languages, and Computation"
-ok,MosTie-AppModLogLing, ," Moss, L. S., & Tiède, H.-J.", ,Applications of modal logic in linguistics
+ok,MosTie-AppModLogLing, ," Moss, L. S., & Tiï¿½de, H.-J.", ,Applications of modal logic in linguistics
 ok,Sug-FunAnaChemSysLogCircEq+, ,Motoyosi Sugita, ,Functional analysis of chemical systems in vivo using a logical circuit equivalent: V. Molecular biological interpretation of the self-reproducing automata theory and chemico-physical interpretation of information in biological systems
 ok,Tho-ApplAuthThe, ,Prof. Dr. Wolfgang Thomas, ,Applied Automata Theory
-ok,Cyr+-ManMachInt1, ,"Krzysztof A. Cyran, Stanis?aw Kozielski, James F. Peters, Urszula Stanczyk, ´ Alicja Wakulicz-Deja", ,Man-Machine Interactions 1
+ok,Cyr+-ManMachInt1, ,"Krzysztof A. Cyran, Stanis?aw Kozielski, James F. Peters, Urszula Stanczyk, ï¿½ Alicja Wakulicz-Deja", ,Man-Machine Interactions 1
 ok,Rav-SomeInvFuzzAut, ,RAVI K. M., ,SOME INVESTIGATIONS IN FUZZY AUTOMATA
 ok,Rav-SimReaSomNovActFilt, ,RAVI K. M., ,SIMULATION AND REALIZATION OF SOME NOVEL ACTIVE FILTERS
 ok,TorrNie-FuzLogMedBio, ,Angela Torres and Juan J. Nieto, ,Fuzzy Logic in Medicine and Bioinformatics
@@ -116,16 +116,16 @@ ok,Jan-WeaBisFuzAut, ,"Jan?i?, Ivana", ,Weak bisimulations for fuzzy automata
 ok,Dub-FuzSetSysTheApp, ,Didier J. Dubois, ,Fuzzy Sets and Systems: Theory and Applications
 -- next iteration,, ,, ,
 --,-- AndAbdAsm-ApprPattMatcFuzzLog, ,, ,
-not found,And-SetCloCommSubPro, ,G. Andrejková, ,The set closest common subsequence problem
-ok,And-SimTwoStriFuzSet, ,G. Andrejková, ,The similarity of two strings of fuzzy sets
-already done,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. J. Astrain, J. R. Gonzalez de Mendivil, J. R. Garitagoitia", ,Fuzzy automata with ?–moves compute fuzzy measures between strings
+not found,And-SetCloCommSubPro, ,G. Andrejkovï¿½, ,The set closest common subsequence problem
+ok,And-SimTwoStriFuzSet, ,G. Andrejkovï¿½, ,The similarity of two strings of fuzzy sets
+already done,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. J. Astrain, J. R. Gonzalez de Mendivil, J. R. Garitagoitia", ,Fuzzy automata with ?ï¿½moves compute fuzzy measures between strings
 not found,RamGir-FuzAutStrComp, ,"V. Ramaswamy, H. A. Girijamma", ,Fuzzy Automata for String Comparison
 --,-- AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr, ,, ,
 not found,SanKru-TiWaStrEdMacr+, ,"Sankoff, Kruskal", ,"Time Warps, String edits and Macromolecules: The theory an Practise of sequence Comparasion"
 ok,XuKrySue-MetComMultClaTheAppHanRec, ,"Xu, Kryzak, Suen", ,Methods for combining Multiple Classifiers and Their Applications to Handwritting Recognition
 already done,- yet done, ,"Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F.", ,Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols
 not found,ReiMenGar-ImpChaRecSysBasNeuNet+, ,"Reina, Mendevil, Gargittoria", ,Improved Character Recognition System based on a Neural Network Incorporating the context via Fuzzy automata
-not found,NegRal-AppFuzSetSysAna, ,"Negoita, Ralescu", ,Aplications of fuzzy sets to systém analyzis
+not found,NegRal-AppFuzSetSysAna, ,"Negoita, Ralescu", ,Aplications of fuzzy sets to systï¿½m analyzis
 ok,Ast+-ImpStrMaExpUsDefFuzAut, ,"Astrain, Garitagoita, Villadangos, Farina, Cordoba, Mendevil", ,An Imperfect String matching experience using deformed fuzzy automata
 --,-- Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,, ,
 ok,San-MaxAut, ,E.S. Santos, ,Maximin automata
@@ -133,7 +133,7 @@ ok,KliYu-FuzSetFuzLogTheApp, ,"G. Klir, B. Yuan", ,Fuzzy Sets and Fuzzy Logic: T
 already done,OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet, ,"Ch. W. Omlin, K. K. Thornber, C. L. Giles", ,Fuzzy Finite-State Automata Can Be Deterministically Encoded Into Recurent Neural Networks
 already done,HopUl-IntrAutTheLangComp, ,"J.E. Hopcroft, J.D. Ullman", ,"Introduction to Automata Theory, Languages, and Computation"
 already done,Gar+-DefFuzAutCorImpStrFuzSym, ,"Garitagoitia, J R; de Mendivil, J R G; Echanobe, J; Astrain, J J; Farina, F.", ,Deformed fuzzy automata for correcting imperfect strings of fuzzy symbols
-ok,Ast+-MobManCelComSysUsFuzSys, ,"J.J. Astrain, J. Villadangos, M. Castillo, J.R. Garitagoitia, F. Fariñ", ,Mobility management in cellular communication systems using fuzzy systems
+ok,Ast+-MobManCelComSysUsFuzSys, ,"J.J. Astrain, J. Villadangos, M. Castillo, J.R. Garitagoitia, F. Fariï¿½", ,Mobility management in cellular communication systems using fuzzy systems
 ok,MizToyTan-SomConFuzAut, ,"M. Mizumoto, J. Toyoda, K. Tanak", ,Some considerations on fuzzy automata
 ok,ThoMar-DetAccRegFuzLang, ,"M.G. Thomason, P.N. Marinos", ,Deterministic acceptors of regular fuzzy languages
 --,-- BaiTri-PattRecUsiTemFuzzAut, ,, ,
@@ -145,11 +145,11 @@ already done,WeeFu-FormFuzAutAppModLeaSys, ,"W.G. Wee, K.S. Fu", ,A formulation 
 already done,VirZim-FuzzAutFuzzRel, ,"Jernej Virant, Niko Zimic", ,Fuzzy automata with fuzzy relief
 ok,SteAdl-CliMonFuzAut, ,"F. Steimann, K.P. Adlassnig", ,Clinical monitoring with fuzzy automata
 ok,Rey-IntFuzStaAut, ,L. Reyneri, ,An introduction to fuzzy state automata
-already done,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. Astrain, J.R. González de Mendívil, J.R. Garitagoitia", ,Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings
+already done,Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs, ,"J. Astrain, J.R. Gonzï¿½lez de Mendï¿½vil, J.R. Garitagoitia", ,Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings
 ok,KemAda-SeqPatRecEmpRecFuzSys, ,"R. Kempf, J. Adamy", ,Sequential pattern recognition employing recurrent fuzzy systems
 already done,Rig-FauDetIsoBasFuzzAut, ,Gerasimos G. Rigatos, ,Fault detection and isolation based on fuzzy automata
 not found,TumBelRop-SynMetAutDiag+, ,"M.B. Tumer, L.A. Belfore, K.M. Ropella", ,A syntactic methodology for automatic diagnosis by analysis of continuous time measurements using hierarchical signal representation
-already done,DooKre-NewDirFuzzAut, ," Mansoor Doostfatemeh, , Stefan C. Kremer", ,New directions in fuzzy automata
+already done,DooKre-NewDirFuzzAut, ,"ï¿½Mansoor Doostfatemeh, , Stefan C. Kremer", ,New directions in fuzzy automata
 ok,MorGar+-DicLigIndMetSys, ,Juan Moreno-Garcia;Luis Jimenez Linares; Jose Jesus Castro-Schez; Luis Rodriguez Benitez, ,A direct linguistic induction method for systems
 ok,Rus-AppClu, ,E.H. Ruspini, ,A new approach to clustering
 --,-- Bel-DetAndFuzzAut, ,, ,
@@ -181,7 +181,7 @@ ok,WufQin-FuzAutSysApp, ,"Wuf, E. Qing", ,Fuzzy automata system with application
 --,-- DooKre-NewDirFuzzAut, ,, ,
 ok,Arb-AutTheBraThe, ,M.A. Arbib, ,From automata theory to brain theory
 ok,Ash-DesBra, ,W.R. Ashby, ,Design for a brain
-ok,Bur-LogBioAutSomHistRef, ,A.W. Burks, ,"Logic, biology and automata—some historical reflections"
+ok,Bur-LogBioAutSomHistRef, ,A.W. Burks, ,"Logic, biology and automataï¿½some historical reflections"
 ok,MccPit-LogCalIdeImmNerAct, ,"W.S. McCulloch, W. Pitts", ,A logical calculus of the ideas immanent in nervous activity
 ok,Min-ComFinInfMach, ,M.L. Minsky, ,Computation: Finite and Infinite Machines
 ok,AshWitWen-TraFinStaImpPrcPriDes, ,"D. Ashlock, A. Wittrock, T. Wen", ,Training finite state machines to improve PCR primer design
@@ -211,9 +211,9 @@ already done,MorMal-FuzzyAutAndLang, ,"J. Mordeson, D. Malik", ,Fuzzy Automata a
 ok,Kle-RepEveNervNetFinAut, ,S.C. Kleene, ,Representation of events in nerve nets and finite automata
 ok,Eil-AutLangMach, ,S. Eilenberg, ,"Automata, Languages, and Machines"
 not found,InaFuk-DesFuzMeaContFreLan, ,"Y. Inagaki, T. Fukumura", ,On the description of fuzzy meaning of context-free language
-ok,GecSte-TreeAut, ,"F. Gécseg, M. Steinby", ,Tree Automata
+ok,GecSte-TreeAut, ,"F. Gï¿½cseg, M. Steinby", ,Tree Automata
 ok,BerReu-RecForPowSerTre, ,"J. Berstel, C. Reutenauer", ,Recognizable formal power series on trees
-not found,EsiKui-ForTreSer, ,"Z. Ésik, W. Kuich", ,Formal tree series
+not found,EsiKui-ForTreSer, ,"Z. ï¿½sik, W. Kuich", ,Formal tree series
 --,-- Fu-SynMethPattRec, ,, ,
 ok,NasHon-FuzEveReaProbAut, ,M. Nasu and N. Honda, ,Fuzzy events realized by probabilistic automata
 --,-- GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc, ,, ,
@@ -222,7 +222,7 @@ already done,- yet done, ,"E.T. Lee, L.A. Zadeh", ,Note on fuzzy languages
 already done,ThoMar-DetAccRegFuzLang, ,"M.G. Thomason, P.N. Marinos", ,Deterministic acceptors of regular fuzzy languages
 already done,San-MaxAut, ,E.S. Santos, ,Maximin automata
 already done,WeeFu-FormFuzAutAppModLeaSys, ,"W.G. Wee, K.S. Fu", ,A formulation of fuzzy automata and its application as a model of learning systems
-ok,Bel-DetFuzAut, ,R. B?lohlávek, ,Determinism and fuzzy automata
+ok,Bel-DetFuzAut, ,R. B?lohlï¿½vek, ,Determinism and fuzzy automata
 --,-- HuaHuWanCheTas-AdaVehPathPlanSys, ,, ,
 --,-- Hua-SyntPattRecSeisOilExp, ,, ,
 already done,Lee-FuzTreAutSynPatRec, ,E. T. Lee, ,Fuzzy tree automata and syntactic pattern recognition
@@ -233,12 +233,12 @@ ok,Com+-TreeAutTecApp, ,"Comon H.,Dauchet M.,Gilleron R.,Jacquemard F., Lugiez D
 ok,Qin+-StaFusFuzAutAppTarTra, ,"Qing E. W. , Wang T., Huang Y. X. , Li J. S.", ,State fusion of fuzzy automata with application on target tracking
 not found,QinCui-AppFuzzAutFuzzSign, ,"Qing E. W., Cui G.", ,Application of Fuzzy Automata to Fuzzy Signal
 already done,RamGir-ConvFinAutFuzzAutStrComp, ,"Ramaswami V. , Girijamma H", ,Conversion of Finite Automata to Fuzzy Automata for String Comparison
-already done,WeeFu-FormFuzAutAppModLeaSys, ,"Wee W.G, Fu K.S.", ,A formulation of fuzzy automata and its application as a model of learning systém
-already done,EsiLiu-FuzzTreeAut, ,"Zoltán Ésik, Guangwu Liu", ,Fuzzy tree automata
+already done,WeeFu-FormFuzAutAppModLeaSys, ,"Wee W.G, Fu K.S.", ,A formulation of fuzzy automata and its application as a model of learning systï¿½m
+already done,EsiLiu-FuzzTreeAut, ,"Zoltï¿½n ï¿½sik, Guangwu Liu", ,Fuzzy tree automata
 --,-- Kov-ReasFuzzAutInUsrAdpSyss, ,, ,
 --,-- LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon, ,, ,
 already done,San-MaxAut, ,E.S. Santos, ,Maximin automata
-ok,San-RedMaxMach, ,E.S. Santos, ,On reduction of max–min machines
+ok,San-RedMaxMach, ,E.S. Santos, ,On reduction of maxï¿½min machines
 ok,San-FuzAutLang, ,E.S. Santos, ,Fuzzy automata and languages
 not found,San-RegFuzExp, ,E.S. Santos, ,Regular fuzzy expressions
 not found,Wee-GenAdaAlgAppFuzSetCon+, ,W.G. Wee, ,On generalizations of adaptive algorithm and application of the fuzzy sets concept to pattern classification
@@ -258,7 +258,7 @@ ok,BleCec+-ModUrbDynCellAut, ,"Blecic, I., Cecchini, A., Prastacos, P., Trunfio,
 not found,KirLie-BasTooFuzMod, ,"Kirschfink, H., Lieven, K.", ,Basic Tools for Fuzzy Modeling
 ok,Dra-CouFuzSetTheGisBaCelAutLanUseChaMod, ,"Dragicevic, S.", ,Coupling Fuzzy Sets Theory and GIS-based Cellular Automata for Land Use Change Modeling
 ok,LiuPhi-DevCelAutModUrbGroIncFuzSetApp, ,"Liu, Y., Phinn, S.R.", ,Developing a Cellular Automaton Model of Urban Growth Incorporating Fuzzy Set Approaches.
-already done,ManHatPra-FuzCelAutBasSheModUrGro+, ,"Mantelas, L., Hatzichristos, T., Prastacos, P", ,A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth – A Pilot Application in Mesogia Area
+already done,ManHatPra-FuzCelAutBasSheModUrGro+, ,"Mantelas, L., Hatzichristos, T., Prastacos, P", ,A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth ï¿½ A Pilot Application in Mesogia Area
 ok,ManHatPra-ModUrbGroUsFuzCelAut, ,"Mantelas, L., Hatzichristos, T., Prastacos, P", ,Modeling Urban Growth using Fuzzy Cellular Automata
 ok,ClaHopHay-SelModCelAutModHistUrbSanFraBayAre, ,"Clarke, K.C., Hoppen, S., Gaydos, L.", ,A Self-Modifying Cellular Automaton Model of Historical Urbanization in the San Francisco Bay Area
 --,-- MogZadAme-NewDirInFuzzTreeAut, ,, ,
@@ -304,7 +304,7 @@ ok,Har-MulObjDecMakUncFuzLogMeth, ,T. L. Hardy, ,Multi-objective decision-making
 already done,KicLem-AppFuzConWarWatPla, ,W. J. M. Kickert and H. van Nauta Lemk, ,Application of a fuzzy controller in a warm water plant
 ok,Lee-FuzLocContSysFuzLogCont, ,"C. Lee,", ,Fuzzy logic in control systems: Fuzzy logic controller
 not found,PapMam-FuzLofConTraJunc, ,C. Pappis and E. Mamdani, ,A fuzzy logic controller for a traffic junction
-ok,YanKal-DesMachUsExpSysFuzLogApp, ,X. Yang and G. Kalambur, ,Design for machining using expert systém and fuzzy logic approach
+ok,YanKal-DesMachUsExpSysFuzLogApp, ,X. Yang and G. Kalambur, ,Design for machining using expert systï¿½m and fuzzy logic approach
 not found,Wan-AdaFuzzSysConDesStaAna, ,L.-X. Wang, ,Adaptive Fuzzy Systems and Control: Design and Stability Analysis
 ok,Cyb-AppBypSigmFun, ,G. Cybenko, ,Approximation by superpositions of a sigmoidal function
 ok,CleeSchr-FinStaAutSimRecNet, ,"A. Cleeremans, D. Servan-Schreiber, and J. McClelland", ,Finite state automata and simple recurrent networks
@@ -317,9 +317,9 @@ ok,OmlGil-ConDetFinStaAutRecNeuNet, ,C. Omlin and C. Giles, ,Constructing determ
 ok,OmlFil-StaEncLarFinStaAutRecNeuNetSigDisc, ,"Omlin, Gilles", ,Stable encoding of large finite-state automata in recurrent neural networks with sigmoid discriminants
 ok,Pol-IndDynRec, ,J. Pollack, ,The induction of dynamical recognizers
 ok,Rab-ProbAut, ,M. Rabin, ,Probabilistic automata
-ok,TinHomGil-FinStaMAchRecNeuNet+, ,"P. Tino, B. Home, and C. L. Giles", ,Finite state machines and recurrent neural networks—Automata and dynamical systems approaches
+ok,TinHomGil-FinStaMAchRecNeuNet+, ,"P. Tino, B. Home, and C. L. Giles", ,Finite state machines and recurrent neural networksï¿½Automata and dynamical systems approaches
 ok,TinSaj-LeaExIniMeaMachModNeuNetMod, ,P. Tino and J. Sajda, ,Learning and extracting initial mealy machines with a modular neural network model
-ok,UnaKha-FuzDFinStaMachImpBasNeuFuzSys, ,F. Unal and E. Khan, ,A fuzzy finite state machine implementation based on a neural fuzzy systém
+ok,UnaKha-FuzDFinStaMachImpBasNeuFuzSys, ,F. Unal and E. Khan, ,A fuzzy finite state machine implementation based on a neural fuzzy systï¿½m
 ok,WatKuh-IndFinStaLangUsiSecOrdRecNet, ,R. Watrous and G. Kuhn, ,Induction of finite-state languages using second-order recurrent networks
 ok,ZenGooSym-LeaFinStaMachSelCluRecNet, ,"Z. Zeng, R. Goodman, and P. Smyth", ,Learning finite state machines with self-clustering recurrent networks
 already done,MenLip-FusSpecFinStaMach, ,S. Mensch and H. Lipp, ,Fuzzy specification of finite state machines
@@ -327,7 +327,7 @@ already done,PatPal-FuzGraSynRecSkeMatXra, ,A. Pathak and S. Pal, ,Fuzzy grammar
 already done,Sen-FuzComGraIntIntDes, ,"H. Senay,", ,Fuzzy command grammars for intelligent interface design
 already done,GaiKoh-LogAut, ,B. Gaines and L. Kohout, ,The logic of automata
 already done,WeeFu-FormFuzAutAppModLeaSys, ,W. Wee and K. Fu, ,A formulation of fuzzy automata and its applications as a model of learning systems
-already done,UnaKha-FuzDFinStaMachImpBasNeuFuzSys, ,F. Unal and E. Khan, ,A fuzzy finite state machine implementation based on a neural fuzzy systém
+already done,UnaKha-FuzDFinStaMachImpBasNeuFuzSys, ,F. Unal and E. Khan, ,A fuzzy finite state machine implementation based on a neural fuzzy systï¿½m
 ok,GraPat-SynAnaFuzLogFinStaMacMod, ,J. Grantner and M. Patyra, ,Synthesis and analysis of fuzzy logic finite state machine models
 not found,LeeLee-FuzNeuNet, ,S. Lee and E. Lee, ,Fuzzy neural networks
 --,-- PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro, ,, ,
@@ -386,7 +386,7 @@ ok,IliYu-FollAut, ,"L. Ilie, S. Yu", ,Follow automata
 ok,LiPed-MinLatFinAutAppDecLatLang, ,"Y.M. Li, W. Pedrycz", ,Minimization of lattice finite automata and its application to the decomposition of lattice languages
 ok,LiLiLi-RelAmoSevTypFuzAut, ,"Z. Li, P. Li, Y.M. Li", ,The relationships among several types of fuzzy automata
 ok,Pee-FinFuzzAccRegFuzGraSyntPattRec, ,K. Peeva, ,"Finite L-fuzzy acceptors, regular L-fuzzy grammars and syntactic pattern recognition"
-ok,PeeZah-ComBehFinFuzMac+, ,"K. Peeva, Z. Zahariev", ,Computing behavior of finite fuzzy machines—algorithm and its application to reduction and minimization
+ok,PeeZah-ComBehFinFuzMac+, ,"K. Peeva, Z. Zahariev", ,Computing behavior of finite fuzzy machinesï¿½algorithm and its application to reduction and minimization
 ok,Qiu-ChaFuzFinAut, ,D.W. Qiu, ,Characterizations of fuzzy finite automata
 --,--- SupBisAkh-AppIntFuzzSetMedDiag, ,, ,
 not found,San-SolComFuzRelEqu+, ,E. Sanchez, ,"Solutions in composite fuzzy relation equation. Application to Medical diagnosis in Brouwerian Logic, in: M.M. Gupta"
@@ -400,8 +400,8 @@ already done,BlaDelPeg-FuzzAutIndUsNeuNet, ,"Blanco A. , Delgado M., Pegalajar M
 already done,CaoEza-NondFuzzAut, ,"Yongzhi Cao, Ezawa", ,Nondeterministic fuzzy automata
 already done,CirIgnIvaDam-ComGreSimBisBetFuzAut, ,"?iri?, Miroslav; Ignjatovi?, Jelena; Jan?i?, Ivana; Damljanovi?, Nada", ,Computation of the greatest simulations and bisimulations between fuzzy automata
 already done,CirIgnIvaDam-WeaBisFuzAut,,"Jan?i?, Ivana",,Weak bisimulations for fuzzy automata
-already done,CirIgnDamBas-BisFuzAut,,"Miroslav ?iri?, Jelena Ignjatovi?, Nada Damljanovi?, Milan Baši?",,Bisimulations for fuzzy automata
-already done,SnaKepAbrHas-AproxStriMatchFuzzAut,,"Václav Snášel, Aleš Keprt, Ajith Abraham, and Aboul Ella Hassanien",,Approximate String Matching by Fuzzy Automata
+already done,CirIgnDamBas-BisFuzAut,,"Miroslav ?iri?, Jelena Ignjatovi?, Nada Damljanovi?, Milan Baï¿½i?",,Bisimulations for fuzzy automata
+already done,SnaKepAbrHas-AproxStriMatchFuzzAut,,"Vï¿½clav Snï¿½el, Aleï¿½ Keprt, Ajith Abraham, and Aboul Ella Hassanien",,Approximate String Matching by Fuzzy Automata
 already done,For-FuzCelAutConjNormForm, ,David Michael Forrester, ,Fuzzy Cellular Automata in Conjunctive Normal Form
 already done,HinKwiNorPar-PriTooAutVerProbSys, ,"Andrew Hinton, Marta Kwiatkowska, Gethin Norman, and David Parker", ,PRISM: A Tool for Automatic Verification of Probabilistic Systems
 already done,HopUl-IntrAutTheLangComp,,"J.E. Hopcroft, J.D. Ullman",,"Introduction to Automata Theory, Languages, and Computation"
@@ -409,7 +409,7 @@ already done,ChoRav-MinDetFinAutVagFinStaIntFuzFinSta,,A. CHOUBEY AND K. M. RAVI
 already done,Sei-FuzzSysGenFuzSetTheItIniAppDev197,,Rudolf Seising,,The Fuzzification of systems : the genesis of fuzzy set theory and its initial applications - developments up to the 1970s
 already done,Sou-EntProbGra,,Stephen Soule,,Entropies of probabilistic grammars
 already done,Rav-SomeInvFuzzAut,,RAVI K. M.,,SOME INVESTIGATIONS IN FUZZY AUTOMATA
-already done,SnaKepAbrHas-AproxStriMatchFuzzAut, ,"Václav Snášel, Aleš Keprt, Ajith Abraham, and Aboul Ella Hassanien", ,Approximate String Matching by Fuzzy Automata
+already done,SnaKepAbrHas-AproxStriMatchFuzzAut, ,"Vï¿½clav Snï¿½el, Aleï¿½ Keprt, Ajith Abraham, and Aboul Ella Hassanien", ,Approximate String Matching by Fuzzy Automata
 already done,SebJoh-InvFuzzAutInvFuzzLang,,"Pamy Sebastian, T. P. Johnson",,Inverse fuzzy automata and inverse fuzzy languages
 not found,ShoFauShi-RecImpStrGenFuzzConFreeGra, ,"Shoaff, Fausett, Schneider", ,The recognition of imperfect strings generated by fuzzy context free grammars
 already done,Sch-TolFuzKeySimSea, ,H.J. SCHEK, ,TOLERATING FUZZINESS IN KEYWORDS BY SIMILARITY SEARCHES
@@ -425,24 +425,24 @@ already done,XuKelPopBond-AppFuzzLogBio, ,Dong Xu; James M Keller; Mihail Popesc
 already done,Leo-FuzzTheSysTechApp, ,Cornelius T Leondes, ,Fuzzy theory systems: Techniques and Applications
 already done,Paz-IntProbAut, ,Azaria Paz, ,Introduction to Probabilistic Automata
 -- aditional cleanup,, ,, ,
-ok,BraKuStra-DecProBisInfStaProSys, ,"Brázdil, Ku?era,Stražovský", ,Deciding Probabilistic Bisimilarity over Infinite-State Probabilistic Systems
+ok,BraKuStra-DecProBisInfStaProSys, ,"Brï¿½zdil, Ku?era,Straï¿½ovskï¿½", ,Deciding Probabilistic Bisimilarity over Infinite-State Probabilistic Systems
 ok,Yin-ForModComWord, ,Mingsheng Ying, ,A Formal Model of Computing With Words
 already done,Bez+-FuzModAlgPatRecImProc, ,"James C. Bezdek,James Keller,Raghu Krisnapuram,Nikhil Pal", ,Fuzzy Models and Algorithms for Pattern Recognition and Image Processing
 ok,Shu-OnCoQuaFacAnaBasFuzMat, ,Ma Shuqin , ,Online Course Quality Factor Analysis Based on Fuzzy Mathematics 
 ok,TaiHaLin-FatUncGuiFuzMeaSegMedIm, ,"Ahmed Al-Taie, Horst K. Hahn, and Lars Linsen", ,Fast Uncertainty-Guided Fuzzy C-Means Segmentation of Medical Images
-ok,JahHau-ComVisAppGuiStuPRac, ,"Bernd Jähne,Horst Haussecker", ,Computer Vision and Applications: A Guide for Students and Practitioners
+ok,JahHau-ComVisAppGuiStuPRac, ,"Bernd Jï¿½hne,Horst Haussecker", ,Computer Vision and Applications: A Guide for Students and Practitioners
 ok,SanAmi-PatRecClaModApp, ,"Sankar K. Pal,Pal. Amita", ,Pattern Recognition: From Classical to Modern Approaches
-ok,GruBra-ManMachInt4, ,Aleksandra Gruca • Agnieszka Brachman, ,Man–Machine Interactions 4
-ok,GruCza-ManMachInt3, ,"Aleksandra Gruca, Tadeusz Czachórski", ,Man–Machine Interactions 3
-ok,CzaKozSta-ManMachInt2, ,"Tadeusz Czachórski, Stanis?aw Kozielski, and Urszula Stanczyk", ,Man–Machine Interactions 2
+ok,GruBra-ManMachInt4, ,Aleksandra Gruca ï¿½ Agnieszka Brachman, ,Manï¿½Machine Interactions 4
+ok,GruCza-ManMachInt3, ,"Aleksandra Gruca, Tadeusz Czachï¿½rski", ,Manï¿½Machine Interactions 3
+ok,CzaKozSta-ManMachInt2, ,"Tadeusz Czachï¿½rski, Stanis?aw Kozielski, and Urszula Stanczyk", ,Manï¿½Machine Interactions 2
 ok,PatPal-FuzGraSynRecSkeMatXra, ,"Pathak, A.; Pal, S.K.", ,Fuzzy Grammars in Syntactic Recognition of Skeletal Maturity from X-Rays
 already done,WuPanHan-FuzzAutSysAppTarRecBasImaProc, ,Qing-E Wu; Xue-Min Pang; Zhen-Yu Han, ,Fuzzy automata system with application to target recognition based on image processing
 already done,MorGar+-DicLigIndMetSys, ,Juan Moreno-Garcia;Luis Jimenez Linares; Jose Jesus Castro-Schez; Luis Rodriguez Benitez, ,A direct linguistic induction method for systems
-ok,ZhuGeoShiChe-OffLineSysRecFreWriZip, ,Xuefang Zhu ; C. Geoger ; Qingyun Shi ; Mingde Cheng, ,An off-line system for recognition of free written zipcodes
-already done,Bel-DetFuzAut, ,R. B?lohlávek, ,Determinism and fuzzy automata
+ok,ZhuGeoShiChe-OffLineSysRecFreWriZip, ,Xuefang Zhuï¿½;ï¿½C. Geogerï¿½;ï¿½Qingyun Shiï¿½;ï¿½Mingde Cheng, ,An off-line system for recognition of free written zipcodes
+already done,Bel-DetFuzAut, ,R. B?lohlï¿½vek, ,Determinism and fuzzy automata
 already done,InuShoFauSch-RecImpStrGenFuzConSenGra, ,"M. Inui, W. Shoaff, L. Fausett, M. Schneider", ,The recognition of imperfect strings generated by fuzzy context sensitive grammars
 ok,San-ReaFuzLanProMaxMaxAut, ,Eugene S. Santos,,"Realizations of fuzzy languages by probabilistic, max-product, and maximin automata"
-ok,KocCam-FuzLogConIntElePowSysLoaFreCon, ,?lhan Kocaarslan; Ertu?rul Çam, ,Fuzzy logic controller in interconnected electrical power systems for load-frequency control
+ok,KocCam-FuzLogConIntElePowSysLoaFreCon, ,?lhan Kocaarslan; Ertu?rul ï¿½am, ,Fuzzy logic controller in interconnected electrical power systems for load-frequency control
 ok,ChoTen-FuzLogConTraJunSig, ,"Chih-Hsun Chou *, Jen-Chao Teng", ,A fuzzy logic controller for traffic junction signals
 ok,GaoXu-UniAppSupSigFun, ,B. Gao; Y. Xu, ,Univariant Approximation by Superpositions of a Sigmoidal Function
 ok,HuaFu-StoSynAnaProGraSynPatRec, ,T. Huang; K.S. Fu, ,Stochastic syntactic analysis for programmed grammars and syntactic pattern recognition
@@ -455,7 +455,7 @@ ok,Doo-SigOutMapFuzAut,,"Doostfatemeth, Kremer",,The significance of output mapp
 ok,ChaRam-IntFuzPushAutIntFuzConFreLan, ,"Chatrapathy. K, and V. Ramaswamy", ,Intuitionistic Fuzzy Pushdown Automata and Intuitionistic Fuzzy Context-Free Languages 
 ok,AlAhHep+-ModUrbGroDynUsCelAutGIS, ,"Khalid Al-Ahmadia, Alison Heppenstall, Linda Seeb and Jim Hoggb", ,Modeling Urban Growth Dynamics using Cellular Automata and GIS 
 ok,MesSol-AutSemCat, ,"Jose Meseguer, Ignacio Sols", ,AUTOMATA IN SEMIMODULE CATEGORIES
-ok,Asv-ToeRobParFuzConLanRec,,PETER R. J. ASVELD,,TOWARDS ROBUSTNESS IN PARSING — FUZZIFYING CONTEXT-FREE LANGUAGE RECOGNITION
+ok,Asv-ToeRobParFuzConLanRec,,PETER R. J. ASVELD,,TOWARDS ROBUSTNESS IN PARSING ï¿½ FUZZIFYING CONTEXT-FREE LANGUAGE RECOGNITION
 not found,GooHarLee-ImpAppAut1, ,"Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen", ,Implementation and Application of Automata 1
 not found,GooHarLee-ImpAppAut2,,"Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen",,Implementation and Application of Automata 2
 not found,GooHarLee-ImpAppAut3,,"Gerhard Goos, Juris Hartmanis, and Jan van Leeuwen",,Implementation and Application of Automata 3
@@ -484,7 +484,7 @@ ok,San-MaxProdMac,,E. S. Santos,,Max-product machines
 ok,San-GenForSeqMac,,E. S. Santos,,General Formulation of Sequential Machines
 ok,Miz-FuzAutFuzGra,,"MASAHABU MIZUMOTO,",,FUZZI AUTOMATA AND FUZZY GRAMMARS
 ok,AfoGol-MinUniFreDecRegLan,,Sergey Afonin and Denis Golomazov,,Minimal Union-free Decompositions of Regular Languages
-ok,CaoChe-FuzPetNetModComWord,,"Yongzhi Cao, Guoqing Chen",,A Fuzzy Petri Nets Model for Computing With Words
+ok,CaoChe-FuzPetNetModComWord,,"Yongzhi Cao,ï¿½Guoqing Chen",,A Fuzzy Petri Nets Model for Computing With Words
 ok,MarMeySol-HybMetGasDifModFuzCelAutImSha,,"F. Marchini, M. Meybodi, and V. Soleymani",,A Hybrid Method based on Gas Diffusion Model and Fuzzy Cellular Automata for Image Sharpening.
 not found,ZhaLiZha-EdgDetImaBasFuzCelAut,,"K. Zhang, Z. Li, and X. Zhao",,Edge detection of images based on fuzzy cellular automata
 -- additional resources (fuzzy cellular automata),, ,,,
@@ -500,22 +500,24 @@ ok,YehLi-SimLanDevIntCelAutMulCriEv,,Anthony Gar-On Yeh; Xia Li,,Simulation of l
 ok,LaiDraSch-IntMulEvCelAutMetLanSimMod,,"Terence Lai , Suzana Dragi?evi? & Margaret Schmidt",,Integration of multicriteria evaluation and cellular automata methods for landslide simulation modelling
 ok,TofMar-CelAuMach+,,"Tommaso Toffoli, Norman Margolus",,Cellular Automata Machines: A New Environment for Modeling
 ok,Wol-CelAut,,Wolfram,,Cellular Automata
-ok,MraZimLapBaj-FuzCelAut+,, M. Mraz ; N. Zimic ; I. Lapanja ; I. Bajec,,Fuzzy cellular automata: from theory to applications
+ok,MraZimLapBaj-FuzCelAut+,,ï¿½M. Mrazï¿½;ï¿½N. Zimicï¿½;ï¿½I. Lapanjaï¿½;ï¿½I. Bajec,,Fuzzy cellular automata: from theory to applications
 not found,Gut-CelAut-TheExp,,Howard Gutowitz,,Cellular Automata: Theory and Experiment
 ok,GhoEda-CombAprEdgDet+,,"Adeleh jafar gholibeik, M.A. Edalatirad",,A Combined Approach for Edge Detection in Images with Gaussian and Salt-And-Pepper Noises Using Fuzzy Logic and Traditional Sobel
 ok,Pla-FuzCelModTrafDatFus,,Bart?omiej P?ACZEK,,FUZZY CELLULAR MODEL FOR TRAFFIC DATA FUSION 
 ok,Wol-CelAutModeComp,,Wolfram,,Cellular Automata as models of complexity
-ok,DiwPatGup-CelAutBasEdDetBraTum,,Manoj Diwakar ;  Pawan Kumar Patel ;  Kunal Gupta, ,Cellular automata based edge-detection for brain tumor
+ok,DiwPatGup-CelAutBasEdDetBraTum,,Manoj Diwakarï¿½;ï¿½ï¿½Pawan Kumar Patelï¿½;ï¿½ï¿½Kunal Gupta, ,Cellular automata based edge-detection for brain tumor
 ok,MofSadRezMey-CelEdDetComCelAuCelLeaAu,,"Mohammad Hasanzadeh Mofrad, Sana Sadeghi, Alireza Rezvanian, Mohammad Reza Meybodi", ,Cellular edge detection: Combining cellular automata and cellular learning automata
-ok,NayPatMah-SurTwDimCelAutAppImProc,,"Deepak Ranjan Nayak, Prashanta Kumar Patra, Amitav Mahapatra", ,A Survey on Two Dimensional Cellular Automata and Its Application in Image Processing
-ok,WanJiaZhoDu-ImProcBasFuzCelAuMod,,Hong Wang ;  Junna Jiang ;  Lihui Zhou ;  Liping Du, ,Image Processing Based on Fuzzy Cellular Automata Model
+ok,NayPatMah-SurTwDimCelAutAppImProc,,"Deepak Ranjan Nayak,ï¿½Prashanta Kumar Patra,ï¿½Amitav Mahapatra", ,A Survey on Two Dimensional Cellular Automata and Its Application in Image Processing
+ok,WanJiaZhoDu-ImProcBasFuzCelAuMod,,Hong Wangï¿½;ï¿½ï¿½Junna Jiangï¿½;ï¿½ï¿½Lihui Zhouï¿½;ï¿½ï¿½Liping Du, ,Image Processing Based on Fuzzy Cellular Automata Model
 ok,CheMyn-ModAlgBloDutCosWat+,,"Quiwen Chen, Arthur E. Mynett", ,Modelling algal blooms in the Dutch coastal waters by integrated numerical and fuzzy cellular automata approaches
 ok,MajCha-FuzCelAutModPatClas,,Pradipta MAJI  P. Pal CHAUDHURI  , ,Fuzzy Cellular Automata for Modeling Pattern Classifier
 ok,SadRetKam-EfMetImpNoiRedImFuzCelAut,,"Sana Sadeghi, Alireza Rezvanian, Ebrahim Kamrani", ,An efficient method for impulse noise reduction from images using fuzzy cellular automata
 ok,SreBab-IdePromRegGenDNA+,,"Kiran Sree, Ramesh Babu", ,Identification of Promoter Region in Genomic DNA Using Cellular Automata Based Text Clustering 
-ok,WasPar-PreSpaDisEleEnCon+,,"Wasilewski, J., Parol, M.", ,Prediction of spatial distribution of electric energy consumers with the use of fuzzy cellular automata
-ok,RewCha-SimRecCelAutGenAlg,,"R. Dewri, N. Chakraborti", ,Simulating recrystallization through cellular automata and genetic algorithms
+ok,WasPar-PreSpaDisEleEnCon+,,"Wasilewski, J.,ï¿½Parol, M.", ,Prediction of spatial distribution of electric energy consumers with the use of fuzzy cellular automata
+ok,RewCha-SimRecCelAutGenAlg,,"R. Dewri,ï¿½N. Chakraborti", ,Simulating recrystallization through cellular automata and genetic algorithms
 ok,SahUguSah-SalPepNoiFilFuzCelAut,,"U. Sahin, S. Uguz, F. Sahin", ,Salt and pepper noise filtering with fuzzy-cellular automata
 ok??,PraCha-FuzCelAuModPatCla,,"Pradipta MAJI, P. Pal CHAUDHURI",,Fuzzy Cellular Automata for Modeling Pattern Classifier
 ok,MaiAgg-StuComVarImDetEdTec,,"Raman Maini, Dr. Himanshu Aggarwal",,Study and Comparison of Various Image Edge Detection Techniques
 ok??,Rus-ImaProHan,,John C. Russ,,"The Image Processing Handbook, Sixth Edition"
+ok,FieRus-HanNeuCom,,"Emile Fiesler, Russell Beale ",,Handbook of Neural Computation
+ok,RuaKer-FuzIfTheRulComIn,,"Da Ruan,Etienne E. Kerre",,Fuzzy If-Then Rules in Computational Intelligence: Theory and Applications

@@ -49,6 +49,7 @@ Warning--I didn't find a database entry for "Dra-CouFuzSetTheGisBaCelAutLanUseCh
 Warning--I didn't find a database entry for "LiuPhi-DevCelAutModUrbGroIncFuzSetApp"
 Warning--I didn't find a database entry for "Rus-ImaProHan"
 Warning--I didn't find a database entry for "MaiAgg-StuComVarImDetEdTec"
+Warning--I didn't find a database entry for "FieRus-HanNeuCom"
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
 while executing---line 1049 of file plain.bst
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
@@ -60,45 +61,45 @@ Warning--empty journal in Ech-DefSyssConPre
 Warning--empty year in Ech-DefSyssConPre
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
 while executing---line 1090 of file plain.bst
-You've used 20 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            688 strings with 10451 characters,
-and the built_in function-call counts, 4271 in all, are:
-= -- 407
-> -- 164
+            684 strings with 10331 characters,
+and the built_in function-call counts, 4067 in all, are:
+= -- 387
+> -- 157
 < -- 0
-+ -- 70
-- -- 48
-* -- 184
-:= -- 810
-add.period$ -- 59
-call.type$ -- 20
-change.case$ -- 81
++ -- 67
+- -- 46
+* -- 176
+:= -- 771
+add.period$ -- 56
+call.type$ -- 19
+change.case$ -- 77
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 204
-empty$ -- 351
-format.name$ -- 48
-if$ -- 856
+cite$ -- 22
+duplicate$ -- 194
+empty$ -- 334
+format.name$ -- 46
+if$ -- 815
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 22
-newline$ -- 102
-num.names$ -- 40
-pop$ -- 97
+int.to.str$ -- 19
+missing$ -- 21
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 93
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 61
 quote$ -- 0
-skip$ -- 139
+skip$ -- 132
 stack$ -- 0
-substring$ -- 102
-swap$ -- 19
+substring$ -- 97
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 72
 warning$ -- 3
-while$ -- 40
-width$ -- 22
-write$ -- 199
+while$ -- 38
+width$ -- 21
+write$ -- 189
 (There were 5 error messages)
