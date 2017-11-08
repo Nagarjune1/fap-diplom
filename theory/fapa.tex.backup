@@ -153,6 +153,44 @@ Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i 
 
 \TODO{vymyslet nějaký fakt pěkný příklad}
 
+\subsection{If-Then pravidla}
+V mnoha aplikacích se setkáme se situací, kdy budeme potřebovat popsat určitou funkčnost či chování systému \uv{lidským} způsobem. Velmi častým způsobem, jak toho dosáhnout je s pomocí tzv. If-Then pravidel. Popis If-Then pravidel byl převzat z \cite{RuaKer-FuzIfTheRulComI}.
+
+If-Then pravidlo je výrok je tvaru:
+$$
+ \text{Jestliže $x_1$, $\dots$, $x_n$, pak $y$}
+$$
+kde $x_1, \dots x_n, y$ jsou podvýroky. Za předpokladu, že jazyk (a později i struktura pro tento jazyk) jsou nám známy z kontextu, můžeme tento výrok zapsat jako formuli\footnote{Všímavější čtenář si všimne, že formule je Hornovská}:
+$$
+ x_1 \wedge \dots \wedge x_n \Rightarrow y
+$$
+
+\begin{example}
+ Následující výroky jsou If-Then pravidla:
+ \begin{itemize}
+  \item Jestliže je spínač sepnut, pak žárovka svítí
+  \item Jestliže je $\text{věk}(p) < 15$, pak $p$ je dítě
+  \item Je-li $x \in \mathbb{N}$, $x > 2$, $\nexists y < x: y|x$, pak $x$ je prvočíslo
+ \end{itemize}
+\end{example}
+
+Určení pravdivosti pravidla, tedy jestli je $y$ pravdivý nebo nepravdivý, se pak provede standardně, tj. určení pravdivosti formule pravidla ve struktuře.
+
+S fuzzy If-Then pravidly se obvykle pracuje mírně složitěji. Pravidla, tj. výroky se typicky uvádejí v mírně pozměněném tvaru, a to:
+$$
+ \text{Jestliže $x_1$ je $X_1$, $\dots$, $x_n$ je $X_n$, pak $y$ je $Y$}
+$$
+případně
+$$
+ \text{Jestliže $x_1 = X_1, \dots, x_n = X_n$, pak $y = Y$}
+$$
+Symboly $x_1, \dots, x_n, y$ označují termy a symboly $X_1, \dots, X_n, Y$ fuzzy množiny nad množinami těchto termů. Značení $x = X$ je ekvivalent zápisu $X(x)$, tj. \uv{$x$ je v množině $X$ ve stupni $X(x)$}. Zapsáno jako formule tedy:
+$$
+ X_1(x_1) \wedge \dots \wedge X_n(x_n) \Rightarrow Y(y)
+$$
+
+U fuzzy If-Then pravidel nemá smysl uvažovat jejich pravdivost jako takovou. Jejím výsledkem je totiž fuzzy množina.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1681,42 +1719,20 @@ Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je
 
 \TODO{někde nadefinovat if-then pravidla. Je to docela základní věc, takže asi někde hodně nahoře.}
 
-Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. 
+Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron:
+$$
+  y_j(t) = s_j(t) = x_{j,1}(t - 1) \wedge \dots \wedge x_{j,n}(t - 1)
+$$
+
+Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.\TODO{Co to vlastně je fuzzy If-Then pravidlo? Je to v souladu s tím, co už znám?} 
+
+Druhým způsobem, jak zkonstruovat neuronovou síť, je pomocí trénovacích dat. Tato technika se dále dělí na učení s učitelem a učení bez učitele. V tomto textu se spokojíme s popisem učení s učitelem.
+
+Hovoříme-li o trénovacích datech v souvislosti s učením s učitelem, pak jako trénovací data považujeme konečné zobrazení, které vstupům problému přiřazuje správné nebo očekávané výsledky. Na počátku se sestaví neuronová síť s náhodnými parametry a tzv. učení se její parametry postupně modifikují tak, aby byla schopna správně přiřazovat vstupům z trénovací množiny odpovídající výstupy.
+
+\TODO{backpropagation algorithm (běžný algoritmus učení)?}
 
 
-
-
-
-
-
-
-
-
-Jedním z možných dělení neuronových sítí je dle způsobu jejich konstrukce. Rozlišují se tak na neuronové sítě vzniklé učením a na ty, které operují na základě pevně stanovených pravidel. V této a následujících kapitolách budeme pracovat s hybridním modelem neuronové sítě, který budeme označovat jako znalostní neuronová síť.
-
-Znalostní neuronové sítě tak zřejmě budou čerpat z výhod obou přístupů. Na jednu stranu budou založené na znalostní bázi, která jim poskytne základní nástroje pro řešení daného problému. Na druhou stranu, učením se může taková síť lépe adaptovat na konkrétní instance problému či odstranit nedostatky znalostní báze.
-
-Jako znalostní bázi budeme považovat kolekci formulí výrokové logiky, konkrétně hornovských klauzulí. 
-
-
-
-
-
-bias
-backpropagation
-sigmoidal discriminant function
-second-order weight
-second-order recurrent neural network
-Neural network performance
-weight streight
-
-backpropagation algorithm (běžný algoritmus učení)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Learning automaty}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automaty a neuronovky}
 
 Bylo mnohokrát ukázano, že klasické konečné automaty mohou být reprezentovány neuronovými sítěmi (\cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}, str. 2).
@@ -1726,6 +1742,27 @@ Tady je algoritmus pro převod automat na neuronovku: \cite{OmlThoGil-FuzzFinSta
 %Stejně tak, existuje několik způsobů, jak sestavit neuronovou síť odpovídající fuzzy automatu.
 
 Věnuje se tomu například \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+
+
+
+
+% 
+% 
+% bias
+% backpropagation
+% sigmoidal discriminant function
+% second-order weight
+% second-order recurrent neural network
+% Neural network performance
+% weight streight
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Learning automaty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

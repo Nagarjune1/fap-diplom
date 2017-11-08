@@ -8,6 +8,7 @@ I was expecting a `,' or a `}'---line 343 of file resources.bib
  :   title   = {Deformed systems for contextual postprocessing},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "RuaKer-FuzIfTheRulComI"
 Warning--I didn't find a database entry for "Com+-TreeAutTecApp"
 Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
 Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
@@ -63,7 +64,7 @@ Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" h
 while executing---line 1090 of file plain.bst
 You've used 19 entries,
             2118 wiz_defined-function locations,
-            684 strings with 10331 characters,
+            686 strings with 10375 characters,
 and the built_in function-call counts, 4067 in all, are:
 = -- 387
 > -- 157

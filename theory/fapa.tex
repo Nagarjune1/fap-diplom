@@ -153,6 +153,64 @@ Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i 
 
 \TODO{vymyslet nějaký fakt pěkný příklad}
 
+\subsection{If-Then pravidla}
+V mnoha aplikacích se setkáme se situací, kdy budeme potřebovat popsat určitou funkčnost či chování systému \uv{lidským} způsobem. Velmi častým způsobem, jak toho dosáhnout je s pomocí tzv. If-Then pravidel. Popis If-Then pravidel byl převzat z \cite{RuaKer-FuzIfTheRulComI}.
+
+If-Then pravidlo je výrok je tvaru:
+$$
+ \text{Jestliže $x_1$, $\dots$, $x_n$, pak $y$}
+$$
+kde $x_1, \dots x_n, y$ jsou podvýroky. Za předpokladu, že jazyk (a později i struktura pro tento jazyk) jsou nám známy z kontextu, můžeme tento výrok zapsat jako formuli\footnote{Formule If-Then pravidel jsou vlastně Hornovské klauzule. Práce s If-Then pravidly se tak podobá logickému programování.}:
+$$
+ x_1 \wedge \dots \wedge x_n \Rightarrow y
+$$
+
+\begin{example}
+ Následující výroky jsou If-Then pravidla:
+ \begin{itemize}
+  \item Jestliže je spínač sepnut, pak žárovka svítí
+  \item Jestliže je $\text{věk}(p) < 15$, pak $p$ je dítě
+  \item Je-li $x \in \mathbb{N}$, $x > 2$, $\nexists y < x: y|x$, pak $x$ je prvočíslo
+ \end{itemize}
+\end{example}
+
+Určení pravdivosti pravidla, tedy jestli je $y$ pravdivý nebo nepravdivý, se pak provede standardně, tj. určení pravdivosti formule pravidla ve struktuře. Pokud máme If-Then pravidel více, stačí, aby bylo pravdivé jen jedno z nich.
+
+S fuzzy If-Then pravidly se obvykle pracuje mírně složitěji. Pravidla, tj. výroky se typicky uvádejí v mírně pozměněném tvaru, a to:
+$$
+ \text{Jestliže $x_1$ je $X_1$, $\dots$, $x_n$ je $X_n$, pak $y$ je $Y$}
+$$
+případně
+$$
+ \text{Jestliže $x_1 = X_1, \dots, x_n = X_n$, pak $y = Y$}
+$$
+Symboly $x_1, \dots, x_n, y$ označují termy a symboly $X_1, \dots, X_n, Y$ fuzzy množiny nad množinami těchto termů. Značení $x = X$ je ekvivalent zápisu $X(x)$, tj. \uv{$x$ je v množině $X$ ve stupni $X(x)$}. Zapsáno jako formule tedy:
+$$
+ X_1(x_1) \wedge \dots \wedge X_n(x_n) \Rightarrow Y(y)
+$$
+
+U fuzzy If-Then pravidel nemá smysl uvažovat jejich pravdivost jako takovou. Jejím výsledkem je totiž fuzzy množina.
+
+\begin{example}
+ Uvažujme systém, u kterého známe tlak a teplotu a popisujeme úroveň otevření ventilu. Označme $p_L$, $p_N$, $p_H$ jako fuzzy množiny \uv{tlak je nízký}, \uv{tlak je normální}, \uv{tlak je vysoký} a dále $t_N$, $t_H$ jako \uv{teplota je v normě} a \uv{teplota je zvýšená}. Dále zaveďme fuzzy množiny $v_C$ a $v_O$ jako \uv{ventil je uzavřen} a \uv{ventil je otevřen}. 
+ 
+ Pak pravidla
+ \begin{align*}
+  \text{Pokud je tlak nízký a teplota zvýšená, }&\text{pak ventil je uzavřen} \\
+  \text{Pokud je tlak vysoký a teplota v normě, }&\text{pak ventil je otevřen}
+ \end{align*}
+
+ budou zapsána jako formule
+ \begin{align*}
+  p_L(p) \wedge t_H(t) &\Rightarrow v_C(v) \\
+  p_H(p) \wedge t_N(t) &\Rightarrow v_O(v)
+ \end{align*}
+\end{example}
+
+\begin{note}
+ Pokud máme fuzzy If-Then pravidel více, pak je spojujeme disjunkcí.
+\end{note}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1208,7 +1266,7 @@ Přechodová funkce $\mu$ pak vypadá následovně:
 $$
 \mu(c, round(c)) = f(c, round(c))
 $$
-kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \uv{If--Then} pravidel.
+kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. If-Then pravidel.
 
 \begin{example} \label{ex:GameOfLife}
   Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) (např. \cite{TofMar-CelAuMach+}). Jedná se o jednoduchý simulátor živého organizmu. 
@@ -1233,7 +1291,7 @@ kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nov
 %    \item Jinak $c'_{i,j} = c_{i,j}$
 %   \end{enumerate}
   
-  Pak je přechodová funkce $\mu$ definována následovně:
+  Pak můžeme přechodovou funkci $\mu$ zapsat následovně:
   $$
     \mu(c_{i,j}, round(c_{i,j})) = 
       \begin{dcases}
@@ -1326,51 +1384,10 @@ Jedná se tedy jen o speciální případ klasického bivalentního buněčného
 \end{align*}
 Díky tomu je obejit předpoklad, že automat se smí nacházet pouze v jednom stavu současně.
 
-Druhý způsob, jak definovat buněčný fuzzy automat, může pracovat s libovolnou množinou stavů. Fuzzy přístup se zde závádí dodatečně pomocí fuzzy množin (resp. výroků se stupni pravdivosti). Množině stavů je přiřazena jedna nebo více fuzzy množin. Každá tato fuzzy množina určitým způsobem charakterizuje stavy v ní obsažené. Přechodová funkce pak nepracuje přímo se stavy, ale pouze z těmito fuzzy množinami. Stav, do kterého má automat přejít je pak určen z fuzzy množiny (množin) popisující tento stav.
-
-Takovýto buněčný fuzzy automat budeme nazývat buněčný automat s fuzzy logikou. Přechodová funkce $\mu$ tohoto automatu je určena množinou \uv{If -- Then}  pravidel. Zatímco u konečného buněčného automatu byla transformace množiny pravidel na přechodovou funkci triviální (viz příklad \ref{ex:GameOfLife}), při použití fuzzy logiky je situace složitější. Bude proto ještě před samotným nadefinováním automatu uveden postup pro konstrukci jeho přechodové funkce.
-
-%\TODO{V CELÉ PRÁCI: ověřit konečné a neprázdné množiny !!!}\\
-%\TODO{\uv{If -- Then} pravidla, odkud jsou, zdůraznit, že je to vlastně implikace. Jo a používají se všude možně (mj. např. v knowledge base a obecně data mining?), takže to nadefinovat asi někde nahoře v úvodních epizodách. Budu značit $pre$ (předpoklad) a $con$ (důsledek).}
-
-
-
-Mějme libovolnou množinu $Q$ stavů, systém $\mathcal{D} \subseteq \fsubsets{Q}$ fuzzy množin nad touto množinou a zobrazení $\gamma: \mathcal{D} \rightarrow Q$ (defuzzyfikační funkce). Dále uvažujme množinu $G$ fuzzy přechodových pravidel, tj. pravidel ve tvaru \uv{If -- Then}. Uvažujme pravidlo $g \in G$. Pravidlo $g$ je v následujícím tvaru:
-$$
-  \text{Jestliže $f(c_1, \dots, c_x)$ pak $c' = \gamma(\varsigma_y)$}
-$$
-
-kde $c_1, \dots, c_x \in Q$, $\varsigma_y \in D$ a $f$ je nějaké zobrazení $f: Q^x \rightarrow [0,1]$.
-
-Označme předpoklad pravidla $g$ jako formuli $pre(g) =  g_x = f(c_1, \dots, c_x)$. Budeme-li konkrétní hodnoty $e = (c_1, \dots, c_x)$ považovat za pravdivostní ohodnocení, pak můžeme určit pravdivostní hodnotu (stupeň pravdivosti) $E_e(g_x)$ podmínky pravidla $g$ při ohodnocení $e$.
-
-Pro vektor $e$ hodnot pak bude vybráno (a použito) pravidlo $g_i \in G$, které maximalizuje své ohodnocení, tj. pro které je $E_e({g_i}_x)$ největší.\footnote{Je vhodné navrhnout pravidla tak, aby takové bylo vždy jen jedno. V opačném případě bude jedno vybráno.} Ohodnocení $E_e(g)$ pravidla $g$ je pak rovno hodnotě $\gamma(\varsigma_y)$. Ohodnocení $E_e(G)$ množiny přechodových pravidel, tj. určení nového stavu na základě vektoru $e$ stavů se tedy určí tímto předpisem
-$$
-  E_e(G) = con(g_i) \text{ kde $g_i \in G$ je takové, že $E_e(g_i) = \max_{g \in G} E_e(g)$}
-$$
-\TODO{ohodnocení pravidla vrací stav, ne stupeň pravdivosti. Chce to jiný termín, např. evaluace.}
-Tímto máme stanoveno, jak se aplikují fuzzy přechodová pravidla, a můžeme tedy přistoupit k definici buněčného automatu s fuzzy logikou.
-
-\begin{definition}[Buněčný automat s fuzzy logikou]
-  Označme strukturu $A = (Q, G, \mathcal{D})$, kde $Q$ je množina stavů, $G$ množina \uv{If -- Then} pravidel a $\mathcal{D}$ je fuzzy množina nad $Q$. Dále pak $(Q, \mu)$ formuje bivalentní buněčný automat s přechodovou funkcí $\mu$:
-  $$
-    \mu(c, round(c) = E_e(G) \text{, kde $e = (c, round(c))$}
-  $$
-  
-%   kde $A = (Q, \mu)$ je bivalentní buněčný automat a $\mathcal{D} \subseteq \fsubsets{Q}$ je systém fuzzy množin nad $Q$. Přechodová funkce $\mu$ je dána 
-  %a $\mu$ je dána předpisem:
-%  $$
-%   \mu(q, q_1, \dots, q_k) = fuzzy^{-1} ( g(fuzzy(q), fuzzy(q_1), \dots, fuzzy(q_k))
-%  $$
-%  a kde $g: ((\mathcal{S} \rightarrow [0,1]) \times (\mathcal{S} \rightarrow [0,1])^k) \rightarrow (\mathcal{S} \rightarrow [0,1])$.  Zobrazení $g$ nazývejme množina fuzzy přechodových pravidel.
-\end{definition}
-
-\begin{notation*}
-  V zápise pravidel se často pro vyšší názornost namísto zápisu $\varsigma_X(c)$ (kde $\varsigma_X \in \mathcal{D}$) používá zápis $c = X$. 
-\end{notation*}
+Druhý způsob, jak definovat buněčný fuzzy automat, může pracovat s libovolnou množinou stavů. Využívá fuzzy If-Then pravidel, bude mu proto říkáno \uv{buněčný automat s fuzzy logikou}.
 
 \begin{example}
- Příkladem buněčného automatu s fuzzy logikou může být například následující automat. Množina stavů bude obsahovat přirozená čísla z intervalu $[0, 150)$. Stanovíme čtveřici fuzzy množin $\varsigma_L$, $\varsigma_M$, a $\varsigma_H$ ve významu \uv{hodnota $q$ je nízká}, \uv{hodnota $q$ je střední} a \uv{hodnota $q$ je vysoká}. (Přesnou definici těchto fuzzy množin vynecháme, není pro tento příklad důležitá.) Pravidla automatu pak mohou vypadat následovně:
+ Příkladem buněčného automatu s fuzzy logikou může být například následující automat. Množina stavů bude obsahovat přirozená čísla z intervalu $[0, 150)$. Stanovíme čtveřici fuzzy množin $\varsigma_L$, $\varsigma_M$, a $\varsigma_H$ ve významu \uv{hodnota $q$ je nízká}, \uv{hodnota $q$ je střední} a \uv{hodnota $q$ je vysoká}. Pravidla automatu pak mohou vypadat následovně:
  \begin{itemize}
   \item Pokud $q^{(t)}_{i-1,j-1} = L$, pak $q^{(t+1)}_{i,j} = H$
   \item Pokud $q^{(t)}_{i-1,j-1} = L$ nebo $q^{(t)}_{i-1,j-1} = M$, pak $q^{(t+1)}_{i,j} = M$
@@ -1378,15 +1395,11 @@ Tímto máme stanoveno, jak se aplikují fuzzy přechodová pravidla, a můžeme
  \end{itemize}
 \end{example}
 
-
-Provedme-li srovnání obou definic buněčných fuzzy automatů, zjistíme, že jsme vlastně obdrželi dva značně rozdílné výpočetní modely. To se projevuje i na jejich uplatnění. $[0,1]$-Buněčný automat je vhodný více tam, kde pro popis přechodové funkce nevyžadujeme \uv{If -- Then} pravidla ale jen funkční předpis. Oproti tomu buněčný automat s fuzzy logikou najde uplatnění spíše tam, kde máma data popsána logicky. Často se však oba přístupy kombinují (typicky se používá buněčný automat s fuzzy logikou spolu s nepodmíněnými pravidly). 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Obecně k aplikacím}
-Buněčné automaty (obecně) nacházejí široké uplatnění v rozličných oblastech. Dle \cite{Wol-NewKinSci} se s nimi lze setkat v matematice, informatice, fyzice, biologii, společenských vědách, např. filozofii a umění. Používají se například pro simulace fyzikálních dějů (např. difuze, tok tekutin), krystalizace, biologickým, urbanistickým, enviromentalistickým a geografickým simulacím či ke generování fraktálů.
+Buněčné automaty (obecně) nacházejí široké uplatnění v rozličných oblastech. Dle \cite{Wol-NewKinSci} se s nimi lze setkat v matematice, informatice, fyzice, biologii, společenských vědách, např. filozofii a umění. Používají se například pro simulace fyzikálních dějů (např. difuze, tok tekutin), krystalizace, biologickým, urbanistickým, enviromentalistickým a geografickým simulacím či například ke generování fraktálů.
 
-Co se buněčných fuzzy automatů týče, jejich aplikace nejsou tak rozšířené. Jedním z důvodů, proč tomu tak je, je velká podobnost bivalentních buněčných automatů a buněčných fuzzy automatů. Jak bylo uvedeno v předchozí podkapitole, $[0,1]$-buněčný fuzzy automat je jen speciálním případem klasického byvalentního. Obdobně, reprezentovat přechodovou funkci \uv{If -- Then} pravidly lze i bez použití fuzzy množin. Přechodová fuzzy pravidla jsou tak jen jiné pojmenování pro speciální třídu pravidel.
+Co se buněčných fuzzy automatů týče, jejich aplikace nejsou tak rozšířené. Jedním z důvodů, proč tomu tak je, je velká podobnost bivalentních buněčných automatů a buněčných fuzzy automatů. Jak bylo uvedeno v předchozí podkapitole, $[0,1]$-buněčný fuzzy automat je jen speciálním případem klasického byvalentního. Obdobně, práce s fuzzy If-Then pravidly je vlastně jen speciální případ klasických If-Then pravidel.
 
 Například \cite{WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn} používá čísla z intervalu $[0,1]$ jako vstupní informaci. \cite{DiwPatGup-CelAutBasEdDetBraTum} používá automat podobný buněčnému automatu s fuzzy logikou, který navíc pracuje se stavy na intervalu $[0,1]$. Obdobně, \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} používá buněčné automaty v kombinaci s určitou formou fuzzy logiky (avšak automat napovažují za buněčný fuzzy automat). V \cite{MofSadRezMey-CelEdDetComCelAuCelLeaAu} je použit automat pracující na intervalu $[0,255]$, který by šel snadnou modifikací konvertován na $[0,1]$-buněčný fuzzy automat. Automat v \cite{BatXie-CellCity} vykazuje určitou náhodnost a bylo by tak možné považovat jej za pravděpodobnostní.
   
@@ -1678,8 +1691,6 @@ Jako signální množinu $X$ budeme pokládat reálný interval $(0, 1)$, jako m
 
 \subsection{Konstrukce neuronové sítě}
 Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je pomocí znalostní báze a druhý pomocí trénovacích dat. Jak znalostní báze, tak trénovací data nám zde plní ůčel popisu problému, který má neuronová síť řešit. V praxi se často používá kombinace obou přístupů.
-
-\TODO{někde nadefinovat if-then pravidla. Je to docela základní věc, takže asi někde hodně nahoře.}
 
 Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron:
 $$
