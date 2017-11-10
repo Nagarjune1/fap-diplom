@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{BlaDelPeg-FuzzAutIndUsNeuNet}
+M.~C.~Pegalajar A.~Blanco, M.~Delgado.
+\newblock Fuzzy automaton induction using neural network.
+\newblock {\em International Journal of Approximate Reasoning}, 2001.
+
 \bibitem{Bel-FuzRelSyss}
 Radim Bělohlávek.
 \newblock {\em Fuzzy Relational Systems: Foundations and Principles}.

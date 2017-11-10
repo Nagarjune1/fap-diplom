@@ -24,18 +24,21 @@
 \contentsline {section}{\numberline {5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{28}
 \contentsline {subsection}{\numberline {5.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{29}
 \contentsline {subsection}{\numberline {5.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{31}
-\contentsline {subsection}{\numberline {5.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{34}
-\contentsline {subsection}{\numberline {5.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{35}
-\contentsline {subsection}{\numberline {5.5}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{36}
-\contentsline {subsection}{\numberline {5.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{40}
-\contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{41}
-\contentsline {subsection}{\numberline {5.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{41}
-\contentsline {section}{\numberline {6}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{43}
-\contentsline {subsection}{\numberline {6.1}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{43}
-\contentsline {subsection}{\numberline {6.2}Konstrukce neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{44}
-\contentsline {subsection}{\numberline {6.3}Fuzzy automaty a neuronovky}{45}
-\contentsline {subsection}{\numberline {6.4}Learning automaty}{45}
-\contentsline {section}{\numberline {7}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{46}
-\contentsline {section}{\numberline {8}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{46}
-\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{46}
-\contentsline {subsection}{\numberline {8.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{46}
+\contentsline {subsection}{\numberline {5.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{33}
+\contentsline {subsection}{\numberline {5.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{34}
+\contentsline {subsection}{\numberline {5.5}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{35}
+\contentsline {subsection}{\numberline {5.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{38}
+\contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{40}
+\contentsline {subsection}{\numberline {5.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{40}
+\contentsline {section}{\numberline {6}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{41}
+\contentsline {subsection}{\numberline {6.1}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{42}
+\contentsline {subsection}{\numberline {6.2}Konstrukce neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{43}
+\contentsline {subsection}{\numberline {6.3}Fuzzy automaty a neuronovky}{44}
+\contentsline {subsection}{\numberline {6.4}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{45}
+\contentsline {subsection}{\numberline {6.5}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{45}
+\contentsline {subsection}{\numberline {6.6}Re\IeC {\'a}ln\IeC {\'e} p\IeC {\v r}\IeC {\'\i }klady pou\IeC {\v z}it\IeC {\'\i }}{46}
+\contentsline {section}{\numberline {7}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{48}
+\contentsline {section}{\numberline {8}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{48}
+\contentsline {subsubsection}{\numberline {8.0.1}Automat jako \uv {lep\IeC {\v s}\IeC {\'\i }} reprezentace n\IeC {\v e}\IeC {\v c}eho}{48}
+\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{48}
+\contentsline {subsection}{\numberline {8.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{48}

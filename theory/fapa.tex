@@ -1653,7 +1653,9 @@ Mezi nejznáměnšjí techniky strojového učení patří například neuronov�
 \subsection{Neuronové sítě}
 Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk známých z biologie. Vygenerovaný algoritmus je tvořen sítí tzv. neuronů, které jsou propojeny v zpravidla rozsáhlou síť. Tato síť obsahuje spoustu parametrů, které jsou nastaveny tak, aby síť tvořila algoritmus řešící požadovaný problém. 
 
-Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je převzat z \cite{FieRus-HanNeuCom}. Označme $X$ jako tzv. signální množinu, tj. množinu všech možných hodnot, kterých mohou nabýt signály přešenášené mezi neurony. Dále označme $S$ jako množinu stavů neuronů. V tomto textu budeme uvažovat pouze neurony diskrétní. Říkáme, že diskrétní neuron $s$ nabývá v čase $t \in \mathbb{N}$ stavu $s(t)$. Dále označnme $y(t)$ jako výstup neuronu $s$ v čase $t$.
+Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je převzat z \cite{FieRus-HanNeuCom}. Označme $X$ jako tzv. signální množinu, tj. množinu všech možných hodnot, kterých mohou nabýt signály přešenášené prostřednictvím spojení. Dále označme $S$ jako množinu stavů neuronů. 
+
+V tomto textu budeme jako signální množinu $X$ pokládat reálný interval $(0, 1)$ (v souladu s fuzzy teorií), jako množinu $S$ stavů pak množinu všech reálných čísel. Dále budeme uvažovat pouze neurony diskrétní (v čase). Říkáme, že diskrétní neuron $s$ nabývá v čase $t \in \mathbb{N}$ stavu $s(t)$. Dále označnme $y(t)$ jako výstup neuronu $s$ v čase $t$.
 
 \begin{definition}[Diskrétní neuron]
  Jako diskrétní neuron označujeme dvojici funkcí $f: X^n \times S \rightarrow S$ (přechodová funkce) a $g: S \rightarrow X$ (výstupní funkce) tak, že:
@@ -1664,12 +1666,11 @@ Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je 
 \end{definition}
 
 \begin{note}
- $x_1$, ..., $x_n$ v předchozí definici značí signály a to buď do sítě vstupující, nebo připojené na výstup jiných neuronů.
+ $x_1$, ..., $x_n$ v předchozí definici značí signální spojení, a to buď ze vstupů sítě k neuronům, nebo mezi jednotlivými neurony.
 \end{note}
 
-Jako signální množinu $X$ budeme pokládat reálný interval $(0, 1)$, jako množinu $S$ stavů pak množinu všech reálných čísel. 
 \begin{example}
- Pro jeden z nejznáměnších, tzv. McCulloch-Pittsův neuron $s_j$, vypadají funkce $f_j$ a $g_j$ neuronu $s_j$ následovně:
+ Pro jeden z nejznáměnších, tzv. McCulloch-Pittsův neuron, vypadají funkce $f_j$ a $g_j$ neuronu $s_j$ následovně:
  \begin{align*}
   f_j(x_{1,j}(t), \dots x_{n,j}(t), s_j) &=  \sum_{i=1}^n w_{i,j} x_{i,j}(t) \\
   g_j(x) &= 
@@ -1679,8 +1680,22 @@ Jako signální množinu $X$ budeme pokládat reálný interval $(0, 1)$, jako m
    \end{dcases}
  \end{align*}
  kde $w_{1,j}, \dots, w_{n,j}$ jsou tzv. synaptické váhy neuronu $s_j$ a $\theta_j$ je jeho tzv. prahová hodnota. 
- 
- Symbolické grafické znázornění sítě McCulloch-Pittsových neuronů je k vidění na obrázku \ref{img:SimplNeuNet} Soubor těchto parametrů u všech neuronů celé sítě určuje chování celé sítě.
+\end{example}
+
+\begin{definition}[Neuronová síť]
+ Jako neuronovou síť označme strukturu $(X, S, N, I, O, o)$, kde $X$ (signální množina) a  $S$ (množina stavů) byly popsány výše, $N$ je množina neuronů, $I \subseteq X^m$ je množina vstupních spojení a $O \subseteq X^n$ množina výstupních spojení a $o: N \rightarrow O$ zobrazení propojující neurony s výstupními spojeními.
+\end{definition}
+
+\begin{definition}[Rekurentní a přímočará neuronová síť]
+ Obsahuje-li neuronová síť cyklus, tj. existuje v ní alespoň jeden neuron $s$ splňující
+ $$
+  s(t) = f(s_1(t - 1), \dots, s_2(t - 1 + k), \dots, s_n(t - 1), s(t - 1)) \\
+ $$
+ kde $k \geq 1$, pak se síť nazývá rekurentní. V opačném případě se nazývá přímočará.
+\end{definition}
+
+\begin{example}
+ Mějme $I = \{ x_1, x_2, x_3 \}$, $I = \{ y_1, y_2, y_3 \}$ a $o(s_4) = y_1$, $o(s_6) = y_2$, $o(s_3) = y_3$. Pak pro množinu $N = \{ s_1, s_2, s_3, s_4, s_5, s_6 \}$ McCulloch-Pittsových neuronů znázorněných na obrázku \ref{img:SimplNeuNet} tvoří $(X, S, N, I, O, o)$ přímočarou neuronovou síť.
 \end{example}
 
 \begin{figure}
@@ -1692,12 +1707,12 @@ Jako signální množinu $X$ budeme pokládat reálný interval $(0, 1)$, jako m
 \subsection{Konstrukce neuronové sítě}
 Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je pomocí znalostní báze a druhý pomocí trénovacích dat. Jak znalostní báze, tak trénovací data nám zde plní ůčel popisu problému, který má neuronová síť řešit. V praxi se často používá kombinace obou přístupů.
 
-Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron:
+Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron: \TODO{doplnit pravidlo pro disjunkce, tj. když je více pravidel s \uv{pak $y$}}
 $$
   y_j(t) = s_j(t) = x_{j,1}(t - 1) \wedge \dots \wedge x_{j,n}(t - 1)
 $$
 
-Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.\TODO{Co to vlastně je fuzzy If-Then pravidlo? Je to v souladu s tím, co už znám?} 
+Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.
 
 Druhým způsobem, jak zkonstruovat neuronovou síť, je pomocí trénovacích dat. Tato technika se dále dělí na učení s učitelem a učení bez učitele. V tomto textu se spokojíme s popisem učení s učitelem.
 
@@ -1705,34 +1720,80 @@ Hovoříme-li o trénovacích datech v souvislosti s učením s učitelem, pak j
 
 \TODO{backpropagation algorithm (běžný algoritmus učení)?}
 
+V praxi je možné oba přístupy kombinovat. Typicky se tedy sestaví neuronová síť pomocí znalostní báze, která je následně pomocí trénovacích dat přizpůsobena skutečným datům. Navíc, díky znalostní bázi neuronová síť je hned má hned v prvních fázích učení určitý přehled o řešeném problému a její učení tak může probíhat značně efektivněji. \TODO{fakt?}
 
 \subsection{Fuzzy automaty a neuronovky}
+Bylo zjištěno, že fuzzy automat může být konvertován do neuronové sítě. Této problematice se věnují např. v \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} \cite{BlaDelPeg-FuzzAutIndUsNeuNet}, \cite{GilOmlTho-EquKnoRep+}, \cite{OmlThoGil-RepFuzFinStaAuConRecNeuNet}, \cite{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}, \cite{PedGac-LeaFuzzAut}.
 
-Bylo mnohokrát ukázano, že klasické konečné automaty mohou být reprezentovány neuronovými sítěmi (\cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}, str. 2).
+Ve zjednodušené podobě se bude jednat o neuronovou síť, která bude realizovat jen přechodovou funkci, tj. přechod mezi stavy na základě vstupu. Vstupem neuronové sítě bude zakódování fuzzy stavu, v jakém se automat nachází a symbol na vstupu automatu. Výsledkem výpočtu pak bude informace, do jakého/jakých stavů by měl automat přejít, tj. opět fuzzy stav.
 
-Tady je algoritmus pro převod automat na neuronovku: \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+Na základě neuronové sítě realizující přechodovou funkci pak může být sestavena neuronová síť, která si sama pamatuje fuzzy stav, v jakém se výpočet nachází. Vzhledem k tomu, že taková neuronová síť bude muset být rekurentní, bude její struktura složitější a nad rámec této práce. Vstupem takové neuronové sítě pak bude v jednotlivých časových kvantech vstupní symboly a na výstupu číslo z intervalu $(0, 1)$ reprezentující stupeň, v jakém je zadaný řetězec automatem přijímán.
 
-%Stejně tak, existuje několik způsobů, jak sestavit neuronovou síť odpovídající fuzzy automatu.
+Sestavíme-li neuronovou síť pomocí přechodové funkce $\mu$ nám známého automatu $A$ budeme  generovat dvojice $(((q, d), a), (q', d')) \in \mu^*$ \TODO{je to tak?} tj. \uv{je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak přejde do stavu $q'$ ve stupni $d'$}. Například v \cite{BlaDelPeg-FuzzAutIndUsNeuNet} autoři demonstrují učení na automatu o dvou stavech a nad dvojprvkovou abecedou. Již po $5$ trénovacích dvojících se síť naučila rozpoznávat s $95\%$ přesností a po $432$ pokusech rozpoznávala se $100\%$ přesností (při toleranci stupně pravdivosti $1.25 . 10^{-7}$).
 
-Věnuje se tomu například \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}.
+Lze však použít i konstrukce s pomocí znalostní báze. V takovém případě je třeba zformulovat If-Then pravidla síť popisující. Pro každý přechod
+$$
+ \delta((q, d), a) = (q', d')
+$$
+tedy sestavíme If-Then pravidlo
+$$
+ \text{Je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak automat přejde do stavu $q'$ ve stupni $d'$}
+$$
+Na základě této znalostní báze může být navržena neuronová síť implementující přechodovou funkci automatu.
 
+Opačný vztah, tj. jak z neuronové sítě zpět získat fuzzy automat je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
 
-
-
-% 
-% 
-% bias
-% backpropagation
-% sigmoidal discriminant function
-% second-order weight
-% second-order recurrent neural network
-% Neural network performance
-% weight streight
-
+Poněkud elegantní způsob, jak z neuronové sítě vyextrahovat automat je popsán v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}. Autoři uvažují neuronovou síť jako nástroj, který rozpoznává (v odstupňované pravdivosti) ($n$-dimenzionální) podprostory prostoru $(0, 1)^n$. Každou souřadnici v tomto prostoru pak rozkládají symboly abecedy automatu, tj. každému vektoru v tomto prostoru přiřazují řetězec nad abecedou automatu. Vzniklá struktura, kterou je vlastně kd-tree, pak tvoří automat.\footnote{Tímto způsobem vygenerovaný automat je automat dle definice \TODO{doplnit ten, co má ostré přechody, ale fuzzy koncové stavy}} \TODO{Zapsat to nějak aspoň trochu lidsky, je např. potřeba doplnit práci s cykly}?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Learning automaty}
+\subsection{Učící se fuzzy automaty}
+
+V předchozích kapitolách byly prezentovány techniky, jak konvertovat fuzzy automat na neuronovou síť a zpět. Konverzí automatu na neuronovou síť obdržíme nástroj, který nám umožňuje učení, tj. adaptaci modelu na jiná data. Zpětnou extrakcí automatu tak můžem obdržet automat, který rozpoznává jiný jazyk, a to jazyk který odpovídá trénovacím datům.
+
+Tento postum lze však s určitou újmou na obecnosti zjedodušit. Namísto konverze automatu na neuronovou síť, její modifikaci a následnou konverzi zpět, je možné automat modifikovat napřímo. Této technice se říká učící se automat. Této technice se věnují např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} a \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} je použit buněčný fuzzy učící se automat. V \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} používají pro učení pokročilejší techniku založenou na genetických algoritmech.
+
+Základní myšlenka techniky učících se automatů je obvykle, že jednotlivé stupně pravdivosti, které figurují v instanci automatu, mohou být pozměněny. V rozšířené podobě je pak možné automat rozšiřovat o kompleně nové stavy a přechody.
+
+\subsection{Metoda lisování dat}
+Autor práce prezentuje novou, jednoduchou, techniku strojového učení. Výhodou této techniky je, že je založena čistě na teorii fuzzy automatů, není třeba žádné další techniky strojového učení.
+
+Vstupem této techniky je (konečná a neprázdná) množina trénovacích dat ve formě jazyka $L$ nad známou abecedou $\Sigma$ a koeficient přesnosti $\sigma$. Výstupem je poté fuzzy automat $A_{L,\sigma}$, který jazyk $L$ přijímá tak, že pro všechna $w \in L$ platí:
+$$
+  A_{L,\sigma}(w) \geq \sigma
+$$
+tj. že řetězec $w$ je automatem přijímán alespoň ve stupni $\sigma$. U řetězců, které do jazyka $L$\footnote{Jazyk $L$ může být klidně fuzzy jazyk, následný postup se pak jen patřičně upraví} nepatří (tj. $w' \in \Sigma^* \setminus L$) by posléze měl automat být schopen určit jak moc se jazyku $L$ podobají, tj. určit stupeň $A_{L,\sigma}(w')$.
+
+Postup konstrukce automatu $A_{L,\sigma}$ je násleudjící:
+\begin{enumerate}
+ \item Máme jazyk $L$, který je konečný. Je tedy zřejmě i regulérní.
+ \item K jazyku $L$ sestavíme nedeterministický konečný automat $A_{L}$ rozpoznávající $L$. Takový automat bude v nejhorším případě obsahovat $\sum_{w \in L} |w|$ stavů.
+ \item K automatu $A_{L}$ vytvoříme nedeterminstický fuzzy automat $A'_{L}$.
+ \item Fuzzy minimalizací automatu $A'_{L}$ se stupněm $\sigma$ získáme hledaný automat $A_{L,\sigma}$.
+\end{enumerate}
+
+Klíčovým bodem této techniky je minimalizace automatu. Technika předpokládá, že jazyk trénovacích dat v sobě obsahuje jeden nebo více jednoduchých regulérních jazyků (ať už jako podmnožiny nebo jako podřetězce vybraných řetězců). Části automatu reprezentující tyto \uv{podjazyky} budou minimalizací zmenšeny. Ve výsledku se tak dá očekávat značné zmenšení velikosti automatu.
+
+Navíc, vygenerovaný automat poměrně přehledně popisuje strukturu ve vstupním jazyce. Technika tak může být použita pro odtranění šumu a nepřesností v jazyce $L$.
+
+Technika lisování dat bude naimplementována a experimentálně ověřena. \TODO{naprogramovat, ověrit} Jednou z možností, kde by mohla tato technika být uplatněna, by bylo určování síly přihlašovacícho hesla. Vstupem by byla databáze uživatelských hesel s informací od experta, která hesla jsou silná a která slabá. Ze silných hesel by poté byl sestaven jazyk, na který by bylo aplikováno lisování dat. Výsledkem by byl automat, který rozpoznává silná hesla. Tato aplikace však nebyla naimplementována, vzhledem k tomu, že je z bezpečnostních důvodů nemožné získat databázi uživatelských hesel.
+
+Další z možných aplikací je určování dělitelnosti čísel. Uvažujme abecedu symbolů číslic, tj. $\Sigma = \{ 0, \dots, 9 \}$ a jazyk $L \subseteq S^*$ čísel dělitelných čtyřmi. Při velikosti jazyka $x$ a koeficientu $\sigma = y$ se podařilo automatu dosáhnout $z$ úspěšného rozpoznávání čísel dělitelných $4$ ve stupni vyšším, než $w\%$. \TODO{naprogramovat, ověrit}
+
+
+\subsection{Reálné příklady použití}
+V \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut} používají učící se fuzzy automaty v mírně pozměněné formě k řízení výkonu při obloukovém sváření. Abeceda v tomto případě obsahuje dva symboly, \uv{zvýšení výkonu} a \uv{snížení výkonu}. Automat byl sestaven tak, aby správně rozpoznával vhodné posloupnosti zvýšení a snížení výkonu za účelem zvýšení kvality sváru. V téže publikaci demonstrují obdobným způsobem uplatnění pro řízení robota pohybujícího se v neznámém prostředí. Pomocí dvojice symbolů pro zvýšení výkonu motorů a snížení výkonu motorů si kladou za cíl navržení systému pro řízení robota. Tento systém má za cíl řídit přidávání a ubírání výkonu tak, aby se robot, bez ohledu na terén, pohyboval konstantní rychlostí.
+
+V \cite{WeeFu-FormFuzAutAppModLeaSys} je fuzzy automat použit pro návrh řídících systému. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Množina možných událostí tak tvoří abecedu a řídící systém může být reprezentován automatem. Použitím nepřesností je tak možno získat fuzzy automat. \TODO{osamostatnit definici řídícího systému? Např. do ůvodu, kde budu zmiňovat, co všechno se podobá FA?} S pomocí znalosti očekávaného chování systému je pak možné pomocí učícího automatu sestavit adekvátní řídící systém.
+
+V \cite{ FuLi-ForLeaAutAutGam} jsou učící automaty použity jako agenti v hře s nulovým součtem, která nemá jasné ekvilibrium. Automaty se postupným hraním tahů učí a vylepšují svoji strategii tak, aby bylo dosaženo ekvilibria.
+
+
+V \cite{PedGac-LeaFuzzAut} navrhují používat učení fuzzy automatů pro konstrukci logických klopných obvodů. Tj. obvodů, které se na základě vstupů překlápí mezi různými diskrétními stavy. Sami autoři uvádějí, že bylo výhodné pracovat s učícím fuzzy automatem a teprve poté jej \uv{diskretizovat}, tj. konvertovat na kýžený bivalentní.
+
+V \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} a \cite{WeeFu-FormFuzAutAppModLeaSys} používají učící automat na vylepšení rozpoznávání textu v obrazu. Jako trénovací data jsou použity známé (již dříve rozpoznané) texty a trénování zde plní účel přizpůsobení se reálným vytištěným textům. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} a \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} používají učící buněčný fuzzy automat pro zpřesnění detekce hran v obrazech. \TODO{Odkázat na patřičné kapitoly v textu}
+
+Autor sám přichází s myšlenkou, že kombinace fuzzy automatů a strojového učení má poměrně značný potenciál pro uplatnění v praxi. Kombinace fuzzy automatů, které poměrně jednoduše, avšak poměrně restriktivně popisují určitý jazyk mohou být pomocí strojového učení snadno upraveny na mocnější nástroje. Důvod, proč se však nepoužívají vidí v současném boomu neuronových sítí jako takových, které utlačují všechny ostatní techniky strojového učení.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1756,11 +1817,21 @@ human-computer interfaces [49].
 
 
 \section{Konkrétní příklady}
+\subsubsection{Automat jako \uv{lepší} reprezentace něčeho}
+Markovův řetěz (probabilistický (dvoj)stavový systém).
+Petriho sítě (petri nets).
+Rozhodovací stromy.
+Řídící systémy, událostní systémy (ale není to to samé, co petriho sítě?).
+
+
 \subsection{Rozpoznávní ručně psaného textu}
+\cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{WeeFu-FormFuzAutAppModLeaSys} a podob.
 ...
 
 \subsection{Detekce překlepů}
 \cite{AndAbdAsm-ApprPattMatcFuzzLog} až na konci,  Fuzzy Aho-Corasick algorithm (popř. dohledat jiný zdroj).
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \bibliography{resources}

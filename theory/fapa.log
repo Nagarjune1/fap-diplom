@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  7 NOV 2017 17:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  10 NOV 2017 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,210 +820,203 @@ Overfull \hbox (2.91849pt too wide) in paragraph at lines 1374--1375
 [31] [32 <./game-of-life-1-eps-converted-to.pdf> <./game-of-life-2-eps-converte
 d-to.pdf> <./game-of-life-3-eps-converted-to.pdf> <./game-of-life-4-eps-convert
 ed-to.pdf>]
-Overfull \hbox (1.42574pt too wide) in paragraph at lines 1405--1406
-\temp pra-vi-dla $\temp g$ \temp je pak rovno hod-not^^Te $\temp ^^M\temp (\tem
-p &[]\temp )$. Ohod-no-cen^^S^^P $\temp E[]\temp (\temp G\temp )$ mno^^Tziny p^
-^Trechodov^^Sych
- []
 
-[33]
-
-LaTeX Warning: Citation `Wol-NewKinSci' on page 34 undefined on input line 1445
+LaTeX Warning: Citation `Wol-NewKinSci' on page 33 undefined on input line 1400
 .
 
 
-Overfull \hbox (9.7689pt too wide) in paragraph at lines 1445--1446
+Overfull \hbox (9.7689pt too wide) in paragraph at lines 1400--1401
 \temp Dle [[]] se s nimi lze se-tkat v ma-te-ma-tice, in-for-ma-tice, fy-zice, 
 bi-o-lo-gii, spole^^Tcensk^^Sych
  []
 
 
-LaTeX Warning: Citation `WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn' on page 34 u
-ndefined on input line 1449.
+LaTeX Warning: Citation `WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn' on page 33 u
+ndefined on input line 1404.
 
 
-LaTeX Warning: Citation `DiwPatGup-CelAutBasEdDetBraTum' on page 34 undefined o
-n input line 1449.
+LaTeX Warning: Citation `DiwPatGup-CelAutBasEdDetBraTum' on page 33 undefined o
+n input line 1404.
 
 
-LaTeX Warning: Citation `MofSadRezMey-CelEdDetComCelAuCelLeaAu' on page 34 unde
-fined on input line 1449.
+LaTeX Warning: Citation `MofSadRezMey-CelEdDetComCelAuCelLeaAu' on page 33 unde
+fined on input line 1404.
 
 
-LaTeX Warning: Citation `BatXie-CellCity' on page 34 undefined on input line 14
-49.
+LaTeX Warning: Citation `BatXie-CellCity' on page 33 undefined on input line 14
+04.
 
 
-Overfull \hbox (3.56282pt too wide) in paragraph at lines 1449--1450
+Overfull \hbox (3.56282pt too wide) in paragraph at lines 1404--1405
 []\temp Nap^^Tr^^S^^Pklad [[]] pou^^Tz^^S^^Pv^^Sa ^^Tc^^S^^Psla z in-ter-valu $
 [0\temp ; \temp 1]$ jako vstupn^^S^^P in-for-maci. [[]] pou^^Tz^^S^^Pv^^Sa
  []
 
 
-LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 34 undefine
-d on input line 1451.
+LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 33 undefine
+d on input line 1406.
 
 
-LaTeX Warning: Citation `Pla-FuzCelModTrafDatFus' on page 34 undefined on input
- line 1453.
+LaTeX Warning: Citation `Pla-FuzCelModTrafDatFus' on page 33 undefined on input
+ line 1408.
 
 
-LaTeX Warning: Citation `CheMyn-ModAlgBloDutCosWat+' on page 34 undefined on in
-put line 1453.
+LaTeX Warning: Citation `CheMyn-ModAlgBloDutCosWat+' on page 33 undefined on in
+put line 1408.
 
 
-LaTeX Warning: Citation `CheMyn-ModAlgBloDutCosWat+' on page 34 undefined on in
-put line 1453.
+LaTeX Warning: Citation `CheMyn-ModAlgBloDutCosWat+' on page 33 undefined on in
+put line 1408.
 
 
-Overfull \hbox (2.75166pt too wide) in paragraph at lines 1453--1454
+Overfull \hbox (2.75166pt too wide) in paragraph at lines 1408--1409
 \temp ^^Tre^^Tseny si-mu-lace hus-toty do-pravy [[]], r^^Wustu mo^^Trsk^^Sych ^
 ^Tras u pob^^Tre^^Tz^^S^^P [[]] ^^Tci pl^^Sanov^^San^^S^^P
  []
 
-[34]
 
-LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 35 un
-defined on input line 1455.
-
-
-LaTeX Warning: Citation `ZhaLiZha-EdgDetImaBasFuzCelAut' on page 35 undefined o
-n input line 1455.
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 33 un
+defined on input line 1410.
 
 
-LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 35 undefine
-d on input line 1455.
+LaTeX Warning: Citation `ZhaLiZha-EdgDetImaBasFuzCelAut' on page 33 undefined o
+n input line 1410.
 
 
-LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 35 un
-defined on input line 1455.
+LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 33 undefine
+d on input line 1410.
 
 
-LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 35 undefined
- on input line 1455.
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 33 un
+defined on input line 1410.
 
 
-LaTeX Warning: Citation `MajCha-FuzCelAutModPatClas' on page 35 undefined on in
-put line 1455.
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 33 undefined
+ on input line 1410.
 
 
-LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 35 undefi
-ned on input line 1455.
+LaTeX Warning: Citation `MajCha-FuzCelAutModPatClas' on page 33 undefined on in
+put line 1410.
 
 
-LaTeX Warning: Citation `SahUguSah-SalPepNoiFilFuzCelAut' on page 35 undefined 
-on input line 1455.
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 33 undefi
+ned on input line 1410.
 
 
-LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 35 undefine
-d on input line 1455.
+LaTeX Warning: Citation `SahUguSah-SalPepNoiFilFuzCelAut' on page 33 undefined 
+on input line 1410.
 
 
-LaTeX Warning: Citation `War+-StoConCelModUrbGro' on page 35 undefined on input
- line 1457.
+LaTeX Warning: Citation `NayPatMah-SurTwDimCelAutAppImProc' on page 33 undefine
+d on input line 1410.
+
+[33]
+
+LaTeX Warning: Citation `War+-StoConCelModUrbGro' on page 34 undefined on input
+ line 1412.
 
 
-LaTeX Warning: Citation `Wu-CalStoCelAutAppRurUrbLanConv' on page 35 undefined 
-on input line 1457.
+LaTeX Warning: Citation `Wu-CalStoCelAutAppRurUrbLanConv' on page 34 undefined 
+on input line 1412.
 
 
-LaTeX Warning: Citation `TofMar-CelAuMach+.pdf' on page 35 undefined on input l
-ine 1457.
+LaTeX Warning: Citation `TofMar-CelAuMach+.pdf' on page 34 undefined on input l
+ine 1412.
 
 
-Overfull \hbox (0.69623pt too wide) in paragraph at lines 1457--1458
+Overfull \hbox (0.69623pt too wide) in paragraph at lines 1412--1413
 []\temp Co se pravd^^Tepodobnostn^^S^^Pch bun^^Te^^Tcn^^Sych au-to-mat^^Wu t^^S
 y^^Tce, ty nach^^Sazej^^S^^P uplatn^^Ten^^S^^P
  []
 
 
-Overfull \hbox (5.03629pt too wide) in paragraph at lines 1457--1458
+Overfull \hbox (5.03629pt too wide) in paragraph at lines 1412--1413
 \temp v^^Tsude tam, kde je t^^Treba do-dat n^^Sahodnost a ne-pra-vi-del-nost. N
 ap^^Tr^^S^^Pklad pro probl^^Sem
  []
 
 
-LaTeX Warning: Citation `LiYe-NeuNetBasCelAutSim+' on page 35 undefined on inpu
-t line 1459.
+LaTeX Warning: Citation `LiYe-NeuNetBasCelAutSim+' on page 34 undefined on inpu
+t line 1414.
 
 
-LaTeX Warning: Citation `YehLi-SimLanDevIntCelAutMulCriEv' on page 35 undefined
- on input line 1459.
+LaTeX Warning: Citation `YehLi-SimLanDevIntCelAutMulCriEv' on page 34 undefined
+ on input line 1414.
 
 
-LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 35 undefined 
-on input line 1459.
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 34 undefined 
+on input line 1414.
 
 
-LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 35 un
-defined on input line 1459.
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 34 un
+defined on input line 1414.
 
 
-LaTeX Warning: Citation `MofSadRezMey-CelEdDetComCelAuCelLeaAu' on page 35 unde
-fined on input line 1459.
+LaTeX Warning: Citation `MofSadRezMey-CelEdDetComCelAuCelLeaAu' on page 34 unde
+fined on input line 1414.
 
 
-LaTeX Warning: Citation `AlAhHep+-ModUrbGroDynUsCelAutGIS' on page 35 undefined
- on input line 1465.
+LaTeX Warning: Citation `AlAhHep+-ModUrbGroDynUsCelAutGIS' on page 34 undefined
+ on input line 1420.
 
 
-LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 35 undefined 
-on input line 1465.
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 34 undefined 
+on input line 1420.
 
 
-LaTeX Warning: Citation `War+-StoConCelModUrbGro' on page 35 undefined on input
- line 1465.
+LaTeX Warning: Citation `War+-StoConCelModUrbGro' on page 34 undefined on input
+ line 1420.
 
 
-LaTeX Warning: Citation `WhiEng-CelAutBasIntDynRegMod' on page 35 undefined on 
-input line 1465.
+LaTeX Warning: Citation `WhiEng-CelAutBasIntDynRegMod' on page 34 undefined on 
+input line 1420.
 
 
-LaTeX Warning: Citation `LaiDraSch-IntMulEvCelAutMetLanSimMod' on page 35 undef
-ined on input line 1465.
+LaTeX Warning: Citation `LaiDraSch-IntMulEvCelAutMetLanSimMod' on page 34 undef
+ined on input line 1420.
 
 
-LaTeX Warning: Citation `ManHatPra-FuzCelAutBasSheModUrGro+' on page 35 undefin
-ed on input line 1465.
+LaTeX Warning: Citation `ManHatPra-FuzCelAutBasSheModUrGro+' on page 34 undefin
+ed on input line 1420.
 
 
-LaTeX Warning: Citation `ManHatPra-ModUrbGroUsFuzCelAut' on page 35 undefined o
-n input line 1465.
+LaTeX Warning: Citation `ManHatPra-ModUrbGroUsFuzCelAut' on page 34 undefined o
+n input line 1420.
 
 
 LaTeX Warning: Citation `ClaHopHay-SelModCelAutModHistUrbSanFraBayAre' on page 
-35 undefined on input line 1465.
+34 undefined on input line 1420.
 
 
-LaTeX Warning: Citation `Wu-CalStoCelAutAppRurUrbLanConv' on page 35 undefined 
-on input line 1465.
+LaTeX Warning: Citation `Wu-CalStoCelAutAppRurUrbLanConv' on page 34 undefined 
+on input line 1420.
 
 
-LaTeX Warning: Citation `Dra-CouFuzSetTheGisBaCelAutLanUseChaMod' on page 35 un
-defined on input line 1467.
+LaTeX Warning: Citation `Dra-CouFuzSetTheGisBaCelAutLanUseChaMod' on page 34 un
+defined on input line 1422.
 
 
-LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 35 unde
-fined on input line 1467.
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 34 unde
+fined on input line 1422.
 
 
-Overfull \hbox (14.19519pt too wide) in paragraph at lines 1465--1468
+Overfull \hbox (14.19519pt too wide) in paragraph at lines 1420--1423
 []\temp Bun^^Te^^Tcn^^Se fuzzy au-to-maty byly ji^^Tz mno-hokr^^Sat pou^^Tzity 
 pro ^^Tre^^Tsen^^S^^P to-hoto probl^^Semu.
  []
 
-[35]
+[34]
 
-LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 36 undefined 
-on input line 1498.
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 35 undefined 
+on input line 1453.
 
 
-LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 36 unde
-fined on input line 1498.
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 35 unde
+fined on input line 1453.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1500.
+               Default added (so using `tbp') on input line 1455.
 
 Package epstopdf Info: Source file: <urban-growt-transitions-1.eps>
 (epstopdf)                    date: 2017-08-13 21:43:11
@@ -1034,15 +1027,15 @@ Package epstopdf Info: Source file: <urban-growt-transitions-1.eps>
 (epstopdf)                    size: 5453 bytes
 (epstopdf)             Command: <repstopdf --outfile=urban-growt-transitions-1-
 eps-converted-to.pdf urban-growt-transitions-1.eps>
-(epstopdf)             \includegraphics on input line 1502.
+(epstopdf)             \includegraphics on input line 1457.
 Package epstopdf Info: Output file is already uptodate.
 
-<urban-growt-transitions-1-eps-converted-to.pdf, id=157, 238.8925pt x 67.25125p
+<urban-growt-transitions-1-eps-converted-to.pdf, id=154, 238.8925pt x 67.25125p
 t>
 File: urban-growt-transitions-1-eps-converted-to.pdf Graphic file (type pdf)
  <use urban-growt-transitions-1-eps-converted-to.pdf>
 Package pdftex.def Info: urban-growt-transitions-1-eps-converted-to.pdf used on
- input line 1502.
+ input line 1457.
 (pdftex.def)             Requested size: 345.0pt x 97.12799pt.
 Package epstopdf Info: Source file: <urban-growt-transitions-2.eps>
 (epstopdf)                    date: 2017-08-13 21:43:04
@@ -1053,15 +1046,15 @@ Package epstopdf Info: Source file: <urban-growt-transitions-2.eps>
 (epstopdf)                    size: 6029 bytes
 (epstopdf)             Command: <repstopdf --outfile=urban-growt-transitions-2-
 eps-converted-to.pdf urban-growt-transitions-2.eps>
-(epstopdf)             \includegraphics on input line 1507.
+(epstopdf)             \includegraphics on input line 1462.
 Package epstopdf Info: Output file is already uptodate.
 
-<urban-growt-transitions-2-eps-converted-to.pdf, id=158, 238.8925pt x 67.25125p
+<urban-growt-transitions-2-eps-converted-to.pdf, id=155, 238.8925pt x 67.25125p
 t>
 File: urban-growt-transitions-2-eps-converted-to.pdf Graphic file (type pdf)
  <use urban-growt-transitions-2-eps-converted-to.pdf>
 Package pdftex.def Info: urban-growt-transitions-2-eps-converted-to.pdf used on
- input line 1507.
+ input line 1462.
 (pdftex.def)             Requested size: 345.0pt x 97.12799pt.
 Package epstopdf Info: Source file: <urban-growt-transitions-3.eps>
 (epstopdf)                    date: 2017-08-13 21:42:49
@@ -1072,28 +1065,28 @@ Package epstopdf Info: Source file: <urban-growt-transitions-3.eps>
 (epstopdf)                    size: 6141 bytes
 (epstopdf)             Command: <repstopdf --outfile=urban-growt-transitions-3-
 eps-converted-to.pdf urban-growt-transitions-3.eps>
-(epstopdf)             \includegraphics on input line 1512.
+(epstopdf)             \includegraphics on input line 1467.
 Package epstopdf Info: Output file is already uptodate.
 
-<urban-growt-transitions-3-eps-converted-to.pdf, id=159, 238.8925pt x 67.25125p
+<urban-growt-transitions-3-eps-converted-to.pdf, id=156, 238.8925pt x 67.25125p
 t>
 File: urban-growt-transitions-3-eps-converted-to.pdf Graphic file (type pdf)
  <use urban-growt-transitions-3-eps-converted-to.pdf>
 Package pdftex.def Info: urban-growt-transitions-3-eps-converted-to.pdf used on
- input line 1512.
+ input line 1467.
 (pdftex.def)             Requested size: 345.0pt x 97.12799pt.
 
 
-LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 36 unde
-fined on input line 1516.
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 35 unde
+fined on input line 1471.
 
 
-LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 36 unde
-fined on input line 1516.
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 35 unde
+fined on input line 1471.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1521.
+               Default added (so using `tbp') on input line 1476.
 
 Package epstopdf Info: Source file: <urban-growt-city-1.eps>
 (epstopdf)                    date: 2017-08-13 23:00:51
@@ -1103,14 +1096,14 @@ Package epstopdf Info: Source file: <urban-growt-city-1.eps>
 (epstopdf)                    size: 338627 bytes
 (epstopdf)             Command: <repstopdf --outfile=urban-growt-city-1-eps-con
 verted-to.pdf urban-growt-city-1.eps>
-(epstopdf)             \includegraphics on input line 1523.
+(epstopdf)             \includegraphics on input line 1478.
 Package epstopdf Info: Output file is already uptodate.
-<urban-growt-city-1-eps-converted-to.pdf, id=160, 563.10374pt x 252.945pt>
+<urban-growt-city-1-eps-converted-to.pdf, id=157, 563.10374pt x 252.945pt>
 File: urban-growt-city-1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use urban-growt-city-1-eps-converted-to.pdf>
 Package pdftex.def Info: urban-growt-city-1-eps-converted-to.pdf used on input 
-line 1523.
+line 1478.
 (pdftex.def)             Requested size: 345.0pt x 154.97551pt.
 Package epstopdf Info: Source file: <urban-growt-city-2.eps>
 (epstopdf)                    date: 2017-08-13 23:11:53
@@ -1120,42 +1113,42 @@ Package epstopdf Info: Source file: <urban-growt-city-2.eps>
 (epstopdf)                    size: 215529 bytes
 (epstopdf)             Command: <repstopdf --outfile=urban-growt-city-2-eps-con
 verted-to.pdf urban-growt-city-2.eps>
-(epstopdf)             \includegraphics on input line 1528.
+(epstopdf)             \includegraphics on input line 1483.
 Package epstopdf Info: Output file is already uptodate.
 
-<urban-growt-city-2-eps-converted-to.pdf, id=161, 563.10374pt x 256.96pt>
+<urban-growt-city-2-eps-converted-to.pdf, id=158, 563.10374pt x 256.96pt>
 File: urban-growt-city-2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use urban-growt-city-2-eps-converted-to.pdf>
 Package pdftex.def Info: urban-growt-city-2-eps-converted-to.pdf used on input 
-line 1528.
+line 1483.
 (pdftex.def)             Requested size: 345.0pt x 157.43544pt.
 
 
-LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 36 undefined 
-on input line 1532.
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 35 undefined 
+on input line 1487.
 
 
-LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 36 undefined 
-on input line 1532.
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 35 undefined 
+on input line 1487.
 
-[36] [37 <./urban-growt-transitions-1-eps-converted-to.pdf> <./urban-growt-tran
+[35] [36 <./urban-growt-transitions-1-eps-converted-to.pdf> <./urban-growt-tran
 sitions-2-eps-converted-to.pdf> <./urban-growt-transitions-3-eps-converted-to.p
-df>] [38 <./urban-growt-city-1-eps-converted-to.pdf> <./urban-growt-city-2-eps-
+df>] [37 <./urban-growt-city-1-eps-converted-to.pdf> <./urban-growt-city-2-eps-
 converted-to.pdf>]
 
-LaTeX Warning: Citation `Rus-ImaProHan' on page 39 undefined on input line 1543
+LaTeX Warning: Citation `Rus-ImaProHan' on page 38 undefined on input line 1498
 .
 
 
-Overfull \hbox (4.72955pt too wide) in paragraph at lines 1550--1552
+Overfull \hbox (4.72955pt too wide) in paragraph at lines 1505--1507
 \temp je kon-volu^^Tcn^^S^^P ma-tic^^S^^P jed-no-duch^^Seho rozost^^Tren^^S^^P.
  Apli-kuje se n^^Sasleduj^^S^^Pc^^S^^Pm zp^^Wusobem: 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1571.
+               Default added (so using `tbp') on input line 1526.
 
 Package epstopdf Info: Source file: <filters.eps>
 (epstopdf)                    date: 2017-08-27 12:31:53
@@ -1165,62 +1158,62 @@ Package epstopdf Info: Source file: <filters.eps>
 (epstopdf)                    size: 16778 bytes
 (epstopdf)             Command: <repstopdf --outfile=filters-eps-converted-to.p
 df filters.eps>
-(epstopdf)             \includegraphics on input line 1572.
+(epstopdf)             \includegraphics on input line 1527.
 Package epstopdf Info: Output file is already uptodate.
-<filters-eps-converted-to.pdf, id=184, 281.05pt x 81.30376pt>
+<filters-eps-converted-to.pdf, id=181, 281.05pt x 81.30376pt>
 File: filters-eps-converted-to.pdf Graphic file (type pdf)
 
 <use filters-eps-converted-to.pdf>
-Package pdftex.def Info: filters-eps-converted-to.pdf used on input line 1572.
+Package pdftex.def Info: filters-eps-converted-to.pdf used on input line 1527.
 (pdftex.def)             Requested size: 345.0pt x 99.80946pt.
 
 
-LaTeX Warning: Citation `MaiAgg-StuComVarImDetEdTec' on page 39 undefined on in
-put line 1580.
+LaTeX Warning: Citation `MaiAgg-StuComVarImDetEdTec' on page 38 undefined on in
+put line 1535.
 
 
-LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 39 un
-defined on input line 1580.
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 38 un
+defined on input line 1535.
 
-[39 <./filters-eps-converted-to.pdf>]
+[38 <./filters-eps-converted-to.pdf>]
 File: miscs0.mps Graphic file (type mps)
  [MP to PDF] (./miscs0.mps)
 File: miscs1.mps Graphic file (type mps)
  [MP to PDF]
 (./miscs1.mps)
-Underfull \hbox (badness 4254) in paragraph at lines 1592--1592
+Underfull \hbox (badness 4254) in paragraph at lines 1547--1547
 []\OT1/cmr/m/n/9 (b) |Uk^^Sazka hrany proch^^Sazej^^S^^Pc^^S^^P
  []
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 1592--1592
+Underfull \hbox (badness 2503) in paragraph at lines 1547--1547
 \OT1/cmr/m/n/9 bu^^Tnkou. Ve sm^^Teru $\OML/cmm/m/it/9 U$ \OT1/cmr/m/n/9 (^^Tce
 rven^^Se
  []
 
 
-Overfull \hbox (3.01685pt too wide) in paragraph at lines 1598--1599
+Overfull \hbox (3.01685pt too wide) in paragraph at lines 1553--1554
 []\temp Nadefinujme fuzzy re-laci []bu^^Tnky $\temp c$ \temp a $\temp c[]$ \tem
 p maj^^S^^P zcela rozd^^S^^Plnou barvu\ p^^Tredpisem: 
  []
 
 
-Overfull \hbox (7.11293pt too wide) in paragraph at lines 1609--1610
+Overfull \hbox (7.11293pt too wide) in paragraph at lines 1564--1565
 []\temp Obdobn^^Sym zp^^Wusobem by se do-de-fi-no-valy zb^^Syvaj^^S^^Pc^^S^^P f
 uzzy mno^^Tziny $\temp ^^O[]$\temp . N^^Sasledn^^Te
  []
 
-[40]
 
-LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 41 un
-defined on input line 1619.
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 39 un
+defined on input line 1574.
+
+[39]
+
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 40 undefi
+ned on input line 1580.
 
 
-LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 41 undefi
-ned on input line 1625.
-
-
-Overfull \hbox (14.66864pt too wide) in paragraph at lines 1627--1628
+Overfull \hbox (14.66864pt too wide) in paragraph at lines 1582--1583
 \temp bun^^Te^^Tcn^^Sy fuzzy au-to-mat, kter^^Sy bu^^Tnky ob-sa-huj^^S^^Pc^^S^^
 P ^^Tsum na-hrad^^S^^P hod-no-tami spo^^Tcten^^Symi
  []
@@ -1233,13 +1226,13 @@ Package epstopdf Info: Source file: <noises1.eps>
 (epstopdf)                    size: 544489 bytes
 (epstopdf)             Command: <repstopdf --outfile=noises1-eps-converted-to.p
 df noises1.eps>
-(epstopdf)             \includegraphics on input line 1633.
+(epstopdf)             \includegraphics on input line 1588.
 Package epstopdf Info: Output file is already uptodate.
-<noises1-eps-converted-to.pdf, id=196, 80.3pt x 80.3pt>
+<noises1-eps-converted-to.pdf, id=193, 80.3pt x 80.3pt>
 File: noises1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use noises1-eps-converted-to.pdf>
-Package pdftex.def Info: noises1-eps-converted-to.pdf used on input line 1633.
+Package pdftex.def Info: noises1-eps-converted-to.pdf used on input line 1588.
 (pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
 Package epstopdf Info: Source file: <noises2.eps>
 (epstopdf)                    date: 2017-08-27 15:28:33
@@ -1249,14 +1242,14 @@ Package epstopdf Info: Source file: <noises2.eps>
 (epstopdf)                    size: 544500 bytes
 (epstopdf)             Command: <repstopdf --outfile=noises2-eps-converted-to.p
 df noises2.eps>
-(epstopdf)             \includegraphics on input line 1638.
+(epstopdf)             \includegraphics on input line 1593.
 Package epstopdf Info: Output file is already uptodate.
 
-<noises2-eps-converted-to.pdf, id=197, 80.3pt x 80.3pt>
+<noises2-eps-converted-to.pdf, id=194, 80.3pt x 80.3pt>
 File: noises2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use noises2-eps-converted-to.pdf>
-Package pdftex.def Info: noises2-eps-converted-to.pdf used on input line 1638.
+Package pdftex.def Info: noises2-eps-converted-to.pdf used on input line 1593.
 (pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
 Package epstopdf Info: Source file: <noises3.eps>
 (epstopdf)                    date: 2017-08-27 15:28:44
@@ -1266,52 +1259,52 @@ Package epstopdf Info: Source file: <noises3.eps>
 (epstopdf)                    size: 544496 bytes
 (epstopdf)             Command: <repstopdf --outfile=noises3-eps-converted-to.p
 df noises3.eps>
-(epstopdf)             \includegraphics on input line 1643.
+(epstopdf)             \includegraphics on input line 1598.
 Package epstopdf Info: Output file is already uptodate.
 
-<noises3-eps-converted-to.pdf, id=198, 80.3pt x 80.3pt>
+<noises3-eps-converted-to.pdf, id=195, 80.3pt x 80.3pt>
 File: noises3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use noises3-eps-converted-to.pdf>
-Package pdftex.def Info: noises3-eps-converted-to.pdf used on input line 1643.
+Package pdftex.def Info: noises3-eps-converted-to.pdf used on input line 1598.
 (pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
 
 
-LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 41 undefi
-ned on input line 1647.
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 40 undefi
+ned on input line 1602.
 
 
-LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 41 undefi
-ned on input line 1647.
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 40 undefi
+ned on input line 1602.
 
 
-LaTeX Warning: Citation `SahUguSah-SalPepNoiFilFuzCelAut' on page 41 undefined 
-on input line 1650.
+LaTeX Warning: Citation `SahUguSah-SalPepNoiFilFuzCelAut' on page 40 undefined 
+on input line 1605.
 
 
-LaTeX Warning: Citation `MajCha-FuzCelAutModPatClas' on page 41 undefined on in
-put line 1657.
+LaTeX Warning: Citation `MajCha-FuzCelAutModPatClas' on page 40 undefined on in
+put line 1612.
 
 
-Overfull \hbox (9.64745pt too wide) in paragraph at lines 1657--1658
+Overfull \hbox (9.64745pt too wide) in paragraph at lines 1612--1613
 \temp kter^^Sa po-pi-suj^^S^^P jak vzo-rov^^Sy ob-raz, tak ob-razy jemu po-dobn
 ^^Se. Mno^^Tzina p^^Trechodov^^Sych
  []
 
-[41 <./noises1-eps-converted-to.pdf> <./noises2-eps-converted-to.pdf> <./noises
+[40 <./noises1-eps-converted-to.pdf> <./noises2-eps-converted-to.pdf> <./noises
 3-eps-converted-to.pdf>]
 
-LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 42 undefined
- on input line 1659.
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 41 undefined
+ on input line 1614.
 
 
-Overfull \hbox (0.25075pt too wide) in paragraph at lines 1661--1662
+Overfull \hbox (0.25075pt too wide) in paragraph at lines 1616--1617
 []\temp Auto^^Tri me-todu do-poru^^Tcuj^^S^^P na vy-hled^^Sav^^San^^S^^P vzor^^
 Wu v l^^Seka^^Trsk^^Sych sn^^S^^Pmc^^S^^Pch (nap^^Tr.
  []
 
 
-Overfull \hbox (8.67516pt too wide) in paragraph at lines 1661--1662
+Overfull \hbox (8.67516pt too wide) in paragraph at lines 1616--1617
 \temp ul-tra-zvuk, R^^?ont-gen). Tech-niku de-mon-struj^^S^^P na ul-tra-zvu-kov
 ^^Sych sn^^S^^Pmc^^S^^Pch vaje^^Tcn^^S^^Pk^^Wu.
  []
@@ -1324,14 +1317,14 @@ Package epstopdf Info: Source file: <follicles-1.eps>
 (epstopdf)                    size: 27077 bytes
 (epstopdf)             Command: <repstopdf --outfile=follicles-1-eps-converted-
 to.pdf follicles-1.eps>
-(epstopdf)             \includegraphics on input line 1671.
+(epstopdf)             \includegraphics on input line 1626.
 Package epstopdf Info: Output file is already uptodate.
-<follicles-1-eps-converted-to.pdf, id=212, 281.05pt x 62.2325pt>
+<follicles-1-eps-converted-to.pdf, id=209, 281.05pt x 62.2325pt>
 File: follicles-1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use follicles-1-eps-converted-to.pdf>
 Package pdftex.def Info: follicles-1-eps-converted-to.pdf used on input line 16
-71.
+26.
 (pdftex.def)             Requested size: 345.0pt x 76.39737pt.
 Package epstopdf Info: Source file: <follicles-2.eps>
 (epstopdf)                    date: 2017-08-24 20:02:17
@@ -1341,65 +1334,196 @@ Package epstopdf Info: Source file: <follicles-2.eps>
 (epstopdf)                    size: 4240 bytes
 (epstopdf)             Command: <repstopdf --outfile=follicles-2-eps-converted-
 to.pdf follicles-2.eps>
-(epstopdf)             \includegraphics on input line 1676.
+(epstopdf)             \includegraphics on input line 1631.
 Package epstopdf Info: Output file is already uptodate.
 
-<follicles-2-eps-converted-to.pdf, id=213, 281.05pt x 60.225pt>
+<follicles-2-eps-converted-to.pdf, id=210, 281.05pt x 60.225pt>
 File: follicles-2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use follicles-2-eps-converted-to.pdf>
 Package pdftex.def Info: follicles-2-eps-converted-to.pdf used on input line 16
-76.
+31.
 (pdftex.def)             Requested size: 345.0pt x 73.93292pt.
 
 
-LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 42 undefined
- on input line 1680.
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 41 undefined
+ on input line 1635.
 
 
-LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 42 undefined
- on input line 1680.
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 41 undefined
+ on input line 1635.
 
 
-Overfull \hbox (15.80621pt too wide) in paragraph at lines 1689--1690
+Overfull \hbox (15.80621pt too wide) in paragraph at lines 1644--1645
 \temp Strojov^^Se u^^Tcen^^S^^P je tech-nika pro p^^Tribli^^Tzn^^Se ^^Tre^^Tsen
 ^^S^^P kom-pli-ko-van^^Sych ^^Tci slo^^Tzit^^Sych probl^^Sem^^Wu.
  []
 
 
-Overfull \hbox (1.28079pt too wide) in paragraph at lines 1689--1690
+Overfull \hbox (1.28079pt too wide) in paragraph at lines 1644--1645
 \temp Spo^^Tc^^S^^Pv^^Sa v tom, ^^Tze nam^^S^^Psto p^^Tr^^S^^Pm^^Seho hled^^San
 ^^S^^P al-go-ritmu, kter^^Sy po^^Tzadovan^^Sy probl^^Sem
  []
 
-[42 <./follicles-1-eps-converted-to.pdf> <./follicles-2-eps-converted-to.pdf>]
-Overfull \hbox (2.83514pt too wide) in paragraph at lines 1693--1694
+[41 <./follicles-1-eps-converted-to.pdf> <./follicles-2-eps-converted-to.pdf>]
+Overfull \hbox (2.83514pt too wide) in paragraph at lines 1648--1649
 []\temp Na dru-hou stranu, s pou^^Tzit^^S^^Pm fuzzy ^^Tci pravd^^Tepodobnostn^^
 S^^Pho p^^Tr^^S^^Pstupu m^^Wu^^Tzeme
  []
 
 
-LaTeX Warning: Citation `FieRus-HanNeuCom' on page 43 undefined on input line 1
-701.
+LaTeX Warning: Citation `FieRus-HanNeuCom' on page 42 undefined on input line 1
+656.
 
-
-Overfull \hbox (3.76567pt too wide) in paragraph at lines 1715--1716
-[]\temp Jako sign^^Saln^^S^^P mno^^Tzinu $\temp X$ \temp bu-deme pokl^^Sadat re
-^^Saln^^Sy in-ter-val $(0\temp ; \temp 1)$, jako mno^^Tzinu
+[42]
+Overfull \hbox (36.17801pt too wide) in paragraph at lines 1686--1687
+\OT1/cmr/bx/n/10 Definice 6.2 \temp (Neu-ro-nov^^Sa s^^S^^Pt[])\OT1/cmr/bx/n/10
+ . \OT1/cmr/m/it/10 Jako neu-ro-no-vou s^^S^^Pt[] ozna^^Tcme struk-turu $\temp 
+(\temp X; S; N; I; O; o\temp )$\OT1/cmr/m/it/10 ,
  []
 
-[43]
-Overfull \hbox (0.97551pt too wide) in paragraph at lines 1728--1729
-[]\OT1/cmr/m/it/10 Symbolick^^Se gra-fick^^Se zn^^Sazorn^^Ten^^S^^P s^^S^^Pt^^T
-e McCulloch-Pittsov^^Sych neu-ron^^Wu je k vid^^Ten^^S^^P
+
+Overfull \hbox (0.70143pt too wide) in paragraph at lines 1693--1695
+\OT1/cmr/m/it/10 kde $\temp k \OMS/cmsy/m/n/10 ^^U \temp 1$\OT1/cmr/m/it/10 , p
+ak se s^^S^^Pt[] naz^^Syv^^Sa re-ku-rentn^^S^^P. V opa^^Tcn^^Sem p^^Tr^^S^^Ppad
+^^Te se naz^^Syv^^Sa p^^Tr^^S^^Pmo^^Tcar^^Sa. 
  []
 
 File: neurals0.mps Graphic file (type mps)
-[MP to PDF] (./neurals0.mps) [44] [45] [46] (./fapa.bbl
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+[MP to PDF] (./neurals0.mps) [43]
+
+LaTeX Warning: Citation `GilOmlTho-EquKnoRep+' on page 44 undefined on input li
+ne 1726.
+
+
+LaTeX Warning: Citation `OmlThoGil-RepFuzFinStaAuConRecNeuNet' on page 44 undef
+ined on input line 1726.
+
+
+LaTeX Warning: Citation `UnaKha-FuzDFinStaMachImpBasNeuFuzSys' on page 44 undef
+ined on input line 1726.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 44 undefined on input line 
+1726.
+
+
+Overfull \hbox (120.62003pt too wide) detected at line 1741
+[]
+ []
+
+
+LaTeX Warning: Citation `BlaDelFlo-MethIndFuzzAutUsNeuNet' on page 44 undefined
+ on input line 1744.
+
+
+LaTeX Warning: Citation `BlaDelPeg-FuzzGraIntUsiNeuNet' on page 44 undefined on
+ input line 1744.
+
+
+LaTeX Warning: Citation `BlaDelFlo-MethIndFuzzAutUsNeuNet' on page 44 undefined
+ on input line 1746.
+
+[44]
+
+LaTeX Warning: Citation `FuLi-ForLeaAutAutGam' on page 45 undefined on input li
+ne 1754.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 45 undefined on 
+input line 1754.
+
+
+LaTeX Warning: Citation `GilOmlTho-EquKnoRep+' on page 45 undefined on input li
+ne 1754.
+
+
+LaTeX Warning: Citation `TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 45
+ undefined on input line 1754.
+
+
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 45 un
+defined on input line 1754.
+
+
+LaTeX Warning: Citation `SinGha+HybrEdgDetMetFuzSetTheCelLeaAut' on page 45 und
+efined on input line 1754.
+
+
+Overfull \hbox (1.56511pt too wide) in paragraph at lines 1759--1760
+\temp Autor pr^^Sace pre-zen-tuje no-vou, jed-no-du-chou, tech-niku stro-jov^^S
+eho u^^Tcen^^S^^P. V^^Syhodou
+ []
+
+
+Overfull \hbox (7.73573pt too wide) in paragraph at lines 1770--1771
+[]\temp K ja-zyku $\temp L$ \temp se-stav^^S^^Pme ne-de-ter-mi-nis-tick^^Sy kon
+e^^Tcn^^Sy au-to-mat $\temp A[]$ \temp roz-pozn^^Savaj^^S^^Pc^^S^^P
+ []
+
+
+Overfull \hbox (17.25742pt too wide) in paragraph at lines 1775--1776
+[]\temp Kl^^S^^P^^Tcov^^Sym bo-dem t^^Seto tech-niky je mi-ni-ma-li-zace au-to-
+matu. Tech-nika p^^Tredpokl^^Sad^^Sa,
+ []
+
+
+Overfull \hbox (9.20079pt too wide) in paragraph at lines 1775--1776
+\temp gul^^Sern^^S^^Pch ja-zyk^^Wu (at[] u^^Tz jako podmno^^Tziny nebo jako pod
+^^Tret^^Tezce vy-bran^^Sych ^^Tret^^Tezc^^Wu).
+ []
+
+[45]
+Overfull \hbox (18.91855pt too wide) in paragraph at lines 1777--1778
+[]\temp Nav^^S^^Pc, vy-ge-ne-ro-van^^Sy au-to-mat pom^^Tern^^Te p^^Trehledn^^Te
+ po-pi-suje struk-turu ve vstupn^^S^^Pm
+ []
+
+
+LaTeX Warning: Citation `TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 46
+ undefined on input line 1785.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 46 undefined on 
+input line 1787.
+
+
+LaTeX Warning: Citation `FuLi-ForLeaAutAutGam' on page 46 undefined on input li
+ne 1789.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 46 undefined on input line 
+1792.
+
+
+Overfull \hbox (10.56905pt too wide) in paragraph at lines 1792--1793
+[]\temp V [[]] na-vr-huj^^S^^P pou^^Tz^^S^^Pvat u^^Tcen^^S^^P fuzzy au-to-mat^^
+Wu pro kon-strukci lo-gick^^Sych klopn^^Sych
+ []
+
+
+Overfull \hbox (5.0151pt too wide) in paragraph at lines 1792--1793
+\temp ob-vod^^Wu. Tj. ob-vod^^Wu, kter^^Se se na z^^Saklad^^Te vstup^^Wu p^^Tre
+kl^^Sap^^S^^P mezi r^^Wuzn^^Symi diskr^^Setn^^S^^Pmi
+ []
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 46 undefined on 
+input line 1794.
+
+
+LaTeX Warning: Citation `SinGha+HybrEdgDetMetFuzSetTheCelLeaAut' on page 46 und
+efined on input line 1794.
+
+[46] [47]
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 48 undefined on 
+input line 1828.
+
+[48] (./fapa.bbl (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [47]) [48]
-(./fapa.aux)
+)
+[49]) [50] (./fapa.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1411,10 +1535,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7054 strings out of 494330
- 100784 string characters out of 6163450
- 169705 words of memory out of 5000000
- 10183 multiletter control sequences out of 15000+600000
+ 7065 strings out of 494330
+ 101132 string characters out of 6163450
+ 169710 words of memory out of 5000000
+ 10194 multiletter control sequences out of 15000+600000
  16809 words of font info for 64 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
  53i,20n,42p,966b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1448,10 +1572,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on fapa.pdf (48 pages, 2841144 bytes).
+Output written on fapa.pdf (50 pages, 2852009 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
+ 355 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

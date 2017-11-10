@@ -24,7 +24,7 @@ beginfig(0);
    
    with shape(boxed) node.a[1][5](btex $y_1$ etex);
    with shape(boxed) node.a[2][5](btex $y_2$ etex);
-   with shape(boxed) node.a[3][5](btex $y_2$ etex);
+   with shape(boxed) node.a[3][5](btex $y_3$ etex);
    
    arrow.top(lblpos, btex $ w_{1,1} $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
    arrow.top(lblpos, btex $ w_{1,2} $ etex) (a[2][1],a[2][2]) a[2][1].c..a[2][2].c;
