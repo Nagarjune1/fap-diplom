@@ -519,5 +519,9 @@ ok,SahUguSah-SalPepNoiFilFuzCelAut,,"U. Sahin, S. Uguz, F. Sahin", ,Salt and pep
 ok??,PraCha-FuzCelAuModPatCla,,"Pradipta MAJI, P. Pal CHAUDHURI",,Fuzzy Cellular Automata for Modeling Pattern Classifier
 ok,MaiAgg-StuComVarImDetEdTec,,"Raman Maini, Dr. Himanshu Aggarwal",,Study and Comparison of Various Image Edge Detection Techniques
 ok??,Rus-ImaProHan,,John C. Russ,,"The Image Processing Handbook, Sixth Edition"
+-- learning,,,,,
 ok,FieRus-HanNeuCom,,"Emile Fiesler, Russell Beale ",,Handbook of Neural Computation
 ok,RuaKer-FuzIfTheRulComIn,,"Da Ruan,Etienne E. Kerre",,Fuzzy If-Then Rules in Computational Intelligence: Theory and Applications
+-- medicine and rest,,,,,
+ok,KwaMinYou-DnaSeqAlAl+,,"Kwangbaek Kim, Minhwan Kim, Youngwoon Woo",,A DNA sequence alignment algorithm using quality information and a fuzzy inference method
+ok,CamMerNun-UsFuzAutDiagPrHeaPro,,"Azahara Camacho, Mercedes G. Merayo, Manuel Núñez",,Using fuzzy automata to diagnose and predict heart problems

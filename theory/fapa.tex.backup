@@ -1793,10 +1793,7 @@ V \cite{PedGac-LeaFuzzAut} navrhují používat učení fuzzy automatů pro kons
 
 V \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} a \cite{WeeFu-FormFuzAutAppModLeaSys} používají učící automat na vylepšení rozpoznávání textu v obrazu. Jako trénovací data jsou použity známé (již dříve rozpoznané) texty a trénování zde plní účel přizpůsobení se reálným vytištěným textům. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} a \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} používají učící buněčný fuzzy automat pro zpřesnění detekce hran v obrazech. \TODO{Odkázat na patřičné kapitoly v textu}
 
-
-Autor sám přichází s myšlenkou, že kombinace fuzzy automatů a strojového učení má poměrně značný potenciál pro uplatnění v praxi. Kombinace fuzzy automatů, které poměrně jednoduše, avšak poměrně restriktivně popisují určitý jazyk mohou být pomocí strojového učení snadno upraveny na mocnější nástroje. 
-
-
+Autor sám přichází s myšlenkou, že kombinace fuzzy automatů a strojového učení má poměrně značný potenciál pro uplatnění v praxi. Kombinace fuzzy automatů, které poměrně jednoduše, avšak poměrně restriktivně popisují určitý jazyk mohou být pomocí strojového učení snadno upraveny na mocnější nástroje. Důvod, proč se však nepoužívají vidí v současném boomu neuronových sítí jako takových, které utlačují všechny ostatní techniky strojového učení.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
