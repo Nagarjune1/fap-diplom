@@ -9,6 +9,13 @@ I was expecting a `,' or a `}'---line 343 of file resources.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "RuaKer-FuzIfTheRulComI"
+Warning--I didn't find a database entry for "Koz-AutComp"
+Warning--I didn't find a database entry for "Law-FinAut"
+Warning--I didn't find a database entry for "SnaKepAbrHas-AproxStriMatchFuzzAut"
+Warning--I didn't find a database entry for "PedGac-LeaFuzzAut"
+Warning--I didn't find a database entry for "BlaDelPeg-FuzzGraIntUsiNeuNet"
+Warning--I didn't find a database entry for "CheMo-MinAlgFuzFinAut"
+Warning--I didn't find a database entry for "Bel-DetFuzAut"
 Warning--I didn't find a database entry for "Com+-TreeAutTecApp"
 Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
 Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
@@ -54,13 +61,12 @@ Warning--I didn't find a database entry for "FieRus-HanNeuCom"
 Warning--I didn't find a database entry for "GilOmlTho-EquKnoRep+"
 Warning--I didn't find a database entry for "OmlThoGil-RepFuzFinStaAuConRecNeuNet"
 Warning--I didn't find a database entry for "UnaKha-FuzDFinStaMachImpBasNeuFuzSys"
-Warning--I didn't find a database entry for "PedGac-LeaFuzzAut"
 Warning--I didn't find a database entry for "BlaDelFlo-MethIndFuzzAutUsNeuNet"
-Warning--I didn't find a database entry for "BlaDelPeg-FuzzGraIntUsiNeuNet"
 Warning--I didn't find a database entry for "FuLi-ForLeaAutAutGam"
 Warning--I didn't find a database entry for "WeeFu-FormFuzAutAppModLeaSys"
 Warning--I didn't find a database entry for "TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut"
 Warning--I didn't find a database entry for "SinGha+HybrEdgDetMetFuzSetTheCelLeaAut"
+Warning--I didn't find a database entry for "SteAdl-CliMonFuzAut"
 Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
 while executing---line 1049 of file plain.bst
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
@@ -72,45 +78,45 @@ Warning--empty journal in Ech-DefSyssConPre
 Warning--empty year in Ech-DefSyssConPre
 Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
 while executing---line 1090 of file plain.bst
-You've used 20 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            711 strings with 11115 characters,
-and the built_in function-call counts, 4271 in all, are:
-= -- 407
-> -- 164
+            718 strings with 11216 characters,
+and the built_in function-call counts, 4056 in all, are:
+= -- 388
+> -- 157
 < -- 0
-+ -- 70
-- -- 48
-* -- 184
-:= -- 810
-add.period$ -- 59
-call.type$ -- 20
-change.case$ -- 81
++ -- 67
+- -- 46
+* -- 176
+:= -- 772
+add.period$ -- 56
+call.type$ -- 19
+change.case$ -- 78
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 204
-empty$ -- 351
-format.name$ -- 48
-if$ -- 856
+cite$ -- 22
+duplicate$ -- 192
+empty$ -- 329
+format.name$ -- 46
+if$ -- 810
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 22
-newline$ -- 102
-num.names$ -- 40
-pop$ -- 97
+int.to.str$ -- 19
+missing$ -- 20
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 89
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 61
 quote$ -- 0
-skip$ -- 139
+skip$ -- 133
 stack$ -- 0
-substring$ -- 102
-swap$ -- 19
+substring$ -- 97
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 74
 warning$ -- 3
-while$ -- 40
-width$ -- 22
-write$ -- 199
+while$ -- 38
+width$ -- 21
+write$ -- 189
 (There were 5 error messages)

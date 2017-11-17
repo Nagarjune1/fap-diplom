@@ -1,44 +1,62 @@
 \select@language {czech}
 \contentsline {section}{\numberline {1}Definice a zna\IeC {\v c}en\IeC {\'\i }}{3}
-\contentsline {subsection}{\numberline {1.1}If-Then pravidla}{5}
-\contentsline {section}{\numberline {2}Fuzzy automaty, gramatiky a jazyky}{7}
-\contentsline {subsection}{\numberline {2.1}Jazyk rozpozn\IeC {\'a}van\IeC {\'y} fuzzy automatem}{7}
-\contentsline {subsection}{\numberline {2.2}Fuzzy a bivalentn\IeC {\'\i } regul\IeC {\'e}rn\IeC {\'\i } jazyky}{7}
-\contentsline {subsection}{\numberline {2.3}Fuzzy regul\IeC {\'a}rn\IeC {\'\i } v\IeC {\'y}razy}{7}
-\contentsline {section}{\numberline {3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } textov\IeC {\'y}ch vzor\IeC {\r u}}{7}
-\contentsline {subsection}{\numberline {3.1}Form\IeC {\'a}ln\IeC {\'\i } zaveden\IeC {\'\i } probl\IeC {\'e}mu}{8}
-\contentsline {subsection}{\numberline {3.2}Motivace k pou\IeC {\v z}it\IeC {\'\i } fuzzy automat\IeC {\r u}}{8}
-\contentsline {subsection}{\numberline {3.3}Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{9}
-\contentsline {subsection}{\numberline {3.4}Podobnost symbol\IeC {\r u}}{10}
-\contentsline {subsection}{\numberline {3.5}Fuzzy symboly}{12}
-\contentsline {subsection}{\numberline {3.6}Edita\IeC {\v c}n\IeC {\'\i } operace}{14}
-\contentsline {subsection}{\numberline {3.7}Deformovan\IeC {\'y} automat}{18}
-\contentsline {subsection}{\numberline {3.8}Shrnut\IeC {\'\i }}{19}
-\contentsline {section}{\numberline {4}Fuzzy tree automaty}{20}
-\contentsline {subsection}{\numberline {4.1}Zaveden\IeC {\'\i }}{20}
-\contentsline {subsection}{\numberline {4.2}Stromy a pseudotermy}{20}
-\contentsline {subsection}{\numberline {4.3}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{22}
-\contentsline {subsection}{\numberline {4.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{25}
-\contentsline {subsection}{\numberline {4.5}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{25}
-\contentsline {subsection}{\numberline {4.6}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{26}
-\contentsline {section}{\numberline {5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{28}
-\contentsline {subsection}{\numberline {5.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{29}
-\contentsline {subsection}{\numberline {5.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{31}
-\contentsline {subsection}{\numberline {5.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{33}
-\contentsline {subsection}{\numberline {5.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{34}
-\contentsline {subsection}{\numberline {5.5}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{35}
-\contentsline {subsection}{\numberline {5.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{38}
-\contentsline {subsection}{\numberline {5.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{40}
-\contentsline {subsection}{\numberline {5.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{40}
-\contentsline {section}{\numberline {6}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{41}
-\contentsline {subsection}{\numberline {6.1}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{42}
-\contentsline {subsection}{\numberline {6.2}Konstrukce neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{43}
-\contentsline {subsection}{\numberline {6.3}Fuzzy automaty a neuronovky}{44}
-\contentsline {subsection}{\numberline {6.4}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{45}
-\contentsline {subsection}{\numberline {6.5}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{45}
-\contentsline {subsection}{\numberline {6.6}Re\IeC {\'a}ln\IeC {\'e} p\IeC {\v r}\IeC {\'\i }klady pou\IeC {\v z}it\IeC {\'\i }}{46}
-\contentsline {section}{\numberline {7}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{48}
-\contentsline {section}{\numberline {8}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{48}
-\contentsline {subsubsection}{\numberline {8.0.1}Automat jako \uv {lep\IeC {\v s}\IeC {\'\i }} reprezentace n\IeC {\v e}\IeC {\v c}eho}{48}
-\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{48}
-\contentsline {subsection}{\numberline {8.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{48}
+\contentsline {subsection}{\numberline {1.1}Fuzzy teorie}{3}
+\contentsline {subsection}{\numberline {1.2}Zbytek}{3}
+\contentsline {subsection}{\numberline {1.3}If-Then pravidla}{4}
+\contentsline {section}{\numberline {2}\IeC {\'U}vod do teorie automat\IeC {\r u}}{5}
+\contentsline {subsection}{\numberline {2.1}Abecedy, \IeC {\v r}et\IeC {\v e}zce, jazyky}{5}
+\contentsline {subsection}{\numberline {2.2}Gramatiky}{6}
+\contentsline {subsection}{\numberline {2.3}Determinstick\IeC {\'e} automaty (bivalentn\IeC {\'\i })}{7}
+\contentsline {subsection}{\numberline {2.4}Nedeterminstick\IeC {\'e} automaty (bivalentn\IeC {\'\i })}{9}
+\contentsline {subsection}{\numberline {2.5}Regul\IeC {\'e}rn\IeC {\'\i } v\IeC {\'y}razy}{9}
+\contentsline {section}{\numberline {3}Definice fuzzy automatu}{9}
+\contentsline {subsection}{\numberline {3.1}Koncept fuzzy automatu}{9}
+\contentsline {subsection}{\numberline {3.2}Nedeterministick\IeC {\'y} fuzzy automat}{9}
+\contentsline {subsection}{\numberline {3.3}Fuzzy automat s v\IeC {\'y}stupem}{10}
+\contentsline {subsection}{\numberline {3.4}Deterministick\IeC {\'y} fuzzy automat}{10}
+\contentsline {section}{\numberline {4}Fuzzy automaty, jazyky, gramatiky a regul\IeC {\'e}rn\IeC {\'\i } v\IeC {\'y}razy}{11}
+\contentsline {subsection}{\numberline {4.1}Jazyk rozpozn\IeC {\'a}van\IeC {\'y} fuzzy automatem}{11}
+\contentsline {subsection}{\numberline {4.2}Fuzzy a bivalentn\IeC {\'\i } regul\IeC {\'e}rn\IeC {\'\i } jazyky}{11}
+\contentsline {subsection}{\numberline {4.3}Fuzzy regul\IeC {\'a}rn\IeC {\'\i } v\IeC {\'y}razy}{11}
+\contentsline {section}{\numberline {5}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } textov\IeC {\'y}ch vzor\IeC {\r u}}{11}
+\contentsline {subsection}{\numberline {5.1}Form\IeC {\'a}ln\IeC {\'\i } zaveden\IeC {\'\i } probl\IeC {\'e}mu}{12}
+\contentsline {subsection}{\numberline {5.2}Motivace k pou\IeC {\v z}it\IeC {\'\i } fuzzy automat\IeC {\r u}}{12}
+\contentsline {subsection}{\numberline {5.3}Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{13}
+\contentsline {subsection}{\numberline {5.4}Podobnost symbol\IeC {\r u}}{14}
+\contentsline {subsection}{\numberline {5.5}Fuzzy symboly}{16}
+\contentsline {subsection}{\numberline {5.6}Edita\IeC {\v c}n\IeC {\'\i } operace}{18}
+\contentsline {subsection}{\numberline {5.7}Deformovan\IeC {\'y} automat}{22}
+\contentsline {subsection}{\numberline {5.8}Shrnut\IeC {\'\i }}{23}
+\contentsline {section}{\numberline {6}Fuzzy tree automaty}{24}
+\contentsline {subsection}{\numberline {6.1}Zaveden\IeC {\'\i }}{24}
+\contentsline {subsection}{\numberline {6.2}Stromy a pseudotermy}{24}
+\contentsline {subsection}{\numberline {6.3}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{26}
+\contentsline {subsection}{\numberline {6.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{29}
+\contentsline {subsection}{\numberline {6.5}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{29}
+\contentsline {subsection}{\numberline {6.6}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{30}
+\contentsline {section}{\numberline {7}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{32}
+\contentsline {subsection}{\numberline {7.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{33}
+\contentsline {subsection}{\numberline {7.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{35}
+\contentsline {subsection}{\numberline {7.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{37}
+\contentsline {subsection}{\numberline {7.4}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{38}
+\contentsline {subsection}{\numberline {7.5}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{39}
+\contentsline {subsection}{\numberline {7.6}Hled\IeC {\'a}n\IeC {\'\i } hran}{42}
+\contentsline {subsection}{\numberline {7.7}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{44}
+\contentsline {subsection}{\numberline {7.8}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{44}
+\contentsline {section}{\numberline {8}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{45}
+\contentsline {subsection}{\numberline {8.1}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{46}
+\contentsline {subsection}{\numberline {8.2}Konstrukce neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{47}
+\contentsline {subsection}{\numberline {8.3}Fuzzy automaty a neuronovky}{48}
+\contentsline {subsection}{\numberline {8.4}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{49}
+\contentsline {subsection}{\numberline {8.5}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{49}
+\contentsline {subsection}{\numberline {8.6}Re\IeC {\'a}ln\IeC {\'e} p\IeC {\v r}\IeC {\'\i }klady pou\IeC {\v z}it\IeC {\'\i }}{50}
+\contentsline {section}{\numberline {9}Biologie a medic\IeC {\'\i }na}{51}
+\contentsline {subsection}{\numberline {9.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{51}
+\contentsline {subsection}{\numberline {9.2}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } vzor\IeC {\r u} v obrazech}{51}
+\contentsline {subsection}{\numberline {9.3}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{51}
+\contentsline {subsection}{\numberline {9.4}Anal\IeC {\'y}za kardiogramu}{51}
+\contentsline {section}{\numberline {10}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{52}
+\contentsline {section}{\numberline {11}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{52}
+\contentsline {subsubsection}{\numberline {11.0.1}Automat jako \uv {lep\IeC {\v s}\IeC {\'\i }} reprezentace n\IeC {\v e}\IeC {\v c}eho}{52}
+\contentsline {subsection}{\numberline {11.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{52}
+\contentsline {subsection}{\numberline {11.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{52}

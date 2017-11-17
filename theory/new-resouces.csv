@@ -525,3 +525,10 @@ ok,RuaKer-FuzIfTheRulComIn,,"Da Ruan,Etienne E. Kerre",,Fuzzy If-Then Rules in C
 -- medicine and rest,,,,,
 ok,KwaMinYou-DnaSeqAlAl+,,"Kwangbaek Kim, Minhwan Kim, Youngwoon Woo",,A DNA sequence alignment algorithm using quality information and a fuzzy inference method
 ok,CamMerNun-UsFuzAutDiagPrHeaPro,,"Azahara Camacho, Mercedes G. Merayo, Manuel Núñez",,Using fuzzy automata to diagnose and predict heart problems
+donwloadme,Res+-AppFuzLogGen,,"Ressom, Natarajan, Varghese, Musavi",,Applications of fuzzy logic in genomics
+-- theory,,,,,
+ok,Eil-AutLanMachVolA,,Samuel Eilenberg,,"Automata, Languages and Machines. Volume A."
+ok,Eil-AutLanMachVolB,,Samuel Eilenberg,,"Automata, Languages and Machines. Volume B."
+ok,Koz-AutComp,,Dexter C. Kozen,,Automata and Computability
+ok,Law-FinAut,,Mark V. Lawson,,Finite automata
+ok,Sip-IntTheComp,,Michael Sipser,,Introduction to the theory of computation

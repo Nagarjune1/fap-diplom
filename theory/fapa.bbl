@@ -5,11 +5,6 @@ M.~C.~Pegalajar A.~Blanco, M.~Delgado.
 \newblock Fuzzy automaton induction using neural network.
 \newblock {\em International Journal of Approximate Reasoning}, 2001.
 
-\bibitem{Bel-FuzRelSyss}
-Radim Bělohlávek.
-\newblock {\em Fuzzy Relational Systems: Foundations and Principles}.
-\newblock Kluwer, New York, 2002.
-
 \bibitem{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}
 C.~L.~Giles Ch. W.~Omlin, K. K.~Thornber.
 \newblock Fuzzy finite-state automata can be deterministically encoded into
