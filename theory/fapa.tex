@@ -16,75 +16,63 @@
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Definice a značení}
-Tato kapitola zatím poslouží jako \uv{skladiště} pro definice a zavedení značení pro ostatní kapitoly.
+\section{Úvodní pojmy}
+V této kapitole budou popsány základní koncepty a pojmy, bez kterých nebude možno se studiu fuzzy automatů věnovat. Bude zde tedy představen koncept fuzzy množin a základní pojmy z teorie automatů.
 
 \subsection{Fuzzy teorie}
+\TODO{Zde se důkladně rozepsat o motivaci a konceptech.}
+\TODO{ZDE dát všechny ty příklady na \uv{je teplo}, \uv{je mladý} a podob. !}
+
 Fuzzy množiny a relace budou po vzoru \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} nejčastěji malými řeckými písmeny (obdobně jako jejich členské (angl. \uv{membership}) funkce). Množinu všech fuzzy podmnožin množiny $S$ budeme značit $\fsubsets{S}$.
 
-% 
-% \subsubsection*{Deterministický bivalentní automat}
-% \TODO{zdroj: Eilenberg S.: Automata, Languages and Machines, Vol. A, Academic Press, New York, 1974. Pokud ji někde seženu (odkazuje se na ni Bel v \cite{Bel-FuzRelSyss}}
-% 
-% \TODO{co citování definic? půlku jsem si vymyslel ...}
-% 
-% \begin{definition}
-%  Konečný deterministický (bivalentní) automat je pětice $A = ( Q, \Sigma, \delta, q_0, F )$, kde $Q$ je konečná množina stavů, $\Sigma$ je vstupní abeceda, $\delta: Q \times \Sigma \rightarrow Q$ je přechodová funkce, $q_0 \in Q$ je počátační stav a $F \subseteq Q$ je množina koncových stavů.
-% \end{definition}
-% 
-% 
-% \subsubsection*{Nedeterministický bivalentní automat}
-% \TODO{Značení převzato z FJAA, dohledat zdroj}
-% \begin{definition}
-%   Konečný nedeterministický (bivalentní) automat je pětice $A = ( Q, \Sigma, \delta, I, F )$, kde $Q$ je konečná množina stavů, $\Sigma$ je vstupní abeceda, $\delta: Q \times \Sigma \rightarrow 2^Q$ je přechodová funkce, $I \subseteq Q$ je množina počátačních stavů a $F \subseteq Q$ je množina koncových stavů.
-%  \end{definition}
- 
-% \subsubsection*{Základní definice nedeterministického fuzzy automatu}
-% Značení je převzato z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} a lehce upraveno.
-% 
-% \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
-%  Nedeterministický fuzzy automat $A$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
-% \end{definition}
-% 
-% \begin{definition}[Fuzzy stav]\label{def-FuzzStav}
-%  Mějme nedeterministický fuzzy automat $A$. Pak jako fuzzy stav označujeme fuzzy podmnožinu jeho stavů, tj. $V \in \fsubsets{Q}$.
-% \end{definition}
-% 
-% \begin{definition}[Aplikace fuzzy relace na fuzzy stav]
-%  Mějme nedeterministický fuzzy automat $A$ a fuzzy symbol $V$. Pak aplikací binární fuzzy relace $R: Q \times Q \rightarrow [0, 1]$ na fuzzy stav $V$ obdržíme fuzzy symbol $V \circ R$ splňující pro každé $p \in Q$: $(V \circ R )(p) = \max_{q \in Q} (V(q) \otimes R(q, p))$.
-% \end{definition}
-% 
-% \begin{definition}[Přechodová funkce fuzzy stavů]\label{def-PreFunFuzzStav}
-%  Mějme nedeterministický fuzzy automat $A$. Pak přechodová funkce fuzzy stavů je fuzzy relace $\widehat{\mu}: \fsubsets{F} \times \Sigma \rightarrow \fsubsets{F}$ taková, že pro každý fuzzy stav $V \in \fsubsets{Q}$ a symbol $x \in \Sigma$ je $\widehat{\mu}(V, x) = V \circ \mu[x]$.
-% \end{definition}
-% 
-% \begin{note}
-%  Označení $\mu[x]$ je fuzzy relace, pro kterou platí: $\mu[x](p, q) = \mu(p, x, q)$ pro všechna $x \in \Sigma$ a $p, q \in Q$.
-% \end{note}
-% 
-% \begin{definition}[Rozšířená přechodová funkce]\label{def-PreFunFuzzStav}
-%  Mějme nedeterministický fuzzy automat $A$. Pak rozšířená přechodová funkce (fuzzy stavů) je fuzzy relace $\mu^*: \fsubsets{F} \times \Sigma^* \rightarrow \fsubsets{F}$ (\TODO{co je to $F$? Nemá to být $Q$?!}) daná následujícím předpisem:
-%  \begin{enumerate}
-%   \item $\mu^*(V, \epsilon) = V$ pro všechna $V \in \fsubsets{Q}$
-%   \item $\mu^*(V, \alpha x) = \widehat{\mu}(\mu^*(V, \alpha), x)$ pro všechna $V \in \fsubsets{Q}, \alpha \in \Sigma^*, x \in \Sigma$
-%  \end{enumerate}
-% \end{definition}
-% 
-% \begin{definition}[Řetězec přijímaný automatem]\label{def-RetPriAut}
-%  Mějme nedeterministický fuzzy automat $A$. Pak řětězec $\alpha \in \Sigma^*$ je automatem $A$ přijat ve stupni
-%  $$
-%   A(\alpha) = \max_{q \in Q} (\mu^*(\sigma, \alpha)(q) \otimes \eta(q))
-%  $$
-%  \TODO{ověřit, dohledat, ozdrojovat}
-% \end{definition}
-% 
-% \begin{definition}[Jazyk rozpoznávaný automatem]\label{def-JazRozpAut}
-%  Mějme nedeterministický fuzzy automat $A$. Pak fuzzy množinu $\mathcal{L}(A)(\alpha) = A(\alpha)$ nad univerzem $\Sigma^*$ nazýváme fuzzy jazyk rozpoznávaný automatem $A$.
-% 
-%  \TODO{ověřit, dohledat, ozdrojovat}
-% \end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abecedy, řetězce, jazyky}
+Definice a značení následujících pojmů jsou převzaty z \cite{Koz-AutComp}.
 
-\subsection{Zbytek}
+\subsubsection*{Abeceda}
+Základním pojmem při studiu automatů je abeceda. Abeceda je neprázdná a konečná množina symbolů a značí se $\Sigma$, případně jiným velkým písmenem řecké abecedy. Abecedou může být například \uv{všechna malá písmena latinky}, nebo např. číslice $0$ -- $9$.
+
+\subsubsection*{Řetezec}
+Posloupnost $u = a_1 a_2 \dots a_n$ kde $a_1,  a_2, \dots, a_n \in \Sigma$ se nazývá řetězec $u$ nad abecedou $\Sigma$. Číslo $n$ je pak délka řetězce $u$, která se jinak značí $|u|$. Řetězec, který má nulovou délku, značíme $\varepsilon$.
+
+Řetězec $u \circ v = a_1 \dots a_n b_1 \dots b_m$ (častěji však $uv$) se nazývá zřetězení (konkatenace) řetězců $u = a_1 \dots a_n$ a $v = b_1 \dots b_m$. Přirozeně platí $|uv| = n + m$. Jako $n$-tá mocnina $u^n$ řetězce $u$ se označuje řetezec:
+$$
+  u^n = \begin{dcases}
+    \varepsilon & \text{pokud } n = 0\\
+    u u^{n-1} & \text{jinak}
+  \end{dcases}
+$$
+
+Symbolem $\Sigma^*$ se značí množina všech řetězců nad abecedou $\Sigma$ (včetně $\varepsilon$). Symbol $\Sigma^+$ pak značí všechny řetězce nad abecedou $\Sigma$ vyjma $\varepsilon$. %Symbol $\Sigma^*$ se nazývá Kleeneho uzávěř, $\Sigma^+$ pak pozitivní uzávěř.
+
+
+\subsection{Jazyky}
+
+Pojmem (formální) jazyk se označuje určitá vybraná množina $L$ řetězců nad abecedou $\Sigma$, tj. $L \subseteq \Sigma^*$.
+
+\subsubsection*{Bivalentní jazyk}
+Nad jazyky $L$, $L_1$ a $L_2$ nad abecedami $\Sigma$, $\Sigma_1$ a $\Sigma_2$ se zavádí:
+$$
+\begin{array}{ll}
+  L_1 L_2 		= \left\{ u v \,|\, u \in L_1, v \in L_2 \right\}	& \text{zřetězení (produkt)}	\\ \\
+  L^n 			= \begin{dcases}
+      \left\{ \varepsilon \right\} 	& \text{pokud } n = 0 \\
+      L L^{n-1} 			& \text{jinak}
+    \end{dcases} 								& \text{$n$-tá mocnina}		\\ \\
+  
+  L^* 	= \bigcup\limits_{i=0}^{\infty} L^i						& \text{Kleeneho uzávěr}	\\ \\
+  L^+ 	= \bigcup\limits_{i=1}^{\infty} L^i						& \text{pozitivní uzávěr}
+\end{array}
+$$
+
+Je-li jazyk konečná množina, tj, obsahuje konečně mnoho řetězců, nazýváme jej konečný. V opačném případě říkáme, že je jazyk nekonečný.
+
+\subsubsection*{Fuzzy jazyk}
+\TODO{Doplnit} \TODO{Fuzzy jazyk by měl přijít až po zavedení fuzzy teorie. Je to ok?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Ostatní důlěžité pojmy}
 \subsubsection*{Nedeterministickýfuzzy automat s $\epsilon$ přechody}
 
 \begin{definition}[Nedeterministický fuzzy automat s $\epsilon$ přechody]\label{def-NedFuzzAutEpsPre}
@@ -150,7 +138,7 @@ Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i 
 
 \TODO{vymyslet nějaký fakt pěkný příklad}
 
-\subsection{If-Then pravidla}
+\subsubsection{If-Then pravidla}
 V mnoha aplikacích se setkáme se situací, kdy budeme potřebovat popsat určitou funkčnost či chování systému \uv{lidským} způsobem. Velmi častým způsobem, jak toho dosáhnout je s pomocí tzv. If-Then pravidel. Popis If-Then pravidel byl převzat z \cite{RuaKer-FuzIfTheRulComI}.
 
 If-Then pravidlo je výrok je tvaru:
@@ -208,56 +196,8 @@ U fuzzy If-Then pravidel nemá smysl uvažovat jejich pravdivost jako takovou. J
  Pokud máme fuzzy If-Then pravidel více, pak je spojujeme disjunkcí.
 \end{note}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Úvod do teorie automatů}
-Nezbytným předpokladem pro studium fuzzy automatů je obeznámení se se základy studia \uv{klasických} bivalentních automatů. Fuzzy automaty jsou v mnohém jejich zobecněním. Navíc, některé základní pojmy zůstávají nezměněny.
-
-V následujících podkapitolách budou proto zavedeny základní pojmy z teorie automatů. Následně bude popsán a uveden pojem \uv{automat} a s ním související pojmy.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Abecedy, řetězce, jazyky}
-Definice a značení následujících pojmů jsou převzaty z \cite{Koz-AutComp}.
-
-\subsubsection*{Abeceda}
-Základním pojmem při studiu automatů je abeceda. Abeceda je neprázdná množina symbolů a značí se $\Sigma$, případně jiným velkým písmenem řecké abecedy. Abecedou může být například \uv{všechna malá písmena latinky}, nebo např. číslice $0$ -- $9$.
-
-\subsubsection*{Řetezec}
-Posloupnost $u = a_1 a_2 \dots a_n$ kde $a_1,  a_2, \dots, a_n \in \Sigma$ se nazývá řetězec $u$ nad abecedou $\Sigma$. Číslo $n$ je pak délka řetězce $u$, která se jinak značí $|u|$. Řetězec, který má nulovou délku, značíme $\varepsilon$.
-
-Řetězec $u \circ v = a_1 \dots a_n b_1 \dots b_m$ (častěji však $uv$) se nazývá zřetězení (konkatenace) řetězců $u = a_1 \dots a_n$ a $v = b_1 \dots b_m$. Přirozeně platí $|uv| = n + m$. Jako $n$-tá mocnina $u^n$ řetězce $u$ se označuje řetezec:
-$$
-  u^n = \begin{dcases}
-    \varepsilon & \text{pokud } n = 0\\
-    u u^{n-1} & \text{jinak}
-  \end{dcases}
-$$
-
-Symbolem $\Sigma^*$ se značí množina všech řetězců nad abecedou $\Sigma$ (včetně $\varepsilon$). Symbol $\Sigma^+$ pak značí všechny řetězce nad abecedou $\Sigma$ vyjma $\varepsilon$. %Symbol $\Sigma^*$ se nazývá Kleeneho uzávěř, $\Sigma^+$ pak pozitivní uzávěř.
-
-\subsubsection*{Jazyk}
-Pojmem (formální) jazyk se označuje určitá vybraná množina $L$ řetězců nad abecedou $\Sigma$, tj. $L \subseteq \Sigma^*$.
-
-Nad jazyky $L$, $L_1$ a $L_2$ nad abecedami $\Sigma$, $\Sigma_1$ a $\Sigma_2$ se zavádí:
-$$
-\begin{array}{ll}
-  L_1 L_2 		= \left\{ u v \,|\, u \in L_1, v \in L_2 \right\}	& \text{zřetězení (produkt)}	\\ \\
-  L^n 			= \begin{dcases}
-      \left\{ \varepsilon \right\} 	& \text{pokud } n = 0 \\
-      L L^{n-1} 			& \text{jinak}
-    \end{dcases} 								& \text{$n$-tá mocnina}		\\ \\
-  
-  L^* 	= \bigcup\limits_{i=0}^{\infty} L^i						& \text{Kleeneho uzávěr}	\\ \\
-  L^+ 	= \bigcup\limits_{i=1}^{\infty} L^i						& \text{pozitivní uzávěr}
-\end{array}
-$$
-
-Je-li jazyk konečná množina, tj, obsahuje konečně mnoho řetězců, nazýváme jej konečný. V opačném případě říkáme, že je jazyk nekonečný.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gramatiky}
+\subsection{Další pojmy z úvodu do teorie automatů}
+\subsubsection{Gramatiky}
 Gramatiky (přesněji \uv{formální gramatiky}) jsou nástroje pro popis jazyků. Gramatika určuje, jakým způsobem lze jazyk vygenerovat. 
 Následující pojmy jsou převzaty z \cite{Law-FinAut}.
 
@@ -305,91 +245,118 @@ Regulérní gramatiky (a jim opdovídající jazyky) mají spoustu zajímavých 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Determinstické automaty (bivalentní)}
-Oproti gramatikám, které jazyky generují, automaty jsou nástroje, které jazyky rozpoznávají. Tedy vstupem automatu je řetězec a výstupem informace, zda-li je tento řetězec v jazyce automatem přijímaným či nikoliv. Začněme s nezákladnější definicí, deterministického bivalentního automatu (pro jednoduchost budeme \uv{bivalentní} v této kapitole vynechávat). Veškeré definice v této podkapitole jsou převzaty z \cite{Law-FinAut}.
-
-\subsubsection*{Konečný deterministický automat}
-Jako konečný deterministický automat považujeme výpočetní model ve formě stavového stroje. Tj. modelu, který disponuje diskrétními stavy, mezi kterými přechází na základě podnětů zvnějšku. Těmito podněty bude v případě automatu čtení symbolů z řetězce na jeho vstupu.
-
-\begin{definition}[Konečný deterministický automat]
- Konečný deterministický automat je pětice $A = ( Q, \Sigma, \delta, q_0, F )$, kde $Q$ je konečná množina stavů, $\Sigma$ je vstupní abeceda, $\delta: Q \times \Sigma \rightarrow Q$ je přechodová funkce, $q_0 \in Q$ je počátační stav a $F \subseteq Q$ je množina koncových stavů.
-\end{definition}
-
-Pokud pro všechny $q \in Q$ a $a \in \Sigma$ existuje nějaký stav $q'$ takový, že $\delta(q, a) = q'$, říkáme, že automat je úplnou přechodovou funkcí. V opačném případě říkáme, že automat je s neúplnou přechodovou funkcí.
-
-Automat je často vhodné reprezentovat přehledněji, než přímo dle definice. Používá se buďto tabulková metoda, nebo graf. \TODO{asi nějak víc rozepsat + příklad!}
-
-\subsubsection*{Konfigurace a výpočet}
-\TODO{nedaří se mi dohledat zdroj, píšu to z hlavy.}
-\TODO{u obou výpočtů, nemám dořešený co když nemá úplnou přechodovou funkci}
-
-Mějme konečný deterministický automat $A$. Pak každou dvojici $(q, w) \in Q \times \Sigma^*$ nazýváme konfigurace automatu. Pokud $q = q_0$ nazýváme konfigurace počáteční. Pokud je $w = \epsilon$ nazýváme konfiguraci koncovou. Konfiguraci nazýváme přijímací pokud $q \in F$. V opačném případě ji nazýváme zamítací.
-
-Jako krok výpočtu automatu značíme relaci $\vdash$ na množině konfigurací takovou, že pro dvě konfigurace $(q, w)$ a $(q', w')$ platí $(q, w) \vdash (q', w')$ právě tehdy, když:
-\begin{enumerate}
- \item $w = a w'$
- \item $\delta(q, a) = q'$
-\end{enumerate}
-Reflexivní a tranzitivní uzávěr $\vdash^*$ relace $\vdash$ nazývejme výpočet automatu $A$. Řetězec $w \in \Sigma^*$ je automatem přijímán, pokud $(q_0,  w) \vdash^* (q', \empty)$ a $q' \in F$ (tj. výpočet zkončí v přijímací konfiguraci).
-
-\subsubsection*{Rozšířená přechodová funkce}
-Přechodová funkce automatu je definována jako zobrazení $\delta: Q \times \Sigma \rightarrow Q$. Pokud ji \uv{rozšíříme}, získáme zobrazení $\delta^*: Q \times \Sigma^* \rightarrow Q$ zvané rozšířená přechodová funkce dané následujícím předpisem:
-$$
- \delta^*(q, w) =
-  \begin{dcases}
-    q				& \text{ pokud $w = \epsilon$} \\
-    \delta^*(\delta(q, a), u)	& \text{ pokud $w = a u$} \\
-  \end{dcases}
-$$
-Pokud $\delta^*(q_0, w) \in F$, pak je řetězec přijímán, v opačném případě říkáme, že je zamítán.
-
-\subsubsection*{Jazyk rozpoznávaný}
-Jako jazyk rozpoznávaný automatem $A$ označujeme množinu $L(A)$:
-$$
-  L(A) = \{ w \in \Sigma^* | (q_0,  w) \vdash^* (q', \epsilon) \text{ a } q' \in F \} = \{ w \in \Sigma^* | \delta^*(q_0, w) \in F \}
-$$
-
-\subsection{Nedeterminstické automaty (bivalentní)}
-\TODO{zdroj?}
-
-\begin{definition}
-  Konečný nedeterministický (bivalentní) automat je pětice $A = ( Q, \Sigma, \delta, I, F )$, kde $Q$ je konečná množina stavů, $\Sigma$ je vstupní abeceda, $\delta: Q \times \Sigma \rightarrow 2^Q$ je přechodová funkce, $I \subseteq Q$ je množina počátačních stavů a $F \subseteq Q$ je množina koncových stavů.
- \end{definition}
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Regulérní výrazy}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definice fuzzy automatu}
-V této kapitole bude podrobně popsát a formálně nadefinován \uv{fuzzy automat}. Budou zde uvedeny různé základní varianty fuzzy automatů a jejich vzájemný vztah.
+V této kapitole bude podrobně popsán a formálně nadefinován \uv{fuzzy automat} a proces jeho výpočtu. Pro snažší ilustraci bude nejdříve popsán automat bivalentní a následně upraven do podoby fuzzy automatu. Popis bivalentního automatu je převzat z \cite{HopUl-IntrAutTheLangComp}, popis fuzzy automatu z \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} (pokud není uvedeno jinak).
 
-\subsection{Koncept fuzzy automatu}
-Je zjevné, že fuzzy automat bude v určitém smyslu zobecněním klasického bivalentního automatu. A to, ať už hovoříme o deterministickém či nedeterministickém, s částečnou nebo úplnou přechodovou funkcí. Obdobně, můžeme hovořit i o nedeterministickém fuzzy automatu s $\epsilon$-pravidly.\TODO{Fakt se $\epsilon$-pravidlům nevyhnu a budu je muset explicitně definovat?} \TODO{někde napsat, že budeme uvažovat vždy jen konečný (fuzzy) automat; odůvodnit to tím, že nechceme nějaké hluboké teoretické bádání, ale prostě ho používat v praxi, kde je to nutnost.}
+Hned na úvod je třeba zdůraznit terminologii. Jak bývá u automatů zvykem, pojem \uv{automat} označuje souhrnně různé varianty automatů, typicky nedeterministický i deterministický, bez dalšího rozlišování. Vzhledem k tomu, že základním (a nejpoužívanějším) fuzzy automatem je automat nedeterministický, bude proto druhá polovina této kapitoly věnována právě nedeterministickému fuzzy automatu. Zbývající známé varianty fuzzy automatů budou poté shrnuty v následujcí kapitole.
 
-Vzhledem k tomu, že se různí i pohledy na klasický automat, tím spíše se budou lišit pohledy i na fuzzy automat. Zaměřme se nyní na nedeterministický fuzzy automat. Připomeňme, že nedeterministický bivalentní automat byl tvořen množinou stavů, vstupní abecedou, počítečními a koncovými stavy a přechodovou funkcí.
+\TODO{někde tady zdůraznit konečné automaty?}
 
-Při definování nedeterministického fuzzy automatu je třeba provést zobecnění a některé množiny (funkce) zobecnit na fuzzy množiny (funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}). Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i výstupních stavů je zřejmě obecnější, bude nadále uvažován pouze tento.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Koncept automatu}
+Automat se řadí mezi tzv. výpočetní modely. Výpočetní model je označení pro matematický formalizmus, který popisuje určitý výpočet, algoritmus. Spolu s automaty (ve všech jejich variantách a modifikacích) se k výpočetním modelům řadí například také Turingovy stroje \cite{MorMal-FuzzyAutLang}. 
 
+Automaty také často bývají nazývany jako stavové stroje. Na automat lze totiž nahlížet jako na určité zařízení. Toto zařízení je charakterizováno svým vnitřním stavem a v závislosti na vstupu se tento stav diskrétně mění, tj. můžeme tvrdit, že automat přecháhází od jednoho stavu k jinému.
+
+Důležité je také dělení automatů na deterministické a nedeterministické. Obecná definice říká, že u deterministického automatu je jednoznačně dáno, do kterého stavu v každý moment výpočtu automat přejde. Naopak u nedeterminstického tento předpoklad neplatí, tj. výpočet automatu se může octnout v situaci, kdy má možnost přejít do dvou a více stavů \uv{současně}.
+
+Tuto situaci budeme u nedeterministických automatů reprezentovat tak, že automat se nebude nacházet vždy v jednom stavu, ale jeho aktuální stav bude popsán celou množinou stavů, ve kterých se nachází.
+
+Automat tedy musí zcela určitě obsahovat stavy, ve kterých se při svém výpočtu může nacházet. Spolu s nimi je každý automat dán vstupy, se kterými dokáže pracovat. Vstupy pro automat budou řetězce nad nějakou danou abecedou. O popis přechodů mezi stavy se bude starat přechodová funkce.
+
+Dále, u každého automatu musí být stanoven počáteční stav. Vzhledem k tomu, že se budeme bavit o automatu nedeterministickém, budeme uvažovat množinu počátečních stavů.
+
+Automaty původně vznikly jako nástroje pro rozpoznávání určité třídy jazyků\footnote{Konkrétně, jedná se o tzv. regulérní jazyky, které budou popsány v kapitole \TODO{doplnit odkaz}}. To znamená, že automat musí pro libovoný řetězec, zda-li do uvedeného jazyka patří nebo ne. U automatů je toto řešeno pomocí tzv. koncových stavů. Pokud výpočet automatu zkončí v koncovém stavu, pak je řetězec automatem zpracovávaný přijat, v opačném případě zamítnut.
+
+Nyní máme známu obecnou představu, jak by měl automat vypadat. Následuje tedy definice nedeterministického bivalentního automatu, spolu se stručným popisem jeho činnosti. Následně je pak odvozena definice nedeterministického fuzzy automatu a jeho výpočtu.
+
+\TODO{potenční množina -- bivalentní značím $2^M$, fuzzy $\fsubsets{M}$, nechtělo by to sjednotit a používat taky $P(M)$, resp. $\mathcal{P}(M)$?}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nedeterminstický bivalentní automat}
+Nedeterministický bivalentní automat je definován následovně:
+
+\begin{definition}[Nedeterministický bivalentní automat]\label{def-NedBivAut}
+ Nedeterministický bivalentní automat $A$ je pětice $(Q, \Sigma, \mu, I, F)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu: Q \times \Sigma \rightarrow 2^Q$ je přechodová funkce a $I \subseteq Q$ a $F \subseteq Q$ je množina počátačních a koncových stavů.
+\end{definition}
+
+\TODO{reprezentace? příklad?}
+
+Výpočet automatu, tedy zpracování vstupního řetězce, je definován jako posloupnost konfigurací. Konfigurace je přesný popis aktuálního stavu výpočtu (tzn. nezpracovaná část vstupního řetězce a množina stavů, ve kterých se automat nachází). Na počátku se výpočet nachází v tzv. počáteční konfiguraci, tj. nezpracovanou částí celého řetězce je celý vstupní řetězec a množinou stavů, ve kterých se automat nachází je celá množina $I$.
+
+Automat čte ze vstupu postupně symboly. Pokud se automat nachází ve stavu $q$ a právě přečteným symbolem je symbol $a$, pak automat přechází do stavu $q'$ (a symbol $a$ je ze vstupu odebrán) pokud $q' \in \mu(q, a)$. Vyprázdní-li takto automat celý vstup (na vstupu je prázdný řetězec), ocitá se v tzv. koncové konfiguraci. Pokud alespoň jeden ze stavů, ve kterém se automat nachází, je koncový, nazývá se tato konfigurace přijímací, v opačném případě zamítací.
+
+Pokud výpočet automatu pro řetězec $w$ zkončí přijímací konfigurací, říkáme, že automat řetězec přijímá. Pokud zkončí zamítací konfigurací, pak říkáme, že je řetězec zamítán. Jazyk rozpoznávaný automatem je pak množina takových řetězců $w \in \Sigma^*$, které automat přijímá.
+
+Ekvivalentním způsobem, jak určit, zda-li je řetězec automatem přijímán či zamítán je pomocí rozšířené přechodové funkce $\mu^*: 2^Q \times \Sigma^* \rightarrow 2^Q$. Rozšířenou přechodovou funkci $\mu^*$ tak lze číst \uv{nachází-li se automat v množině stavů $Q'$ a na vstupu je řetězec $w$, pak automat přejde do množiny stavů $\mu^*(Q'', w)$}. \TODO{uvést její předpis?} 
+
+Následuje popis, jak pojmy týkající se nedeterministického bivalentního automatu \uv{zobecnit} na odpovídající pojmy z oblasti fuzzy automatů. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{--Koncept fuzzy automatu--}
+% Je zjevné, že fuzzy automat bude v určitém smyslu zobecněním klasického bivalentního automatu. A to, ať už hovoříme o deterministickém čí nedeterministickém, s částečnou nebo úplnou přechodovou funkcí. Obdobně, můžeme hovořit i o nedeterministickém fuzzy automatu s $\epsilon$-pravidly.\TODO{Fakt se $\epsilon$-pravidlům nevyhnu a budu je muset explicitně definovat?} \TODO{někde napsat, že budeme uvažovat vždy jen konečný (fuzzy) automat; odůvodnit to tím, že nechceme nějaké hluboké teoretické bádání, ale prostě ho používat v praxi, kde je to nutnost.}
+% 
+% Vzhledem k tomu, že se různí i pohledy na klasický automat, tím spíše se budou lišit pohledy i na fuzzy automat. Zaměřme se nyní na nedeterministický fuzzy automat. Připomeňme, že nedeterministický bivalentní automat byl tvořen množinou stavů, vstupní abecedou, počítečními a koncovými stavy a přechodovou funkcí.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nedeterministický fuzzy automat}
-Následuje nadefinování nedeterministického fuzzy automatu tak, jak byl uveden v předchozí podkapitole. Poté bude popsán jeho výpočet.
+Stejně tak, jak fuzzy množiny jsou zobecněním klasických \uv{bivalentních} množin, dá se předpokládat, že i fuzzy automaty budou v určitém smyslu zobecněním klasických bivalentních automatů. A nebude tomu jinak ani u nedeterministického automatu.
+
+Vzhledem k tomu, že automat je definován jako struktura, je zprvu třeba stanovit, které její části má smysl zobecňovat na fuzzy množiny (relace, funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{Bel-DetAndFuzzAut} \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc})\footnote{Jak bude ukázáno, mezi oběma druhy automatů existuje ekvivalence. Automaty s bivalentními počátečními a koncovými stavy se však jednoduššeji reprezentují.}. Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i výstupních stavů, je zřejmě obecnější, bude nadále uvažován pouze tento.
 
 \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
  Nedeterministický fuzzy automat $A$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
 \end{definition}
 
-\TODO{a co rozšířená přechodová funkce? Nějak uvést, že jsou dva způsoby pro popis \uv{výpočetního procesu}.}
+\subsection{Reprezentace nedeterministického fuzzy automatu}
+Nedeterministické fuzzy automaty se typicky reprezentují třemi způsoby. Prvním z nich je přechodová tabulka (např. \cite{DooKre-NewDirFuzzAut}). 
 
-O nedeterminstickém bivalentním automatu lze říci, že se při výpočtu může nacházet ve více stavech současně. Pro nedeterminstický fuzzy automat to platí také, avšak s tím, že množina stavů, ve kterých se během výpočtu automat nachází, bude fuzzy množinou. Fuzzy množinu stavů budeme nazývat fuzzy stav.
+Jedná se o tabulku, která v řádcích obsahuje aktuální stavy a ve sloupcích následující stavy (tím je dána množina stavů). Poté buňka na řádku $q$ a ve sloupci $q'$ obsahuje $\mu(q, q') \in \Sigma \rightarrow [0, 1]$, tj. výčet symbolů a stupňů pravdivosti těchto přechodů. Dále tabulka obsahuje dva dodatečné sloupce pro určení stupně počátečního a koncového stavu každého stavu.
+
+Tabulka však často může být rozsáhlá, proto se reprezentace tabulkou často nahrazuje maticovým způsobem (např. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{StaCir-ConsFuzzAutFuzzRegExp}). Uvažujme označení stavů $Q = \{ q_0, \dots q_n \}$. Dále, přechodovou funkci $\mu$ rozložme na soubor funkcí $\mu_x$ pro všechny $x \in \Sigma$ takové, že $\mu_x(q, q') = \mu(q, x, q')$. Pro každý symbol $x \in \Sigma$ vytvoříme matici tak, že na $i$-tém řádku a $j$-tém sloupci obsahuje hodnotu $\mu(q_i, x, q_j)$. Dále je přiložen vektor počátečních (koncových) stavů takový, že $i$-tá složka vektoru je rovna hodnotě $\sigma(q_i)$ ($eta(q_i$).
+
+Posledním používaným způsobem je grafická reprezentace (např. \cite{DooKre-NewDirFuzzAut}, \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}, \cite{StaCir-ConsFuzzAutFuzzRegExp}). Jedná se o orientovaný ohodnocený graf, kde:
+\begin{itemize}
+ \item stavy automatu tvoří uzly grafu
+ \item každý uzel stavu $q$ je označen $q/\eta(q)$
+ \item hrana od uzlu $q$ k uzlu $q'$ je ohodnocena seznamem takových $x/d$, pro které platí $\mu(q, x, q') = d$
+ \item každý uzel $q$ je označen šipkou vedoucí k tomuto uzlu ohodnocenou hodnotou $\sigma(q)$
+\end{itemize}
+
+Pokud je některý ze stupňů roven $0$, tak se v grafu zpravidla vynechává.
+
+\begin{example}
+ \TODO{vymyslet příklad}
+\end{example}
+
+\subsection{Výpočet nedeterministického fuzzy automatu}
+Výpočet nedeterminsitického fuzzy automatu vychází z výpočtu nedeterministického bivalentního automatu. U bivalentního automatu jsme uvažovali, že automat se může nacházet ve více stavech současně, tj. součástí konfigurace výpočtu je množina stavů, ve kterých se automat nachází. Nedeterministický fuzzy automat se této koncepce drží, jen ji obohacuje o odstupňovanost. Tedy, že množina stavů, ve kterých se automat může nacházet je fuzzy množinou. Tutu množinu budeme nazývat fuzzy stav.
 
 \begin{definition}[Fuzzy stav]\label{def-FuzzStav}
- Mějme nedeterministický fuzzy automat $A$. Pak jako fuzzy stav označujeme fuzzy podmnožinu jeho stavů, tj. $V \in \fsubsets{Q}$.
+ Mějme nedeterministický fuzzy automat $A$. Pak jako fuzzy stav označujeme každou fuzzy podmnožinu jeho stavů, tj. $\widehat{Q} \in \fsubsets{Q}$.
 \end{definition}
 
-\begin{definition}[Aplikace fuzzy relace na fuzzy stav]
- Mějme nedeterministický fuzzy automat $A$ a fuzzy symbol $V$. Pak aplikací binární fuzzy relace $R: Q \times Q \rightarrow [0, 1]$ na fuzzy stav $V$ obdržíme fuzzy symbol $V \circ R$ splňující pro každé $p \in Q$: $(V \circ R )(p) = \max_{q \in Q} (V(q) \otimes R(q, p))$.
+\begin{note}
+ Fuzzy množiny počátečních a koncových stavů jsou ve své podstatě také fuzzy stavy.
+\end{note}
+
+Obdobně jako u bivalentního automatu, nezpracovaná část řetězce na vstupu spolu s (fuzzy) množinou stavů, ve kterých se automat nachází, označujeme jako konfigurace automatu. Posloupnost konfigurací nazýváme výpočtem. Formální definice výpočtu je však mírně složitější a pro jeho zavedení bude potřeba pár dalších pojmů, které budou nyní uvedeny.
+
+\begin{definition}[Konfigurace nedeterministického fuzzy automatu]
+  Mějme nedeterminsitický fuzzy automat $A$. Pak každý prvek $(w, \widehat{Q})$ relace $\Sigma^* \times \fsubsets{Q}$ nazýváme konfigurace automatu $A$.
+\end{definition}
+
+
+\begin{definition}[Aplikace fuzzy relace na fuzzy stav (tzv. t-kompozice)]
+ Mějme nedeterministický fuzzy automat $A$ a fuzzy stav $\widehat{Q}$. Pak aplikací binární fuzzy relace $R: Q \times Q \rightarrow [0, 1]$ na fuzzy stav $\widehat{Q}$ obdržíme fuzzy symbol $\widehat{Q} \circ R$ splňující pro každé $p \in Q$: $(\widehat{Q} \circ R )(p) = \max_{q \in Q} (\widehat{Q}(q) \otimes R(q, p))$.
+ 
+  \TODO{přesunout do některé z úvodních kapitol?}
+  \TODO{t-kompozice má pár dalších zajímavých (a potřebných) vlastností (např. asociativitu)}
 \end{definition}
 
 \begin{notation*}
@@ -397,36 +364,121 @@ O nedeterminstickém bivalentním automatu lze říci, že se při výpočtu mů
 \end{notation*}
 
 \begin{definition}[Přechodová funkce fuzzy stavů]\label{def-PreFunFuzzStav}
- Mějme nedeterministický fuzzy automat $A$. Pak přechodová funkce fuzzy stavů je fuzzy relace $\widehat{\mu}: \fsubsets{F} \times \Sigma \rightarrow \fsubsets{F}$ taková, že pro každý fuzzy stav $V \in \fsubsets{Q}$ a symbol $x \in \Sigma$ je $\widehat{\mu}(V, x) = V \circ \mu[x]$.
+ Mějme nedeterministický fuzzy automat $A$. Pak přechodová funkce fuzzy stavů je fuzzy relace $\widehat{\mu}: \fsubsets{F} \times \Sigma \rightarrow \fsubsets{F}$ taková, že pro každý fuzzy stav $\widehat{Q} \in \fsubsets{Q}$ a symbol $x \in \Sigma$ je $\widehat{\mu}(\widehat{Q}, x) = \widehat{Q} \circ \mu[x]$.
 \end{definition}
 
-\begin{definition}[Rozšířená přechodová funkce]\label{def-PreFunFuzzStav}
- Mějme nedeterministický fuzzy automat $A$. Pak rozšířená přechodová funkce (fuzzy stavů) je fuzzy relace $\mu^*: \fsubsets{F} \times \Sigma^* \rightarrow \fsubsets{F}$ (\TODO{co je to $F$? Nemá to být $Q$?!}) daná následujícím předpisem:
+\begin{definition}[Výpočet nedeterministického fuzzy automatu]
+  Mějme nedeterminsitický fuzzy automat $A$. Každou posloupnost konfigurací $(w_0, \widehat{Q}_0), \dots, (w_m, \widehat{Q}_m)$ splňující pro každé $0 \leq i < m$
+  \begin{enumerate}
+   \item $w_{i} = a w_{i+1}$ kde $a \in \Sigma$
+   \item $\widehat{Q}_{i+1} = \widehat{Q}_{i} \circ \widehat{\mu}(\widehat{Q}_{i}, a)$
+  \end{enumerate}
+  nazýváme výpočet automatu $A$ z fuzzy stavu $\widehat{Q}_0$ při vstupu $w_0$.
+\end{definition}
+
+Vidíme, že výpočet je definován rekurentně. Zápis můžeme přetransformovat do podoby rozšířené přechodové funkce \cite{IgnCirBog-DetFuzAutMemValComResLat}.
+
+\begin{definition}[Rozšířená přechodová funkce]\label{def-RozPreFunFuzzStav}
+ Mějme nedeterministický fuzzy automat $A$. Pak rozšířená přechodová funkce je fuzzy relace $\mu^*: Q \times \Sigma^* \times Q \rightarrow [0,1]$ daná následujícím předpisem:
+ 
  \begin{enumerate}
-  \item $\mu^*(V, \epsilon) = V$ pro všechna $V \in \fsubsets{Q}$
-  \item $\mu^*(V, \alpha x) = \widehat{\mu}(\mu^*(V, \alpha), x)$ pro všechna $V \in \fsubsets{Q}, \alpha \in \Sigma^*, x \in \Sigma$
+  \item $\mu^*(q, \epsilon, q) = 1$ pro všechna $q \in Q$
+  \item $\mu^*(q, u a, q') =  \bigvee_{p \in Q} \mu^*(q, u, p) \otimes \mu(p, a, q')$ pro všechna $q, q' \in Q, u \in \Sigma^*, a \in \Sigma$
+  %\item $\mu^*(q, w, q') =  0$ pro všechny ostatní $q, q' \in Q$ a $w \in \Sigma^*$
  \end{enumerate}
 \end{definition}
 
+Rozšířená přechodová funkce fuzzy stavů zřejmě plní funkci výpočtu automatu. Výraz $\mu^*(q, w, q')$ odpovídá stupni, v jakém automat přejde při zpracování řetězce $w$ ze stavu $q$ do stavu $q'$. 
+
+Stupeň $A(w)$, v jakém je řetězec $w$ automatem $A$ přijat je dán jako nejvyšší stupeň pro všechny dvojice stavů $p, q$:
+\begin{enumerate}
+ \item stupňem \uv{stav $q$ je počáteční ve stupni $\sigma(q)$}
+ \item stupňem \uv{automat při vstupu $w$ přejde ze stavu $q$ do stavu $q'$ ve stupni $\mu^*(q, w, q')$}
+ \item stupňem \uv{stav $q'$ je koncový ve stupni $\eta(q')$}
+\end{enumerate}
+
+Můžeme tedy zapsat:
+
 \begin{definition}[Řetězec přijímaný automatem]\label{def-RetPriAut}
- Mějme nedeterministický fuzzy automat $A$. Pak řětězec $\alpha \in \Sigma^*$ je automatem $A$ přijat ve stupni
- $$
-  A(\alpha) = \max_{q \in Q} (\mu^*(\sigma, \alpha)(q) \otimes \eta(q))
- $$
- \TODO{ověřit, dohledat, ozdrojovat}
+ Mějme nedeterministický fuzzy automat $A$. Pak řětězec $w \in \Sigma^*$ je automatem $A$ přijat ve stupni
+ \begin{align} \label{eq-RetPriAut}
+  A(w) = \max_{q, q' \in Q} (\sigma(q) \otimes \mu^*(q, w, q')(q) \otimes \eta(q'))
+ \end{align}
 \end{definition}
+
+
+\begin{note}
+  V literatuře (např. \cite{SebJoh-InvFuzzAutInvFuzzLang} \cite{IgnCirBog-DetFuzAutMemValComResLat} \cite{Bel-DetFuzAut}) se obvykle lze setkat s \uv{techničtějším} zápisem ať už jen rozšířené přechodové funkce, tak $A(w)$. Pro řetězec $w = a_0 \dots a_n$ rozvojem rekurence $\mu^*$ a použitím asociativity $\circ$ můžeme napsat:
+  \begin{align*}
+   \mu^*(q, a_0 \dots a_n, q') 
+    &= \bigvee_{p_n \in Q} \left( \dots \bigvee_{p_0 \in Q} (1 \otimes \mu(p_0, a_0, p_1)) \dots \otimes \mu(p_n, a_n, q') \right)  \\
+    &= \bigvee_{p_n \in Q} \dots \bigvee_{p_0 \in Q} \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q') \\
+    &= \bigvee_{(p_n,\dots, p_0) \in Q^n} \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q')
+  \end{align*}
+  Poté může být (\ref{eq-RetPriAut}) zapsána jako:
+  $$
+    A(a_0 \dots a_n) = \bigvee_{(p_n,\dots, p_0, q') \in Q^{n+1}} (\sigma(p_0) \otimes \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q') \otimes \eta(q'))
+  $$
+  
+  Tento zápis intuitivněji popsuje výpočet automatu. Tento zápis totiž můžeme číst jako: \uv{Řetězec je přijímán ve stupni $A(a_0 \dots a_n)$ jestliže ze stavu $p_0$, který je počáteční ve stupni $\sigma(p_0)$ přejde přečtením $a_0$ do $p_1$ ve stupni $\mu(p_0, a_0, p_1)$, $\dots$, ze stavu $p_n$ přečtením $a_n$ do stavu $q'$ ve stupni $\mu(p_n, a_n, q')$, a stav $q'$ je koncový ve stavu $\eta(q')$.}
+  
+  Z tohoto zápisu je také patrné, že výpočet $A(a_0 \dots a_n)$ dle definice vyžaduje $|Q|^{n+1}$ výpočtů, každý o délce $1 + n + 1$ elementárních kroků. Výpočet má tedy exponenciální složitost vzhledem k délce vstupního řetězce.
+  
+  %Tento zápis na jednu stranu podporuje intuitivnější chápání výpočtu a na stranu druhou ostraňuje rekurenci, takže usnadňuje snažší implementaci.
+  
+%   Pokud si výpočet $(w_0, \widehat{Q}_0), \dots, (w_m, \widehat{Q}_m)$ rozepíšeme, můžeme napsat
+%   \begin{enumerate}
+%   \item $w_{m} = a_{0} \dots a_{m-1} \; w_{0}$, kde $a_{0}, a_{m-1} \in \Sigma$
+%   \item $\widehat{Q}_{m} = \widehat{Q}_{0} \wedge \bigwedge_{i=1}^{m} \widehat{\mu}(\widehat{Q}_{i}, a_i)$
+%   \end{enumerate}
+% 
+%   Označme $w \in \Sigma^*$ jako řetězec délky $n$ na vstupu automatu. Pak $(w, \sigma)$ je počáteční konfigurací výpočtu a $(\epsilon, \widehat{Q}_{n})$ (kde $\widehat{Q}_{n}$ je nějaký fuzzy stav) pak koncovou. 
+%   
+%   Pak stupeň $A(w)$, v jakém je řetězec $w$ automatem $A$ přijímán je určen následujícím předpisem:
+%   $$
+%     A(w) = \bigvee_{q \in Q} \left( \sigma(q) \wedge .... \wedge \eta(q) \right)
+%   $$
+\end{note}
+
+Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množina všech řetězců, které jsou tímto automatem rozpoznávané. U fuzzy automatu se však bude pochopitelně jednat o fuzzy jazyk.
 
 \begin{definition}[Jazyk rozpoznávaný automatem]\label{def-JazRozpAut}
- Mějme nedeterministický fuzzy automat $A$. Pak fuzzy množinu $\mathcal{L}(A)(\alpha) = A(\alpha)$ nad univerzem $\Sigma^*$ nazýváme fuzzy jazyk rozpoznávaný automatem $A$.
-
- \TODO{ověřit, dohledat, ozdrojovat}
+ Mějme nedeterministický fuzzy automat $A$. Pak fuzzy množinu $L(A)(w) = A(w)$ nad univerzem $\Sigma^*$ nazýváme fuzzy jazyk rozpoznávaný automatem $A$.
 \end{definition}
 
-\subsection{Fuzzy automat s výstupem}
-Např. zde: \cite{BlaDelPeg-FuzzAutIndUsNeuNet}. Zde \cite{PedGac-LeaFuzzAut}\cite{BlaDelPeg-FuzzGraIntUsiNeuNet}\cite{CheMo-MinAlgFuzFinAut} je bez koncových a počátečních stavů.
+\TODO{Jazyk rozpoznávaný automatem značit $\mathcal{L}$ nebo jen $L$? A automat $\mathcal{A}$, $\mathbf{A}$, $\mathbb{A}$ nebo jen $A$?}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Další varianty fuzzy automatů}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zobecněný automat}
+Např. \cite{DooKre-NewDirFuzzAut}, v \cite{San-MaxAut}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy automat s výstupem}
+Např. zde: \cite{BlaDelPeg-FuzzAutIndUsNeuNet}. Zde \cite{PedGac-LeaFuzzAut}\cite{BlaDelPeg-FuzzGraIntUsiNeuNet}\cite{CheMo-MinAlgFuzFinAut}\cite{ThoMar-DetAccRegFuzLang} je bez koncových \TODO{ i \uv{a počátečních}?} stavů.
+
+Naopak, zde \cite{Qiu-ChaFuzFinAut} je uveden automat \uv{bez výstupu} (nemá žádný výstup -- ani formou koncových stavů ani formou výstpní funkce/abecedy).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nedeterminstický fuzzy automat s $\epsilon$-přehcody}
+Je docela praktický a současně docela intuitivní. Např. zde: \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}. V \cite{LiLiLi-RelAmoSevTypFuzAut} ho definují jako automat shodný s $A$ jen místo $\Sigma$ má $\Sigma_\epsilon = \Sigma \cup \{ \epsilon \}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Deterministický fuzzy automat}
-O tom mluví snad jen \cite{Bel-DetFuzAut}.
+V \cite{Bel-DetFuzAut} je definován jako determinstický automat, jen koncové stavy jsou fuzzy. V \cite{LiLiLi-RelAmoSevTypFuzAut} je to deterministický automat, ale s fuzzy počátečními stavy, koncovými stavy i přechodovu funkcí.
+
+Trošku jinak (pomocí jednotkových kardinalit) je uveden v \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zásobníkový fuzzy automat}
+Někde jsem o něm četl. Je to s ním krapet složitější, co se bezkontextového jazyka týče.
+
+Tady je pěkně popsán \cite{BucPas-FuzPusAut}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

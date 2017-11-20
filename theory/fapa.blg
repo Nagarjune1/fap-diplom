@@ -3,24 +3,28 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
 Database file #1: resources.bib
-I was expecting a `,' or a `}'---line 343 of file resources.bib
- :   
- :   title   = {Deformed systems for contextual postprocessing},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "RuaKer-FuzIfTheRulComI"
 Warning--I didn't find a database entry for "Koz-AutComp"
+Warning--I didn't find a database entry for "RuaKer-FuzIfTheRulComI"
 Warning--I didn't find a database entry for "Law-FinAut"
+Warning--I didn't find a database entry for "HopUl-IntrAutTheLangComp"
+Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
 Warning--I didn't find a database entry for "SnaKepAbrHas-AproxStriMatchFuzzAut"
+Warning--I didn't find a database entry for "Bel-DetAndFuzzAut"
+Warning--I didn't find a database entry for "IgnCirBog-DetFuzAutMemValComResLat"
+Warning--I didn't find a database entry for "SebJoh-InvFuzzAutInvFuzzLang"
+Warning--I didn't find a database entry for "Bel-DetFuzAut"
+Warning--I didn't find a database entry for "San-MaxAut"
 Warning--I didn't find a database entry for "PedGac-LeaFuzzAut"
 Warning--I didn't find a database entry for "BlaDelPeg-FuzzGraIntUsiNeuNet"
 Warning--I didn't find a database entry for "CheMo-MinAlgFuzFinAut"
-Warning--I didn't find a database entry for "Bel-DetFuzAut"
+Warning--I didn't find a database entry for "ThoMar-DetAccRegFuzLang"
+Warning--I didn't find a database entry for "Qiu-ChaFuzFinAut"
+Warning--I didn't find a database entry for "LiLiLi-RelAmoSevTypFuzAut"
+Warning--I didn't find a database entry for "BucPas-FuzPusAut"
 Warning--I didn't find a database entry for "Com+-TreeAutTecApp"
 Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
 Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
 Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
-Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
 Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
 Warning--I didn't find a database entry for "Wol-NewKinSci"
 Warning--I didn't find a database entry for "Wol-NewKiSci"
@@ -67,56 +71,45 @@ Warning--I didn't find a database entry for "WeeFu-FormFuzAutAppModLeaSys"
 Warning--I didn't find a database entry for "TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut"
 Warning--I didn't find a database entry for "SinGha+HybrEdgDetMetFuzSetTheCelLeaAut"
 Warning--I didn't find a database entry for "SteAdl-CliMonFuzAut"
-Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
-while executing---line 1049 of file plain.bst
-Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "Javier Echanobe, José R. Gonzáles Mendívil, José R. Garitagoitia, Carlos F. Alastrueya" for entry Ech-DefSyssConPre
-while executing---line 1090 of file plain.bst
-Warning--empty title in Ech-DefSyssConPre
-Warning--empty journal in Ech-DefSyssConPre
-Warning--empty year in Ech-DefSyssConPre
-Name 1 in "Lefteris A. Mantelas, Thomas Hatzichristos, and Poulicos Prastacos" has a comma at the end for entry ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm
-while executing---line 1090 of file plain.bst
 You've used 19 entries,
             2118 wiz_defined-function locations,
-            718 strings with 11216 characters,
-and the built_in function-call counts, 4056 in all, are:
-= -- 388
+            738 strings with 11647 characters,
+and the built_in function-call counts, 4066 in all, are:
+= -- 393
 > -- 157
 < -- 0
 + -- 67
 - -- 46
-* -- 176
-:= -- 772
-add.period$ -- 56
+* -- 170
+:= -- 777
+add.period$ -- 58
 call.type$ -- 19
-change.case$ -- 78
+change.case$ -- 79
 chr.to.int$ -- 0
-cite$ -- 22
+cite$ -- 19
 duplicate$ -- 192
 empty$ -- 329
 format.name$ -- 46
-if$ -- 810
+if$ -- 815
 int.to.chr$ -- 0
 int.to.str$ -- 19
 missing$ -- 20
-newline$ -- 97
+newline$ -- 99
 num.names$ -- 38
-pop$ -- 89
+pop$ -- 83
 preamble$ -- 1
 purify$ -- 61
 quote$ -- 0
-skip$ -- 133
+skip$ -- 135
 stack$ -- 0
 substring$ -- 97
-swap$ -- 18
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 74
-warning$ -- 3
+warning$ -- 0
 while$ -- 38
 width$ -- 21
-write$ -- 189
-(There were 5 error messages)
+write$ -- 194
+(There were 68 warnings)

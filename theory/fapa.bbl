@@ -5,6 +5,12 @@ M.~C.~Pegalajar A.~Blanco, M.~Delgado.
 \newblock Fuzzy automaton induction using neural network.
 \newblock {\em International Journal of Approximate Reasoning}, 2001.
 
+\bibitem{Ech-DefSyssConPre}
+Javier Echanobe José R. Gonzáles Mendívil José R. Garitagoitia Carlos~F.
+  Alastrueya.
+\newblock Deformed systems for contextual postprocessing.
+\newblock {\em Fuzzy Sets and Systems}, 1998.
+
 \bibitem{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}
 C.~L.~Giles Ch. W.~Omlin, K. K.~Thornber.
 \newblock Fuzzy finite-state automata can be deterministically encoded into
@@ -50,6 +56,12 @@ S.S.~Yau G.F.~DePalma.
 \newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
   MorMal-FuzzAutAndLangs 10.7.
 
+\bibitem{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}
+Lefteris A. Mantelas~Thomas Hatzichristos and Poulicos Prastacos.
+\newblock A fuzzy cellular automata modeling approach -- accessing urban growth
+  dynamics in linguistic terms.
+\newblock {\em Computational Science and Its Applications}, 2010.
+
 \bibitem{Hua-SyntPattRecSeisOilExp}
 Kou-Yuan Huang.
 \newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
@@ -61,21 +73,11 @@ J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
   strings.
 \newblock {\em Fuzzy Sets and Systems 157}, 2005.
 
-\bibitem{Ech-DefSyssConPre}
-José R. Garitagoitia Carlos F.~Alastrueya Javier~Echanobe, José R.
-  Gonzáles~Mendívil.
-
 \bibitem{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}
 José R.~Garitagoitia José R. González~de Mendívil.
 \newblock Fuzzy languages with infinite range accepted by fuzzy automata:
   Pumping lemma and determinization procedure.
 \newblock {\em Fuzzy sets and Systems}, 2014.
-
-\bibitem{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}
-Thomas~Hatzichristos Lefteris A.~Mantelas and Poulicos Prastacos.
-\newblock A fuzzy cellular automata modeling approach -- accessing urban growth
-  dynamics in linguistic terms.
-\newblock {\em Computational Science and Its Applications}, 2010.
 
 \bibitem{DooKre-NewDirFuzzAut}
 S.~C.~Kremer M.~Doostfatemeh.
