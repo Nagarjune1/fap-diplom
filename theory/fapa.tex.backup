@@ -307,20 +307,33 @@ Následuje popis, jak pojmy týkající se nedeterministického bivalentního au
 \subsection{Nedeterministický fuzzy automat}
 Stejně tak, jak fuzzy množiny jsou zobecněním klasických \uv{bivalentních} množin, dá se předpokládat, že i fuzzy automaty budou v určitém smyslu zobecněním klasických bivalentních automatů. A nebude tomu jinak ani u nedeterministického automatu.
 
-Vzhledem k tomu, že automat je definován jako struktura, je zprvu třeba stanovit, které její části má smysl zobecňovat na fuzzy množiny (relace, funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{Bel-DetAndFuzzAut} \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc})\footnote{Jak bude ukázáno, mezi oběma druhy automatů existuje ekvivalence. Automaty s bivalentními počátečními a koncovými stavy se však jednoduššeji reprezentují.}. Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i výstupních stavů, je zřejmě obecnější, bude nadále uvažován pouze tento.
+Vzhledem k tomu, že automat je definován jako struktura, je zprvu třeba stanovit, které její části má smysl zobecňovat na fuzzy množiny (relace, funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{Bel-DetAndFuzzAut} \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc})\footnote{Jak bude ukázáno, mezi oběma druhy automatů existuje ekvivalence. Automaty s bivalentními počátečními a koncovými stavy se však jednoduššeji reprezentují.}. Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i 
+výstupních stavů, je zřejmě obecnější, bude nadále uvažován pouze tento.
 
 \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
  Nedeterministický fuzzy automat $A$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
 \end{definition}
 
-\subsection{Reprezentace automatu}
+\subsection{Reprezentace nedeterministického fuzzy automatu}
 Nedeterministické fuzzy automaty se typicky reprezentují třemi způsoby. Prvním z nich je přechodová tabulka (např. \cite{DooKre-NewDirFuzzAut}). 
 
 Jedná se o tabulku, která v řádcích obsahuje aktuální stavy a ve sloupcích následující stavy (tím je dána množina stavů). Poté buňka na řádku $q$ a ve sloupci $q'$ obsahuje $\mu(q, q') \in \Sigma \rightarrow [0, 1]$, tj. výčet symbolů a stupňů pravdivosti těchto přechodů. Dále tabulka obsahuje dva dodatečné sloupce pro určení stupně počátečního a koncového stavu každého stavu.
 
-Tabulka však často může být rozsáhlá, proto se reprezentace tabulkou často nahrazuje maticovým způsobem (např. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{StaCir-ConsFuzzAutFuzzRegExp}). Uvažujme označení stavů $Q = \{ q_0, \dots q_n \}$. Dále, přechodovou funkci $\mu$ rozložme na soubor funkcí $\mu_x$ pro všechny $x \in \Sigma$ takové, že $\mu_x(q, q') = \mu(q, x, q')$. Pro každý symbol $x \in \Sigma$ vytvoříme matici tak, že na $i$-tém řádku a $j$-tém sloupci obsahuje hodnotu $\mu(q_i, x, q_j)$. 
+Tabulka však často může být rozsáhlá, proto se reprezentace tabulkou často nahrazuje maticovým způsobem (např. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{StaCir-ConsFuzzAutFuzzRegExp}). Uvažujme označení stavů $Q = \{ q_0, \dots q_n \}$. Dále, přechodovou funkci $\mu$ rozložme na soubor funkcí $\mu_x$ pro všechny $x \in \Sigma$ takové, že $\mu_x(q, q') = \mu(q, x, q')$. Pro každý symbol $x \in \Sigma$ vytvoříme matici tak, že na $i$-tém řádku a $j$-tém sloupci obsahuje hodnotu $\mu(q_i, x, q_j)$. Dále je přiložen vektor počátečních (koncových) stavů takový, že $i$-tá složka vektoru je rovna hodnotě $\sigma(q_i)$ ($eta(q_i$).
 
-Posledním používaným způsobem je grafická reprezentace. (např. \cite{DooKre-NewDirFuzzAut}, \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}, \cite{StaCir-ConsFuzzAutFuzzRegExp}).
+Posledním používaným způsobem je grafická reprezentace (např. \cite{DooKre-NewDirFuzzAut}, \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}, \cite{StaCir-ConsFuzzAutFuzzRegExp}). Jedná se o orientovaný ohodnocený graf, kde:
+\begin{itemize}
+ \item stavy automatu tvoří uzly grafu
+ \item každý uzel stavu $q$ je označen $q/\eta(q)$
+ \item hrana od uzlu $q$ k uzlu $q'$ je ohodnocena seznamem takových $x/d$, pro které platí $\mu(q, x, q') = d$
+ \item každý uzel $q$ je označen šipkou vedoucí k tomuto uzlu ohodnocenou hodnotou $\sigma(q)$
+\end{itemize}
+
+Pokud je některý ze stupňů roven $0$, tak se v grafu zpravidla vynechává.
+
+\begin{example}
+ \TODO{vymyslet příklad}
+\end{example}
 
 \subsection{Výpočet nedeterministického fuzzy automatu}
 Výpočet nedeterminsitického fuzzy automatu vychází z výpočtu nedeterministického bivalentního automatu. U bivalentního automatu jsme uvažovali, že automat se může nacházet ve více stavech současně, tj. součástí konfigurace výpočtu je množina stavů, ve kterých se automat nachází. Nedeterministický fuzzy automat se této koncepce drží, jen ji obohacuje o odstupňovanost. Tedy, že množina stavů, ve kterých se automat může nacházet je fuzzy množinou. Tutu množinu budeme nazývat fuzzy stav.
@@ -1662,7 +1675,7 @@ Například \cite{WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn} používá čísla z
   
 Další varianty buněčných automatů a jejich uplanění jsou vyjmenovány v \cite{NayPatMah-SurTwDimCelAutAppImProc}. Ve všech případech se uvažují vždy dvoudimenzionální bunečné automaty.
 
-Aplikace fuzzy automatů se dají rozdělit do dvou kategorií. Do první z nich spadají urbanistické simulace. Pomocí buněčných fuzzy automatů tak byly řešeny simulace hustoty dopravy \cite{Pla-FuzCelModTrafDatFus}, růstu mořských řas u pobřeží \cite{CheMyn-ModAlgBloDutCosWat+} či plánování elektrické rozvodné sítě \cite{CheMyn-ModAlgBloDutCosWat+}. Zdaleka nezčastější však bylo nasazení buněčných fuzzy automatů na řešení problému městského růstu. Z tohoto důvodu bude tomuto problému věnována samostatná podkapitola.
+Aplikace fuzzy automatů se dají rozdělit do dvou kategorií. Do první z nich spadají urbanistické simulace. Pomocí buněčných fuzzy automatů tak byly řešeny simulace hustoty dopravy \cite{Pla-FuzCelModTrafDatFus}, růstu mořských řas u pobřeží \cite{CheMyn-ModAlgBloDutCosWat+} či plánování elektrické rozvodné sítě. Zdaleka nezčastější však bylo nasazení buněčných fuzzy automatů na řešení problému městského růstu. Z tohoto důvodu bude tomuto problému věnována samostatná podkapitola.
 
 Další oblastí, kde nalezly buněčné fuzzy automaty uplatnění je zpracování obrazu. Používají se například na zaostřování obrazů \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}\cite{ZhaLiZha-EdgDetImaBasFuzCelAut}, hledání hran \cite{NayPatMah-SurTwDimCelAutAppImProc}\cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, vyhledávání vzorů \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}\cite{MajCha-FuzCelAutModPatClas} či odstranění šumu \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut}\cite{SahUguSah-SalPepNoiFilFuzCelAut}\cite{NayPatMah-SurTwDimCelAutAppImProc}. V následujcíích podkapitolách budou některé takové techniky rozebrány podrobněji.
 
@@ -2055,14 +2068,50 @@ Autor sám přichází s myšlenkou, že kombinace fuzzy automatů a strojového
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Biologie a medicína}
+
+Biologie a medicína jsou odvětví, které zpravidla disponují velikým množstvím dat, které je třeba zpracovat. Typicky v datech získaných nějakým sledováním najít určité vzory. Fuzzy automaty mohou být v této oblasti nápomocny.
+
+Vzhledem k tomu, že většina těchto aplikací vyžaduje zásah experta na danou problematiku, budou tyto aplikace rozbrány pouze teoreticky.
+
 \subsection{Rozpoznávání řetězců DNA}
+
+
 Mělo by to jít, něco málo na to mám. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}
+
+\subsection{Simulace růstu mořských řas}
+
+\cite{CheMyn-ModAlgBloDutCosWat+}. \TODO{odkázat se na urban growt problem}.
 
 \subsection{Rozpoznávání vzorů v obrazech}
 Viz buněčné automaty a jejich jednoduché rozpoznávání vzorů.
 
 \subsection{Analýza zdravotního stavu pacienta}
-Tu \cite{SteAdl-CliMonFuzAut}.
+V \cite{GupRah-CliMonUsFuzSys} a \cite{SteAdl-CliMonFuzAut} je popisován způsob, jak pomocí fuzzy automatů sledovat zdravotní stav pacienta. Ve skutečnosti je však popsán jen základní teoretický koncept, bez žádné konkrétní ukázky.
+
+Technika pracuje s automatem s fuzzy If-Then pravidly. Stavy automatu v tomto případě reprezentují choroby (popř. stavy jedné choroby), přechodová funkce pak přechody mezi nimi. Máme-li stavy, pak můžeme uvažovat fuzzy množinu stavů. V \cite{GupRah-CliMonUsFuzSys} takovýto fuzzy stav nazývají   \uv{fuzzy chorobný syndrom}. Fuzzy chorobný syndrom je vlastně popis zdravotního stavu pacienta v určitý okamžik.
+
+Přechodová pravidla, navržena expertem, pak popisují přechody při různých událostech či akcích (např. medikace). Důležitým předpokladem, který automat musí splňovat, je tzv. vlastnost pozdržení vrcholu. Tato vlastnost říká, že výpočet automatu pro libovolný vstup nikdy nezkončí v prázdném fuzzy stavu, tj. výpočet se vždy bude muset nacházet v nenulovém stupni v alespoň některém stavu.
+
+
+
+
+\subsection{Diagnóza a predikce chorob srdce}
+V \cite{CamMerNun-UsFuzAutDiagPrHeaPro} je prezentována technika pro diagnózu a predikci chorob či problémů srdce. Využívají k tomu fuzzy automat s fuzzy If-Then pravidly a výstupem. 
+
+Přechodová funkce je realizována pravidly sledující určité vlastnosti pacienta (pohlaví, věk, aktuální tepová frekvence, aktuální variabilita srdeční frekvence). První dvojicí přechodů je rozlišení pohlaví a věkové kategorie (fuzzy množiny) pacienta. Na základě těchto vlastností výpočet pokračuje v patřičném podautomatu. Jednotlivé podautomaty tak mají detekci problémů přizpůsobenu přímo věku a pohlaví pacienta.
+
+Vzhledem k tomu, že tepová frekvence i variabilita srdeční frekvence se u pacienta mohou měnit v závislosti na čase, podautomaty mohou obsahovat smyčky, díky kterým může být měření těchto vlastností prováděno opakovaně (po určitém počtu \uv{negativních} měřeních se však výpočet automaticky ukončuje). 
+
+Podautomaty (především stupňě pravdivosti a meze hodnot u přechodů) jsou navrženy expertem. Pokud se výpočet podautomatu dostane do stavu reprezentující srdeční problém, je proveden přechod s výstupem (varovné hlášení) zpět do počátečního stavu podautomatu a celý proces je spuštěn znovu. Počet vygenerovaných varovných hlášení je poté směrodatný spolu se stupněm pravdivosti (tzv. úroveň spolehlivosti), v jakém výpočet automatu zkončil\footnote{Nízká hodnota značí, že výpočet automatu neproběhl zcela dle očekávání a napočítaný počet varovných hlášení tak nemusí být zcela směrodatný}. Autoři navíc doporučují počítat úroveň spolehlivosti dvakrát, pokaždé s jinou $t$-normou (v jejich případě Gödelova t-norma a Hamacherův produkt).
+
+\TODO{Příklad?}
+
+Autoři techniku ověřili experimentálně na vybraných vzorcích z databáze případových studií. V článku jsou odprezentovány výsledky pro 31 pacientů analyzované podautomaty pro muže a ženy ve věku 60 -- 69 let (tj. vzhledem k odstuňovanosti $\pm 13$ let). Autoři výsledky nijak statisticky neanalyzují, zaměřují se na popis konkrétních pacientů a důvody, proč u nich došlo k odchylce (zmiňují např. sportovní aktivity či vrozené předpoklady). Autoři uvádějí, že možným vylepšením by mohlo být provázání se strojovým učením.
+
+
+\TODO{nadefinovat u různých typů automatů Fuzzy automat (klasický nedeterminstický) s If-Then pravidly} \TODO{On je vlastně i rozdíl mezi fuzzy automatem s If-Then pravidly a bivaletním automatem s fuzzy If-Then pravidly}
+
+\TODO{terminologie u proměnných (resp. indexů proměnných), česky (triangel, age, distance) vs. česky?}
 
 \subsection{Analýza kardiogramu}
 Např. \cite{PedGac-LeaFuzzAut}. Ale je to obecně zpracování signálu, popsat někde jinde?
