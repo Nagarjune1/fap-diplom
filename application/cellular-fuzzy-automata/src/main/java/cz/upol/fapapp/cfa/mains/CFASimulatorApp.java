@@ -25,7 +25,7 @@ public class CFASimulatorApp extends Application {
 	private static final double DEFAULT_PARAM_VALUE = 1.0;
 
 	public static void main(String[] args) {
-		args = new String[] { "100", "data/test/configs/random-config-100.timf", "be-filter", "1.2" };
+		args = new String[] { "128", "data/test/configs/lenna-sp-noise-0.5.timf", "noise-reduction", "1.2" };
 		Application.launch(args);
 	}
 

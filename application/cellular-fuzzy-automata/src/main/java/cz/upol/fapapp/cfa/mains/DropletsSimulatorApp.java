@@ -25,7 +25,7 @@ public class DropletsSimulatorApp extends Application {
 	private static final double STEP_MIN_VALUE = 0.0;
 
 	public static void main(String[] args) {
-		//args = new String[] {"200", "5", "42"};
+		//args = new String[] { "300", "1", "42"};
 		Application.launch(args);
 	}
 
