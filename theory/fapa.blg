@@ -59,6 +59,7 @@ Warning--I didn't find a database entry for "ManHatPra-ModUrbGroUsFuzCelAut"
 Warning--I didn't find a database entry for "ClaHopHay-SelModCelAutModHistUrbSanFraBayAre"
 Warning--I didn't find a database entry for "Dra-CouFuzSetTheGisBaCelAutLanUseChaMod"
 Warning--I didn't find a database entry for "LiuPhi-DevCelAutModUrbGroIncFuzSetApp"
+Warning--I didn't find a database entry for "WasPar-PreSpaDisEleEnCon+"
 Warning--I didn't find a database entry for "Rus-ImaProHan"
 Warning--I didn't find a database entry for "MaiAgg-StuComVarImDetEdTec"
 Warning--I didn't find a database entry for "FieRus-HanNeuCom"
@@ -70,47 +71,77 @@ Warning--I didn't find a database entry for "FuLi-ForLeaAutAutGam"
 Warning--I didn't find a database entry for "WeeFu-FormFuzAutAppModLeaSys"
 Warning--I didn't find a database entry for "TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut"
 Warning--I didn't find a database entry for "SinGha+HybrEdgDetMetFuzSetTheCelLeaAut"
-Warning--I didn't find a database entry for "SteAdl-CliMonFuzAut"
+Warning--I didn't find a database entry for "ZhiMinLan-EvoStraIndFuFiStaAu"
+Warning--I didn't find a database entry for "PatPal-FuzGraSynRecSkeMatXra"
+Warning--I didn't find a database entry for "Jia+-ExHeaSimMetBasIntHumTheMod"
+Warning--I didn't find a database entry for "GupRah-CliMonUsFuzSys"
 Warning--I didn't find a database entry for "CamMerNun-UsFuzAutDiagPrHeaPro"
-You've used 19 entries,
+Warning--I didn't find a database entry for "SteAdl-CliMonFuzAut"
+Warning--I didn't find a database entry for "Est+-CytImAnaGenFuFiStMa"
+Warning--I didn't find a database entry for "RigTza-FuzAutFauDia"
+Warning--I didn't find a database entry for "Alv-HumGaiModUsGenFuzFinStaMac"
+Warning--I didn't find a database entry for "AlvTri-ComModQuaPerSig"
+Warning--I didn't find a database entry for "Hun-NoLiTexSeaUsFuFiStLiNoDetAut"
+Warning--I didn't find a database entry for "HamKoNam-FirFlaDetBasFuzFinAut"
+Warning--I didn't find a database entry for "KoHamNam-ModForFuFiAuDetIrrFirFla"
+Warning--I didn't find a database entry for "Hul+-ManRecUsProFinStaMacFuzLog"
+Warning--I didn't find a database entry for "TriHei-ExpDesSeqFuzPer"
+Warning--I didn't find a database entry for "GraFod-FuzAutIntHybConSys"
+Warning--I didn't find a database entry for "DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis"
+Warning--I didn't find a database entry for "AlvJoaCru-FuStMaAppEmoModEleGamCha"
+Warning--I didn't find a database entry for "HeiTri-SimEmoPerHumComInt"
+Warning--I didn't find a database entry for "ManPra-PriPatDetUsFiStMaFuzTra"
+Warning--I didn't find a database entry for "TriHei-LinSumHumActSkiConAcc"
+Warning--I didn't find a database entry for "Alv+-HumActRec+"
+Warning--I didn't find a database entry for "Pee-FuzAcSynPatRec"
+Warning--I didn't find a database entry for "Lee-AppFuzLanPatRec"
+Warning--I didn't find a database entry for "Gog-ConRepNatArtLang"
+Warning--I didn't find a database entry for "Cha-ExeFuzProUsFiStaMa"
+Warning--I didn't find a database entry for "SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa"
+Warning--I didn't find a database entry for "MatSalSalYu-LexAnaSimFinFuzAutMod"
+Warning--I didn't find a database entry for "HeKinSep-DecMakFuzEnvZUsOntCon+"
+Warning--I didn't find a database entry for "Gra+-ApFuStFuOuFinMaPrRecVioOntAss"
+Warning--I didn't find a database entry for "GraFodDri-HybFuzBooAutOntCont"
+Warning--I didn't find a database entry for "GraPat-FuzLogFinStaMacModReaTimSys"
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            740 strings with 11707 characters,
-and the built_in function-call counts, 4066 in all, are:
-= -- 393
-> -- 157
+            812 strings with 13691 characters,
+and the built_in function-call counts, 4474 in all, are:
+= -- 433
+> -- 171
 < -- 0
-+ -- 67
-- -- 46
-* -- 170
-:= -- 777
-add.period$ -- 58
-call.type$ -- 19
-change.case$ -- 79
++ -- 73
+- -- 50
+* -- 186
+:= -- 855
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 87
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 192
-empty$ -- 329
-format.name$ -- 46
-if$ -- 815
+cite$ -- 21
+duplicate$ -- 212
+empty$ -- 363
+format.name$ -- 50
+if$ -- 897
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 20
-newline$ -- 99
-num.names$ -- 38
-pop$ -- 83
+int.to.str$ -- 21
+missing$ -- 22
+newline$ -- 109
+num.names$ -- 42
+pop$ -- 91
 preamble$ -- 1
-purify$ -- 61
+purify$ -- 67
 quote$ -- 0
-skip$ -- 135
+skip$ -- 149
 stack$ -- 0
-substring$ -- 97
-swap$ -- 19
+substring$ -- 107
+swap$ -- 21
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
+type$ -- 82
 warning$ -- 0
-while$ -- 38
-width$ -- 21
-write$ -- 194
-(There were 69 warnings)
+while$ -- 42
+width$ -- 23
+write$ -- 214
+(There were 100 warnings)

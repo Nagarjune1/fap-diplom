@@ -56,6 +56,11 @@ S.S.~Yau G.F.~DePalma.
 \newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
   MorMal-FuzzAutAndLangs 10.7.
 
+\bibitem{BaiTri-PattRecUsiTemFuzzAut}
+Gracián~Triviño Gonzalo~Bailadora.
+\newblock Pattern recognition using temporal fuzzy automata.
+\newblock {\em Fuzzy Sets and Systems}, 2010.
+
 \bibitem{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}
 Lefteris A. Mantelas~Thomas Hatzichristos and Poulicos Prastacos.
 \newblock A fuzzy cellular automata modeling approach -- accessing urban growth
@@ -89,6 +94,11 @@ Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
 \newblock Application of fuzzy automata theory and knowledge based neural
   networks for development of basic learning model.
 \newblock {\em Computer Technology and Application 2}, 2011.
+
+\bibitem{Rig-FauDetIsoBasFuzzAut}
+Gerasimos~G. Rigatos.
+\newblock Fault detection and isolation based on fuzzy automata.
+\newblock {\em Information Sciences}, 2009.
 
 \bibitem{MogZadAme-NewDirInFuzzTreeAut}
 M.~M.~ZAHEDI S.~MOGHARI and R.~AMERI.
