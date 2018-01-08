@@ -505,6 +505,8 @@ Dle definice 4 \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} je fuzzy regu
 
 Automat s bivalentní $\mu$ and $\eta$ (a fuzzy $\sigma$) taky rozpoznává fuzzy regulérní jazyk \cite{PalYau-FracFuzzGramAppPatRec}. Neřešil něco takového i Bel? Jinak řečeno, support konečný automat \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}.
 
+Dále např. \cite{Pee-FuzAcSynPatRec}.
+
 \subsection{Fuzzy a bivalentní regulérní jazyky}
 Univerzum fuzzy jazyka je regulérní jazyk, pozorování 6.1 \cite{LiPed-FuzzFinAutFuzzRegExMembValLattOrdMon}.
 
@@ -1487,6 +1489,8 @@ Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné}
 
 I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
 
+\TODO{To samé dělá i v \cite{Lee-AppFuzLanPatRec}, akorát to dělá přes jazyky a gramatiky, ne přes automaty. Ale takových případů jsem měl víc, zmínit je v sekci problémy v metodice!}
+
 %TODO 
 % \subsection{Jednoduchá klasifikace zvířat}
 % Autor práce přichází s využitím fuzzy tree automatů pro jednoduchou klasifikaci zvířat. Každé zvíře je charakterizováno prostředím, kde obvykle žije nebo je možné jej spatřit (voda, souš, vzduch), povrchem těla (kůže, šupiny, srst, peří), seznamem končetin (nohy, ruce, křídla, ploutve) a ocasem (žádný, krátký, dlouhý).
@@ -2161,7 +2165,7 @@ používají fuzzy automaty pro modelování fungovaní protézy dolní končeti
 
 \newpage
 
-\section{Další návrhy na aplikace}
+\section{Další aplikace}
 
 
 \subsection{Pattern matching, další příklady}
@@ -2246,25 +2250,14 @@ Z fuzzy stavu pak lze zpětně zkonstruovat, v jakém emocionálním rozpoložen
 
 
 \subsection{Sledování cen investic}
-Zde \cite{ManPra-PriPatDetUsFiStMaFuzTra}. Co dodat? Automat fuzzy-sleduje vzory v časovém průběhu výše ceny na trhu. Např. \uv{cena prudce vzrostla}. 
+Zde \cite{ManPra-PriPatDetUsFiStMaFuzTra}, automat \uv{fuzzy-sleduje} vzory v časovém průběhu výše ceny na trhu (např. \uv{cena prudce vzrostla}). Na základě toho pak sleduje stav, v jakém stavu se cena nachází (např. těsně před výrazným růstem).
 
 \subsection{Sledování pohybu a aktivit osoby}
 V \cite{TriHei-LinSumHumActSkiConAcc} je prezentován postup, jak pomocí sledování různých parametrů (pohyb, získaný akcelerometrem, a el. vodivost kůže) určit pravděpodobnou činnost (nicnedělání, chůze, práce, odpočinek) osoby. Činnosti odpovídají stavům automatu a na základě parametrů se určijí přechody. Navíc, je pravděpodobnější, že člověk ze stavu nicnedělání přejde do stavu práce než do stavu relaxace.
 
-Stejnou techniku využívají v \cite{Alv+-HumActRec+}. 
+Stejnou techniku využívají v \cite{Alv+-HumActRec+}. Zde však detekují činnosti: chůze, práce u sebe, hovor s kolegy, dávání si kávy, míting, a to pomocí polohy zařízení (chytrý telefon) osoby (určené triangulací Wifi sítě) a polohy těla.
 
-\subsection{Zbytek, ostatní}
-
-Smetí na závěr: pattern matching \cite{Pee-FuzAcSynPatRec} (myslím, že spíš jazyků), \cite{Lee-AppFuzLanPatRec} pattern matching a obrázky (něco na způsob vektorů -- kostel a tak), \cite{Gog-ConRepNatArtLang} asi pattern matching.
-
-
-V \cite{Cha-ExeFuzProUsFiStaMa} popisují fuzzy programy. Fuzzy program je prakticky deklarativní program, fuzzy reguérní výraz, který popisuje, jak mají vypadat výsledky.
-
-V \cite{SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa} používají fuzzy automat pro vylepšení (zefektivnění) human-robot interakce. Nikde však neuvádějí, jak konkrétně.
-
-V \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} definují fuzzy lexikální analyzátor. Funguje na bázi klasickýho pattern matching, jen s informací, ve kterém konccovém stavu zkončil.\TODO{mimochodem, v \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} je poměrně pěkně popsaná teorie (determinsitické a nedeterministické automaty, regexy i reg. jazyky).}
-
-
+Poloha těla pakl může být buď, že osoba stojí, sedí nebo jde. Tyto hodnoty jsou opět sledovány fuzzy automatem (přechody jsou realizovány na základě dat z akcelerometru, pohybového čidla, a gyroskopu (senzoru náklonu). 
 
 
 \subsection{Řídící systémy, fuzzy kontroléry}
@@ -2272,8 +2265,41 @@ Vztah fuzzy automatů a řídících systémů pracujících na bázi ontologick
 
 Je-li systém modelován klasickým, bivalentním automatem \TODO{on ani tak není klasický bivalentní, ale event-driven} je pravděpodobné, že takovouto situaci nebude schopen ošetřit. Mohl by se tak ve snaze provést synchronizaci reálného a modelového stavu např. zacyklit mezi dvojicí diskrétních stavů.  
 
+\subsection{Ostatní a nezařezeno}
+
+V \cite{Cha-ExeFuzProUsFiStaMa} popisují fuzzy programy. Fuzzy program je prakticky deklarativní program, fuzzy reguérní výraz, který popisuje, jak mají vypadat výsledky.
+
+V \cite{SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa} používají fuzzy automat pro vylepšení (zefektivnění) human-robot interakce. Nikde však neuvádějí, jak konkrétně.
+
+V \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} definují fuzzy lexikální analyzátor. Funguje na bázi klasickýho pattern matching, jen s informací, ve kterém koncovém stavu zkončil.\TODO{mimochodem, v \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} je poměrně pěkně popsaná teorie (determinsitické a nedeterministické automaty, regexy i reg. jazyky).}
+
+\section{Pravděpodobností automaty}
+V \cite{YorSinTis-PowAmnLeaPrAuVarMemLen} a \cite{Ron-AutLeaApp} zavádějí pravděpodobnostní automat s pamětí. Každý stav si pamatuje něco jako své prefixy. Takže je to tak trochu automat pracující s celými slovy. Spolu s učením ho používají ke korekci textu bible. A posléze pro segmentaci DNA.
+
+V \cite{MilAtl-ProAuModEpiCelNet} používají pravděpodobnostní automaty na epigenetiku. Víc fakt netuším.
+
+V \cite{Mar+-ProAriAutApp} používají aritmetický automat (automat, který v každém přechodu může něco udělat) pro počítání počtu výskytů vzoru v řetězci. To pak využívají na určování proteinů (protein je rozštěpen a jednotlivé peptidy jsou pomocí hmotnostního spektrometru analyzovány a hmotnosti předány automatu). 
+
+V \cite{Niz-ModComComNetViaPrAu} modelují pomocí pravděpodobnostního automatu počítačovou síť (zvlášť uzly a kanály, jejich matice pak matematicky spojují do jedné velké matice \uv{matice automatu sítě}). Stavy uzlu jsou délky front v bufferech u jednotlivých kanálů. (U kanálů nevím.) Výsledkem je návrh optimální směrovací tabulky pro celou síť. 
+
+V \cite{Cas+-ProAutAspBasSenAna} pomocí pravděpodobnístních automatů analyzují aspektová tvrzení (tj. zda-li je tvrzení míněno pozitivně, negaitvně, neutrálně nebo s rozporem). Stavy automatu jsou všechna slova z celé databáze, vstupní abeceda taktéž. Počáteční stav je první slovo tvrzení, koncový pak poslední. Pravidla jsou, pochopitelně, sestavena učením. Přechody automatu mohou popisovat fráze či použití stejných slov v různém kontextu. Každý stav má pak přiřazenu polaritu, zkomibnováním všech polarit napříč celým tvrtením (napčíř všemi stavy) se pak obdrží celková polarita tvrzení.
+
+V \cite{SchYou-ProSimHumMacDia} používají automat jako generátor strojového člověka, konkrétně jako pracovníka banky. Generuje dotazy a, a na základě podnětů od člověka získává informace, co a jak chce (v jejich příkladě, bankovním pracovníku, jestli chce člověk vybrat peníze, nebo provést transakci z účtu na účet). \TODO{Tak ale tohle je spíš práce pro gramatiky, ne?}
+
+V \cite{MohPerRoe-WeiFinStaTraSpeRec} de facto překládají fonetickou abecedu na angličtinu (některá slova se totiž mohou vyslovovat  různě, např. \uv{data} a \uv{dejta} a naopak, dvě slova shodně, např. \uv{red} a \uv{red}). Z databáze sestavují automaty pro jednotlivá slova a ty na principu automatu pro lexikální analyzátor slývají do jednoho obrovského.
+
+V \cite{ForBel-GenMusAccUsFinStaTra} používají pravděpodobnostní automat jako jednu komponentu procesu pro parsování \uv{MIDI} dat ze zvukového záznamu.
+
+V \cite{WaMan-ProFiStMaRegBaMTEva} kombinují editační operace s pravděpodobnostními automaty pro pattern matching. Tentorkát však přirozeného jazyka.
+
+Mějme pravděpodobnostní automat. Pak v \cite{HigOnc-ComMosProStrProFiStaMa} studují, jak najít nejpravděpodobnější řetězec, tj. řetězec s nejvyyší pravděpodobností přijetí.
+
+V \cite{OliWag-ComMusNeuNetProFiStMa} používají pravděpodobnostní automat pro reprezentaci databáze hudebních skladeb. 
+
+
+
 \section{Konkrétní příklady}
-\subsubsection{Automat jako \uv{lepší} reprezentace něčeho}
+\subsection{Automat jako \uv{lepší} reprezentace něčeho}
 Markovův řetěz (probabilistický (dvoj)stavový systém).
 Petriho sítě (petri nets).
 Rozhodovací stromy.

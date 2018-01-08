@@ -40,7 +40,7 @@
 \contentsline {subsection}{\numberline {6.4}Pou\IeC {\v z}it\IeC {\'\i } fuzy tree automat\IeC {\r u}}{33}
 \contentsline {subsection}{\numberline {6.5}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{33}
 \contentsline {subsection}{\numberline {6.6}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{34}
-\contentsline {section}{\numberline {7}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{36}
+\contentsline {section}{\numberline {7}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{37}
 \contentsline {subsection}{\numberline {7.1}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{37}
 \contentsline {subsection}{\numberline {7.2}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{39}
 \contentsline {subsection}{\numberline {7.3}Obecn\IeC {\v e} k aplikac\IeC {\'\i }m}{41}
@@ -64,7 +64,7 @@
 \contentsline {subsection}{\numberline {9.5}Detekce zhoubn\IeC {\'y}ch n\IeC {\'a}dor\IeC {\r u}}{56}
 \contentsline {subsection}{\numberline {9.6}Anal\IeC {\'y}za kardiogramu}{56}
 \contentsline {subsection}{\numberline {9.7}\IeC {\v R}\IeC {\'\i }zen\IeC {\'\i } prot\IeC {\'e}zy}{57}
-\contentsline {section}{\numberline {10}Dal\IeC {\v s}\IeC {\'\i } n\IeC {\'a}vrhy na aplikace}{58}
+\contentsline {section}{\numberline {10}Dal\IeC {\v s}\IeC {\'\i } aplikace}{58}
 \contentsline {subsection}{\numberline {10.1}Pattern matching, dal\IeC {\v s}\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{58}
 \contentsline {subsection}{\numberline {10.2}Detekce po\IeC {\v z}\IeC {\'a}r\IeC {\r u}}{58}
 \contentsline {subsection}{\numberline {10.3}Automobilismus}{58}
@@ -73,9 +73,10 @@
 \contentsline {subsection}{\numberline {10.6}Modelov\IeC {\'a}n\IeC {\'\i } emoc\IeC {\'\i }}{60}
 \contentsline {subsection}{\numberline {10.7}Sledov\IeC {\'a}n\IeC {\'\i } cen investic}{61}
 \contentsline {subsection}{\numberline {10.8}Sledov\IeC {\'a}n\IeC {\'\i } pohybu a aktivit osoby}{61}
-\contentsline {subsection}{\numberline {10.9}Zbytek, ostatn\IeC {\'\i }}{61}
-\contentsline {subsection}{\numberline {10.10}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my, fuzzy kontrol\IeC {\'e}ry}{62}
-\contentsline {section}{\numberline {11}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{62}
-\contentsline {subsubsection}{\numberline {11.0.1}Automat jako \uv {lep\IeC {\v s}\IeC {\'\i }} reprezentace n\IeC {\v e}\IeC {\v c}eho}{62}
-\contentsline {subsection}{\numberline {11.1}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{62}
-\contentsline {subsection}{\numberline {11.2}Detekce p\IeC {\v r}eklep\IeC {\r u}}{62}
+\contentsline {subsection}{\numberline {10.9}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my, fuzzy kontrol\IeC {\'e}ry}{61}
+\contentsline {subsection}{\numberline {10.10}Ostatn\IeC {\'\i } a neza\IeC {\v r}ezeno}{62}
+\contentsline {section}{\numberline {11}Pravd\IeC {\v e}podobnost\IeC {\'\i } automaty}{62}
+\contentsline {section}{\numberline {12}Konkr\IeC {\'e}tn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }klady}{63}
+\contentsline {subsection}{\numberline {12.1}Automat jako \uv {lep\IeC {\v s}\IeC {\'\i }} reprezentace n\IeC {\v e}\IeC {\v c}eho}{63}
+\contentsline {subsection}{\numberline {12.2}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{63}
+\contentsline {subsection}{\numberline {12.3}Detekce p\IeC {\v r}eklep\IeC {\r u}}{64}

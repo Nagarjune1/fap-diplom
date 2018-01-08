@@ -21,11 +21,13 @@ Warning--I didn't find a database entry for "ThoMar-DetAccRegFuzLang"
 Warning--I didn't find a database entry for "Qiu-ChaFuzFinAut"
 Warning--I didn't find a database entry for "LiLiLi-RelAmoSevTypFuzAut"
 Warning--I didn't find a database entry for "BucPas-FuzPusAut"
+Warning--I didn't find a database entry for "Pee-FuzAcSynPatRec"
 Warning--I didn't find a database entry for "Com+-TreeAutTecApp"
 Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
 Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
 Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
 Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
+Warning--I didn't find a database entry for "Lee-AppFuzLanPatRec"
 Warning--I didn't find a database entry for "Wol-NewKinSci"
 Warning--I didn't find a database entry for "Wol-NewKiSci"
 Warning--I didn't find a database entry for "Wol-CelAut"
@@ -93,19 +95,41 @@ Warning--I didn't find a database entry for "HeiTri-SimEmoPerHumComInt"
 Warning--I didn't find a database entry for "ManPra-PriPatDetUsFiStMaFuzTra"
 Warning--I didn't find a database entry for "TriHei-LinSumHumActSkiConAcc"
 Warning--I didn't find a database entry for "Alv+-HumActRec+"
-Warning--I didn't find a database entry for "Pee-FuzAcSynPatRec"
-Warning--I didn't find a database entry for "Lee-AppFuzLanPatRec"
-Warning--I didn't find a database entry for "Gog-ConRepNatArtLang"
-Warning--I didn't find a database entry for "Cha-ExeFuzProUsFiStaMa"
-Warning--I didn't find a database entry for "SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa"
-Warning--I didn't find a database entry for "MatSalSalYu-LexAnaSimFinFuzAutMod"
 Warning--I didn't find a database entry for "HeKinSep-DecMakFuzEnvZUsOntCon+"
 Warning--I didn't find a database entry for "Gra+-ApFuStFuOuFinMaPrRecVioOntAss"
 Warning--I didn't find a database entry for "GraFodDri-HybFuzBooAutOntCont"
+Warning--I didn't find a database entry for "Cha-ExeFuzProUsFiStaMa"
+Warning--I didn't find a database entry for "SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa"
+Warning--I didn't find a database entry for "MatSalSalYu-LexAnaSimFinFuzAutMod"
+Warning--I didn't find a database entry for "YorSinTis-PowAmnLeaPrAuVarMemLen"
+Warning--I didn't find a database entry for "Ron-AutLeaApp"
+Warning--I didn't find a database entry for "MilAtl-ProAuModEpiCelNet"
+Warning--I didn't find a database entry for "Mar+-ProAriAutApp"
+Warning--I didn't find a database entry for "Her-ProAriAutAppSoComFraBioSeqAna"
+Warning--I didn't find a database entry for "Niz-ModComComNetViaPrAu"
+Warning--I didn't find a database entry for "Cas+-ProAutAspBasSenAna"
+Warning--I didn't find a database entry for "SchYou-ProSimHumMacDia"
+Warning--I didn't find a database entry for "MohPerRoe-WeiFinStaTraSpeRec"
+Warning--I didn't find a database entry for "BahJel-DecChaWinDelSubApSpeRec"
+Warning--I didn't find a database entry for "ForBel-GenMusAccUsFinStaTra"
+Warning--I didn't find a database entry for "WaMan-ProFiStMaRegBaMTEva"
+Warning--I didn't find a database entry for "HigOnc-ComMosProStrProFiStaMa"
+Warning--I didn't find a database entry for "OliWag-ComMusNeuNetProFiStMa"
+Warning--I didn't find a database entry for "Hua+-LeaProbAutModChe"
+Warning--I didn't find a database entry for "TurChe-MacRecHumActSur"
+Warning--I didn't find a database entry for "Jin+-WavBasFeaExtUsPrFiStAuPatCla"
+Warning--I didn't find a database entry for "Kra+-BibMeExUsiPrFiStTra"
+Warning--I didn't find a database entry for "KniGra-OvProTreTraNatLanPro"
+Warning--I didn't find a database entry for "MukRay-StaSplMerProbFiStaAuSigRepAna"
+Warning--I didn't find a database entry for "Hac+-ProAnaLarFinStaMac"
+Warning--I didn't find a database entry for "Maz+-ProTreAutAppBehMod"
+Warning--I didn't find a database entry for "LafMccPer-ConRanFieProModSegLabSeqDat"
+Warning--I didn't find a database entry for "BocChe-CriBePrAuNetModSprInfDis+"
+Warning--I didn't find a database entry for "SegLyn-ProbSimProbProc"
 Warning--I didn't find a database entry for "GraPat-FuzLogFinStaMacModReaTimSys"
 You've used 21 entries,
             2118 wiz_defined-function locations,
-            812 strings with 13691 characters,
+            860 strings with 14959 characters,
 and the built_in function-call counts, 4474 in all, are:
 = -- 433
 > -- 171
@@ -144,4 +168,4 @@ warning$ -- 0
 while$ -- 42
 width$ -- 23
 write$ -- 214
-(There were 100 warnings)
+(There were 124 warnings)
