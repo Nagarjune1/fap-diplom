@@ -1,0 +1,12 @@
+type:
+	insertion/deletions set
+
+universe:
+	a b c
+
+mapping:
+	a 0.9
+	b 0.8
+	c 0.7
+
+
