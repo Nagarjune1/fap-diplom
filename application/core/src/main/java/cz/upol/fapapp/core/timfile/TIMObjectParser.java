@@ -83,7 +83,26 @@ public abstract class TIMObjectParser<T> {
 	}
 
 	/**
-	 * Processes given data into object of type T.
+	 * Processes given data into object of type T. The method should look like as follows:
+	 * <pre>
+	 	\@Override
+		public T process(TIMFileData data) {
+			Foo foo = processFoo(data);
+			Bar bar = processBar(data); 
+	  
+	  		return new T(foo, bar);
+  		}
+  		
+		private Foo processFoo(TIMFileData data) {
+			LineElements elements = TIMObjectParserComposerTools.findElementsMerged(data, "foo");
+			return TIMObjectParserComposerTools.fooo(elements);
+		}
+	
+		private Bar processBar(TIMFileData data) {
+			LineElements elements = TIMObjectParserComposerTools.findElements(data, "bar");
+			return new Bar(new Baz(elements.iTh(0)), new Aux(elements.iTh(1)));
+		}
+	 </pre>
 	 * 
 	 * @param data
 	 * @return

@@ -134,6 +134,12 @@ public class TIMObjectParserComposerTools {
 				.collect(Collectors.toSet())); //
 	}
 
+	public static Word parseWord(LineElements elements) {
+		return new Word(elements.getElements().stream() //
+				.map((s) -> parseSymbol(s)) //
+				.collect(Collectors.toList()));
+	}
+
 	/////////////////////////////////////////////////////////////////////////
 
 	public static LineElements intsToLine(Integer... ints) {
@@ -162,14 +168,18 @@ public class TIMObjectParserComposerTools {
 				(s) -> s.getValue());
 	}
 
+	public static LineElements alphabetToLine(Alphabet alphabet) {
+		return symbolsToLine(alphabet);
+	}
+
 	public static LineElements wordToLine(Word word) {
 		return collectionToLine(word.getSymbols(), //
 				(s) -> s.getValue());
 	}
 
 	public static LineElements fuzzyStateToLine(FuzzyState fuzzyState) {
-		return collectionToLine(fuzzyState.getTuples(), //
-				(t) -> t.getDomain().getLabel() + "/" + t.getTarget().getValue());
+		return collectionToLine(fuzzyState.toMap().entrySet(), //
+				(t) -> t.getKey().getLabel() + "/" + t.getValue().getValue());
 	}
 
 	/////////////////////////////////////////////////////////////////////////

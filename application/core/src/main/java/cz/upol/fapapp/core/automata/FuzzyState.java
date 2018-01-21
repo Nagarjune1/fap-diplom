@@ -20,4 +20,16 @@ public class FuzzyState extends FuzzySet<State> {
 		super(fuzzySet.toMap());
 	}
 
+	public Set<State> listStates() {
+		return domain();
+	}
+
+	@Override
+	public String toString() {
+		return "FuzzyState: " + toMap();
+	}
+	
+	
+
+	
 }

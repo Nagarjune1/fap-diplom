@@ -67,4 +67,10 @@ public class Word {
 		return "Word:" + symbols + "";
 	}
 
+	public String toSimpleHumanString() {
+		return symbols.stream() //
+				.map((s) -> s.getValue()) //
+				.collect(Collectors.joining(" "));
+	}
+
 }

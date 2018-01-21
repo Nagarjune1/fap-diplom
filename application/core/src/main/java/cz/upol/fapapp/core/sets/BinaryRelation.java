@@ -5,9 +5,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
-import cz.upol.fapapp.core.sets.Relation.Tuple;
+import cz.upol.fapapp.core.sets.BaseRelation.Tuple;
 
-public class BinaryRelation<DT, TT> extends Relation<Couple<DT, TT>> {
+public class BinaryRelation<DT, TT> extends BaseRelation<Couple<DT, TT>> {
 
 	public BinaryRelation(Set<Couple<DT, TT>> tuples) {
 		super(tuples);

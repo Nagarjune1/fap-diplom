@@ -1,6 +1,6 @@
 package cz.upol.fapapp.core.automata;
 
-public class State {
+public class State implements Comparable<State> {
 	private final String label;
 
 	public State(String label) {
@@ -40,5 +40,10 @@ public class State {
 	@Override
 	public String toString() {
 		return "State(" + label + ")";
+	}
+	
+	@Override
+	public int compareTo(State o) {
+		return this.label.compareTo(o.label);
 	}
 }

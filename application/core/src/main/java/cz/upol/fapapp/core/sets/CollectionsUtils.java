@@ -77,11 +77,10 @@ public class CollectionsUtils {
 	}
 
 	public static void checkFuzzyState(FuzzyState fuzzyState, Set<State> states) {
-		fuzzyState.getTuples().forEach((c) -> {
-			State state = c.getDomain();
-			if (!states.contains(state)) {
+		fuzzyState.listStates().forEach((s) -> {
+			if (!states.contains(s)) {
 				throw new IllegalArgumentException(
-						"Not subset, subset does't contain " + state + " (" + fuzzyState + " and " + states + ")");
+						"Not subset, subset does't contain " + s + " (" + fuzzyState + " and " + states + ")");
 			}
 		});
 	}
@@ -120,6 +119,13 @@ public class CollectionsUtils {
 		return new FuzzySet<>(map);
 	}
 
+	public static <E> FuzzySet<E> singletonFuzzySet(Set<E> universe, E singleOne) {
+		return new FuzzySet<>(universe.stream() //
+				.collect(Collectors.toMap( //
+						(e) -> e, //
+						(e) -> singleOne.equals(e) ? Degree.ONE : Degree.ZERO)));
+	}
+
 	/////////////////////////////////////////////////////////////////
 
 	@SuppressWarnings("unchecked")
@@ -130,6 +136,27 @@ public class CollectionsUtils {
 		Set<Couple<E, Degree>> couples = (Set<Couple<E, Degree>>) object;
 
 		return couples;
+	}
+
+	public static <E> Map<E, Degree> convert(Set<FuzzyTuple<E>> tuples) {
+		return tuples.stream() //
+				.collect(Collectors.toMap( //
+						(t) -> t.getDomain(), //
+						(t) -> t.getTarget()));
+
+	}
+
+	/////////////////////////////////////////////////////////////////
+
+	public static <K, V> Map<K, V> createMap(Set<K> keys, V value) {
+		return keys.stream() //
+				.collect(Collectors.toMap((e) -> e, //
+						(e) -> value));
+	}
+
+	public static Alphabet inferAlphabetOfWord(Word word) {
+		// TODO move to Alpabet or Word class?
+		return new Alphabet(word.getSymbols().stream().collect(Collectors.toSet()));
 	}
 
 }

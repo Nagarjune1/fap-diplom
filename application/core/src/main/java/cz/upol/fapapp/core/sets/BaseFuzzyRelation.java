@@ -1,24 +1,31 @@
 package cz.upol.fapapp.core.sets;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
-import cz.upol.fapapp.core.sets.Relation.Tuple;
+import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.sets.BaseRelation.Tuple;
 
-public class Relation<T extends Tuple> {
+public class BaseFuzzyRelation<T extends Tuple> {
 
-	protected final Set<T> tuples;
+	protected final Map<T, Degree> tuples;
 
-	public Relation(Set<T> tuples) {
+	public BaseFuzzyRelation(Map<T, Degree> tuples) {
 		super();
 		this.tuples = tuples;
 	}
 
-	public Set<T> getTuples() {
-		return tuples;
+	public Degree get(T tuple) {
+		return this.tuples.get(tuple); // TODO zero if not in set?
 	}
 
-	public T getOne() {
-		return tuples.stream().findAny().get();
+	public Set<T> domain() {
+		return tuples.keySet();
+	}
+	
+	public Map<T, Degree> getTuplesWithDegree() {
+		return new HashMap<>(tuples);
 	}
 
 	@Override
@@ -37,7 +44,7 @@ public class Relation<T extends Tuple> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Relation<?> other = (Relation<?>) obj;
+		BaseFuzzyRelation<?> other = (BaseFuzzyRelation<?>) obj;
 		if (tuples == null) {
 			if (other.tuples != null)
 				return false;
@@ -48,11 +55,7 @@ public class Relation<T extends Tuple> {
 
 	@Override
 	public String toString() {
-		return "Relation:" + tuples + "";
-	}
-
-	public static abstract class Tuple {
-
+		return "BaseFuzzyRelation:" + tuples + "";
 	}
 
 }

@@ -86,7 +86,24 @@ public abstract class TIMObjectComposer<T> {
 	}
 
 	/**
-	 * Processes given object into given data.
+	 * Processes given object into given data. The method it should look like:
+	 * <pre>
+	  	\@Override
+		protected void process(T object, TIMFileData data) {
+			processFoo(object.getFoo(), data);
+			processBar(object.getBar(), data);
+	  	}
+	  
+	  	private void processFoo(Foo foo, TIMFileData data) {
+			LineElements line = TIMObjectParserComposerTools.fooo(foo);
+			data.add("foo", line);
+		}
+		
+		private void processBar(Bar bar, TIMFileData data) {
+			LineElements line = new LineElements(bar.getBaz(), bar.getAux());
+			data.add("baz", line);
+		}
+	 * </pre>
 	 * 
 	 * @param object
 	 * @param data
