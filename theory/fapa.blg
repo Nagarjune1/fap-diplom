@@ -3,41 +3,13 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: fapa.aux
 The style file: plain.bst
 Database file #1: resources.bib
-Warning--I didn't find a database entry for "Koz-AutComp"
-Warning--I didn't find a database entry for "RuaKer-FuzIfTheRulComI"
 Warning--I didn't find a database entry for "Law-FinAut"
-Warning--I didn't find a database entry for "HopUl-IntrAutTheLangComp"
-Warning--I didn't find a database entry for "MorMal-FuzzyAutLang"
-Warning--I didn't find a database entry for "SnaKepAbrHas-AproxStriMatchFuzzAut"
-Warning--I didn't find a database entry for "Bel-DetAndFuzzAut"
-Warning--I didn't find a database entry for "IgnCirBog-DetFuzAutMemValComResLat"
-Warning--I didn't find a database entry for "SebJoh-InvFuzzAutInvFuzzLang"
-Warning--I didn't find a database entry for "Bel-DetFuzAut"
-Warning--I didn't find a database entry for "San-MaxAut"
-Warning--I didn't find a database entry for "PedGac-LeaFuzzAut"
-Warning--I didn't find a database entry for "BlaDelPeg-FuzzGraIntUsiNeuNet"
-Warning--I didn't find a database entry for "CheMo-MinAlgFuzFinAut"
-Warning--I didn't find a database entry for "ThoMar-DetAccRegFuzLang"
-Warning--I didn't find a database entry for "Qiu-ChaFuzFinAut"
-Warning--I didn't find a database entry for "LiLiLi-RelAmoSevTypFuzAut"
-Warning--I didn't find a database entry for "BucPas-FuzPusAut"
 Warning--I didn't find a database entry for "Pee-FuzAcSynPatRec"
-Warning--I didn't find a database entry for "Com+-TreeAutTecApp"
-Warning--I didn't find a database entry for "Bez+-FuzModAlgPatRecImProc"
-Warning--I didn't find a database entry for "Lee-FuzTreAutSynPatRec"
-Warning--I didn't find a database entry for "EsiLiu-FuzzTreeAut"
-Warning--I didn't find a database entry for "MorMal-FuzzyLangThe"
-Warning--I didn't find a database entry for "Lee-AppFuzLanPatRec"
 Warning--I didn't find a database entry for "Wol-NewKinSci"
-Warning--I didn't find a database entry for "Wol-NewKiSci"
-Warning--I didn't find a database entry for "Wol-CelAut"
-Warning--I didn't find a database entry for "BatXie-CellCity"
-Warning--I didn't find a database entry for "Wu-ExpGenPolUrbGroCelAutCit"
-Warning--I didn't find a database entry for "For-FuzCelAutConjNormForm"
-Warning--I didn't find a database entry for "TofMar-CelAuMach+"
 Warning--I didn't find a database entry for "WhiEngInj-UsConsCelAuHiResModUrbLanUsDyn"
 Warning--I didn't find a database entry for "DiwPatGup-CelAutBasEdDetBraTum"
 Warning--I didn't find a database entry for "MofSadRezMey-CelEdDetComCelAuCelLeaAu"
+Warning--I didn't find a database entry for "BatXie-CellCity"
 Warning--I didn't find a database entry for "NayPatMah-SurTwDimCelAutAppImProc"
 Warning--I didn't find a database entry for "Pla-FuzCelModTrafDatFus"
 Warning--I didn't find a database entry for "CheMyn-ModAlgBloDutCosWat+"
@@ -53,119 +25,47 @@ Warning--I didn't find a database entry for "TofMar-CelAuMach+.pdf"
 Warning--I didn't find a database entry for "LiYe-NeuNetBasCelAutSim+"
 Warning--I didn't find a database entry for "YehLi-SimLanDevIntCelAutMulCriEv"
 Warning--I didn't find a database entry for "Ahm+-CalFuzCelAutModUrbDynSauAr"
-Warning--I didn't find a database entry for "AlAhHep+-ModUrbGroDynUsCelAutGIS"
-Warning--I didn't find a database entry for "WhiEng-CelAutBasIntDynRegMod"
-Warning--I didn't find a database entry for "LaiDraSch-IntMulEvCelAutMetLanSimMod"
-Warning--I didn't find a database entry for "ManHatPra-FuzCelAutBasSheModUrGro+"
-Warning--I didn't find a database entry for "ManHatPra-ModUrbGroUsFuzCelAut"
-Warning--I didn't find a database entry for "ClaHopHay-SelModCelAutModHistUrbSanFraBayAre"
-Warning--I didn't find a database entry for "Dra-CouFuzSetTheGisBaCelAutLanUseChaMod"
-Warning--I didn't find a database entry for "LiuPhi-DevCelAutModUrbGroIncFuzSetApp"
-Warning--I didn't find a database entry for "WasPar-PreSpaDisEleEnCon+"
-Warning--I didn't find a database entry for "Rus-ImaProHan"
-Warning--I didn't find a database entry for "MaiAgg-StuComVarImDetEdTec"
-Warning--I didn't find a database entry for "FieRus-HanNeuCom"
-Warning--I didn't find a database entry for "GilOmlTho-EquKnoRep+"
-Warning--I didn't find a database entry for "OmlThoGil-RepFuzFinStaAuConRecNeuNet"
-Warning--I didn't find a database entry for "UnaKha-FuzDFinStaMachImpBasNeuFuzSys"
-Warning--I didn't find a database entry for "BlaDelFlo-MethIndFuzzAutUsNeuNet"
-Warning--I didn't find a database entry for "FuLi-ForLeaAutAutGam"
-Warning--I didn't find a database entry for "WeeFu-FormFuzAutAppModLeaSys"
-Warning--I didn't find a database entry for "TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut"
-Warning--I didn't find a database entry for "SinGha+HybrEdgDetMetFuzSetTheCelLeaAut"
-Warning--I didn't find a database entry for "ZhiMinLan-EvoStraIndFuFiStaAu"
-Warning--I didn't find a database entry for "PatPal-FuzGraSynRecSkeMatXra"
-Warning--I didn't find a database entry for "Jia+-ExHeaSimMetBasIntHumTheMod"
-Warning--I didn't find a database entry for "GupRah-CliMonUsFuzSys"
-Warning--I didn't find a database entry for "CamMerNun-UsFuzAutDiagPrHeaPro"
-Warning--I didn't find a database entry for "SteAdl-CliMonFuzAut"
-Warning--I didn't find a database entry for "Est+-CytImAnaGenFuFiStMa"
-Warning--I didn't find a database entry for "RigTza-FuzAutFauDia"
-Warning--I didn't find a database entry for "Alv-HumGaiModUsGenFuzFinStaMac"
-Warning--I didn't find a database entry for "AlvTri-ComModQuaPerSig"
-Warning--I didn't find a database entry for "Hun-NoLiTexSeaUsFuFiStLiNoDetAut"
-Warning--I didn't find a database entry for "HamKoNam-FirFlaDetBasFuzFinAut"
-Warning--I didn't find a database entry for "KoHamNam-ModForFuFiAuDetIrrFirFla"
-Warning--I didn't find a database entry for "Hul+-ManRecUsProFinStaMacFuzLog"
-Warning--I didn't find a database entry for "TriHei-ExpDesSeqFuzPer"
-Warning--I didn't find a database entry for "GraFod-FuzAutIntHybConSys"
-Warning--I didn't find a database entry for "DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis"
-Warning--I didn't find a database entry for "AlvJoaCru-FuStMaAppEmoModEleGamCha"
-Warning--I didn't find a database entry for "HeiTri-SimEmoPerHumComInt"
-Warning--I didn't find a database entry for "ManPra-PriPatDetUsFiStMaFuzTra"
-Warning--I didn't find a database entry for "TriHei-LinSumHumActSkiConAcc"
-Warning--I didn't find a database entry for "Alv+-HumActRec+"
-Warning--I didn't find a database entry for "HeKinSep-DecMakFuzEnvZUsOntCon+"
-Warning--I didn't find a database entry for "Gra+-ApFuStFuOuFinMaPrRecVioOntAss"
-Warning--I didn't find a database entry for "GraFodDri-HybFuzBooAutOntCont"
-Warning--I didn't find a database entry for "Cha-ExeFuzProUsFiStaMa"
 Warning--I didn't find a database entry for "SalKarMor-ModRobAtDeHuRoIntUsFiFuStMa"
-Warning--I didn't find a database entry for "MatSalSalYu-LexAnaSimFinFuzAutMod"
-Warning--I didn't find a database entry for "YorSinTis-PowAmnLeaPrAuVarMemLen"
-Warning--I didn't find a database entry for "Ron-AutLeaApp"
-Warning--I didn't find a database entry for "MilAtl-ProAuModEpiCelNet"
-Warning--I didn't find a database entry for "Mar+-ProAriAutApp"
-Warning--I didn't find a database entry for "Her-ProAriAutAppSoComFraBioSeqAna"
-Warning--I didn't find a database entry for "Niz-ModComComNetViaPrAu"
-Warning--I didn't find a database entry for "Cas+-ProAutAspBasSenAna"
-Warning--I didn't find a database entry for "SchYou-ProSimHumMacDia"
-Warning--I didn't find a database entry for "MohPerRoe-WeiFinStaTraSpeRec"
-Warning--I didn't find a database entry for "BahJel-DecChaWinDelSubApSpeRec"
-Warning--I didn't find a database entry for "ForBel-GenMusAccUsFinStaTra"
-Warning--I didn't find a database entry for "WaMan-ProFiStMaRegBaMTEva"
-Warning--I didn't find a database entry for "HigOnc-ComMosProStrProFiStaMa"
-Warning--I didn't find a database entry for "OliWag-ComMusNeuNetProFiStMa"
-Warning--I didn't find a database entry for "Hua+-LeaProbAutModChe"
-Warning--I didn't find a database entry for "TurChe-MacRecHumActSur"
-Warning--I didn't find a database entry for "Jin+-WavBasFeaExtUsPrFiStAuPatCla"
-Warning--I didn't find a database entry for "Kra+-BibMeExUsiPrFiStTra"
-Warning--I didn't find a database entry for "KniGra-OvProTreTraNatLanPro"
-Warning--I didn't find a database entry for "MukRay-StaSplMerProbFiStaAuSigRepAna"
-Warning--I didn't find a database entry for "Hac+-ProAnaLarFinStaMac"
-Warning--I didn't find a database entry for "Maz+-ProTreAutAppBehMod"
-Warning--I didn't find a database entry for "LafMccPer-ConRanFieProModSegLabSeqDat"
-Warning--I didn't find a database entry for "BocChe-CriBePrAuNetModSprInfDis+"
-Warning--I didn't find a database entry for "SegLyn-ProbSimProbProc"
 Warning--I didn't find a database entry for "GraPat-FuzLogFinStaMacModReaTimSys"
-You've used 21 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            860 strings with 14959 characters,
-and the built_in function-call counts, 4474 in all, are:
-= -- 433
-> -- 171
+            581 strings with 6734 characters,
+and the built_in function-call counts, 1253 in all, are:
+= -- 122
+> -- 42
 < -- 0
-+ -- 73
-- -- 50
-* -- 186
-:= -- 855
-add.period$ -- 64
-call.type$ -- 21
-change.case$ -- 87
++ -- 18
+- -- 12
+* -- 50
+:= -- 245
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 212
-empty$ -- 363
-format.name$ -- 50
-if$ -- 897
+cite$ -- 6
+duplicate$ -- 60
+empty$ -- 103
+format.name$ -- 12
+if$ -- 249
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 22
-newline$ -- 109
-num.names$ -- 42
-pop$ -- 91
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 67
+purify$ -- 18
 quote$ -- 0
-skip$ -- 149
+skip$ -- 42
 stack$ -- 0
-substring$ -- 107
-swap$ -- 21
+substring$ -- 30
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 24
 warning$ -- 0
-while$ -- 42
-width$ -- 23
-write$ -- 214
-(There were 124 warnings)
+while$ -- 12
+width$ -- 7
+write$ -- 64
+(There were 24 warnings)

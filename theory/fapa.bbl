@@ -1,28 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{BlaDelPeg-FuzzAutIndUsNeuNet}
-M.~C.~Pegalajar A.~Blanco, M.~Delgado.
-\newblock Fuzzy automaton induction using neural network.
-\newblock {\em International Journal of Approximate Reasoning}, 2001.
-
-\bibitem{Ech-DefSyssConPre}
-Javier Echanobe José R. Gonzáles Mendívil José R. Garitagoitia Carlos~F.
-  Alastrueya.
-\newblock Deformed systems for contextual postprocessing.
-\newblock {\em Fuzzy Sets and Systems}, 1998.
-
-\bibitem{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}
-C.~L.~Giles Ch. W.~Omlin, K. K.~Thornber.
-\newblock Fuzzy finite-state automata can be deterministically encoded into
-  recurent neural networks.
-\newblock {\em University of Technical Report}, 1996.
-
-\bibitem{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}
-Roger~White Conrad~Power, Alvin~Simms.
-\newblock Hierarchical fuzzy pattern matching for the regional comparison of
-  land use maps.
-\newblock {\em International Journal of Geographical Information Science},
-  2010.
+\begin{thebibliography}{1}
 
 \bibitem{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}
 Prof. Sagar A.~More Dhiraj Kumar~Patel.
@@ -31,52 +7,12 @@ Prof. Sagar A.~More Dhiraj Kumar~Patel.
 \newblock {\em International Conference on Computer Communication and
   Informatics}, 2013.
 
-\bibitem{RamGir-ConvFinAutFuzzAutStrComp}
-H.~A.~Girijamma Dr. V.~Ramaswamy.
-\newblock Conversion of finite automata to fuzzy automata for string
-  comparison.
-\newblock {\em International Journal of Computer Applications}, 2012.
-
-\bibitem{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}
-J.~J. Astrain; J. R. Garitagoitia; J. R. Gonzalez De Mendivil; J.
-  Villadangos;~F. Farina.
-\newblock Approximate string matching using deformed fuzzy automata: A learning
-  experience.
-\newblock {\em Springer Science \& Business Media}, 2004.
-
-\bibitem{AndAbdAsm-ApprPattMatcFuzzLog}
-Abdulwahed~Almarimi Gabriela~Andrejková and Asmaa Mahmoud.
-\newblock Approximate pattern matching using fuzzy logic.
-\newblock {\em CEUR Workshop Proceedings}, 2003.
-
 \bibitem{PalYau-FracFuzzGramAppPatRec}
 S.S.~Yau G.F.~DePalma.
 \newblock Fractionally fuzzy grammars with application to pattern recognition.
 \newblock {\em US–Japan Seminar on Fuzzy Sets and their Applications}, 1974.
 \newblock článek jako e-book: http://bit.ly/2cumxjz, výcuc v
   MorMal-FuzzAutAndLangs 10.7.
-
-\bibitem{BaiTri-PattRecUsiTemFuzzAut}
-Gracián~Triviño Gonzalo~Bailadora.
-\newblock Pattern recognition using temporal fuzzy automata.
-\newblock {\em Fuzzy Sets and Systems}, 2010.
-
-\bibitem{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm}
-Lefteris A. Mantelas~Thomas Hatzichristos and Poulicos Prastacos.
-\newblock A fuzzy cellular automata modeling approach -- accessing urban growth
-  dynamics in linguistic terms.
-\newblock {\em Computational Science and Its Applications}, 2010.
-
-\bibitem{Hua-SyntPattRecSeisOilExp}
-Kou-Yuan Huang.
-\newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
-\newblock World Scientific, 2002.
-
-\bibitem{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}
-J.R.~Garitagoitia J.~Astrain, J.R. González de~Mendívil.
-\newblock Fuzzy automata with $\epsilon$-moves compute fuzzy measures between
-  strings.
-\newblock {\em Fuzzy Sets and Systems 157}, 2005.
 
 \bibitem{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}
 José R.~Garitagoitia José R. González~de Mendívil.
@@ -88,27 +24,6 @@ José R.~Garitagoitia José R. González~de Mendívil.
 S.~C.~Kremer M.~Doostfatemeh.
 \newblock New directions in fuzzy automata.
 \newblock {\em International Journal of Approximate Reasoning}, 2004.
-
-\bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
-Hasan~Ahmed Manuj~Darbari and Vivek~Kr. Singh.
-\newblock Application of fuzzy automata theory and knowledge based neural
-  networks for development of basic learning model.
-\newblock {\em Computer Technology and Application 2}, 2011.
-
-\bibitem{Rig-FauDetIsoBasFuzzAut}
-Gerasimos~G. Rigatos.
-\newblock Fault detection and isolation based on fuzzy automata.
-\newblock {\em Information Sciences}, 2009.
-
-\bibitem{MogZadAme-NewDirInFuzzTreeAut}
-M.~M.~ZAHEDI S.~MOGHARI and R.~AMERI.
-\newblock New direction in fuzzy tree automata.
-\newblock {\em Iranian Journal of Fuzzy Systems}, 2011.
-
-\bibitem{ChaJos-NoteFuzzTreeAut}
-Mukta N.~Joshi S.~R.~Chaudhari.
-\newblock A note on fuzzy tree automata.
-\newblock {\em International Journal of Computer Applications}, 2012.
 
 \bibitem{StaCir-ConsFuzzAutFuzzRegExp}
 Miroslav Stamenkovic, Aleksandar;~Ciric.
