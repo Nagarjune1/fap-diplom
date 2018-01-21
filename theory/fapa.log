@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  8 JAN 2018 05:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  21 JAN 2018 10:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1912,153 +1912,153 @@ d on input line 2274.
 
 
 LaTeX Warning: Citation `YorSinTis-PowAmnLeaPrAuVarMemLen' on page 62 undefined
- on input line 2277.
+ on input line 2279.
 
 
-LaTeX Warning: Citation `Ron-AutLeaApp' on page 62 undefined on input line 2277
+LaTeX Warning: Citation `Ron-AutLeaApp' on page 62 undefined on input line 2279
 .
 
 
 LaTeX Warning: Citation `MilAtl-ProAuModEpiCelNet' on page 62 undefined on inpu
-t line 2279.
+t line 2281.
 
 
-Overfull \hbox (5.57571pt too wide) in paragraph at lines 2279--2280
+Overfull \hbox (5.57571pt too wide) in paragraph at lines 2281--2282
 []\temp V [[]] pou^^Tz^^S^^Pvaj^^S^^P pravd^^Tepodobnostn^^S^^P au-to-maty na e
 pi-ge-ne-tiku. V^^S^^Pc fakt netu^^Ts^^S^^Pm. 
  []
 
 
 LaTeX Warning: Citation `Mar+-ProAriAutApp' on page 62 undefined on input line 
-2281.
+2283.
 
 
 LaTeX Warning: Citation `Her-ProAriAutAppSoComFraBioSeqAna' on page 62 undefine
-d on input line 2281.
+d on input line 2283.
 
 
 LaTeX Warning: Citation `Niz-ModComComNetViaPrAu' on page 62 undefined on input
- line 2283.
+ line 2285.
 
 
-Overfull \hbox (4.3581pt too wide) in paragraph at lines 2283--2284
+Overfull \hbox (4.3581pt too wide) in paragraph at lines 2285--2286
 []\temp V [[]] mo-de-luj^^S^^P po-moc^^S^^P pravd^^Tepodobnostn^^S^^Pho au-to-m
 atu po^^Tc^^S^^Pta^^Tcovou s^^S^^Pt[] (zvl^^Sa^^Tst[]
  []
 
 
 LaTeX Warning: Citation `Cas+-ProAutAspBasSenAna' on page 62 undefined on input
- line 2285.
+ line 2287.
 
 
 LaTeX Warning: Citation `SchYou-ProSimHumMacDia' on page 62 undefined on input 
-line 2287.
+line 2289.
 
 
 LaTeX Warning: Citation `MohPerRoe-WeiFinStaTraSpeRec' on page 62 undefined on 
-input line 2289.
+input line 2291.
 
 
 LaTeX Warning: Citation `BahJel-DecChaWinDelSubApSpeRec' on page 62 undefined o
-n input line 2289.
+n input line 2291.
 
 [62]
 
 LaTeX Warning: Citation `ForBel-GenMusAccUsFinStaTra' on page 63 undefined on i
-nput line 2291.
+nput line 2293.
 
 
 LaTeX Warning: Citation `WaMan-ProFiStMaRegBaMTEva' on page 63 undefined on inp
-ut line 2293.
+ut line 2295.
 
 
 LaTeX Warning: Citation `HigOnc-ComMosProStrProFiStaMa' on page 63 undefined on
- input line 2295.
+ input line 2297.
 
 
-Overfull \hbox (32.18915pt too wide) in paragraph at lines 2295--2296
+Overfull \hbox (32.18915pt too wide) in paragraph at lines 2297--2298
 []\temp M^^Tejme pravd^^Tepodobnostn^^S^^P au-to-mat. Pak v [[]] stu-duj^^S^^P,
  jak naj^^S^^Pt nej-pravd^^Tepodobn^^Tej^^Ts^^S^^P
  []
 
 
 LaTeX Warning: Citation `OliWag-ComMusNeuNetProFiStMa' on page 63 undefined on 
-input line 2297.
+input line 2299.
 
 
-Overfull \hbox (33.37518pt too wide) in paragraph at lines 2297--2298
+Overfull \hbox (33.37518pt too wide) in paragraph at lines 2299--2300
 \temp debn^^S^^Pch skla-deb. Tj. ^^Tze abeca jsou t^^Sony a pravd^^Tepodobnosti
  p^^Trechod^^Wu pravd^^Tepodobnosti,
  []
 
 
 LaTeX Warning: Citation `Hua+-LeaProbAutModChe' on page 63 undefined on input l
-ine 2299.
+ine 2301.
 
 
 LaTeX Warning: Citation `TurChe-MacRecHumActSur' on page 63 undefined on input 
-line 2301.
+line 2303.
 
 
 LaTeX Warning: Citation `Jin+-WavBasFeaExtUsPrFiStAuPatCla' on page 63 undefine
-d on input line 2303.
+d on input line 2305.
 
 
 LaTeX Warning: Citation `Kra+-BibMeExUsiPrFiStTra' on page 63 undefined on inpu
-t line 2305.
+t line 2307.
 
 
 LaTeX Warning: Citation `KniGra-OvProTreTraNatLanPro' on page 63 undefined on i
-nput line 2307.
+nput line 2309.
 
 
 LaTeX Warning: Citation `MukRay-StaSplMerProbFiStaAuSigRepAna' on page 63 undef
-ined on input line 2309.
+ined on input line 2311.
 
 
 LaTeX Warning: Citation `Hac+-ProAnaLarFinStaMac' on page 63 undefined on input
- line 2311.
-
-
-LaTeX Warning: Citation `Maz+-ProTreAutAppBehMod' on page 63 undefined on input
  line 2313.
 
 
-Overfull \hbox (28.98584pt too wide) in paragraph at lines 2313--2314
+LaTeX Warning: Citation `Maz+-ProTreAutAppBehMod' on page 63 undefined on input
+ line 2315.
+
+
+Overfull \hbox (28.98584pt too wide) in paragraph at lines 2315--2316
 []\temp V [[]] pou^^Tz^^S^^Pvaj^^S^^P pravd^^Tepodobnost^^S^^P au-to-mat pro ro
 z-pozn^^Sav^^San^^S^^P pravd^^Tepobnobnostn^^S^^Pch
  []
 
 
 LaTeX Warning: Citation `LafMccPer-ConRanFieProModSegLabSeqDat' on page 63 unde
-fined on input line 2315.
+fined on input line 2317.
 
 
 LaTeX Warning: Citation `BocChe-CriBePrAuNetModSprInfDis+' on page 63 undefined
- on input line 2317.
+ on input line 2319.
 
 
-Overfull \hbox (37.90796pt too wide) in paragraph at lines 2317--2318
+Overfull \hbox (37.90796pt too wide) in paragraph at lines 2319--2320
 []\temp V [[]] po-pi-suj^^S^^P velmi zaj^^S^^Pmav^^Sy probl^^Sem - ^^Ts^^S^^P^^
 Tren^^S^^P n^^Sakazy. A to po-moc^^S^^P pravd^^Tepobnostn^^S^^Pho
  []
 
 
 LaTeX Warning: Citation `SegLyn-ProbSimProbProc' on page 63 undefined on input 
-line 2322.
+line 2321.
 
 
 LaTeX Warning: Citation `GraPat-FuzLogFinStaMacModReaTimSys' on page 63 undefin
-ed on input line 2332.
+ed on input line 2329.
 
 
 LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 63 undefined on 
-input line 2336.
+input line 2333.
 
 [63]
 
 LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 64 undefin
-ed on input line 2342.
+ed on input line 2339.
 
 [64] (./fapa.bbl [65]) [66] (./fapa.aux)
 
