@@ -1,3 +1,8 @@
+ 
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
 \gdef\mpxshipout{\shipout\hbox\bgroup%
   \setbox0=\hbox\bgroup}%
 \gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
@@ -8,19 +13,10 @@
     \else \vrule width1sp height1sp depth0sp\relax
     \fi\egroup
   \ht0=0pt \dp0=0pt \box0 \egroup}
-\mpxshipout% line 15 ./rest.mp
-$q_F$%
+\mpxshipout% line 19 ./charts.mp
+Výška (cm)%
 \stopmpxshipout
-\mpxshipout% line 16 ./rest.mp
-$q_S$%
-\stopmpxshipout
-\mpxshipout% line 17 ./rest.mp
-$q_H$%
-\stopmpxshipout
-\mpxshipout% line 18 ./rest.mp
-$q_A$%
-\stopmpxshipout
-\mpxshipout% line 21 ./rest.mp
-$ n $%
+\mpxshipout% line 20 ./charts.mp
+Stupeň%
 \stopmpxshipout
 \end{document}
