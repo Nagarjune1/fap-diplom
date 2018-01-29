@@ -21,82 +21,73 @@
 \contentsline {subsection}{\numberline {3.7}Z\IeC {\'a}sobn\IeC {\'\i }kov\IeC {\'y} fuzzy automat}{15}
 \contentsline {section}{\numberline {4}Dal\IeC {\v s}\IeC {\'\i } modely podobn\IeC {\'e} fuzzy automat\IeC {\r u}m}{15}
 \contentsline {subsection}{\numberline {4.1}Fuzzy tree automaty}{15}
-\contentsline {subsection}{\numberline {4.2}Zaveden\IeC {\'\i }}{15}
-\contentsline {subsection}{\numberline {4.3}Stromy a pseudotermy}{16}
-\contentsline {subsection}{\numberline {4.4}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{18}
-\contentsline {subsection}{\numberline {4.5}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{20}
-\contentsline {subsection}{\numberline {4.6}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{20}
-\contentsline {subsection}{\numberline {4.7}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{24}
-\contentsline {subsection}{\numberline {4.8}Strojov\IeC {\'e} u\IeC {\v c}en\IeC {\'\i }}{24}
-\contentsline {subsection}{\numberline {4.9}Neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{25}
-\contentsline {subsection}{\numberline {4.10}Konstrukce neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{26}
-\contentsline {subsection}{\numberline {4.11}Fuzzy automaty a neuronovky}{27}
-\contentsline {subsection}{\numberline {4.12}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{28}
-\contentsline {subsection}{\numberline {4.13}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{28}
-\contentsline {section}{\numberline {5}U\IeC {\v z}ite\IeC {\v c}n\IeC {\'e} techniky pro pr\IeC {\'a}ci s fuzzy automaty}{29}
-\contentsline {subsection}{\numberline {5.1}Form\IeC {\'a}ln\IeC {\'\i } zaveden\IeC {\'\i } probl\IeC {\'e}mu}{30}
-\contentsline {subsection}{\numberline {5.2}Motivace k pou\IeC {\v z}it\IeC {\'\i } fuzzy automat\IeC {\r u}}{30}
-\contentsline {subsection}{\numberline {5.3}Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{31}
-\contentsline {subsection}{\numberline {5.4}Konstrukce fuzzy automatu z kone\IeC {\v c}n\IeC {\'e}ho automatu}{32}
-\contentsline {subsection}{\numberline {5.5}Podobnost symbol\IeC {\r u}}{33}
-\contentsline {subsection}{\numberline {5.6}Fuzzy symboly}{35}
-\contentsline {subsection}{\numberline {5.7}Edita\IeC {\v c}n\IeC {\'\i } operace}{37}
-\contentsline {subsection}{\numberline {5.8}Deformovan\IeC {\'y} automat}{41}
-\contentsline {subsection}{\numberline {5.9}Shrnut\IeC {\'\i }}{42}
-\contentsline {section}{\numberline {6}Obecn\IeC {\v e} k rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{42}
-\contentsline {subsection}{\numberline {6.1}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{42}
-\contentsline {subsection}{\numberline {6.2}Lexik\IeC {\'a}ln\IeC {\'\i } analyz\IeC {\'a}tor}{44}
-\contentsline {subsection}{\numberline {6.3}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{44}
-\contentsline {subsection}{\numberline {6.4}Detekce p\IeC {\v r}eklep\IeC {\r u}}{44}
-\contentsline {subsection}{\numberline {6.5}Korekce textu pomoc\IeC {\'\i } pravd\IeC {\v e}podobnostn\IeC {\'\i }ch automat\IeC {\r u}}{44}
-\contentsline {subsection}{\numberline {6.6}Fuzzy programy}{44}
-\contentsline {subsection}{\numberline {6.7}Pravd\IeC {\v e}podobnost v\IeC {\'y}skytu vzoru v \IeC {\v r}et\IeC {\v e}zci}{44}
-\contentsline {subsection}{\numberline {6.8}A d\IeC {\'a}le je\IeC {\v s}t\IeC {\v e} ...}{44}
-\contentsline {subsection}{\numberline {6.9}Pravd\IeC {\v e}podobnostn\IeC {\'\i } rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } fonetick\IeC {\'e} abecedy}{44}
-\contentsline {subsection}{\numberline {6.10}Parsov\IeC {\'a}n\IeC {\'\i } MIDI ze zvuku}{45}
-\contentsline {subsection}{\numberline {6.11}Reprezentace zvuk\IeC {\r u}}{45}
-\contentsline {subsection}{\numberline {6.12}Pattern matching p\IeC {\v r}irozen\IeC {\'e}ho jazyka}{45}
-\contentsline {subsection}{\numberline {6.13}Nejpravd\IeC {\v e}podobn\IeC {\v e}j\IeC {\v s}\IeC {\'\i } \IeC {\v r}\IeC {\v e}t\IeC {\v e}zec}{45}
-\contentsline {subsection}{\numberline {6.14}PAttern matching sign\IeC {\'a}l\IeC {\r u}}{45}
-\contentsline {subsection}{\numberline {6.15}Pattern matching dvourozm\IeC {\v e}rn\IeC {\'e}ho sign\IeC {\'a}lu}{45}
-\contentsline {subsection}{\numberline {6.16}Parsov\IeC {\'a}n\IeC {\'\i } referenc\IeC {\'\i }}{46}
-\contentsline {subsection}{\numberline {6.17}Pravd\IeC {\v e}podobnostn\IeC {\'\i } rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } p\IeC {\v r}irozen\IeC {\'e}ho textu}{46}
-\contentsline {section}{\numberline {7}Modelov\IeC {\'a}n\IeC {\'\i } a simulace}{46}
-\contentsline {subsection}{\numberline {7.1}Automobilismus}{46}
-\contentsline {subsection}{\numberline {7.2}Sledov\IeC {\'a}n\IeC {\'\i } vyt\IeC {\'\i }\IeC {\v z}en\IeC {\'\i } el. s\IeC {\'\i }t\IeC {\v e}}{46}
-\contentsline {subsection}{\numberline {7.3}Modelov\IeC {\'a}n\IeC {\'\i } emoc\IeC {\'\i } postav v po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'y}ch hr\IeC {\'a}ch}{47}
-\contentsline {subsection}{\numberline {7.4}Modelov\IeC {\'a}n\IeC {\'\i } emoc\IeC {\'\i }}{47}
-\contentsline {subsection}{\numberline {7.5}Sledov\IeC {\'a}n\IeC {\'\i } a modelov\IeC {\'a}n\IeC {\'\i } aktivit po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'y}ch program\IeC {\r u}}{49}
-\contentsline {subsection}{\numberline {7.6}Sledov\IeC {\'a}n\IeC {\'\i } cen investic}{49}
-\contentsline {subsection}{\numberline {7.7}Sledov\IeC {\'a}n\IeC {\'\i } pohybu a aktivit osoby}{49}
-\contentsline {subsection}{\numberline {7.8}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my, fuzzy kontrol\IeC {\'e}ry}{50}
-\contentsline {subsection}{\numberline {7.9}Predikce pr\IeC {\r u}b\IeC {\v e}hu hry}{50}
-\contentsline {subsection}{\numberline {7.10}Pravd\IeC {\v e}podobnostn\IeC {\'\i } sledov\IeC {\'a}n\IeC {\'\i } aktivit \IeC {\v c}lov\IeC {\v e}ka}{50}
-\contentsline {subsection}{\numberline {7.11}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{50}
-\contentsline {subsection}{\numberline {7.12}A co na to u\IeC {\v c}\IeC {\'\i }c\IeC {\'\i }?}{54}
-\contentsline {subsubsection}{\numberline {7.12.1}N\IeC {\v e}co}{54}
-\contentsline {subsubsection}{\numberline {7.12.2}N\IeC {\v e}co}{54}
-\contentsline {subsubsection}{\numberline {7.12.3}N\IeC {\v e}co}{54}
-\contentsline {subsubsection}{\numberline {7.12.4}N\IeC {\v e}co}{54}
-\contentsline {subsection}{\numberline {7.13}Modelov\IeC {\'a}n\IeC {\'\i } vyt\IeC {\'\i }\IeC {\v z}enosti po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{54}
-\contentsline {subsection}{\numberline {7.14}Sledov\IeC {\'a}n\IeC {\'\i } aspekt\IeC {\r u} tvrzen\IeC {\'\i }}{54}
-\contentsline {subsection}{\numberline {7.15}Gener\IeC {\'a}tor strojov\IeC {\'e}ho \IeC {\v c}lov\IeC {\v e}ka}{55}
-\contentsline {section}{\numberline {8}Biologie a medic\IeC {\'\i }na}{55}
-\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{55}
-\contentsline {subsection}{\numberline {8.2}Simulace r\IeC {\r u}stu mo\IeC {\v r}sk\IeC {\'y}ch \IeC {\v r}as}{55}
-\contentsline {subsection}{\numberline {8.3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } vzor\IeC {\r u} v l\IeC {\'e}ka\IeC {\v r}sk\IeC {\'y}ch sn\IeC {\'\i }mc\IeC {\'\i }ch}{55}
-\contentsline {subsection}{\numberline {8.4}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{55}
-\contentsline {subsection}{\numberline {8.5}Detekce zhoubn\IeC {\'y}ch n\IeC {\'a}dor\IeC {\r u}}{56}
-\contentsline {subsection}{\numberline {8.6}Anal\IeC {\'y}za kardiogramu}{56}
-\contentsline {subsection}{\numberline {8.7}\IeC {\v R}\IeC {\'\i }zen\IeC {\'\i } prot\IeC {\'e}zy}{57}
-\contentsline {subsection}{\numberline {8.8}Modelov\IeC {\'a}n\IeC {\'\i } bun\IeC {\v e}\IeC {\v c}n\IeC {\'y}ch s\IeC {\'\i }t\IeC {\'\i }}{57}
-\contentsline {subsection}{\numberline {8.9}Modelov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i } infek\IeC {\v c}n\IeC {\'\i } nemoci}{57}
-\contentsline {section}{\numberline {9}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{57}
-\contentsline {subsection}{\numberline {9.1}Konvoluce}{57}
-\contentsline {subsection}{\numberline {9.2}Hled\IeC {\'a}n\IeC {\'\i } hran}{58}
-\contentsline {subsection}{\numberline {9.3}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{60}
-\contentsline {subsection}{\numberline {9.4}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{60}
-\contentsline {subsection}{\numberline {9.5}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{61}
-\contentsline {subsection}{\numberline {9.6}Detekce po\IeC {\v z}\IeC {\'a}r\IeC {\r u}}{64}
-\contentsline {subsection}{\numberline {9.7}A co na tu u\IeC {\v c}\IeC {\'\i }c\IeC {\'\i }?}{64}
-\contentsline {subsubsection}{\numberline {9.7.1}N\IeC {\v e}co}{64}
+\contentsline {subsection}{\numberline {4.2}Stromy a pseudotermy}{16}
+\contentsline {subsection}{\numberline {4.3}Fuzzy tree automat a jazyk j\IeC {\'\i }m rozpozn\IeC {\'a}van\IeC {\'y}}{18}
+\contentsline {subsection}{\numberline {4.4}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{20}
+\contentsline {subsection}{\numberline {4.5}\uv {Bivalentn\IeC {\'\i }} bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat}{20}
+\contentsline {subsection}{\numberline {4.6}Bun\IeC {\v e}\IeC {\v c}n\IeC {\'e} fuzzy automaty}{24}
+\contentsline {section}{\numberline {5}U\IeC {\v z}ite\IeC {\v c}n\IeC {\'e} techniky pro pr\IeC {\'a}ci s fuzzy automaty}{24}
+\contentsline {subsection}{\numberline {5.1}Fuzzy automat bivalentn\IeC {\'\i }ho automatu}{24}
+\contentsline {subsection}{\numberline {5.2}Fuzzy automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $\omega $}{25}
+\contentsline {subsection}{\numberline {5.3}Podobnost symbol\IeC {\r u}}{26}
+\contentsline {subsection}{\numberline {5.4}Edita\IeC {\v c}n\IeC {\'\i } operace, deformovan\IeC {\'y} automat}{26}
+\contentsline {subsection}{\numberline {5.5}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{29}
+\contentsline {subsection}{\numberline {5.6}Fuzzy automaty a neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{29}
+\contentsline {section}{\numberline {6}Obecn\IeC {\v e} k rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }}{30}
+\contentsline {subsection}{\numberline {6.1}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{30}
+\contentsline {subsection}{\numberline {6.2}Lexik\IeC {\'a}ln\IeC {\'\i } analyz\IeC {\'a}tor}{31}
+\contentsline {subsection}{\numberline {6.3}Rozpozn\IeC {\'a}vn\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{31}
+\contentsline {subsection}{\numberline {6.4}Detekce p\IeC {\v r}eklep\IeC {\r u}}{31}
+\contentsline {subsection}{\numberline {6.5}Korekce textu pomoc\IeC {\'\i } pravd\IeC {\v e}podobnostn\IeC {\'\i }ch automat\IeC {\r u}}{31}
+\contentsline {subsection}{\numberline {6.6}Fuzzy programy}{32}
+\contentsline {subsection}{\numberline {6.7}Pravd\IeC {\v e}podobnost v\IeC {\'y}skytu vzoru v \IeC {\v r}et\IeC {\v e}zci}{32}
+\contentsline {subsection}{\numberline {6.8}A d\IeC {\'a}le je\IeC {\v s}t\IeC {\v e} ...}{32}
+\contentsline {subsection}{\numberline {6.9}Pravd\IeC {\v e}podobnostn\IeC {\'\i } rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } fonetick\IeC {\'e} abecedy}{32}
+\contentsline {subsection}{\numberline {6.10}Parsov\IeC {\'a}n\IeC {\'\i } MIDI ze zvuku}{32}
+\contentsline {subsection}{\numberline {6.11}Reprezentace zvuk\IeC {\r u}}{32}
+\contentsline {subsection}{\numberline {6.12}Pattern matching p\IeC {\v r}irozen\IeC {\'e}ho jazyka}{32}
+\contentsline {subsection}{\numberline {6.13}Nejpravd\IeC {\v e}podobn\IeC {\v e}j\IeC {\v s}\IeC {\'\i } \IeC {\v r}\IeC {\v e}t\IeC {\v e}zec}{33}
+\contentsline {subsection}{\numberline {6.14}PAttern matching sign\IeC {\'a}l\IeC {\r u}}{33}
+\contentsline {subsection}{\numberline {6.15}Pattern matching dvourozm\IeC {\v e}rn\IeC {\'e}ho sign\IeC {\'a}lu}{33}
+\contentsline {subsection}{\numberline {6.16}Parsov\IeC {\'a}n\IeC {\'\i } referenc\IeC {\'\i }}{33}
+\contentsline {subsection}{\numberline {6.17}Pravd\IeC {\v e}podobnostn\IeC {\'\i } rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } p\IeC {\v r}irozen\IeC {\'e}ho textu}{33}
+\contentsline {section}{\numberline {7}Modelov\IeC {\'a}n\IeC {\'\i } a simulace}{34}
+\contentsline {subsection}{\numberline {7.1}Automobilismus}{34}
+\contentsline {subsection}{\numberline {7.2}Sledov\IeC {\'a}n\IeC {\'\i } vyt\IeC {\'\i }\IeC {\v z}en\IeC {\'\i } el. s\IeC {\'\i }t\IeC {\v e}}{34}
+\contentsline {subsection}{\numberline {7.3}Modelov\IeC {\'a}n\IeC {\'\i } emoc\IeC {\'\i } postav v po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'y}ch hr\IeC {\'a}ch}{34}
+\contentsline {subsection}{\numberline {7.4}Modelov\IeC {\'a}n\IeC {\'\i } emoc\IeC {\'\i }}{35}
+\contentsline {subsection}{\numberline {7.5}Sledov\IeC {\'a}n\IeC {\'\i } a modelov\IeC {\'a}n\IeC {\'\i } aktivit po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'y}ch program\IeC {\r u}}{36}
+\contentsline {subsection}{\numberline {7.6}Sledov\IeC {\'a}n\IeC {\'\i } cen investic}{37}
+\contentsline {subsection}{\numberline {7.7}Sledov\IeC {\'a}n\IeC {\'\i } pohybu a aktivit osoby}{37}
+\contentsline {subsection}{\numberline {7.8}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my, fuzzy kontrol\IeC {\'e}ry}{37}
+\contentsline {subsection}{\numberline {7.9}Predikce pr\IeC {\r u}b\IeC {\v e}hu hry}{37}
+\contentsline {subsection}{\numberline {7.10}Pravd\IeC {\v e}podobnostn\IeC {\'\i } sledov\IeC {\'a}n\IeC {\'\i } aktivit \IeC {\v c}lov\IeC {\v e}ka}{37}
+\contentsline {subsection}{\numberline {7.11}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu (urban growt problem)}{38}
+\contentsline {subsection}{\numberline {7.12}A co na to u\IeC {\v c}\IeC {\'\i }c\IeC {\'\i }?}{40}
+\contentsline {subsubsection}{\numberline {7.12.1}N\IeC {\v e}co}{40}
+\contentsline {subsubsection}{\numberline {7.12.2}N\IeC {\v e}co}{41}
+\contentsline {subsubsection}{\numberline {7.12.3}N\IeC {\v e}co}{41}
+\contentsline {subsubsection}{\numberline {7.12.4}N\IeC {\v e}co}{41}
+\contentsline {subsection}{\numberline {7.13}Modelov\IeC {\'a}n\IeC {\'\i } vyt\IeC {\'\i }\IeC {\v z}enosti po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{41}
+\contentsline {subsection}{\numberline {7.14}Sledov\IeC {\'a}n\IeC {\'\i } aspekt\IeC {\r u} tvrzen\IeC {\'\i }}{41}
+\contentsline {subsection}{\numberline {7.15}Gener\IeC {\'a}tor strojov\IeC {\'e}ho \IeC {\v c}lov\IeC {\v e}ka}{41}
+\contentsline {subsection}{\numberline {7.16}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{42}
+\contentsline {section}{\numberline {8}Biologie a medic\IeC {\'\i }na}{43}
+\contentsline {subsection}{\numberline {8.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{43}
+\contentsline {subsection}{\numberline {8.2}Simulace r\IeC {\r u}stu mo\IeC {\v r}sk\IeC {\'y}ch \IeC {\v r}as}{43}
+\contentsline {subsection}{\numberline {8.3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } vzor\IeC {\r u} v l\IeC {\'e}ka\IeC {\v r}sk\IeC {\'y}ch sn\IeC {\'\i }mc\IeC {\'\i }ch}{43}
+\contentsline {subsection}{\numberline {8.4}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{43}
+\contentsline {subsection}{\numberline {8.5}Detekce zhoubn\IeC {\'y}ch n\IeC {\'a}dor\IeC {\r u}}{44}
+\contentsline {subsection}{\numberline {8.6}Anal\IeC {\'y}za kardiogramu}{44}
+\contentsline {subsection}{\numberline {8.7}\IeC {\v R}\IeC {\'\i }zen\IeC {\'\i } prot\IeC {\'e}zy}{44}
+\contentsline {subsection}{\numberline {8.8}Modelov\IeC {\'a}n\IeC {\'\i } bun\IeC {\v e}\IeC {\v c}n\IeC {\'y}ch s\IeC {\'\i }t\IeC {\'\i }}{44}
+\contentsline {subsection}{\numberline {8.9}Modelov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i } infek\IeC {\v c}n\IeC {\'\i } nemoci}{45}
+\contentsline {section}{\numberline {9}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{45}
+\contentsline {subsection}{\numberline {9.1}Konvoluce}{45}
+\contentsline {subsection}{\numberline {9.2}Hled\IeC {\'a}n\IeC {\'\i } hran}{46}
+\contentsline {subsection}{\numberline {9.3}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{47}
+\contentsline {subsection}{\numberline {9.4}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{48}
+\contentsline {subsection}{\numberline {9.5}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{49}
+\contentsline {subsection}{\numberline {9.6}Detekce po\IeC {\v z}\IeC {\'a}r\IeC {\r u}}{52}
+\contentsline {subsection}{\numberline {9.7}A co na tu u\IeC {\v c}\IeC {\'\i }c\IeC {\'\i }?}{52}
+\contentsline {subsubsection}{\numberline {9.7.1}N\IeC {\v e}co}{52}

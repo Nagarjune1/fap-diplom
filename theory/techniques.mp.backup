@@ -1,0 +1,58 @@
+input automata;
+outputtemplate:="%j%c.mps";
+
+
+
+
+size := 15;
+incominglength := 25;
+loopsize := 15;
+lblpos := 0.5;
+
+beginfig(1);	% deformation: insertion of $x$
+
+  with spacing((40,60)) matrix.a(2,3);
+  
+  node.a[1][1](btex $q$ etex);
+  
+  arrowcolor:=black; arrowlabelcolor:=black;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrowcolor:=red; arrowlabelcolor:=red;
+  arrow.top(lblpos, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+    
+endfig;
+
+beginfig(2);	% deformovaný automat, vložení ￼$￼￼￼x$
+    
+  with spacing((40,60)) matrix.a(2,4);
+  
+  node.a[1][1](btex $q_i$ etex);
+  bordercolor:= red; nodelabelcolor:=red;
+  node.a[1][2](btex $q'_i$ etex);
+  bordercolor:= black; nodelabelcolor:=black;
+  node.a[1][3](btex $q_{i+1}$ etex);
+ 
+  arrowcolor:=red; arrowlabelcolor:=red;
+  arrow.top(lblpos, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrow.top(lblpos, btex $ y $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][2],a[1][3]) a[1][2].c..a[1][3].c;
+    
+endfig;
+
+
+beginfig(3); % deformovaný automat, odebrání $x$
+    
+  with spacing((40,60)) matrix.a(2,3);
+  
+  node.a[1][1](btex $q_i$ etex);
+  node.a[1][2](btex $q_{i+1}$ etex);
+ 
+  arrowcolor:=black; arrowlabelcolor:=black;
+  arrow.top(lblpos, btex $ x $ etex) (a[1][1],a[1][2]) a[1][1].c..a[1][2].c;
+  arrowcolor:=red; arrowlabelcolor:=red;
+  arrow.top(lblpos, btex $ \epsilon $ etex) (a[1][1],a[1][2]) a[1][1].c{up}..{down}a[1][2].c;
+    
+endfig;
+
+
+end;

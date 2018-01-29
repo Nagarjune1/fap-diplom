@@ -190,46 +190,6 @@ Je-li jazyk konečná množina, tj, obsahuje konečně mnoho řetězců, nazýv�
 
 Podobně, jako jsme si zavedli fuzzy množinu jako protějšek \uv{klasické} množiny, můžeme nadefinovat i fuzzy jazyk. Fuzzy jazyk nad abecedou $\Sigma$ je její libovolná fuzzy podmnožina, tj. $\lambda \in \fsubsets{\Sigma^*}$. \TODO{a co probabilistický jazyk?}
 
-% 
-% 
-% 
-% 
-% 
-% 
-% \subsection{Fuzzy if-then pravidla}
-% V mnoha aplikacích se setkáme se situací, kdy budeme potřebovat popsat určitou funkčnost či chování systému \uv{lidským} způsobem. Velmi častým způsobem, jak toho dosáhnout je s pomocí tzv. If-Then pravidel. Popis If-Then pravidel byl převzat z \cite{RuaKer-FuzIfTheRulComI}.
-% 
-% If-Then pravidlo je výrok je tvaru:
-% $$
-%  \text{Jestliže $x_1$, $\dots$, $x_n$, pak $y$}
-% $$
-% kde $x_1, \dots x_n, y$ jsou podvýroky. Za předpokladu, že jazyk (a později i struktura pro tento jazyk) jsou nám známy z kontextu, můžeme tento výrok zapsat jako formuli
-% $$
-%  x_1 \wedge \dots \wedge x_n \Rightarrow y
-% $$
-% 
-% 
-% Určení pravdivosti pravidla, tedy jestli je $y$ pravdivý nebo nepravdivý, se pak provede standardně, tj. určení pravdivosti formule pravidla ve struktuře. Pokud máme If-Then pravidel více, stačí, aby bylo pravdivé jen jedno z nich.
-% 
-% S fuzzy If-Then pravidly se obvykle pracuje mírně složitěji. Pravidla, tj. výroky se typicky uvádejí v mírně pozměněném tvaru, a to:
-% $$
-%  \text{Jestliže $x_1$ je $X_1$, $\dots$, $x_n$ je $X_n$, pak $y$ je $Y$}
-% $$
-% případně
-% $$
-%  \text{Jestliže $x_1 = X_1, \dots, x_n = X_n$, pak $y = Y$}
-% $$
-% Symboly $x_1, \dots, x_n, y$ označují termy a symboly $X_1, \dots, X_n, Y$ fuzzy množiny nad množinami těchto termů. Značení $x = X$ je ekvivalent zápisu $X(x)$, tj. \uv{$x$ je v množině $X$ ve stupni $X(x)$}. Zapsáno jako formule tedy:
-% $$
-%  X_1(x_1) \wedge \dots \wedge X_n(x_n) \Rightarrow Y(y)
-% $$
-% 
-% U fuzzy If-Then pravidel nemá smysl uvažovat jejich pravdivost jako takovou. Jejím výsledkem je totiž fuzzy množina.
-% 
-% 
-% \begin{note}
-%  Pokud máme fuzzy If-Then pravidel více, pak je spojujeme disjunkcí.
-% \end{note}
 
 
 \section{Definice fuzzy automatu}
@@ -278,12 +238,6 @@ Pokud výpočet automatu pro řetězec $w$ zkončí přijímací konfigurací, �
 Ekvivalentním způsobem, jak určit, zda-li je řetězec automatem přijímán či zamítán je pomocí rozšířené přechodové funkce $\mu^*: 2^Q \times \Sigma^* \rightarrow 2^Q$. Rozšířenou přechodovou funkci $\mu^*$ tak lze číst \uv{nachází-li se automat v množině stavů $Q'$ a na vstupu je řetězec $w$, pak automat přejde do množiny stavů $\mu^*(Q'', w)$}. \TODO{uvést její předpis?} 
 
 Následuje popis, jak pojmy týkající se nedeterministického bivalentního automatu \uv{zobecnit} na odpovídající pojmy z oblasti fuzzy automatů. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{--Koncept fuzzy automatu--}
-% Je zjevné, že fuzzy automat bude v určitém smyslu zobecněním klasického bivalentního automatu. A to, ať už hovoříme o deterministickém čí nedeterministickém, s částečnou nebo úplnou přechodovou funkcí. Obdobně, můžeme hovořit i o nedeterministickém fuzzy automatu s $\epsilon$-pravidly.\TODO{Fakt se $\epsilon$-pravidlům nevyhnu a budu je muset explicitně definovat?} \TODO{někde napsat, že budeme uvažovat vždy jen konečný (fuzzy) automat; odůvodnit to tím, že nechceme nějaké hluboké teoretické bádání, ale prostě ho používat v praxi, kde je to nutnost.}
-% 
-% Vzhledem k tomu, že se různí i pohledy na klasický automat, tím spíše se budou lišit pohledy i na fuzzy automat. Zaměřme se nyní na nedeterministický fuzzy automat. Připomeňme, že nedeterministický bivalentní automat byl tvořen množinou stavů, vstupní abecedou, počítečními a koncovými stavy a přechodovou funkcí.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nedeterministický fuzzy automat}
@@ -342,9 +296,9 @@ Obdobně jako u bivalentního automatu, nezpracovaná část řetězce na vstupu
   \TODO{t-kompozice má pár dalších zajímavých (a potřebných) vlastností (např. asociativitu)}
 \end{definition}
 
-\begin{notation*}
+\begin{notation} \ref{not:muOverSym}
  Označme $\mu[x](p, q) = \mu(p, x, q)$.
-\end{notation*}
+\end{notation}
 
 \begin{definition}[Přechodová funkce fuzzy stavů]\label{def-PreFunFuzzStav}
  Mějme nedeterministický fuzzy automat $A$. Pak přechodová funkce fuzzy stavů je fuzzy relace $\widehat{\mu}: \fsubsets{F} \times \Sigma \rightarrow \fsubsets{F}$ taková, že pro každý fuzzy stav $\widehat{Q} \in \fsubsets{Q}$ a symbol $x \in \Sigma$ je $\widehat{\mu}(\widehat{Q}, x) = \widehat{Q} \circ \mu[x]$.
@@ -407,20 +361,6 @@ Můžeme tedy zapsat:
   
   Z tohoto zápisu je také patrné, že výpočet $A(a_0 \dots a_n)$ dle definice vyžaduje $|Q|^{n+1}$ výpočtů, každý o délce $1 + n + 1$ elementárních kroků. Výpočet má tedy exponenciální složitost vzhledem k délce vstupního řetězce.
   
-  %Tento zápis na jednu stranu podporuje intuitivnější chápání výpočtu a na stranu druhou ostraňuje rekurenci, takže usnadňuje snažší implementaci.
-  
-%   Pokud si výpočet $(w_0, \widehat{Q}_0), \dots, (w_m, \widehat{Q}_m)$ rozepíšeme, můžeme napsat
-%   \begin{enumerate}
-%   \item $w_{m} = a_{0} \dots a_{m-1} \; w_{0}$, kde $a_{0}, a_{m-1} \in \Sigma$
-%   \item $\widehat{Q}_{m} = \widehat{Q}_{0} \wedge \bigwedge_{i=1}^{m} \widehat{\mu}(\widehat{Q}_{i}, a_i)$
-%   \end{enumerate}
-% 
-%   Označme $w \in \Sigma^*$ jako řetězec délky $n$ na vstupu automatu. Pak $(w, \sigma)$ je počáteční konfigurací výpočtu a $(\epsilon, \widehat{Q}_{n})$ (kde $\widehat{Q}_{n}$ je nějaký fuzzy stav) pak koncovou. 
-%   
-%   Pak stupeň $A(w)$, v jakém je řetězec $w$ automatem $A$ přijímán je určen následujícím předpisem:
-%   $$
-%     A(w) = \bigvee_{q \in Q} \left( \sigma(q) \wedge .... \wedge \eta(q) \right)
-%   $$
 \end{note}
 
 Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množina všech řetězců, které jsou tímto automatem rozpoznávané. U fuzzy automatu se však bude pochopitelně jednat o fuzzy jazyk.
@@ -475,7 +415,7 @@ V určitém smyslu opakem fuzzy automatu s výstupem je stavový stroj. Oproti n
 Takovýto automat je uveden např. v \cite{Qiu-ChaFuzFinAut}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Událostmi řízený fuzzy automat}
+\subsection{Událostmi řízený fuzzy automat} \label{subsec:FuzzEvMach}
 Jako událostmi řízený fuzzy automat se obvykle označuje další třída výpočetních modelů, které zobecňují fuzzy automaty. Vycházejí z myšlenky, že přechodová funkce může být zapsána jako fuzzy \ifthen pravidlo. Slovní popis činnosti přechodu $(q, a, q', d) \in \mu$ je totiž následující:
 \begin{align*}
  &\text{Jestliže je automat ve stavu $q$ a na vstupu je symbol $a$,} \\
@@ -483,6 +423,11 @@ Jako událostmi řízený fuzzy automat se obvykle označuje další třída vý
 \end{align*}
 
 Událostmi řízené fuzzy automaty tak uvažují, že přechodová funkce může být libovolná množina fuzzy \ifthen pravidel. \TODO{doplnit pár citací} Takovýto automat má velké praktické uplatnění, protože popis pomocí fuzzy \ifthen pravidel je mnohem přirozenější a flexibilněšjí, než pomocí symbolů.
+
+\begin{note}
+ V souvislosti s automaty budeme často používat pojem \uv{abecda událostí}. Tímto pojmem budeme souhrnně nazývat všechny \uv{události}, tj. ligvistické proměnné, které se v přechodové funkci vyskytují.
+\end{note}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zásobníkový fuzzy automat}
@@ -497,13 +442,12 @@ Definice zásobníkového automatu je např. v \cite{BucPas-FuzPusAut}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Další modely podobné fuzzy automatům}
-\TODO{Zmínit že je to off-topic, ale v praxi se to používá}
+V této kapitole bude navázáno na kapitolu předcházející. Budou zde představeny výpočetní modely, které se také automatům podobají. Oproti automatům v předchozí kapitole se však od \uv{běžného} nedeterministického automatu liší více a proto je třeba pro jejich zavední doplnit některé související pojmy. 
 
-\subsection{Fuzzy tree automaty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Zavedení}
-Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání dat, které mají v sobě obsaženu určitou stromovou strukturu. Jak bude ukázáno, fuzzy tree automaty tak mohou rozpoznávat vybrané bezkontextové jazyky.
+\subsection{Fuzzy tree automaty}
+Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání dat, které mají v sobě obsaženu určitou stromovou strukturu.
 
 Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
 
@@ -809,7 +753,7 @@ Přechodová funkce $\mu$ pak vypadá následovně:
 $$
 \mu(c, round(c)) = f(c, round(c))
 $$
-kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. If-Then pravidel.
+kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \ifthen pravidel.
 
 \begin{example} \label{ex:GameOfLife}
   Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) (např. \cite{TofMar-CelAuMach+}). Jedná se o jednoduchý simulátor živého organizmu. 
@@ -821,29 +765,29 @@ kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nov
    \item Je-li buňka $c$ mrtvá, a v jejím okolí jsou přesně $4$ živé bunky, je buňka oživena
    \item Ve všech ostatních případech zůstává buňka buďto mrtvá nebo živá 
   \end{enumerate}
-  Označme 
-  $$
-    neighs_{i,j} = \left( \sum_{k,l \in \{-1, 0, +1\}} c_{i + k, j + l} \right) - c_{i,j}
-  $$
-  jako počet živých buněk sousedících s $c_{i,j}$. 
-%   Pak předchozí pravidla mohou být zapsána (kde $c' = \mu(c, round(c))$)
-%   \begin{enumerate}
-%    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} < 2$ pak $c'_{i,j} = 0$
-%    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} > 3$ pak $c'_{i,j} = 0$
-%    \item Je-li $c_{i,j} = 0$ a $neighs_{i,j} = 4$ pak $c'_{i,j} = 1$
-%    \item Jinak $c'_{i,j} = c_{i,j}$
-%   \end{enumerate}
-  
-  Pak můžeme přechodovou funkci $\mu$ zapsat následovně:
-  $$
-    \mu(c_{i,j}, round(c_{i,j})) = 
-      \begin{dcases}
-       0 & \text{ pokud $c_{i,j} = 1$ a $neighs_{i,j} < 2$}	\\
-       0 & \text{ pokud $c_{i,j} = 1$ a $neighs_{i,j} > 3$}	\\
-       1 & \text{ pokud $c_{i,j} = 0$ a $neighs_{i,j} = 4$}	\\
-       c_{i,j} & \text{ jinak}
-      \end{dcases}
-  $$
+%   Označme 
+%   $$
+%     neighs_{i,j} = \left( \sum_{k,l \in \{-1, 0, +1\}} c_{i + k, j + l} \right) - c_{i,j}
+%   $$
+%   jako počet živých buněk sousedících s $c_{i,j}$. 
+% %   Pak předchozí pravidla mohou být zapsána (kde $c' = \mu(c, round(c))$)
+% %   \begin{enumerate}
+% %    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} < 2$ pak $c'_{i,j} = 0$
+% %    \item Je-li $c_{i,j} = 1$ a $neighs_{i,j} > 3$ pak $c'_{i,j} = 0$
+% %    \item Je-li $c_{i,j} = 0$ a $neighs_{i,j} = 4$ pak $c'_{i,j} = 1$
+% %    \item Jinak $c'_{i,j} = c_{i,j}$
+% %   \end{enumerate}
+%   
+%   Pak můžeme přechodovou funkci $\mu$ zapsat následovně:
+%   $$
+%     \mu(c_{i,j}, round(c_{i,j})) = 
+%       \begin{dcases}
+%        0 & \text{ pokud $c_{i,j} = 1$ a $neighs_{i,j} < 2$}	\\
+%        0 & \text{ pokud $c_{i,j} = 1$ a $neighs_{i,j} > 3$}	\\
+%        1 & \text{ pokud $c_{i,j} = 0$ a $neighs_{i,j} = 4$}	\\
+%        c_{i,j} & \text{ jinak}
+%       \end{dcases}
+%   $$
 \end{example}
 
 Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných automatů -- konfigurace buněčného automatu.
@@ -914,23 +858,12 @@ Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým
 
 Vzhledem k tomu, že stejné chování budeme vyžadovat i u buněčného fuzzy automatu, \uv{odstupňování} přechodové funkce (zavední fuzzy přechodové funkce) by nemělo smysl\footnote{Teoreticky by bylo možné nahradit stav buňky fuzzy stavem buňky. Takováto úprava by však výrazně zvýšila výpočetní šložitost výpočtu automatu a například také znesnadnila grafické znázornění jeho konfigurací a proto zde nebude uvažován.}.
 
-Triviální způsob, jak zavést buněčný fuzzy automat je jako bivalentní buněčný automat, jehož množina stavů je rovna intervalu $[0,1]$. Takovýto automat budeme označovat jako $[0,1]$-buněčný fuzzy automat.
-
-\begin{definition}[\ensuremath{[0,1]}-buněčný fuzzy automat]
- Jako $[0,1]$-buněčný fuzzy automat velikosti $m$ budeme označovat bivalentní buněčný automat $A = (Q, \mu)$, kde $Q = [0,1]$.
-\end{definition}
-
-Jedná se tedy jen o speciální případ klasického bivalentního buněčného automatu. Každá buňka $c$ takového automatu pak vždy splňuje následující tvrzení:
-\begin{align*}
-  & \text{\uv{buňka $c$ se nachází ve stavu $1$} ve stupni $q$}	\\
-  & \text{\uv{buňka $c$ se nachází ve stavu $0$} ve stupni $1 - q$}
-\end{align*}
-Díky tomu je obejit předpoklad, že automat se smí nacházet pouze v jednom stavu současně.
-
-Druhý způsob, jak definovat buněčný fuzzy automat, může pracovat s libovolnou množinou stavů. Využívá fuzzy If-Then pravidel, bude mu proto říkáno \uv{buněčný automat s fuzzy logikou}.
+Lze se tak setkat s definicí buněčného fuzzy automatu jakožto buněčného automatu pracujícího s množinou stavů rovnu intervalu $[0,1]$. Časteji bšak bývá buněčný fuzzy automat definován jako buněčný automat, jehož přechodová funkce není určena \uv{klasickými} \ifthen pravidly, ale fuzzy \ifthen pravidly.
 
 \begin{example}
- Příkladem buněčného automatu s fuzzy logikou může být například následující automat. Množina stavů bude obsahovat přirozená čísla z intervalu $[0, 150)$. Stanovíme čtveřici fuzzy množin $\varsigma_L$, $\varsigma_M$, a $\varsigma_H$ ve významu \uv{hodnota $q$ je nízká}, \uv{hodnota $q$ je střední} a \uv{hodnota $q$ je vysoká}. Pravidla automatu pak mohou vypadat následovně:
+ Příkladem buněčného fuzzy automatu může být například následující automat. Množina stavů bude obsahovat přirozená čísla z intervalu $[0, 150)$. Mějme lingvistickou proměnnou $\varsigma$ a její čtyři štítky $\varsigma_L$, $\varsigma_M$, a $\varsigma_H$.
+ %ve významu \uv{hodnota $q$ je nízká}, \uv{hodnota $q$ je střední} a \uv{hodnota $q$ je vysoká}. 
+ Pravidla automatu pak mohou vypadat následovně:
  \begin{itemize}
   \item Pokud $q^{(t)}_{i-1,j-1} = L$, pak $q^{(t+1)}_{i,j} = H$
   \item Pokud $q^{(t)}_{i-1,j-1} = L$ nebo $q^{(t)}_{i-1,j-1} = M$, pak $q^{(t+1)}_{i,j} = M$
@@ -938,710 +871,822 @@ Druhý způsob, jak definovat buněčný fuzzy automat, může pracovat s libovo
  \end{itemize}
 \end{example}
 
-\subsection{Strojové učení}
 
-Strojové učení je technika pro přibližné řešení komplikovaných či složitých problémů. Spočívá v tom, že namísto přímého hledání algoritmu, který požadovaný problém řeší, navrhujeme algoritmus, jehož vstupem je popis problému (ve vhodném formátu) a výstupem je algoritmus pro řešení problému. Pro popis problému se typicky používá deklarativní přístup, tj. \uv{co má být při určitém vstupu výsledkem} namísto \uv{jak ze vstupu spočítat výsledek}.
-
-Je třeba mít na paměti, že správnost \uv{vygenerovaného algoritmu} závisí na správnosti popisu řešeného problému. Vzhledem k tomu, že strojové učení se používá pro komplikované problémy, popis problému vkládaný do patřičné techniky strojového učení bude zřejmě zjednodušený. Tím vzniká prostor pro nepřesnost řešení.
-
-Na druhou stranu, s použitím fuzzy či pravděpodobnostního přístupu můžeme tento fakt vzít v potaz. Vygenerovaný algoritmus tak sice nebude fungovat správně, nicméně jeho výsledkem bude moci být například \uv{$y$ je správným řešením s pravděpodobností $p$} či \uv{$z$ je správným řešením ve stupni $d$}. Propojení strojového učení s fuzzy nebo pravděpodobnostního přístupu by tak mělo být přínosem. Navíc, jak bude ukázáno, může být i přirozené.
-
-Mezi nejznáměnšjí techniky strojového učení patří například neuronové sítě, rozhodovací stromy či shlukování. Následuje popis neuronových sítí. Ty mají totiž nejlepší předpoklady pro provázání s fuzzy automaty a následné využití v praxi.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Neuronové sítě}
-Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk známých z biologie. Vygenerovaný algoritmus je tvořen sítí tzv. neuronů, které jsou propojeny v zpravidla rozsáhlou síť. Tato síť obsahuje spoustu parametrů, které jsou nastaveny tak, aby síť tvořila algoritmus řešící požadovaný problém. 
-
-Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je převzat z \cite{FieRus-HanNeuCom}. Označme $X$ jako tzv. signální množinu, tj. množinu všech možných hodnot, kterých mohou nabýt signály přešenášené prostřednictvím spojení. Dále označme $S$ jako množinu stavů neuronů. 
-
-V tomto textu budeme jako signální množinu $X$ pokládat reálný interval $(0, 1)$ (v souladu s fuzzy teorií), jako množinu $S$ stavů pak množinu všech reálných čísel. Dále budeme uvažovat pouze neurony diskrétní (v čase). Říkáme, že diskrétní neuron $s$ nabývá v čase $t \in \mathbb{N}$ stavu $s(t)$. Dále označnme $y(t)$ jako výstup neuronu $s$ v čase $t$.
-
-\begin{definition}[Diskrétní neuron]
- Jako diskrétní neuron označujeme dvojici funkcí $f: X^n \times S \rightarrow S$ (přechodová funkce) a $g: S \rightarrow X$ (výstupní funkce) tak, že:
- \begin{align*}
-  s(t) &= f(x_1(t - 1), \dots x_n(t - 1), s(t - 1)) \\
-  y(t) &= g(s(t))
- \end{align*}
-\end{definition}
-
-\begin{note}
- $x_1$, ..., $x_n$ v předchozí definici značí signální spojení, a to buď ze vstupů sítě k neuronům, nebo mezi jednotlivými neurony.
-\end{note}
-
-\begin{example}
- Pro jeden z nejznáměnších, tzv. McCulloch-Pittsův neuron, vypadají funkce $f_j$ a $g_j$ neuronu $s_j$ následovně:
- \begin{align*}
-  f_j(x_{1,j}(t), \dots x_{n,j}(t), s_j) &=  \sum_{i=1}^n w_{i,j} x_{i,j}(t) \\
-  g_j(x) &= 
-   \begin{dcases}
-    0 & \text{ pokud $x < \theta_j$} \\
-    1 & \text{ pokud $x \geq \theta_j$}
-   \end{dcases}
- \end{align*}
- kde $w_{1,j}, \dots, w_{n,j}$ jsou tzv. synaptické váhy neuronu $s_j$ a $\theta_j$ je jeho tzv. prahová hodnota. 
-\end{example}
-
-\begin{definition}[Neuronová síť]
- Jako neuronovou síť označme strukturu $(X, S, N, I, O, o)$, kde $X$ (signální množina) a  $S$ (množina stavů) byly popsány výše, $N$ je množina neuronů, $I \subseteq X^m$ je množina vstupních spojení a $O \subseteq X^n$ množina výstupních spojení a $o: N \rightarrow O$ zobrazení propojující neurony s výstupními spojeními.
-\end{definition}
-
-\begin{definition}[Rekurentní a přímočará neuronová síť]
- Obsahuje-li neuronová síť cyklus, tj. existuje v ní alespoň jeden neuron $s$ splňující
- $$
-  s(t) = f(s_1(t - 1), \dots, s_2(t - 1 + k), \dots, s_n(t - 1), s(t - 1)) \\
- $$
- kde $k \geq 1$, pak se síť nazývá rekurentní. V opačném případě se nazývá přímočará.
-\end{definition}
-
-\begin{example}
- Mějme $I = \{ x_1, x_2, x_3 \}$, $I = \{ y_1, y_2, y_3 \}$ a $o(s_4) = y_1$, $o(s_6) = y_2$, $o(s_3) = y_3$. Pak pro množinu $N = \{ s_1, s_2, s_3, s_4, s_5, s_6 \}$ McCulloch-Pittsových neuronů znázorněných na obrázku \ref{img:SimplNeuNet} tvoří $(X, S, N, I, O, o)$ přímočarou neuronovou síť.
-\end{example}
-
-\begin{figure}
- \centering
- \includegraphics{neurals0}
- \caption{Ukázka neuronové sítě} \label{img:SimplNeuNet}
-\end{figure}
-
-\subsection{Konstrukce neuronové sítě}
-Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je pomocí znalostní báze a druhý pomocí trénovacích dat. Jak znalostní báze, tak trénovací data nám zde plní ůčel popisu problému, který má neuronová síť řešit. V praxi se často používá kombinace obou přístupů.
-
-Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron: \TODO{doplnit pravidlo pro disjunkce, tj. když je více pravidel s \uv{pak $y$}}
-$$
-  y_j(t) = s_j(t) = x_{j,1}(t - 1) \wedge \dots \wedge x_{j,n}(t - 1)
-$$
-
-Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.
-
-Druhým způsobem, jak zkonstruovat neuronovou síť, je pomocí trénovacích dat. Tato technika se dále dělí na učení s učitelem a učení bez učitele. V tomto textu se spokojíme s popisem učení s učitelem.
-
-Hovoříme-li o trénovacích datech v souvislosti s učením s učitelem, pak jako trénovací data považujeme konečné zobrazení, které vstupům problému přiřazuje správné nebo očekávané výsledky. Na počátku se sestaví neuronová síť s náhodnými parametry a tzv. učení se její parametry postupně modifikují tak, aby byla schopna správně přiřazovat vstupům z trénovací množiny odpovídající výstupy.
-
-\TODO{backpropagation algorithm (běžný algoritmus učení)?}
-
-V praxi je možné oba přístupy kombinovat. Typicky se tedy sestaví neuronová síť pomocí znalostní báze, která je následně pomocí trénovacích dat přizpůsobena skutečným datům. Navíc, díky znalostní bázi neuronová síť je hned má hned v prvních fázích učení určitý přehled o řešeném problému a její učení tak může probíhat značně efektivněji. \TODO{fakt?}
-
-\subsection{Fuzzy automaty a neuronovky}
-Bylo zjištěno, že fuzzy automat může být konvertován do neuronové sítě. Této problematice se věnují např. v \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} \cite{BlaDelPeg-FuzzAutIndUsNeuNet}, \cite{GilOmlTho-EquKnoRep+}, \cite{OmlThoGil-RepFuzFinStaAuConRecNeuNet}, \cite{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}, \cite{PedGac-LeaFuzzAut}.
-
-Ve zjednodušené podobě se bude jednat o neuronovou síť, která bude realizovat jen přechodovou funkci, tj. přechod mezi stavy na základě vstupu. Vstupem neuronové sítě bude zakódování fuzzy stavu, v jakém se automat nachází a symbol na vstupu automatu. Výsledkem výpočtu pak bude informace, do jakého/jakých stavů by měl automat přejít, tj. opět fuzzy stav.
-
-Na základě neuronové sítě realizující přechodovou funkci pak může být sestavena neuronová síť, která si sama pamatuje fuzzy stav, v jakém se výpočet nachází. Vzhledem k tomu, že taková neuronová síť bude muset být rekurentní, bude její struktura složitější a nad rámec této práce. Vstupem takové neuronové sítě pak bude v jednotlivých časových kvantech vstupní symboly a na výstupu číslo z intervalu $(0, 1)$ reprezentující stupeň, v jakém je zadaný řetězec automatem přijímán.
-
-Sestavíme-li neuronovou síť pomocí přechodové funkce $\mu$ nám známého automatu $A$ budeme  generovat dvojice $(((q, d), a), (q', d')) \in \mu^*$ \TODO{je to tak?} tj. \uv{je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak přejde do stavu $q'$ ve stupni $d'$}. Například v \cite{BlaDelPeg-FuzzAutIndUsNeuNet} autoři demonstrují učení na automatu o dvou stavech a nad dvojprvkovou abecedou. Již po $5$ trénovacích dvojících se síť naučila rozpoznávat s $95\%$ přesností a po $432$ pokusech rozpoznávala se $100\%$ přesností (při toleranci stupně pravdivosti $1.25 . 10^{-7}$).
-
-Lze však použít i konstrukce s pomocí znalostní báze. V takovém případě je třeba zformulovat If-Then pravidla síť popisující. Pro každý přechod
-$$
- \delta((q, d), a) = (q', d')
-$$
-tedy sestavíme If-Then pravidlo
-$$
- \text{Je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak automat přejde do stavu $q'$ ve stupni $d'$}
-$$
-Na základě této znalostní báze může být navržena neuronová síť implementující přechodovou funkci automatu.
-
-Opačný vztah, tj. jak z neuronové sítě zpět získat fuzzy automat je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
-
-Poněkud elegantní způsob, jak z neuronové sítě vyextrahovat automat je popsán v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}. Autoři uvažují neuronovou síť jako nástroj, který rozpoznává (v odstupňované pravdivosti) ($n$-dimenzionální) podprostory prostoru $(0, 1)^n$. Každou souřadnici v tomto prostoru pak rozkládají symboly abecedy automatu, tj. každému vektoru v tomto prostoru přiřazují řetězec nad abecedou automatu. Vzniklá struktura, kterou je vlastně kd-tree, pak tvoří automat.\footnote{Tímto způsobem vygenerovaný automat je automat dle definice \TODO{doplnit ten, co má ostré přechody, ale fuzzy koncové stavy}} \TODO{Zapsat to nějak aspoň trochu lidsky, je např. potřeba doplnit práci s cykly}?
+\TODO{desetinná čísla s desetinnou čárkou, ne tečkou!!!!}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Učící se fuzzy automaty}
-
-V předchozích kapitolách byly prezentovány techniky, jak konvertovat fuzzy automat na neuronovou síť a zpět. Konverzí automatu na neuronovou síť obdržíme nástroj, který nám umožňuje učení, tj. adaptaci modelu na jiná data. Zpětnou extrakcí automatu tak můžem obdržet automat, který rozpoznává jiný jazyk, a to jazyk který odpovídá trénovacím datům.
-
-Tento postum lze však s určitou újmou na obecnosti zjedodušit. Namísto konverze automatu na neuronovou síť, její modifikaci a následnou konverzi zpět, je možné automat modifikovat napřímo. Této technice se říká učící se automat. Této technice se věnují např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} a \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} je použit buněčný fuzzy učící se automat. V \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} používají pro učení pokročilejší techniku založenou na genetických algoritmech. Obdobně, v \cite{ZhiMinLan-EvoStraIndFuFiStaAu} učením generují kompletně nový automat (tedy přeučením náhodného).
-
-Základní myšlenka techniky učících se automatů je obvykle, že jednotlivé stupně pravdivosti, které figurují v instanci automatu, mohou být pozměněny. V rozšířené podobě je pak možné automat rozšiřovat o kompleně nové stavy a přechody.
-
-\subsection{Metoda lisování dat}
-\TODO{zkusit nějaký známý dataset, něco z toho, co jsme dělali v KMI/ZZD}
-Autor práce prezentuje novou, jednoduchou, techniku strojového učení. Výhodou této techniky je, že je založena čistě na teorii fuzzy automatů, není třeba žádné další techniky strojového učení.
-
-Vstupem této techniky je (konečná a neprázdná) množina trénovacích dat ve formě jazyka $L$ nad známou abecedou $\Sigma$ a koeficient přesnosti $\sigma$. Výstupem je poté fuzzy automat $A_{L,\sigma}$, který jazyk $L$ přijímá tak, že pro všechna $w \in L$ platí:
-$$
-  A_{L,\sigma}(w) \geq \sigma
-$$
-tj. že řetězec $w$ je automatem přijímán alespoň ve stupni $\sigma$. U řetězců, které do jazyka $L$\footnote{Jazyk $L$ může být klidně fuzzy jazyk, následný postup se pak jen patřičně upraví} nepatří (tj. $w' \in \Sigma^* \setminus L$) by posléze měl automat být schopen určit jak moc se jazyku $L$ podobají, tj. určit stupeň $A_{L,\sigma}(w')$.
-
-Postup konstrukce automatu $A_{L,\sigma}$ je násleudjící:
-\begin{enumerate}
- \item Máme jazyk $L$, který je konečný. Je tedy zřejmě i regulérní.
- \item K jazyku $L$ sestavíme nedeterministický konečný automat $A_{L}$ rozpoznávající $L$. Takový automat bude v nejhorším případě obsahovat $\sum_{w \in L} |w|$ stavů.
- \item K automatu $A_{L}$ vytvoříme nedeterminstický fuzzy automat $A'_{L}$.
- \item Fuzzy minimalizací automatu $A'_{L}$ se stupněm $\sigma$ získáme hledaný automat $A_{L,\sigma}$.
-\end{enumerate}
-
-Klíčovým bodem této techniky je minimalizace automatu. Technika předpokládá, že jazyk trénovacích dat v sobě obsahuje jeden nebo více jednoduchých regulérních jazyků (ať už jako podmnožiny nebo jako podřetězce vybraných řetězců). Části automatu reprezentující tyto \uv{podjazyky} budou minimalizací zmenšeny. Ve výsledku se tak dá očekávat značné zmenšení velikosti automatu.
-
-Navíc, vygenerovaný automat poměrně přehledně popisuje strukturu ve vstupním jazyce. Technika tak může být použita pro odtranění šumu a nepřesností v jazyce $L$.
-
-Technika lisování dat bude naimplementována a experimentálně ověřena. \TODO{naprogramovat, ověrit} Jednou z možností, kde by mohla tato technika být uplatněna, by bylo určování síly přihlašovacícho hesla. Vstupem by byla databáze uživatelských hesel s informací od experta, která hesla jsou silná a která slabá. Ze silných hesel by poté byl sestaven jazyk, na který by bylo aplikováno lisování dat. Výsledkem by byl automat, který rozpoznává silná hesla. Tato aplikace však nebyla naimplementována, vzhledem k tomu, že je z bezpečnostních důvodů nemožné získat databázi uživatelských hesel.
-
-Další z možných aplikací je určování dělitelnosti čísel. Uvažujme abecedu symbolů číslic, tj. $\Sigma = \{ 0, \dots, 9 \}$ a jazyk $L \subseteq S^*$ čísel dělitelných čtyřmi. Při velikosti jazyka $x$ a koeficientu $\sigma = y$ se podařilo automatu dosáhnout $z$ úspěšného rozpoznávání čísel dělitelných $4$ ve stupni vyšším, než $w\%$. \TODO{naprogramovat, ověrit}
-
-Podobnou techniku používají v \cite{Hac+-ProAnaLarFinStaMac}, jen s pravděpodobnostními automaty.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Užitečné techniky pro práci s fuzzy automaty}
 
-Rozpoznávání vzorů obecně je jednou z nejvýznamějších aplikací informatiky. V běžném životě se často setkáváme se situacemi, kdy je třeba v datech najít výskyt učitého vzoru, popř. jeho další vlastnosti. Případně určit podobnost ke vzoru, nebo nejpodobnější vzor.
+Fuzzy automaty či jim podobné modely zavedené v předchozích kapitolách jsou z pohledu pracktických aplikací pouze teoretické modely. V reálných aplikacích je často nutné pracovat s těmito modely spíše jen jako s kostrou, od které je poté odvozen výsledný model nebo algoritmus.
 
-Typickým příkladem je např. detekce obličeje na fotografii, tedy rozpoznávání vzorů v obrazových datech. Vzory je však možné rozpoznávat v téměř jakýchkoliv datech, například textech, zvukových záznamech či výsedcích měření nebo pozorování.
+V této kapitole budou některé ze základních technik, jak fuzzy automaty přiblížit reálným aplikacím, odprezentovány. Demonstrovány budou na nedeterministickém fuzzy automatu, nicméně není problém aplikovat je na jakýkoliv jiný typ fuzzy automatu.
 
-Z pohledu teoretické informatiky je však základem vyhledávání vzorů v textových datech. Textová data, tedy řetězce, mají jednoduchou strukturu a lze s nimi snadno manipulovat. Na druhou stranu, jsou schopna reprezentovat nebo kódovat široké spektrum dat. Právě z tohoto důvodu je studium rozpoznávání textových vzorů klíčové pro zpracovávání jakýchkoliv dalších typů dat.
-
-\begin{note}
- Pokud nebude uvedeno jinak, pojem \uv{rozpoznávání textových vzorů} bude v této kapitole zkracován jen na \uv{rozpoznávání vzorů}.
-\end{note}
+% 
+% Rozpoznávání vzorů obecně je jednou z nejvýznamějších aplikací informatiky. V běžném životě se často setkáváme se situacemi, kdy je třeba v datech najít výskyt učitého vzoru, popř. jeho další vlastnosti. Případně určit podobnost ke vzoru, nebo nejpodobnější vzor.
+% 
+% Typickým příkladem je např. detekce obličeje na fotografii, tedy rozpoznávání vzorů v obrazových datech. Vzory je však možné rozpoznávat v téměř jakýchkoliv datech, například textech, zvukových záznamech či výsedcích měření nebo pozorování.
+% 
+% Z pohledu teoretické informatiky je však základem vyhledávání vzorů v textových datech. Textová data, tedy řetězce, mají jednoduchou strukturu a lze s nimi snadno manipulovat. Na druhou stranu, jsou schopna reprezentovat nebo kódovat široké spektrum dat. Právě z tohoto důvodu je studium rozpoznávání textových vzorů klíčové pro zpracovávání jakýchkoliv dalších typů dat.
+% 
+% \begin{note}
+%  Pokud nebude uvedeno jinak, pojem \uv{rozpoznávání textových vzorů} bude v této kapitole zkracován jen na \uv{rozpoznávání vzorů}.
+% \end{note}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Formální zavedení problému}
+% Stejně tak, jak se mohou různit aplikace rozpoznávání vzorů, i samotný pojem \uv{rozpoznávání vzorů} bývá chápan různě. V nejzákladnější podobě se jedná o problém určení, zda-li pozorovaný řetězec odpovídá předem stanovenému vzoru. Vzorem bývá obvykle také řetězec, ale může jím být například regulérní výraz. Také - může nás zajímat buď exaktní shoda pozorovaného řetězce se vzorem, nebo jen nějaká forma podobnosti. 
+% 
+% V rozšířeném smyslu může být problém chápán jako klasifikace. Tedy, určení třídy, do které by měl pozorovaný řetězec spadat, typicky na základě podobnosti s vybrannými reprezentanty jednotlivých tříd. 
+% 
+% V této kapitole se však budeme zabývat pouze určováním podobnosti vzorového a pozorovaného řetězce. U každé instance problému budeme znát abecedu se kterou pracujeme a také vzor. Vzorem bude libovolný řetězec nad touto abecedou. Řešením tohoto problému pro nějaký, tzv. pozorovaný, vstupní řetězec bude úroveň podobnosti tohoto řetězce s vzorovým. Jako podobnost zde budeme uvažovat reálné číslo z intervalu $[0, 1]$, kde $0$ znamená úplnou rozdílnost a $1$ úplnou shodu. 
+% 
+% \begin{note}
+%  Vzorový řetězec budeme v této kapitole vždy značit $\omega$, pozorovaný pak $\alpha$.
+% \end{note}
+% 
+% Nyní máme zadefinován problém samotný, nicméně je třeba zdůraznit, že v jeho definici se používá vágní pojem \uv{podobnost řetězců}. Podobnost řetězců je totiž pojem, který souvisí s konkrétní instancí problému a nelze jej nějak přesně, ale současně dostatečně obecně popsat. Jedinné, co o podobnosti řetězců můžeme říct, je, že čím vyšší toto číslo je, tím by si měly být řetězce podobnější.
+% 
+% Například, budeme-li porovnávat vstup zadaný z klávesnice počítače oproti nějakému vzoru, je možné, že uživatel udělá překlep. V takovém případě bude vzorovému řetězci určitě více podobný řetězec obsahující dva překlepy (záměna symbolu za některý sousedící na klávesnici) než jiný, který se sice bude lišit jen v jednom symbolu, ale to takovém, který je na opačné straně klávesnice.
+% 
+% Obdobně, pokud budeme pracovat s abecedou malých a velkých písmen (majuskule a minuskule). Uvažujme vzorový řetězec \str{hello}. Řetězec \str{HELLO} se s ním neshoduje v ani jednom symbolu, ale přesto jejich podobnost může být blízká jedné.
+% 
+% % \begin{definition}[Problém rozpoznávání vzorů]
+% %   Mějme konečnou abecedu $\Sigma$ a řetězce $\omega, \alpha \in \Sigma^*$ nad touto abecedou. Řetězec $\omega$ nazývejme \term{vzor}, řetězec $\alpha$ pak \term{pozorovaný řetězec}. Problém rozpoznávání vzorů je problém určení podobnosti řetězce $\alpha$ od řetězce $\omega$. Pokud nebude uvedeno jinak, podobnost uvažijeme jako reálné číslo z intervalu $[0, 1]$.
+% % \end{definition}
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Motivace k použití fuzzy automatů}
+% Klasická teorie automatů vznikla jako nástroj pro zpracování textových řetězců. Z tohoto důvodu je rozpoznávání textových vzorů jejím základním výsledkem. Automaty obecně jsou nástroje sloužící pro rozhodování, zda-li řetězec odpovídá vzoru automatem reprezentovaném. Použití pro rozpoznávání řetězcového vzoru tak bude jen speciálním případem jejich užití.
+% 
+% V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
+% 
+% \TODO{a co pravděpodobnostní?} \TODO{Protože například: \uv{pozorovaný řetězec se se vzorovým shoduje ve stupni $x$} ale \uv{je pravděpodobnost $y$, že uživatel zadal požadovaný řetězec}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Formální zavedení problému}
-Stejně tak, jak se mohou různit aplikace rozpoznávání vzorů, i samotný pojem \uv{rozpoznávání vzorů} bývá chápan různě. V nejzákladnější podobě se jedná o problém určení, zda-li pozorovaný řetězec odpovídá předem stanovenému vzoru. Vzorem bývá obvykle také řetězec, ale může jím být například regulérní výraz. Také - může nás zajímat buď exaktní shoda pozorovaného řetězce se vzorem, nebo jen nějaká forma podobnosti. 
+\subsection{Fuzzy automat bivalentního automatu}
+V některých situacích máme k dispozici \uv{klasický} bivalentní automat\footnote{Zde je vhodné připomenout, že automat můžeme získat například také konverzí regulérního výrazu nebo regulérní gramatiky} a potřebujeme k němu sestavit odpovídající fuzzy automat. Odpovídající ve smyslu, že řetězce, které bivalentní automat přijímá (zamítá) musí fuzzy automat přijímat ve stupni $1$ ($0$).
 
-V rozšířeném smyslu může být problém chápán jako klasifikace. Tedy, určení třídy, do které by měl pozorovaný řetězec spadat, typicky na základě podobnosti s vybrannými reprezentanty jednotlivých tříd. 
+Uvažujme automat $A = (Q, \Sigma, \mu, I, F)$ z definice \ref{def-NedBivAut}. Pak fuzzy automat $A' = (Q, \Sigma, \mu', \sigma, \eta)$ odpovídající tomuto automatu je následující:
+\begin{itemize}
+ \item množina stavů $Q$ a abeceda $\Sigma$ zůstávají stejné
+ \item přechodová funkce $\mu'$ je dána předpisem (pro všechny $q, q' \in Q$ a $x \in \Sigma$):
+ $$
+  \mu'(q, x, q') = 
+    \begin{cases}
+     1 & \text{ pokud $(q, x, q') \in \mu$} \\
+     0 & \text{ pokud $(q, x, q') \notin \mu$}
+    \end{cases}
+ $$
+ \item množina počátečních stavů $\sigma(q) = 1$ pro všechny stavy $q \in I$, jinak $0$
+ \item množina počátečních stavů $\eta(q) = 1$ pro všechny stavy $q \in F$, jinak $0$
+\end{itemize}
 
-V této kapitole se však budeme zabývat pouze určováním podobnosti vzorového a pozorovaného řetězce. U každé instance problému budeme znát abecedu se kterou pracujeme a také vzor. Vzorem bude libovolný řetězec nad touto abecedou. Řešením tohoto problému pro nějaký, tzv. pozorovaný, vstupní řetězec bude úroveň podobnosti tohoto řetězce s vzorovým. Jako podobnost zde budeme uvažovat reálné číslo z intervalu $[0, 1]$, kde $0$ znamená úplnou rozdílnost a $1$ úplnou shodu. 
+\TODO{je potřeba příklad?}
+\TODO{rozebrat, jestli tento automat skutečně dělá to, co má? Asi by to chtělo}
 
-\begin{note}
- Vzorový řetězec budeme v této kapitole vždy značit $\omega$, pozorovaný pak $\alpha$.
-\end{note}
-
-Nyní máme zadefinován problém samotný, nicméně je třeba zdůraznit, že v jeho definici se používá vágní pojem \uv{podobnost řetězců}. Podobnost řetězců je totiž pojem, který souvisí s konkrétní instancí problému a nelze jej nějak přesně, ale současně dostatečně obecně popsat. Jedinné, co o podobnosti řetězců můžeme říct, je, že čím vyšší toto číslo je, tím by si měly být řetězce podobnější.
-
-Například, budeme-li porovnávat vstup zadaný z klávesnice počítače oproti nějakému vzoru, je možné, že uživatel udělá překlep. V takovém případě bude vzorovému řetězci určitě více podobný řetězec obsahující dva překlepy (záměna symbolu za některý sousedící na klávesnici) než jiný, který se sice bude lišit jen v jednom symbolu, ale to takovém, který je na opačné straně klávesnice.
-
-Obdobně, pokud budeme pracovat s abecedou malých a velkých písmen (majuskule a minuskule). Uvažujme vzorový řetězec \str{hello}. Řetězec \str{HELLO} se s ním neshoduje v ani jednom symbolu, ale přesto jejich podobnost může být blízká jedné.
-
-% \begin{definition}[Problém rozpoznávání vzorů]
-%   Mějme konečnou abecedu $\Sigma$ a řetězce $\omega, \alpha \in \Sigma^*$ nad touto abecedou. Řetězec $\omega$ nazývejme \term{vzor}, řetězec $\alpha$ pak \term{pozorovaný řetězec}. Problém rozpoznávání vzorů je problém určení podobnosti řetězce $\alpha$ od řetězce $\omega$. Pokud nebude uvedeno jinak, podobnost uvažijeme jako reálné číslo z intervalu $[0, 1]$.
-% \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Motivace k použití fuzzy automatů}
-Klasická teorie automatů vznikla jako nástroj pro zpracování textových řetězců. Z tohoto důvodu je rozpoznávání textových vzorů jejím základním výsledkem. Automaty obecně jsou nástroje sloužící pro rozhodování, zda-li řetězec odpovídá vzoru automatem reprezentovaném. Použití pro rozpoznávání řetězcového vzoru tak bude jen speciálním případem jejich užití.
+\subsection{Fuzzy automat rozpoznávající $\omega$}
+Další ze základních pomůcek pro práci s fuzzy automaty je automat, který v jednotkovém stupni rozpoznává pouze jeden konkrétní řetězec nad nějakou známou abecedou $\Sigma$. Tento řetězec budeme v této a některých dalších podkapitolách nazývat \uv{vzorový} a značit $\omega$.
 
-V předchozí podkapitole jsme si stanovili, že řešením našeho problému je číslo z intervalu $[0,1]$. Z tohoto důvodu nebude možné využít klasické bivalentní automaty. Fuzzy automaty pracují se stupněm pravdivosti, který by mohl s hodnotou podobnosti řetězců korespondovat. Navíc, v praxi se často setkáme s texty, které jsou nepřesné a nedokonalé. Fuzzy přístup by nám tak mohl pomoci na tyto nepřesnosti adekvátně reagovat.
+Pro konstrukci automatu rozpoznávající řetězec omega bychom mohli použít následující postup:
+\begin{enumerate} 
+ \item Známe řetezec $\omega$ nad abecedou $\Sigma$
+ \item Označme $L(\omega)$ jako jednoprvkový fuzzy jazyk obsahující řetězec $\omega$ ve stupni $1$
+ \item Jazyk $L(\omega)$ je konečný a tudíž i regulérní. \TODO{ozdrojovat, nebo se odkázat do úvodu, platí to i pro fuzzy jazyky?}
+ \item Můžeme tak k němu sestavit nedeterminstický fuzzy automat $A(\omega)$, který jazyk $L(\omega)$ rozpoznává.
+\end{enumerate}
 
-\TODO{a co pravděpodobnostní?} \TODO{Protože například: \uv{pozorovaný řetězec se se vzorovým shoduje ve stupni $x$} ale \uv{je pravděpodobnost $y$, že uživatel zadal požadovaný řetězec}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Automat rozpoznávající $\omega$}
-Klíčovým pro rozpoznávání vzorů (chceme-li využívat fuzzy automaty) je bivalentní automat rozpoznávající vzorový řetězec. Tedy automat takový, který přijímá jedinný řetězec $\omega$ a všechny ostatní zamítá. Nyní si takovýto automat zkonstruujeme.
-
-Uvažujme, že máme k dispozici vzorový řetězec $\omega$ nad abecedou $\Sigma$. Označme $\mathcal{L}(\omega)$ jako jednoprvkový jazyk obsahující pouze řetězec $\omega$. Vzhledem k tomu, že jazyk $\mathcal{L}(\omega)$ je konečný, je také regulérní a existuje tak konečný deterministický automat, který jej rozpoznává.
-
-Automat bude v každém kroku konzumovat symboly ze vstupního řetězce a porovnávat je se symboly vzorového řetězce na odpovídajících pozicích. Pokud dojde ke shodě na všech pozicích, automat dojde do koncového stavu a sledovaný řetězec přijme. Pokud se symboly shodovat nebudou, automat nebude mít definován žádný odpovídající přechod, kterým by pokračoval ve výpočtu, a řetězec tak zamítne. 
-
-Takovýto automat označme jako \term{automat rozpoznávající} $\omega$.
-\begin{definition}[Automat rozpoznávající $\omega$ (deterministický)]
-  Mějme řetězec $\omega$ délky $n$ nad abecedou $\Sigma$. Automat rozpoznávající $\omega$ je pak konečný automat $A(\omega) = ( Q, \Sigma, \delta, q_0, F )$ takový, že jeho množina stavů $Q$ se sestává z právě $n$ stavů $q_0, \dots, q_n$, $q_0$ je počáteční stav, $F = \{ q_n \}$ množina koncových stavů a $\delta$ je přechodová funkce definována pro všechna $0 \leq k < n$ následovně:
-  $$
-    \delta(q_{k}, a_k) = q_{k+1} \text{ kde $a_k$ je $k$-tý symbol řetězce $\omega$}
-  $$
-\end{definition}
-
-Tato definice automatu je vcelku intuitivní. K stejnému výsledku bychom došli, pokud bychom automat zkonstruovali konverzí gramatiky nebo regulérního výrazu. 
-
-\begin{example}
- Příklad automatu rozpoznávající řetězec $\omega = $ \str{hello} se nachází na obrázku \ref{diag-AutRozpHell}.  
-
-  \begin{figure}
-    \includegraphics{diags0}
-    \caption{Automat rozpoznávající \str{hello}} \label{diag-AutRozpHell}
-  \end{figure}
-\end{example}
-
-My však budeme potřebovat fuzzy automat rozpoznávající $\omega$. To znamená, že musíme nejdříve automat z předchozí definice převést na nedeterministický a poté dle definice \ref{def-FuzzAutBivAut} k němu zkonstruovat odpovídající fuzzy automat.
-
-\begin{definition}[Automat rozpoznávající $\omega$ (nedeterministický)] \label{def-AutRozpOme}
-  Mějme řetězec $\omega$ nad abecedou $\Sigma$ z předchozí definice. Nedeterministický automat rozpoznávající $\omega$ je pak konečný automat $A'(\omega) = ( Q, \Sigma, \delta, I, F )$ takový, že jeho množina stavů $Q$ je stejná jako v předchozí definici, dále $I = \{ q_0 \}$ je množina počátečních a $F = \{ q_n \}$ množina koncových stavů a $\delta$ je přechodová funkce definována pro všechna $0 \leq k < n$ následovně:
-  $$
-  \delta(q_{k}, a_k) = 
-  \begin{cases}
-      \{ q_{k+1} \}	&\text{pokud je $a_k$ $k$-tý symbol řetězce $\omega$} \\
-      \emptyset	&\text{jinak}
-  \end{cases}
-  $$
-\end{definition}
-
-%TODO: Ekvivalentní definice je zavedena v \cite[str. 2]{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}.
-Následuje vytvoření fuzzy automatu.
+My však použujeme jinou, intuitivnější, úvahu. Automat bude v každém kroku konzumovat symboly ze vstupního řetězce a porovnávat je se symboly vzorového řetězce na odpovídajících pozicích. Pokud dojde ke shodě na všech pozicích, automat dojde do koncového stavu a sledovaný řetězec přijme. Pokud se symboly shodovat nebudou, automat nebude mít definován žádný odpovídající přechod, kterým by pokračoval ve výpočtu, a řetězec tak zamítne. Formálně pak:
 
 \begin{definition}[Fuzzy automat rozpoznávající $\omega$] \label{def-FuzzAutRozpOme}
-  Mějme řetězec $\omega$ nad abecedou $\Sigma$ délky $n$. Fuzzy automat rozpoznávající $\omega$ je pak automat $A''(\omega)$ vytvořený z nedeterministického automatu rozpoznávající $\omega$ (definice \ref{def-AutRozpOme}) dle definice \ref{def-FuzzAutBivAut}. Bude to tedy automat $A''(\omega) = ( Q, \Sigma, \mu, \sigma, \epsilon )$ kde
+  Mějme řetězec $\omega$ nad abecedou $\Sigma$ délky $n$. Fuzzy automat rozpoznávající $\omega$ je pak automat $A(\omega) = ( Q, \Sigma, \mu, \sigma, \eta )$ kde
   \begin{itemize}
    \item $\sigma(q_0) = 1$ a $\sigma(q_i) = 0$ pro všechna $i > 0$
-   \item $\epsilon(q_n) = 1$ a $\epsilon(q_i) = 0$ pro všechna $i < n$
+   \item $\eta(q_n) = 1$ a $\eta(q_i) = 0$ pro všechna $i < n$
    \item $\mu(q_{k}, a_k, q_{k+1}) = 
       \begin{cases}
-	1		&\text{pokud je $a_k$ $k$-tý symbol řetězce $\omega$} \\
-	0		&\text{jinak}
+	1		& \text{ pokud je $a_k$ $k$-tý symbol řetězce $\omega$} \\
+	0		& \text{ jinak}
       \end{cases}
       $
   \end{itemize}
 \end{definition}
 
-Nyní máme k dispozici fuzzy automat, který ostře rozpoznává vzorový řetězec. V následujících podkapitolách následuje výčet několika technik, které tuto ostrost (pomocí dalších informací) odstraňují a nahrazují podobností.
+\begin{example}
+ Příklad fuzzy automatu rozpoznávající řetězec $\omega = $ \str{hello} se nachází na obrázku \ref{diag-AutRozpHell}.   
 
+  \begin{figure}
+    \includegraphics{techniques0}
+    \caption{Automat rozpoznávající \str{hello}} \label{diag-AutRozpHell} 
+  \end{figure}
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Konstrukce fuzzy automatu z konečného automatu}
-V praxi se často setkáme z problémem, kdy máme k dispozici konečný bivalentní automat avšak my potřebujeme pro naši práci fuzzy automat. Je tedy třeba zkonstruovat takový fuzzy automat, který rozpoznává odpovídající jazyk odpovídající jazyku rozpoznávaném naším bivalentním automatem. 
-
-Důležité je zmínit, že nelze zkonstruovat fuzzy automat, rozpoznávající stejný jazyk neboť fuzzy automat rozpoznává fuzzy jazyk, zatímco bivaletní automat klasický \uv{bivalentní} jazyk. Můžeme však sestavit automat takový, který přijímá řetězce ve stupni $0$ nebo $1$ podle toho, jestli je přijímal bivaletní automat.
-
-Formálně řečeno, pro konečný (nedeterministický) bivalentní automat $A$ budeme konstruovat nedeterministický fuzzy automat $A'$ takový, že bude pro všechna $x \in \Sigma^*$ splněna následující rovnost:
-$$
- \mathcal{L}(A')(\omega) = 
-  \begin{cases}
-   1 & \text{ pokud } \omega \in \mathcal{L}(A) \\
-   0 & \text{ pokud } \omega \notin \mathcal{L}(A)
-  \end{cases}
-$$
-
-\begin{note}
- Postup budeme provádět pro nedeterministické automaty. To jednak proto, že nedeterministické automaty jsou obecnější, než deterministické, a navíc, protože jsou v praxi využívány častěji. \TODO{ozdrojovat, klidně někde, kde rozebírám determinizmus vs. nedeterminizmus}
-\end{note}
-
-Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i množina stavů automatu zůstanou zachovány, lišit se tedy bude pouze množina počátečních a koncových stavů a přechodová funkce. \TODO{fuzzy subset $I$, $F$ a $\delta$? nebo tak něco, z teorie fuzzy množin?}
-
-\begin{definition}[Fuzzy automat bivalentního automatu] \label{def-FuzzAutBivAut}
-  Mějme řetězec konečný nedeterministický automatu $A = ( Q, \Sigma, \delta, I, F )$. Pak nedetermintistický fuzzy automat přijímájící korespondující jazyk je automat $A' = ( Q, \Sigma, \mu, \sigma, \epsilon )$ kde pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$:
-  \begin{itemize}
-   \item $\sigma(q_i) =
-    \begin{cases}
-     1 & \text{ pokud } q_i \in I \\
-     0 & \text{ pokud } q_i \notin I
-    \end{cases}$
-    
-   \item $\eta(q_i) =
-    \begin{cases}
-     1 & \text{ pokud } q_i \in F \\
-     0 & \text{ pokud } q_i \notin F
-    \end{cases}$
-    
-    \item $\mu(q_i, x, q_j) = 
-     \begin{cases}
-      1 & \text{ pokud } q_j \in \delta(q_i, x) \\
-      0 & \text{ pokud } q_j \notin \delta(q_i, x)
-     \end{cases}$
-  \end{itemize}
-\end{definition}
-
-\TODO{rozebrat, jestli tento automat skutečně dělá to, co má? Asi by to chtělo}
-
-\TODO{vymyslet nějaký fakt pěkný příklad}
+% \subsection{Konstrukce fuzzy automatu z konečného automatu}
+% V praxi se často setkáme z problémem, kdy máme k dispozici konečný bivalentní automat avšak my potřebujeme pro naši práci fuzzy automat. Je tedy třeba zkonstruovat takový fuzzy automat, který rozpoznává odpovídající jazyk odpovídající jazyku rozpoznávaném naším bivalentním automatem. 
+% 
+% Důležité je zmínit, že nelze zkonstruovat fuzzy automat, rozpoznávající stejný jazyk neboť fuzzy automat rozpoznává fuzzy jazyk, zatímco bivaletní automat klasický \uv{bivalentní} jazyk. Můžeme však sestavit automat takový, který přijímá řetězce ve stupni $0$ nebo $1$ podle toho, jestli je přijímal bivaletní automat.
+% 
+% Formálně řečeno, pro konečný (nedeterministický) bivalentní automat $A$ budeme konstruovat nedeterministický fuzzy automat $A'$ takový, že bude pro všechna $x \in \Sigma^*$ splněna následující rovnost:
+% $$
+%  \mathcal{L}(A')(\omega) = 
+%   \begin{cases}
+%    1 & \text{ pokud } \omega \in \mathcal{L}(A) \\
+%    0 & \text{ pokud } \omega \notin \mathcal{L}(A)
+%   \end{cases}
+% $$
+% 
+% \begin{note}
+%  Postup budeme provádět pro nedeterministické automaty. To jednak proto, že nedeterministické automaty jsou obecnější, než deterministické, a navíc, protože jsou v praxi využívány častěji. \TODO{ozdrojovat, klidně někde, kde rozebírám determinizmus vs. nedeterminizmus}
+% \end{note}
+% 
+% Nyní se podíváme na to, jak výsledný fuzzy automat bude vypadat. Abeceda i množina stavů automatu zůstanou zachovány, lišit se tedy bude pouze množina počátečních a koncových stavů a přechodová funkce. \TODO{fuzzy subset $I$, $F$ a $\delta$? nebo tak něco, z teorie fuzzy množin?}
+% 
+% \begin{definition}[Fuzzy automat bivalentního automatu] \label{def-FuzzAutBivAut}
+%   Mějme řetězec konečný nedeterministický automatu $A = ( Q, \Sigma, \delta, I, F )$. Pak nedetermintistický fuzzy automat přijímájící korespondující jazyk je automat $A' = ( Q, \Sigma, \mu, \sigma, \epsilon )$ kde pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$:
+%   \begin{itemize}
+%    \item $\sigma(q_i) =
+%     \begin{cases}
+%      1 & \text{ pokud } q_i \in I \\
+%      0 & \text{ pokud } q_i \notin I
+%     \end{cases}$
+%     
+%    \item $\eta(q_i) =
+%     \begin{cases}
+%      1 & \text{ pokud } q_i \in F \\
+%      0 & \text{ pokud } q_i \notin F
+%     \end{cases}$
+%     
+%     \item $\mu(q_i, x, q_j) = 
+%      \begin{cases}
+%       1 & \text{ pokud } q_j \in \delta(q_i, x) \\
+%       0 & \text{ pokud } q_j \notin \delta(q_i, x)
+%      \end{cases}$
+%   \end{itemize}
+% \end{definition}
+% 
+% \TODO{rozebrat, jestli tento automat skutečně dělá to, co má? Asi by to chtělo}
+% 
+% \TODO{vymyslet nějaký fakt pěkný příklad}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Podobnost symbolů}
-Nejzákladnější technika pro zanesení neostrého (stupňovitého) rozpoznávání je s využitím podobnostní relace symbolů. Tato technika byla přejata z \cite{RamGir-ConvFinAutFuzzAutStrComp}. Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém.
+V této a následujících podkapitolách budou popsány základní techniky, jak chování automatu upravit tak, aby více odpovídalo reálným aplikacím. Například, máme fuzzy automat, který rozpoznovává určitý fuzzy jazyk. Řetězce, které se určitým způsobem \uv{podobají} řetězcům toho jazyka, však tento jazyk obvykle obsahuje v nulovém stupni. Vzniká zde tedy snaha přizpůsobit automat tak, aby i takovéto řetězce v určitém nenulovém stupni přijímal.
 
-Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $s(x, y) = 0$, pak se jedná o naprosto rozdílné symboly. Naopak, pokud bude $s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+Základním nástrojem, jak toho dosáhnout je pomocí podobnosti symbolů. Některé symboly mohou totiž vykazovat určitou formu podobnosti a tudiž možné zamněnitelnosti. Například znaky ASCII tabulky, které se liší v jednom bitu. Podobnost symbolů však nemusí být klasická \uv{bivalentní} relace, ale je výhodné použít fuzzy relaci. V takovém případě by podobnost znaků ASCII tabulky mohla být formulována následovně: \uv{znaky $x$ a $y$ se liší o $\delta$ bitů ve stupni $1 - \delta/8$}.
 
-\begin{example}
- Jako příklad podobnostní relace (nad abecedou písmen anglické abecedy) může posloužit například vzdálenost patřičných kláves na klávesnici. V takovém případě by určitě platilo kupříkladu $s(a,s) > s(a, d) > s(a, l)$. Protože klávesy \str{A} a \str{S} jsou si blíž (a tudíž symboly $a$ a $s$ jsou si \uv{podobnější}) než například \str{A} a \str{D} či \str{A} a \str{L}.
- 
- Jiným příkladem může být například vizuální podobnost napsaných (malých psacích) písmen. V takovém případě by zřejmě platilo $s(a, o) > s(m, t)$, protože malá psací písmena \str{a} a \str{o} jsou si vizuálně podobnější než \str{m} a \str{t}, která vypadají úplně rozdílně.
-\end{example}
-
-Máme-li k dispozici relaci $s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, tato technika může pracovat s libovolným konečným automatem. Podíváme se proto nejdříve, jak využít relaci $s$ obecně. Následně ji aplikujeme na automat rozpoznávající $\omega$, čímž získáme nástroj pro podobnostní rozpoznávání textového vzoru.
-
-\begin{definition}[Automat pracující s $s$] \label{def-AutPracGS}
-Uvažujme, že máme nedeterminstický automat $A$ a relaci podobnosti symbolů $s$. Pak k automatu $A$ můžeme zkonstruovat fuzzy automat $A'$, který navíc pracuje s $s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutBivAut} s tím rozdílem, že přechodová funkce $\mu$ bude definována pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$ následovně:
+Formálně se tedy jedná o fuzzy relaci $\mathbin{\simeq}: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace zjevně musí splňovat symetrii ($\mathbin{\simeq}(x, x) = 1$) a reflexivitu ($\mathbin{\simeq}(x, y) = \mathbin{\simeq}(y, x)$) (pro všechny $x, y \in \Sigma$).\TODO{a tranzitivita?} Fuzzy relace podobnosti symbolů pak může být součástí automatu. V takovém případě dojde ke modifikaci výpočtu automatu takovým způsobem, že ve značení \ref{not:muOverSym} a definici \ref{def-RozPreFunFuzzStav} bude nahrazen výraz $\mu(q, x, q')$ následujícím výrazem
 $$
- \mu(q_i, x, q_j) = \bigvee_{y \in \Sigma} (s (x, y) \wedge \delta_y (q_i, q_j))
+  \bigvee_{y \in \Sigma} \mu(q, y, q') \otimes \mathbin{\simeq}(x, y)
 $$
- kde $\delta_x(q_i, q_j) = 
-  \begin{cases}
-   1 & \text{ pokud } q_j \in \delta(q_i, x)		\\
-   0 & \text{ pokud } q_j \notin \delta(q_i, x)
-  \end{cases}
- $ pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$.
-\end{definition}
 
-Definice je vcelku přímočará. Pro každý přechod ze stavu $q_i$ do stavu $q_j$ přes symbol $x$, procházíme přechody původního automatu. Obsahovala-li přechodová funkce původního automatu přechod ze stavu $q_i$ přes symbol $y$ do stavu $q_j$, pak je $s (x, y) \wedge \delta_y (q_i, q_j)$ rovno podobnosti $x$ a $y$. V opačném případě je roven nule. Hodnota tohoto výrazu je díky spojení přes všechny symboly maximalizována.
+Tento zápis říká, že při vstupu $x$ automat má zkontrolovat všechny ostatní symboly $y$, které by mohly být se symbolem $x$ podobné a v takovém případě realizovat přechod přes symbol $y$. Takto modifikovaný automat tak umožňuje namísto symbolu $x$ \uv{rozpoznat} jiný symbol. Můžeme tak říci, že automat umožňuje ve vstupu náhradu symbolu.
 
-Nyní aplikujeme tento způsob konstrukce fuzzy automatu na automat rozpoznávající $\omega$.
+Další informace a příklady k této technice jsou k nalezení v \cite{RamGir-ConvFinAutFuzzAutStrComp}. V \cite{Ech-DefSyssConPre} je pak tato technika prezentována v mírně pozměněné formě. Symboly nahrazují tzv. fuzzy symboly, což jsou fuzzy množiny symbolů danému symbolu podobné.
 
-\begin{definition}[Automat rozpoznávající $\omega$ pracující s $s$]
- Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a fuzzy relaci $s$ nad touto abecedou. Dle definice \ref{def-AutRozpOme} můžeme zkonstruovat nedeterministický bivalentní automat $A(\omega)$ rozpoznávající $\omega$. Jako automat rozpoznávající $\omega$ pracující s $s$ označme nedeterministický fuzzy automat $A'(\omega)$, který byl z automatu $A(\omega)$ vytvořen podle definice \ref{def-AutPracGS}.
-\end{definition}
+% Jiným příkladem může být automat pro modelování počasí. Pro takový automat budou události \uv{jasno} a \uv{skoro jasno} velmi podobné a s lehce sníženým stupňem pravdivosti nahraditelné.
 
-\TODO{neměl by se takovýto automat místo $A'(\omega)$ značit třeba $A_{s}(\omega)$? }
 
-Následuje jednoduchý příklad takového automatu.
-
-\begin{example} \label{ex-AutRozpOmePodSym}
- Mějme abecedu $\Sigma = \{ a, b, c, d \}$. Dále uvažujme relaci podobnosti symbolů $s$ takovou, že
- \begin{itemize}
-  \item každý symbol je podobný sám sobě ve stupni $1$
-  \item každý symbol je podobný symbolu ve stupni $0,5$ jedná-li se o symboly reprezentující sousedící písmena abecedy
-  \item každý symbol je podobný symbolu ve stupni $0,3$ jedná-li se o symboly reprezentující ob-jedno písmeno sousedící písmena abecedy
-  \item všechny ostatní dvojice symbolů jsou si podobny ve stupni $0$
- \end{itemize}
- Tuto relaci můžeme zapsat do matice (sloupce i řádky odpovídají po řadě symbolům $a, b, c, d$):
- $$
- s = 
-  \begin{pmatrix}
-   1,0 	& 0,5	& 0,3	& 0,0 	\\
-   0,5	& 1,0 	& 0,5	& 0,3	\\
-   0,3	& 0,5	& 1,0 	& 0,5	\\
-   0,0 	& 0,3	& 0,5	& 1,0 	\\
-  \end{pmatrix}
- $$
- Nyní mějme vzorový řetězec $\omega = abc$. Pak můžeme podle předchozí definice sestavit automat $A(\omega)$ rozpoznávající $\omega$ pracující s $s$. Přechodový diagram takového automatu je na obrázku \ref{diag-AutRozpABCPracGS}.
- 
- Tento automat evidentně rozpoznává řetězec \str{abc} ve stupni $1$. Pokud v pozorovaném řetězci nahradíme symbol \str{a} za \str{b}, bude jej automat přijímat ve stupni $0,5$. Pokud nahradíme \str{b} za \str{d}, bude jej automat přijímat ve stupni $0,3$.
- 
- Pokud na začátek pozorovaného řetězce vložíme symbol \str{a} (tedy $\alpha = $ \str{aabc}), automat jej přijme ve stupni $0$. Stejnětak, pokud odebereme symbol \str{c} z konce vzorového řetězce (tedy $\alpha = $ \str{ab}). Pokud vložíme symbol \str{a} na začátek a současně odebereme \str{c} z konce vzorového řetězce, obdržíme pozorovaný řetězec $\alpha = $ \str{aab}. Tento řetězec bude přijat ve stupni $0,5$ \TODO{$1 \otimes 0,5 \otimes 0,5$, záleží tedy na $\otimes$}.
- 
-  \begin{figure}
-    \includegraphics{diags5}
-    \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpABCPracGS}
-  \end{figure}
-\end{example}
-
-Z příkladu jasně vyplývá, že automat pracující s $s$ je schopen akceptovat pouze náhradu symbolu jiným symbolem. Bude-li pozorovaný řetězec oproti vzorovému obsahovat vložený symbol nebo naopak z něj bude symbol odebrán, tento typ automatu selže. Na druhou stranu jeho princip i konstrukce jsou jednoduché a snadno se s nimi pracuje.
+% 
+% Nejzákladnější technika pro zanesení neostrého (stupňovitého) rozpoznávání je s využitím podobnostní relace symbolů. Tato technika byla přejata z . Myšlenkou této techniky je, že symbol v pozorovaném řetězci může být snadno zaměněn za jiný, podobný, jemu odpovídající v řětězci vzorovém.
+% 
+% Pro realizaci této techniky je potřeba mít k dispozici fuzzy relaci $s: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace popisuje podobnost dvojice symbolů. Tedy, je-li pro nějakou dvojici symbolů $x, y \in \Sigma$  $s(x, y) = 0$, pak se jedná o naprosto rozdílné symboly. Naopak, pokud bude $s(x, y) = 1$, pak se jedná o shodné symboly. Je zjevné, že by relace $s$ měla být symetrickou a reflexivní. \TODO{v článku to nepíší, ale měla by to být relace ekvivalence (Sym, Ref, Tra). Existuje něco, jako fuzzy relace ekvivalence?}
+% 
+% \begin{example}
+%  Jako příklad podobnostní relace (nad abecedou písmen anglické abecedy) může posloužit například vzdálenost patřičných kláves na klávesnici. V takovém případě by určitě platilo kupříkladu $s(a,s) > s(a, d) > s(a, l)$. Protože klávesy \str{A} a \str{S} jsou si blíž (a tudíž symboly $a$ a $s$ jsou si \uv{podobnější}) než například \str{A} a \str{D} či \str{A} a \str{L}.
+%  
+%  Jiným příkladem může být například vizuální podobnost napsaných (malých psacích) písmen. V takovém případě by zřejmě platilo $s(a, o) > s(m, t)$, protože malá psací písmena \str{a} a \str{o} jsou si vizuálně podobnější než \str{m} a \str{t}, která vypadají úplně rozdílně.
+% \end{example}
+% 
+% Máme-li k dispozici relaci $s$, je nutné ji zakomponovat do automatu. Jak autoři uvádějí, tato technika může pracovat s libovolným konečným automatem. Podíváme se proto nejdříve, jak využít relaci $s$ obecně. Následně ji aplikujeme na automat rozpoznávající $\omega$, čímž získáme nástroj pro podobnostní rozpoznávání textového vzoru.
+% 
+% \begin{definition}[Automat pracující s $s$] \label{def-AutPracGS}
+% Uvažujme, že máme nedeterminstický automat $A$ a relaci podobnosti symbolů $s$. Pak k automatu $A$ můžeme zkonstruovat fuzzy automat $A'$, který navíc pracuje s $s$. Takový automat bude zkonstruován dle definice \ref{def-FuzzAutBivAut} s tím rozdílem, že přechodová funkce $\mu$ bude definována pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$ následovně:
+% $$
+%  \mu(q_i, x, q_j) = \bigvee_{y \in \Sigma} (s (x, y) \wedge \delta_y (q_i, q_j))
+% $$
+%  kde $\delta_x(q_i, q_j) = 
+%   \begin{cases}
+%    1 & \text{ pokud } q_j \in \delta(q_i, x)		\\
+%    0 & \text{ pokud } q_j \notin \delta(q_i, x)
+%   \end{cases}
+%  $ pro všechna $q_i, q_j \in Q$ a $x \in \Sigma$.
+% \end{definition}
+% 
+% Definice je vcelku přímočará. Pro každý přechod ze stavu $q_i$ do stavu $q_j$ přes symbol $x$, procházíme přechody původního automatu. Obsahovala-li přechodová funkce původního automatu přechod ze stavu $q_i$ přes symbol $y$ do stavu $q_j$, pak je $s (x, y) \wedge \delta_y (q_i, q_j)$ rovno podobnosti $x$ a $y$. V opačném případě je roven nule. Hodnota tohoto výrazu je díky spojení přes všechny symboly maximalizována.
+% 
+% Nyní aplikujeme tento způsob konstrukce fuzzy automatu na automat rozpoznávající $\omega$.
+% 
+% \begin{definition}[Automat rozpoznávající $\omega$ pracující s $s$]
+%  Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a fuzzy relaci $s$ nad touto abecedou. Dle definice \ref{def-AutRozpOme} můžeme zkonstruovat nedeterministický bivalentní automat $A(\omega)$ rozpoznávající $\omega$. Jako automat rozpoznávající $\omega$ pracující s $s$ označme nedeterministický fuzzy automat $A'(\omega)$, který byl z automatu $A(\omega)$ vytvořen podle definice \ref{def-AutPracGS}.
+% \end{definition}
+% 
+% \TODO{neměl by se takovýto automat místo $A'(\omega)$ značit třeba $A_{s}(\omega)$? }
+% 
+% Následuje jednoduchý příklad takového automatu.
+% 
+% \begin{example} \label{ex-AutRozpOmePodSym}
+%  Mějme abecedu $\Sigma = \{ a, b, c, d \}$. Dále uvažujme relaci podobnosti symbolů $s$ takovou, že
+%  \begin{itemize}
+%   \item každý symbol je podobný sám sobě ve stupni $1$
+%   \item každý symbol je podobný symbolu ve stupni $0,5$ jedná-li se o symboly reprezentující sousedící písmena abecedy
+%   \item každý symbol je podobný symbolu ve stupni $0,3$ jedná-li se o symboly reprezentující ob-jedno písmeno sousedící písmena abecedy
+%   \item všechny ostatní dvojice symbolů jsou si podobny ve stupni $0$
+%  \end{itemize}
+%  Tuto relaci můžeme zapsat do matice (sloupce i řádky odpovídají po řadě symbolům $a, b, c, d$):
+%  $$
+%  s = 
+%   \begin{pmatrix}
+%    1,0 	& 0,5	& 0,3	& 0,0 	\\
+%    0,5	& 1,0 	& 0,5	& 0,3	\\
+%    0,3	& 0,5	& 1,0 	& 0,5	\\
+%    0,0 	& 0,3	& 0,5	& 1,0 	\\
+%   \end{pmatrix}
+%  $$
+%  Nyní mějme vzorový řetězec $\omega = abc$. Pak můžeme podle předchozí definice sestavit automat $A(\omega)$ rozpoznávající $\omega$ pracující s $s$. Přechodový diagram takového automatu je na obrázku \ref{diag-AutRozpABCPracGS}.
+%  
+%  Tento automat evidentně rozpoznává řetězec \str{abc} ve stupni $1$. Pokud v pozorovaném řetězci nahradíme symbol \str{a} za \str{b}, bude jej automat přijímat ve stupni $0,5$. Pokud nahradíme \str{b} za \str{d}, bude jej automat přijímat ve stupni $0,3$.
+%  
+%  Pokud na začátek pozorovaného řetězce vložíme symbol \str{a} (tedy $\alpha = $ \str{aabc}), automat jej přijme ve stupni $0$. Stejnětak, pokud odebereme symbol \str{c} z konce vzorového řetězce (tedy $\alpha = $ \str{ab}). Pokud vložíme symbol \str{a} na začátek a současně odebereme \str{c} z konce vzorového řetězce, obdržíme pozorovaný řetězec $\alpha = $ \str{aab}. Tento řetězec bude přijat ve stupni $0,5$ \TODO{$1 \otimes 0,5 \otimes 0,5$, záleží tedy na $\otimes$}.
+%  
+%   \begin{figure}
+%     \includegraphics{diags5}
+%     \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpABCPracGS}
+%   \end{figure}
+% \end{example}
+% 
+% Z příkladu jasně vyplývá, že automat pracující s $s$ je schopen akceptovat pouze náhradu symbolu jiným symbolem. Bude-li pozorovaný řetězec oproti vzorovému obsahovat vložený symbol nebo naopak z něj bude symbol odebrán, tento typ automatu selže. Na druhou stranu jeho princip i konstrukce jsou jednoduché a snadno se s nimi pracuje.
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Fuzzy symboly}
+% Fuzzy symbol je technika využjívající podobnosti symbolů. Ve své podstatě se jedná o téže techniku jak v předchozí podkapitole, jen je na ni nahlíženo jinak. Oproti podobnosti symbolů je použití fuzzy symbolů komplikovanější, avšak umožňuje jednoduše tuto techniku kombinovat s jinými. Princip fuzzy symbolů byl přejat z \cite{Ech-DefSyssConPre}.
+% 
+% Mějme abecedu $\Sigma$ a relaci $p$ podobnosti symbolů (stejně jako relace $s$ v předchozí podkapitole). Fuzzy symbolem symbolu $x \in \Sigma$ označujeme fuzzy množinu symbolů takových, které jsou podle relace $p$ symbolu $x$ \uv{podobné}.
+% 
+% \begin{definition}[Fuzzy symbol]
+% Mějme abecedu $\Sigma$ a fuzzy relaci $p \subseteq \Sigma \times \Sigma$. Pak pro každý symbol $y \in \Sigma$ definujeme fuzzy symbol $\widetilde{y}$ symbolu $y$ jako fuzzy množinu nad $\Sigma$ takovou, že pro všechna $x \in \Sigma$ platí
+% $$
+% \widetilde{y}(x) = p(y, x)
+% $$
+% \end{definition}
+% 
+% Vzhledem k tomu, že fuzzy symbol máme definován pro všechny $y \in \Sigma$, můžeme množinu všech takových fuzzy symbolů nazvat abecedou fuzzy symbolů.
+% 
+% \begin{definition}[Abeceda fuzzy symbolů]
+% Mějme abecedu $\Sigma$ a fuzzy symboly $\widetilde{y}$ pro všechna $y \in \Sigma$. Pak množinu všech těchto fuzzy symbolů nazvěme abeceda fuzzy symbolů abecedy $\Sigma$ a označme $\widetilde{\Sigma}$. Tedy $\widetilde{\Sigma} = \{ \widetilde{y} \mid y \in \Sigma \}$.
+% \end{definition}
+% 
+% Máme-li abecedu fuzzy symbolů $\widetilde{\Sigma}$, můžeme pracovat s řetězci $\widetilde{\alpha} \in \widetilde{\Sigma}^*$ nad touto abecedou. Ještě si však doplníme, jak vytvořit k řetězci $\alpha \in \Sigma^*$ jemu odpovídající řetězec fuzzy symbolů $\widetilde{\alpha} \in \widetilde{\Sigma}^*$.
+% 
+% \TODO{sjednotit značení $\omega$ vs. $\alpha$, když se používá jen jeden obecný řetězec}
+% 
+% \begin{definition}[Řetězec fuzzy symbolů]
+% Mějme abecedu $\Sigma$ a nějaký řetězec $a_1 \dots a_n = \alpha \in \Sigma^*$. Pak definujme $\widetilde{\alpha} = \widetilde{a_1} \dots \widetilde{a_n}$ jako řetězec fuzzy symbolů řetězce $\alpha$.
+% \end{definition}
+% 
+% V této fázi jsme schopni plnohodnotně pracovat s řetězci fuzzy symbolů a konstruovat je z řetězců nad abecedou $\Sigma$. Nyní přejdeme k návrhu fuzzy automatu, který bude s fuzzy symboly pracovat. Stejně jako u podobnosti symbolů i fuzzy symboly mohou být aplikovány na libovolný typ automatu. Vytvoříme proto automat pracující s fuzzy symboly nejdříve obecně, pro libovolný automat $A$. 
+% 
+% \begin{definition}[Automat pracující s fuzzy symboly] \label{def-AutPracFuzzSym}
+%   Mějme nedeterministický fuzzy automat automat $A$. Pak fuzzy automat $\widetilde{A}$ pracující s fuzzy symboly vytvoříme tak, že v definici automatu $A$ nahradíme $\Sigma$ za $\widetilde{\Sigma}$.
+%   
+%   \TODO{může to tak být? a co související pojmy}
+% \end{definition}
+% 
+% Formální zavedení automatu pracujícího s fuzzy symboly je intutivní, jedná se jen o formalitu. Abychom však využili potenciál fuzzy symbolů, je třeba pozměnit výpočet automatu. Proces jeho výpočtu se změní ve fázi výpočtu přechodové funkce fuzzy stavů. Připomeňme, že ta je definována (definice \ref{def-PreFunFuzzStav}) jako fuzzy relace $\widehat{\mu}$ přiřazující každému fuzzy stavu $V$ a fuzzy symbolu $x$ fuzzy stav dle předpisu
+% $$
+%  \widehat{\mu}(V, x) = V \circ \mu[x]
+% $$
+% 
+% Zde je zjevně nutné nahradit $\mu[x]$ spojením přes všechny fuzzy symboly. Bude tedy vypadat následovně:
+% $$
+%  \widehat{\mu}(V, x) = V \circ \bigvee_{y \in \Sigma} (\mu[x] \wedge \widetilde{x}(y))
+% $$
+% 
+% Tím, že je změna zakořeněna ve výpočtu automatu, nám umožňuje další práci se samotným automatem. Můžeme tedy bez problémů zkonstruovat automat rozpoznávající $\omega$ pracující s fuzzy symboly.
+% 
+% \begin{definition}[Automat rozpoznávající $\omega$ pracující s fuzzy symboly]
+%  Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a abecedu fuzzy symbolů $\widetilde{\Sigma}$. Dle definice \ref{def-FuzzAutRozpOme} můžeme zkonstruovat fuzzy automat $A(\omega)$ rozpoznávající $\omega$. Následně pak podle definice \ref{def-AutPracFuzzSym} automat $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
+% \end{definition}
+% 
+% Postup konstrukce takovéhoto automatu je opět vcelku intuitivní. Následuje demonstrace na příkladu.
+% 
+% \begin{example}
+%  Mějme abecedu $\Sigma$, vzorový řetězec a podobnostní relaci $p = s$ stejné jako v příkladu \ref{ex-AutRozpOmePodSym}. Na obrázku \ref{diag-AutRozpOmePraFuzSym} je zobrazen diagram automatu $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
+%  
+%  \begin{figure}
+%     \includegraphics{diags6}
+%     \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpOmePraFuzSym}
+%   \end{figure}
+% \end{example}
+% 
+% Co se týče vlastností automatů (rozpoznávajících $\omega$) pracujících s fuzzy symboly, jejich charakteristika je vesměs stejná jako u automatů pracujících s podobností symbolů. Pouze, jak již bylo zmíněno v úvodu, nezasahují do struktury automatu jako takového.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fuzzy symboly}
-Fuzzy symbol je technika využjívající podobnosti symbolů. Ve své podstatě se jedná o téže techniku jak v předchozí podkapitole, jen je na ni nahlíženo jinak. Oproti podobnosti symbolů je použití fuzzy symbolů komplikovanější, avšak umožňuje jednoduše tuto techniku kombinovat s jinými. Princip fuzzy symbolů byl přejat z \cite{Ech-DefSyssConPre}.
+\subsection{Editační operace, deformovaný automat}
+Další technikou pro modifikaci chování automatu je využití editačních operací. Tato technika byla přejata z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}. Základní idea této techniky spočívá v trojici jednoduchých editačních operací, jejiž složením jsme schopni popsat požadovanou transformaci vstupu na automatem reprezentovaný vzor. \uv{Množství} transformace pak udává podobnost pozorovaného a vzorového řetězce.
 
-Mějme abecedu $\Sigma$ a relaci $p$ podobnosti symbolů (stejně jako relace $s$ v předchozí podkapitole). Fuzzy symbolem symbolu $x \in \Sigma$ označujeme fuzzy množinu symbolů takových, které jsou podle relace $p$ symbolu $x$ \uv{podobné}.
+Editační operace nám určují elementární (na úrovni symbolů) transformace z řetězce na jiný řetězec. Jak bylo zmíněno, tyto elementární transformace jsou tři, a to:
+\begin{enumerate}
+ \item vložení symbolu
+ \item odstranění symbolu
+ \item nahrazení symbolu jiným symbolem
+\end{enumerate}
 
-\begin{definition}[Fuzzy symbol]
-Mějme abecedu $\Sigma$ a fuzzy relaci $p \subseteq \Sigma \times \Sigma$. Pak pro každý symbol $y \in \Sigma$ definujeme fuzzy symbol $\widetilde{y}$ symbolu $y$ jako fuzzy množinu nad $\Sigma$ takovou, že pro všechna $x \in \Sigma$ platí
-$$
-\widetilde{y}(x) = p(y, x)
-$$
-\end{definition}
+Aplikováním posloupnosti těchto operací na vstupní řetězec tak můžeme obdržet řetězec, který odpovídá vzoru a je tak automatem přijímán. Posloupnost editačních operací budeme nazývat vyrovnání řetězců.
 
-Vzhledem k tomu, že fuzzy symbol máme definován pro všechny $y \in \Sigma$, můžeme množinu všech takových fuzzy symbolů nazvat abecedou fuzzy symbolů.
-
-\begin{definition}[Abeceda fuzzy symbolů]
-Mějme abecedu $\Sigma$ a fuzzy symboly $\widetilde{y}$ pro všechna $y \in \Sigma$. Pak množinu všech těchto fuzzy symbolů nazvěme abeceda fuzzy symbolů abecedy $\Sigma$ a označme $\widetilde{\Sigma}$. Tedy $\widetilde{\Sigma} = \{ \widetilde{y} \mid y \in \Sigma \}$.
-\end{definition}
-
-Máme-li abecedu fuzzy symbolů $\widetilde{\Sigma}$, můžeme pracovat s řetězci $\widetilde{\alpha} \in \widetilde{\Sigma}^*$ nad touto abecedou. Ještě si však doplníme, jak vytvořit k řetězci $\alpha \in \Sigma^*$ jemu odpovídající řetězec fuzzy symbolů $\widetilde{\alpha} \in \widetilde{\Sigma}^*$.
-
-\TODO{sjednotit značení $\omega$ vs. $\alpha$, když se používá jen jeden obecný řetězec}
-
-\begin{definition}[Řetězec fuzzy symbolů]
-Mějme abecedu $\Sigma$ a nějaký řetězec $a_1 \dots a_n = \alpha \in \Sigma^*$. Pak definujme $\widetilde{\alpha} = \widetilde{a_1} \dots \widetilde{a_n}$ jako řetězec fuzzy symbolů řetězce $\alpha$.
-\end{definition}
-
-V této fázi jsme schopni plnohodnotně pracovat s řetězci fuzzy symbolů a konstruovat je z řetězců nad abecedou $\Sigma$. Nyní přejdeme k návrhu fuzzy automatu, který bude s fuzzy symboly pracovat. Stejně jako u podobnosti symbolů i fuzzy symboly mohou být aplikovány na libovolný typ automatu. Vytvoříme proto automat pracující s fuzzy symboly nejdříve obecně, pro libovolný automat $A$. 
-
-\begin{definition}[Automat pracující s fuzzy symboly] \label{def-AutPracFuzzSym}
-  Mějme nedeterministický fuzzy automat automat $A$. Pak fuzzy automat $\widetilde{A}$ pracující s fuzzy symboly vytvoříme tak, že v definici automatu $A$ nahradíme $\Sigma$ za $\widetilde{\Sigma}$.
-  
-  \TODO{může to tak být? a co související pojmy}
-\end{definition}
-
-Formální zavedení automatu pracujícího s fuzzy symboly je intutivní, jedná se jen o formalitu. Abychom však využili potenciál fuzzy symbolů, je třeba pozměnit výpočet automatu. Proces jeho výpočtu se změní ve fázi výpočtu přechodové funkce fuzzy stavů. Připomeňme, že ta je definována (definice \ref{def-PreFunFuzzStav}) jako fuzzy relace $\widehat{\mu}$ přiřazující každému fuzzy stavu $V$ a fuzzy symbolu $x$ fuzzy stav dle předpisu
-$$
- \widehat{\mu}(V, x) = V \circ \mu[x]
-$$
-
-Zde je zjevně nutné nahradit $\mu[x]$ spojením přes všechny fuzzy symboly. Bude tedy vypadat následovně:
-$$
- \widehat{\mu}(V, x) = V \circ \bigvee_{y \in \Sigma} (\mu[x] \wedge \widetilde{x}(y))
-$$
-
-Tím, že je změna zakořeněna ve výpočtu automatu, nám umožňuje další práci se samotným automatem. Můžeme tedy bez problémů zkonstruovat automat rozpoznávající $\omega$ pracující s fuzzy symboly.
-
-\begin{definition}[Automat rozpoznávající $\omega$ pracující s fuzzy symboly]
- Mějme abecedu $\Sigma$, řetězec $\omega$ nad touto abecedou a abecedu fuzzy symbolů $\widetilde{\Sigma}$. Dle definice \ref{def-FuzzAutRozpOme} můžeme zkonstruovat fuzzy automat $A(\omega)$ rozpoznávající $\omega$. Následně pak podle definice \ref{def-AutPracFuzzSym} automat $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
-\end{definition}
-
-Postup konstrukce takovéhoto automatu je opět vcelku intuitivní. Následuje demonstrace na příkladu.
-
-\begin{example}
- Mějme abecedu $\Sigma$, vzorový řetězec a podobnostní relaci $p = s$ stejné jako v příkladu \ref{ex-AutRozpOmePodSym}. Na obrázku \ref{diag-AutRozpOmePraFuzSym} je zobrazen diagram automatu $\widetilde{A}(\omega)$ rozpoznávající $\omega$ pracující s fuzzy symboly.
- 
- \begin{figure}
-    \includegraphics{diags6}
-    \caption{Automat rozpoznávající \str{abc} pracující s $s$} \label{diag-AutRozpOmePraFuzSym}
-  \end{figure}
-\end{example}
-
-Co se týče vlastností automatů (rozpoznávajících $\omega$) pracujících s fuzzy symboly, jejich charakteristika je vesměs stejná jako u automatů pracujících s podobností symbolů. Pouze, jak již bylo zmíněno v úvodu, nezasahují do struktury automatu jako takového.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Editační operace}
-Další technikou pro podobnostní porovnávání pozorovaného a vzorového řetězce je s využitím editačních operací. Tato technika byla přejata z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}. Základní idea této techniky spočívá v trojici jednoduchých editačních operací, jejiž složením jsme schopni popsat transformaci pozorovaného řetězce na vzorový. Množství transformace pak udává podobnost pozorovaného a vzorového řetězce.
-
-Následuje formální definice editačních operací a pojmů s nimi souvisejících. Následně přejdeme ke konstrukci automatu, který s nimi bude schopen pracovat.
-
-\begin{definition}[Editační operace]
-Mějme abecedu $\Sigma$, uvažujme množinu $E = (\Sigma \cup \{ \epsilon \}) \times (\Sigma \cup \{ \epsilon \}) \setminus \{ (\epsilon, \epsilon) \}$. Pak každou dvojici $(x, y) = z \in E$ nazvěme editační operace. Speciálně pak, pro všechna $x, y \in \Sigma$, $(x, y) \in E$ znamená nahrazení symbolu $x$ symbolem $y$, $(x, \epsilon) \in E$ znamená odebrání symbolu $x$ a naopak $(\epsilon, y) \in E$ pak vložení symbolu $y$. Navíc jako editační operaci uvažujme i všechny dvojce $(x, x) \in E$ (pro každé $x \in \Sigma$) symbolizující \uv{žádnou editaci}.
-
-Máme-li editační operaci $(x, y) = z \in E$, pak označme $x = z^\downarrow$ a $y = z^\uparrow$.
-\end{definition}
-
-Editační operace jsou tedy tři a to náhrada symbolu, vložení symbolu a odebrání symbolu. Například řetězec \str{hallo} vznikl záměnou \str{e} za \str{a} v řetězci \str{hello}. Obdobně, řetězec \str{hellow} vznikl přidáním \str{w} na konec a řetězec \str{helo} odebráním (prvního nebo druhého) symbolu \str{l}.
-
-My však obvykle očekáváme, že došlo k více, než jedné jednoduché editaci. Je proto vhodné zavést koncept mnohanásobné editace. Jednotlivé editace za sebe seřadíme do posloupnosti v pořadí, v jakém mají být postupně aplikovány, a takovouto posloupnost nazvěme vyrovnáním řetězce $\alpha$ na řetězec $\omega$.
-
-Uvažujme nyní množinu $E$ editačních operací jako abecedu. Pak každé vyrovnání $\zeta$ řetězce $\alpha$ na řetězec $\omega$ (posloupnost $z_1 z_2 \dots z_n$ symbolů $z_1, z_2, \dots z_n \in E$), tak můžeme považovat za řetězec nad abecedou $E$.
-
-\TODO{fakt E považovat za abecedu a $G$ za jazyk? není to zbytečná komplikace? je to tam nutné?}
-
-Například všechny tři následující řetězce jsou vyrovnáním řetězce \str{ahoj} na řetězec \str{hello}:
+Pracujme nyní s abecedou $\Sigma$. Editační operace budeme zapisovat jako uspořádané dvojice $(a, b) \in (\Sigma \cup \{ \epsilon \})^2 \setminus (\epsilon, \epsilon)$. Vložení symbolu $x$ značme $(\epsilon, x)$, odstranění symbolu $x$ pak $(x, \epsilon)$ a náhradu symbolu $x$ symbolem $y$ pak $(x, y)$.  Pak všechny tři posloupnosti editačních operací jsou vyrovnáním řětězce \str{ahoj} na řetězec \str{hello}:
 \begin{align*}
- \zeta_1 =& (a,\epsilon) (h,h) (o, e) (j, l) (\epsilon, l) (\epsilon, o) \\
- \zeta_2 =& (a, \epsilon) (h, \epsilon) (o, \epsilon) (j, \epsilon) (\epsilon, h) (\epsilon, e) (\epsilon, l) (\epsilon, l) (\epsilon, o) \\
- \zeta_3 =& (a,h) (h,e) (o,l) (j,l) (\epsilon, o) 
+ & (a,\epsilon), (o,e), (j,l), (\epsilon,l), (\epsilon, o) \\
+ & (a, \epsilon), (h,\epsilon), (o,\epsilon), (j,\epsilon), (\epsilon,h), (\epsilon,e), (\epsilon,l), (\epsilon,l), (\epsilon,o) \\
+ & (a,h), (h,e), (o,l), (j,l), (\epsilon,o) 
 \end{align*}
 
-Na tomto příkladu je vhodné si povšimnout, že obecně může existovat více než $1$ vyrovnaní mezi libovolnou dvojicí řetězců. Bude proto vhodné neuvažovat vyrovnání jednotlivá, ale množinu všech možných vyrovnání mezi dvojicí řetězců. 
+Označme $E$ jako množinu všech editačních operací, tj. $E = (\Sigma \cup \{ \epsilon \})^2 \setminus (\epsilon, \epsilon)$. Budeme-li chtít pro každou editační operaci stanovit stupeň, v jakém má být provedena, použijeme fuzzy relaci  $P: E \rightarrow [0, 1]$. Následovat bude popis tzv. \uv{deformace} automatu, tedy procedury, která pro fuzzy relaci editačních operací $R$ a fuzzy automat $A$ zkonstruuje fuzzy automat $A'$, který editační operace reflektuje.
 
-Podíváme-li se nyní jen na levé části editačních operací ve vyrovnání $\zeta_1$ z předchozího příkladu, zjistíme, že jejich zřetězením získáme řetězec $\alpha$:
-$$
-(a,\epsilon)^\downarrow (h,h)^\downarrow  (o, e)^\downarrow  (j, l)^\downarrow  (\epsilon, l)^\downarrow  (\epsilon, o)^\downarrow  = ahoj
-$$
-Stejně tak, zřetězením pravých částí editačních operací v $\zeta_1$ získáme řetězec $\omega$:
-$$
-(a,\epsilon)^\uparrow (h,h)^\uparrow  (o, e)^\uparrow  (j, l)^\uparrow  (\epsilon, l)^\uparrow  (\epsilon, o)^\uparrow  = hello
-$$
-
-Tato vlastnost nám udává, v jakém pořadí mají být editační operace aplikovány. Stejně tak nám odstaňuje nadbytečné editační operace (např. opakované přidávání a odebírání téže znaku, které by mohlo vést až k nekonečné posloupnosti editací). Proto nám tato vlastnost poslouží jako definiční pro formání zavedení vyrovnání řetězců.
-
-\begin{definition}[Vyrovnání řetězců \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}]
- Jako množinu všech vyrovnání $G(\alpha, \omega)$ řetězce $\alpha$ na řetězec $\omega$ (kde $(\epsilon, \epsilon) \neq \alpha, \omega \in \Sigma^*$) označme takovou množinu $\{ \zeta \in E^+ \mid \zeta \text{splňuje vlastnosti 1., 2. i 3.}\}$
- \begin{enumerate}
-  \item $\zeta = z_1 z_2 \dots z_r$, $z_i \neq (\epsilon, \epsilon)$ pro všechna $i \in 1, \dots, r$,
-  \item ${z_1}^\downarrow {z_2}^\downarrow \dots {z_r}^\downarrow = \alpha$
-  \item ${z_1}^\uparrow {z_2}^\uparrow \dots {z_r}^\uparrow = \omega$
- \end{enumerate}
-\end{definition}
-
-V tento okamžik máme formálně zavedena vyrovnání řetězců. Můžeme tedy přejít k práci s nimi. Ukážeme si způsob, jak pomocí vyrovnání řetězců spočítat podobnost dvojice řetězců. Na základě tohoto výpočtu pak sestavíme automat, který tento výpočet bude realizovat.
-
-Pro uřčení podobnosti na základě vyrovnání řetězců budeme potřebovat znát míry pravdivosti editačních operací. Vstupem pro výpočet podobnosti řetězců tak bude navíc binární fuzzy relace $R$ nad množinou všech editačních operací ($E$), udávající stupeň akceptovatelnosti kadždé z možných editačních operací. S touto znalostí můžeme nadefinovat relaci podobnosti řetězců, tzv. fuzzy míru dvojice řetězců $\alpha$ a $\omega$.
-
-\TODO{Musí být $R$ reflexivní a symetrická (def. automatu to vyžaduje, ale je to nutné?). A co T-tranzitivita?} \TODO{Takové relaci se říká relace podobnosti (proximity relation)}
-
-\begin{definition}[Fuzzy míra\cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}]\label{def-FuzzMir}
- Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$. Pak jako fuzzy míru mezi řetězci $\alpha, \omega \in \Sigma^*$ (značenou $S_{\Sigma, R, \otimes}$) označme fuzzy relaci danou následujícím předpisem:
- $$
- S_{\Sigma, R, \otimes} = 
-  \begin{cases}
-   1	&	\text{ pokud } (\alpha, \omega) = (\epsilon, \epsilon) \\
-   \max\limits_{\zeta \in G(\alpha, \omega)} (\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) )	&	\text{ pokud } (\alpha, \omega) \neq (\epsilon, \epsilon) 
-  \end{cases}
- $$
-% kde $\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) = R(\zeta_1) \otimes R(\zeta_2) \otimes \dots \otimes R(\zeta_{|\zeta|}$ pro $zeta_1 zeta_2 \dots zeta_{|\zeta|} = \zeta \in G(\alpha, \omega)$.
-\end{definition}
-
-Definice fuzzy míry je vcelku intuitivní. Počítá se míra všech možných vyrovnání z nichž se vybírá ta největší. Míra vyrovnání se určuje jako t-norma ze všech $R(\zeta_i)$, tedy stupňů akceptovatelnosti jednotlivých editačních operací. Navíc, míra mezi dvojicí prázdných řetězců je dodefinována jako $1$.
-
-Označme $\mathcal{L}(\omega)$ jako fuzzy jazyk řetězců \uv{podobných} řetězci $\omega$ s podobností danou relací $R$. Takový jazyk pak můžeme nadefinovat pro  všechna $\alpha \in \Sigma^*$ následujícím předpisem
-$$
- \mathcal{L}(\omega)(\alpha) = S_{\Sigma, R, \otimes}(\alpha, \omega)
-$$
-
-Nyní zkonstruujeme nedeterministický fuzzy automat s $\epsilon$-přechody, který jazyk $\mathcal{L}$ rozpoznává. 
-\TODO{rozpoznává vs. přijímá, pozor na to}
-
-\begin{definition}[Automat rozpoznávající $\mathcal{L}$ \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}] \label{def-AutRozpCalL}
- Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$ (stejná jako v definici \ref{def-FuzzMir}). Pak pro vzorový řetězec $a_1 a_2 \dots a_n = \omega \in \Sigma^*$ označme $M_{\Sigma, R, \otimes}(\omega)$ automat rozpoznávající jazyk $\mathcal{L}(\omega)$ dle definice \ref{def-NedFuzzAutEpsPre}, takový, že
- \begin{enumerate}
-  \item množina stavů $Q = \{ q_0, q_1, \dots q_n \}$
- % \item $\Sigma$ automatu je stejná jako $\Sigma$ v parametru
-  \item fuzzy přechodová funkce $\mu$ pro všechny $x \in \Sigma$:
-  \begin{enumerate}
-   \item $\mu(q_i, q_i, x) = R(x, \epsilon)$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n$
-   \item $\mu(q_i, q_{i+1}, x) = R(x, a_{i+1})$ pro všechny $q_i, q_{i+1} \in Q$ taková, že $i = 0, \dots, n-1$
-   \item $\mu(q, q', x) = 0$ pro všechny $q, q' \in Q$ nesplňující předchozí dva body
-
-   \item $\mu(q_i, q_i, \epsilon) = 1$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n$
-   \item $\mu(q_i, q_{i+1}, \epsilon) = R(\epsilon, a_{i+1})$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n-1$
-   \item $\mu(q, q', \epsilon) = 0$ pro všechny $q, q' \in Q$ nesplňující předchozí dva body 
-  \end{enumerate}
-  \item množina počátečních stavů $\sigma$: $\sigma(q_0) = 1$ a pro všechny ostatní $q_0 \neq q' \in Q$: $\sigma(q') = 0$ 
-  \item množina koncových stavů $\eta$: $\eta(q_n) = 1$ a pro všechny ostatní $q_n \neq q' \in Q$: $\eta(q') = 0$
- \end{enumerate}
-\end{definition}
-
-Máme nadefinován fuzzy automat rozpoznávající jazyk $\mathcal{L}(\omega)$. Bylo by však vhodné dokázat, že jazyk $\mathcal{L}(\omega)$, který tento automat rozpoznává je skutečně jazykem řetězců podobných řetězci $\omega$ s podobností danou relací $R$. Vzhledem ke složitosti důkazu tohoto tvrzení se v této práci spokojíme pouze s ilustrací na příkladu.
-\begin{theorem}\label{the-JazAutJeJazEditOper}
- Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$ (stejná jako v definici \ref{def-FuzzMir}) a vzorový řetězec $\omega \in \Sigma^*$. Pak pro automat $M_{\Sigma, R, \otimes}(\omega)$ sestavený dle předcházející definice a fuzzy míru $S_{\Sigma, R, \otimes}$ platí následující rovnost
- $$
-  \mathcal{L}(M_{\Sigma, R, \otimes}) = \mathcal{L}(\omega)
- $$
-\end{theorem}
-\begin{proof}
- Kompletní důkaz je k nalezení v \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}.
-\end{proof}
-
-\TODO{sazba symbolů v matematickém módu vs. verbatim řetězce v textovém}
-
-\begin{example} \label{ex-AutRozpCalL}
- Uvažujme abecedu $\Sigma = \{a, b, c\}$ a vzorový řetězec $\omega = abc$. Zkonstruujeme automat, který bude akceptovat ve stupni $0.5$ náhradu symbolu $x$ symbolem s ním v abecedě sousedícím. Navíc uvažujme vložení symbolu $a$ ve stupni $0.2$ a odebrání symbolu $c$ ve stupni $0.1$. Tedy, relace $R$ bude vypadat následovně:
- \begin{align*}
-  R = \{ 
-   & (a, a)/1, (b, b)/1, (c, c)/1, \\
-   & (b, a)/0.5, (a, b)/0.5, (c, b)/0.5, (b, c)/0.5, \\
-   & (a, \epsilon)/0.2, (\epsilon, c)/0.1 \}
- \end{align*}
-
- Dle definice \ref{def-AutRozpCalL} můžeme sestavit automat $M_{\Sigma, R, \otimes}$. Jako $\otimes$ použijme produktovou t-normu. Získáme tak automat $M_{\Sigma, R, \otimes} = (Q, \Sigma, \mu, \sigma, \epsilon)$ takový, že:
-  \begin{enumerate}
-  \item $Q = \{ q_0, q_1, q_2, q_3 \}$
-  \item $\mu = \{ $
-  \begin{enumerate}
-   
-   \item $(q_0, q_0, a)/0.2, (q_1, q_1, a)/0.2, (q_2, q_2, a)/0.2, (q_3, q_3, a)/0.2),$
-   \item $(q_0, q_1, a)/1, (q_1, q_2, a)/0.5,$ \\
-   $(q_0, q_1, b)/0.5, (q_1, q_2, b)/1, (q_2, q_3, b)/0.5,$ \\
-   $(q_1, q_2, c)/0.5, (q_2, q_3, c)/1,$
-   \addtocounter{enumii}{1} %\item  \TODO{takové, jako $(q_3, q_1, a)$}
-   \item $(q_0, q_0, \epsilon)/1, (q_1, q_1, \epsilon)/1, (q_2, q_2, \epsilon)/1, (q_3, q_3, \epsilon)/1),$
-   \item $(q_2, q_3, \epsilon)/0.1$
-   \addtocounter{enumii}{1} %\item \TODO{takové, jako $(q_3, q_1, \epsilon)$}
-  \end{enumerate}
-  $ \} $ (přechody dle bodů (b) a (d) v definici jsou s nulovým stupněm a ve výpisu jsou vynechány)
-  \item $\sigma = \{ q_0/1, q_1/0, q_2/0, q_3/0  \}$
-  \item $\eta = \{ q_0/0, q_1/0, q_2/0, q_3/1  \}$
-  \\ \TODO{$\sigma = \{ x / y, ... \}$ by se mělo přepsat na $\sigma(x) = y, ...$, ne?}
- \end{enumerate}
-
- Přechodový diagram tohoto automatu je k nalezení na obrázku \ref{img-AutRozpCalL}. V přechodovém diagramu jsou červeně zvárazněny pravidla pro rozpoznávání $\omega$, ostatní pravidla (doplněna dle definice) jsou černá. 
+\begin{definition}[Deformovaný automat] \label{def-AutRozpCalL}
+ Mějme binární fuzzy relaci $R: E \rightarrow [0, 1]$ a nedeterministický fuzzy automat $A = (Q, \Sigma, \mu, \sigma, \eta)$. Pak jako deformovaný automat označme nedeterministický fuzzy automat $A' = (Q, \Sigma, \mu', \sigma, \eta)$ s $\epsilon$-přechody, kde $Q$, $\Sigma$, $\sigma$ a $\eta$ zůstávají stejné a fuzzy přechodová funkce $\mu'$ je dána:
  
- Nyní si na pár řetězcích zkuzme ukázat platnost věty \ref{the-JazAutJeJazEditOper}. Dle definice \ref{def-RetPriAut} spočítáme stupeň, v jakém automat náš testovací rozpoznává řetězec $\alpha$:
  \begin{align*}
-  M_{\Sigma, R, \otimes}(\alpha) 
-   =& \max_{q \in Q} (\mu^*(\sigma, \alpha)(q) \otimes \eta(q))) \\
-   =& \max\{ \mu^*(\sigma, \alpha)(q_0) \otimes \eta(q_0)), \mu^*(\sigma, \alpha)(q_1) \otimes \eta(q_1)),  \\
-    & \mu^*(\sigma, \alpha)(q_2) \otimes \eta(q_2)), \mu^*(\sigma, \alpha)(q_3) \otimes \eta(q_3)) \}   \\
-   =& \max\{ \mu^*(\sigma, \alpha)(q_0) \otimes 0), \mu^*(\sigma, \alpha)(q_1) \otimes 0),  \\
-    & \mu^*(\sigma, \alpha)(q_2) \otimes 0), \mu^*(\sigma, \alpha)(q_3) \otimes 1) \}   \\
-   =&  \mu^*(\sigma, \alpha)(q_3)
- \end{align*}
-  
- \begin{itemize}
-  \item řětězec $\alpha = abc$:
-  Určíme stupeň akceptance automatem:
-  $$
-  M_{\Sigma, R, \otimes}(\alpha) 
-   = \mu^*(\sigma, abc) (q_3)
-   = \widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\sigma, \epsilon), a), b), c) (q_3)
-   = \{ q_3 / 1 \} (q_3) 
-   = 1 
-  $$
-  A následně ověříme fuzzy míru. Množina všech vyrovnání bude obsahovat například $\zeta_1 = (a,a), (b,b), (c,c)$ či 
-  $\zeta_2 = (a, \epsilon) (\epsilon, a) (b, \epsilon) (\epsilon, b) (c, \epsilon) (\epsilon, c)$. Snadno zjistíme, že $\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) $ je maximální právě pro $\zeta = \zeta_1$ a nabývá stupně $1$. A tedy $S_{\Sigma, R, \otimes}(\alpha) = 1$.
-   
-  \item řětězec $\alpha = ab$:
-  $$
-  M_{\Sigma, R, \otimes}(\alpha) 
-   = \mu^*(\sigma, ab) (q_3)
-   = \widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\sigma, \epsilon), a), b) (q_3)
-   = \{ q_2 / 1, q_3 / 0.1 \} (q_3)
-   = 0,1
-  $$
-  $$
-  S_{\Sigma, R, \otimes}(\alpha) 
-   = R(a, a) \otimes R(b, b) \otimes R(\epsilon, c) 
-   = 1 \otimes 1 \otimes 0.1
-   = 0,1
-  $$
-  
-  \item řětězec $\alpha = bbb$:
-  $$
-  M_{\Sigma, R, \otimes}(\alpha) 
-   = \mu^*(\sigma, bbb) (q_3)
-   = ...
-   = \{ q_3 / 0,25 \} (q_3)
-   = 0,25
-  $$
-  $$
-  S_{\Sigma, R, \otimes}(\alpha) 
-   = R(b, a) \otimes R(b, b) \otimes R(b, c) 
-   = 0,5 \otimes 1 \otimes 0,5
-   = 0,25
-  $$
-  
-  \item řětězec $\alpha = abaca$:
-  $$
-  M_{\Sigma, R, \otimes}(\alpha) 
-   = \mu^*(\sigma, abaca) (q_3)
-   = ...
-   = \{ q_3 / 0,04 \} (q_3)
-   = 0,04
-  $$
-  $$
-  S_{\Sigma, R, \otimes}(\alpha) 
-   = R(a, a) \otimes R(b, b) \otimes R(a, \epsilon) \otimes R(c, c) \otimes R(a, \epsilon)
-   = 1 \otimes 1 \otimes 0,2 \otimes 1 \otimes 0,2
-   = 0,04
-  $$
+  \mu' = 	& \{ (q, x, q', d) | (q, x, q', d) \in \mu \} 			& \text{(původní přechody)}	\\
+    \cup 	& \{ (q, y, q, R(\epsilon, y)) | q \in Q, y \in \Sigma \} 	& \text{(vložení symbolu)}	\\
+    \cup 	& \{ (q, \epsilon, q', R(x, \epsilon)) | (q, x, q', d) \in \mu \} & \text{(odstranění symbolu)}	\\
+    \cup 	& \{ (q, y, q', R(x, y)) | (q, x, q', d) \in \mu \} 	& \text{(nahrazení symbolu)}\\
+  \end{align*}
+\end{definition}
 
-  \item řětězec $\alpha = cba$:
-  $$
-  M_{\Sigma, R, \otimes}(\alpha) 
-   = \mu^*(\sigma, cba) (q_3)
-   = ...
-   = (\emptyset) (q_3)
-   = 0
-  $$
-  $$
-  S_{\Sigma, R, \otimes}(\alpha) 
-   = R(c, a) \otimes R(b, b) \otimes R(a, c) 
-   = 0 \otimes 1 \otimes 0
-   = 0
-  $$
-  
-  ...
-  
- \end{itemize}
+Význam jednotlivých složek přechodové funkce (deformací) je názorně zobrazen v tabulce \ref{tbl:DefAutDef}. Příklad deformovaného automatu je na obrázku \ref{img:DefAut}. \TODO{Okomentovat ten příklad!} 
 
- Je tedy zjevné, že výpočet automatu $M_{\Sigma, R, \otimes}$ je v korespondenci s fuzzy mírou $S_{\Sigma, R, \otimes}$.
- 
- \begin{figure}
-  \includegraphics{diags4}
-  \caption{Přechodový diagram automatu z příkladu \ref{ex-AutRozpCalL}} \label{img-AutRozpCalL}
- \end{figure}
-\end{example}
-
-Je vidět, že automat zkonstruován dle editačních operací je značně silný nástroj. Umožňuje nám velmi pohodlně popsat, jak moc mohou být konkrétní editační operace akceptovány. Editační operace vložení symbolu, náhrada symbolu a odebrání symbolu jsou pro popis modifikace vzorového řetězce přirozené.
-
-Nevýhodou této techniky je, že jednotlivé editační operace jsou akceptovány bez ohledu na jejich výskyt v řetězci. Automat akceptuje nastanuvší editační operaci pokaždé, kde může nastat, ve stejném stupni. Často je však třeba v jiném stupni stejnou editační operaci přijímat např. na začátku a na konci řetězce pokaždé však v jiném stupni. Tento požadavek však automat zkonstruovaný pomocí editačních operací neumí zpracovat. Řešením může být například použití následující techniky.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Deformovaný automat}
-Dalším ze způsobů, jak přijímat řetězec podobný vzorovému je s využitím deformovaného (fuzzy) automatu. Tato technika využívá tzv. deformovaného automatu, neboli automatu který byl stanoveným způsobem upraven, neboli deformován. Tato technika byla přejata z \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}.
-
-Jako deformace může být použita prakticky jakákoliv úprava automatu. Mějme fuzzy automat $A$. Provedením deformace $x$ získáme deformovaný automat $A'$, který rozpoznává jiný jazyk, než automat $A$. Mezi nejzákladnější tři deformace patří náhrada symbolu, vložení symbolu před symbol a odebrání symbolu. Možných deformací existuje nekonečně mnoho. Mezi další deformace může patřit například (pro nějaké $x, y, z \in \Sigma$ a $i \geq 0$): \uv{náhrada symbolu $x$ na $i$-té pozici symboly $yz$}, \uv{odebrání všech výskytů symbolu $x$, které se nachází před symbolem $y$} nebo \uv{vložení sudého počtu symbolů $y$ mezi symboly $x$ a $z$}.
-
-Provedeme-li deformaci fuzzy automatu rozpoznávající $\omega$, můžeme se na trojici základních deformací podívat konkrétně. Ukázka toho, jak by vypadal deformovaný automat po provedení jedné ze základních deformací je vyobrazeno v tabulce \ref{tbl-DefAutDef}.
-
-\begin{table}[h]
- \begin{tabular}{|l|l|}
+\begin{table}
+ \begin{tabular}{|l|c|}
   \hline
-  Deformace	& Význam deformace	 \\
+  Editační operace 	& Deformace (nový přechod v automatu)	 \\
   \hline
-  \textsc{Náhrada} symbolu na $i$-té pozici (symbolu $x$) symbolem $y$ & \includegraphics{diags1} \\	  
-    $\delta' = \delta \cup \{ (q_i, y, q_{i+1}) \}$, $Q' = Q$	&	\\
-  \textsc{Vložení} symbolu $y$ na $i$-tou pozici (před symbol $x$) & \includegraphics{diags2} \\
-    $\delta' = \delta \setminus \{ (q_i, x, q_{i+1} ) \} \cup \{ (q_i, \epsilon, q'_i), (q_i, y, q'_i), (q'_i, x, q_{i+1}) \}$, $Q' = Q \cup \{ q'_i \}$	 & \\
-  \textsc{Odebrání} symbolu z $i$-té pozice (symbolu $x$) & \includegraphics{diags3} \\
-    $\delta' = \delta \cup (q_i, \epsilon, q_{i+1})$, $Q' = Q$	 & \\
+  Vložení symbolu $y$ 			& \includegraphics{techniques1} \\
+  \hline
+  Odebrání symbolu $x$ 			& \includegraphics{techniques2} \\
+  \hline
+  Narazení symbolu $x$ symbolem $y$ 	& \includegraphics{techniques3} \\
   \hline
  \end{tabular}
- \caption{Deformace deformovaného automatu}\label{tbl-DefAutDef}
- \TODO{pozor, toto je pro konečné automaty, ne pro fuzzy automaty!}
+ \caption{Deformace automatu. Černě jsou znázorněny přechody původního automatu, červeně pak nově přidané}\label{tbl:DefAutDef}
 \end{table}
 
-Je vidět, že deformace mohou být účinným nástrojem pro rozpoznávání modifikovaných pozorovaných řetězců. Na druhou stranu, deformování automatu vyžaduje znalost fungování automatů. Často také může nastat situace, kdy výsledný zdeformovaný automat bude více, než deformovaný automat rozpoznávající $\omega$, automatem reprezentující samostatný netriviální vzor.
+\begin{figure}
+  \includegraphics{techniques4}
+  \caption{Ukázka deformovaného automatu (červené přechody byly přidány deformací)} \label{img:DefAut}
+\end{figure}
+ 
+Je vidět, že pomocí editačních operací jsme schopni popsat libovolnou transformaci. Deformovaný automat tak může být schopen rozpoznat v nenulovém stupni jakoukoliv transformaci řetězce, který původní automat přijímal. Je také vidět, že deformovaný automat nedokáže ošetřit pokročilejší transformace, jako je vložení právě jednoho symbolu, vložení symbolu na určité pozici či nahrazení podřetězce jiným podřetězcem. Takovéto deformace automatu je zpravidla potřeba provést ručně. Další informace ohledně editačních operací a deformovaných automatů lze nalést např. v \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}.
 
-\subsection{Shrnutí}
-V této kapitole byl zaveden pojem rozpoznávání textových vzorů. Bylo ukázáno, že pro klasickou teorii automatů je to triviální problém, který však kvůli nepřesnostem reálných dat vyžaduje nasazení fuzzy automatů. Bylo představeno několik technik, které pomocí fuzzy automatů umožňují přijímání řetězců podobných vzorovému. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Učící se fuzzy automaty}
+Učící se automat je koncept pro propojení fuzzy automatů a strojového učení. Strojové učení je moderní přístup pro řešení obtížných úkolů. Návrh či přizpůsobení výpočetního modelu, který perfektně modeluje data z reálného světa je typický takovýto úkol. Takovým modelem může být i fuzzy automat. Velmi často se můžeme setkat s tím, že navržený fuzzy automat zcela nekoresponduje se vstupními daty (a jednoduché techniky pro ošetření těchto odchylek nebyly dostatečné). 
 
-Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná na prosté nahrazování podobných symbolů. Technika fuzzy symbolů funguje na stejném principu, jen se liší ve formálním zavedení. Technika s využitím editačních operací umožňuje specifikovat stupeň akceptance základních editačních operací (vložení symbolu, odebrání symbolu, náhrada symbolu). Poslední technika, deformovaný automat, umožňuje libovolnou transformaci automatu, vedoucí až k libovolnému vzoru.
+Důležitým předpokladem pro strojové učení je velké množství vstupních, tzv. trénovacích, dat. Strojové učení totiž data obvykle zpracovává na značně nízké úrovni, takže toto nízké množství informace je třeba kompenzovat velkým množstvím vstupů.
+
+V této kapitole bude prezentován koncept učícího se fuzzy automatu. Jedná se o všeobecný koncept techniky, jak přizpůsobit chování automatu reálným datum. Praxe ukazuje, že učící automaty tento problém dokáží velmi efektivně řešit. Setkat se s nimi můžeme např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}, \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} nebo \cite{ZhiMinLan-EvoStraIndFuFiStaAu}. Vzhledem k tomu, že konkrétní výpočty, resp. algoritmy pro učení automatu bývají poměrně komplikované, spokojíme se pouze s obecným popisem principu.
+
+Učení fuzzy automatů je obvykle založeno na tzv. shlukování. Mějme fuzzy automat $A$ rozpoznávající jazyk  $\mathcal{L}(A)$. Tento jazyk tvoří shluky. Shluk je podmnožina jazyka $\mathcal{L}(A)$, jejiž řetězce jsou si navzájem podobnější, než s řetězci ostatních shluků. Nyní si vezměme libovolný řetězec $\omega$, který do jazyka $\mathcal{L}(A)$ nepatří. Pak můžeme najít řetězec $\omega'$ z jazyka $\mathcal{L}(A)$, který je řetězci $\omega$ určitým způsobem nejpodobnější, tj. patřil by do jeho shluku. Pak můžeme automat (resp. části automatu, kterémají vliv na rozpoznávání řětězce $\omega$) upravit tak, aby tento shluk obsahoval i řetězec $\omega$.
+
+Konkrétní techniky jsou uvedeny v literatuře. \TODO{reálný ocitovaný příklad z některého z článků}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fuzzy automaty a neuronové sítě}
+Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších a nejpoužívanějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk. Neuronová síť je tvořena sítí tzv. neuronů, které jsou propojeny zpravidla v rozsáhlou síť. Tato síť obsahuje spoustu parametrů a vah, které jsou nastaveny tak, aby síť řešila patřičný problém. Při výpočtu se sítí šíří tzv. vzruchy (typicky reálná čísla), které jsou neurony přepočítávány. Více o neuronových sítích je dispozici např. v \cite{FieRus-HanNeuCom}.
+
+Způsoby, jak sestavit neuronovou síť existují dva (v praxi se však obvykle tyto přístupy kombinují). A to pomocí trénovacích dat nebo pomocí znalostní báze. Konstrukce pomocí trénovacích dat je podobná, jako v předchozí podkapitole. Tedy, že vstupní data se postupně nechávají vyhodnocovat neuronovou sítí a ta je posléze přizpůsobována. Konstrukce pomocí znalostní báze je pak založena na kódování znalostní báze (\ifthen pravidel) do vah neuronové sítě.
+
+Bylo zjištěno, že fuzzy automat může být konvertován do neuronové sítě. Této problematice se věnují např. v \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} \cite{BlaDelPeg-FuzzAutIndUsNeuNet}, \cite{GilOmlTho-EquKnoRep+}, \cite{OmlThoGil-RepFuzFinStaAuConRecNeuNet}, \cite{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}, \cite{PedGac-LeaFuzzAut}.
+
+V jednodušších případech se jedná pouze o neuronovou síť, která realizuje jen přechodovou funkci automatu. Tedy neurnovou síť, jejimž vstupem je fuzzy stav, ve kterém se automat nachází, a symbol na vstupu a výstupem fuzzy stav, do kterého automat přejde. Existují však i způsoby, jak pomocí neuronové sítě reprezentovat celý automat.\TODO{najít, ve kterém článku to bylo?}
+
+Možnosti, jak takovou neuronovou síť sestavit, jsou stejné, jako při návrhu obecné neuronové sítě. Lze tedy využít jak konstrukci pomocí trénovacích dat, tak pomocí znalostní báze. Použití trénovacích dat spočívá ve vygenerování dostatečného množství kombinací fuzzy stavů a vstupních symbolů. Pomocí automatu je určen \uv{výstupní} fuzzy stav, který je spolu se vstupem předán neuronové síti k učení. Při použití znalostní báze jsou přechodová pravidla přepsána do fuzzy \ifthen pravidel, jak bylo uvedeno v kapitole \ref{subsec:FuzzEvMach}.
+
+Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy automat. Postup je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
+
+% 
+% Lze však použít i konstrukce s pomocí znalostní báze. V takovém případě je třeba zformulovat If-Then pravidla síť popisující. Pro každý přechod
+% $$
+%  \delta((q, d), a) = (q', d')
+% $$
+% tedy sestavíme If-Then pravidlo
+% $$
+%  \text{Je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak automat přejde do stavu $q'$ ve stupni $d'$}
+% $$
+% Na základě této znalostní báze může být navržena neuronová síť implementující přechodovou funkci automatu.
+% 
+% Opačný vztah, tj. jak z neuronové sítě zpět získat fuzzy automat je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
+% 
+% Poněkud elegantní způsob, jak z neuronové sítě vyextrahovat automat je popsán v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}. Autoři uvažují neuronovou síť jako nástroj, který rozpoznává (v odstupňované pravdivosti) ($n$-dimenzionální) podprostory prostoru $(0, 1)^n$. Každou souřadnici v tomto prostoru pak rozkládají symboly abecedy automatu, tj. každému vektoru v tomto prostoru přiřazují řetězec nad abecedou automatu. Vzniklá struktura, kterou je vlastně kd-tree, pak tvoří automat.\footnote{Tímto způsobem vygenerovaný automat je automat dle definice \TODO{doplnit ten, co má ostré přechody, ale fuzzy koncové stavy}} \TODO{Zapsat to nějak aspoň trochu lidsky, je např. potřeba doplnit práci s cykly}?
+% 
+% 
+% 
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+
+
+%  
+% V kontextu editačních operací budeme hovořit o \uv{skutečném vstupu} a \uv{vzoru}. 
+% 
+% Následuje formální definice editačních operací a pojmů s nimi souvisejících. Následně přejdeme ke konstrukci automatu, který s nimi bude schopen pracovat.
+% 
+% \begin{definition}[Editační operace]
+% Mějme abecedu $\Sigma$, uvažujme množinu $E = (\Sigma \cup \{ \epsilon \}) \times (\Sigma \cup \{ \epsilon \}) \setminus \{ (\epsilon, \epsilon) \}$. Pak každou dvojici $(x, y) = z \in E$ nazvěme editační operace. Speciálně pak, pro všechna $x, y \in \Sigma$, $(x, y) \in E$ znamená nahrazení symbolu $x$ symbolem $y$, $(x, \epsilon) \in E$ znamená odebrání symbolu $x$ a naopak $(\epsilon, y) \in E$ pak vložení symbolu $y$. Navíc jako editační operaci uvažujme i všechny dvojce $(x, x) \in E$ (pro každé $x \in \Sigma$) symbolizující \uv{žádnou editaci}.
+% 
+% Máme-li editační operaci $(x, y) = z \in E$, pak označme $x = z^\downarrow$ a $y = z^\uparrow$.
+% \end{definition}
+% 
+% Editační operace jsou tedy tři a to náhrada symbolu, vložení symbolu a odebrání symbolu. Například řetězec \str{hallo} vznikl záměnou \str{e} za \str{a} v řetězci \str{hello}. Obdobně, řetězec \str{hellow} vznikl přidáním \str{w} na konec a řetězec \str{helo} odebráním (prvního nebo druhého) symbolu \str{l}.
+% 
+% My však obvykle očekáváme, že došlo k více, než jedné jednoduché editaci. Je proto vhodné zavést koncept mnohanásobné editace. Jednotlivé editace za sebe seřadíme do posloupnosti v pořadí, v jakém mají být postupně aplikovány, a takovouto posloupnost nazvěme vyrovnáním řetězce $\alpha$ na řetězec $\omega$.
+% 
+% Uvažujme nyní množinu $E$ editačních operací jako abecedu. Pak každé vyrovnání $\zeta$ řetězce $\alpha$ na řetězec $\omega$ (posloupnost $z_1 z_2 \dots z_n$ symbolů $z_1, z_2, \dots z_n \in E$), tak můžeme považovat za řetězec nad abecedou $E$.
+% 
+% \TODO{fakt E považovat za abecedu a $G$ za jazyk? není to zbytečná komplikace? je to tam nutné?}
+% 
+% Například všechny tři následující řetězce jsou vyrovnáním řetězce \str{ahoj} na řetězec \str{hello}:
+% \begin{align*}
+%  \zeta_1 =& (a,\epsilon) (h,h) (o, e) (j, l) (\epsilon, l) (\epsilon, o) \\
+%  \zeta_2 =& (a, \epsilon) (h, \epsilon) (o, \epsilon) (j, \epsilon) (\epsilon, h) (\epsilon, e) (\epsilon, l) (\epsilon, l) (\epsilon, o) \\
+%  \zeta_3 =& (a,h) (h,e) (o,l) (j,l) (\epsilon, o) 
+% \end{align*}
+% 
+% Na tomto příkladu je vhodné si povšimnout, že obecně může existovat více než $1$ vyrovnaní mezi libovolnou dvojicí řetězců. Bude proto vhodné neuvažovat vyrovnání jednotlivá, ale množinu všech možných vyrovnání mezi dvojicí řetězců. 
+% 
+% Podíváme-li se nyní jen na levé části editačních operací ve vyrovnání $\zeta_1$ z předchozího příkladu, zjistíme, že jejich zřetězením získáme řetězec $\alpha$:
+% $$
+% (a,\epsilon)^\downarrow (h,h)^\downarrow  (o, e)^\downarrow  (j, l)^\downarrow  (\epsilon, l)^\downarrow  (\epsilon, o)^\downarrow  = ahoj
+% $$
+% Stejně tak, zřetězením pravých částí editačních operací v $\zeta_1$ získáme řetězec $\omega$:
+% $$
+% (a,\epsilon)^\uparrow (h,h)^\uparrow  (o, e)^\uparrow  (j, l)^\uparrow  (\epsilon, l)^\uparrow  (\epsilon, o)^\uparrow  = hello
+% $$
+% 
+% Tato vlastnost nám udává, v jakém pořadí mají být editační operace aplikovány. Stejně tak nám odstaňuje nadbytečné editační operace (např. opakované přidávání a odebírání téže znaku, které by mohlo vést až k nekonečné posloupnosti editací). Proto nám tato vlastnost poslouží jako definiční pro formání zavedení vyrovnání řetězců.
+% 
+% \begin{definition}[Vyrovnání řetězců \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}]
+%  Jako množinu všech vyrovnání $G(\alpha, \omega)$ řetězce $\alpha$ na řetězec $\omega$ (kde $(\epsilon, \epsilon) \neq \alpha, \omega \in \Sigma^*$) označme takovou množinu $\{ \zeta \in E^+ \mid \zeta \text{splňuje vlastnosti 1., 2. i 3.}\}$
+%  \begin{enumerate}
+%   \item $\zeta = z_1 z_2 \dots z_r$, $z_i \neq (\epsilon, \epsilon)$ pro všechna $i \in 1, \dots, r$,
+%   \item ${z_1}^\downarrow {z_2}^\downarrow \dots {z_r}^\downarrow = \alpha$
+%   \item ${z_1}^\uparrow {z_2}^\uparrow \dots {z_r}^\uparrow = \omega$
+%  \end{enumerate}
+% \end{definition}
+% 
+% V tento okamžik máme formálně zavedena vyrovnání řetězců. Můžeme tedy přejít k práci s nimi. Ukážeme si způsob, jak pomocí vyrovnání řetězců spočítat podobnost dvojice řetězců. Na základě tohoto výpočtu pak sestavíme automat, který tento výpočet bude realizovat.
+% 
+% Pro uřčení podobnosti na základě vyrovnání řetězců budeme potřebovat znát míry pravdivosti editačních operací. Vstupem pro výpočet podobnosti řetězců tak bude navíc binární fuzzy relace $R$ nad množinou všech editačních operací ($E$), udávající stupeň akceptovatelnosti kadždé z možných editačních operací. S touto znalostí můžeme nadefinovat relaci podobnosti řetězců, tzv. fuzzy míru dvojice řetězců $\alpha$ a $\omega$.
+% 
+% \TODO{Musí být $R$ reflexivní a symetrická (def. automatu to vyžaduje, ale je to nutné?). A co T-tranzitivita?} \TODO{Takové relaci se říká relace podobnosti (proximity relation)}
+% 
+% \begin{definition}[Fuzzy míra\cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}]\label{def-FuzzMir}
+%  Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$. Pak jako fuzzy míru mezi řetězci $\alpha, \omega \in \Sigma^*$ (značenou $S_{\Sigma, R, \otimes}$) označme fuzzy relaci danou následujícím předpisem:
+%  $$
+%  S_{\Sigma, R, \otimes} = 
+%   \begin{cases}
+%    1	&	\text{ pokud } (\alpha, \omega) = (\epsilon, \epsilon) \\
+%    \max\limits_{\zeta \in G(\alpha, \omega)} (\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) )	&	\text{ pokud } (\alpha, \omega) \neq (\epsilon, \epsilon) 
+%   \end{cases}
+%  $$
+% % kde $\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) = R(\zeta_1) \otimes R(\zeta_2) \otimes \dots \otimes R(\zeta_{|\zeta|}$ pro $zeta_1 zeta_2 \dots zeta_{|\zeta|} = \zeta \in G(\alpha, \omega)$.
+% \end{definition}
+% 
+% Definice fuzzy míry je vcelku intuitivní. Počítá se míra všech možných vyrovnání z nichž se vybírá ta největší. Míra vyrovnání se určuje jako t-norma ze všech $R(\zeta_i)$, tedy stupňů akceptovatelnosti jednotlivých editačních operací. Navíc, míra mezi dvojicí prázdných řetězců je dodefinována jako $1$.
+% 
+% Označme $\mathcal{L}(\omega)$ jako fuzzy jazyk řetězců \uv{podobných} řetězci $\omega$ s podobností danou relací $R$. Takový jazyk pak můžeme nadefinovat pro  všechna $\alpha \in \Sigma^*$ následujícím předpisem
+% $$
+%  \mathcal{L}(\omega)(\alpha) = S_{\Sigma, R, \otimes}(\alpha, \omega)
+% $$
+% 
+% Nyní zkonstruujeme nedeterministický fuzzy automat s $\epsilon$-přechody, který jazyk $\mathcal{L}$ rozpoznává. 
+% \TODO{rozpoznává vs. přijímá, pozor na to}
+% 
+% \begin{definition}[Automat rozpoznávající $\mathcal{L}$ \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}] \label{def-AutRozpCalL}
+%  Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$ (stejná jako v definici \ref{def-FuzzMir}). Pak pro vzorový řetězec $a_1 a_2 \dots a_n = \omega \in \Sigma^*$ označme $M_{\Sigma, R, \otimes}(\omega)$ automat rozpoznávající jazyk $\mathcal{L}(\omega)$ dle definice \ref{def-NedFuzzAutEpsPre}, takový, že
+%  \begin{enumerate}
+%   \item množina stavů $Q = \{ q_0, q_1, \dots q_n \}$
+%  % \item $\Sigma$ automatu je stejná jako $\Sigma$ v parametru
+%   \item fuzzy přechodová funkce $\mu$ pro všechny $x \in \Sigma$:
+%   \begin{enumerate}
+%    \item $\mu(q_i, q_i, x) = R(x, \epsilon)$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n$
+%    \item $\mu(q_i, q_{i+1}, x) = R(x, a_{i+1})$ pro všechny $q_i, q_{i+1} \in Q$ taková, že $i = 0, \dots, n-1$
+%    \item $\mu(q, q', x) = 0$ pro všechny $q, q' \in Q$ nesplňující předchozí dva body
+% 
+%    \item $\mu(q_i, q_i, \epsilon) = 1$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n$
+%    \item $\mu(q_i, q_{i+1}, \epsilon) = R(\epsilon, a_{i+1})$ pro všechny $q_i \in Q$ taková, že $i = 0, \dots, n-1$
+%    \item $\mu(q, q', \epsilon) = 0$ pro všechny $q, q' \in Q$ nesplňující předchozí dva body 
+%   \end{enumerate}
+%   \item množina počátečních stavů $\sigma$: $\sigma(q_0) = 1$ a pro všechny ostatní $q_0 \neq q' \in Q$: $\sigma(q') = 0$ 
+%   \item množina koncových stavů $\eta$: $\eta(q_n) = 1$ a pro všechny ostatní $q_n \neq q' \in Q$: $\eta(q') = 0$
+%  \end{enumerate}
+% \end{definition}
+% 
+% Máme nadefinován fuzzy automat rozpoznávající jazyk $\mathcal{L}(\omega)$. Bylo by však vhodné dokázat, že jazyk $\mathcal{L}(\omega)$, který tento automat rozpoznává je skutečně jazykem řetězců podobných řetězci $\omega$ s podobností danou relací $R$. Vzhledem ke složitosti důkazu tohoto tvrzení se v této práci spokojíme pouze s ilustrací na příkladu.
+% \begin{theorem}\label{the-JazAutJeJazEditOper}
+%  Mějme binární fuzzy relaci $R$ nad $\Sigma \cup \{\epsilon\}$ (stejná jako v definici \ref{def-FuzzMir}) a vzorový řetězec $\omega \in \Sigma^*$. Pak pro automat $M_{\Sigma, R, \otimes}(\omega)$ sestavený dle předcházející definice a fuzzy míru $S_{\Sigma, R, \otimes}$ platí následující rovnost
+%  $$
+%   \mathcal{L}(M_{\Sigma, R, \otimes}) = \mathcal{L}(\omega)
+%  $$
+% \end{theorem}
+% \begin{proof}
+%  Kompletní důkaz je k nalezení v \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}.
+% \end{proof}
+% 
+% \TODO{sazba symbolů v matematickém módu vs. verbatim řetězce v textovém}
+% 
+% \begin{example} \label{ex-AutRozpCalL}
+%  Uvažujme abecedu $\Sigma = \{a, b, c\}$ a vzorový řetězec $\omega = abc$. Zkonstruujeme automat, který bude akceptovat ve stupni $0.5$ náhradu symbolu $x$ symbolem s ním v abecedě sousedícím. Navíc uvažujme vložení symbolu $a$ ve stupni $0.2$ a odebrání symbolu $c$ ve stupni $0.1$. Tedy, relace $R$ bude vypadat následovně:
+%  \begin{align*}
+%   R = \{ 
+%    & (a, a)/1, (b, b)/1, (c, c)/1, \\
+%    & (b, a)/0.5, (a, b)/0.5, (c, b)/0.5, (b, c)/0.5, \\
+%    & (a, \epsilon)/0.2, (\epsilon, c)/0.1 \}
+%  \end{align*}
+% 
+%  Dle definice \ref{def-AutRozpCalL} můžeme sestavit automat $M_{\Sigma, R, \otimes}$. Jako $\otimes$ použijme produktovou t-normu. Získáme tak automat $M_{\Sigma, R, \otimes} = (Q, \Sigma, \mu, \sigma, \epsilon)$ takový, že:
+%   \begin{enumerate}
+%   \item $Q = \{ q_0, q_1, q_2, q_3 \}$
+%   \item $\mu = \{ $
+%   \begin{enumerate}
+%    
+%    \item $(q_0, q_0, a)/0.2, (q_1, q_1, a)/0.2, (q_2, q_2, a)/0.2, (q_3, q_3, a)/0.2),$
+%    \item $(q_0, q_1, a)/1, (q_1, q_2, a)/0.5,$ \\
+%    $(q_0, q_1, b)/0.5, (q_1, q_2, b)/1, (q_2, q_3, b)/0.5,$ \\
+%    $(q_1, q_2, c)/0.5, (q_2, q_3, c)/1,$
+%    \addtocounter{enumii}{1} %\item  \TODO{takové, jako $(q_3, q_1, a)$}
+%    \item $(q_0, q_0, \epsilon)/1, (q_1, q_1, \epsilon)/1, (q_2, q_2, \epsilon)/1, (q_3, q_3, \epsilon)/1),$
+%    \item $(q_2, q_3, \epsilon)/0.1$
+%    \addtocounter{enumii}{1} %\item \TODO{takové, jako $(q_3, q_1, \epsilon)$}
+%   \end{enumerate}
+%   $ \} $ (přechody dle bodů (b) a (d) v definici jsou s nulovým stupněm a ve výpisu jsou vynechány)
+%   \item $\sigma = \{ q_0/1, q_1/0, q_2/0, q_3/0  \}$
+%   \item $\eta = \{ q_0/0, q_1/0, q_2/0, q_3/1  \}$
+%   \\ \TODO{$\sigma = \{ x / y, ... \}$ by se mělo přepsat na $\sigma(x) = y, ...$, ne?}
+%  \end{enumerate}
+% 
+%  Přechodový diagram tohoto automatu je k nalezení na obrázku \ref{img-AutRozpCalL}. V přechodovém diagramu jsou červeně zvárazněny pravidla pro rozpoznávání $\omega$, ostatní pravidla (doplněna dle definice) jsou černá. 
+%  
+%  Nyní si na pár řetězcích zkuzme ukázat platnost věty \ref{the-JazAutJeJazEditOper}. Dle definice \ref{def-RetPriAut} spočítáme stupeň, v jakém automat náš testovací rozpoznává řetězec $\alpha$:
+%  \begin{align*}
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    =& \max_{q \in Q} (\mu^*(\sigma, \alpha)(q) \otimes \eta(q))) \\
+%    =& \max\{ \mu^*(\sigma, \alpha)(q_0) \otimes \eta(q_0)), \mu^*(\sigma, \alpha)(q_1) \otimes \eta(q_1)),  \\
+%     & \mu^*(\sigma, \alpha)(q_2) \otimes \eta(q_2)), \mu^*(\sigma, \alpha)(q_3) \otimes \eta(q_3)) \}   \\
+%    =& \max\{ \mu^*(\sigma, \alpha)(q_0) \otimes 0), \mu^*(\sigma, \alpha)(q_1) \otimes 0),  \\
+%     & \mu^*(\sigma, \alpha)(q_2) \otimes 0), \mu^*(\sigma, \alpha)(q_3) \otimes 1) \}   \\
+%    =&  \mu^*(\sigma, \alpha)(q_3)
+%  \end{align*}
+%   
+%  \begin{itemize}
+%   \item řětězec $\alpha = abc$:
+%   Určíme stupeň akceptance automatem:
+%   $$
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    = \mu^*(\sigma, abc) (q_3)
+%    = \widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\sigma, \epsilon), a), b), c) (q_3)
+%    = \{ q_3 / 1 \} (q_3) 
+%    = 1 
+%   $$
+%   A následně ověříme fuzzy míru. Množina všech vyrovnání bude obsahovat například $\zeta_1 = (a,a), (b,b), (c,c)$ či 
+%   $\zeta_2 = (a, \epsilon) (\epsilon, a) (b, \epsilon) (\epsilon, b) (c, \epsilon) (\epsilon, c)$. Snadno zjistíme, že $\bigotimes_{i = 1}^{|\zeta|} R(\zeta_i) $ je maximální právě pro $\zeta = \zeta_1$ a nabývá stupně $1$. A tedy $S_{\Sigma, R, \otimes}(\alpha) = 1$.
+%    
+%   \item řětězec $\alpha = ab$:
+%   $$
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    = \mu^*(\sigma, ab) (q_3)
+%    = \widehat{\mu}(\widehat{\mu}(\widehat{\mu}(\sigma, \epsilon), a), b) (q_3)
+%    = \{ q_2 / 1, q_3 / 0.1 \} (q_3)
+%    = 0,1
+%   $$
+%   $$
+%   S_{\Sigma, R, \otimes}(\alpha) 
+%    = R(a, a) \otimes R(b, b) \otimes R(\epsilon, c) 
+%    = 1 \otimes 1 \otimes 0.1
+%    = 0,1
+%   $$
+%   
+%   \item řětězec $\alpha = bbb$:
+%   $$
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    = \mu^*(\sigma, bbb) (q_3)
+%    = ...
+%    = \{ q_3 / 0,25 \} (q_3)
+%    = 0,25
+%   $$
+%   $$
+%   S_{\Sigma, R, \otimes}(\alpha) 
+%    = R(b, a) \otimes R(b, b) \otimes R(b, c) 
+%    = 0,5 \otimes 1 \otimes 0,5
+%    = 0,25
+%   $$
+%   
+%   \item řětězec $\alpha = abaca$:
+%   $$
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    = \mu^*(\sigma, abaca) (q_3)
+%    = ...
+%    = \{ q_3 / 0,04 \} (q_3)
+%    = 0,04
+%   $$
+%   $$
+%   S_{\Sigma, R, \otimes}(\alpha) 
+%    = R(a, a) \otimes R(b, b) \otimes R(a, \epsilon) \otimes R(c, c) \otimes R(a, \epsilon)
+%    = 1 \otimes 1 \otimes 0,2 \otimes 1 \otimes 0,2
+%    = 0,04
+%   $$
+% 
+%   \item řětězec $\alpha = cba$:
+%   $$
+%   M_{\Sigma, R, \otimes}(\alpha) 
+%    = \mu^*(\sigma, cba) (q_3)
+%    = ...
+%    = (\emptyset) (q_3)
+%    = 0
+%   $$
+%   $$
+%   S_{\Sigma, R, \otimes}(\alpha) 
+%    = R(c, a) \otimes R(b, b) \otimes R(a, c) 
+%    = 0 \otimes 1 \otimes 0
+%    = 0
+%   $$
+%   
+%   ...
+%   
+%  \end{itemize}
+% 
+%  Je tedy zjevné, že výpočet automatu $M_{\Sigma, R, \otimes}$ je v korespondenci s fuzzy mírou $S_{\Sigma, R, \otimes}$.
+%  
+%  \begin{figure}
+%   \includegraphics{diags4}
+%   \caption{Přechodový diagram automatu z příkladu \ref{ex-AutRozpCalL}} \label{img-AutRozpCalL}
+%  \end{figure}
+% \end{example}
+% 
+% Je vidět, že automat zkonstruován dle editačních operací je značně silný nástroj. Umožňuje nám velmi pohodlně popsat, jak moc mohou být konkrétní editační operace akceptovány. Editační operace vložení symbolu, náhrada symbolu a odebrání symbolu jsou pro popis modifikace vzorového řetězce přirozené.
+% 
+% Nevýhodou této techniky je, že jednotlivé editační operace jsou akceptovány bez ohledu na jejich výskyt v řetězci. Automat akceptuje nastanuvší editační operaci pokaždé, kde může nastat, ve stejném stupni. Často je však třeba v jiném stupni stejnou editační operaci přijímat např. na začátku a na konci řetězce pokaždé však v jiném stupni. Tento požadavek však automat zkonstruovaný pomocí editačních operací neumí zpracovat. Řešením může být například použití následující techniky.
+% 
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Deformovaný automat}
+% Dalším ze způsobů, jak přijímat řetězec podobný vzorovému je s využitím deformovaného (fuzzy) automatu. Tato technika využívá tzv. deformovaného automatu, neboli automatu který byl stanoveným způsobem upraven, neboli deformován. Tato technika byla přejata z \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}.
+% 
+% Jako deformace může být použita prakticky jakákoliv úprava automatu. Mějme fuzzy automat $A$. Provedením deformace $x$ získáme deformovaný automat $A'$, který rozpoznává jiný jazyk, než automat $A$. Mezi nejzákladnější tři deformace patří náhrada symbolu, vložení symbolu před symbol a odebrání symbolu. Možných deformací existuje nekonečně mnoho. Mezi další deformace může patřit například (pro nějaké $x, y, z \in \Sigma$ a $i \geq 0$): \uv{náhrada symbolu $x$ na $i$-té pozici symboly $yz$}, \uv{odebrání všech výskytů symbolu $x$, které se nachází před symbolem $y$} nebo \uv{vložení sudého počtu symbolů $y$ mezi symboly $x$ a $z$}.
+% 
+% Provedeme-li deformaci fuzzy automatu rozpoznávající $\omega$, můžeme se na trojici základních deformací podívat konkrétně. Ukázka toho, jak by vypadal deformovaný automat po provedení jedné ze základních deformací je vyobrazeno v tabulce \ref{tbl-DefAutDef}.
+% 
+% \begin{table}[h]
+%  \begin{tabular}{|l|l|}
+%   \hline
+%   Deformace	& Význam deformace	 \\
+%   \hline
+%   \textsc{Náhrada} symbolu na $i$-té pozici (symbolu $x$) symbolem $y$ & \includegraphics{diags1} \\	  
+%     $\delta' = \delta \cup \{ (q_i, y, q_{i+1}) \}$, $Q' = Q$	&	\\
+%   \textsc{Vložení} symbolu $y$ na $i$-tou pozici (před symbol $x$) & \includegraphics{diags2} \\
+%     $\delta' = \delta \setminus \{ (q_i, x, q_{i+1} ) \} \cup \{ (q_i, \epsilon, q'_i), (q_i, y, q'_i), (q'_i, x, q_{i+1}) \}$, $Q' = Q \cup \{ q'_i \}$	 & \\
+%   \textsc{Odebrání} symbolu z $i$-té pozice (symbolu $x$) & \includegraphics{diags3} \\
+%     $\delta' = \delta \cup (q_i, \epsilon, q_{i+1})$, $Q' = Q$	 & \\
+%   \hline
+%  \end{tabular}
+%  \caption{Deformace deformovaného automatu}\label{tbl-DefAutDef}
+%  \TODO{pozor, toto je pro konečné automaty, ne pro fuzzy automaty!}
+% \end{table}
+% 
+% Je vidět, že deformace mohou být účinným nástrojem pro rozpoznávání modifikovaných pozorovaných řetězců. Na druhou stranu, deformování automatu vyžaduje znalost fungování automatů. Často také může nastat situace, kdy výsledný zdeformovaný automat bude více, než deformovaný automat rozpoznávající $\omega$, automatem reprezentující samostatný netriviální vzor.
+
+% \subsection{Shrnutí}
+% V této kapitole byl zaveden pojem rozpoznávání textových vzorů. Bylo ukázáno, že pro klasickou teorii automatů je to triviální problém, který však kvůli nepřesnostem reálných dat vyžaduje nasazení fuzzy automatů. Bylo představeno několik technik, které pomocí fuzzy automatů umožňují přijímání řetězců podobných vzorovému. 
+% 
+% Nejjednodušší z nich, využívající relaci podobnosti symbolů, je vhodná na prosté nahrazování podobných symbolů. Technika fuzzy symbolů funguje na stejném principu, jen se liší ve formálním zavedení. Technika s využitím editačních operací umožňuje specifikovat stupeň akceptance základních editačních operací (vložení symbolu, odebrání symbolu, náhrada symbolu). Poslední technika, deformovaný automat, umožňuje libovolnou transformaci automatu, vedoucí až k libovolnému vzoru.
+
+% 
+% \subsection{Strojové učení}
+% 
+% Strojové učení je technika pro přibližné řešení komplikovaných či složitých problémů. Spočívá v tom, že namísto přímého hledání algoritmu, který požadovaný problém řeší, navrhujeme algoritmus, jehož vstupem je popis problému (ve vhodném formátu) a výstupem je algoritmus pro řešení problému. Pro popis problému se typicky používá deklarativní přístup, tj. \uv{co má být při určitém vstupu výsledkem} namísto \uv{jak ze vstupu spočítat výsledek}.
+% 
+% Je třeba mít na paměti, že správnost \uv{vygenerovaného algoritmu} závisí na správnosti popisu řešeného problému. Vzhledem k tomu, že strojové učení se používá pro komplikované problémy, popis problému vkládaný do patřičné techniky strojového učení bude zřejmě zjednodušený. Tím vzniká prostor pro nepřesnost řešení.
+% 
+% Na druhou stranu, s použitím fuzzy či pravděpodobnostního přístupu můžeme tento fakt vzít v potaz. Vygenerovaný algoritmus tak sice nebude fungovat správně, nicméně jeho výsledkem bude moci být například \uv{$y$ je správným řešením s pravděpodobností $p$} či \uv{$z$ je správným řešením ve stupni $d$}. Propojení strojového učení s fuzzy nebo pravděpodobnostního přístupu by tak mělo být přínosem. Navíc, jak bude ukázáno, může být i přirozené.
+% 
+% Mezi nejznáměnšjí techniky strojového učení patří například neuronové sítě, rozhodovací stromy či shlukování. Následuje popis neuronových sítí. Ty mají totiž nejlepší předpoklady pro provázání s fuzzy automaty a následné využití v praxi.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Neuronové sítě}
+% Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk známých z biologie. Vygenerovaný algoritmus je tvořen sítí tzv. neuronů, které jsou propojeny v zpravidla rozsáhlou síť. Tato síť obsahuje spoustu parametrů, které jsou nastaveny tak, aby síť tvořila algoritmus řešící požadovaný problém. 
+% 
+% Následuje formální zavedení uvedených pojmů. Popis neuronových sítí je převzat z \cite{FieRus-HanNeuCom}. Označme $X$ jako tzv. signální množinu, tj. množinu všech možných hodnot, kterých mohou nabýt signály přešenášené prostřednictvím spojení. Dále označme $S$ jako množinu stavů neuronů. 
+% 
+% V tomto textu budeme jako signální množinu $X$ pokládat reálný interval $(0, 1)$ (v souladu s fuzzy teorií), jako množinu $S$ stavů pak množinu všech reálných čísel. Dále budeme uvažovat pouze neurony diskrétní (v čase). Říkáme, že diskrétní neuron $s$ nabývá v čase $t \in \mathbb{N}$ stavu $s(t)$. Dále označnme $y(t)$ jako výstup neuronu $s$ v čase $t$.
+% 
+% \begin{definition}[Diskrétní neuron]
+%  Jako diskrétní neuron označujeme dvojici funkcí $f: X^n \times S \rightarrow S$ (přechodová funkce) a $g: S \rightarrow X$ (výstupní funkce) tak, že:
+%  \begin{align*}
+%   s(t) &= f(x_1(t - 1), \dots x_n(t - 1), s(t - 1)) \\
+%   y(t) &= g(s(t))
+%  \end{align*}
+% \end{definition}
+% 
+% \begin{note}
+%  $x_1$, ..., $x_n$ v předchozí definici značí signální spojení, a to buď ze vstupů sítě k neuronům, nebo mezi jednotlivými neurony.
+% \end{note}
+% 
+% \begin{example}
+%  Pro jeden z nejznáměnších, tzv. McCulloch-Pittsův neuron, vypadají funkce $f_j$ a $g_j$ neuronu $s_j$ následovně:
+%  \begin{align*}
+%   f_j(x_{1,j}(t), \dots x_{n,j}(t), s_j) &=  \sum_{i=1}^n w_{i,j} x_{i,j}(t) \\
+%   g_j(x) &= 
+%    \begin{dcases}
+%     0 & \text{ pokud $x < \theta_j$} \\
+%     1 & \text{ pokud $x \geq \theta_j$}
+%    \end{dcases}
+%  \end{align*}
+%  kde $w_{1,j}, \dots, w_{n,j}$ jsou tzv. synaptické váhy neuronu $s_j$ a $\theta_j$ je jeho tzv. prahová hodnota. 
+% \end{example}
+% 
+% \begin{definition}[Neuronová síť]
+%  Jako neuronovou síť označme strukturu $(X, S, N, I, O, o)$, kde $X$ (signální množina) a  $S$ (množina stavů) byly popsány výše, $N$ je množina neuronů, $I \subseteq X^m$ je množina vstupních spojení a $O \subseteq X^n$ množina výstupních spojení a $o: N \rightarrow O$ zobrazení propojující neurony s výstupními spojeními.
+% \end{definition}
+% 
+% \begin{definition}[Rekurentní a přímočará neuronová síť]
+%  Obsahuje-li neuronová síť cyklus, tj. existuje v ní alespoň jeden neuron $s$ splňující
+%  $$
+%   s(t) = f(s_1(t - 1), \dots, s_2(t - 1 + k), \dots, s_n(t - 1), s(t - 1)) \\
+%  $$
+%  kde $k \geq 1$, pak se síť nazývá rekurentní. V opačném případě se nazývá přímočará.
+% \end{definition}
+% 
+% \begin{example}
+%  Mějme $I = \{ x_1, x_2, x_3 \}$, $I = \{ y_1, y_2, y_3 \}$ a $o(s_4) = y_1$, $o(s_6) = y_2$, $o(s_3) = y_3$. Pak pro množinu $N = \{ s_1, s_2, s_3, s_4, s_5, s_6 \}$ McCulloch-Pittsových neuronů znázorněných na obrázku \ref{img:SimplNeuNet} tvoří $(X, S, N, I, O, o)$ přímočarou neuronovou síť.
+% \end{example}
+% 
+% \begin{figure}
+%  \centering
+%  \includegraphics{neurals0}
+%  \caption{Ukázka neuronové sítě} \label{img:SimplNeuNet}
+% \end{figure}
+% 
+% \subsection{Konstrukce neuronové sítě}
+% Existují dva základní způsoby, jak zkonstruovat neuronovou síť. Prvním je pomocí znalostní báze a druhý pomocí trénovacích dat. Jak znalostní báze, tak trénovací data nám zde plní ůčel popisu problému, který má neuronová síť řešit. V praxi se často používá kombinace obou přístupů.
+% 
+% Uvažujme, že máme Množinu $P$ If-Then pravidel \uv{Jestliže $x_{j,1}, \dots, x_{j,n}$ pak $y_j$ }. Pak pro tuto množinu můžeme vytvořit neuronovou síť tak, že každému pravidlu $j$ vytvoříme následující neuron: \TODO{doplnit pravidlo pro disjunkce, tj. když je více pravidel s \uv{pak $y$}}
+% $$
+%   y_j(t) = s_j(t) = x_{j,1}(t - 1) \wedge \dots \wedge x_{j,n}(t - 1)
+% $$
+% 
+% Takto vytvořená neuronová síť bude schopna pracovat jak s klasickými If-Then pravidly, tak i s fuzzy If-Then pravidly.
+% 
+% Druhým způsobem, jak zkonstruovat neuronovou síť, je pomocí trénovacích dat. Tato technika se dále dělí na učení s učitelem a učení bez učitele. V tomto textu se spokojíme s popisem učení s učitelem.
+% 
+% Hovoříme-li o trénovacích datech v souvislosti s učením s učitelem, pak jako trénovací data považujeme konečné zobrazení, které vstupům problému přiřazuje správné nebo očekávané výsledky. Na počátku se sestaví neuronová síť s náhodnými parametry a tzv. učení se její parametry postupně modifikují tak, aby byla schopna správně přiřazovat vstupům z trénovací množiny odpovídající výstupy.
+% 
+% \TODO{backpropagation algorithm (běžný algoritmus učení)?}
+% 
+% V praxi je možné oba přístupy kombinovat. Typicky se tedy sestaví neuronová síť pomocí znalostní báze, která je následně pomocí trénovacích dat přizpůsobena skutečným datům. Navíc, díky znalostní bázi neuronová síť je hned má hned v prvních fázích učení určitý přehled o řešeném problému a její učení tak může probíhat značně efektivněji. \TODO{fakt?}
+% 
+% \subsection{Fuzzy automaty a neuronovky}
+% Bylo zjištěno, že fuzzy automat může být konvertován do neuronové sítě. Této problematice se věnují např. v \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} \cite{BlaDelPeg-FuzzAutIndUsNeuNet}, \cite{GilOmlTho-EquKnoRep+}, \cite{OmlThoGil-RepFuzFinStaAuConRecNeuNet}, \cite{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}, \cite{PedGac-LeaFuzzAut}.
+% 
+% Ve zjednodušené podobě se bude jednat o neuronovou síť, která bude realizovat jen přechodovou funkci, tj. přechod mezi stavy na základě vstupu. Vstupem neuronové sítě bude zakódování fuzzy stavu, v jakém se automat nachází a symbol na vstupu automatu. Výsledkem výpočtu pak bude informace, do jakého/jakých stavů by měl automat přejít, tj. opět fuzzy stav.
+% 
+% Na základě neuronové sítě realizující přechodovou funkci pak může být sestavena neuronová síť, která si sama pamatuje fuzzy stav, v jakém se výpočet nachází. Vzhledem k tomu, že taková neuronová síť bude muset být rekurentní, bude její struktura složitější a nad rámec této práce. Vstupem takové neuronové sítě pak bude v jednotlivých časových kvantech vstupní symboly a na výstupu číslo z intervalu $(0, 1)$ reprezentující stupeň, v jakém je zadaný řetězec automatem přijímán.
+% 
+% Sestavíme-li neuronovou síť pomocí přechodové funkce $\mu$ nám známého automatu $A$ budeme  generovat dvojice $(((q, d), a), (q', d')) \in \mu^*$ \TODO{je to tak?} tj. \uv{je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak přejde do stavu $q'$ ve stupni $d'$}. Například v \cite{BlaDelPeg-FuzzAutIndUsNeuNet} autoři demonstrují učení na automatu o dvou stavech a nad dvojprvkovou abecedou. Již po $5$ trénovacích dvojících se síť naučila rozpoznávat s $95\%$ přesností a po $432$ pokusech rozpoznávala se $100\%$ přesností (při toleranci stupně pravdivosti $1.25 . 10^{-7}$).
+% 
+% Lze však použít i konstrukce s pomocí znalostní báze. V takovém případě je třeba zformulovat If-Then pravidla síť popisující. Pro každý přechod
+% $$
+%  \delta((q, d), a) = (q', d')
+% $$
+% tedy sestavíme If-Then pravidlo
+% $$
+%  \text{Je-li automat ve stavu $q$ ve stupni $d$ a na vstupu je symbol $a$, pak automat přejde do stavu $q'$ ve stupni $d'$}
+% $$
+% Na základě této znalostní báze může být navržena neuronová síť implementující přechodovou funkci automatu.
+% 
+% Opačný vztah, tj. jak z neuronové sítě zpět získat fuzzy automat je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
+% 
+% Poněkud elegantní způsob, jak z neuronové sítě vyextrahovat automat je popsán v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}. Autoři uvažují neuronovou síť jako nástroj, který rozpoznává (v odstupňované pravdivosti) ($n$-dimenzionální) podprostory prostoru $(0, 1)^n$. Každou souřadnici v tomto prostoru pak rozkládají symboly abecedy automatu, tj. každému vektoru v tomto prostoru přiřazují řetězec nad abecedou automatu. Vzniklá struktura, kterou je vlastně kd-tree, pak tvoří automat.\footnote{Tímto způsobem vygenerovaný automat je automat dle definice \TODO{doplnit ten, co má ostré přechody, ale fuzzy koncové stavy}} \TODO{Zapsat to nějak aspoň trochu lidsky, je např. potřeba doplnit práci s cykly}?
+% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Učící se fuzzy automaty}
+% 
+% V předchozích kapitolách byly prezentovány techniky, jak konvertovat fuzzy automat na neuronovou síť a zpět. Konverzí automatu na neuronovou síť obdržíme nástroj, který nám umožňuje učení, tj. adaptaci modelu na jiná data. Zpětnou extrakcí automatu tak můžem obdržet automat, který rozpoznává jiný jazyk, a to jazyk který odpovídá trénovacím datům.
+% 
+% Tento postum lze však s určitou újmou na obecnosti zjedodušit. Namísto konverze automatu na neuronovou síť, její modifikaci a následnou konverzi zpět, je možné automat modifikovat napřímo. Této technice se říká učící se automat. Této technice se věnují např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} a \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} je použit buněčný fuzzy učící se automat. V \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} používají pro učení pokročilejší techniku založenou na genetických algoritmech. Obdobně, v \cite{ZhiMinLan-EvoStraIndFuFiStaAu} učením generují kompletně nový automat (tedy přeučením náhodného).
+% 
+% Základní myšlenka techniky učících se automatů je obvykle, že jednotlivé stupně pravdivosti, které figurují v instanci automatu, mohou být pozměněny. V rozšířené podobě je pak možné automat rozšiřovat o kompleně nové stavy a přechody.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1771,6 +1816,7 @@ Problém je však ten, že některé části (např. počet stran) jsou nepovinn
 
 \subsection{Pravděpodobnostní rozpoznávání přirozeného textu}
 V \cite{KniGra-OvProTreTraNatLanPro} zpracovávají přirozený jazyk. Vzhledem k podstatě gramatiky přirozeného jazyka využívají pravděpodobnostní tree automaty. \TODO{příklad gramatického stromu}?
+
 
 
 
@@ -1975,6 +2021,36 @@ V \cite{Cas+-ProAutAspBasSenAna} pomocí pravděpodobnístních automatů analyz
 
 \subsection{Generátor strojového člověka}
 V \cite{SchYou-ProSimHumMacDia} používají automat jako generátor strojového člověka, konkrétně jako pracovníka banky. Generuje dotazy a, a na základě podnětů od člověka získává informace, co a jak chce (v jejich příkladě, bankovním pracovníku, jestli chce člověk vybrat peníze, nebo provést transakci z účtu na účet). \TODO{Tak ale tohle je spíš práce pro gramatiky, ne?}
+
+
+\subsection{Metoda lisování dat}
+\TODO{zkusit nějaký známý dataset, něco z toho, co jsme dělali v KMI/ZZD}
+Autor práce prezentuje novou, jednoduchou, techniku strojového učení. Výhodou této techniky je, že je založena čistě na teorii fuzzy automatů, není třeba žádné další techniky strojového učení.
+
+Vstupem této techniky je (konečná a neprázdná) množina trénovacích dat ve formě jazyka $L$ nad známou abecedou $\Sigma$ a koeficient přesnosti $\sigma$. Výstupem je poté fuzzy automat $A_{L,\sigma}$, který jazyk $L$ přijímá tak, že pro všechna $w \in L$ platí:
+$$
+  A_{L,\sigma}(w) \geq \sigma
+$$
+tj. že řetězec $w$ je automatem přijímán alespoň ve stupni $\sigma$. U řetězců, které do jazyka $L$\footnote{Jazyk $L$ může být klidně fuzzy jazyk, následný postup se pak jen patřičně upraví} nepatří (tj. $w' \in \Sigma^* \setminus L$) by posléze měl automat být schopen určit jak moc se jazyku $L$ podobají, tj. určit stupeň $A_{L,\sigma}(w')$.
+
+Postup konstrukce automatu $A_{L,\sigma}$ je násleudjící:
+\begin{enumerate}
+ \item Máme jazyk $L$, který je konečný. Je tedy zřejmě i regulérní.
+ \item K jazyku $L$ sestavíme nedeterministický konečný automat $A_{L}$ rozpoznávající $L$. Takový automat bude v nejhorším případě obsahovat $\sum_{w \in L} |w|$ stavů.
+ \item K automatu $A_{L}$ vytvoříme nedeterminstický fuzzy automat $A'_{L}$.
+ \item Fuzzy minimalizací automatu $A'_{L}$ se stupněm $\sigma$ získáme hledaný automat $A_{L,\sigma}$.
+\end{enumerate}
+
+Klíčovým bodem této techniky je minimalizace automatu. Technika předpokládá, že jazyk trénovacích dat v sobě obsahuje jeden nebo více jednoduchých regulérních jazyků (ať už jako podmnožiny nebo jako podřetězce vybraných řetězců). Části automatu reprezentující tyto \uv{podjazyky} budou minimalizací zmenšeny. Ve výsledku se tak dá očekávat značné zmenšení velikosti automatu.
+
+Navíc, vygenerovaný automat poměrně přehledně popisuje strukturu ve vstupním jazyce. Technika tak může být použita pro odtranění šumu a nepřesností v jazyce $L$.
+
+Technika lisování dat bude naimplementována a experimentálně ověřena. \TODO{naprogramovat, ověrit} Jednou z možností, kde by mohla tato technika být uplatněna, by bylo určování síly přihlašovacícho hesla. Vstupem by byla databáze uživatelských hesel s informací od experta, která hesla jsou silná a která slabá. Ze silných hesel by poté byl sestaven jazyk, na který by bylo aplikováno lisování dat. Výsledkem by byl automat, který rozpoznává silná hesla. Tato aplikace však nebyla naimplementována, vzhledem k tomu, že je z bezpečnostních důvodů nemožné získat databázi uživatelských hesel.
+
+Další z možných aplikací je určování dělitelnosti čísel. Uvažujme abecedu symbolů číslic, tj. $\Sigma = \{ 0, \dots, 9 \}$ a jazyk $L \subseteq S^*$ čísel dělitelných čtyřmi. Při velikosti jazyka $x$ a koeficientu $\sigma = y$ se podařilo automatu dosáhnout $z$ úspěšného rozpoznávání čísel dělitelných $4$ ve stupni vyšším, než $w\%$. \TODO{naprogramovat, ověrit}
+
+Podobnou techniku používají v \cite{Hac+-ProAnaLarFinStaMac}, jen s pravděpodobnostními automaty.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

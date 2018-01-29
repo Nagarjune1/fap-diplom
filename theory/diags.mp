@@ -2,6 +2,11 @@ input automata;
 outputtemplate:="%j%c.mps";
 
 
+%% XXXXX
+%% XXXXX THIS FILE IS TO BE DELETED
+%% XXXXX
+
+
 %verbatimtex
 %btex
 %% generic layout
