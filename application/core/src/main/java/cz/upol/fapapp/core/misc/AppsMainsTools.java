@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cz.upol.fapapp.core.fuzzy.tnorm.BaseTNorm;
+import cz.upol.fapapp.core.fuzzy.tnorm.GodelTNorm;
+import cz.upol.fapapp.core.fuzzy.tnorm.LukasiewiczTNorm;
+import cz.upol.fapapp.core.fuzzy.tnorm.ProductTNorm;
+import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import javafx.application.Application.Parameters;
@@ -68,11 +73,12 @@ public class AppsMainsTools {
 		}
 
 		checkVerbocity(argsList);
+		checkTNorm(argsList);
 
 		if ((minArgs != null && argsList.size() < minArgs) || (maxArgs != null && argsList.size() > maxArgs)) {
 			System.err.println("Expected " + minArgs + " up to " + maxArgs + " args, given " + argsList.size() + " ("
 					+ argsList + "). Printing help");
-			helpPrinter.run();
+			printHelp(helpPrinter);
 			System.exit(2);
 			return null;
 		}
@@ -90,12 +96,21 @@ public class AppsMainsTools {
 	 */
 	private static boolean checkHelp(List<String> argsList, Runnable helpPrinter) {
 		if (argsList.size() == 1 && ("--help".equals(argsList.get(0)) || "-h".equals(argsList.get(0)))) {
-			helpPrinter.run();
+			
+			printHelp(helpPrinter);
 			System.exit(0);
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	private static void printHelp(Runnable helpPrinter) {
+		System.out.println("General usage: PROGRAM FLAGS PROGRAM_ARGS");
+		helpPrinter.run();
+		System.out.println("FLAGS: [-v|--verbose] [-t|--tnorm <TNORM>]");
+		System.out.println("	where <TNROM> is Godel|product|Lukasiewicz");
+		
 	}
 
 	/**
@@ -108,6 +123,47 @@ public class AppsMainsTools {
 		if (argsList.size() >= 1 && ("--verbose".equals(argsList.get(0)) || "-v".equals(argsList.get(0)))) {
 			Logger.get().setVerbose(true);
 			argsList.remove(0);
+		}
+	}
+
+	/**
+	 * If first arg is {@code -t} or {@code --tnorm}, parses next one. If
+	 * succeeds, sets appropiate instance into {@link TNorms}.
+	 * 
+	 * @param argsList
+	 */
+	private static void checkTNorm(List<String> argsList) {
+		if (argsList.size() >= 1 && ("--tnorm".equals(argsList.get(0)) || "-t".equals(argsList.get(0)))) {
+			argsList.remove(0);
+			if (argsList.isEmpty()) {
+				Logger.get().warning("Missing t-norm spec");
+				return;
+			}
+
+			BaseTNorm tnorm = parseTnorm(argsList.get(0));
+			if (tnorm == null) {
+				Logger.get().warning("Invalid t-norm spec, see help");
+				return;
+			}
+
+			TNorms.setTnorm(tnorm);
+			Logger.get().moreinfo("Will use " + tnorm.getClass().getSimpleName());
+		}
+	}
+
+	private static BaseTNorm parseTnorm(String spec) {
+		switch (spec) {
+		case "minimum":
+		case "Godel":
+		case "godel":
+			return new GodelTNorm();
+		case "product":
+			return new ProductTNorm();
+		case "Lukasiewicz":
+		case "lukasiewicz":
+			return new LukasiewiczTNorm();
+		default:
+			return null;
 		}
 	}
 

@@ -3,6 +3,7 @@ package cz.upol.fapapp.core.sets;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -157,6 +158,17 @@ public class CollectionsUtils {
 	public static Alphabet inferAlphabetOfWord(Word word) {
 		// TODO move to Alpabet or Word class?
 		return new Alphabet(word.getSymbols().stream().collect(Collectors.toSet()));
+	}
+
+	public static Alphabet createAlphabet(char from, char to) {
+		Set<Symbol> symbols = new HashSet<>();
+
+		for (char ch = from; ch < to; ch++) {
+			Symbol symbol = new Symbol(Character.toString(ch));
+			symbols.add(symbol);
+		}
+
+		return new Alphabet(symbols);
 	}
 
 }
