@@ -8,6 +8,8 @@ import org.junit.Test;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.fuzzy.tnorm.GodelTNorm;
+import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.Logger;
@@ -18,6 +20,7 @@ public class FuzzyAutomataTest {
 	@BeforeClass
 	public static void init() {
 		Logger.get().setVerbose(true);
+		TNorms.setTnorm(new GodelTNorm());
 	}
 
 	@Test

@@ -11,6 +11,7 @@ import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
@@ -61,8 +62,8 @@ public class FuzzyAutomata extends BaseFuzzyAutomata {
 				Degree transitionDegree = transitions.get(transition);
 
 				Degree toDegreeOld = toFuzzyStateMap.get(to);
-				Degree toDegreeNew = Degree.infimum(fromDegree, transitionDegree);
-				Degree toDegree = Degree.supremum(toDegreeOld, toDegreeNew);
+				Degree toDegreeNew = TNorms.getTnorm().tnorm(fromDegree, transitionDegree);
+				Degree toDegree = TNorms.getTnorm().tconorm(toDegreeOld, toDegreeNew);
 
 				toFuzzyStateMap.put(to, toDegree);
 			}
