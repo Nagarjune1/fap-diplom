@@ -1,13 +1,13 @@
 package cz.upol.fapapp.fa.gui.comp;
 
-import java.util.stream.Collectors;
-
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.fa.gui.data.Direction;
 import cz.upol.fapapp.fa.gui.data.Multipath;
 import cz.upol.fapapp.fa.gui.data.Path;
 import cz.upol.fapapp.fa.gui.data.PathSegment;
+import cz.upol.fapapp.fa.gui.misc.DirectionOrientedStrategy;
+import cz.upol.fapapp.fa.gui.misc.FromStartStrategy;
+import cz.upol.fapapp.fa.gui.misc.PathSegmentationStrategy;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.Event;
@@ -18,6 +18,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 public class FxPathableCanvas extends Canvas {
 	public static final EventType<Event> NEW_POINT_EVENT = new EventType<>("new point");
@@ -25,20 +26,28 @@ public class FxPathableCanvas extends Canvas {
 	public static final EventType<Event> NEW_PATH_EVENT = new EventType<>("new path");
 
 	private static final Color BACKGROUND_COLOR = Color.WHITE;
+
+	private static final Color LINE_COLOR = Color.GRAY;
 	private static final double LINE_WIDTH = 1;
 
+	private static final Paint DOTS_COLOR = Color.SALMON;
+	private static final double DOT_RADIUS = 2;
+
+	private static final PathSegmentationStrategy DEFAULT_STRATEGY = new FromStartStrategy();
+
+	private final PathSegmentationStrategy strategy;
 	private final IntegerProperty shake;
 
 	private Multipath paths;
 
 	public FxPathableCanvas() {
 		this(400, 300);
-
 	}
 
 	public FxPathableCanvas(double width, double height) {
 		super(width, height);
 
+		this.strategy = DEFAULT_STRATEGY;
 		this.shake = new SimpleIntegerProperty();
 
 		reset(true, true);
@@ -85,7 +94,7 @@ public class FxPathableCanvas extends Canvas {
 		if (resetPath) {
 			startNewMultipath();
 		}
-		
+
 		if (clear) {
 			clear();
 		}
@@ -101,6 +110,7 @@ public class FxPathableCanvas extends Canvas {
 		getPaths().addPath(new Path());
 
 		startNewSegment();
+		strategy.newPathStarted();
 	}
 
 	private void startNewSegment() {
@@ -125,9 +135,18 @@ public class FxPathableCanvas extends Canvas {
 
 	private void drawLine(Point2D from, Point2D to) {
 		GraphicsContext ctx = getGraphicsContext2D();
+
+		ctx.setFill(LINE_COLOR);
 		ctx.setLineWidth(LINE_WIDTH);
 		ctx.strokeLine(from.getX(), from.getY(), to.getX(), to.getY());
 
+	}
+
+	private void drawSegmentSplit(Point2D position) {
+		GraphicsContext ctx = getGraphicsContext2D();
+
+		ctx.setFill(DOTS_COLOR);
+		ctx.fillOval(position.getX() - DOT_RADIUS, position.getY() - DOT_RADIUS, 2 * DOT_RADIUS, 2 * DOT_RADIUS);
 	}
 
 	private void clear() {
@@ -140,22 +159,18 @@ public class FxPathableCanvas extends Canvas {
 	/////////////////////////////////////////////////////////////////////////
 
 	protected void appendNewPoint(Point2D newPosition) {
-		Direction dirToNew;
+		Path currentPath = getCurrentPath();
+		PathSegment currentSegment = getCurrentSegment();
+		int shaking = shake.get();
+		boolean isNewSegment = strategy.isNewSegment(currentPath, currentSegment, newPosition, shaking);
 
-		Point2D lastPoint = getLastPosition();
-		if (lastPoint != null) {
-			dirToNew = Direction.compute(lastPoint, newPosition);
-		} else {
-			dirToNew = null;
-		}
-
-		Direction currentDir = getCurrentSegment().directionOnScreen();
-
-		if (dirToNew != null && currentDir != null && dirToNew != currentDir) {
+		if (isNewSegment) {
 			startNewSegment();
+			drawSegmentSplit(newPosition);
 			newSegmentStarted();
 		}
 
+		Point2D lastPoint = getLastPosition();
 		getCurrentSegment().addPoint(newPosition);
 		drawAddedPoint(lastPoint, newPosition);
 		newPointAdded();
@@ -217,15 +232,7 @@ public class FxPathableCanvas extends Canvas {
 		Logger.get().moreinfo("Computing on multipath: " + paths);
 		Multipath paths = getPaths();
 		int shake = this.shake.get();
-		return convertToWord(paths, shake);
-	}
-
-	private Word convertToWord(Multipath paths, int shake) {
-		return new Word(paths.listSegments().stream() //
-				.filter((s) -> !Direction.NOPE.equals(s.getDirection())) //
-				.filter((s) -> s.getPoints().size() > shake) //
-				.map((s) -> s.getDirection().toSymbol()) //
-				.collect(Collectors.toList()));
+		return strategy.convertToWord(paths, shake);
 	}
 
 }
