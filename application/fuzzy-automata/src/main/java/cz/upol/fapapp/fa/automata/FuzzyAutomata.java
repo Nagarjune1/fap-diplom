@@ -19,6 +19,7 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.CollectionsUtils;
 import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
+import cz.upol.fapapp.fa.modifs.StatesCreator;
 
 public class FuzzyAutomata extends BaseFuzzyAutomata {
 
@@ -35,7 +36,7 @@ public class FuzzyAutomata extends BaseFuzzyAutomata {
 		return computeSymbolBySymbol(word);
 	}
 
-	private FuzzyState computeSymbolBySymbol(Word word) {
+	protected FuzzyState computeSymbolBySymbol(Word word) {
 		FuzzyState currentFuzzyState = new FuzzyState(initialStates);
 
 		for (Symbol over : word.getSymbols()) {
@@ -49,7 +50,7 @@ public class FuzzyAutomata extends BaseFuzzyAutomata {
 		return new FuzzyState(resultSet);
 	}
 
-	private FuzzyState stepOver(FuzzyState fromFuzzyState, Symbol over) {
+	protected FuzzyState stepOver(FuzzyState fromFuzzyState, Symbol over) {
 		Map<State, Degree> toFuzzyStateMap = CollectionsUtils.createMap(states, Degree.ZERO);
 
 		for (State from : states) {
@@ -127,7 +128,7 @@ public class FuzzyAutomata extends BaseFuzzyAutomata {
 		return new FuzzyAutomata(newAlphabet, newStates, newTransitionFunction, newInitialStates, newFinalStates);
 	}
 
-	private FuzzySet<State> createFinalStates(Map<FuzzyState, State> readyStates) {
+	protected FuzzySet<State> createFinalStates(Map<FuzzyState, State> readyStates) {
 		Map<State, Degree> map = new HashMap<>();
 
 		for (FuzzyState fuzzyState : readyStates.keySet()) {

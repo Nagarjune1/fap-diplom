@@ -10,9 +10,9 @@ import cz.upol.fapapp.core.ling.WordTIMParser;
 import cz.upol.fapapp.core.ling.WordWithAlphabet;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.fa.automata.AutomataCreator;
 import cz.upol.fapapp.fa.automata.FATIMComposer;
 import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class AutomataOfWordApp {
 

@@ -34,6 +34,10 @@ public class CollectionsUtils {
 		return new Alphabet(Arrays.stream(symbols).collect(Collectors.toSet()));
 	}
 
+	public static Word toWord(String... symbolsLbls) {
+		return new Word(Arrays.stream(symbolsLbls).map((l) -> new Symbol(l)).collect(Collectors.toList()));
+	}
+
 	/////////////////////////////////////////////////////////////////
 
 	public static <E> void checkNotNull(String key, E object) {
@@ -109,10 +113,23 @@ public class CollectionsUtils {
 
 	/////////////////////////////////////////////////////////////////
 
+	/**
+	 * If possible, use {@link #singletonFuzzySet(Set, Object)} !
+	 * 
+	 * @param element
+	 * @return
+	 */
 	public static <E> FuzzySet<E> singletonFuzzySet(E element) {
 		return singletonFuzzySet(element, Degree.ONE);
 	}
 
+	/**
+	 * If possible, use {@link #singletonFuzzySet(Set, Object)} !
+	 * 
+	 * @param element
+	 * @param degree
+	 * @return
+	 */
 	public static <E> FuzzySet<E> singletonFuzzySet(E element, Degree degree) {
 		Map<E, Degree> map = new HashMap<>();
 		map.put(element, degree);

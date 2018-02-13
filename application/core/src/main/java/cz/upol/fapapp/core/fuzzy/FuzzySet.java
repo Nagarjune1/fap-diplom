@@ -38,6 +38,12 @@ public class FuzzySet<E> {
 				.findAny().orElse(Degree.ZERO);
 	}
 
+	public boolean isSubsetOf(FuzzySet<E> superset, boolean allowEquality) {
+		return superset.domain().stream() //
+				.map((e) -> Degree.isSmallerThan(this.degreeOf(e), superset.degreeOf(e), allowEquality)) //
+				.allMatch((b) -> b); //
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,7 +73,6 @@ public class FuzzySet<E> {
 	public String toString() {
 		return "FuzzySet" + map + "";
 	}
-	
 
 	public static class FuzzyTuple<E> extends Couple<E, Degree> {
 
@@ -86,10 +91,20 @@ public class FuzzySet<E> {
 				.filter((e) -> second.domain().contains(e))
 				.collect(Collectors.toMap((e) -> (e), (e) -> (Degree.infimum(first.degreeOf(e), second.degreeOf(e))))));
 	}
+	
+	public static <E> FuzzySet<E> union(FuzzySet<E> first, FuzzySet<E> second) {
+		if (!first.domain().equals(second.domain())) {
+			Logger.get().warning(
+					"Fuzzy sets " + first + " and " + second + " has different domain during the union");
+		}
 
+		return new FuzzySet<>(first.domain().stream() //
+				.filter((e) -> second.domain().contains(e))
+				.collect(Collectors.toMap((e) -> (e), (e) -> (Degree.supremum(first.degreeOf(e), second.degreeOf(e))))));
+	}
 
 	public static <E> Degree maxDegree(FuzzySet<E> set) {
-		//TODO rewrite to lambdas? 
+		// TODO rewrite to lambdas?
 		Degree result = Degree.ZERO;
 
 		for (E item : set.domain()) {

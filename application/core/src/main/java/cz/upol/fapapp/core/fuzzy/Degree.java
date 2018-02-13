@@ -25,6 +25,11 @@ public class Degree implements Comparable<Degree> {
 		return Double.compare(this.value, o.value);
 	}
 
+	/**
+	 * @see Degree#isSmallerThan(Degree, Degree, boolean)
+	 * @param o
+	 * @return
+	 */
 	public boolean isLessOrEqual(Degree o) {
 		return this.compareTo(o) < 0;
 	}
@@ -76,6 +81,20 @@ public class Degree implements Comparable<Degree> {
 
 		double value = Math.min(firstValue, secondValue);
 		return new Degree(value);
+	}
+
+	public static boolean isSmallerThan(Degree first, Degree second, boolean smallerOrEqual) {
+		if (ZERO.equals(first) && ZERO.equals(second)) {
+			return true;
+		}
+		
+		int cmp = first.compareTo(second);
+		
+		if (smallerOrEqual) {
+			return cmp <= 0;
+		} else {
+			return cmp < 0;
+		}
 	}
 
 }

@@ -20,10 +20,10 @@ import javafx.stage.Stage;
 public class HandwrittenTextGuiApp extends Application {
 
 	public static void main(String[] args) {
-		args = new String[] { // 
-				"test-data/handwritten/word-1a.timf-automata.timf-deformed.timf",
-				"test-data/handwritten/word-2a.timf-automata.timf-deformed.timf" };
-		
+//		args = new String[] { // 
+//				"test-data/handwritten/gen-word-1a.timf-automata.timf-deformed.timf",
+//				"test-data/handwritten/gen-word-2a.timf-automata.timf-deformed.timf" };
+//		
 		Application.launch(args);
 	}
 

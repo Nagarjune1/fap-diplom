@@ -15,6 +15,8 @@ import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import javafx.application.Application.Parameters;
 
+
+//TODO write test?
 public class AppsMainsTools {
 
 	/**
@@ -135,6 +137,7 @@ public class AppsMainsTools {
 	private static void checkTNorm(List<String> argsList) {
 		if (argsList.size() >= 1 && ("--tnorm".equals(argsList.get(0)) || "-t".equals(argsList.get(0)))) {
 			argsList.remove(0);
+			
 			if (argsList.isEmpty()) {
 				Logger.get().warning("Missing t-norm spec");
 				return;
@@ -145,7 +148,9 @@ public class AppsMainsTools {
 				Logger.get().warning("Invalid t-norm spec, see help");
 				return;
 			}
-
+			
+			argsList.remove(0);
+			
 			TNorms.setTnorm(tnorm);
 			Logger.get().moreinfo("Will use " + tnorm.getClass().getSimpleName());
 		}

@@ -2,8 +2,10 @@ package cz.upol.fapapp.fa.gui.comp;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.gui.data.Direction;
 import cz.upol.fapapp.fa.gui.data.Multipath;
 import javafx.geometry.Point2D;
@@ -11,7 +13,10 @@ import javafx.geometry.Point2D;
 public class FxPathableCanvasTest {
 
 	@Test
+	@Ignore
 	public void test() {
+		Logger.get().warning("Skipped test");
+		
 		FxPathableCanvas canvas = new FxPathableCanvas();
 		check(canvas, 0, null, null, null, null, null);
 

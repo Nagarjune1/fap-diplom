@@ -47,7 +47,7 @@
       <TableView fx:id="resultsTable" prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn editable="false" prefWidth="96.0" text="Automata" />
-          <TableColumn editable="false" minWidth="0.0" prefWidth="103.0" resizable="false" text="Degree" />
+          <TableColumn editable="false" minWidth="0.0" prefWidth="103.0"  text="Degree" />
         </columns>
       </TableView>
    </center>

@@ -1,0 +1,7 @@
+type:
+	word
+alphabet:
+	u, ul, l, dl, d, dr, r, ur
+word:
+	l dl d dr r dr d dl l dl u ur r ur u ul l
+

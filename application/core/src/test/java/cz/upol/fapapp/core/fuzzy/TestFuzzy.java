@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import cz.upol.fapapp.core.sets.CollectionsUtils;
+
 public class TestFuzzy {
 
 	@Test
@@ -17,12 +19,25 @@ public class TestFuzzy {
 		Degree d10 = Degree.ONE;
 		Degree d00 = Degree.ZERO;
 
+		// isLessOrEqual
 		assertTrue(d05.isLessOrEqual(d08));
 		assertFalse(d10.isLessOrEqual(d00));
 		assertTrue(d00.isLessOrEqual(d10));
 
+		// infimum
 		assertEquals(d01, Degree.infimum(d05, d01));
 		assertEquals(d05, Degree.supremum(d05, d01));
+
+		// isSmallerThan
+		assertTrue(Degree.isSmallerThan(d00, d10, false));
+		assertTrue(Degree.isSmallerThan(d00, d10, true));
+
+		assertFalse(Degree.isSmallerThan(d05, d05, false));
+		assertTrue(Degree.isSmallerThan(d05, d05, true));
+
+		assertTrue(Degree.isSmallerThan(d00, d00, false));
+		assertTrue(Degree.isSmallerThan(d00, d00, true));
+
 	}
 
 	@Test
@@ -47,6 +62,15 @@ public class TestFuzzy {
 		} catch (IllegalStateException e) {
 			// ok
 		}
+
+		FuzzySet<String> s2 = CollectionsUtils.singletonFuzzySet("baz", new Degree(0.3));
+
+		assertFalse(s1.isSubsetOf(s2, false));
+		assertTrue(s2.isSubsetOf(s1, false));
+
+		assertFalse(s1.isSubsetOf(s1, false));
+		assertTrue(s1.isSubsetOf(s1, true));
+
 	}
 
 }

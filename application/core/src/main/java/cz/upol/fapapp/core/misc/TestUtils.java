@@ -17,5 +17,7 @@ public class TestUtils {
 		
 		return new FuzzyState(map);
 	}
+	
+	
 
 }

@@ -9,6 +9,7 @@ import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class AutomataCreatorTest {
 

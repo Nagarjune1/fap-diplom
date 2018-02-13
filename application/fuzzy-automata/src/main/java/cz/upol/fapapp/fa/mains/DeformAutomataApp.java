@@ -14,22 +14,24 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.FSTIMObjectParser;
 import cz.upol.fapapp.core.sets.FuzzyBinaryRelation;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
-import cz.upol.fapapp.fa.automata.AutomataDeformer;
 import cz.upol.fapapp.fa.automata.FATIMComposer;
 import cz.upol.fapapp.fa.automata.FATIMParser;
 import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.modifs.AutomataDeformer;
 
 public class DeformAutomataApp {
 
 	private static final String RELATION_FILE_TYPE = "symbols similarity relation";
 	private static final String SET_FILE_TYPE = "insertion/deletions set";
+	private static final Integer PRECISION = 5;
 
 	public static void main(String[] args) {
-//		args = new String[] { "--verbose", "test-data/basic/automata1.timf", "test-data/basic/automata1-deformed.timf", //
-//				"replace", "relation", "test-data/basic/relation-abc-1.timf", //
-//				"insert", "set", "test-data/basic/set-abc-1.timf" //
-//				};
-				
+		// args = new String[] { "--verbose", "test-data/basic/automata1.timf",
+		// "test-data/basic/automata1-deformed.timf", //
+		// "replace", "relation", "test-data/basic/relation-abc-1.timf", //
+		// "insert", "set", "test-data/basic/set-abc-1.timf" //
+		// };
+
 		List<String> argsList = AppsMainsTools.checkArgs(args, 2, null, () -> printHelp());
 		if (argsList == null) {
 			System.exit(1);
@@ -77,57 +79,64 @@ public class DeformAutomataApp {
 		}
 
 		Iterator<String> deformsIters = deforms.iterator();
-		FuzzyAutomata currentAutomata = inputAutomata;
+		AutomataDeformer deformer = new AutomataDeformer(inputAutomata);
 		while (deformsIters.hasNext()) {
 			String what = deformsIters.next();
 			String how = deformsIters.next();
 			String dataSpec = deformsIters.next();
 
-			currentAutomata = performDeform(currentAutomata, what, how, dataSpec);
+			performDeform(deformer, what, how, dataSpec);
 		}
 
-		return currentAutomata;
+		return deformer.getAutomata(PRECISION);
 	}
 
 	@SuppressWarnings("unchecked")
-	private static FuzzyAutomata performDeform(FuzzyAutomata currentAutomata, String what, String how,
-			String dataSpec) {
+	private static void performDeform(AutomataDeformer deformer, String what, String how, String dataSpec) {
 
 		Object data = inferData(what, how, dataSpec);
 		if (data == null) {
-			return currentAutomata;
+			return;
 		}
 
 		switch (what) {
 		case "replace":
 			if (data instanceof Degree) {
-				return AutomataDeformer.deformReplace(currentAutomata, (Degree) data);
+				deformer.addReplace((Degree) data);
 			}
 			if (data instanceof FuzzyBinaryRelation) {
-				return AutomataDeformer.deformReplace(currentAutomata, (FuzzyBinaryRelation<Symbol, Symbol>) data);
+				deformer.addReplace((FuzzyBinaryRelation<Symbol, Symbol>) data);
 			}
 			break;
 		case "insert":
+		case "insert-more":
 			if (data instanceof Degree) {
-				return AutomataDeformer.deformInsertions(currentAutomata, (Degree) data);
+				deformer.addInsertMore((Degree) data);
 			}
-			if (data instanceof FuzzySet) {
-				return AutomataDeformer.deformInsertions(currentAutomata, (FuzzySet<Symbol>) data);
+			if (data instanceof FuzzyBinaryRelation) {
+				deformer.addInsertMore((FuzzySet<Symbol>) data);
+			}
+			break;
+		case "insert-one":
+			if (data instanceof Degree) {
+				deformer.addInsertOne((Degree) data);
+			}
+			if (data instanceof FuzzyBinaryRelation) {
+				deformer.addInsertOne((FuzzySet<Symbol>) data);
 			}
 			break;
 		case "delete":
+		case "remove":
 			if (data instanceof Degree) {
-				return AutomataDeformer.deformDeletions(currentAutomata, (Degree) data);
+				deformer.addRemoveOne((Degree) data);
 			}
-			if (data instanceof FuzzySet) {
-				return AutomataDeformer.deformDeletions(currentAutomata, (FuzzySet<Symbol>) data);
+			if (data instanceof FuzzyBinaryRelation) {
+				deformer.addRemoveOne((FuzzySet<Symbol>) data);
 			}
+			break;
 		default:
 			Logger.get().warning("Unknown deformation: " + what);
-			return currentAutomata;
 		}
-
-		return null;
 	}
 
 	private static Object inferData(String what, String how, String dataSpec) {
@@ -187,7 +196,8 @@ public class DeformAutomataApp {
 	private static void printHelp() {
 		System.out.println("DeformAutomata");
 		System.out.println("Usage: DeformAutomata input-automata.timf output-automata.timf [<DEFORMATION_SPEC> ...]");
-		System.out.println("where <DEFORMATION_SPEC> = replace|insert|delete degree|relation|set VALUE|FILE");
+		System.out.println(
+				"where <DEFORMATION_SPEC> = replace|insert-one|insert-more|delete degree|relation|set VALUE|FILE");
 		System.out.println(" and VALUE is degree, and FILE file with fuzzy relation/fuzzy set");
 	}
 

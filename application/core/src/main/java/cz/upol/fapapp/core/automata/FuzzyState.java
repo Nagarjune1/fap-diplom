@@ -28,6 +28,8 @@ public class FuzzyState extends FuzzySet<State> {
 	public String toString() {
 		return "FuzzyState: " + toMap();
 	}
+
+	
 	
 	
 

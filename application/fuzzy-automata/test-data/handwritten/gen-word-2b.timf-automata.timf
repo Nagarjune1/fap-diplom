@@ -1,0 +1,21 @@
+type:
+	fuzzy automata
+
+alphabet:
+	d	dl	dr	l	r	u	ul	ur
+
+states:
+	q_0	q_2	q_1	q_4	q_3
+
+transition function:
+	q_3	r	q_4	1.0
+	q_2	dl	q_3	1.0
+	q_0	ur	q_1	1.0
+	q_1	dr	q_2	1.0
+
+initial states:
+	q_0/1.0	q_2/0.0	q_1/0.0	q_4/0.0	q_3/0.0
+
+final states:
+	q_0/0.0	q_2/0.0	q_1/0.0	q_4/1.0	q_3/0.0
+
