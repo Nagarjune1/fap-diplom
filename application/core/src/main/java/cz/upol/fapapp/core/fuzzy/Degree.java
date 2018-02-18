@@ -10,7 +10,7 @@ public class Degree implements Comparable<Degree> {
 	public Degree(double value) {
 		super();
 		if (value < 0.0 || value > 1.0) {
-			throw new IllegalArgumentException("Degree d must be 0 <= d <= 1!");
+			throw new IllegalArgumentException("Degree d must be 0 <= d <= 1 but is " + value);
 		}
 
 		this.value = value;

@@ -44,6 +44,19 @@ public class FuzzySet<E> {
 				.allMatch((b) -> b); //
 	}
 
+	// TODO testme
+	public E withMaxDegree() {
+		return map.entrySet().stream() //
+				.reduce((e, r) -> { //
+					if (r.getValue().isLessOrEqual(e.getValue())) {
+						return e;
+					} else {
+						return r;
+					}
+				}) //
+				.get().getKey(); //
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -91,16 +104,15 @@ public class FuzzySet<E> {
 				.filter((e) -> second.domain().contains(e))
 				.collect(Collectors.toMap((e) -> (e), (e) -> (Degree.infimum(first.degreeOf(e), second.degreeOf(e))))));
 	}
-	
+
 	public static <E> FuzzySet<E> union(FuzzySet<E> first, FuzzySet<E> second) {
 		if (!first.domain().equals(second.domain())) {
-			Logger.get().warning(
-					"Fuzzy sets " + first + " and " + second + " has different domain during the union");
+			Logger.get().warning("Fuzzy sets " + first + " and " + second + " has different domain during the union");
 		}
 
 		return new FuzzySet<>(first.domain().stream() //
-				.filter((e) -> second.domain().contains(e))
-				.collect(Collectors.toMap((e) -> (e), (e) -> (Degree.supremum(first.degreeOf(e), second.degreeOf(e))))));
+				.filter((e) -> second.domain().contains(e)).collect(
+						Collectors.toMap((e) -> (e), (e) -> (Degree.supremum(first.degreeOf(e), second.degreeOf(e))))));
 	}
 
 	public static <E> Degree maxDegree(FuzzySet<E> set) {

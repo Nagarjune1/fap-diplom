@@ -25,6 +25,13 @@ public class TernaryRelation<T1, T2, T3> extends BaseRelation<Triple<T1, T2, T3>
 				});
 	}
 
+	public T3 getOrNot(T1 first, T2 second) {
+		return tuples.stream() //
+				.filter((t) -> t.getFirst().equals(first) && t.getSecond().equals(second)) //
+				.map((t) -> t.getThird()) //
+				.findAny().orElse(null);
+	}
+	
 	public Map<T1, Map<T2, T3>> toMap() {
 		return triplesToMap(tuples);
 	}

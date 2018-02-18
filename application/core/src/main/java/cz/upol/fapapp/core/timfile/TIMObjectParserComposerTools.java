@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,24 @@ import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.Logger;
 
 public class TIMObjectParserComposerTools {
+
+	/////////////////////////////////////////////////////////////////////////
+
+	public static void lenthAtLeast(LineElements line, int count) throws IllegalArgumentException {
+		if (line.getElements().size() < count) {
+			throw new IllegalArgumentException("Line " + line + " must have at least " + count + " elements");
+		}
+	}
+
+	public static void is(LineElements line, int index, String value) throws IllegalArgumentException {
+		lenthAtLeast(line, index); // just for sure
+
+		if (!value.equals(line.getIth(index))) {
+			throw new IllegalArgumentException("Line " + line + " must contain " + value + " at " + index);
+		}
+	}
+
+	/////////////////////////////////////////////////////////////////////////
 
 	public static int parseInt(String intStr) {
 		try {
@@ -117,15 +136,16 @@ public class TIMObjectParserComposerTools {
 	/////////////////////////////////////////////////////////////////////////
 
 	public static Alphabet parseAlphabet(LineElements elements) {
-		return new Alphabet(elements.getElements().stream() //
-				.map((s) -> parseSymbol(s)) //
-				.collect(Collectors.toSet()));
+		return new Alphabet(new TreeSet<>(//
+				elements.getElements().stream() //
+						.map((s) -> parseSymbol(s)) //
+						.collect(Collectors.toSet())));
 	}
 
 	public static Set<State> parseStates(LineElements elements) {
-		return elements.getElements().stream() //
+		return new TreeSet<>(elements.getElements().stream() //
 				.map((s) -> parseState(s)) //
-				.collect(Collectors.toSet());
+				.collect(Collectors.toSet()));
 	}
 
 	public static FuzzyState parseFuzzyState(LineElements elements) {
@@ -149,6 +169,10 @@ public class TIMObjectParserComposerTools {
 	public static LineElements intsToLine(List<Integer> ints) {
 		return collectionToLine(ints, //
 				(i) -> Integer.toString(i));
+	}
+
+	public static LineElements doublesToLine(Double... doubles) {
+		return doublesToLine(Arrays.asList(doubles));
 	}
 
 	public static LineElements doublesToLine(List<Double> doubles) {
