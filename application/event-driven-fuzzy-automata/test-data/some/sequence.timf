@@ -1,0 +1,13 @@
+type:
+	fuzzy events sequence
+
+variables:
+	occured	is	pulse	if	unary
+	the-X	is	hig	if	linear	40.0,	60.0,	100.0,	100.0
+	the-X	is	low	if	linear	0.0,	0.0,	40.0,	60.0
+
+events:
+	the-X is 1.0,	occured is 42.0
+	the-X is 45.0,
+	the-X is 3.0,	occured is 42.0
+	the-X is 58.0,	occured is 42.0
