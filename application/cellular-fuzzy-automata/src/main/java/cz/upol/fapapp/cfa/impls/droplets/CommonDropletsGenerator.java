@@ -5,6 +5,13 @@ import java.util.Random;
 import cz.upol.fapapp.cfa.automata.CellState;
 import cz.upol.fapapp.core.misc.Logger;
 
+/**
+ * Common generator of droplets. Generates random droplets, with optionally
+ * specified min and max values.
+ * 
+ * @author martin
+ *
+ */
 public class CommonDropletsGenerator implements DropletsGenerator {
 
 	private final int count;

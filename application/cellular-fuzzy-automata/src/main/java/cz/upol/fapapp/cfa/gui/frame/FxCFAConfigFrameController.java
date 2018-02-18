@@ -8,6 +8,13 @@ import cz.upol.fapapp.cfa.gui.comp.FxConfigurationViewerComp;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+/**
+ * Simple FxFrame displaing only the specified
+ * ({@link #setConfig(CFAConfiguration)}) configuration.
+ * 
+ * @author martin
+ *
+ */
 public class FxCFAConfigFrameController implements Initializable {
 
 	@FXML
@@ -27,7 +34,7 @@ public class FxCFAConfigFrameController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		// nothing needed
 
 	}
 

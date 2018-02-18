@@ -17,6 +17,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.paint.Color;
 
+/**
+ * Utility class performing interaction of {@link CFAConfiguration}s with the
+ * images in {@value #WRITE_FORMAT}.
+ * 
+ * @author martin
+ *
+ */
 public class Imager {
 
 	private static final String WRITE_FORMAT = "png";
@@ -24,6 +31,14 @@ public class Imager {
 	public Imager() {
 	}
 
+	/**
+	 * Read image from given file and convert to configuration.
+	 * 
+	 * @param imageFile
+	 * @param chanel
+	 * @return
+	 * @throws IOException
+	 */
 	public CFAConfiguration imageToConfig(File imageFile, Color chanel) throws IOException {
 
 		Logger.get().moreinfo("Loading config from image " + imageFile);
@@ -35,6 +50,15 @@ public class Imager {
 		}
 	}
 
+	/**
+	 * Convert configuration to image file.
+	 * 
+	 * @param config
+	 * @param imageFile
+	 * @param colors
+	 * @param scale
+	 * @throws IOException
+	 */
 	public void configToImage(CFAConfiguration config, File imageFile, ColorModel colors, int scale)
 			throws IOException {
 
@@ -63,7 +87,7 @@ public class Imager {
 		PixelReader r = image.getPixelReader();
 
 		CFAConfiguration config = new CFAConfiguration(size);
-		
+
 		config.forEach((i, j, xVal) -> {
 			Color color = r.getColor(i, j);
 			double value = applyChanel(chanel, color);
@@ -123,44 +147,5 @@ public class Imager {
 	}
 
 	/**************************************************************************/
-
-	// XXX
-	// private <E extends Exception> void runWithinFX(RunnableWithException<E>
-	// run) throws E {
-	//
-	// Thread thread = Thread.currentThread();
-	// startFX();
-	//
-	// try {
-	// Platform.runLater(() -> {
-	// try {
-	// run.run();
-	// } catch (Exception e) {
-	// throw new RuntimeException(e);
-	// } finally {
-	// synchronized (thread) {
-	// thread.notify();
-	// }
-	// }
-	// });
-	// } catch (Exception e) {
-	// @SuppressWarnings("unchecked")
-	// E cause = (E) e.getCause();
-	// throw cause;
-	// }
-	//
-	// try {
-	// synchronized (thread) {
-	// thread.wait();
-	// }
-	// } catch (InterruptedException eIgnore) {
-	// }
-	//
-	// Platform.exit();
-	// }
-	//
-	// private void startFX() {
-	// new JFXPanel();
-	// }
 
 }

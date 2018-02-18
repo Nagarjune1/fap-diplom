@@ -15,12 +15,17 @@ import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import javafx.application.Application.Parameters;
 
-
-//TODO write test?
+/**
+ * Some utilities to be fun within the console app.
+ * 
+ * @author martin
+ *
+ */
+// TODO write test?
 public class AppsMainsTools {
 
 	/**
-	 * Invokes {@link #checkArgs(List, Integer, Integer, Runnable)}.
+	 * Does the same as {@link #checkArgs(List, Integer, Integer, Runnable)}.
 	 * 
 	 * @param args
 	 * @param minArgs
@@ -34,7 +39,7 @@ public class AppsMainsTools {
 	}
 
 	/**
-	 * Invokes {@link #checkArgs(List, Integer, Integer, Runnable)}.
+	 * Does the same as {@link #checkArgs(List, Integer, Integer, Runnable)}.
 	 * 
 	 * @param params
 	 * @param minArgs
@@ -56,10 +61,13 @@ public class AppsMainsTools {
 	 * If verbocity specifier is provided ({@code -v} or {@code --verbose}),
 	 * sets the {@link Logger}'s flag.
 	 * 
-	 * If actual number of args does not match expected, prints error message,
-	 * help and exists with error code 2.
+	 * I tnorm specifier is provided ({@code -t} or {@code --tnorm} SPEC), sets
+	 * the tnorm ({@link TNorms}) to specified one.
 	 * 
-	 * Returns "modified" args list.
+	 * Finally, check args count. If actual number of args does not match
+	 * expected, prints error message, help and exists with error code 2.
+	 * 
+	 * Returns "modified" (without the flags) args list.
 	 * 
 	 * @param args
 	 * @param minArgs
@@ -98,7 +106,7 @@ public class AppsMainsTools {
 	 */
 	private static boolean checkHelp(List<String> argsList, Runnable helpPrinter) {
 		if (argsList.size() == 1 && ("--help".equals(argsList.get(0)) || "-h".equals(argsList.get(0)))) {
-			
+
 			printHelp(helpPrinter);
 			System.exit(0);
 			return true;
@@ -107,12 +115,17 @@ public class AppsMainsTools {
 		}
 	}
 
+	/**
+	 * Performs help print.
+	 * 
+	 * @param helpPrinter
+	 */
 	private static void printHelp(Runnable helpPrinter) {
 		System.out.println("General usage: PROGRAM FLAGS PROGRAM_ARGS");
 		helpPrinter.run();
 		System.out.println("FLAGS: [-v|--verbose] [-t|--tnorm <TNORM>]");
 		System.out.println("	where <TNROM> is Godel|product|Lukasiewicz");
-		
+
 	}
 
 	/**
@@ -137,7 +150,7 @@ public class AppsMainsTools {
 	private static void checkTNorm(List<String> argsList) {
 		if (argsList.size() >= 1 && ("--tnorm".equals(argsList.get(0)) || "-t".equals(argsList.get(0)))) {
 			argsList.remove(0);
-			
+
 			if (argsList.isEmpty()) {
 				Logger.get().warning("Missing t-norm spec");
 				return;
@@ -148,14 +161,20 @@ public class AppsMainsTools {
 				Logger.get().warning("Invalid t-norm spec, see help");
 				return;
 			}
-			
+
 			argsList.remove(0);
-			
+
 			TNorms.setTnorm(tnorm);
 			Logger.get().moreinfo("Will use " + tnorm.getClass().getSimpleName());
 		}
 	}
 
+	/**
+	 * Parses spec to {@link BaseTNorm} instance, or returns null if unknown.
+	 * 
+	 * @param spec
+	 * @return
+	 */
 	private static BaseTNorm parseTnorm(String spec) {
 		switch (spec) {
 		case "minimum":
@@ -168,6 +187,7 @@ public class AppsMainsTools {
 		case "lukasiewicz":
 			return new LukasiewiczTNorm();
 		default:
+			Logger.get().warning("Unknown tnorm specifier: " + spec + ", ignoring");
 			return null;
 		}
 	}
@@ -193,18 +213,35 @@ public class AppsMainsTools {
 		}
 	}
 
+	/**
+	 * Using given parser composes given object into given file. Prints quite
+	 * pretty error message and exits with 4 if failed. Returns the parsed file
+	 * or null if failed.
+	 * 
+	 * @param file
+	 * @param parser
+	 * @return
+	 */
 	public static <T> T runParser(File file, TIMObjectParser<T> parser) {
 		try {
 			return parser.parse(file);
 		} catch (IOException e) {
 			Logger.get().error("Parsing of file failed: " + e.getMessage());
-			System.err.println(3);
+			System.err.println(4);
 			return null;
 		}
 	}
 
 	/*************************************************************************/
 
+	/**
+	 * Item of args at given index converts to int. Throws exception if fails.
+	 * 
+	 * @param args
+	 * @param index
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
 	public static int toInt(List<String> args, int index) throws IllegalArgumentException {
 		String value = null;
 		try {
@@ -219,7 +256,16 @@ public class AppsMainsTools {
 		}
 	}
 
-	public static int toInt(List<String> args, int index, int dflt) {
+	/**
+	 * Item of args at given index converts to int. If not specified, returns
+	 * dflt, if fails (invalid number) throws.
+	 * 
+	 * @param args
+	 * @param index
+	 * @param dflt
+	 * @return
+	 */
+	public static int toInt(List<String> args, int index, int dflt) throws IllegalArgumentException {
 		String value = null;
 		try {
 			value = args.get(index);
@@ -233,7 +279,16 @@ public class AppsMainsTools {
 		}
 	}
 
-	public static double toDouble(List<String> args, int index, double dflt) {
+	/**
+	 * Item of args at given index converts to double. If not specified, returns
+	 * dflt, if fails (invalid number) throws.
+	 * 
+	 * @param args
+	 * @param index
+	 * @param dflt
+	 * @return
+	 */
+	public static double toDouble(List<String> args, int index, double dflt) throws IllegalArgumentException {
 		String value = null;
 		try {
 			value = args.get(index);

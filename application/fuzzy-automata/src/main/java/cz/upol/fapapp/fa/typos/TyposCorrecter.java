@@ -5,22 +5,28 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyBinaryRelation;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
-import cz.upol.fapapp.core.sets.FuzzyBinaryRelation;
-import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 import cz.upol.fapapp.fa.modifs.AutomataCreator;
-import cz.upol.fapapp.fa.modifs.AutomataDeformer;
+import cz.upol.fapapp.fa.modifs.AutomatonDeformer;
 
+/**
+ * Class performing correction of typos.
+ * 
+ * @author martin
+ *
+ */
 public class TyposCorrecter {
 
 	private static final Integer PRECISION = 5;
 
-	private final Map<Word, FuzzyAutomata> automata;
+	private final Map<Word, FuzzyAutomaton> automata;
 
 	public TyposCorrecter(List<Word> dictionary, KeyboardMap keymap, Degree replacesDegree, Degree removesOnesDegree,
 			Degree insertsOnesDegree, Degree insertsMoreDegree) {
@@ -32,7 +38,18 @@ public class TyposCorrecter {
 
 	////////////////////////////////////////////////////////////////////////////////
 
-	private static Map<Word, FuzzyAutomata> generateAutomata(List<Word> dictionary, KeyboardMap keymap,
+	/**
+	 * Generated automata for given words.
+	 * 
+	 * @param dictionary
+	 * @param keymap
+	 * @param replacesDegree
+	 * @param removesDegree
+	 * @param insertsOnesDegree
+	 * @param insertsMoreDegree
+	 * @return
+	 */
+	private static Map<Word, FuzzyAutomaton> generateAutomata(List<Word> dictionary, KeyboardMap keymap,
 			Degree replacesDegree, Degree removesDegree, Degree insertsOnesDegree, Degree insertsMoreDegree) {
 
 		Alphabet alphabet = CollectionsUtils.createAlphabet('a', (char) ('z' + 1));
@@ -49,6 +66,13 @@ public class TyposCorrecter {
 						(wOld, wNew) -> wOld)); //
 	}
 
+	/**
+	 * Converts typos ratio to fuzzy set of theese.
+	 * 
+	 * @param alphabet
+	 * @param typoRatio
+	 * @return
+	 */
 	private static FuzzySet<Symbol> toInsertsAndRemoves(Alphabet alphabet, Degree typoRatio) {
 		return new FuzzySet<>(alphabet.stream() //
 				.collect(Collectors.toMap( //
@@ -56,38 +80,74 @@ public class TyposCorrecter {
 						(s) -> typoRatio)));
 	}
 
-	private static FuzzyAutomata toAutomaton(Alphabet alphabet, Word word,
+	/**
+	 * Converts given word to automaton.
+	 * 
+	 * @param alphabet
+	 * @param word
+	 * @param similarity
+	 * @param removesOnes
+	 * @param insertsOnes
+	 * @param insertsMore
+	 * @return
+	 */
+	private static FuzzyAutomaton toAutomaton(Alphabet alphabet, Word word,
 			FuzzyBinaryRelation<Symbol, Symbol> similarity, FuzzySet<Symbol> removesOnes, FuzzySet<Symbol> insertsOnes,
 			FuzzySet<Symbol> insertsMore) {
 
-		FuzzyAutomata ofWord = AutomataCreator.automataOfWord(alphabet, word);
+		FuzzyAutomaton ofWord = AutomataCreator.automatonOfWord(alphabet, word);
 
-		FuzzyAutomata deformed = deform(ofWord, similarity, removesOnes, insertsOnes, insertsMore);
+		FuzzyAutomaton deformed = deform(ofWord, similarity, removesOnes, insertsOnes, insertsMore);
 
 		return deformed;
 	}
 
-	private static FuzzyAutomata deform(FuzzyAutomata automata, FuzzyBinaryRelation<Symbol, Symbol> similarity,
+	/**
+	 * Deforms given automaton.
+	 * 
+	 * @param automaton
+	 * @param similarity
+	 * @param removesOnes
+	 * @param insertsOnes
+	 * @param insertsMore
+	 * @return
+	 */
+	private static FuzzyAutomaton deform(FuzzyAutomaton automaton, FuzzyBinaryRelation<Symbol, Symbol> similarity,
 			FuzzySet<Symbol> removesOnes, FuzzySet<Symbol> insertsOnes, FuzzySet<Symbol> insertsMore) {
 
-		AutomataDeformer deformer = new AutomataDeformer(automata);
+		AutomatonDeformer deformer = new AutomatonDeformer(automaton);
 
 		deformer.addRemoveOne(removesOnes);
 		deformer.addInsertOne(insertsOnes);
 		deformer.addReplace(similarity);
 		deformer.addInsertMore(insertsMore);
 
-		// automata.print(System.out);
+		// automaton.print(System.out);
 
-		return deformer.getAutomata(PRECISION);
+		return deformer.getAutomaton(PRECISION);
 	}
 
 	///////////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Corrects given word. Uppercases if corrected.
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public String correct(String word) {
 		return correct(word, false, true, false);
 	}
 
+	/**
+	 * Corrects given word. If specified, uppercases the resulting word.
+	 * 
+	 * @param word
+	 * @param upperNoTypo
+	 * @param upperReplaced
+	 * @param upperNoMatch
+	 * @return
+	 */
 	public String correct(String word, boolean upperNoTypo, boolean upperReplaced, boolean upperNoMatch) {
 		Word input = WordsTimFileParser.stringToWord(word);
 		CorrectionResult output = correct(input);
@@ -95,6 +155,15 @@ public class TyposCorrecter {
 		return toString(output, upperNoTypo, upperReplaced, upperNoMatch);
 	}
 
+	/**
+	 * Converts given result to string (and if matches flags, uppercases).
+	 * 
+	 * @param result
+	 * @param upperNoTypo
+	 * @param upperReplaced
+	 * @param upperNoMatch
+	 * @return
+	 */
 	private String toString(CorrectionResult result, boolean upperNoTypo, boolean upperReplaced, boolean upperNoMatch) {
 		Word word = result.getBestMatch();
 		String string = WordsTimFileComposer.wordToString(word);
@@ -112,22 +181,28 @@ public class TyposCorrecter {
 
 	///////////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Runs conversion of given word.
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public CorrectionResult correct(Word word) {
 		Word bestWord = word;
 		Degree bestDegree = Degree.ZERO;
 
-		for (Word pattern : automata.keySet()) {			
-			FuzzyAutomata automaton = automata.get(pattern);
+		for (Word pattern : automata.keySet()) {
+			FuzzyAutomaton automaton = automata.get(pattern);
 
 			Degree degree = automaton.degreeOfWord(word);
 
 			Logger.get().moreinfo("Word " + pattern + " matches " + pattern + " in " + degree);
-			
+
 			if (bestDegree.isLessOrEqual(degree)) {
 				bestWord = pattern;
 				bestDegree = degree;
 			}
-			
+
 			if (pattern.equals(word)) {
 				// no need to continue ...
 				break;
@@ -137,6 +212,14 @@ public class TyposCorrecter {
 		return processBestMatched(word, bestWord, bestDegree);
 	}
 
+	/**
+	 * Creates {@link CorrectionResult} based on match of pattern's automata.
+	 * 
+	 * @param word
+	 * @param bestWord
+	 * @param bestDegree
+	 * @return
+	 */
 	private CorrectionResult processBestMatched(Word word, Word bestWord, Degree bestDegree) {
 		CorrectionResult result = new CorrectionResult(word, bestWord, bestDegree);
 

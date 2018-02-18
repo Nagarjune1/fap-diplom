@@ -1,15 +1,21 @@
 package cz.upol.fapapp.cfa.automata;
 
+/**
+ * State of cell of cellular fuzzy automata. Assuming only double from 0 to 1.
+ * 
+ * @author martin
+ *
+ */
 public class CellState {
 	private final double value;
 
 	public CellState(double value) {
 		super();
-		
+
 		if (value < 0.0 || value > 1.0) {
 			throw new IllegalArgumentException("Invalid cell state " + value);
 		}
-		
+
 		this.value = value;
 	}
 

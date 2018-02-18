@@ -1,5 +1,11 @@
 package cz.upol.fapapp.core.misc;
 
+/**
+ * Performs simple logging, singleton (use {@link #get()}).
+ * 
+ * @author martin
+ *
+ */
 public class Logger {
 	private static final Logger INSTANCE = new Logger(false);
 

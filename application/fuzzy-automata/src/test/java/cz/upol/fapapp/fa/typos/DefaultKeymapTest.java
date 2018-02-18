@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyBinaryRelation;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyBinaryRelation;
 
 public class DefaultKeymapTest {
 

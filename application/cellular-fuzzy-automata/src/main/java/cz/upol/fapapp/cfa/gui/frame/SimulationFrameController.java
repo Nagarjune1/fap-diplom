@@ -3,7 +3,7 @@ package cz.upol.fapapp.cfa.gui.frame;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import cz.upol.fapapp.cfa.comp.CFAComputation;
+import cz.upol.fapapp.cfa.conf.CFAComputation;
 import cz.upol.fapapp.cfa.gui.comp.FxConfigurationViewerComp;
 import cz.upol.fapapp.cfa.gui.misc.CFaComputationService;
 import cz.upol.fapapp.cfa.gui.misc.ObservableCFAComputation;
@@ -14,6 +14,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
+/**
+ * Complate FxFrame of fuzzy cellular automata simulator.
+ * 
+ * @author martin
+ *
+ */
 public class SimulationFrameController implements Initializable {
 
 	@FXML

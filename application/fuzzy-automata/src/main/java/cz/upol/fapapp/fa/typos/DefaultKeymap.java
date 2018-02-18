@@ -2,6 +2,13 @@ package cz.upol.fapapp.fa.typos;
 
 import cz.upol.fapapp.core.ling.Symbol;
 
+/**
+ * Default QWERTZ keymap, each key has as its neighbor keys which has at least a
+ * piece of common edge at my Lenovo notebook ;-).
+ * 
+ * @author martin
+ *
+ */
 public class DefaultKeymap extends KeyboardMap {
 
 	public DefaultKeymap() {
@@ -43,7 +50,7 @@ public class DefaultKeymap extends KeyboardMap {
 		for (char neigh : neighs) {
 			Symbol toSymbol = new Symbol(Character.toString(to));
 			Symbol neigSymbol = new Symbol(Character.toString(neigh));
-			
+
 			addNeighbor(toSymbol, neigSymbol);
 		}
 	}

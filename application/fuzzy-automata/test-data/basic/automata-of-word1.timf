@@ -1,5 +1,5 @@
 type:
-	fuzzy automata
+	fuzzy automaton
 
 alphabet:
 	a	b	c

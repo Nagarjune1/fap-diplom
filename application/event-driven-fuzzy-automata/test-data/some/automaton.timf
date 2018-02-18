@@ -1,5 +1,5 @@
 type:
-	event driven fuzzy automata
+	event driven fuzzy automaton
 
 states:
 	q_0, q_1, q_2

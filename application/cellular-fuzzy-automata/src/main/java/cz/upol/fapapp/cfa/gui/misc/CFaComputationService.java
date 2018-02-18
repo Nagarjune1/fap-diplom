@@ -2,13 +2,20 @@ package cz.upol.fapapp.cfa.gui.misc;
 
 import java.util.concurrent.TimeUnit;
 
-import cz.upol.fapapp.cfa.comp.CFAComputation;
+import cz.upol.fapapp.cfa.conf.CFAComputation;
 import cz.upol.fapapp.core.misc.Logger;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
+/**
+ * JavaFx service performing background computation, {@link CFAComputation}.
+ * After each step waits given time interval.
+ * 
+ * @author martin
+ *
+ */
 public class CFaComputationService extends Service<CFAComputation> {
 
 	private static final int DEFAULT_SPEED = 10;

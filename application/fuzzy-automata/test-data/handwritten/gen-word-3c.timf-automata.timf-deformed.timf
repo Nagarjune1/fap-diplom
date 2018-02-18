@@ -1,5 +1,5 @@
 type:
-	fuzzy automata
+	fuzzy automaton
 
 alphabet:
 	d	dl	dr	l	r	u	ul	ur

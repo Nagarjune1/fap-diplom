@@ -1,13 +1,20 @@
 package cz.upol.fapapp.cfa.impls.images;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomata;
+import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomaton;
 import cz.upol.fapapp.cfa.conf.CellNeighborhood;
 import cz.upol.fapapp.cfa.misc.MutableDouble;
 import cz.upol.fapapp.cfa.mu.SimpleTransitionFunction;
 import cz.upol.fapapp.cfa.outers.CloningOuterSupplier;
 
-public class ConvolutionalCFA extends CellularFuzzyAutomata {
+/**
+ * Convolutional automata, automata performing convolutional operator given by
+ * {@link ConvolutionalCore}.
+ * 
+ * @author martin
+ *
+ */
+public class ConvolutionalCFA extends CellularFuzzyAutomaton {
 
 	public ConvolutionalCFA(int size, ConvolutionalCore core) {
 		super(size, //
@@ -15,6 +22,12 @@ public class ConvolutionalCFA extends CellularFuzzyAutomata {
 				new CloningOuterSupplier());
 	}
 
+	/**
+	 * Transition function performing application of convolutional core.
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static class ConvolutionalMu extends SimpleTransitionFunction {
 
 		private final double coreSum;

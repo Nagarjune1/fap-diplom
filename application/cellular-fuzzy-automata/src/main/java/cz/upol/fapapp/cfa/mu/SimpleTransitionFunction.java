@@ -4,6 +4,13 @@ import cz.upol.fapapp.cfa.automata.CellState;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.conf.CellNeighborhood;
 
+/**
+ * Transition function doing no preparation and needs to compute only knowledge
+ * of the cell's neighborhood.
+ * 
+ * @author martin
+ *
+ */
 public abstract class SimpleTransitionFunction implements CFATransitionFunction {
 
 	public SimpleTransitionFunction() {

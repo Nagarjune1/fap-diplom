@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 
 public class FSTIMObjectParserTest {
 

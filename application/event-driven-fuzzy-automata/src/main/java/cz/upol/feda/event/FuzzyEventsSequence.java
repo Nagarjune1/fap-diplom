@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 
 import cz.upol.feda.lingvar.LingvisticVariable;
 
+/**
+ * Fuzzy events sequence is just named {@link List} of {@link FuzzyEvent}s.
+ * 
+ * @author martin
+ *
+ */
 public class FuzzyEventsSequence {
 
 	private final List<FuzzyEvent> events;
@@ -30,9 +36,8 @@ public class FuzzyEventsSequence {
 				.flatMap((e) -> e.getVariables().stream()) //
 				.collect(Collectors.toSet()); //
 	}
-	
-///////////////////////////////////////////////////////////////////////////
-	
+
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {
@@ -63,9 +68,5 @@ public class FuzzyEventsSequence {
 	public String toString() {
 		return "FuzzyEventsSequence [events=" + events + "]";
 	}
-	
-	
-	
-	
 
 }

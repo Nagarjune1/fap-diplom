@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>cellular-fuzzy-automata</artifactId>
-	<name>Cellular fuzzy automata</name>
-	<description>Implementation of Cellular fuzzy automata</description>
+	<artifactId>cellular-fuzzy-automaton</artifactId>
+	<name>Cellular fuzzy automaton</name>
+	<description>Implementation of Cellular fuzzy automaton</description>
 
 
 	<dependencies>

@@ -1,6 +1,6 @@
 package cz.upol.feda.automata;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -10,11 +10,11 @@ public class EDFATIMParserComposerTest {
 	public void testCompose() {
 		EDFATIMComposer composer = new EDFATIMComposer();
 
-		EventDrivenFuzzyAutomata automata = AutomataCreator.createSome();
+		EventDrivenFuzzyAutomaton automaton = AutomataCreator.createSome();
 
 		String expected = createTIMF();
 
-		String actual = composer.compose(automata);
+		String actual = composer.compose(automaton);
 
 		assertEquals(expected, actual);
 	}
@@ -25,18 +25,17 @@ public class EDFATIMParserComposerTest {
 
 		String input = createTIMF();
 
-		EventDrivenFuzzyAutomata expected = AutomataCreator.createSome();
+		EventDrivenFuzzyAutomaton expected = AutomataCreator.createSome();
 
-		EventDrivenFuzzyAutomata actual = parser.parse(input);
+		EventDrivenFuzzyAutomaton actual = parser.parse(input);
 
-		assertEquals(expected.toString(), actual.toString());
-		//FIXME assertEquals(expected, actual);
+		assertEquals(expected, actual);
 	}
 
 	private String createTIMF() {
 		return "" //
 				+ "type:\n" //
-				+ "	event driven fuzzy automata\n" //
+				+ "	event driven fuzzy automaton\n" //
 				+ "\n" //
 				+ "states:\n" //
 				+ "	q_0	q_1	q_2\n" //
@@ -61,20 +60,6 @@ public class EDFATIMParserComposerTest {
 				+ "	q_0/0.1	q_2/0.2	q_1/1.0\n" //
 				+ "\n"; //
 	}
-//	
 
-//transition function:
-//	from	q_0	if	the-X	is	hig	to	q_2
-//	from	q_2	if	the-X	is	hig	to	q_2
-//	from	q_1	if	occured	is	pulse	to	q_2
-//	from	q_2	if	occured	is	pulse	to	q_1
-//	from	q_0	if	the-X	is	low	to	q_1
-//	from	q_1	if	the-X	is	low	to	q_0
-//
-//initial states:
-//	q_0/0.0	q_2/0.5	q_1/1.0
-//
-//final states:
-//	q_0/0.1	q_2/0.2	q_1/1.0
 
 }

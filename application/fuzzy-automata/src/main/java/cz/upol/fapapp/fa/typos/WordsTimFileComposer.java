@@ -4,9 +4,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.timfile.TIMFileComposer;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 
+/**
+ * {@link TIMFileComposer} of {@link List} of {@link Word}s. For format see
+ * {@link WordsTimFileParser}.
+ * 
+ * @author martin
+ *
+ */
 public class WordsTimFileComposer extends TIMObjectComposer<List<Word>> {
 
 	public WordsTimFileComposer() {

@@ -18,6 +18,14 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
+/**
+ * Control of component displaying the configuration. Contains
+ * {@link FxCFAConfigPanel} within the {@link ZoomPane}, combo box with color
+ * models ({@link ColorModel}) and spinner with zoom.
+ * 
+ * @author martin
+ *
+ */
 public class FxConfigurationViewerComp extends BorderPane {
 
 	@FXML
@@ -54,7 +62,6 @@ public class FxConfigurationViewerComp extends BorderPane {
 		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10, 1);
 		spinScale.setValueFactory(valueFactory);
 		configPane.scaleProperty().bind(spinScale.valueProperty());
-		
 
 	}
 

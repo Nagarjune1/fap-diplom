@@ -8,10 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>fuzzy-tree-automata</artifactId>
+	<artifactId>fuzzy-tree-automaton</artifactId>
 
-	<name>Fuzzy tree automata</name>
-	<description>Module implementing fuzzy tree automata</description>
+	<name>Fuzzy tree automaton</name>
+	<description>Module implementing fuzzy tree automaton</description>
 
 	<dependencies>
 		<dependency>

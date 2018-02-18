@@ -13,6 +13,12 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} of {@link BaseTree}.
+ * 
+ * @author martin
+ *
+ */
 public class TreeTIMParser extends TIMObjectParser<BaseTree> {
 
 	public static final String TYPE = "tree";
@@ -36,7 +42,7 @@ public class TreeTIMParser extends TIMObjectParser<BaseTree> {
 
 	@Override
 	public BaseTree process(TIMFileData data) {
-		//TODO make nonterminals and terminals optional
+		// TODO make nonterminals and terminals optional
 		Alphabet nonterminals = processNonterminals(data);
 		Alphabet terminals = processTerminals(data);
 		BaseTree tree = processTree(data);

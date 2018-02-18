@@ -11,12 +11,21 @@ import java.util.stream.Collectors;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet.FuzzyTuple;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet.FuzzyTuple;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.Logger;
+import cz.upol.feda.lingvar.LingVarValue;
 
+/**
+ * Various utilities for {@link TIMObjectParser}'s and {@link TIMObjectComposer}'s implementations.
+ * 
+ * @author martin
+ *
+ */
+//TODO javadoc
+//TODO rename to somehing shorter
 public class TIMObjectParserComposerTools {
 
 	/////////////////////////////////////////////////////////////////////////
@@ -68,14 +77,16 @@ public class TIMObjectParserComposerTools {
 	}
 
 	public static Degree parseDegree(String degreeStr) {
-		try {
-			double degreeDouble = Double.parseDouble(degreeStr);
+			double degreeDouble = parseDouble(degreeStr);
 			return new Degree(degreeDouble);
-		} catch (Exception e) {
-			throw new IllegalArgumentException("Not a degree: " + degreeStr);
-		}
 	}
 
+
+	public static LingVarValue parseLingVarValue(String valStr) {
+		double valDouble = parseDouble(valStr);
+		return new LingVarValue(valDouble);
+	}
+	
 	public static State parseState(String stateStr) {
 		return new State(stateStr);
 	}
@@ -213,5 +224,6 @@ public class TIMObjectParserComposerTools {
 				.map((i) -> toStringFunction.apply(i)) //
 				.collect(Collectors.toList()));
 	}
+
 
 }

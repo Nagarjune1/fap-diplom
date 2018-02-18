@@ -14,6 +14,12 @@ import javafx.application.Application;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * Application running conversion from timf to png and back.
+ * 
+ * @author martin
+ *
+ */
 public class ImageConfigConverter extends Application {
 
 	private static final String IMAGE_EXTENSION = ".png";
@@ -24,8 +30,8 @@ public class ImageConfigConverter extends Application {
 	private static final int SCALE = 1;
 
 	public static void main(String[] args) {
-//		args = new String[] { "--verbose", "data/test/images/random-100.png",
-//				"data/test/configs/random-config-100.timf" };// XXX debug
+		// args = new String[] { "--verbose", "data/test/images/random-100.png",
+		// "data/test/configs/random-config-100.timf" };// XXX debug
 
 		args = new String[] { "--verbose", "data/test/configs/random-config-100.timf",
 				"data/test/images/random-100.png" };// XXX debug

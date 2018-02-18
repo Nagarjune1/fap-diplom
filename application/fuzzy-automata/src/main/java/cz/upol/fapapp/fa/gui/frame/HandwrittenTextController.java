@@ -8,7 +8,7 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Word;
-import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 import cz.upol.fapapp.fa.gui.comp.FxPathableCanvas;
 import cz.upol.fapapp.fa.gui.misc.AutomataComputationTask;
 import javafx.beans.property.SimpleObjectProperty;
@@ -26,9 +26,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * Controller of app performing handwriitten text recognition.
+ * 
+ * @author martin
+ *
+ */
 public class HandwrittenTextController implements Initializable {
 
-	private final Map<String, FuzzyAutomata> automata;
+	private final Map<String, FuzzyAutomaton> automata;
 
 	@FXML
 	private FxPathableCanvas canvas;
@@ -50,8 +56,8 @@ public class HandwrittenTextController implements Initializable {
 
 	///////////////////////////////////////////////////////////////////////////
 
-	public HandwrittenTextController(Map<String, FuzzyAutomata> automata) {
-		this.automata = automata; 
+	public HandwrittenTextController(Map<String, FuzzyAutomaton> automata) {
+		this.automata = automata;
 	}
 
 	@Override

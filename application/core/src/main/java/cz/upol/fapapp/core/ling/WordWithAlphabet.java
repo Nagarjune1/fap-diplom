@@ -2,6 +2,12 @@ package cz.upol.fapapp.core.ling;
 
 import java.util.List;
 
+/**
+ * {@link Word} extended to have assigned alphabet with itself.
+ * 
+ * @author martin
+ *
+ */
 public class WordWithAlphabet extends Word {
 	private final Alphabet alphabet;
 

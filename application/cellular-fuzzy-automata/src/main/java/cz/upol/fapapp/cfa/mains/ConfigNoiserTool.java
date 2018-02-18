@@ -7,9 +7,15 @@ import java.util.List;
 import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
 import cz.upol.fapapp.cfa.conf.CFAConfTIMParser;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
-import cz.upol.fapapp.cfa.conf.ConfigNoiser;
+import cz.upol.fapapp.cfa.misc.ConfigNoiser;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 
+/**
+ * Application performing the noising.
+ * 
+ * @author martin
+ *
+ */
 public class ConfigNoiserTool {
 
 	private static final double DEFAULT_RATIO = 0.5;

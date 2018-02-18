@@ -7,13 +7,24 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} for {@link FuzzySet}. Assumes format:
+ * <pre>
+ * domain:
+ *  foo, bar, baz
+ * mapping:
+ *  0.1, 0.2, 0.3
+ * @author martin
+ *
+ * @param <E>
+ */
 public class FSTIMObjectParser<E> extends TIMObjectParser<FuzzySet<E>> {
 
 	//TODO impelement composer

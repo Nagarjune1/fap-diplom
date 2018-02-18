@@ -1,5 +1,5 @@
 type:
-	Fuzzy tree automata
+	Fuzzy tree automaton
 
 states:
 	q_1

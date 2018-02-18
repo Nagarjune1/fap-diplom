@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.feda.event.FuzzyEvent;
@@ -21,7 +21,7 @@ import cz.upol.feda.lingvar.UnaryVarLabel;
 
 public class AutomataCreator {
 
-	public static EventDrivenFuzzyAutomata createSome() {
+	public static EventDrivenFuzzyAutomaton createSome() {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
 		final State stateQ2 = new State("q_2");
@@ -67,7 +67,7 @@ public class AutomataCreator {
 		finals.put(stateQ2, new Degree(0.2));
 		FuzzySet<State> finalStates = new FuzzySet<>(finals);
 
-		return new EventDrivenFuzzyAutomata(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
+		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
 	}
 
 	public static Set<LingvisticVariable> createSomeLingVars() {

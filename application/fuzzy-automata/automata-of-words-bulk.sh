@@ -1,11 +1,11 @@
 #!/bin/bash
-# converts given word files into corresponding automata
-# usage: automata-of-words-bulk..sh WORD_FILES ...
+# converts given word files into corresponding automaton
+# usage: automaton-of-words-bulk..sh WORD_FILES ...
 
 for FILE in $@; do
-	OUTFILE=$FILE"-automata.timf"
+	OUTFILE=$FILE"-automaton.timf"
 	
 	echo "$FILE -> $OUTFILE"
-	mvn exec:java -Dexec.mainClass="cz.upol.fapapp.fa.mains.AutomataOfWordApp" -Dexec.args="$FILE $OUTFILE"
+	mvn exec:java -Dexec.mainClass="cz.upol.fapapp.fa.mains.AutomatonOfWordApp" -Dexec.args="$FILE $OUTFILE"
 done
 

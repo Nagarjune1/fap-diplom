@@ -7,35 +7,41 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
-public class FATIMParser extends TIMObjectParser<BaseFuzzyAutomata> {
+/**
+ * {@link TIMObjectParser} parser of {@link BaseFuzzyAutomaton}.
+ * 
+ * @author martin
+ *
+ */
+public class FATIMParser extends TIMObjectParser<BaseFuzzyAutomaton> {
 
-	public static final String TYPE = "fuzzy automata";
+	public static final String TYPE = "fuzzy automaton";
 
 	public FATIMParser() {
 		super(FATIMParser.TYPE);
 	}
 
 	@Override
-	public BaseFuzzyAutomata process(TIMFileData data) {
+	public BaseFuzzyAutomaton process(TIMFileData data) {
 		Alphabet alphabet = processAlphabet(data);
 		Set<State> states = processStates(data);
 		FuzzyTernaryRelation<State, Symbol, State> transitionFunction = processTransitions(data);
 		FuzzySet<State> initialStates = processInitials(data);
 		FuzzySet<State> finalStates = processFinals(data);
 
-		//TODO check alphabet and states consistency
-		
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		// TODO check alphabet and states consistency
+
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
 	private Set<State> processStates(TIMFileData data) {

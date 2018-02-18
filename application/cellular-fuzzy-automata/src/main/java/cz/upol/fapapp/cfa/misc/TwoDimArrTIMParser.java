@@ -10,7 +10,12 @@ import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
-
+/**
+ * {@link TIMObjectParser} of general {@link TwoDimArray}. Works as expected.
+ * @author martin
+ *
+ * @param <E>
+ */
 public class TwoDimArrTIMParser<E> extends TIMObjectParser<TwoDimArray<E>> {
 
 	private final Function<String, E> fromStringFunction;

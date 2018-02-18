@@ -1,6 +1,6 @@
 package cz.upol.fapapp.fa.typos;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.tnorm.GodelTNorm;
 import cz.upol.fapapp.core.fuzzy.tnorm.ProductTNorm;
 import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Symbol;

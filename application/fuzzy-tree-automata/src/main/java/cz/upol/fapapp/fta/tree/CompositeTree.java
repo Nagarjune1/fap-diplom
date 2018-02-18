@@ -7,6 +7,11 @@ import java.util.List;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 
+/**
+ * Composite tree (i.e. node with children).
+ * @author martin
+ *
+ */
 public class CompositeTree extends BaseTree {
 	private final List<BaseTree> children;
 

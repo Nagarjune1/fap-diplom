@@ -5,6 +5,12 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
+/**
+ * Panel performing simple zoom of its children.
+ * 
+ * @author martin
+ *
+ */
 public class ZoomPane extends Pane {
 
 	private final DoubleProperty zoomProp;
@@ -31,7 +37,6 @@ public class ZoomPane extends Pane {
 		return prop;
 	}
 
-	
 	public DoubleProperty getZoom() {
 		return zoomProp;
 	}

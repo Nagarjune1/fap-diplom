@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import cz.upol.fapapp.core.sets.FuzzyBinaryRelation;
+import cz.upol.fapapp.core.fuzzy.sets.FBRTIMObjectParser;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyBinaryRelation;
 
 public class FBRTIMObjectParserTest {
 

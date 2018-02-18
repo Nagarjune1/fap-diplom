@@ -7,9 +7,24 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} for {@link CFAConfiguration}. Uses following format:
+ * 
+ * <pre>
+ * size:
+ * 	3
+ * cells:
+ * 	0.1 0.2 0.3
+ *  0.4 0.5 0.6
+ *  0.7 0.8 0.9
+ * </pre>
+ * 
+ * @author martin
+ *
+ */
 public class CFAConfTIMParser extends TIMObjectParser<CFAConfiguration> {
 
-	public static final String TYPE = "cellular fuzzy automata configuration";
+	public static final String TYPE = "cellular fuzzy automaton configuration";
 
 	private final TwoDimArrTIMParser<CellState> arrParser;
 

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import cz.upol.fapapp.core.automata.State;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
@@ -16,9 +16,15 @@ import cz.upol.feda.lingvar.BaseLingVarLabel;
 import cz.upol.feda.lingvar.LingVarsTIMParser;
 import cz.upol.feda.lingvar.LingvisticVariable;
 
-public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomata> {
+/**
+ * {@link TIMObjectParser} of {@link EventDrivenFuzzyAutomaton}.
+ * 
+ * @author martin
+ *
+ */
+public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomaton> {
 
-	public static final String TYPE = "event driven fuzzy automata";
+	public static final String TYPE = "event driven fuzzy automaton";
 
 	private final LingVarsTIMParser lingVarsParser = new LingVarsTIMParser("whatever", "events", "events alphabet");
 
@@ -27,7 +33,7 @@ public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomata> {
 	}
 
 	@Override
-	public EventDrivenFuzzyAutomata process(TIMFileData data) {
+	public EventDrivenFuzzyAutomaton process(TIMFileData data) {
 		Set<LingvisticVariable> eventsAlphabet = processAlphabet(data);
 		Set<State> states = processStates(data);
 		TernaryRelation<State, BaseLingVarLabel, State> transitionFunction = processTransitions(data, eventsAlphabet);
@@ -36,7 +42,7 @@ public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomata> {
 
 		// TODO check alphabet and states consistency
 
-		return new EventDrivenFuzzyAutomata(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
+		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
 	}
 
 	private Set<State> processStates(TIMFileData data) {

@@ -2,57 +2,59 @@ package cz.upol.fapapp.fta.mains;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.misc.Logger;
+import cz.upol.fapapp.core.misc.AppsMainsTools;
 import cz.upol.fapapp.fta.automata.FTATIMParser;
-import cz.upol.fapapp.fta.automata.FuzzyTreeAutomata;
+import cz.upol.fapapp.fta.automata.FuzzyTreeAutomaton;
 import cz.upol.fapapp.fta.tree.BaseTree;
 import cz.upol.fapapp.fta.tree.TreeTIMParser;
 
+/**
+ * Application performing computation of degree of acceptance of tree by
+ * automata, both given by TIM files.
+ * 
+ * @author martin
+ *
+ */
 public class TreeOnFTaRunner {
 
 	public static void main(String[] args) {
-		Logger.get().setVerbose(true);
+		List<String> argsList = AppsMainsTools.checkArgs(args, 2, 2, () -> printHelp());
 
-		// String automataFile = "test/data/example-from-MorMal/fta-4.11.2.df";
+		// String automatonFile = "test/data/example-from-MorMal/fta-4.11.2.df";
 		// String treeFile = "test/data/example-from-MorMal/tree-4.11.2.df";
 
-		// String automataFile = "test/data/example-from-thesis/fta.df";
+		// String automatonFile = "test/data/example-from-thesis/fta.df";
 		// String treeFile = "test/data/example-from-thesis/tree-1.df";
 
-		// String automataFile =
+		// String automatonFile =
 		// "test/data/m-ary-complete-trees/fta-of-3-ary.df";
 		// String treeFile =
 		// "test/data/m-ary-complete-trees/2-ary-notcomplete-tree.df";
 
-		if (args.length != 2) {
-			Logger.get()
-					.error("Usage: " + TreeOnFTaRunner.class.getSimpleName() + " [automata_file.df] [tree_file.df]");
-			System.exit(1);
-		}
+		String automatonFile = argsList.get(0);
+		String treeFile = argsList.get(1);
 
-		String automataFile = args[0];
-		String treeFile = args[1];
-
-		Degree degree = run(automataFile, treeFile);
+		Degree degree = run(automatonFile, treeFile);
 		System.out.println(degree.getValue());
 	}
 
-	private static Degree run(String automataFilePath, String treeFilePath) {
-		File automataFile = new File(automataFilePath);
+	private static Degree run(String automatonFilePath, String treeFilePath) {
+		File automatonFile = new File(automatonFilePath);
 		File treeFile = new File(treeFilePath);
 
-		return run(automataFile, treeFile);
+		return run(automatonFile, treeFile);
 	}
 
-	private static Degree run(File automataFile, File treeFile) {
-		FTATIMParser automataParser = new FTATIMParser();
-		FuzzyTreeAutomata automata;
+	private static Degree run(File automatonFile, File treeFile) {
+		FTATIMParser automatonParser = new FTATIMParser();
+		FuzzyTreeAutomaton automaton;
 		try {
-			automata = automataParser.parse(automataFile);
+			automaton = automatonParser.parse(automatonFile);
 		} catch (IOException e) {
-			System.err.println("Cannot load automata file");
+			System.err.println("Cannot load automaton file");
 			return null;
 		}
 
@@ -65,14 +67,18 @@ public class TreeOnFTaRunner {
 			return null;
 		}
 
-		return run(automata, tree);
+		return run(automaton, tree);
 	}
 
-	private static Degree run(FuzzyTreeAutomata automata, BaseTree tree) {
-		// automata.print(System.out);
-		// System.out.println(automata);
+	private static Degree run(FuzzyTreeAutomaton automaton, BaseTree tree) {
+		// automaton.print(System.out);
+		// System.out.println(automaton);
 
-		return automata.accept(tree);
+		return automaton.accept(tree);
+	}
+
+	private static void printHelp() {
+		System.out.println("TreeOnFTaRunner AUTOMATON.timf TREE.timf");
 	}
 
 }

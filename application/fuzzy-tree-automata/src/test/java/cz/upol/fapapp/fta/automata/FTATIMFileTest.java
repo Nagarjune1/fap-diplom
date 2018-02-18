@@ -15,9 +15,9 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.BinaryRelation;
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
 
 public class FTATIMFileTest {
 
@@ -26,7 +26,7 @@ public class FTATIMFileTest {
 		String input = createInputFileA();
 
 		FTATIMParser parser = new FTATIMParser();
-		FuzzyTreeAutomata fta = parser.parse(input);
+		FuzzyTreeAutomaton fta = parser.parse(input);
 
 		System.out.println(fta);
 	}
@@ -64,29 +64,13 @@ public class FTATIMFileTest {
 		FTATIMParser parser = new FTATIMParser();
 		FTATIMComposer composer = new FTATIMComposer();
 
-		FuzzyTreeAutomata expectedAutomata = createAutomataB();
+		FuzzyTreeAutomaton expectedAutomaton = createAutomatonB();
 
-		String output = composer.compose(expectedAutomata);
-		FuzzyTreeAutomata actualAutomata = parser.parse(output);
+		String output = composer.compose(expectedAutomaton);
+		FuzzyTreeAutomaton actualAutomaton = parser.parse(output);
 
-		assertEquals(expectedAutomata.toString(), actualAutomata.toString());
-		assertEquals(composer.compose(expectedAutomata), composer.compose(actualAutomata));
+		assertEquals(expectedAutomaton, actualAutomaton);
 
-		// BinaryRelation<Word,FuzzyState> ex = new
-		// ArrayList<>(expectedAutomata.transitionFunction.values()).get(0);
-		// BinaryRelation<Word,FuzzyState> ac = new
-		// ArrayList<>(actualAutomata.transitionFunction.values()).get(0);
-		// System.out.println("E: " + ex.hashCode());
-		// System.out.println("A: " + ac.hashCode());
-
-		// //WTF FFFF?? TODO FIXME FAIL
-		System.err.println("Test does not pass, commented out, here ...");
-		assertEquals(expectedAutomata.toString(), actualAutomata.toString());
-		
-		// System.out.println(expectedAutomata.transitionFunction.entrySet().equals(actualAutomata.transitionFunction.entrySet()));
-		// assertEquals(expectedAutomata, actualAutomata);
-
-		
 	}
 
 	@Test
@@ -94,16 +78,12 @@ public class FTATIMFileTest {
 		FTATIMParser parser = new FTATIMParser();
 		FTATIMComposer composer = new FTATIMComposer();
 
-		FuzzyTreeAutomata expectedAutomata = createAutomataB();
-		String file = composer.compose(expectedAutomata);
+		FuzzyTreeAutomaton expectedAutomaton = createAutomatonB();
+		String file = composer.compose(expectedAutomaton);
 
-		FuzzyTreeAutomata actualAutomata = parser.parse(file);
+		FuzzyTreeAutomaton actualAutomaton = parser.parse(file);
 
-		assertEquals(expectedAutomata.toString(), actualAutomata.toString());
-
-		//FIXME not equal ...
-		System.err.println("Test does not pass, commented out, ... and here ...");
-		// assertEquals(expectedAutomata, actualAutomata);
+		assertEquals(expectedAutomaton, actualAutomaton);
 
 	}
 
@@ -112,7 +92,7 @@ public class FTATIMFileTest {
 	public static String createInputFileA() {
 		return "" //
 				+ "type:\n" //
-				+ "	fuzzy TREE automata\n" //
+				+ "	fuzzy TREE automaton\n" //
 				+ "states:\n" //
 				+ "	q_0, q_1, q_2\n" //
 				+ "terminals:\n" //
@@ -134,7 +114,7 @@ public class FTATIMFileTest {
 	public static String createInputFileB() {
 		return "" //
 				+ "type:\n" //
-				+ "	fuzzy tree automata\n" //
+				+ "	fuzzy tree automaton\n" //
 				+ "states:\n" //
 				+ "	q_1, q_2\n" //
 				+ "terminals:\n" //
@@ -161,7 +141,7 @@ public class FTATIMFileTest {
 	private String createInputY() {
 		return "" //
 				+ "type:\n" //
-				+ "	fuzzy tree automata\n" //
+				+ "	fuzzy tree automaton\n" //
 				+ "states:\n" //
 				+ "	q_1\n" //
 				+ "terminals:\n" //
@@ -178,7 +158,7 @@ public class FTATIMFileTest {
 	private String createInputZ() {
 		return "" //
 				+ "type:\n" //
-				+ "	fuzzy tree automata\n" //
+				+ "	fuzzy tree automaton\n" //
 				+ "states:\n" //
 				+ "	q_1\n" //
 				+ "terminals:\n" //
@@ -192,7 +172,7 @@ public class FTATIMFileTest {
 				+ "	q_1\n"; //
 	}
 
-	public static FuzzyTreeAutomata createAutomataB() {
+	public static FuzzyTreeAutomaton createAutomatonB() {
 		final State q1 = new State("q_1");
 		final State q2 = new State("q_2");
 
@@ -239,8 +219,8 @@ public class FTATIMFileTest {
 		// final states
 		Set<State> finalStates = CollectionsUtils.toSet(q2);
 
-		// automata
-		return new FuzzyTreeAutomata(states, nonterminals, terminals, transitionFunction, finalStates);
+		// automaton
+		return new FuzzyTreeAutomaton(states, nonterminals, terminals, transitionFunction, finalStates);
 	}
 
 }

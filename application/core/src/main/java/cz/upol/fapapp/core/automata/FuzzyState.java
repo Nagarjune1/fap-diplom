@@ -4,8 +4,13 @@ import java.util.Map;
 import java.util.Set;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 
+/**
+ * Fuzzy state, terminus technicus for fuzzy set of states.
+ * @author martin
+ *
+ */
 public class FuzzyState extends FuzzySet<State> {
 
 	public FuzzyState(Set<FuzzyTuple<State>> tuples) {
@@ -29,10 +34,4 @@ public class FuzzyState extends FuzzySet<State> {
 		return "FuzzyState: " + toMap();
 	}
 
-
-	
-	
-	
-
-	
 }

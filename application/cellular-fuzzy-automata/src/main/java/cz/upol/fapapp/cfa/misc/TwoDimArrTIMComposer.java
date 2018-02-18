@@ -9,6 +9,12 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectComposer} of {@link TwoDimArray}.
+ * @author martin
+ *
+ * @param <E>
+ */
 public class TwoDimArrTIMComposer<E> extends TIMObjectComposer<TwoDimArray<E>> {
 
 	private final Function<E, String> toStringFunction;

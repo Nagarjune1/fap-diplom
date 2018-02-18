@@ -8,7 +8,7 @@ import org.junit.Test;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class FuzAutWithEpsilonMovesTest {
@@ -20,11 +20,11 @@ public class FuzAutWithEpsilonMovesTest {
 
 	@Test
 	public void test() {
-		FuzAutWithEpsilonMoves automata = AutomataCreator.createAutomataWET(10);
+		FuzAutWithEpsilonMoves automaton = AutomataCreator.createAutomatonWET(10);
 
-		FuzzyState from = new FuzzyState(CollectionsUtils.singletonFuzzySet(automata.getStates(), new State("q_0")));
+		FuzzyState from = new FuzzyState(CollectionsUtils.singletonFuzzySet(automaton.getStates(), new State("q_0")));
 
-		FuzzyState to = automata.computeEpsilonClosure(from);
+		FuzzyState to = automaton.computeEpsilonClosure(from);
 
 
 		System.out.println(to);

@@ -8,10 +8,10 @@ public class FATIMFileTest {
 
 	@Test
 	public void testCompose() {
-		FuzzyAutomata automata = TestAutomataCreator.createAutomata1();
+		FuzzyAutomaton automaton = TestAutomataCreator.createAutomaton1();
 		
 		FATIMComposer composer = new FATIMComposer();
-		String actual = composer.compose(automata);
+		String actual = composer.compose(automaton);
 		
 		String expected = createComposedOf1();
 		
@@ -25,9 +25,9 @@ public class FATIMFileTest {
 		String input = createComposedOf1();
 		
 		
-		BaseFuzzyAutomata actual = parser.parse(input);  
-		FuzzyAutomata expected = TestAutomataCreator.createAutomata1();
-		
+		BaseFuzzyAutomaton actual = parser.parse(input);  
+		FuzzyAutomaton expected = TestAutomataCreator.createAutomaton1();
+	
 		assertEquals(actual, expected);
 		
 	}
@@ -39,7 +39,7 @@ public class FATIMFileTest {
 	private String createComposedOf1() {
 		String expected = ""
 				+ "type:\n"
-				+ "	fuzzy automata\n"
+				+ "	fuzzy automaton\n"
 				+ "\n"
 				+ "alphabet:\n"
 				+ "	a	b\n"

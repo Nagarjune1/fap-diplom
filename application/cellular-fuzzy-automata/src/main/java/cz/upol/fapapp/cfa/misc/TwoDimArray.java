@@ -5,6 +5,15 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Two-dimensional array. Beside the plain old java arrays this allows idexes to
+ * be negative as well. In theese terms, we call minIndex and maxIndex
+ * respectivelly.
+ * 
+ * @author martin
+ *
+ * @param <E>
+ */
 public class TwoDimArray<E> implements Iterable<E> {
 
 	private final int minIndex;
@@ -40,7 +49,15 @@ public class TwoDimArray<E> implements Iterable<E> {
 
 	/**************************************************************************/
 
-	public E get(int i, int j) {
+	/**
+	 * Returns item at given indexes. If out of bounds, or udefined, throws
+	 * exception.
+	 * 
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	public E get(int i, int j) throws IllegalArgumentException, IllegalStateException {
 		checkBounds(i, j);
 
 		Map<Integer, E> row = items.get(i);
@@ -55,7 +72,14 @@ public class TwoDimArray<E> implements Iterable<E> {
 		return item;
 	}
 
-	public void set(int i, int j, E item) {
+	/**
+	 * Sets item at given indexes. If out of bounds throws eception
+	 * 
+	 * @param i
+	 * @param j
+	 * @param item
+	 */
+	public void set(int i, int j, E item) throws IllegalArgumentException {
 		checkBounds(i, j);
 
 		Map<Integer, E> row = items.get(i);
@@ -63,8 +87,14 @@ public class TwoDimArray<E> implements Iterable<E> {
 	}
 
 	/**************************************************************************/
-
-	private void checkBounds(int i, int j) {
+	/**
+	 * Checks bounds. Throws exception if out of bounds.
+	 * 
+	 * @param i
+	 * @param j
+	 * @throws IllegalArgumentException
+	 */
+	private void checkBounds(int i, int j) throws IllegalArgumentException {
 		if (i < minIndex || i >= maxIndex) {
 			throw new IllegalArgumentException("Out of bounds: i=" + i);
 		}
@@ -73,6 +103,14 @@ public class TwoDimArray<E> implements Iterable<E> {
 		}
 	}
 
+	/**
+	 * Initializes array to be filled with dflt.
+	 * 
+	 * @param minIndex
+	 * @param maxIndex
+	 * @param dflt
+	 * @return
+	 */
 	private static <E> Map<Integer, Map<Integer, E>> initEmpty(int minIndex, int maxIndex, E dflt) {
 		Map<Integer, Map<Integer, E>> map = new HashMap<>();
 
@@ -150,6 +188,13 @@ public class TwoDimArray<E> implements Iterable<E> {
 
 	/**************************************************************************/
 
+	/**
+	 * Iterator over {@link TwoDimArray}. Runs over lines.
+	 * 
+	 * @author martin
+	 *
+	 * @param <E>
+	 */
 	public static class TwoDimArrIterator<E> implements Iterator<E> {
 		private Iterator<Map<Integer, E>> rowsIter;
 		private Iterator<E> colsIter;
@@ -181,6 +226,13 @@ public class TwoDimArray<E> implements Iterable<E> {
 		}
 	}
 
+	/**
+	 * Lambda for #cz.upol.fapapp.cfa.misc.TwoDimArray.forEach(TwoDimArrForEach<E>).
+	 * 
+	 * @author martin
+	 *
+	 * @param <E>
+	 */
 	@FunctionalInterface
 	public static interface TwoDimArrForEach<E> {
 		public void invoke(int i, int j, E elem);

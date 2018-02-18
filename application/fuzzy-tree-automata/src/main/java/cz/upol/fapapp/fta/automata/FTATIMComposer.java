@@ -18,14 +18,20 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
-public class FTATIMComposer extends TIMObjectComposer<FuzzyTreeAutomata> {
+/**
+ * {@link TIMObjectComposer} of {@link FuzzyTreeAutomaton}.
+ * 
+ * @author martin
+ *
+ */
+public class FTATIMComposer extends TIMObjectComposer<FuzzyTreeAutomaton> {
 
 	public FTATIMComposer() {
 		super(FTATIMParser.TYPE);
 	}
 
 	@Override
-	protected void process(FuzzyTreeAutomata object, TIMFileData data) {
+	protected void process(FuzzyTreeAutomaton object, TIMFileData data) {
 		processStates(object.getStates(), data);
 		processNonterminals(object.getNonterminals(), data);
 		processTerminals(object.getTerminals(), data);
@@ -64,7 +70,6 @@ public class FTATIMComposer extends TIMObjectComposer<FuzzyTreeAutomata> {
 		}
 	}
 
-
 	private void processFinalStates(Set<State> finalStates, TIMFileData data) {
 		LineElements line = TIMObjectParserComposerTools.statesToLine(finalStates);
 		data.add("final states", line);
@@ -72,7 +77,6 @@ public class FTATIMComposer extends TIMObjectComposer<FuzzyTreeAutomata> {
 
 	///////////////////////////////////////////////////////////////////////////
 
-	
 	private LineElements generateTransitionLine(Symbol currentSymbol, Couple<Word, FuzzyState> couple) {
 		List<String> items = new LinkedList<>();
 		items.add(currentSymbol.getValue());

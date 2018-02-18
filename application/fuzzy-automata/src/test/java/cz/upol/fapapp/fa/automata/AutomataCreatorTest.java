@@ -1,6 +1,6 @@
 package cz.upol.fapapp.fa.automata;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class AutomataCreatorTest {
@@ -24,18 +24,18 @@ public class AutomataCreatorTest {
 		
 		
 		Word word1 = new Word(symA, symA, symB);
-		FuzzyAutomata automata1 = AutomataCreator.automataOfWord(alphabet, word1);
-		automata1.print(System.out);
-		assertEquals(Degree.ONE, automata1.degreeOfWord(word1));
+		FuzzyAutomaton automaton1 = AutomataCreator.automatonOfWord(alphabet, word1);
+		automaton1.print(System.out);
+		assertEquals(Degree.ONE, automaton1.degreeOfWord(word1));
 		
 		
 		Word word2 = new Word(symA, symA, symB, symC, symA, symD, symC);
-		FuzzyAutomata automata2 = AutomataCreator.automataOfWord(alphabet, word2);
-		automata2.print(System.out);
-		assertEquals(Degree.ONE, automata2.degreeOfWord(word2));
+		FuzzyAutomaton automaton2 = AutomataCreator.automatonOfWord(alphabet, word2);
+		automaton2.print(System.out);
+		assertEquals(Degree.ONE, automaton2.degreeOfWord(word2));
 		
-		assertEquals(Degree.ZERO, automata1.degreeOfWord(word2));
-		assertEquals(Degree.ZERO, automata2.degreeOfWord(word1));
+		assertEquals(Degree.ZERO, automaton1.degreeOfWord(word2));
+		assertEquals(Degree.ZERO, automaton2.degreeOfWord(word1));
 	}
 
 }

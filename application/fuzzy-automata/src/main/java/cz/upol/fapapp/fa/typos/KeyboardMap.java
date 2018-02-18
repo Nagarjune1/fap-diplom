@@ -6,10 +6,16 @@ import java.util.Map;
 import java.util.Set;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyBinaryRelation;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyBinaryRelation;
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 
+/**
+ * Description of similarities of keys at keyboard.
+ * 
+ * @author martin
+ *
+ */
 public class KeyboardMap {
 	private final Map<Symbol, Set<Symbol>> neighborhood;
 

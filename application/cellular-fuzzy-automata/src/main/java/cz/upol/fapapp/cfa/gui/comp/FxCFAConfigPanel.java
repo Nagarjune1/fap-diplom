@@ -12,6 +12,12 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Paint;
 
+/**
+ * JavaFX component displaing {@link CFAConfiguration}.
+ * 
+ * @author martin
+ *
+ */
 public class FxCFAConfigPanel extends Canvas {
 
 	public static final ColorModel DEFAULT_COLOR_MODEL = ColorModel.GRAY;

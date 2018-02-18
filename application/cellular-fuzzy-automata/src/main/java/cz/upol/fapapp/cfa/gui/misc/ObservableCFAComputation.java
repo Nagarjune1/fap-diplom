@@ -3,16 +3,22 @@ package cz.upol.fapapp.cfa.gui.misc;
 import java.util.ArrayList;
 import java.util.List;
 
-import cz.upol.fapapp.cfa.comp.CFAComputation;
+import cz.upol.fapapp.cfa.conf.CFAComputation;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
+/**
+ * An Fx extension of {@link CFAComputation} but {@link Observable}.
+ * 
+ * @author martin
+ *
+ */
 public class ObservableCFAComputation extends CFAComputation implements Observable {
 
 	private final List<InvalidationListener> listeners;
 
 	public ObservableCFAComputation(CFAComputation computation) {
-		super(computation.getAutomata(), computation.getConfig(), computation.getGeneration());
+		super(computation.getAutomaton(), computation.getConfig(), computation.getGeneration());
 
 		this.listeners = new ArrayList<>();
 	}

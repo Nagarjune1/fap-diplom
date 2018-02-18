@@ -2,6 +2,12 @@ package cz.upol.fapapp.fta.tree;
 
 import cz.upol.fapapp.core.ling.Alphabet;
 
+/**
+ * Partiali ranked alphabet, tuple of alphabet of terminals and nonterminals.
+ * 
+ * @author martin
+ *
+ */
 public class PartRankedAlphabet {
 	private final Alphabet terminals;
 	private final Alphabet nonterminals;

@@ -70,7 +70,7 @@ public class CFAConfTIMFileTest {
 	private String createGeneratedFile() {
 		return "" //
 				+ "type:\n" //
-				+ "	cellular fuzzy automata configuration\n" //
+				+ "	cellular fuzzy automaton configuration\n" //
 				+ "\n" //
 				+ "size:\n" //
 				+ "	4\n" //
@@ -86,7 +86,7 @@ public class CFAConfTIMFileTest {
 	private String createSomeFile() {
 		return "" //
 				+ "type:\n" //
-				+ "	cellular fuzzy automata configuration\n" //
+				+ "	cellular fuzzy automaton configuration\n" //
 				+ "size:\n" //
 				+ "	4\n" //
 				+ "cells:\n" //

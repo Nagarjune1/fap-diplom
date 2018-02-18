@@ -5,15 +5,22 @@ import java.util.TreeMap;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Word;
-import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 import javafx.concurrent.Task;
 
+/**
+ * JavaFx task performing computation of automata. Updates states (number of
+ * computed automata).
+ * 
+ * @author martin
+ *
+ */
 public class AutomataComputationTask extends Task<Map<String, Degree>> {
 
-	private final Map<String, FuzzyAutomata> automata;
+	private final Map<String, FuzzyAutomaton> automata;
 	private final Word word;
 
-	public AutomataComputationTask(Map<String, FuzzyAutomata> automata, Word word) {
+	public AutomataComputationTask(Map<String, FuzzyAutomaton> automata, Word word) {
 		super();
 		this.automata = automata;
 		this.word = word;
@@ -27,7 +34,7 @@ public class AutomataComputationTask extends Task<Map<String, Degree>> {
 		for (String name : automata.keySet()) {
 			this.updateMessage(name + " ...");
 
-			FuzzyAutomata automaton = automata.get(name);
+			FuzzyAutomaton automaton = automata.get(name);
 
 			Degree degree = automaton.degreeOfWord(word);
 

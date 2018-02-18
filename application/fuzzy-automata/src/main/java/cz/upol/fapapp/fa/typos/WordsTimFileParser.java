@@ -11,10 +11,26 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} of {@link List} of {@link Word}. Uses following
+ * syntax:
+ * 
+ * <pre>
+ * alphabet:
+ *   a b c d e
+ * words:
+ *   abece
+ *   debebe
+ *   decaba
+ * </pre>
+ * 
+ * @author martin
+ *
+ */
 public class WordsTimFileParser extends TIMObjectParser<List<Word>> {
 
 	public static final String TYPE = "words for typos correct";
-	
+
 	public WordsTimFileParser() {
 		super(TYPE);
 	}
@@ -22,13 +38,13 @@ public class WordsTimFileParser extends TIMObjectParser<List<Word>> {
 	@Override
 	public List<Word> process(TIMFileData data) {
 		List<Word> words = processWords(data);
-		
+
 		return words;
 	}
 
 	private List<Word> processWords(TIMFileData data) {
 		LineElements elements = TIMObjectParserComposerTools.findElementsMerged(data, "words", "list");
-		
+
 		return elements.getElements().stream() //
 				.map((e) -> stringToWord(e)) //
 				.collect(Collectors.toList());
@@ -36,15 +52,15 @@ public class WordsTimFileParser extends TIMObjectParser<List<Word>> {
 
 	public static Word stringToWord(String string) {
 		String lower = string.toLowerCase();
-		
+
 		List<Symbol> symbols = new ArrayList<>(lower.length());
-		
+
 		for (int i = 0; i < lower.length(); i++) {
 			String str = Character.toString(lower.charAt(i));
 			Symbol symbol = new Symbol(str);
 			symbols.add(symbol);
 		}
-		
+
 		return new Word(symbols);
 	}
 

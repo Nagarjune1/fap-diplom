@@ -9,10 +9,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>fuzzy-automata</artifactId>
+	<artifactId>fuzzy-automaton</artifactId>
 
-	<name>Fuzzy automata</name>
-	<description>Module implementing fuzzy automata</description>
+	<name>Fuzzy automaton</name>
+	<description>Module implementing fuzzy automaton</description>
 
 	<dependencies>
 		<dependency>

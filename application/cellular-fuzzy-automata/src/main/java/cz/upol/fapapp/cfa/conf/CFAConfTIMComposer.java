@@ -6,6 +6,13 @@ import cz.upol.fapapp.cfa.misc.TwoDimArray;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 
+/**
+ * {@link TIMObjectComposer} for {@link CFAConfiguration}. See
+ * {@link CFAConfTIMParser} for format.
+ * 
+ * @author martin
+ *
+ */
 public class CFAConfTIMComposer extends TIMObjectComposer<CFAConfiguration> {
 
 	private final TwoDimArrTIMComposer<CellState> arrComp;

@@ -4,7 +4,7 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
@@ -15,7 +15,12 @@ import cz.upol.feda.lingvar.BaseLingVarLabel;
 import cz.upol.feda.lingvar.LingVarsTIMComposer;
 import cz.upol.feda.lingvar.LingvisticVariable;
 
-public class EDFATIMComposer extends TIMObjectComposer<EventDrivenFuzzyAutomata> {
+/**
+ * {@link TIMObjectComposer} of {@link EventDrivenFuzzyAutomaton}.
+ * @author martin
+ *
+ */
+public class EDFATIMComposer extends TIMObjectComposer<EventDrivenFuzzyAutomaton> {
 
 	private final LingVarsTIMComposer lingVarsComposer = new LingVarsTIMComposer("whatewer", "events");
 
@@ -24,7 +29,7 @@ public class EDFATIMComposer extends TIMObjectComposer<EventDrivenFuzzyAutomata>
 	}
 
 	@Override
-	protected void process(EventDrivenFuzzyAutomata object, TIMFileData data) {
+	protected void process(EventDrivenFuzzyAutomaton object, TIMFileData data) {
 		processStates(object.getStates(), data);
 		processEvents(object.getEventsAlphabet(), data);
 		processTransitions(object.getTransitionFunction(), data);

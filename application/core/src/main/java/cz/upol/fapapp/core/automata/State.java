@@ -1,5 +1,10 @@
 package cz.upol.fapapp.core.automata;
 
+/**
+ * State, base element in (fuzzy) automata theory.
+ * @author martin
+ *
+ */
 public class State implements Comparable<State> {
 	private final String label;
 
@@ -12,6 +17,8 @@ public class State implements Comparable<State> {
 		return label;
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

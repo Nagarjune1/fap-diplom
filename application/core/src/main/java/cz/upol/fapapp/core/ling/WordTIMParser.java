@@ -1,12 +1,17 @@
 package cz.upol.fapapp.core.ling;
 
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} for {@link Word}.
+ * @author martin
+ *
+ */
 public class WordTIMParser extends TIMObjectParser<WordWithAlphabet> {
 
 	public static final String TYPE = "word";

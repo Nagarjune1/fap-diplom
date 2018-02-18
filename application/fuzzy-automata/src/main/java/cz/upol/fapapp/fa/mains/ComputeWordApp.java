@@ -10,38 +10,45 @@ import cz.upol.fapapp.core.ling.WordTIMParser;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.automata.FATIMParser;
-import cz.upol.fapapp.fa.automata.FuzzyAutomata;
+import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
+/**
+ * Application for compiting degree of acceptance by automaton.
+ * 
+ * @author martin
+ *
+ */
 public class ComputeWordApp {
 
 	public static void main(String[] args) {
-		//args = new String[] { "test-data/basic/automata1.timf", "test-data/basic/word1.timf" };
+		// args = new String[] { "test-data/basic/automaton1.timf",
+		// "test-data/basic/word1.timf" };
 		List<String> argsList = AppsMainsTools.checkArgs(args, 2, 2, () -> printHelp());
 		if (argsList == null) {
 			System.exit(1);
 		}
 
-		String automataFileName = argsList.get(0);
+		String automatonFileName = argsList.get(0);
 		String wordFileName = argsList.get(1);
 
-		Degree degree = run(automataFileName, wordFileName);
+		Degree degree = run(automatonFileName, wordFileName);
 		System.out.println(degree);
 	}
 
-	private static Degree run(String automataFileName, String wordFileName) {
-		File automataFile = new File(automataFileName);
+	private static Degree run(String automatonFileName, String wordFileName) {
+		File automatonFile = new File(automatonFileName);
 		File wordFile = new File(wordFileName);
 
-		return run(automataFile, wordFile);
+		return run(automatonFile, wordFile);
 	}
 
-	private static Degree run(File automataFile, File wordFile) {
-		FATIMParser automataParser = new FATIMParser();
-		FuzzyAutomata automata;
+	private static Degree run(File automatonFile, File wordFile) {
+		FATIMParser automatonParser = new FATIMParser();
+		FuzzyAutomaton automaton;
 		try {
-			automata = (FuzzyAutomata) automataParser.parse(automataFile);
+			automaton = (FuzzyAutomaton) automatonParser.parse(automatonFile);
 		} catch (IOException e) {
-			Logger.get().error("Cannot load automata file: " + e);
+			Logger.get().error("Cannot load automaton file: " + e);
 			return null;
 		}
 
@@ -54,16 +61,16 @@ public class ComputeWordApp {
 			return null;
 		}
 
-		return run(automata, word);
+		return run(automaton, word);
 	}
 
-	private static Degree run(FuzzyAutomata automata, Word word) {
-		return automata.degreeOfWord(word);
+	private static Degree run(FuzzyAutomaton automaton, Word word) {
+		return automaton.degreeOfWord(word);
 	}
 
 	private static void printHelp() {
 		System.out.println("ComputeWord");
-		System.out.println("Usage: ComputeWord automata.timf word.timf");
+		System.out.println("Usage: ComputeWord automaton.timf word.timf");
 	}
 
 }

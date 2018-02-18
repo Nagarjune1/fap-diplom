@@ -7,7 +7,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 
 public class TestFuzzy {
 

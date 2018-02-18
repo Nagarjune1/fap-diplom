@@ -3,6 +3,11 @@ package cz.upol.fapapp.fta.tree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 
+/**
+ * General structure for tree node.
+ * @author martin
+ *
+ */
 public abstract class BaseTree {
 	private final Symbol label;
 

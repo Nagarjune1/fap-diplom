@@ -8,6 +8,11 @@ import cz.upol.fapapp.cfa.misc.TwoDimArray.TwoDimArrForEach;
 import cz.upol.fapapp.cfa.outers.CFAOuterCellSupplier;
 import cz.upol.fapapp.core.misc.Printable;
 
+/**
+ * Configuration of cellular fuzzy automat. In fact {@link TwoDimArray} of {@link CellState} of size m.
+ * @author martin
+ *
+ */
 public class CFAConfiguration implements Printable {
 
 	private final int m;

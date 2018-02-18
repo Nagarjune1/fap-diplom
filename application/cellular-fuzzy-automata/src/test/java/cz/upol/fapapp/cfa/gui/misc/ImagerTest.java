@@ -1,6 +1,6 @@
 package cz.upol.fapapp.cfa.gui.misc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class ImagerTest {
 	/**************************************************************************/
 
 	@Test
-	@Ignore("Due the performance test skipped")
+	@Ignore("Due the performance test skipped")//TODO wtf
 	public void testBi() throws IOException {
 		ConfigGenerator gen = new ConfigGenerator();
 		CFAConfiguration config = gen.generateDoubles(250, 42);

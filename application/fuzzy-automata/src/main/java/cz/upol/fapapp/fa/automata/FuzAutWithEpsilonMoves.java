@@ -4,13 +4,21 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
-import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 
-public class FuzAutWithEpsilonMoves extends FuzzyAutomata {
+/**
+ * Fuzzy automaton with epsilon moves is extension of {@link FuzzyAutomaton}.
+ * Allows transtition function to operate with {@link Symbol#EMPTY} and perform
+ * so-called epsilon closures. Since the closure can cause infinite
+ * approximation, requires as well precision.
+ * 
+ * @author martin
+ *
+ */
+public class FuzAutWithEpsilonMoves extends FuzzyAutomaton {
 
 	private final int precision;
 

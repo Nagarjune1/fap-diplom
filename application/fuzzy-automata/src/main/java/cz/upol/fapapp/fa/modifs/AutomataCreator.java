@@ -8,21 +8,25 @@ import java.util.TreeSet;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.core.sets.CollectionsUtils;
-import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.fa.automata.FuzAutWithEpsilonMoves;
-import cz.upol.fapapp.fa.automata.FuzzyAutomata;
-
+import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
+/**
+ * Class performing creation of some testing automata.
+ * @author martin
+ *
+ */
 public class AutomataCreator {
 
 	/**
-	 * Constructs following automata:
+	 * Constructs following automaton:
 	 * 
 	 * <pre>
 	 *   
@@ -35,7 +39,7 @@ public class AutomataCreator {
 	 * 
 	 * @return
 	 */
-	public static FuzzyAutomata createAutomata1() {
+	public static FuzzyAutomaton createAutomaton1() {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
 
@@ -67,10 +71,10 @@ public class AutomataCreator {
 		finals.put(stateQ1, new Degree(0.8));
 		FuzzySet<State> finalStates = new FuzzySet<>(finals);
 
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
-	public static FuzzyAutomata createAutomata2() {
+	public static FuzzyAutomaton createAutomaton2() {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
 
@@ -103,10 +107,10 @@ public class AutomataCreator {
 		finals.put(stateQ1, new Degree(0.9));
 		FuzzySet<State> finalStates = new FuzzySet<>(finals);
 
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
-	public static FuzzyAutomata createAutomata3() {
+	public static FuzzyAutomaton createAutomaton3() {
 		final State stateQ0 = new State("q_0");
 
 		final Symbol symbolU = new Symbol("u");
@@ -138,11 +142,11 @@ public class AutomataCreator {
 		FuzzySet<State> initialStates = CollectionsUtils.singletonFuzzySet(states, stateQ0);
 		FuzzySet<State> finalStates = CollectionsUtils.singletonFuzzySet(states, stateQ0);
 
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
 	
-	public static FuzAutWithEpsilonMoves createAutomataWET(int precision) {
+	public static FuzAutWithEpsilonMoves createAutomatonWET(int precision) {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
 		final State stateQ2 = new State("q_2");
@@ -188,14 +192,14 @@ public class AutomataCreator {
 	///////////////////////////////////////////////////////////////////////////
 	
 	
-	public static FuzzyAutomata automataOfWord(Word word) {
+	public static FuzzyAutomaton automatonOfWord(Word word) {
 		Alphabet alphabet = CollectionsUtils.inferAlphabetOfWord(word);
-		FuzzyAutomata automata = automataOfWord(alphabet, word);
-		return automata;
+		FuzzyAutomaton automaton = automatonOfWord(alphabet, word);
+		return automaton;
 	}
 
-	public static FuzzyAutomata automataOfWord(Alphabet alphabet, Word word) {
-		Logger.get().moreinfo("Creating automata of " + word);
+	public static FuzzyAutomaton automatonOfWord(Alphabet alphabet, Word word) {
+		Logger.get().moreinfo("Creating automaton of " + word);
 		
 		StatesCreator creator = new StatesCreator();
 
@@ -225,7 +229,7 @@ public class AutomataCreator {
 		FuzzySet<State> initialStates = CollectionsUtils.singletonFuzzySet(states, initState);
 		FuzzySet<State> finalStates = CollectionsUtils.singletonFuzzySet(states, finState);
 
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
 }

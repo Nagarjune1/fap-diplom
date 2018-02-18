@@ -2,6 +2,13 @@ package cz.upol.fapapp.core.fuzzy.tnorm;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 
+/**
+ * Base abstract class for t-norm and t-conorm computations. Repacks abstract
+ * methods to compute not with {@link Degree}, but with plain doubles.
+ * 
+ * @author martin
+ *
+ */
 public abstract class SimpleTNorm implements BaseTNorm {
 
 	@Override

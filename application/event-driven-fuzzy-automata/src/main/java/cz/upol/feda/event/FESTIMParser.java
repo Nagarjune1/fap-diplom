@@ -14,6 +14,18 @@ import cz.upol.feda.lingvar.LingVarValue;
 import cz.upol.feda.lingvar.LingVarsTIMParser;
 import cz.upol.feda.lingvar.LingvisticVariable;
 
+/**
+ * {@link TIMObjectParser} of {@link FuzzyEventsSequence}. Uses following format:
+ * <pre>
+ * variables:
+ *  (see {@link LingVarsTIMParser})
+ * values:
+ *  foo is 42, bar is 99
+ *  foo is 33, bar is -1.5
+ * </pre>
+ * @author martin
+ *
+ */
 public class FESTIMParser extends TIMObjectParser<FuzzyEventsSequence> {
 
 	public static final String TYPE = "fuzzy events sequence";

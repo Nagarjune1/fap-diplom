@@ -7,17 +7,17 @@ import java.util.TreeSet;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 
 public class TestAutomataCreator {
 	
 
 	/**
-	 * Constructs following automata:
+	 * Constructs following automaton:
 	 * 
 	 * <pre>
 	 *   
@@ -30,7 +30,7 @@ public class TestAutomataCreator {
 	 * 
 	 * @return
 	 */
-	public static FuzzyAutomata createAutomata1() {
+	public static FuzzyAutomaton createAutomaton1() {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
 
@@ -62,7 +62,7 @@ public class TestAutomataCreator {
 		finals.put(stateQ1, new Degree(0.8));
 		FuzzySet<State> finalStates = new FuzzySet<>(finals);
 
-		return new FuzzyAutomata(alphabet, states, transitionFunction, initialStates, finalStates);
+		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
 }

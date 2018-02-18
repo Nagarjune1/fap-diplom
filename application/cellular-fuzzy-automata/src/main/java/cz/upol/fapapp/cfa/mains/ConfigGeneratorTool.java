@@ -9,6 +9,12 @@ import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 
+/**
+ * Application generating configs.
+ * 
+ * @author martin
+ *
+ */
 public class ConfigGeneratorTool {
 
 	public static void main(String[] args) {

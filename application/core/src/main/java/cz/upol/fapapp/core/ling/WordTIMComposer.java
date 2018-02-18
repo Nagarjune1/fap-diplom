@@ -1,11 +1,17 @@
 package cz.upol.fapapp.core.ling;
 
-import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectComposer} for {@link Word}.
+ * 
+ * @author martin
+ *
+ */
 public class WordTIMComposer extends TIMObjectComposer<Word> {
 
 	private final Alphabet alphabet;

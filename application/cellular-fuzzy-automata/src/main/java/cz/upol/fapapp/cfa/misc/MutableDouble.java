@@ -1,5 +1,11 @@
 package cz.upol.fapapp.cfa.misc;
 
+/**
+ * Mutable double value. Simple, yea?
+ * 
+ * @author martin
+ *
+ */
 public class MutableDouble {
 	private double value;
 

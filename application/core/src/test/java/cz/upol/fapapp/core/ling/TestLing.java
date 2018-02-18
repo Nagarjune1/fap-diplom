@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import cz.upol.fapapp.core.sets.CollectionsUtils;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 
 public class TestLing {
 

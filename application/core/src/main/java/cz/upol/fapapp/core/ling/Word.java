@@ -4,7 +4,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Word os sequence of {@link Symbol}s.
+ * 
+ * @author martin
+ *
+ */
 public class Word {
+	/**
+	 * Empty word (just for memory efficiency), equvivalent to
+	 * {@code new Word()}.
+	 */
 	public static final Word EMPTY = new Word();
 
 	private final List<Symbol> symbols;
@@ -31,11 +41,19 @@ public class Word {
 		return symbols.get(index);
 	}
 
+	/**
+	 * Creates list of symbols containing given list.
+	 * 
+	 * @param symbols
+	 * @return
+	 */
 	private List<Symbol> concat(List<Symbol> symbols) {
 		return symbols.stream()//
 				.filter((s) -> !s.equals(Symbol.EMPTY))//
 				.collect(Collectors.toList());
 	}
+
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {
@@ -67,6 +85,11 @@ public class Word {
 		return "Word:" + symbols + "";
 	}
 
+	/**
+	 * Outputs word with symbols separated by space.
+	 * 
+	 * @return
+	 */
 	public String toSimpleHumanString() {
 		return symbols.stream() //
 				.map((s) -> s.getValue()) //

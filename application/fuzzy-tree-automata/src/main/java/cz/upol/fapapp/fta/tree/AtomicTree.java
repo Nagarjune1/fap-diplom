@@ -3,6 +3,11 @@ package cz.upol.fapapp.fta.tree;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 
+/**
+ * Atomic tree (leaf node).
+ * @author martin
+ *
+ */
 public class AtomicTree extends BaseTree {
 
 	public AtomicTree(Symbol leaf) {

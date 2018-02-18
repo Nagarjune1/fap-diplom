@@ -2,12 +2,12 @@ package cz.upol.fapapp.cfa.mains;
 
 import java.util.List;
 
-import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomata;
-import cz.upol.fapapp.cfa.comp.CFAComputation;
+import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomaton;
+import cz.upol.fapapp.cfa.conf.CFAComputation;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.frame.SimulationFrameController;
 import cz.upol.fapapp.cfa.impls.droplets.CommonDropletsGenerator;
-import cz.upol.fapapp.cfa.impls.droplets.DropletsAutomata;
+import cz.upol.fapapp.cfa.impls.droplets.DropletsAutomaton;
 import cz.upol.fapapp.cfa.impls.droplets.DropletsConfigGenerator;
 import cz.upol.fapapp.cfa.impls.droplets.DropletsGenerator;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
@@ -17,6 +17,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Application performing the droplets simulator.
+ * 
+ * @author martin
+ *
+ */
 public class DropletsSimulatorApp extends Application {
 
 	private static final int DEFAULT_INIT_COUNT = 1;
@@ -25,7 +31,7 @@ public class DropletsSimulatorApp extends Application {
 	private static final double STEP_MIN_VALUE = 0.0;
 
 	public static void main(String[] args) {
-		//args = new String[] { "300", "1", "42"};
+		// args = new String[] { "300", "1", "42"};
 		Application.launch(args);
 	}
 
@@ -46,7 +52,7 @@ public class DropletsSimulatorApp extends Application {
 		Scene scene = new Scene(root);
 
 		stage.setScene(scene);
-		stage.setTitle("Cellular fuzzy automata simulator (Droplets automata)");
+		stage.setTitle("Cellular fuzzy automaton simulator (Droplets automaton)");
 		stage.show();
 	}
 
@@ -67,12 +73,12 @@ public class DropletsSimulatorApp extends Application {
 			int stepSeed, double stepMinValue) {
 
 		DropletsGenerator dropletsGenerator = new CommonDropletsGenerator(stepCount, stepSeed, stepMinValue);
-		CellularFuzzyAutomata automata = new DropletsAutomata(size, dropletsGenerator);
+		CellularFuzzyAutomaton automaton = new DropletsAutomaton(size, dropletsGenerator);
 
 		DropletsConfigGenerator configsGenerator = new DropletsConfigGenerator();
 		CFAConfiguration config = configsGenerator.generate(size, initCount, initSeed, initMinValue);
 
-		return new CFAComputation(automata, config);
+		return new CFAComputation(automaton, config);
 	}
 
 	private void printHelp() {

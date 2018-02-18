@@ -1,11 +1,10 @@
 package cz.upol.fapapp.cfa.outers;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 
 public class CloningOuterSupplierTest {

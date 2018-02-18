@@ -10,6 +10,11 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectComposer} of {@link BaseTree}.
+ * @author martin
+ *
+ */
 public class TreeTIMComposer extends TIMObjectComposer<BaseTree> {
 
 	private static final String OPENING_PARENTHESIS = "(";

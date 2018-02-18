@@ -9,6 +9,13 @@ import cz.upol.fapapp.fa.gui.data.Path;
 import cz.upol.fapapp.fa.gui.data.PathSegment;
 import javafx.geometry.Point2D;
 
+/**
+ * Base strategy. Does nothing when new path started and converts to word
+ * ignoring {@link Direction.NOPE}s and short segments.
+ * 
+ * @author martin
+ *
+ */
 public abstract class BaseSimpleSegmentStrategy implements PathSegmentationStrategy {
 
 	public BaseSimpleSegmentStrategy() {

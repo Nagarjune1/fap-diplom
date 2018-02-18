@@ -6,13 +6,40 @@ import java.util.function.Function;
 
 import cz.upol.fapapp.cfa.automata.CellState;
 
+/**
+ * Specification definining how particular cell state should be colored.
+ * 
+ * @author martin
+ *
+ */
 public enum ColorModel {
+	/**
+	 * From black over gray to white.
+	 */
 	GRAY(new GrayColorMapper()), //
+	/**
+	 * From red over orange, yellow, green, cyan, blue, purple back to red.
+	 */
 	RED_TO_RED_HSV(new HSVColorMapper((float) 1.0, (float) 0.8)), //
+	/**
+	 * From orange over yellow, green, cyan, blue to purple.
+	 */
 	ORANGE_TO_PURPLE_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 0.1)), //
-	RED_TO_GREEN_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 0.0, 1.0/3.0)), //
-	GREEN_TO_BLUE_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 1/3.0, 2/3.0)), //
+	/**
+	 * From red over orange, yellow to green.
+	 */
+	RED_TO_GREEN_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 0.0, 1.0 / 3.0)), //
+	/**
+	 * From green over cyan to blue.
+	 */
+	GREEN_TO_BLUE_HSV(new HSVColorMapper((float) 1.0, (float) 0.8, 1 / 3.0, 2 / 3.0)), //
+	/**
+	 * From black to red.
+	 */
 	RED(new RGBColorMapper(Color.RED)), //
+	/**
+	 * From black to cyan.
+	 */
 	CYAN(new RGBColorMapper(Color.CYAN)); //
 
 	/**************************************************************************/
@@ -29,6 +56,12 @@ public enum ColorModel {
 
 	/**************************************************************************/
 
+	/**
+	 * Assumes cell value as gray, i.e. color: R(cell), G(cell), B(cell)
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static class GrayColorMapper implements Function<CellState, Color> {
 
 		@Override
@@ -41,6 +74,12 @@ public enum ColorModel {
 
 	}
 
+	/**
+	 * Assumes cell value as hue based on hue mapper.
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static class HSVColorMapper implements Function<CellState, Color> {
 
 		private final float brigtness;
@@ -80,6 +119,13 @@ public enum ColorModel {
 
 	}
 
+	/**
+	 * Assumes cell state as brightness of specified color (i.e. cell=0 means
+	 * black and cell=1 means cyan).
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static class RGBColorMapper implements Function<CellState, Color> {
 
 		private final Color color;

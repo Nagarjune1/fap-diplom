@@ -11,6 +11,13 @@ import cz.upol.feda.lingvar.LingVarValue;
 import cz.upol.feda.lingvar.LingVarsTIMComposer;
 import cz.upol.feda.lingvar.LingvisticVariable;
 
+/**
+ * {@link TIMObjectComposer} of {@link FuzzyEventsSequence}. See
+ * {@link FESTIMParser} to see the format.
+ * 
+ * @author martin
+ *
+ */
 public class FESTIMComposer extends TIMObjectComposer<FuzzyEventsSequence> {
 
 	private final LingVarsTIMComposer lingVarsComposer = new LingVarsTIMComposer("whatever", "variables");

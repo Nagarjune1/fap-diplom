@@ -1,7 +1,14 @@
 package cz.upol.fapapp.core.ling;
 
+/***
+ * Symbol is element of {@link Alphabet}. In fact it is something described by
+ * its string value. Also, symbol is {@link Symbol#EMPTY} symbol.
+ * 
+ * @author martin
+ *
+ */
 public class Symbol implements Comparable<Symbol> {
-	public static final Symbol EMPTY = new Symbol("epsilon");	//TODO epsilon
+	public static final Symbol EMPTY = new Symbol("epsilon");
 
 	private final String value;
 
@@ -13,6 +20,8 @@ public class Symbol implements Comparable<Symbol> {
 	public String getValue() {
 		return value;
 	}
+
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {

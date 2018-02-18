@@ -1,12 +1,18 @@
 package cz.upol.fapapp.cfa.impls.common;
 
 import cz.upol.fapapp.cfa.automata.CellState;
-import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomata;
+import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomaton;
 import cz.upol.fapapp.cfa.conf.CellNeighborhood;
 import cz.upol.fapapp.cfa.mu.SimpleTransitionFunction;
 import cz.upol.fapapp.cfa.outers.ConstantOuterSupplier;
 
-public class BivalentGameOfLifeCFA extends CellularFuzzyAutomata {
+/**
+ * Implementation of plain old game of life.
+ * 
+ * @author martin
+ *
+ */
+public class BivalentGameOfLifeCFA extends CellularFuzzyAutomaton {
 
 	public static final CellState ALIVE = new CellState(1.0);
 	public static final CellState DEAD = new CellState(0.0);
@@ -19,6 +25,12 @@ public class BivalentGameOfLifeCFA extends CellularFuzzyAutomata {
 
 	/*************************************************************************/
 
+	/**
+	 * Game of life's mu.
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static class BivalGameOfLifeMu extends SimpleTransitionFunction {
 
 		@Override

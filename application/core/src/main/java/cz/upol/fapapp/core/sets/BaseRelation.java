@@ -4,7 +4,14 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.sets.BaseRelation.Tuple;
 
-public class BaseRelation<T extends Tuple> {
+/**
+ * Base class for relation.
+ * 
+ * @author martin
+ *
+ * @param <T>
+ */
+public abstract class BaseRelation<T extends Tuple> {
 
 	protected final Set<T> tuples;
 
@@ -13,10 +20,16 @@ public class BaseRelation<T extends Tuple> {
 		this.tuples = tuples;
 	}
 
+	/**
+	 * Returns this object as set of tuples.
+	 * 
+	 * @return
+	 */
 	public Set<T> getTuples() {
 		return tuples;
 	}
-	
+
+	///////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public int hashCode() {
@@ -48,6 +61,12 @@ public class BaseRelation<T extends Tuple> {
 		return "Relation:" + tuples + "";
 	}
 
+	/**
+	 * General class for tuple.
+	 * 
+	 * @author martin
+	 *
+	 */
 	public static abstract class Tuple {
 
 	}

@@ -13,6 +13,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Basic config displaying app (in frame). No interactivity.
+ * @author martin
+ *
+ */
 public class ConfigDisplayerApp extends Application {
 
 	public static void main(String[] args) {
@@ -45,7 +50,7 @@ public class ConfigDisplayerApp extends Application {
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Cellular fuzzy automata configuration displayer");
+		stage.setTitle("Cellular fuzzy automaton configuration displayer");
 		stage.show();
 	}
 

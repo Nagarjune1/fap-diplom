@@ -4,15 +4,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomata;
-import cz.upol.fapapp.cfa.comp.CFAComputation;
+import cz.upol.fapapp.cfa.automata.CellularFuzzyAutomaton;
+import cz.upol.fapapp.cfa.conf.CFAComputation;
 import cz.upol.fapapp.cfa.conf.CFAConfTIMParser;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.gui.frame.SimulationFrameController;
 import cz.upol.fapapp.cfa.impls.common.BivalentGameOfLifeCFA;
-import cz.upol.fapapp.cfa.impls.images.MyBEFilterAutomata;
-import cz.upol.fapapp.cfa.impls.images.NoiseReductionAutomata;
-import cz.upol.fapapp.cfa.impls.images.SimpleBlurFilterAutomata;
+import cz.upol.fapapp.cfa.impls.images.MyBEFilterAutomaton;
+import cz.upol.fapapp.cfa.impls.images.NoiseReductionAutomaton;
+import cz.upol.fapapp.cfa.impls.images.SimpleBlurFilterAutomaton;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +20,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Application performing complete CFA simulation within the interactive GUI
+ * app.
+ * 
+ * @author martin
+ *
+ */
 public class CFASimulatorApp extends Application {
 
 	private static final double DEFAULT_PARAM_VALUE = 1.0;
@@ -46,7 +53,7 @@ public class CFASimulatorApp extends Application {
 		Scene scene = new Scene(root);
 
 		stage.setScene(scene);
-		stage.setTitle("Cellular fuzzy automata simulator");
+		stage.setTitle("Cellular fuzzy automaton simulator");
 		stage.show();
 	}
 
@@ -58,14 +65,14 @@ public class CFASimulatorApp extends Application {
 		String typeStr = argsList.get(2);
 		double arg = AppsMainsTools.toDouble(argsList, 3, DEFAULT_PARAM_VALUE);
 
-		CellularFuzzyAutomata automata = loadAutomata(size, typeStr, arg);
+		CellularFuzzyAutomaton automaton = loadAutomaton(size, typeStr, arg);
 		CFAConfiguration config = loadConfig(configFileStr);
 
-		if (automata == null || config == null) {
+		if (automaton == null || config == null) {
 			return null;
 		}
 
-		return new CFAComputation(automata, config);
+		return new CFAComputation(automaton, config);
 	}
 
 	private static CFAConfiguration loadConfig(String configFileStr) {
@@ -74,19 +81,19 @@ public class CFASimulatorApp extends Application {
 		return AppsMainsTools.runParser(configFile, new CFAConfTIMParser());
 	}
 
-	private static CellularFuzzyAutomata loadAutomata(int size, String typeStr, double param) {
+	private static CellularFuzzyAutomaton loadAutomaton(int size, String typeStr, double param) {
 		switch (typeStr) {
 		case "game-of-life":
 			return new BivalentGameOfLifeCFA(size);
 		case "BE-filter":
 		case "be-filter":
-			return new MyBEFilterAutomata(size, param);
+			return new MyBEFilterAutomaton(size, param);
 		case "simple-blur":
-			return new SimpleBlurFilterAutomata(size);
+			return new SimpleBlurFilterAutomaton(size);
 		case "noise-reduction":
-			return new NoiseReductionAutomata(size);
+			return new NoiseReductionAutomaton(size);
 		default:
-			throw new IllegalArgumentException("Unknown automata type " + typeStr);
+			throw new IllegalArgumentException("Unknown automaton type " + typeStr);
 		}
 	}
 
@@ -97,7 +104,7 @@ public class CFASimulatorApp extends Application {
 		System.out.println();
 		System.out.println("	where AUTOMATA can be one of:");
 		System.out.println("		game-of-life, be-filter, simple-blur, noise-reduction");
-		System.out.println("	automata be-filter requires PARAM to specified (double > 1)");
+		System.out.println("	automaton be-filter requires PARAM to specified (double > 1)");
 		System.err.println("	if not, is used default value, " + DEFAULT_PARAM_VALUE);
 	}
 

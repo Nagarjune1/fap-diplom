@@ -18,9 +18,15 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
-public class FTATIMParser extends TIMObjectParser<FuzzyTreeAutomata> {
+/**
+ * {@link TIMObjectParser} of {@link FuzzyTreeAutomaton}.
+ * 
+ * @author martin
+ *
+ */
+public class FTATIMParser extends TIMObjectParser<FuzzyTreeAutomaton> {
 
-	protected static final String TYPE = "Fuzzy tree automata";
+	protected static final String TYPE = "Fuzzy tree automaton";
 	protected static final String OVER_TO_TO_SEPARATOR_TOKEN = "->";
 
 	public FTATIMParser() {
@@ -30,14 +36,14 @@ public class FTATIMParser extends TIMObjectParser<FuzzyTreeAutomata> {
 	///////////////////////////////////////////////////////////////////////////
 
 	@Override
-	public FuzzyTreeAutomata process(TIMFileData data) {
+	public FuzzyTreeAutomaton process(TIMFileData data) {
 		Set<State> states = processStates(data);
 		Alphabet nonterminals = processNonterminals(data);
 		Alphabet terminals = processTerminals(data);
 		Map<Symbol, BinaryRelation<Word, FuzzyState>> transitionFunction = processTransitionFunction(data);
 		Set<State> finalStates = processFinalStates(data);
 
-		return new FuzzyTreeAutomata(states, nonterminals, terminals, transitionFunction, finalStates);
+		return new FuzzyTreeAutomaton(states, nonterminals, terminals, transitionFunction, finalStates);
 	}
 
 	///////////////////////////////////////////////////////////////////////////

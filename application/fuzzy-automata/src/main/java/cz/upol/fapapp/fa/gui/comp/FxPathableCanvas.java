@@ -5,7 +5,6 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.gui.data.Multipath;
 import cz.upol.fapapp.fa.gui.data.Path;
 import cz.upol.fapapp.fa.gui.data.PathSegment;
-import cz.upol.fapapp.fa.gui.misc.DirectionOrientedStrategy;
 import cz.upol.fapapp.fa.gui.misc.FromStartStrategy;
 import cz.upol.fapapp.fa.gui.misc.PathSegmentationStrategy;
 import javafx.beans.property.IntegerProperty;

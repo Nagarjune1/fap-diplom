@@ -9,6 +9,13 @@ import cz.upol.feda.lingvar.BaseLingVarLabel;
 import cz.upol.feda.lingvar.LingVarValue;
 import cz.upol.feda.lingvar.LingvisticVariable;
 
+/**
+ * Fuzzy event is list (in fact {@link Map}) of {@link LingvisticVariable}s and
+ * their {@link LingVarValue}s.
+ * 
+ * @author martin
+ *
+ */
 public class FuzzyEvent {
 
 	private final Map<LingvisticVariable, LingVarValue> values;

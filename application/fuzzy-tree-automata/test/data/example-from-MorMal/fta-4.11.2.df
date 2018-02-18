@@ -1,5 +1,5 @@
 type:
-	Fuzzy tree automata
+	Fuzzy tree automaton
 
 states:
 	s_lambda, s_xi, s_eta

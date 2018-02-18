@@ -15,6 +15,11 @@ import cz.upol.fapapp.fa.typos.KeyboardMap;
 import cz.upol.fapapp.fa.typos.TyposCorrecter;
 import cz.upol.fapapp.fa.typos.WordsTimFileParser;
 
+/**
+ * Application for typos correcting. Can be used both with input or iteractivelly (words read from stdin).
+ * @author martin
+ *
+ */
 public class TyposCorrecterApp {
 
 	private static final String SPACE = " ";

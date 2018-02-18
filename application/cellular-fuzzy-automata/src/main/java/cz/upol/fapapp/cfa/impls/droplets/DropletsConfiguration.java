@@ -1,10 +1,15 @@
-package cz.upol.fapapp.cfa.impls.droplets;
+	package cz.upol.fapapp.cfa.impls.droplets;
 
 import cz.upol.fapapp.cfa.automata.CellState;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import cz.upol.fapapp.cfa.misc.TwoDimArray;
 
+/**
+ * Configuration containing three types of information to perform droplets automata.
+ * @author martin
+ *
+ */
 public class DropletsConfiguration extends CFAConfiguration {
 
 	private final TwoDimArray<CellState> isDroplet;

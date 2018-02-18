@@ -5,24 +5,29 @@ import java.util.Set;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.fapapp.core.fuzzy.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
-import cz.upol.fapapp.core.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
-public class FATIMComposer extends TIMObjectComposer<BaseFuzzyAutomata> {
+/**
+ * {@link TIMObjectComposer} of {@link BaseFuzzyAutomaton}.
+ * @author martin
+ *
+ */
+public class FATIMComposer extends TIMObjectComposer<BaseFuzzyAutomaton> {
 
 	public FATIMComposer() {
 		super(FATIMParser.TYPE);
 	}
 
 	@Override
-	protected void process(BaseFuzzyAutomata object, TIMFileData data) {
+	protected void process(BaseFuzzyAutomaton object, TIMFileData data) {
 		processAlphabet(object.getAlphabet(), data);
 		processStates(object.getStates(), data);
 		processTransitions(object.getTransitionFunction(), data);
