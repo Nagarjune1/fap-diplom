@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import cz.upol.fapapp.core.lingvar.LingVarValue;
+import cz.upol.fapapp.core.lingvar.LingVarsTIMParser;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
-import cz.upol.feda.lingvar.LingVarValue;
-import cz.upol.feda.lingvar.LingVarsTIMParser;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * {@link TIMObjectParser} of {@link FuzzyEventsSequence}. Uses following format:

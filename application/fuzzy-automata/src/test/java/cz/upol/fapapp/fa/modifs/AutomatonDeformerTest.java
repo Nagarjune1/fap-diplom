@@ -101,10 +101,10 @@ public class AutomatonDeformerTest {
 		deformer.addRemoveOne(ADDS);
 
 		checkWord(0.4);
-		checkWord(0.4, "b");
+		checkWord(0.1, "b");
 		checkWord(0.5, "a", "a");
 		checkWord(0.5, "a", "a", "b", "a");
-		checkWord(0.5, "a", "b", "b");
+		checkWord(0.3, "a", "b", "b");
 	}
 
 	@Test

@@ -1,11 +1,13 @@
 package cz.upol.feda.event;
 
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import cz.upol.feda.lingvar.LingvisticVariable;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
+import cz.upol.fapapp.core.misc.Printable;
 
 /**
  * Fuzzy events sequence is just named {@link List} of {@link FuzzyEvent}s.
@@ -13,7 +15,7 @@ import cz.upol.feda.lingvar.LingvisticVariable;
  * @author martin
  *
  */
-public class FuzzyEventsSequence {
+public class FuzzyEventsSequence implements Printable {
 
 	private final List<FuzzyEvent> events;
 
@@ -67,6 +69,11 @@ public class FuzzyEventsSequence {
 	@Override
 	public String toString() {
 		return "FuzzyEventsSequence [events=" + events + "]";
+	}
+
+	@Override
+	public void print(PrintStream to) {
+		Printable.print(to, new FESTIMComposer(), this);
 	}
 
 }

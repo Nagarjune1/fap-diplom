@@ -5,15 +5,15 @@ import java.util.Set;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingVarsTIMComposer;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LingVarsTIMComposer;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * {@link TIMObjectComposer} of {@link EventDrivenFuzzyAutomaton}.
@@ -34,7 +34,6 @@ public class EDFATIMComposer extends TIMObjectComposer<EventDrivenFuzzyAutomaton
 		processEvents(object.getEventsAlphabet(), data);
 		processTransitions(object.getTransitionFunction(), data);
 		processInitials(object.getInitialStates(), data);
-		processFinals(object.getFinalStates(), data);
 	}
 
 	private void processStates(Set<State> states, TIMFileData data) {
@@ -75,10 +74,5 @@ public class EDFATIMComposer extends TIMObjectComposer<EventDrivenFuzzyAutomaton
 		data.add("initial states", line);
 	}
 
-	private void processFinals(FuzzySet<State> finalStates, TIMFileData data) {
-		FuzzyState fuzzyState = new FuzzyState(finalStates);
-		LineElements line = TIMObjectParserComposerTools.fuzzyStateToLine(fuzzyState);
-		data.add("final states", line);
-	}
 
 }

@@ -55,9 +55,6 @@ public class EDFATIMParserComposerTest {
 				+ "\n" //
 				+ "initial states:\n" //
 				+ "	q_0/0.0	q_2/0.5	q_1/1.0\n" //
-				+ "\n" //
-				+ "final states:\n" //
-				+ "	q_0/0.1	q_2/0.2	q_1/1.0\n" //
 				+ "\n"; //
 	}
 

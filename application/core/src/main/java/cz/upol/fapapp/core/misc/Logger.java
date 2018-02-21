@@ -1,5 +1,7 @@
 package cz.upol.fapapp.core.misc;
 
+import java.io.PrintStream;
+
 /**
  * Performs simple logging, singleton (use {@link #get()}).
  * 
@@ -8,6 +10,8 @@ package cz.upol.fapapp.core.misc;
  */
 public class Logger {
 	private static final Logger INSTANCE = new Logger(false);
+
+	public static final PrintStream META_STREAM = System.err;
 
 	private boolean verbose;
 

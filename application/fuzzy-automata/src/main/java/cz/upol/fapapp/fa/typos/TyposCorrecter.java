@@ -98,6 +98,11 @@ public class TyposCorrecter {
 		FuzzyAutomaton ofWord = AutomataCreator.automatonOfWord(alphabet, word);
 
 		FuzzyAutomaton deformed = deform(ofWord, similarity, removesOnes, insertsOnes, insertsMore);
+		
+		if (Logger.get().isVerbose()) {
+			Logger.get().moreinfo("Obtained deformed automata for word " + word + ":");
+			deformed.print(Logger.META_STREAM);
+		}
 
 		return deformed;
 	}
@@ -117,10 +122,12 @@ public class TyposCorrecter {
 
 		AutomatonDeformer deformer = new AutomatonDeformer(automaton);
 
+		deformer.addInsertMore(insertsMore); //TODO XXX do not use?!
+		
 		deformer.addRemoveOne(removesOnes);
 		deformer.addInsertOne(insertsOnes);
 		deformer.addReplace(similarity);
-		deformer.addInsertMore(insertsMore);
+		
 
 		// automaton.print(System.out);
 
@@ -191,14 +198,19 @@ public class TyposCorrecter {
 		Word bestWord = word;
 		Degree bestDegree = Degree.ZERO;
 
+		Logger.get().moreinfo("Correcting word " + word + " ... ");
+
 		for (Word pattern : automata.keySet()) {
 			FuzzyAutomaton automaton = automata.get(pattern);
 
 			Degree degree = automaton.degreeOfWord(word);
 
-			Logger.get().moreinfo("Word " + pattern + " matches " + pattern + " in " + degree);
+			Logger.get().moreinfo("Word " + word + " matches " + pattern + " in " + degree);
+			//System.out.println(" in " + degree + "\t  matches " + pattern );
 
+			
 			if (bestDegree.isLessOrEqual(degree)) {
+				//TODO if found two of equal degree ...
 				bestWord = pattern;
 				bestDegree = degree;
 			}

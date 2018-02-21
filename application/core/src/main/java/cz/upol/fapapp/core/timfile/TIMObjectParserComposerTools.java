@@ -15,8 +15,8 @@ import cz.upol.fapapp.core.fuzzy.sets.FuzzySet.FuzzyTuple;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
+import cz.upol.fapapp.core.lingvar.LingVarValue;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.feda.lingvar.LingVarValue;
 
 /**
  * Various utilities for {@link TIMObjectParser}'s and {@link TIMObjectComposer}'s implementations.

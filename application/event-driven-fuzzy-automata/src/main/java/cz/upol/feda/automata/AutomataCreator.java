@@ -9,16 +9,23 @@ import java.util.TreeSet;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LinearLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingVarValue;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
+import cz.upol.fapapp.core.lingvar.UnaryVarLabel;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.feda.event.FuzzyEvent;
 import cz.upol.feda.event.FuzzyEventsSequence;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LinearLingVarLabel;
-import cz.upol.feda.lingvar.LingVarValue;
-import cz.upol.feda.lingvar.LingvisticVariable;
-import cz.upol.feda.lingvar.UnaryVarLabel;
 
+/**
+ * Class performing creation of event driven automata and related stuff, like
+ * events.
+ * 
+ * @author martin
+ *
+ */
 public class AutomataCreator {
 
 	public static EventDrivenFuzzyAutomaton createSome() {
@@ -61,13 +68,7 @@ public class AutomataCreator {
 		initials.put(stateQ2, new Degree(0.5));
 		FuzzySet<State> initialStates = new FuzzySet<>(initials);
 
-		Map<State, Degree> finals = new HashMap<>();
-		finals.put(stateQ0, new Degree(0.1));
-		finals.put(stateQ1, Degree.ONE);
-		finals.put(stateQ2, new Degree(0.2));
-		FuzzySet<State> finalStates = new FuzzySet<>(finals);
-
-		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
+		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates);
 	}
 
 	public static Set<LingvisticVariable> createSomeLingVars() {

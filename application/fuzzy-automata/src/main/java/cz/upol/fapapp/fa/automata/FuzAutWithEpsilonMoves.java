@@ -34,7 +34,7 @@ public class FuzAutWithEpsilonMoves extends FuzzyAutomaton {
 	protected FuzzyState stepOver(FuzzyState fromFuzzyState, Symbol over) {
 
 		FuzzyState toConvience = computeRegularStepTo(fromFuzzyState, over);
-		FuzzyState toEpsilons = computeEpsilonClosure(fromFuzzyState);
+		FuzzyState toEpsilons = computeEpsilonClosure(toConvience);
 
 		FuzzyState toFuzzyState = new FuzzyState(FuzzySet.union(toConvience, toEpsilons));
 
@@ -46,8 +46,8 @@ public class FuzAutWithEpsilonMoves extends FuzzyAutomaton {
 	}
 
 	protected FuzzyState computeEpsilonClosure(FuzzyState convienced) {
-		FuzzyState currentState = convienced;
-		FuzzySet<State> nextState = null;
+		FuzzyState currentState = convienced; /*computeRegularStepTo(convienced, Symbol.EMPTY);*/
+		FuzzySet<State> nextState = null; /*convienced;*/
 
 		for (int i = 0; i < precision; i++) {
 			nextState = computeRegularStepTo(currentState, Symbol.EMPTY);

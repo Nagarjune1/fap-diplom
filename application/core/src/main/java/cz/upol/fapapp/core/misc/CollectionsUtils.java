@@ -13,6 +13,7 @@ import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet.FuzzyTuple;
+import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
@@ -195,6 +196,36 @@ public class CollectionsUtils {
 		}
 
 		return new Alphabet(symbols);
+	}
+
+	public static <E> Set<E> join(Set<E> first, Set<E> second) {
+		Set<E> result = new HashSet<>(first.size() + second.size());
+
+		result.addAll(first);
+		result.addAll(second);
+
+		return result;
+	}
+	
+	public static <E> Map<E, Degree> joinFuzzy(Map<E, Degree> first, Map<E, Degree> second) {
+		Map<E, Degree> result = new HashMap<>(first.size() + second.size());
+
+		addAllFuzzy(first, result);
+		addAllFuzzy(second, result);
+		
+		return result;
+	}
+
+	private static <E> void addAllFuzzy(Map<E, Degree> who, Map<E, Degree> result) {
+		who.forEach((e, d) -> {
+			Degree degree = result.get(e);
+			if (degree != null) {
+				degree = TNorms.getTnorm().tconorm(degree, d);
+			} else {
+				degree = d;
+			}
+			result.put(e, degree);
+		});
 	}
 
 }

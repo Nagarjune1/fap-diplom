@@ -13,9 +13,9 @@ import org.junit.Test;
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.feda.event.FuzzyEvent;
 import cz.upol.feda.event.FuzzyEventsSequence;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 public class EventDrivenFuzzyAutomatonTest {
 
@@ -86,9 +86,12 @@ public class EventDrivenFuzzyAutomatonTest {
 		double degreeOfQ0 = actualFS.degreeOf(new State("q_0")).getValue();
 		double degreeOfQ1 = actualFS.degreeOf(new State("q_1")).getValue();
 		double degreeOfQ2 = actualFS.degreeOf(new State("q_2")).getValue();
+		
+		//System.out.println(degreeOfQ0 + "," + degreeOfQ1 + "," + degreeOfQ2);
+		
 		assertTrue(0.06 < degreeOfQ0 && degreeOfQ0 < 0.07);
 		assertTrue(0.76 < degreeOfQ1 && degreeOfQ1 < 0.77);
-		assertTrue(0.19 < degreeOfQ2 && degreeOfQ2 < 0.21);
+		assertTrue(0.96 < degreeOfQ2 && degreeOfQ2 < 0.97);
 
 	}
 
@@ -99,7 +102,7 @@ public class EventDrivenFuzzyAutomatonTest {
 
 		FuzzyEventsSequence events = AutomataCreator.createSomeEvents(automaton.getEventsAlphabet());
 
-		State expectedS = new State("q_1");
+		State expectedS = new State("q_2");
 		State actualS = automaton.run(events);
 
 		assertEquals(expectedS, actualS);

@@ -2,6 +2,7 @@ package cz.upol.fapapp.core.sets;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.sets.BaseRelation.Tuple;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
@@ -35,35 +36,18 @@ public class TernaryRelation<T1, T2, T3> extends BaseRelation<Triple<T1, T2, T3>
 	}
 
 	/**
-	 * Returns element for given two. Throws exception if not found.
+	 * Returns all elements for given two. If no such, returns empty set.
 	 * 
 	 * @param first
 	 * @param second
 	 * @see #getOrNot(Object, Object)
 	 * @return
 	 */
-	public T3 get(T1 first, T2 second) {
+	public Set<T3> get(T1 first, T2 second) {
 		return tuples.stream() //
 				.filter((t) -> t.getFirst().equals(first) && t.getSecond().equals(second)) //
 				.map((t) -> t.getThird()) //
-				.findAny().orElseThrow(() -> {
-					return new IllegalStateException("Not found (" + first + ", " + second + ") in " + this);
-				});
-	}
-
-	/**
-	 * Returns element for given two. Returns null if not found.
-	 * 
-	 * @param first
-	 * @param second
-	 * @see #get(Object, Object).
-	 * @return
-	 */
-	public T3 getOrNot(T1 first, T2 second) {
-		return tuples.stream() //
-				.filter((t) -> t.getFirst().equals(first) && t.getSecond().equals(second)) //
-				.map((t) -> t.getThird()) //
-				.findAny().orElse(null);
+				.collect(Collectors.toSet());
 	}
 
 	/**
@@ -95,8 +79,7 @@ public class TernaryRelation<T1, T2, T3> extends BaseRelation<Triple<T1, T2, T3>
 		// TODO FIXME IMPLEMENTME
 	}
 
-	
-////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 	@Override
 	public int hashCode() {
 		return super.hashCode();
@@ -111,11 +94,13 @@ public class TernaryRelation<T1, T2, T3> extends BaseRelation<Triple<T1, T2, T3>
 	public String toString() {
 		return "Ternary:" + tuples + "";
 	}
-	
+
 	////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * Triple, simple tuple containing exactly three values, named first, second and third.
+	 * Triple, simple tuple containing exactly three values, named first, second
+	 * and third.
+	 * 
 	 * @author martin
 	 *
 	 * @param <T1>

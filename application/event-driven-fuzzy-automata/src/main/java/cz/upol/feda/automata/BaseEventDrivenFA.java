@@ -6,11 +6,11 @@ import java.util.Set;
 import cz.upol.fapapp.core.automata.BaseAutomaton;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.misc.Printable;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.feda.event.FuzzyEventsSequence;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * Base specification of event driven fuzzy automaton.
@@ -24,17 +24,14 @@ public abstract class BaseEventDrivenFA implements BaseAutomaton {
 	protected final Set<LingvisticVariable> eventsAlphabet;
 	protected final TernaryRelation<State, BaseLingVarLabel, State> transitionFunction;
 	protected final FuzzySet<State> initialStates;
-	protected final FuzzySet<State> finalStates;
 
 	public BaseEventDrivenFA(Set<State> states, Set<LingvisticVariable> eventsAlphabet,
-			TernaryRelation<State, BaseLingVarLabel, State> transitionFunction, FuzzySet<State> initialStates,
-			FuzzySet<State> finalStates) {
+			TernaryRelation<State, BaseLingVarLabel, State> transitionFunction, FuzzySet<State> initialStates) {
 		super();
 		this.states = states;
 		this.eventsAlphabet = eventsAlphabet;
 		this.transitionFunction = transitionFunction;
 		this.initialStates = initialStates;
-		this.finalStates = finalStates;
 	}
 
 	// /////////////////////////////////////////////////////////////////////////
@@ -55,10 +52,6 @@ public abstract class BaseEventDrivenFA implements BaseAutomaton {
 		return initialStates;
 	}
 
-	public FuzzySet<State> getFinalStates() {
-		return finalStates;
-	}
-
 	// /////////////////////////////////////////////////////////////////////////
 
 	public abstract State run(FuzzyEventsSequence events);
@@ -70,7 +63,6 @@ public abstract class BaseEventDrivenFA implements BaseAutomaton {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((eventsAlphabet == null) ? 0 : eventsAlphabet.hashCode());
-		result = prime * result + ((finalStates == null) ? 0 : finalStates.hashCode());
 		result = prime * result + ((initialStates == null) ? 0 : initialStates.hashCode());
 		result = prime * result + ((states == null) ? 0 : states.hashCode());
 		result = prime * result + ((transitionFunction == null) ? 0 : transitionFunction.hashCode());
@@ -90,11 +82,6 @@ public abstract class BaseEventDrivenFA implements BaseAutomaton {
 			if (other.eventsAlphabet != null)
 				return false;
 		} else if (!eventsAlphabet.equals(other.eventsAlphabet))
-			return false;
-		if (finalStates == null) {
-			if (other.finalStates != null)
-				return false;
-		} else if (!finalStates.equals(other.finalStates))
 			return false;
 		if (initialStates == null) {
 			if (other.initialStates != null)
@@ -117,7 +104,7 @@ public abstract class BaseEventDrivenFA implements BaseAutomaton {
 	@Override
 	public String toString() {
 		return "BaseEventDrivenFA [states=" + states + ", eventsAlphabet=" + eventsAlphabet + ", transitionFunction="
-				+ transitionFunction + ", initialStates=" + initialStates + ", finalStates=" + finalStates + "]";
+				+ transitionFunction + ", initialStates=" + initialStates + "]";
 	}
 
 	// /////////////////////////////////////////////////////////////////////////

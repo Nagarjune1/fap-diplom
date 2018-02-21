@@ -23,12 +23,16 @@ public class CorrectionResult {
 	}
 
 	/**
-	 * Pattern word which best matched to input.
+	 * Pattern word which best matched to input. If no such, returns original word.
 	 * 
 	 * @return
 	 */
 	public Word getBestMatch() {
-		return bestMatch;
+		if (isNoMatch()) {
+			return input;
+		} else {
+			return bestMatch;
+		}
 	}
 
 	/**

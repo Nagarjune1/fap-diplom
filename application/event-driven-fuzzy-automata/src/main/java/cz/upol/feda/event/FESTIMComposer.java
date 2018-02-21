@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import cz.upol.fapapp.core.lingvar.LingVarValue;
+import cz.upol.fapapp.core.lingvar.LingVarsTIMComposer;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
-import cz.upol.feda.lingvar.LingVarValue;
-import cz.upol.feda.lingvar.LingVarsTIMComposer;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * {@link TIMObjectComposer} of {@link FuzzyEventsSequence}. See

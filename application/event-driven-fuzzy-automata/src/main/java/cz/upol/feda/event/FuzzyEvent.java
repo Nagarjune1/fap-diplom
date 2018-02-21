@@ -5,9 +5,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LingVarValue;
-import cz.upol.feda.lingvar.LingvisticVariable;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingVarValue;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 
 /**
  * Fuzzy event is list (in fact {@link Map}) of {@link LingvisticVariable}s and
@@ -78,7 +78,15 @@ public class FuzzyEvent {
 
 	@Override
 	public String toString() {
-		return "FuzzyEvent [values=" + values + "]";
+		return "FuzzyEvent("
+				+ values.entrySet().stream() //
+						.map((e) -> e.getKey().getName() + "=" + e.getValue() + "[" //
+								+ e.getKey().getLabels().stream() //
+										.map((el) -> el.getLabel() + "=" + degreeOf(el)) //
+										.collect(Collectors.joining(",")) //
+								+ "]") //
+						.collect(Collectors.joining(",")) //
+				+ ")";
 	}
 
 }

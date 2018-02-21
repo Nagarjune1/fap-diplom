@@ -26,18 +26,21 @@ public class TyposCorrecterApp {
 	private static final String SPACE_REGEX = "\\s+";
 	private static final KeyboardMap KEYMAP = new DefaultKeymap();
 
-	private static final Degree REPLACES_DEGREE = new Degree(0.7);
-	private static final Degree REMOVES_DEGREE = new Degree(0.3);
-	private static final Degree INSERTS_ONES_DEGREE = new Degree(0.4);
-	private static final Degree INSERTS_MORE_DEGREE = new Degree(0.2);
+	private static final Degree REPLACES_DEGREE = new Degree(0.8);
+	private static final Degree REMOVES_DEGREE = new Degree(0.1);
+	private static final Degree INSERTS_ONES_DEGREE = new Degree(0.5);
+	private static final Degree INSERTS_MORE_DEGREE = new Degree(0.01);
 
 	public static void main(String[] args) {
 //		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/animals-dictionary.timf", // };
-//				"dpg", "cst", "rhinp", "dog cat" };
+//				"dg", "doberman" };
 //		
-//		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/100-words.timf", // };
-//				"man use your peqple sou thus thing I think" };
-		
+//		args = new String[] {   "--tnorm", "product", "test-data/typos/numbers.timf"}; //XXX debug
+//		
+//		args = new String[] {  "--tnorm", "product", "test-data/typos/100-words.timf", // };
+//				//"peqple" };
+//				"nan use yout peqple sou thus thibng i thinl" };
+//		
 
 		List<String> argsList = AppsMainsTools.checkArgs(args, 1, null, () -> printHelp());
 		if (argsList == null) {

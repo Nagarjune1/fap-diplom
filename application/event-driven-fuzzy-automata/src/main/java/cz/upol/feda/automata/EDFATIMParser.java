@@ -6,15 +6,15 @@ import java.util.Set;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingVarsTIMParser;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.core.timfile.LineElements;
 import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LingVarsTIMParser;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * {@link TIMObjectParser} of {@link EventDrivenFuzzyAutomaton}.
@@ -38,11 +38,10 @@ public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomaton> {
 		Set<State> states = processStates(data);
 		TernaryRelation<State, BaseLingVarLabel, State> transitionFunction = processTransitions(data, eventsAlphabet);
 		FuzzySet<State> initialStates = processInitials(data);
-		FuzzySet<State> finalStates = processFinals(data);
 
 		// TODO check alphabet and states consistency
 
-		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates, finalStates);
+		return new EventDrivenFuzzyAutomaton(states, eventsAlphabet, transitionFunction, initialStates);
 	}
 
 	private Set<State> processStates(TIMFileData data) {
@@ -87,11 +86,6 @@ public class EDFATIMParser extends TIMObjectParser<EventDrivenFuzzyAutomaton> {
 
 	private FuzzySet<State> processInitials(TIMFileData data) {
 		LineElements elements = TIMObjectParserComposerTools.findElementsMerged(data, "initial states", "sigma");
-		return new FuzzySet<>(TIMObjectParserComposerTools.parseFuzzyState(elements).toMap());
-	}
-
-	private FuzzySet<State> processFinals(TIMFileData data) {
-		LineElements elements = TIMObjectParserComposerTools.findElementsMerged(data, "final states", "eta");
 		return new FuzzySet<>(TIMObjectParserComposerTools.parseFuzzyState(elements).toMap());
 	}
 

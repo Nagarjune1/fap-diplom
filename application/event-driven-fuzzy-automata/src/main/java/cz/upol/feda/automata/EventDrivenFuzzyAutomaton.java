@@ -1,33 +1,32 @@
 package cz.upol.feda.automata;
 
 import java.util.Map;
-import java.util.Set;
+import java.util.Set;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
+import cz.upol.fapapp.core.lingvar.BaseLingVarLabel;
+import cz.upol.fapapp.core.lingvar.LingvisticVariable;
 import cz.upol.fapapp.core.misc.CollectionsUtils;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.TernaryRelation;
 import cz.upol.feda.event.FuzzyEvent;
 import cz.upol.feda.event.FuzzyEventsSequence;
-import cz.upol.feda.lingvar.BaseLingVarLabel;
-import cz.upol.feda.lingvar.LingvisticVariable;
 
 /**
  * Implementation of event drive fuzzy automaton.
+ * 
  * @author martin
  *
  */
 public class EventDrivenFuzzyAutomaton extends BaseEventDrivenFA {
 
-	public EventDrivenFuzzyAutomaton(Set<State> states,
-			Set<LingvisticVariable> eventsAlphabet,
-			TernaryRelation<State, BaseLingVarLabel, State> transitionFunction,
-			FuzzySet<State> initialStates, FuzzySet<State> finalStates) {
-		super(states, eventsAlphabet, transitionFunction, initialStates,
-				finalStates);
+	public EventDrivenFuzzyAutomaton(Set<State> states, Set<LingvisticVariable> eventsAlphabet,
+			TernaryRelation<State, BaseLingVarLabel, State> transitionFunction, FuzzySet<State> initialStates) {
+		super(states, eventsAlphabet, transitionFunction, initialStates);
 	}
 
 	@Override
@@ -37,41 +36,44 @@ public class EventDrivenFuzzyAutomaton extends BaseEventDrivenFA {
 	}
 
 	public FuzzyState runEvents(FuzzyEventsSequence events) {
+		Logger.get().moreinfo("Starting from: " + initialStates + " events: " + events);
 		FuzzyState currentState = new FuzzyState(initialStates);
 
 		for (FuzzyEvent event : events.getEvents()) {
 			currentState = runEvent(currentState, event);
 		}
 
-		return new FuzzyState(FuzzySet.intersect(currentState, finalStates));
+		Logger.get().moreinfo("Completed in: " + currentState);
+		return currentState;
 	}
 
 	protected FuzzyState runEvent(FuzzyState fromFuzzyState, FuzzyEvent event) {
-		Map<State, Degree> toFuzzyStateMap = CollectionsUtils.createMap(states,
-				Degree.ZERO);
+		Map<State, Degree> toFuzzyStateMap = CollectionsUtils.createMap(states, Degree.ZERO);
 
+		Logger.get().moreinfo("Going from : " + fromFuzzyState + " at " + event + " ...");
+		
 		for (State from : states) {
 			for (BaseLingVarLabel label : event.getLabels()) {
-				State to = transitionFunction.getOrNot(from, label);
-				if (to == null) {
-					continue;
+				Set<State> tos = transitionFunction.get(from, label);
+
+				for (State to : tos) {
+
+					Degree fromDegree = fromFuzzyState.degreeOf(from);
+
+					Degree transitionDegree = event.degreeOf(label);
+
+					Degree toDegreeOld = toFuzzyStateMap.get(to);
+					Degree toDegreeNew = TNorms.getTnorm().tnorm(fromDegree, transitionDegree);
+					Degree toDegree = TNorms.getTnorm().tconorm(toDegreeOld, toDegreeNew);
+
+					toFuzzyStateMap.put(to, toDegree);
 				}
-
-				Degree fromDegree = fromFuzzyState.degreeOf(from);
-
-				Degree transitionDegree = event.degreeOf(label);
-
-				Degree toDegreeOld = toFuzzyStateMap.get(to);
-				Degree toDegreeNew = TNorms.getTnorm().tnorm(fromDegree,
-						transitionDegree);
-				Degree toDegree = TNorms.getTnorm().tconorm(toDegreeOld,
-						toDegreeNew);
-
-				toFuzzyStateMap.put(to, toDegree);
 			}
 		}
 
 		FuzzyState toFuzzyState = new FuzzyState(toFuzzyStateMap);
+		
+		Logger.get().moreinfo("Into fuzzy state: " + toFuzzyState);
 		return toFuzzyState;
 
 	}

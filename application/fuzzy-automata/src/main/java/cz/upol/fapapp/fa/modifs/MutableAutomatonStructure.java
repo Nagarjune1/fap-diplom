@@ -1,6 +1,7 @@
 package cz.upol.fapapp.fa.modifs;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
+import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.fa.automata.BaseFuzzyAutomaton;
 import cz.upol.fapapp.fa.automata.FuzAutWithEpsilonMoves;
@@ -34,24 +36,36 @@ public class MutableAutomatonStructure {
 
 	public MutableAutomatonStructure(Set<Symbol> alphabet, Set<State> states,
 			Map<Triple<State, Symbol, State>, Degree> transitionFunction, Map<State, Degree> initialStates,
-			Map<State, Degree> finalStates) {
+			Map<State, Degree> finalStates, boolean hasEpsilonRules) {
 		super();
 		this.alphabet = alphabet;
 		this.states = states;
 		this.transitionFunction = transitionFunction;
 		this.initialStates = initialStates;
 		this.finalStates = finalStates;
+		this.hasEpsilonRules = hasEpsilonRules;
 	}
 
 	public MutableAutomatonStructure(Alphabet alphabet, Set<State> states,
 			FuzzyTernaryRelation<State, Symbol, State> transitionFunction, FuzzySet<State> initialStates,
-			FuzzySet<State> finalStates) {
-		this(alphabet, states, transitionFunction.getTuplesWithDegree(), initialStates.toMap(), finalStates.toMap());
+			FuzzySet<State> finalStates, boolean hasEpsilonRules) {
+		this(alphabet, states, transitionFunction.getTuplesWithDegree(), initialStates.toMap(), finalStates.toMap(),
+				hasEpsilonRules);
 	}
 
 	public MutableAutomatonStructure(BaseFuzzyAutomaton automaton) {
 		this(automaton.getAlphabet(), automaton.getStates(), automaton.getTransitionFunction(),
-				automaton.getInitialStates(), automaton.getFinalStates());
+				automaton.getInitialStates(), automaton.getFinalStates(),
+				(automaton instanceof FuzAutWithEpsilonMoves));
+	}
+
+	public MutableAutomatonStructure() {
+		this.alphabet = new HashSet<>();
+		this.states = new HashSet<>();
+		this.transitionFunction = new HashMap<>();
+		this.initialStates = new HashMap<>();
+		this.finalStates = new HashMap<>();
+		this.hasEpsilonRules = false;
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -289,11 +303,28 @@ public class MutableAutomatonStructure {
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////////////////
+
 	@FunctionalInterface
 	public static interface TransitionFunctionMapper {
 
 		public void perform(Triple<State, Symbol, State> transition, State from, Symbol over, State to, Degree degree);
 
+	}
+
+	public static MutableAutomatonStructure merge(MutableAutomatonStructure old, MutableAutomatonStructure newly) {
+		Set<Symbol> alphabet = CollectionsUtils.join(old.getAlphabet(), newly.getAlphabet());
+		Set<State> states = CollectionsUtils.join(old.getStates(), newly.getStates());
+
+		Map<Triple<State, Symbol, State>, Degree> transitionFunction = //
+				CollectionsUtils.joinFuzzy(old.getTransitionFunction(), newly.getTransitionFunction());
+
+		Map<State, Degree> initialStates = CollectionsUtils.joinFuzzy(old.getInitialStates(), newly.getInitialStates());
+		Map<State, Degree> finalStates = CollectionsUtils.joinFuzzy(old.getFinalStates(), newly.getFinalStates());
+		boolean hasEpsilonRules = old.hasEpsilonRules || newly.hasEpsilonRules;
+
+		return new MutableAutomatonStructure(alphabet, states, transitionFunction, initialStates, finalStates,
+				hasEpsilonRules);
 	}
 
 }

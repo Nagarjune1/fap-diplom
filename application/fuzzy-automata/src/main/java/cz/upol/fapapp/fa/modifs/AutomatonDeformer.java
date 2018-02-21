@@ -15,25 +15,28 @@ import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
 /**
- * Class performing deformations of fuzzy automaton.
+ * Class performing deformations of fuzzy automaton. 
  * @author martin
  *
  */
 public class AutomatonDeformer {
-	private MutableAutomatonStructure struct;
+	private final MutableAutomatonStructure old;
+	private MutableAutomatonStructure newly;
 
 	public AutomatonDeformer(FuzzyAutomaton automaton) {
-		this.struct = new MutableAutomatonStructure(automaton);
+		this.old = new MutableAutomatonStructure(automaton);
+		this.newly = new MutableAutomatonStructure();
 	}
 
 	public FuzzyAutomaton getAutomaton(Integer precisionOrNull) {
-		return struct.toAutomaton(precisionOrNull);
+		MutableAutomatonStructure merged = MutableAutomatonStructure.merge(old, newly);
+		return merged.toAutomaton(precisionOrNull);
 	}
 
 	///////////////////////////////////////////////////////////////////////////
 
 	public void addReplace(Degree degreeOf) {
-		FuzzyBinaryRelation<Symbol, Symbol> similarity = degreeToFuzzyBinaryRelation(struct.getAlphabet(), degreeOf);
+		FuzzyBinaryRelation<Symbol, Symbol> similarity = degreeToFuzzyBinaryRelation(old.getAlphabet(), degreeOf);
 		addReplace(similarity);
 	}
 
@@ -41,46 +44,46 @@ public class AutomatonDeformer {
 		Logger.get().moreinfo("Adding replaces " + similarity);
 		checkSimilarity(similarity);
 
-		struct.doWithTransitionFunction((transition, from, over, to, degree) -> {
+		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
 			if (Symbol.EMPTY.equals(over)) {
 				return;
 			}
 
-			for (Symbol altOver : struct.getAlphabet()) {
+			for (Symbol altOver : old.getAlphabet()) {
 				Degree similar = similarity.get(over, altOver);
 				Degree newDegree = TNorms.getTnorm().tnorm(degree, similar);
 
-				struct.addTransition(from, altOver, to, newDegree);
+				newly.addTransition(from, altOver, to, newDegree);
 			}
 		});
 	}
 
 	public void addInsertMore(Degree degreeOf) {
-		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(struct.getAlphabet(), degreeOf);
+		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addInsertMore(degreesOf);
 	}
 
 	public void addInsertMore(FuzzySet<Symbol> degreesOf) {
 		Logger.get().moreinfo("Adding inserts more " + degreesOf);
 
-		struct.getStates().stream().forEach((state) -> {
-			struct.getAlphabet().stream().forEach((symbol) -> {
+		old.getStates().stream().forEach((state) -> {
+			old.getAlphabet().stream().forEach((symbol) -> {
 				Degree insert = degreesOf.degreeOf(symbol);
 
-				struct.addTransition(state, symbol, state, insert);
+				newly.addTransition(state, symbol, state, insert);
 			});
 		});
 	}
 
 	public void addRemoveOne(Degree degreeOf) {
-		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(struct.getAlphabet(), degreeOf);
+		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addRemoveOne(degreesOf);
 	}
 
 	public void addRemoveOne(FuzzySet<Symbol> degreesOf) {
 		Logger.get().moreinfo("Adding removes ones " + degreesOf);
 
-		struct.doWithTransitionFunction((transition, from, over, to, degree) -> {
+		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
 			if (Symbol.EMPTY.equals(over)) {
 				return;
 			}
@@ -88,20 +91,20 @@ public class AutomatonDeformer {
 			Degree similar = degreesOf.degreeOf(over);
 			Degree newDegree = TNorms.getTnorm().tnorm(degree, similar);
 
-			struct.addTransition(from, Symbol.EMPTY, to, newDegree);
+			newly.addTransition(from, Symbol.EMPTY, to, newDegree);
 		});
 	}
 
 	public void addInsertOne(Degree degreeOf) {
-		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(struct.getAlphabet(), degreeOf);
+		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addInsertOne(degreesOf);
 	}
 
 	public void addInsertOne(FuzzySet<Symbol> degreesOf) {
 		Logger.get().moreinfo("Adding inserts ones " + degreesOf);
-		StatesCreator creator = new StatesCreator("'", struct.getStates().size());
+		StatesCreator creator = new StatesCreator("'", old.getStates().size());
 
-		struct.doWithTransitionFunction((transition, from, over, to, degree) -> {
+		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
 			if (Symbol.EMPTY.equals(over)) {
 				return;
 			}
@@ -113,9 +116,9 @@ public class AutomatonDeformer {
 			Degree initialIn = Degree.ZERO;
 			Degree finalIn = Degree.ZERO;
 
-			struct.addState(innerState, initialIn, finalIn);
-			struct.addTransition(from, over, innerState, newDegree);
-			struct.addTransition(innerState, over, to, newDegree);
+			newly.addState(innerState, initialIn, finalIn);
+			newly.addTransition(from, over, innerState, newDegree);
+			newly.addTransition(innerState, over, to, newDegree);
 		});
 	}
 

@@ -1,5 +1,7 @@
 package cz.upol.fapapp.core.fuzzy;
 
+import java.text.DecimalFormat;
+
 /**
  * Degree, the main term in the fuzzy theory. In this implementation is
  * represented as double number between 0 ({@link #ZERO}) and 1 ({@link #ONE})
@@ -56,7 +58,7 @@ public class Degree implements Comparable<Degree> {
 
 	@Override
 	public String toString() {
-		return "Deg(" + value + ")";
+		return "Deg(" + new DecimalFormat("0.0#####").format(value) + ")";
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package cz.upol.fapapp.core.fuzzy.sets;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -87,15 +88,41 @@ public class FuzzySet<E> {
 	 */
 	// TODO testme
 	public E withMaxDegree() {
-		return map.entrySet().stream() //
-				.reduce((e, r) -> { //
-					if (r.getValue().isLessOrEqual(e.getValue())) {
-						return e;
-					} else {
-						return r;
-					}
-				}) //
-				.get().getKey(); //
+		Set<E> bestEs = new HashSet<>();
+		Degree bestDegree  = Degree.ZERO;
+		
+		for (E elem: map.keySet()) {
+			Degree degree = map.get(elem);
+			
+			if (bestDegree.compareTo(degree) < 0) {
+				bestDegree = degree;
+				bestEs.clear();
+				bestEs.add(elem);
+			}
+			if (bestDegree.compareTo(degree) == 0) {
+				bestEs.add(elem);
+			}
+			if (bestDegree.compareTo(degree) > 0) {
+				continue;
+			}
+		}
+		
+		if (Degree.ZERO.equals(bestDegree)) {
+			Logger.get().warning("Computed result is in degree 0.0");
+		}
+		
+		if (bestEs.size() == 0) {
+			throw new IllegalStateException("No such element");
+		}
+		if (bestEs.size() == 1) {
+			return bestEs.iterator().next();
+		}
+		if (bestEs.size() >= 2) {
+			Logger.get().warning("Found " + bestEs.size() + " elements with max degree in " + this);
+			return bestEs.iterator().next();
+		}
+		
+		return null;
 	}
 
 	/**
