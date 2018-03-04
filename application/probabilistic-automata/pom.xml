@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>cz.upol</groupId>
+    <artifactId>fapapp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>probabilistic-automata</artifactId>
+  
+  <name>Probablistic automata implementation</name>
+  <description>An implementation of probabilistic automata and related stuff</description>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>cz.upol</groupId>
+  		<artifactId>core</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>

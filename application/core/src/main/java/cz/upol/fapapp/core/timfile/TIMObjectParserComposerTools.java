@@ -17,6 +17,7 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.lingvar.LingVarValue;
 import cz.upol.fapapp.core.misc.Logger;
+import cz.upol.fapapp.core.probability.Probability;
 
 /**
  * Various utilities for {@link TIMObjectParser}'s and {@link TIMObjectComposer}'s implementations.
@@ -82,6 +83,12 @@ public class TIMObjectParserComposerTools {
 	}
 
 
+	public static Probability parseProbability(String probStr) {
+		double probDouble = parseDouble(probStr);
+		return new Probability(probDouble);
+	}
+
+	
 	public static LingVarValue parseLingVarValue(String valStr) {
 		double valDouble = parseDouble(valStr);
 		return new LingVarValue(valDouble);
