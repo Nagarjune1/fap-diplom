@@ -7,7 +7,7 @@
 %opening
 \title{Aplikace fuzzy a pravděpodobnostních automatů}
 \author{Martin Jašek}
-\date{12. září 2016 --- ??}
+\date{12. září 2016 --- ???}
 
 \begin{document}
 
@@ -17,21 +17,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Úvodní pojmy}
-V této kapitole budou popsány základní koncepty a pojmy, bez kterých nebude možno se studiu fuzzy automatů věnovat. Bude zde tedy představen koncept fuzzy množin, pravděpodobnostního počtu a základní pojmy z teorie automatů.
+V této kapitole budou popsány základní pojmy, bez kterých nebude možno se studiu fuzzy automatů věnovat. Bude zde tedy představen koncept fuzzy množin, pravděpodobnostního počtu a základní pojmy z teorie automatů.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fuzzy teorie}
-Fuzzy teorie je poměrně nový pohled (oficiálně byl publikován v roce 1965\TODO{ocitovat Zadeh: Fuzzy sets}) na matematický svět. Uvažuje, že pravdivost tvrzení nenabývá jen hodnot \uv{pravda} a \uv{nepravda}, ale libovolného stupně pravdivosti (splňujícího určitá kritéria). Stejně tak, množiny (klasické neboli bivalentní) mohou prvek buďto obsahovat nebo neobsahovat. Fuzzy teorie přichází s konceptem fuzzy množin, tedy množin, které mohou prvky obsahovat jen částečně.
+\subsection{Fuzzy množiny a fuzzy logiky}
+Pomocí matematiky můžeme formalizovat svět kolem nás. Zatímco matematika je založena na přesnosti, většina okolního světa lze přesně popsat jen s těží. Při popisu okolního světa pravujeme mnohem časteji s vágními pojmy jako \uv{málo}, \uv{téměř} či \uv{trochu} než s jednoznačným \uv{ano} a \uv{ne}. Například, tvrzení \uv{student učivo umí} lze těžko ohodnotit pravdou či nepravdou, pokud student z testu získal $50\%$ bodů. Naopak, říci, že \uv{student učivo umí z $1/2$} je mnohem přirozenější. V případech jako je tento mohou fuzzy množiny přinést značné zpřehlednění.
 
-Svět kolem nás je jen málokdy dvojstavový, mít možnost okolí popisovat ve stupních pravdivosti je tak více, než přirozené. Například, tvrzení \uv{student učivo umí} lze těžko ohodnotit pravdou či nepravdou, pokud student z testu získal $50\%$ bodů. Naopak, říci, že \uv{student učivo umí z $1/2$} je mnohem přirozenější. 
+Fuzzy množiny (případně fuzzy logiky od nich odvozené) jsou matematický aparát, který matematicky formalizuje určitou neurčitost\footnote{Slovo \uv{fuzzy} v angličtině znamená \uv{nejasný}, \uv{rozmazaný}, \uv{neostrý}}. Oproti \uv{klasické} množina, která prvek buďto obsahuje nebo neobsahuje, fuzzy množině může prvek nálažet v určitém stupni, který se nachází někde mezi \uv{nenáleží vůbec} a \uv{náleží plně}. Obdobně, pravdivost tvrzení (tedy formule vyjádřené v přirozeném jazyce) ve fuzzy logice nemusí být pouze pravdivé či nepravdivé, ale může nabývat libovolného stupně pravdivosti.
 
-Fuzzy teorie se toto uvažování snaží formalizovat matematicky. Na úvod si nadefinujme fuzzy množinu. 
+Přejděme nyní k formální definici fuzzy množiny a souvisejících pojmů.
+
 \begin{definition}[Fuzzy množina]
  Mějme libovolnou neprázdnou množinu $U$ (tzv. univerzum). Pak zobrazení $\rho_A: U \rightarrow [0, 1]$ nazvěme členská funkce. Množinu $A$ nazýváme fuzzy množina nad $U$. Pro libovolné $x \in U$ říkáme, že prvek $x$ náleží do množiny $A$ ve stupni $\rho_A(x)$.
 \end{definition}
 
 \begin{note}
- Členská funkce nemusí být nutně zobrazení do intervalu $[0, 1]$. Interval může být nahrazen svazem s $0$ a $1$, pokud splňuje ještě některá další kritéria. Studium těchto vlastností však není účelem této práce a proto bude vynecháno. Navíc, práce s intervalem $[0 ,1]$ je poměrně výhodná z důvodu snadné implementace na počítači a proto ve všech praktických aplikacích (které jsou smyslem této práce) se bude používat právě tento interval.
+ Členská funkce fuzzy množiny nemusí být nutně zobrazení do intervalu $[0, 1]$. Interval může být nahrazen svazem s $0$ a $1$, pokud splňuje ještě některá další kritéria. Studium těchto vlastností však není účelem této práce a proto bude vynecháno. Navíc, práce s intervalem $[0 ,1]$ je poměrně výhodná z důvodu snadné implementace na počítači a proto ve všech praktických aplikacích (které jsou smyslem této práce) se bude používat právě tento interval.
 \end{note}
 
 \begin{notation*}
@@ -50,10 +51,11 @@ Nyní se podíváme na základní množinové operace nad fuzzy množinami.
  pro všechna $x \in U$.
 \end{definition}
 
-Připomeňme, že operátory $\wedge$ $\vee$ na reálném intervalu $[0, 1]$ jsou definovány jako $\min$ a $\max$. Operátor $\le$ značí přirozené uspořádání čísel.
+Připomeňme, že operátory $\wedge$ $\vee$ na reálném intervalu $[0, 1]$ jsou definovány jako $\min$ a $\max$. Operátor $\le$ značí přirozené uspořádání čísel a $=$ jejich rovnost.
 
 Množinu všech fuzzy množin nad univerzem $U$ (tedy protějšek potenční množiny u \uv{klasických} množin) budeme značit $\fsubsets{U}$. Obdobně jako u \uv{klasických} množin lze definovat kartézský součin a relace, můžeme definovat kartézký součin fuzzy množin a fuzzy relace. 
 
+%TODO ověřit, prý to mám blbě
 \begin{definition}[Kartézský součin fuzzy množin]
  Mějme fuzzy množiny $\rho_1, \dots, \rho_n$ nad univerzy $U_1, \dots, U_n$. Pak kartézský součin těchto fuzzy množin, psáno $\rho_1 \times \dots \times \rho_n$ nebo $\prod_{i=1}^n \rho_i$ je definován jako zobrazení $U_1 \times \dots \times U_n \rightarrow [0, 1]$.
  
@@ -72,11 +74,49 @@ Množinu všech fuzzy množin nad univerzem $U$ (tedy protějšek potenční mno
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravděpodobnostní počet}
-(Dle potřeby rozepsat více.)\TODO{Pravděpodobnostní počet, rozepsat} \TODO{Doplnit příklady}
+Pravděpodobnost je další forma neurčitosti. Pozorujeme-li nějaký jev, pak pravděpodobnost nám říká, jak moc je jisté, že tento jev nastane i v budoucnu. 
 
-Z pohledu pravděpodobnostních automatů je nejzákladnějím pojmem pravděpodobnostního počtu pravděpodobnostní míra. Pravděpodobnostní míra, neboli pravděpodobnost, je reálné číslo z intervalu $[0, 1]$.  
+Z pohledu aplikací pravděpodobnostních automatů pro nás bude pravděpodobnost -- podobně, jako stupeň pravdivosti -- reálný interval $[0, 1]$ s některými dalšími vlastnostmi. Definice a vlastnosti pravděpodobností zde budou uvedeny ve zjednodušené podobě a jsou převány z \cite{Joh-ProbStaComSci}. 
+
+\begin{definition}[Prostor jevů, jev]
+  Označme neprázdnou množinu $\Omega$ jako prostor jevů, její prvky jako elementární jevy a její podmnožiny jako jevy.  
+\end{definition}
+
+\begin{definition}[Pravděpodobnost elementárních jevů]
+ Pravděpodobnost (resp. pravděpodobnostní míra) elementárního jevu je zobrazení $P: \Omega \rightarrow [0,1]$, (tj. zobrazení, které každému elementárnímu jevu $\omega \in \Omega$ přiřazuje jeho pravděpodobnost $P(\omega)$) takové, že $\sum_{\omega \in \Omega} P(\omega) = 1$.
+\end{definition}
+
+\begin{definition}[Pravděpodobnostní míra]
+ Mějme prostor jevů $\Omega$ a pravděpodobnost $P$ elementárních jevů z tohoto prostoru. Pak jako pravděpodobnost (pravděpodobnostní míra) jevu $A \subset \Omega$ nazýváme zobrazení $P: 2^\Omega \rightarrow [0,1]$ dané následujícím předpisem:
+  $$
+    P(A) = \sum_{\omega \in A} P(\omega)
+  $$
+\end{definition}
+
+Libovolná pravděpodobnostní míra $P$ pro každý prostor jevů $\Omega$ a libovolné jevy $A, B \subseteq \Omega$ dále splňuje následující vlastnosti:
+\begin{enumerate}
+ \item $P(\emptyset) = 0$ (tzv. nemožný jev)
+ \item $P(\Omega) = 1$ (tzv. jistý jev)
+ \item $P(\overline{A}) = 1 - P(A)$
+ \item $P(A \cap B) = P(A) P(B)$
+ \item $P(A \cup B) \leq P(A) + P(B)$
+ \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\end{enumerate}
+
+Dalším důležitým pojmem je podmíněná pravděpodobnost. Zjednodušeně řečeno, podmíněná pravděpodobnost nám říká, s jakou pravděpodobností nastal jev $A$ jestliže víme, že nastal jev $B$.
+
+\begin{definition}[Podmíněná pravděpodobnost]
+ Mějme pravděpodobností prostor $\Omega$ a dva jevy $A, B \subseteq \Omega$ z tohoto prostoru tak, že $P(B) > 0$. Podmíněná pravděpodobnost jevu $A$ za podmínky, že nastal jev $B$ je pravděpodobnost $P(A | B) = \frac{P(A \cap B)}{P(B)}$.
+\end{definition}
+
+\begin{example}
+ Uvažujme příklad s klasickou šestistěnnou hrací kostkou. Prostor jevů je $\Omega = \{ 1,2,3,4,5,6 \}$. Označme $A = \{2, 4, 6\}$ jako jev \uv{padlo sudé číslo} a $B = \{ 5, 6 \}$ jako \uv{padlo číslo větší než $4$}.
+ 
+ Pravděpodobnost jevu $A$ je $\frac{1}{2}$, pravděpodobnost jevu $B$ je $\frac{1}{3}$ a $P(A | B) = \frac{1}{2}$ (tj. pravděpodobnost, že padlo sudé číslo za předpokladu, že padlo číslo větší než $4$).
+\end{example}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy vs. pravděpodobnostní přístup} \label{subsec:FuzzyVsProb}
 V předchozích dvou podkapitolých byly zavedeny základní pojmy z oblasti fuzzy teorie a pravděpodobnostního počtu. Je vidět, že jak stupeň pravdivosti, tak pravděpodobnostní míra jsou obě reálná čísla z intervalu $[0, 1]$. Oba tyto pojmy totiž popisují určitou formu neurčitosti, každá však jinou. Často však může docházet k jejich záměně.
 
@@ -271,6 +311,8 @@ Pokud je některý ze stupňů roven $0$, tak se v grafu zpravidla vynechává.
  \TODO{vymyslet příklad}
 \end{example}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Výpočet nedeterministického fuzzy automatu}
 Výpočet nedeterminsitického fuzzy automatu vychází z výpočtu nedeterministického bivalentního automatu. U bivalentního automatu jsme uvažovali, že automat se může nacházet ve více stavech současně, tj. součástí konfigurace výpočtu je množina stavů, ve kterých se automat nachází. Nedeterministický fuzzy automat se této koncepce drží, jen ji obohacuje o odstupňovanost. Tedy, že množina stavů, ve kterých se automat může nacházet je fuzzy množinou. Tutu množinu budeme nazývat fuzzy stav.
 
@@ -371,7 +413,39 @@ Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množ
 
 \TODO{Jazyk rozpoznávaný automatem značit $\mathcal{L}$ nebo jen $L$? A automat $\mathcal{A}$, $\mathbf{A}$, $\mathbb{A}$ nebo jen $A$?}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pravděpodobností automat}
 
+Pravděpodobnostní automat je opět jen určitým rozšířením \uv{klasického} automatu. Očekáváme od něj, že přechody mezi stavy budou prováděny s určitou pravděpodobností. Tedy, že nachází-li se automat v určitém stavu a na vstupu je určitý symbol, stav, do kterého automat přejde, bude vybrán náhodně. Přechodová funkce pak bude určovat, s jakou pravděpodobností do kterého stavu automat má přejít.
+
+Je vidět, že automat se tedy pokaždé bude nacházet vždy pouze v jednom stavu. Pravděpodobnostní automat bude tedy přirozené uvažovat jako deterministický. Z tohoto důvodu bude mít automat jen jeden počáteční stav. Množina koncových stavů bude \uv{klasická} podmnožina stavů, stav tedy bude vždy buďto koncový nebo nekoncový.
+
+Následuje definice pravděpodobnostního automatu. Byla převzata z \cite{Rab-ProbAut}.
+\begin{definition}[Pravděpodobnostní automat]
+ Jako pravděpodobnostní automat označujeme strukturu $(\Sigma, Q, \mu, q_0, F)$, kde $\Sigma$ je abeceda, $Q$ je neprázdná množina stavů, $q_0 \in Q$ je počáteční stav, $F \subseteq Q$ je množina koncových stavů a $\mu: Q \times \Sigma \rightarrow (Q \rightarrow [0,1])$ je pravděpodobnostní přechodová funkce, která každému $q \in Q$ a $a \in \Sigma$ přiřazuje pravděpodobnost $P_{q,a}: Q \rightarrow [0,1]$ takovou, že:
+ $$   
+  \sum_{q' \in Q} P_{q,a}(q') = 1 
+ $$
+\end{definition}
+
+Přechodovou funkci lze číst následujícím způsobem. Por libovolné $(q, a, q', p) \in \mu$: \uv{jestliže se automat nachází ve stavu $q$ a na vstupu je symbol $a$, do stavu $q'$ přejde s pravděpodobností $p$}. Přejdeme nyní k popisu výpočtu automatu. Označme stavy $Q = \{ q_0, q_1, \dots n \}$. Dále označme $A(a)$ jako čtvercovou matici $n \times n$ symbolu $a \in \Sigma$ tak, že:
+$$
+  A(a)_{i, j} = P_{a,i}(j)
+$$
+
+Dále definujme matici $A(\omega)$, kde $a_1 \dots a_m = \omega \in \Sigma^*$ jako
+$$
+  A(\omega) = A(a_1) \times \dots \times A(a_m)
+$$
+kde operátor $\times$ značí násobení matic. Každý prvek $A(\omega)_{i,j}$ pak symbolizuje pravděpodobnost, s jakou automat přejde ze stavu $q_i$ do stavu $q_j$, je-li na vstupu řetězec $\omega$. 
+
+
+
+
+
+
+
+\TODO{naimplementovat easter egg do appky}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -710,10 +784,6 @@ V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě 
 
 Takovýto automat zřejmě rozpoznává jazyk $T = \{ (t, 1) \}$. 
 
-
-\subsection{Buněčné fuzzy automaty}
-
-Buněčné (fuzzy) automaty jsou další z výpočetních modelů, které se svojí základní myšlenkou podobají (fuzzy) automatům. Oproti \uv{klasickým} (fuzzy) automatům mají však značně zajímavější možnosti uplatnění. Proto jim v této práci bude věnována samostatná kapitola.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\uv{Bivalentní} buněčný automat}
@@ -2460,13 +2530,17 @@ Biologie a medicína jsou odvětví, které zpravidla disponují velikým množs
 Vzhledem k tomu, že většina těchto aplikací vyžaduje zásah experta na danou problematiku, budou tyto aplikace rozbrány pouze teoreticky.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání řetězců DNA}
 Řetězec DNA, neboli deoxyribonukleová kyselina je organická makromoleukula. Je tvořena sekvencí tzv. nukleotidů. Každý nukleotid obsahuje jednu ze čtyř nukleových bází, adeninu, guaninu, cytosinu a nebo thyminu. Nukleové báze se často značí po řadě A, G, C a T a celá DNA tak může být zapsána jako posloupnost těchto symbolů.
 
-Mělo by to jít, něco málo na to mám. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}
+Řětězce DNA kódují základní informace o živých organizmech a je proto snaha pochopit její strukturu. 
+
+Použití fuzzy a pravděpodobnostních automatů s rozpoznáváním vzorců DNA je k dispozici v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{Ron-AutLeaApp}, \cite{ZlaSteSch-FiStaConTraFemPro} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Biologické simulace}
 V \cite{CheMyn-ModAlgBloDutCosWat+} je prezentován model založený na buněčných fuzzy automatech modelujícící růst mořských řas. Funguje na velmi podobném principu jako problém městského růstu (viz kapitola \TODO{doplnit dokaz}).
 
@@ -2484,6 +2558,7 @@ Autoři navíc do modelu zanášejí pohyb jedinců, tj. že s určitou pravděp
 % 
 % A pak ještě toto: \cite{PatPal-FuzGraSynRecSkeMatXra}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Analýza zdravotního stavu pacienta}
 V \cite{Jia+-ExHeaSimMetBasIntHumTheMod}, \cite{GupRah-CliMonUsFuzSys}, \cite{CamMerNun-UsFuzAutDiagPrHeaPro} a \cite{SteAdl-CliMonFuzAut} je popisován způsob, jak pomocí fuzzy automatů sledovat zdravotní stav pacienta. 
 
@@ -2523,6 +2598,7 @@ V \cite{CamMerNun-UsFuzAutDiagPrHeaPro} se fuzzy automaty používají pro diagn
 \TODO{terminologie u proměnných (resp. indexů proměnných), česky (triangel, age, distance) vs. česky?}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Analýza lékařských snímků}
 V \cite{Est+-CytImAnaGenFuFiStMa} popř. \cite{Est+-CytImAnaGenFuFiStMa} využívají učící se fuzzy automat pro rozpoznávání zhoubných (maligních) nádorových buněk. Vstupem této techniky je mikroskopický snímek z buněk z prsní tkáně, výstupem pak nalezené maligní buňky. Využívají faktu, že nezhoubné buňky mají na snímcích obvykle symetričtější tvary a méně \uv{skvrn}.
 
@@ -2564,10 +2640,10 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
 
 V \cite{PatPal-FuzGraSynRecSkeMatXra} popisují způsob, jak pomocí fuzzy automatů sledovat vývoj kostí ruky dítěte. Z Röntgenového snímku ruky pomocí detekce hran obrdrží obrysy kostí. Ty pak pomocí techniky podobné rozpoznávání složených geometrických tvarů (kapitola \TODO{doplnit}) používají k určování stádia vývinu patřičné kosti.
 
-\subsection{Analýza kardiogramu}
-Např. \cite{PedGac-LeaFuzzAut}, popř. i \cite{RigTza-FuzAutFauDia}. Ale je to obecně zpracování signálu, popsat někde jinde?
+\subsection{Další aplikace}
+V \cite{PedGac-LeaFuzzAut}, popř. i \cite{RigTza-FuzAutFauDia} analyzují signál z elektrokardiogramu (EKG). Využivají při tom techniky uvedené v kapitole \TODO{odkaz na kapitolu}.
 
-\subsection{Řízení protézy}
+%\subsection{Řízení protézy}
 V \cite{Alv-HumGaiModUsGenFuzFinStaMac} (popř. i \cite{AlvTri-ComModQuaPerSig} \TODO{to by šlo ale obecně použít pro zpracování signálu, ne?})
 používají fuzzy automaty pro modelování fungovaní protézy dolní končetiny. Pomocí akcelerometrů sledují pohyb patřičné náhrady a pomocí známých vzorů spouštějí automat, který určuje, v jaké fázi pohybu protéza je.
 
