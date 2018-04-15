@@ -608,7 +608,7 @@ V této kapitole bude navázáno na kapitolu předcházející. Budou zde předs
 \subsection{Fuzzy tree automaty}
 Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání dat, které mají v sobě obsaženu určitou stromovou strukturu.
 
-Fuzzy tree automaty vznikly fuzzyfikací \uv{klasických} tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
+Fuzzy tree automaty vznikly zobecněním \uv{klasických} bivalentních tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
 
 Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. stromy. Pro snadnější práci s nimi bylo navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy tree automatů.
 
@@ -1880,10 +1880,9 @@ Další variantu automatu\footnote{Zde se jedná o tzv. aritmentický pravděpod
 V \cite{MohPerRoe-WeiFinStaTraSpeRec} a \cite{BahJel-DecChaWinDelSubApSpeRec} pomocí pravděpodobnostních automatů snaží překládat slova fonetické abecedy na \uv{běžnou} (angličtinu). Dá se totiž předpokládat, že vyřčené slovo nemuselo být řečeno zcela zprávně a navíc mohlo být upraveno určitým akcentem. Z databáze tak (podobně, jako při učení) sestavují automaty pro jednotlivá slova a ty spouštějí oproti vstupu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Detekce překlepů}
+\subsection{Detekce překlepů} \label{subs:DetTyp}
 Pomocí fuzzy automatů lzde poměrně snadno detekovat a případně se pokoušet opravit překlepy. Využívá se při tom faktu, že překlep obvykle znamená vložení či náhradu symbolem, který je na klávesnici počítače v okolí očekávaného symbolu. Například řetězec \str{hrllo} zcela určitě vznikl překlepnutím při psaní \str{hello}, než kupříkladu \str{ahoj}. Je tak možné napsané slovo opravit. Tuto techniku popisují v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, popř. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}.% až na konci,  Fuzzy Aho-Corasick algorithm (popř. dohledat jiný zdroj).
 
-\TODO{naprogramovat?!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy lexikální analyzátor}
@@ -1947,10 +1946,11 @@ Vstupní signály jsou diskrétně kvantovány v čase a následně i v úrovni.
 Autoři tuto techniku demonstrují na problému detekce poruch u materiálu. Měřený kus testovaného materiálu je zatěžován stále větším tlakem a postupně proměřován ultrazvukovými signály. Při namáhání materiálu dochází k jeho systematickému poškození. Změna chování materiálu je detekována ultrazvukovými senzory a předány automatu, který v nich rozpozná vznikající poruchu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Rozpoznávání ručně psaného textu}
+\subsection{Rozpoznávání ručně psaného textu} \label{subs:RecHandWrit}
 Problém ručně psaného textu je v současné době velmi významný. V závislosti na konkrétní situaci může být vstupem buď přímo bitmapa (např. sken), nebo již vektorizovaný obrázek obsahující informace o cestě, kterou hrot pera při psaní písmene udělal.
 
 Uvažujme tedy, že máme k dispozici již cestu. Analýzou průběhu cesty, tj. rozkladem na podcesty (např. na základě směru či délky) získáme segmenty. Každému segmentu může být posléze přiřazen symbol (dán typicky jeho směrem). Celé cestě pak může být přiřazen řetězec, který může být následně rozpoznán automatem.
+\TODO{obrázek}
 
 Této technice se věnují např. v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} \cite{WeeFu-FormFuzAutAppModLeaSys}. V obou případech poukazují, že pro řádově lepší výsledky rozpoznávání je vhodné systém vylepšit určitou formou strojového učení.
 
@@ -2006,7 +2006,7 @@ Podobnou techniku používají v \cite{Hac+-ProAnaLarFinStaMac}, jen s pravděpo
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Detekce úplných $m$-árních stromů}
+\subsection{Detekce úplných $m$-árních stromů} \label{subs:DetComTrees}
 Fuzzy tree automaty mohou být použity pro velmi elegentní určení úplnnosti stromu. Úplný $m$-ární strom je takový strom, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly). Tato technika pochází z autorovy invence.
 
 Zaveďme lingvistickou proměnnou $C$ \uv{vnitřní uzel $v$ o $n$ potomcích je vnitřní uzel úplného $m$-árního stromu} a její štítek \uv{ano, je}. Pak významovovu funkci $C(v)$  tohoto štítku může nadefinovat následovně:
@@ -2083,7 +2083,7 @@ Podobný způsob je popsán v \cite{Hul+-ManRecUsProFinStaMacFuzLog}. V tomto p�
 \TODO{WTF? V \cite{GraFod-FuzAutIntHybConSys} také popisují řídící systém, avšak zavádějí distribuovaný model.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Monitorování elektrických a počítačových sítí}
+\subsection{Monitorování elektrických a počítačových sítí} \label{subs:MonElComNet}
 V \cite{DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis} používají fuzzy automaty pro sledování vytížení el. rozvodné sítě. Technika předpokládá znalost spotřebičů v síti a nástroj pro monitorování odběru el. proudu (elektroměr). Výstupem je pak rozpis, kdy byl jaký spotřebič (pravděpodobně) zapnut a kolik odebíral energie.
 
 Technika využívá faktu, že každý spotřebič se může nacházet v různých stavech. Například vysoušeč vlasů se může nacházet v jednom z těchto tří stavů: \uv{vypnut}, \uv{fouká studený vzduch} a \uv{fouká teplý vzduch}. Každému takovému stavu může být být asociována konkrétní hodnota odběru el. energie.  Pokud známe výkyvy spotřeby proudu při změnách těchto stavů, můžeme spotřebiči sestavit fuzzy automat. Zaveďme lingvistickou proměnnou \uv{spotřeba el. proudu ...} a její štítky \uv{výrazně klesla}, \uv{je konstantní} a \uv{lehce stoupla}. 
@@ -2312,8 +2312,7 @@ V \cite{PedGac-LeaFuzzAut} navrhují používat učení fuzzy automatů pro kons
 \section{Zpracování obrazu}
 Zpracování obrazu je velmi populární informatická disciplína. V této kapitole budou prezentovány některé problémy, které lze řešit pomocí fuzzy automatů. Vzhledem k tomu, že obraz bývá obvykle reprezentován bitmapou, bývá obraz obvykle zpracováván pomocí buněčných fuzzy automatů.
 
-
-\subsection{Konvoluce}
+\subsection{Konvoluce} \label{subs:Convol}
 Uvažujme obraz jako mřížku $m \times m$ pixelů s odstíny šedi jako hodnotami od $0$ do $1$. Hodnota $0$ značí černou, hodnota $1$ bílou. Jinými slovy, barva (resp. stupeň šedi) pixelu je ohodnocující funkce lingvistické proměnné se štítkem \uv{pixel má bílou barvu}. Tato skutečnost nám umožňuje pracovat s obrazem pomocí fuzzy logiky.
 
 Každý obraz tak také můžeme považovat za konfiguraci buněčného fuzzy automatu s množinou stavů $Q = [0,1]$. Návrhem vhodné přechodové funkce tak můžeme vytvořit automat, který provádí určitou operaci pro úpravu obrazu. Typickou operací je tzv. obrazový filtr, který obrazu $m \times m$ přiřazuje obraz $m \times m$.
@@ -2395,7 +2394,7 @@ Pomocí těchto pravidel tak lze sestavit buněčný fuzzy automat s fuzzy logik
 Dle \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} může být hodnota stupně \uv{buňkou $c$ prochází hrana} použita jako parametr $\alpha$ tzv. Gas Diffusion Modelu, jednu z technik zaostřování obrazu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ostraňování šumu}
+\subsection{Ostraňování šumu} \label{subs:NoisRem}
 Odstraňování šumu je další častý problém, který je třeba při zpracování obrazů řešit. Pro studium technik odstraňování šumu se používá zašumnění tzv. impulzním šumem popř. šumem \uv{sůl a pepř}. Zašumnění impulzním šumem nahradí stanovený počet pixelů náhodnými barvami. Šumění \uv{sůl a pepř} pak narazuje pixely buď bílou ($1$) nebo černou ($0$) barvou.
 
 V \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut} je prezentována jednoduchá avšak efektivní technika, která kombinuje klasický bivalentní buněčný automat s buněčnýcm fuzzy automatem. 
@@ -2745,4 +2744,100 @@ používají fuzzy automaty pro modelování fungovaní protézy dolní končeti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Implementace vybraných problémů}
+V rámci této práce byly vybrané aplikace naimplementovány. Tato kapitola popisuje základní informace o způsobu, jak byly tyto aplikace naimplementovány.
+
+Studium této kapitoly vyžaduje alespoň základní znalost objektového programování, nejlépe pak znalost programovacího jazyka Java.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Základní informace}
+Aplikace byly implementovány v programovacím jazyce Java na platformě Java Standart Edition. Projekt byl strukturován tak, aby bylo možné jej automaticky sestavit pomocí nástroje Apache Maven. Pro jeho sestavení a spuštění nejsou potřebné žádné dodatečné nástroje či knihovny.
+
+Samotný projekt je rozdělen na moduly (podprojekty) odpovídající použitému typu automatu, tj. \verb|fuzzy-automata| (nedeterministický fuzzy automat), \verb|event-driven-fuzzy-automata| (událostmi řízený fuzzy automat), \verb|fuzzy-tree-automata| (fuzzy tree automat) a \verb|cellular-fuzzy-automata|.
+
+Každý z těchto modulů obsahuje vždy základní, abstraktní, třídu implementující definici patřičného automatu (tj. datovou strukturu). Každý modul poté obsahuje třídu, která je jejím potomkem a rozšiřuje ji o implementaci vybraných algoritmů (např. výpočet, determinizace a podob.).
+
+Každý modul tak může být používán jako softwarová knihovna. Pro snažší použití každý modul obsahuje obvykle několik spustitelných tříd (tj. tříd s metodou \verb|main|), které zaobalují vybranou funkcionalitu modulu do spustitelného programu. Každý modul spravidla obsahuje také adresář \verb|data/test| obsahující testovací data.
+
+Implementované aplikace jsou umístěny v modulech podle typu automatu, se kterým pracují. Každá aplikace je implementována (obvykle) samostatnou třídou a obsahuje patřičné spustitelné třídy a testovací data.
+
+Projekt dále obsahuje modul \verb|core|, který implementuje základní funkcionalitu společnou pro všechny moduly. Tedy implementaci abeced, symbolů, řetězců, stupňů pravdivosti, fuzzy množin a relací a podob. Implementuje také tzv. \textsc{TIMFile}, což je speciální formát souboru navržený pro vstup a výstup dat z aplikace.
+
+Veškeré podrobnější informace jsou k nalezení v javadoc dokumentaci v samotném kódu. Nyní budou ve stručnosti popsány jednotlivé aplikace, které byly implementovány.
+
+% \begin{note}
+%  Pro zjednodušení nejsou v následujících kapitolách uváděny plně kvalifikované názvy tříd. 
+% \end{note}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Korekce překlepů}
+Detekce a korekce překlepů byla implementována na základě popisu v kapitole \ref{subs:DetTyp}. Realizuje ji třída \verb|TyposCorrecter| a spuští se pomocí \verb|TyposCorrecterApp|. Proces korekce je konfigurován slovníkem (seznam korektních slov), popisem klávesnice a stupni v jakých má být akceptován stisk právě jedné extra klávesy, stisk více extra kláves, stisk jiné klávesy či vynechání klávesy.
+
+Instance této třídy bere na svém vstupu textový řetězec tvořený jedním nebo více slovy oddělených mezerou. Výstupem je posloupnost slov dle následujího klíče:
+\begin{enumerate}
+ \item výstupem je slovo $x$, jestliže je vstupní slovo $x$ ve slovníku
+ \item výstupem je slovo $y$, jestliže je vstupní slovo $x$ nejpodobnější slovu $y$, které je ve slovníku
+ \item výstupem je slovo $x$, pokud žádné slovo ze slovníku mu není podobné
+\end{enumerate}
+
+Podobnost řetězců je určována pomocí deformovaných automatů rozpoznávající slova ze slovníku. Ukázka korekce překlepů (při výchozím nastavení) je uvedena v tabulce \ref{tab:TyposOut}. Jak je v tabulce vidět, program má problém s krátkými slovy, kde se často ztrácí, avšak u dlouhých slov dokáže obnovit i velmi \uv{poškozené slovo}.
+
+\begin{table}
+ \centering
+  \begin{tabular}{|l||l|l|l|l|l|l|l|l|l|}
+    \hline
+    vstup 	& februacy & jaruanry & devmber  & october & asdbril	\\\hline
+    výstup 	& february & january  & december & october & april	\\\hline
+    \hline
+    vstup 	& maj   & jana & poctober & asauguszt  & mnobmvmert	\\\hline
+    výstup	& march & may  & october  & august     & november	\\\hline
+  \end{tabular}
+
+ \caption{Ukázka korekce překlepů při slovníku anglických názvů měsíců} \label{tab:TyposOut}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rozpoznávání ručně psaného textu}
+Rozpoznávání ručně psaného textu bylo naimplementováno dle kapitoly \ref{subs:RecHandWrit}. Tato aplikace je naimplementována jako interaktivní grafická aplikace spouštěná třídou \verb|HandwrittenTextGuiApp|. 
+
+V prostřední části okna aplikace se nachází plátno, kde je možno pomocí tahu myší psát. Na plátně se červeně zvýraznůjí body, ve kterých se lámou segmenty. Ve stavovém řádku se zobrazuje řetězec, který napsanému tvaru odpovídá. V levé části okna se nachází tabulka s automaty a stupni pravdivosti, jak moc je jimi napsaný tvar přijímán.Nástrojová lišta pak obsahuje prvky pro konfiguraci a ovládání programu. Parametr \textit{Shake reduction} udává minimální délku segmentu, zaškrtávací tlačítko \textit{Immediate} zapíná automatické spuštění výpočtu při uvolnění tlačítka myši.
+
+Seznam automatů se zadává při spuštění programu. Pro vygenerování automatu rozpoznávající vzor a jeho následnou deformaci lze použít spustitelné třídy \verb|AutomatonOfWordApp| a \verb|DeformAutomatonApp|. Pro testování bylo v adresáři s testovacími daty vytvořeno $10$ vzorů odpovídající číslicím $0$ až $9$ (každá ve více variantách). 
+
+Ukázka okna aplikace je na obrázku \ref{img:HandWritScreen}.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.8\textwidth]{handwritrec-screen}
+ \caption{Ukázka aplikace pro rozpoznávání ručně psaného textu} \label{img:HandWritScreen}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detekce úplných $m$-árních stromů}
+Detekce úplných $m$-árních stromů je naimplementována pomocí fuzzy tree automatů a to dle kapitoly \ref{subs:DetComTrees}. V adresáři s testovacími daty se nachází vzorové stromy pro úplný ternární a kvadrární strom. Testování úplnnosti vstupu se spouští třídou \verb|TreeOnFTaRunner|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Simulace spotřeby elektrického produdu}
+Simulace spotřeby elektrického proudu byla naimplementována dle kapitoly \ref{subs:MonElComNet}. Výpočet realizuje třída \verb|PowerConsumptionComputer|. Jejím vstupem jsou informace o spotřebičích v síti, jejich možných stavech a spotřebách. Dále pak seznam naměřených spotřeb elektrického proudu a dodatečné parametry. 
+
+Pomocí třídy \verb|PowerConsumptionsToFEDA| jsou tato data transformována na fuzzy událostmi řízený automat a sekvenci fuzzy událostí. Automat je posléze spuštěn s těmito událostmi a výsledný stav je opět převeden na informace o spotřebičích a jejich stavech. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Zpracování obrazu}
+Naimplementovány byly také vybrané techniky pro zpracování obrazu. Realizovány byly pomocí buněčných fuzzy automatů.
+
+Byly implementovány některé grafické filtry uvedené v kapitole \ref{subs:Convol}. Třída \verb|ConvolutionalCFA| implementuje automat realizující obecnou konvoluci. Třída \verb|SimpleBlurFilterAutomaton| pak pomocí konvoluce implementuje jednoduché rozostření. Třída \verb|MyBEFilterAutomaton| implementuje BE filtr. 
+
+Třída \verb|NoiseReductionAutomaton| implementuje metodu pro odstranění šumu z obrazu popsanou v kapitole \ref{subs:NoisRem}. Pro přidání šumu je možné použít spustitelnou třídu \verb|ConfigNoiserTool|. Pro import a export (převod mezi bitmapou a souborem konfigurace buněčného automatu) je slouží spustitelná třída \verb|ImageConfigConverter|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Metoda lisování dat}
+
+Bude doplněno, až budu mít nějaká data. \TODO{doplnit}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}

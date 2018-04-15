@@ -73,3 +73,11 @@
 \contentsline {subsection}{\numberline {11.3}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{54}
 \contentsline {subsection}{\numberline {11.4}Anal\IeC {\'y}za l\IeC {\'e}ka\IeC {\v r}sk\IeC {\'y}ch sn\IeC {\'\i }mk\IeC {\r u}}{55}
 \contentsline {subsection}{\numberline {11.5}Dal\IeC {\v s}\IeC {\'\i } aplikace}{56}
+\contentsline {section}{\numberline {12}Implementace vybran\IeC {\'y}ch probl\IeC {\'e}m\IeC {\r u}}{56}
+\contentsline {subsection}{\numberline {12.1}Z\IeC {\'a}kladn\IeC {\'\i } informace}{56}
+\contentsline {subsection}{\numberline {12.2}Korekce p\IeC {\v r}eklep\IeC {\r u}}{57}
+\contentsline {subsection}{\numberline {12.3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{57}
+\contentsline {subsection}{\numberline {12.4}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{58}
+\contentsline {subsection}{\numberline {12.5}Simulace spot\IeC {\v r}eby elektrick\IeC {\'e}ho produdu}{59}
+\contentsline {subsection}{\numberline {12.6}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{59}
+\contentsline {subsection}{\numberline {12.7}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{59}
