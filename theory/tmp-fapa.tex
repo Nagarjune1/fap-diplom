@@ -16,35 +16,56 @@
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Úvod}
+Fuzzy automaty jsou výpočetní modely, které propojují teorii automatů s fuzzy množinami. Obdobně, pravděpodobnostní automaty spojují teorii automatů s pravděpodobnostním počtem.
+
+Všechny tyto tři oblasti matematiky (resp. informatiky) jsou v současné době velmi hluboce prozkoumány. Především fuzzy množiny jsou tak dnes stále více propojovány s dalšími oblastmi informatiky, jako jsou například řídící systémy\cite{Jan-FouFuzzContPracAppr}, formálně-konceptuální analýza\cite{Bel-FuzRelSys} nebo právě teorie automatů.
+
+Motivací pro propojení teorie automatů s fuzzy množinami (popř. pravděpodobnostním počtem) je vcelku jasná. Jak fuzzy množiny, tak pravděpodobnostní počet, zavádějí (resp. poměrně elegantně dokáží popsat) různé formy nepřesnosti, neurčitosti, nejistoty či vágnosti. Přesně s těmito pojmy se setkáváme v běžném životě. Provázání fuzzy množin a pravděpodobnostního počtu s teorií automatů tak může sloužit jako určitý \uv{můstek}, který nám usnadní nasazení automatů v praxi.
+
+Úkolem této práce je prezentovat základy teorie fuzzy a pravděpodobnostních automatů, a především jejich možná uplatnění v praxi. Práce prezentuje vybrané aplikace fuzzy a pravděpodobnostních automatů, tematicky rozdělených dle oblastí, do kterých spadají.
+
+Následuje zavedení základních pojmů z oblasti fuzzy množin, pravděpodobnostního počtu a teorie automatů. Poté budou formálně zavedeny pojmy \uv{fuzzy automat} a \uv{pravděpodobnostní automat} spolu s některými souvisejícími pojmy. Poté následují kapitoly věnované samotným aplikacím fuzzy a pravděpodobnostních automatů. Na závěr je popsána softwarová implementace vybraných problémů.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Úvodní pojmy}
-V této kapitole budou popsány základní pojmy, bez kterých nebude možno se studiu fuzzy automatů věnovat. Bude zde tedy představen koncept fuzzy množin, pravděpodobnostního počtu a základní pojmy z teorie automatů.
+V této kapitole budou popsány základní pojmy, bez kterých nebude možné se studiu fuzzy automatů věnovat. Bude zde představen koncept fuzzy množin, pravděpodobnostního počtu a základní pojmy z teorie automatů.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy množiny a fuzzy logiky}
-Pomocí matematiky můžeme formalizovat svět kolem nás. Zatímco matematika je založena na přesnosti, většina okolního světa lze přesně popsat jen s těží. Při popisu okolního světa pravujeme mnohem časteji s vágními pojmy jako \uv{málo}, \uv{téměř} či \uv{trochu} než s jednoznačným \uv{ano} a \uv{ne}. Například, tvrzení \uv{student učivo umí} lze těžko ohodnotit pravdou či nepravdou, pokud student z testu získal $50\%$ bodů. Naopak, říci, že \uv{student učivo umí z $1/2$} je mnohem přirozenější. V případech jako je tento mohou fuzzy množiny přinést značné zpřehlednění.
+Pomocí matematiky můžeme formalizovat svět kolem nás. Zatímco matematika je založena na přesnosti, většina okolního světa lze přesně popsat jen s těží. Při popisu okolního světa pravujeme mnohem častěji s vágními pojmy jako \uv{málo}, \uv{téměř} či \uv{trochu} než s jednoznačným \uv{ano} a \uv{ne}. Například, tvrzení \uv{student učivo umí} lze těžko ohodnotit pravdou či nepravdou, pokud student z testu získal $50\%$ bodů. Naopak, říci, že \uv{student učivo umí z $1/2$} je mnohem přirozenější. V případech jako je tento mohou fuzzy množiny přinést značné zpřehlednění.
 
-Fuzzy množiny (případně fuzzy logiky od nich odvozené) jsou matematický aparát, který matematicky formalizuje určitou neurčitost\footnote{Slovo \uv{fuzzy} v angličtině znamená \uv{nejasný}, \uv{rozmazaný}, \uv{neostrý}}. Oproti \uv{klasické} množina, která prvek buďto obsahuje nebo neobsahuje, fuzzy množině může prvek nálažet v určitém stupni, který se nachází někde mezi \uv{nenáleží vůbec} a \uv{náleží plně}. Obdobně, pravdivost tvrzení (tedy formule vyjádřené v přirozeném jazyce) ve fuzzy logice nemusí být pouze pravdivé či nepravdivé, ale může nabývat libovolného stupně pravdivosti.
+Podobně jako například predikátová logika tvoří matematický nástroj pro popis logického uvažování, fuzzy množiny (případně fuzzy logiky od nich odvozené) jsou matematický nástroj pro práci s nepřesnými pojmy\footnote{Slovo \uv{fuzzy} v angličtině znamená \uv{nejasný}, \uv{rozmazaný}, \uv{neostrý}}. Oproti \uv{klasické} množině, která prvek buďto obsahuje nebo neobsahuje, fuzzy množině může prvek nálažet v určitém stupni, který se nachází někde mezi \uv{nenáleží vůbec} a \uv{náleží plně}. Obdobně, pravdivost tvrzení (tedy formule vyjádřené v přirozeném jazyce) ve fuzzy logice nemusí být pouze pravdivé či nepravdivé, ale může nabývat libovolného stupně pravdivosti.
 
-Přejděme nyní k formální definici fuzzy množiny a souvisejících pojmů.
+Fuzzy množiny jsou tedy matematickým nástrojem. Následuje jejich definice. Definice fuzzy množin a související pojmy jsou přejaty z \cite{Bel-FuzRelSys}.
 
 \begin{definition}[Fuzzy množina]
  Mějme libovolnou neprázdnou množinu $U$ (tzv. univerzum). Pak zobrazení $\rho_A: U \rightarrow [0, 1]$ nazvěme členská funkce. Množinu $A$ nazýváme fuzzy množina nad $U$. Pro libovolné $x \in U$ říkáme, že prvek $x$ náleží do množiny $A$ ve stupni $\rho_A(x)$.
 \end{definition}
 
-\begin{note}
- Členská funkce fuzzy množiny nemusí být nutně zobrazení do intervalu $[0, 1]$. Interval může být nahrazen svazem s $0$ a $1$, pokud splňuje ještě některá další kritéria. Studium těchto vlastností však není účelem této práce a proto bude vynecháno. Navíc, práce s intervalem $[0 ,1]$ je poměrně výhodná z důvodu snadné implementace na počítači a proto ve všech praktických aplikacích (které jsou smyslem této práce) se bude používat právě tento interval.
-\end{note}
+V této práci se dopouštíme význameného zjednodušení. Množina stupňů pravdivosti, kterou zde uvažujeme jako interval $[0, 1]$, může být mnohem obecnější. Takové zobecnění by však jednak vyžadovalo hlubší popis, který je u intervalu $[0, 1]$ intuitivní. Navíc, použití itervalu $[0, 1]$ je pro člověka přirozené, $0$ odpovídá \uv{nulové pravdivosti} a $1$ \uv{plné pravdivosti}. V neposlední řadě, použití intervalu $[0, 1]$ je výhodné také z implementace na počítači.
+
+% \begin{note}
+%  Členská funkce fuzzy množiny nemusí být nutně zobrazení do intervalu $[0, 1]$. Interval může být nahrazen svazem s $0$ a $1$, pokud splňuje ještě některá další kritéria. Studium těchto vlastností však není účelem této práce a proto bude vynecháno. Navíc, práce s intervalem $[0 ,1]$ je poměrně výhodná z důvodu snadné implementace na počítači a proto ve všech praktických aplikacích (které jsou smyslem této práce) se bude používat právě tento interval.
+% \end{note}
 
 \begin{notation*}
- Abychom rozlišili \uv{klasické} bivalentní množiny od fuzzy množin, budou fuzzy množiny v tomto textu značeny malými řeckými písmeny.
+ Abychom rozlišili \uv{klasické} bivalentní množiny od fuzzy množin, budou fuzzy množiny v tomto textu obvykle značeny malými řeckými písmeny.
 \end{notation*}
 
 Nyní se podíváme na základní množinové operace nad fuzzy množinami.
 \begin{definition}[Operace nad fuzzy množinami]
  Mějme dvě fuzzy množiny $\pi$ a $\rho$ nad univerzem $U$. Pak definujme jejich průnik, sjednocení, rovnost a inkluzi (relaci \uv{býti podmnožinou}) jako:
  \begin{align*}
-  \pi \cup \rho 	\; &= \; \pi(x) \wedge \rho(x) \\
-  \pi \cap \rho 	\; &= \; \pi(x) \vee \rho(x) \\
+  \pi \cap \rho 	\; &= \; \pi(x) \wedge \rho(x) \\
+  \pi \cup \rho 	\; &= \; \pi(x) \vee \rho(x) \\
   \pi = \rho 		\; &= \; \pi(x) = \rho(x) \\
   \pi \subseteq \rho 	\; &= \; \pi(x) \le \rho(x) 
  \end{align*}
@@ -53,30 +74,57 @@ Nyní se podíváme na základní množinové operace nad fuzzy množinami.
 
 Připomeňme, že operátory $\wedge$ $\vee$ na reálném intervalu $[0, 1]$ jsou definovány jako $\min$ a $\max$. Operátor $\le$ značí přirozené uspořádání čísel a $=$ jejich rovnost.
 
-Množinu všech fuzzy množin nad univerzem $U$ (tedy protějšek potenční množiny u \uv{klasických} množin) budeme značit $\fsubsets{U}$. Obdobně jako u \uv{klasických} množin lze definovat kartézský součin a relace, můžeme definovat kartézký součin fuzzy množin a fuzzy relace. 
-
-%TODO ověřit, prý to mám blbě
-\begin{definition}[Kartézský součin fuzzy množin]
- Mějme fuzzy množiny $\rho_1, \dots, \rho_n$ nad univerzy $U_1, \dots, U_n$. Pak kartézský součin těchto fuzzy množin, psáno $\rho_1 \times \dots \times \rho_n$ nebo $\prod_{i=1}^n \rho_i$ je definován jako zobrazení $U_1 \times \dots \times U_n \rightarrow [0, 1]$.
+Kromě operací s fuzzy množinami ještě budeme pracovat s operacemi t-norma a t-konorma, což jsou binární operace na množině $[0,1]$.
+\begin{definition}[T-norma a t-konorma]
+ Binární operace $\otimes$ (t-norma) na množině $[0,1]$ je asociativní, komutativní, monotonní operátor s neutrálním prvkem $1$.
  
+ Binární operace $\oplus$  (t-konorma) na množině $[0,1]$ je asociativní, komutativní, monotonní operátor s neutrálním prvkem $0$ takový, že:
+ $$
+  a \oplus b = 1 - ((1 - a) \otimes (1 - b))
+ $$
+ splňuje pro všechna $a, b \in [0,1]$.
 \end{definition}
+
+Operace t-norma a t-konorma si lze představit jako zobecnění disjunkce a konjunkce. V tabulce \ref{tbl:Norms} jsou uvedeny nejpoužívanější tři t-normy a jim odpovídajícím t-konormy.
+\begin{table}
+ \centering
+ \begin{tabular}{|l|l|l|}
+  \hline
+  Název 		& t-norma 				& t-konorma				\\\hline
+  \hline
+  Gödelova 		& $a \otimes b = \min(a, b)$ 		& $a \otimes b = \max(a, b)$		\\\hline
+  Produktová 		& $a \otimes b = a b$ 			& $a \otimes b = a + b - a b$		\\\hline
+  \L{}ukasiewiczova 	& $a \otimes b = \max(0, a + b - 1)$ 	& $a \otimes b = \min(a + b, 1)$	\\\hline
+ \end{tabular}
+
+ \caption{Tři nejpoužívajší t-normy a jim odpovídající t-konormy}
+ \label{tbl:Norms}
+\end{table}
+
+Množinu všech fuzzy množin nad univerzem $U$ (tedy protějšek potenční množiny u \uv{klasických} množin) budeme značit $\fsubsets{U}$. Posledním z důležitých pojmů je fuzzy relace.
+
+% \begin{definition}[Kartézský součin fuzzy množin]
+%  Mějme fuzzy množiny $\rho_1, \dots, \rho_n$ nad univerzy $U_1, \dots, U_n$. Pak kartézský součin těchto fuzzy množin, psáno $\rho_1 \times \dots \times \rho_n$ nebo $\prod_{i=1}^n \rho_i$ je definován jako zobrazení $U_1 \times \dots \times U_n \rightarrow [0, 1]$.
+%  
+% \end{definition}
+
 \begin{definition}[Fuzzy relace]
- Jako fuzzy relaci na fuzzy množinách množinách $\rho_1, \dots, \rho_n$ nazýváme libovolnou fuzzy podmnožinu kartézského součinu těchto fuzzy množin.
+ Jako fuzzy relaci na fuzzy množinách $U_1, \dots, U_n$ nazýváme fuzzy množinu nad $U_1 \times \dots \times U_n$ (tj. nad jejich kartézským součinem).
 \end{definition}
 
-\TODO{t-norma a konorma}.
 
+\TODO{příklad}
 % 
-% \TODO{Zde se důkladně rozepsat o motivaci a konceptech.}
-% \TODO{ZDE dát všechny ty příklady na \uv{je teplo}, \uv{je mladý} a podob. !}
+% T O D O{Zde se důkladně rozepsat o motivaci a konceptech.}
+% T O D O{ZDE dát všechny ty příklady na \uv{je teplo}, \uv{je mladý} a podob. !}
 % 
 % Fuzzy množiny a relace budou po vzoru \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs} nejčastěji malými řeckými písmeny (obdobně jako jejich členské (angl. \uv{membership}) funkce). Množinu všech fuzzy podmnožin množiny $S$ budeme značit $\fsubsets{S}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravděpodobnostní počet}
-Pravděpodobnost je další forma neurčitosti. Pozorujeme-li nějaký jev, pak pravděpodobnost nám říká, jak moc je jisté, že tento jev nastane i v budoucnu. 
+Pravděpodobnost je další forma neurčitosti. Pozorujeme-li nějaký jev, pak pravděpodobnost vyjadřuje, jak moc je jisté, že tento jev nastane i v budoucnu. 
 
-Z pohledu aplikací pravděpodobnostních automatů pro nás bude pravděpodobnost -- podobně, jako stupeň pravdivosti -- reálný interval $[0, 1]$ s některými dalšími vlastnostmi. Definice a vlastnosti pravděpodobností zde budou uvedeny ve zjednodušené podobě a jsou převány z \cite{Joh-ProbStaComSci}. 
+Z pohledu aplikací pravděpodobnostních automatů pro nás bude pravděpodobnost -- podobně, jako stupeň pravdivosti -- reálný interval $[0, 1]$ s některými dalšími vlastnostmi. Definice a vlastnosti pravděpodobností zde budou uvedeny ve zjednodušené podobě a jsou převzaty z \cite{Joh-ProbStaComSci}. 
 
 \begin{definition}[Prostor jevů, jev]
   Označme neprázdnou množinu $\Omega$ jako prostor jevů, její prvky jako elementární jevy a její podmnožiny jako jevy.  
@@ -118,26 +166,42 @@ Dalším důležitým pojmem je podmíněná pravděpodobnost. Zjednodušeně ř
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy vs. pravděpodobnostní přístup} \label{subsec:FuzzyVsProb}
-V předchozích dvou podkapitolých byly zavedeny základní pojmy z oblasti fuzzy teorie a pravděpodobnostního počtu. Je vidět, že jak stupeň pravdivosti, tak pravděpodobnostní míra jsou obě reálná čísla z intervalu $[0, 1]$. Oba tyto pojmy totiž popisují určitou formu neurčitosti, každá však jinou. Často však může docházet k jejich záměně.
+V předchozích dvou podkapitolách byly zavedeny základní pojmy z oblasti fuzzy množin a pravděpodobnostního počtu. Je vidět, že jak stupeň pravdivosti, tak pravděpodobnostní míra, jsou obě reálná čísla z intervalu $[0, 1]$. Oba tyto pojmy totiž popisují určitou formu neurčitosti, avšak každá jinou. 
 
-Je však třeba mít na paměti, že tyto pojmy jsou zcela rozdílné. Stupeň pravdivosti popisuje, jak moc je tvrzení pravdivé, zatímco pravděpodobnost, jak moc je pravděpodobné, že tvrzení pravdivé bude.
+Popisujeme-li nějaký jev, pak stupeň pravdivosti udává, jak moc jev odpovídá jeho popisu. Například tvrzení \uv{osoba $X$ je vysoká} může být pravdivé ve stupni $1$, pokud je osoba vysoká $180$ centimetrů a víc a ve stupni $0,5$, pokud osoba měří $160$ centimetrů. Popisujeme tedy skutečnost, která je nám známá, avšak při jejím popisu používáme vágní pojem (\uv{vysoká}). Ohodnocení stupňem pravdivosti tak záleží na skutečné výšce osoby.
 
-Názorně je to vidět na příkladě: Trvzení \uv{Já jsem vysoký} může nabývat různých stupňů pravdivosti, avšak pravděpodobnost se nemění. Naopak tvrzení \uv{Zítra ráno mi ujede autobus} může popisovat buď zcela pravdivou skutečnost, nebo zcela nepravdivou, nicméně má smysl uvažovat, s jakou pravděpodobností tento jev nastane.
+Naopak, tvrzení \uv{zítra mi ujede autobus} je popsáno přesně (nepoužívá žádné vágní pojmy), avšak nejistota je zde skryta v pozorovaném jevu. Zda-li tento jev nastane (a tvrzení je tudíž pravdivé) nebo nenastane nám není známo. Můžeme se však bavit o pravděpodobnosti, s jakou nastane.
 
-Občas se stává, že lze uplatnit oba přístupy. Například trzení \uv{Venku je pěkné počasí}. Na jednu stranu se můžeme bavit o \uv{pěknosti} počasí (tj. jak moc je venku pěkně). Ovšem na druhou stranu můžeme uvažovat, že autor výroku není seznámen s aktuálním počasím a proto může určovat s jakou pravděpodobností venku skutečně je pěkně. Právě z takovýchto situací pramení časté záměny těchto dvou přístupů.
+Matoucí může být tvrzení \uv{uživatel píše slovo $X$}. Na jednu stranu může být chápáno ve smyslu pravděpodobnosti. Tedy, že na základě určitých pozorování predikujeme s jakou pravděpodobností slovo, které uživatel píše, je slovem $X$. Na druhou stranu toto tvrzení může být chápáno tak, že víme, (se stoprocentní jistotou) jaké slovo uživatel píše, a pak můžeme studovat stupeň pravivosti, v jakém je psané slovo slovem $X$.
+
+Poněkud jinou situací je tvrzení \uv{zítra bude pěkné počasí}. Toto tvrzení totiž obsahuje jak vágní pojem \uv{pěkné}, tak nejistotu (nevíme, jaké bude počasí). Využívá tedy obou přístupů současně.
+
+Při návrhu systému pracujícího s neurčitostí je tedy nutné se vždy zamyslet, jestli jeho neurčitost tkví spíše v nepřesném označení nebo naopak v nepřesné znalosti popisované situace.
+
+\begin{note}
+ Existují snahy fuzzy a pravděpodobnostní přístup sjednotit. Takovýmto \uv{stupňům} se obvykle říká \uv{váhy}. Systém pracující s vahami však nemá žádný logický základ a není tak vhodné jej používat v reálných aplikacích. Uplatnění však může najít pro teoretické studium společných vlastností jak pravděpodobností tak stupňů pravdivosti.
+\end{note}
+
+
+% 
+% Stupeň pravdivosti popisuje, jak moc je tvrzení pravdivé, zatímco pravděpodobnost, jak moc je pravděpodobné, že tvrzení pravdivé bude.
+% 
+% Názorně je to vidět na příkladě: Trvzení \uv{Já jsem vysoký} může nabývat různých stupňů pravdivosti, avšak pravděpodobnost se nemění. Naopak tvrzení \uv{Zítra ráno mi ujede autobus} může popisovat buď zcela pravdivou skutečnost, nebo zcela nepravdivou, nicméně má smysl uvažovat, s jakou pravděpodobností tento jev nastane.
+% 
+% Občas se stává, že lze uplatnit oba přístupy. Například trzení \uv{Venku je pěkné počasí}. Na jednu stranu se můžeme bavit o \uv{pěknosti} počasí (tj. jak moc je venku pěkně). Ovšem na druhou stranu můžeme uvažovat, že autor výroku není seznámen s aktuálním počasím a proto může určovat s jakou pravděpodobností venku skutečně je pěkně. Právě z takovýchto situací pramení časté záměny těchto dvou přístupů.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Popis v přirozeném jazyce}
-Vzhledem k tomu, že účelem této práce je studovat uplatění fuzzy a pravděpodobnostních automatů v praxi, je nutné zavést nástroj pro přemostění \uv{propasti} mezi fuzzy teorií (pravděpodobnostním počtem) a popisem v přirozeném jazyce.
+Vzhledem k tomu, že účelem této práce je studovat uplatění fuzzy a pravděpodobnostních automatů v praxi, je nutné seznámit se s nástroji pro propojení matematického světa (tj. fuzzy množin a pravděpodobnostního počtu) a popisu v přirozeném jazyce.
 
-Pravděpodobnostní počet k tomuto účelu používá jevy. Je poměrně přirozené říkat \uv{Pravděpodobnost jevu $e$ je $p$.}.
+Pravděpodobnostní počet k tomuto účelu používá slovní označení jevů. Je poměrně přirozené říkat \uv{Pravděpodobnost jevu $e$ je $p$.}.
 
-Pro popis stupňů pravdivosti by bylo možné používat \uv{Tvrzení $t$ je pravdivé ve stupni $d$.}. Bude však výhodnější použít tzv. lingvistické proměnné \cite{Zad-ConLingVarAppApprRea}. Každá lingvistická proměnná $\alpha$ je tvořena univerzem $U$ hodnot a množinou lingvistických štítků $T$. Pro každý štítek $X \in T$ pak definuje jeho význam $M(X)$, fuzzy množinu nad $U$ (tj. funkci, která hodnotě z univerza přiřadí stupeň pravdivosti). Fakt, že lingvistická proměnná $\alpha$ nabývá \uv{hodnoty} $X$ budeme zapisovat $\alpha = X$.
+Pro popis stupňů pravdivosti by bylo možné používat \uv{Tvrzení $t$ je pravdivé ve stupni $d$.}. Taková formulace však zní poněkud kostrbatě. Mnohem elegantněji lze podobná tvrzení vyjádřit pomocí tzv. lingvistikých proměnných \cite{Zad-ConLingVarAppApprRea}. Každá lingvistická proměnná $\alpha$ je tvořena univerzem $U$ hodnot a množinou lingvistických štítků $T$. Pro každý štítek $X \in T$ pak definuje jeho význam $M(X)$ (významovou funkci), fuzzy množinu nad $U$ (tj. funkci, která hodnotě z univerza přiřadí stupeň pravdivosti). Fakt, že lingvistická proměnná $\alpha$ nabývá \uv{hodnoty} $X$ budeme zapisovat $\alpha = X$.
 
 \begin{example}
- Mějme lingvistickou proměnnou $\alpha$ s významem \uv{výška osoby}. Univerzem hodnot jsou všechna nezáporná reálná čísla. Lingvistické štítky jsou \uv{malá}, \uv{střední}, \uv{vysoká} a \uv{velmi velká}. Význam jednotlivých štítků je vyobrazen na obrázku \ref{fig:lingVarsMeansChart}.
+ Mějme lingvistickou proměnnou $\alpha$ s významem \uv{výška osoby}. Univerzem hodnot jsou všechna nezáporná reálná čísla. Lingvistické štítky jsou \uv{malá}, \uv{střední}, \uv{vysoká} a \uv{velmi velká}. Významové funkce jednotlivých štítků jsou vyobrazeny na obrázku \ref{fig:lingVarsMeansChart}.
 
- Osoba $X$ má výšku $h$. Namísto \uv{Platnost tvrzení \uv{osoba $X$ má střední výšku} je ve stupni $M(\text{střední})(h)$} můžeme říkat \uv{osoba $X$ má střední výšku}. Symbolicky zapsáno: $\alpha = \text{střední}$.
+ Nyní mějme osobu $X$. Osoba $X$ má výšku $h$. Namísto \uv{Platnost tvrzení \uv{osoba $X$ má střední výšku} je ve stupni $M(\text{střední})(h)$} můžeme říkat \uv{osoba $X$ má střední výšku}. Symbolicky zapsáno: $\alpha = \text{střední}$.
 \end{example}
 
 \begin{figure}
@@ -147,7 +211,7 @@ Pro popis stupňů pravdivosti by bylo možné používat \uv{Tvrzení $t$ je pr
  \caption{Graf významových funkcí štítků \uv{malá}, \uv{střední}, \uv{velká} a \uv{velmi velká}} \label{fig:lingVarsMeansChart}
 \end{figure}
 
-Pro popis složitějších zákonitostí je potřeba pokročilejčí nástroj. Vztahy tak budeme popisovat pomocí tzv. fuzzy \ifthen pravidel. Klasické bivalentní \ifthen pravidlo je výrok: je tvaru:
+Pro popis složitějších zákonitostí je potřeba pokročilejčí nástroj. Vztahy tak budeme popisovat pomocí tzv. fuzzy \ifthen pravidel\cite{Jan-FouFuzzContPracAppr}. Klasické bivalentní \ifthen pravidlo je výrok ve tvaru:
 $$
  \text{Jestliže $x_1$, $\dots$, $x_n$, pak $y$}
 $$
@@ -231,9 +295,12 @@ Je-li jazyk konečná množina, tj, obsahuje konečně mnoho řetězců, nazýv�
 Podobně, jako jsme si zavedli fuzzy množinu jako protějšek \uv{klasické} množiny, můžeme nadefinovat i fuzzy jazyk. Fuzzy jazyk nad abecedou $\Sigma$ je její libovolná fuzzy podmnožina, tj. $\lambda \in \fsubsets{\Sigma^*}$. \TODO{a co probabilistický jazyk?}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definice fuzzy automatu}
-V této kapitole bude podrobně popsán a formálně nadefinován \uv{fuzzy automat} a proces jeho výpočtu. Pro snažší ilustraci bude nejdříve popsán automat bivalentní a následně upraven do podoby fuzzy automatu. Popis bivalentního automatu je převzat z \cite{HopUl-IntrAutTheLangComp}, popis fuzzy automatu z \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} (pokud není uvedeno jinak).
+V této kapitole bude podrobně popsán a formálně definován \uv{fuzzy automat} a proces jeho výpočtu. Pro snažší ilustraci bude nejdříve popsán automat bivalentní a následně upraven do podoby fuzzy automatu. Popis bivalentního automatu je převzat z \cite{HopUl-IntrAutTheLangComp}, popis fuzzy automatu z \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} (pokud není uvedeno jinak).
 
 Hned na úvod je třeba zdůraznit terminologii. Jak bývá u automatů zvykem, pojem \uv{automat} označuje souhrnně různé varianty automatů, typicky nedeterministický i deterministický, bez dalšího rozlišování. Vzhledem k tomu, že základním (a nejpoužívanějším) fuzzy automatem je automat nedeterministický, bude proto druhá polovina této kapitoly věnována právě nedeterministickému fuzzy automatu. Zbývající známé varianty fuzzy automatů budou poté shrnuty v následujcí kapitole.
 
@@ -253,11 +320,13 @@ Automat tedy musí zcela určitě obsahovat stavy, ve kterých se při svém vý
 
 Dále, u každého automatu musí být stanoven počáteční stav. Vzhledem k tomu, že se budeme bavit o automatu nedeterministickém, budeme uvažovat množinu počátečních stavů.
 
-Automaty původně vznikly jako nástroje pro rozpoznávání určité třídy jazyků\footnote{Konkrétně, jedná se o tzv. regulérní jazyky, které budou popsány v kapitole \TODO{doplnit odkaz}}. To znamená, že automat musí pro libovoný řetězec, zda-li do uvedeného jazyka patří nebo ne. U automatů je toto řešeno pomocí tzv. koncových stavů. Pokud výpočet automatu zkončí v koncovém stavu, pak je řetězec automatem zpracovávaný přijat, v opačném případě zamítnut.
+Automaty původně vznikly jako nástroje pro rozpoznávání určité třídy jazyků.
+%\footnote{Konkrétně, jedná se o tzv. regulérní jazyky, které budou popsány v kapitole T O D O{doplnit odkaz}}
+To znamená, že automat musí pro libovolný řetězec určit, zda-li do uvedeného jazyka patří nebo ne. U automatů je toto řešeno pomocí tzv. koncových stavů. Pokud výpočet automatu zkončí v koncovém stavu, pak je řetězec automatem zpracovávaný přijat, v opačném případě zamítnut.
 
 Nyní máme známu obecnou představu, jak by měl automat vypadat. Následuje tedy definice nedeterministického bivalentního automatu, spolu se stručným popisem jeho činnosti. Následně je pak odvozena definice nedeterministického fuzzy automatu a jeho výpočtu.
 
-\TODO{potenční množina -- bivalentní značím $2^M$, fuzzy $\fsubsets{M}$, nechtělo by to sjednotit a používat taky $P(M)$, resp. $\mathcal{P}(M)$?}
+%T O D O{potenční množina -- bivalentní značím $2^M$, fuzzy $\fsubsets{M}$, nechtělo by to sjednotit a používat taky $P(M)$, resp. $\mathcal{P}(M)$?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nedeterminstický bivalentní automat}
@@ -332,10 +401,10 @@ Obdobně jako u bivalentního automatu, nezpracovaná část řetězce na vstupu
 
 
 \begin{definition}[Aplikace fuzzy relace na fuzzy stav (tzv. t-kompozice)]
- Mějme nedeterministický fuzzy automat $A$ a fuzzy stav $\widehat{Q}$. Pak aplikací binární fuzzy relace $R: Q \times Q \rightarrow [0, 1]$ na fuzzy stav $\widehat{Q}$ obdržíme fuzzy symbol $\widehat{Q} \circ R$ splňující pro každé $p \in Q$: $(\widehat{Q} \circ R )(p) = \max_{q \in Q} (\widehat{Q}(q) \otimes R(q, p))$.
+ Mějme nedeterministický fuzzy automat $A$ a fuzzy stav $\widehat{Q}$. Pak aplikací binární fuzzy relace $R: Q \times Q \rightarrow [0, 1]$ na fuzzy stav $\widehat{Q}$ obdržíme fuzzy stav $\widehat{Q} \circ R$ splňující pro každé $p \in Q$: $(\widehat{Q} \circ R )(p) = \bigoplus_{q \in Q} (\widehat{Q}(q) \otimes R(q, p))$.
  
-  \TODO{přesunout do některé z úvodních kapitol?}
-  \TODO{t-kompozice má pár dalších zajímavých (a potřebných) vlastností (např. asociativitu)}
+  %T O D O{přesunout do některé z úvodních kapitol?}
+  %T O D O{t-kompozice má pár dalších zajímavých (a potřebných) vlastností (např. asociativitu)}
 \end{definition}
 
 \begin{notation} \ref{not:muOverSym}
@@ -362,7 +431,7 @@ Vidíme, že výpočet je definován rekurentně. Zápis můžeme přetransformo
  
  \begin{enumerate}
   \item $\mu^*(q, \epsilon, q) = 1$ pro všechna $q \in Q$
-  \item $\mu^*(q, u a, q') =  \bigvee_{p \in Q} \mu^*(q, u, p) \otimes \mu(p, a, q')$ pro všechna $q, q' \in Q, u \in \Sigma^*, a \in \Sigma$
+  \item $\mu^*(q, u a, q') =  \bigoplus_{p \in Q} \mu^*(q, u, p) \otimes \mu(p, a, q')$ pro všechna $q, q' \in Q, u \in \Sigma^*, a \in \Sigma$
   %\item $\mu^*(q, w, q') =  0$ pro všechny ostatní $q, q' \in Q$ a $w \in \Sigma^*$
  \end{enumerate}
 \end{definition}
@@ -381,28 +450,29 @@ Můžeme tedy zapsat:
 \begin{definition}[Řetězec přijímaný automatem]\label{def-RetPriAut}
  Mějme nedeterministický fuzzy automat $A$. Pak řětězec $w \in \Sigma^*$ je automatem $A$ přijat ve stupni
  \begin{align} \label{eq-RetPriAut}
-  A(w) = \max_{q, q' \in Q} (\sigma(q) \otimes \mu^*(q, w, q')(q) \otimes \eta(q'))
+  A(w) = \bigoplus_{q, q' \in Q} (\sigma(q) \otimes \mu^*(q, w, q')(q) \otimes \eta(q'))
  \end{align}
 \end{definition}
 
 
 \begin{note}
-  V literatuře (např. \cite{SebJoh-InvFuzzAutInvFuzzLang} \cite{IgnCirBog-DetFuzAutMemValComResLat} \cite{Bel-DetFuzAut}) se obvykle lze setkat s \uv{techničtějším} zápisem ať už jen rozšířené přechodové funkce, tak $A(w)$. Pro řetězec $w = a_0 \dots a_n$ rozvojem rekurence $\mu^*$ a použitím asociativity $\circ$ můžeme napsat:
+  V literatuře (např. \cite{SebJoh-InvFuzzAutInvFuzzLang} \cite{IgnCirBog-DetFuzAutMemValComResLat} \cite{Bel-DetFuzAut}) se obvykle lze setkat s \uv{techničtějším} zápisem ať už jen rozšířené přechodové funkce, tak $A(w)$. Pro řetězec $w = a_0 \dots a_n$ rozvojem rekurence $\mu^*$ můžeme napsat (poznamenejme, že $\mu^*(q, \epsilon, p_0) = 1$ pokud $q = p_0$, jinak $0$):
   \begin{align*}
-   \mu^*(q, a_0 \dots a_n, q') 
-    &= \bigvee_{p_n \in Q} \left( \dots \bigvee_{p_0 \in Q} (1 \otimes \mu(p_0, a_0, p_1)) \dots \otimes \mu(p_n, a_n, q') \right)  \\
-    &= \bigvee_{p_n \in Q} \dots \bigvee_{p_0 \in Q} \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q') \\
-    &= \bigvee_{(p_n,\dots, p_0) \in Q^n} \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q')
+   \mu^*(& q, a_0 \dots a_n, q') = \\
+    &= \bigoplus_{p_n \in Q} \left( \dots \bigoplus_{p_0 \in Q} (\mu^*(q, \epsilon, p_0) \otimes \mu(p_0, a_0, p_1)) \dots \otimes \mu(p_n, a_n, q') \right) = \\
+    &= \bigoplus_{p_n \in Q} \dots \bigoplus_{p_1 \in Q} \left( \mu(q, a_0, p_1) \otimes \mu(p_1, a_1, p_2) \otimes \dots \otimes \mu(p_n, a_n, q') \right) = \\
+    &= \bigoplus_{(p_n,\dots, p_1) \in Q^n} \mu(q, a_0, p_1) \otimes \mu(p_1, a_1, p_2) \otimes \dots \otimes \mu(p_n, a_n, q')
   \end{align*}
   Poté může být (\ref{eq-RetPriAut}) zapsána jako:
-  $$
-    A(a_0 \dots a_n) = \bigvee_{(p_n,\dots, p_0, q') \in Q^{n+1}} (\sigma(p_0) \otimes \mu(p_0, a_0, p_1) \dots \otimes \mu(p_n, a_n, q') \otimes \eta(q'))
-  $$
+  \begin{align*}
+    A(a_0 \dots a_n) 
+    = \bigoplus_{(q, p_n,\dots, p_1, q') \in Q^{n+1}} (\sigma(q) \otimes \mu(q, a_0, p_1) \otimes &\mu(p_1, a_1, p_2) \dots \\
+     \dots \otimes &\mu(p_n, a_n, q') \otimes \eta(q'))
+  \end{align*}
+
+  Tento zápis intuitivněji popsuje výpočet automatu. Tento zápis totiž můžeme chápat tak, že automat projde všechny $(n+1)$ prvkové posloupnosti stavů $q, q_n, \dots, q_1, q$ (tj. všechny možné cesty v grafu automatu) pro každou z nich spočítá stupeň, v jakém by byl automatem přijat a vybere tu s nejvyšším stupňěm.
   
-  Tento zápis intuitivněji popsuje výpočet automatu. Tento zápis totiž můžeme číst jako: \uv{Řetězec je přijímán ve stupni $A(a_0 \dots a_n)$ jestliže ze stavu $p_0$, který je počáteční ve stupni $\sigma(p_0)$ přejde přečtením $a_0$ do $p_1$ ve stupni $\mu(p_0, a_0, p_1)$, $\dots$, ze stavu $p_n$ přečtením $a_n$ do stavu $q'$ ve stupni $\mu(p_n, a_n, q')$, a stav $q'$ je koncový ve stavu $\eta(q')$.}
-  
-  Z tohoto zápisu je také patrné, že výpočet $A(a_0 \dots a_n)$ dle definice vyžaduje $|Q|^{n+1}$ výpočtů, každý o délce $1 + n + 1$ elementárních kroků. Výpočet má tedy exponenciální složitost vzhledem k délce vstupního řetězce.
-  
+  Vzhledem k tomu, že počet cest je roven $|Q|^{n+1}$ a každá cesta je tvořena $n+1$ stavy, automat při svém výpočtu musí navštívit $|Q|^{n+1}(n+1)$ stavů. Časová složitost je exponenciální vzhledem k délce vstupního řetězce\footnote{Výpočet však může být optimalizován. Pokud některý přechod není definován (tj. automat by jej realizoval v nulovém stupni) můžou být cesty, procházející tímto přechodem při vypočtu vynechány.}.
 \end{note}
 
 Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množina všech řetězců, které jsou tímto automatem rozpoznávané. U fuzzy automatu se však bude pochopitelně jednat o fuzzy jazyk.
@@ -411,7 +481,7 @@ Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množ
  Mějme nedeterministický fuzzy automat $A$. Pak fuzzy množinu $L(A)(w) = A(w)$ nad univerzem $\Sigma^*$ nazýváme fuzzy jazyk rozpoznávaný automatem $A$.
 \end{definition}
 
-\TODO{Jazyk rozpoznávaný automatem značit $\mathcal{L}$ nebo jen $L$? A automat $\mathcal{A}$, $\mathbf{A}$, $\mathbb{A}$ nebo jen $A$?}
+\TODO{příklad?!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravděpodobností automat}
@@ -422,13 +492,13 @@ Je vidět, že automat se tedy pokaždé bude nacházet vždy pouze v jednom sta
 
 Následuje definice pravděpodobnostního automatu. Byla převzata z \cite{Rab-ProbAut}.
 \begin{definition}[Pravděpodobnostní automat]
- Jako pravděpodobnostní automat označujeme strukturu $(\Sigma, Q, \mu, q_0, F)$, kde $\Sigma$ je abeceda, $Q$ je neprázdná množina stavů, $q_0 \in Q$ je počáteční stav, $F \subseteq Q$ je množina koncových stavů a $\mu: Q \times \Sigma \rightarrow (Q \rightarrow [0,1])$ je pravděpodobnostní přechodová funkce, která každému $q \in Q$ a $a \in \Sigma$ přiřazuje pravděpodobnost $P_{q,a}: Q \rightarrow [0,1]$ takovou, že:
+ Jako pravděpodobnostní automat označujeme strukturu $(\Sigma, Q, \mu, q_0, F)$, kde $\Sigma$ je abeceda, $Q$ je neprázdná množina stavů, $q_0 \in Q$ je počáteční stav, $F \subseteq Q$ je množina koncových stavů a $\mu: Q \times \Sigma \rightarrow (Q \rightarrow [0,1])$ je pravděpodobnostní přechodová funkce\footnote{V literatuře (např. v \cite{San-ReaFuzLanProMaxMaxAut}) se můžeme setkat s alternativní definicí. Přechodová funkce je definována jako podmíněná pravděpodobnost, že automat přejde do stavu $q'$ za předpokladu, že se nachází ve stavu $q$ a na vstupu je $a$.}, která každému $q \in Q$ a $a \in \Sigma$ přiřazuje pravděpodobnost $P_{q,a}: Q \rightarrow [0,1]$ takovou, že:
  $$   
-  \sum_{q' \in Q} P_{q,a}(q') = 1 
+  \sum_{q' \in Q} P_{q, a}(q') = 1 
  $$
 \end{definition}
 
-Přechodovou funkci lze číst následujícím způsobem. Por libovolné $(q, a, q', p) \in \mu$: \uv{jestliže se automat nachází ve stavu $q$ a na vstupu je symbol $a$, do stavu $q'$ přejde s pravděpodobností $p$}. Přejdeme nyní k popisu výpočtu automatu. Označme stavy $Q = \{ q_0, q_1, \dots q_n \}$. Dále označme $A(a)$ jako čtvercovou matici $n \times n$ symbolu $a \in \Sigma$ tak, že:
+Přechodovou funkci lze číst následujícím způsobem. Por libovolné $(q, a, q', p) \in \mu$: \uv{jestliže se automat nachází ve stavu $q$ a na vstupu je symbol $a$, do stavu $q'$ přejde s pravděpodobností $p$}. Přejděme nyní k popisu výpočtu automatu. Očíslujme si stavy $Q = \{ q_0, q_1, \dots q_n \}$. Dále označme $A(a)$ jako čtvercovou matici velikosti $n \times n$ symbolu $a \in \Sigma$ tak, že:
 $$
   B(a)_{i, j} = P_{a,i}(j)
 $$
@@ -458,73 +528,73 @@ Jazyk řetězců rozpoznávaných automatem je pak určen tzv. řezem (tj. minim
 \TODO{příklad, by to chtělo}
 
 
-
 \TODO{naimplementovat easter egg do appky}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Varianty fuzzy automatů}
-V této kapitole budou uvedeny další typy fuzzy automatu. Kromě nedeterminstického fuzzy automatu, kterému byla věnována předchozí kapitola, se v souvislosti s fuzzy automaty často mluví s o dalších výpočetních modelech. A právě ty jsou předmětem této kapitoly. 
+V této kapitole budou uvedeny další typy fuzzy automatů. Kromě nedeterminstického fuzzy automatu, kterému byla věnována předchozí kapitola, se v souvislosti s fuzzy automaty často mluví s o dalších výpočetních modelech. A právě ty jsou předmětem této kapitoly. 
 
-Vzhledem k tomu, že se obvykle jedná o modifikace elementární, nebudou rozebírány do hloubky. Podrobnější informace o těchto automatech jsou k nalezení v literatuře.
+Vzhledem k tomu, že se obvykle jedná o modifikace obvykle elementární, nebudou rozebírány do hloubky. Podrobnější informace o těchto automatech jsou k nalezení v literatuře.
+
+\begin{note}
+ Vybranné varianty automatů se mohou kombinovat. Například automat může být současně deterministický, událostmi řízený i zásobníkový.
+\end{note}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Deterministický fuzzy automat}
-V teorii \uv{klasických} bivaletních automatů se rozlišuje automat deterministický a nedeterministický. Deterministcký automat je charakterizován tím, že každý krok jeho výpočtu je jednoznačně určen. U nedeterministického tento předpoklad platit nemusí. Právě z tohoto důvodu je deterministický automat klíčovým pojmem v oblasti \uv{klasických} bivaletních automatů, zatímco nedeterministický jeho zobecnění.
+V teorii \uv{klasických} bivaletních automatů se rozlišuje automat deterministický a nedeterministický. Deterministcký automat je charakterizován tím, že každý krok jeho výpočtu je jednoznačně určen. U nedeterministického tento předpoklad platit nemusí. 
 
-U fuzzy automatů tomu je přesně naopak. Deterministický fuzzy automat se obvykle definuje pouze jako speciální případ nedeterministického. Podobně jako u nedeterministického automatu existuje několik různých definic. V \cite{Bel-DetFuzAut} je definován jako deterministický bivalentní automat, jen koncové stavy jsou fuzzy. Dle \cite{LiLiLi-RelAmoSevTypFuzAut} je to deterministický bivalentní automat, ale s fuzzy počátečními stavy, koncovými stavy i přechodovu funkcí.
+V klasické teorii automatů je nedeterministický automat považován za zobecnění deterministického. U fuzzy automatů tomu je přesně naopak. Deterministický fuzzy automat se obvykle definuje pouze jako speciální případ nedeterministického.
 
-V \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} definují determinsitický fuzzy automat jako nedeterministický fuzzy automat s tím, že je doplněn o omezení přechodové funkce, že z každého stavu při každém vstupním symbolu automat může přejít do nejvýše jednoho stavu.
+Podobně jako u nedeterministického automatu existuje několik různých definic. V \cite{Bel-DetFuzAut} je definován jako deterministický bivalentní automat, jen koncové stavy jsou fuzzy množinou. Dle \cite{LiLiLi-RelAmoSevTypFuzAut} je to deterministický bivalentní automat, ale s fuzzy počátečními stavy, koncovými stavy i přechodovu funkcí.
 
-Deterministické fuzzy automaty mají význam především pro implementace. Jak bylo zmíněno v předchozí kapitole, \TODO{zmínit složitost (popř. ověřit, že byla zmíněna)} časová složitost výpočtu nedeterminstického fuzzy automatu je exponenciální vzhledem k délce vstupu. U deterministického automatu je tato složitost lineární. Bohužel, zpravidla bývá vykoupena mnohonásobně vyšším počtem stavů automatu.
+V \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} definují determinsitický fuzzy automat jako nedeterministický fuzzy automat s tím, že je jeho přechodová funkce omezene tak, že z každého stavu při každém vstupním symbolu automat může přejít do nejvýše jednoho stavu.
 
-U všech tří citovaných definic deterministického fuzzy automatu jsou uvedeny algoritmy pro tzv. determinizaci automatu, tedy převod nedeterministického fuzzy automatu na jemu odpovídající deterministický. Algoritmus podle \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} byl naimplementován\TODO{opsat ho?}.
+Deterministické fuzzy automaty mají význam především pro implementace. Jak bylo zmíněno v předchozí kapitole, časová složitost výpočtu nedeterminstického fuzzy automatu je exponenciální vzhledem k délce vstupu. U deterministického automatu je tato složitost lineární. Obvykle však bývá vykoupena mnohonásobně vyšším počtem stavů automatu.
+
+U všech tří citovaných definic deterministického fuzzy automatu jsou uvedeny algoritmy pro tzv. determinizaci automatu, tedy převod nedeterministického fuzzy automatu na jemu odpovídající deterministický.
+
+\TODO{Algoritmus podle \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc} byl naimplementován.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nedeterminstický fuzzy automat s $\epsilon$-přechody}
-Nedeterminstický fuzzy automat s $\epsilon$-přechody je rozšíření nedeterminsitického fuzzy automatu. Toto rozšíření je realizováno pomocí tzv. $\epsilon$-přechodů. \uv{Klasický} přechod automat při svém výpočtu realizuje, je-li na vstupu symbol odpovídající symbolu pravidla. Oproti tomu $\epsilon$-přechod však automat může realizovat kdykoliv, bez ohledu na symbol na vstupu.
+Nedeterminstický fuzzy automat s $\epsilon$-přechody je rozšíření nedeterminsitického fuzzy automatu. Toto rozšíření je realizováno pomocí tzv. $\epsilon$-přechodů. \uv{Klasický} přechod je automatem realizován, je-li na vstupu symbol odpovídající symbolu pravidla. Oproti tomu $\epsilon$-přechod však automat může realizovat kdykoliv, bez ohledu na symbol na vstupu.
 
-Takovýto automat nalézá uplatnění především v praktických aplikacích. S jeho pomocí lze velmi elegantně vyřešit např. rozdvojejí výpočtu nebo přesun výpočtu do jiného stavu, a to bez ohledu na vstup. Formální definice tohoto automatu lze nalést např. v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut} či \cite{LiLiLi-RelAmoSevTypFuzAut}.
+Takovýto automat nalézá uplatnění především v praktických aplikacích. S jeho pomocí lze velmi elegantně vyřešit např. rozdvojejí výpočtu nebo přesun výpočtu do jiného stavu, a to bez ohledu na vstup. Formální definice tohoto automatu lze nalést např. v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut} či \cite{LiLiLi-RelAmoSevTypFuzAut}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Zobecněný automat}
-V kapitole \ref{subsec:FuzzyVsProb} byl rozebírán koncepční rozdíl mezi stupněm pravdivosti a pravděpobností. V teorii fuzzy/pravděpodobnostních automatů existují snahy tyto dva přístupy sloučit. Vniklo proto několik definic tzv. zobecněného automatu, např. \cite{DooKre-NewDirFuzzAut} či Max-Min automat \cite{San-MaxAut}. 
-
-Hodnota reprezentující neučitost (tj. stupeň pravdivosti nebo pravděpodobnost) se u těchto automatů nazývá širším pojmem \uv{váha}. Tomuto druhu automatů se proto někdy říká automat s váhami.
+\subsection{Zobecněné automaty}
+V kapitole \ref{subsec:FuzzyVsProb} byl rozebírán rozdíl mezi stupněm pravdivosti a pravděpobností. Ve snaze zobecnit tyto dva přístupy na tzv. váhy vniklo proto několik různých automatů pracující s váhami. Označují se např. zobecněný automat, automat s vahami či např. Max-Min automat. O takovýchto automatech se lze dočíst např. v \cite{MorMal-FuzzyAutLang}, \cite{DooKre-NewDirFuzzAut} či \cite{San-MaxAut}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automat s výstupem}
-Rožšířením klasického automatu lze získat automat s výstupem. Automat kromě přechodové funkce disponuje také výstupní přechodovou funkcí, která při přechodu mezi stavy odesílá na výstup symboly. Automat s výstupem tak obvykle nemá koncové stavy. S fuzzy automaty s výstupem se lze setkat např. v \cite{BlaDelPeg-FuzzAutIndUsNeuNet}\cite{PedGac-LeaFuzzAut}\cite{BlaDelPeg-FuzzGraIntUsiNeuNet}\cite{CheMo-MinAlgFuzFinAut}\cite{ThoMar-DetAccRegFuzLang}.
+Rožšířením klasického automatu lze získat automat s výstupem. Automat kromě přechodové funkce (které se pak říká \uv{vstupní}) disponuje také výstupní přechodovou funkcí, která při přechodu mezi stavy odesílá na výstup symboly. Takové automaty generují řetězce, takže obvykle nemívají koncové stavy. S fuzzy automaty s výstupem se lze setkat např. v \cite{BlaDelPeg-FuzzAutIndUsNeuNet}\cite{PedGac-LeaFuzzAut}\cite{BlaDelPeg-FuzzGraIntUsiNeuNet}\cite{CheMo-MinAlgFuzFinAut}\cite{ThoMar-DetAccRegFuzLang}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stavový stroj}
-V určitém smyslu opakem fuzzy automatu s výstupem je stavový stroj. Oproti němu totiž výstupní schopnosti běžného fuzzy automatu nerozšiřuje, ale naopak ubírá. Stavový stroj je totiž výpočetní model, který nedisponuje žádnou formou výstupu\footnote{V určitém smyslu však může být za výstup považován stav (resp. fuzzy stav). ve kterém výpočet zkončil.}. U stavových strojů není totiž důležitý výsledek výpočtu, ale jeho průběh.
+V určitém smyslu opakem fuzzy automatu s výstupem je stavový stroj. Oproti němu totiž výstupní schopnosti běžného fuzzy automatu nerozšiřuje, ale naopak ubírá. Stavový stroj je totiž výpočetní model, který nedisponuje žádnou formou výstupu\footnote{V určitém smyslu však může být za výstup považován stav (resp. fuzzy stav), ve kterém výpočet zkončil.}. U stavových strojů není totiž důležitý výsledek výpočtu, ale jeho průběh.
 
-Takovýto automat je uveden např. v \cite{Qiu-ChaFuzFinAut}.
+Takovýto automat je uveden např. v \cite{Qiu-ChaFuzFinAut} nebo \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Událostmi řízený fuzzy automat} \label{subsec:FuzzEvMach}
-Jako událostmi řízený fuzzy automat se obvykle označuje další třída výpočetních modelů, které zobecňují fuzzy automaty. Vycházejí z myšlenky, že přechodová funkce může být zapsána jako fuzzy \ifthen pravidlo. Slovní popis činnosti přechodu $(q, a, q', d) \in \mu$ je totiž následující:
+Jako událostmi řízený fuzzy automat se obvykle označuje další třída výpočetních modelů, které zobecňují fuzzy automaty. Vycházejí z myšlenky, že přechodová funkce může být zapsána jako fuzzy \ifthen pravidla. Slovní popis činnosti přechodu $(q, a, q', d) \in \mu$ je totiž následující:
 \begin{align*}
  &\text{Jestliže je automat ve stavu $q$ a na vstupu je symbol $a$,} \\
  &\text{pak automat přejde do stavu $q'$ ve stupni $d$ }
 \end{align*}
 
-Událostmi řízené fuzzy automaty tak uvažují, že přechodová funkce může být libovolná množina fuzzy \ifthen pravidel. \TODO{doplnit pár citací} Takovýto automat má velké praktické uplatnění, protože popis pomocí fuzzy \ifthen pravidel je mnohem přirozenější a flexibilněšjí, než pomocí symbolů.
+Událostmi řízené fuzzy automaty pak tyto pravidla nahrazují libovolnými fuzzy \ifthen pravidel. Takovýto automat má velké praktické uplatnění, protože popis pomocí fuzzy \ifthen pravidel je mnohem přirozenější a flexibilněšjí, než pomocí symbolů. Setkat se s nimi můžeme např. v \cite{TriHei-ExpDesSeqFuzPer}, \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha} nebo \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}.
 
 \begin{note}
  V souvislosti s automaty budeme často používat pojem \uv{abecda událostí}. Tímto pojmem budeme souhrnně nazývat všechny \uv{události}, tj. ligvistické proměnné, které se v přechodové funkci vyskytují.
 \end{note}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zásobníkový fuzzy automat}
-Podobně jako v \uv{klasické} teorii automatů, existuje i zásobníkový fuzzy automat. Jedná se o nedeterminsitický fuzzy automat, který je navíc vybaven tzv. zásobníkem. Zásobník je struktura typu Li--Fo tvořena symboly tzv. zásobníkové abecedy. Přechodová funkce automatu pak kromě symbolu na vstupu sleduje také symbol na vrcholu zásobníku a pří přechodu kromě změny stavu také provádí vložení, odebrání či nahrazení symbolu na vrcholu zásobníku.
-
-Zásobníkový fuzzy automat se však od \uv{klasického} v některých oblastech liší\footnote{Vlastnost, že zásobníkový automat rozpoznává bezkontextový jazyk\TODO{dohledat, ocitovat} u zásobních fuzzy automatů obecně neplatí}. 
-
-Definice zásobníkového automatu je např. v \cite{BucPas-FuzPusAut}.
+Podobně jako v \uv{klasické} teorii automatů, existuje i zásobníkový fuzzy automat. Jedná se o nedeterminsitický fuzzy automat, který je navíc vybaven tzv. zásobníkem. Zásobník je struktura typu Li--Fo tvořena symboly tzv. zásobníkové abecedy. Přechodová funkce automatu pak kromě symbolu na vstupu sleduje také symbol na vrcholu zásobníku a při přechodu kromě změny stavu také provádí vložení, odebrání či nahrazení symbolu na vrcholu zásobníku. Definice zásobníkového automatu je uvedena např. v \cite{BucPas-FuzPusAut}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
