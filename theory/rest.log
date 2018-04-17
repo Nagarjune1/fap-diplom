@@ -1,8 +1,8 @@
-This is MetaPost, version 1.9991 (TeX Live 2016/Debian) (kpathsea version 6.2.2)  21 JAN 2018 10:02
+This is MetaPost, version 1.9991 (TeX Live 2016/Debian) (kpathsea version 6.2.2)  17 APR 2018 19:31
 **rest.mp
 (/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
 (/usr/share/texlive/texmf-dist/metapost/base/plain.mp
 Preloading the plain mem file, version 1.005) ) (./rest.mp (./automata.mp)
-[0] )
-1 output file written: rest0.mps
+[0] [1] )
+2 output files written: rest0.mps .. rest1.mps
 

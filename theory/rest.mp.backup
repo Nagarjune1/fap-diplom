@@ -5,10 +5,9 @@ outputtemplate:="%j%c.mps";
 
 beginfig(0);	% automata representing faces emotions of chess player
   
-  size := 15;
-  incominglength := 25;
-  loopsize := 15;
-  lblpos := 0.5;
+  size := 20;
+  lblposout := 0.5;
+  lblposin := 0.3;
   
   with spacing((60,60)) matrix.a(4,4);
   
@@ -17,27 +16,37 @@ beginfig(0);	% automata representing faces emotions of chess player
   node.a[3][1](btex $q_H$ etex);
   node.a[3][3](btex $q_A$ etex);
   
-  spl := 5;
+  spl := 35;
   
+ 
+  arrow.top(lblposout, btex $ c     $ etex) (a[1][1],a[1][3]) a[1][1].c{dir (+45-spl)}..a[1][3].c{dir (-45+spl)}; % F -> S
+  arrow.bot(lblposout, btex $ n     $ etex) (a[1][3],a[1][1]) a[1][3].c{dir (+225-spl)}..a[1][1].c{dir (+135+spl)}; % S -> F
   
-  arrow.top(lblpos, btex $ n     $ etex) (a[1][1],a[1][3]) a[1][1].c{dir (+45-spl)}..a[1][3].c{dir (-45+spl)}; % F -> S
-  arrow.top(lblpos, btex $ c     $ etex) (a[1][3],a[1][1]) a[1][3].c{dir (+225-spl)}..a[1][1].c{dir (+135+spl)}; % S -> F
+  arrow.top(lblposout, btex $ p_{-} $ etex) (a[3][1],a[3][3]) a[3][1].c{dir (+45-spl)}..a[3][3].c{dir (-45+spl)}; % H -> A
+  arrow.bot(lblposout, btex $ p_{+} $ etex) (a[3][3],a[3][1]) a[3][3].c{dir (+225-spl)}..a[3][1].c{dir (+135+spl)}; % A -> H
   
-  arrow.top(lblpos, btex $ p_{-} $ etex) (a[3][1],a[3][3]) a[3][1].c{dir (+45-spl)}..a[3][3].c{dir (-45+spl)}; % H -> A
-  arrow.top(lblpos, btex $ p_{+} $ etex) (a[3][3],a[3][1]) a[3][3].c{dir (+225-spl)}..a[3][1].c{dir (+135+spl)}; % A -> H
+  arrow.lft(lblposout, btex $ p_{+} $ etex) (a[1][1],a[3][1]) a[1][1].c{dir (-135+spl)}..a[3][1].c{dir (-45-spl)}; % F -> H
+  arrow.rt(lblposout,  btex $ n     $ etex) (a[3][1],a[1][1]) a[3][1].c{dir (+45+spl)}..a[1][1].c{dir (-225-spl)}; % H -> F
   
-  arrow.top(lblpos, btex $ p_{+} $ etex) (a[1][1],a[3][1]) a[1][1].c{dir (-135+spl)}..a[3][1].c{dir (-45-spl)}; % F -> H
-  arrow.top(lblpos, btex $ n     $ etex) (a[3][1],a[1][1]) a[3][1].c{dir (+45+spl)}..a[1][1].c{dir (-225-spl)}; % H -> F
+  arrow.lft(lblposout, btex $ p_{-} $ etex) (a[1][3],a[3][3]) a[1][3].c{dir (-135+spl)}..a[3][3].c{dir (-45-spl)}; % S -> A
+  arrow.rt(lblposout,  btex $ c     $ etex) (a[3][3],a[1][3]) a[3][3].c{dir (+45+spl)}..a[1][3].c{dir (-225-spl)}; % A -> S
   
-  arrow.top(lblpos, btex $ p_{-} $ etex) (a[1][3],a[3][3]) a[1][3].c{dir (-135+spl)}..a[3][3].c{dir (-45-spl)}; % S -> A
-  arrow.top(lblpos, btex $ c     $ etex) (a[3][3],a[1][3]) a[3][3].c{dir (+45+spl)}..a[1][3].c{dir (-225-spl)}; % A -> S
+  arrow.lft(lblposin, btex $ p_{-} $ etex) (a[1][1],a[3][3]) a[1][1].c{dir (-90+spl)}..a[3][3].c{dir (0-spl)}; % F -> A
+  arrow.rt(lblposin,  btex $ n     $ etex) (a[3][3],a[1][1]) a[3][3].c{dir (+90+spl)}..a[1][1].c{dir (+180-spl)}; % A -> F
   
-  arrow.top(lblpos, btex $ p_{-} $ etex) (a[1][1],a[3][3]) a[1][1].c{dir (-90+spl)}..a[3][3].c{dir (0-spl)}; % F -> A
-  arrow.top(lblpos, btex $ n     $ etex) (a[3][3],a[1][1]) a[3][3].c{dir (+90+spl)}..a[1][1].c{dir (+180-spl)}; % A -> F
+  arrow.lft(lblposin, btex $ p_{+} $ etex) (a[1][3],a[3][1]) a[1][3].c{dir (-180+spl)}..a[3][1].c{dir (270-spl)}; % S -> H
+  arrow.rt(lblposin, btex $ c     $ etex) (a[3][1],a[1][3]) a[3][1].c{dir (0+spl)}..a[1][3].c{dir (+90-spl)}; % H -> S
   
-  arrow.top(lblpos, btex $ p_{+} $ etex) (a[1][3],a[3][1]) a[1][3].c{dir (-180+spl)}..a[3][1].c{dir (270-spl)}; % S -> H
-  arrow.top(lblpos, btex $ c     $ etex) (a[3][1],a[1][3]) a[3][1].c{dir (0+spl)}..a[1][3].c{dir (+90-spl)}; % H -> S
+endfig;
+
+
+beginfig(1);	% handwritten text recognition sample
+   ds:=3;
   
+  pair ze[];
+  ze[1]:=(0,0); ze[2]:=(10,0); ze[3]:=(20,10); ze[4]:=(15,20); ze[5]:=(10,10); ze[6]:=(20,0); ze[7]:=(30,10); ze[8]:=(40,20);
+  
+  draw ze[1]..ze[2]..ze[3]..ze[4]..ze[5]..ze[6]..ze[7]..ze[8];
 endfig;
 
 end

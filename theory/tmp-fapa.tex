@@ -608,271 +608,327 @@ V této kapitole bude navázáno na kapitolu předcházející. Budou zde předs
 \subsection{Fuzzy tree automaty}
 Fuzzy tree automaty jsou speciální třídou automatů, které jsou navrženy pro rozpoznávání dat, které mají v sobě obsaženu určitou stromovou strukturu.
 
-Fuzzy tree automaty vznikly zobecněním \uv{klasických} bivalentních tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}. V této kapitole bude vycházeno z \cite{MorMal-FuzzyAutLang}.
+Fuzzy tree automaty byly odvozeny od \uv{klasických} bivalentních tree automatů. O \uv{klasických} tree automatech je možné se dočíst více informací např. v \cite{Com+-TreeAutTecApp}, popř. \cite{Hua-SyntPattRecSeisOilExp} a \cite{Bez+-FuzModAlgPatRecImProc}. Problematice fuzzy tree automatů se věnuje například \cite{Lee-FuzTreAutSynPatRec}, \cite{MogZadAme-NewDirInFuzzTreeAut}, \cite{ChaJos-NoteFuzzTreeAut}, \cite{EsiLiu-FuzzTreeAut} a \cite{MorMal-FuzzyAutLang}.
 
-Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. stromy. Pro snadnější práci s nimi bylo navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy tree automatů.
+Zatímco běžné konečné (fuzzy) automaty pracují s řetězci symbolů, (fuzzy) tree automaty pracují se speciálními strukturami symbolů, tzv. S-termy\footnote{S-termy jsou podobné termům známým například z predikátové logiky.}. S-term je řetězec tvořený symboly z $(N \cup T \cup \{ (, ) \})$ (za předpokladu, že $(N \cap T \cap \{ (, ) \}) = \emptyset$) takové, že:
+\begin{enumerate}
+ \item S-term je každé $ t \in T$
+ \item S-term je každý řetězec $ X ( t_1 \dots t_m )$ takový, že $X \in N$, $m > 0$ a $t_1, \dots t_m$ jsou S-termy
+\end{enumerate}
+S-termem je tedy buďto symbol z abecedy $T$ (tzv. abecedy terminálních symbolů) nebo řetězec tvořený symbolem z abecedy $N$ (tzv. abecedy neterminálních symbolů) následovaný symbolem otevírající závorky, neprázdnou posloupností S-termů a zakončen symbolem uzavírajcí závorky.
 
-Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
+V tomto textu budeme jako abecedu terminálních symbolů uvažovat malá písmena abecedy (minusky) a jako množinu neterminálních symbolů velká písmena abecedy (verzálky). Pak S-termem jsou například následující řetězce: $x$, $P(x y)$, $S(P(x K(z z) y z))$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Stromy a pseudotermy}
-%\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
-
-\begin{definition}[Doména stromu]
-  Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
-  \begin{itemize}
-   \item jestliže $w \in U$ a $w = uv$ pak $u \in U$ pro všechna $u, v, w \in \Sigma^+$ (tj. množina je prefixově uzavřena)
-   \item $wn \in U$ a $m \leq n$ implikuje $wm \in U$, pro všechna $w \in \Sigma^+$ a $m, n \in \Sigma$
-  \end{itemize}
-\end{definition}
- Na doménu stromu můžeme nahlížet jako na množinu řetězců, které formují prefixový strom. Množinu $U$ tak lze rozložit na množinu $\overline{U}$ listových uzlů 
-$$
- \overline{U} = \{ w \in U | w u \notin U \text{ pro všechna } u \in \Sigma^+ \}
-$$
-a množninu $U \setminus \overline{U}$ vnitřních uzlů.
-
-\begin{definition}[Částečně spořádaná abeceda]
-  Částečně spořádaná abeceda je dvojice $(N, T)$, kde $N$ a $T$ jsou dvě disjunktní konečné abecedy (tj. $N \cap T = \emptyset$).
-\end{definition}
-
-\begin{definition}[Strom] \label{def:Tree}
- Strom $t$ nad částečně spořádnou abecedou $(N, T)$ je zobrazení z domény $U$ stromu do $(N \cup T) $ (psáno $t: U \rightarrow (N, T)$) takové, že
- \begin{itemize}
-  \item $t(w) \in N$ pokud $w \in U \setminus \overline{U}$
-  \item $t(w) \in T$ pokud $w \in \overline{U}$
- \end{itemize}
- Místo $t(w)$ budeme psát jen $t$.
-\end{definition}
-\TODO{Takto definovaný strom však teoreticky může být nekonečný. Co s tím?}
-Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu daného doménou $U$. Strom dle definice \ref{def:Tree} je v korespondenci s pojmem \uv{strom} (resp. \uv{kořenový strom}) z teorie grafů. Z tohoto důvodu si pro jednoduchost můžeme odpustit definici souvisejících pojmů z teorie grafů pro strom z definice \ref{def:Tree}. Můžeme tak stromy graficky zobrazovat, hovořit o jejich potomcích, podstromech, vnitřních a listových uzlech bez nutnosti formálního nadefinování.
-
-\begin{example} \label{ex:Trees}
- Označme $T = \{ x, y \}$ a $N = \{ S, M \}$. Definujme doménu $U_1$ stromu pro abecedu $\Sigma = \mathbb{N}$ jako množinu řetězců $U_1 = \{ \epsilon, 1, 11, 12, 121, 2 \}$. Pak $\overline{U_1} = \{ 11, 121, 2 \}$. Strom $t_1: U_1 \rightarrow (T, N)$ nad $(T, N)$ pak může vypadat například takto:
- $$
- \begin{array}{lll}
-   t_1(\epsilon) = M	& t_1(1) = M	& t_1(12) = S \\
-   t_1(11) = x		& t_1(121) = y	& t_1(2) = x \\
-  \end{array}
- $$
- Grafické znázornění stromu $t_1$ je na obrázku \ref{img:Tree:first}. Další ukázky stromů jsou na zbylých podobrázcích obrázku \ref{img:Tree}.  
-\end{example}
+Je patrné, že S-termy mají rekurentní strukturu, tj. že S-term může obsahovat další S-term(y). S-term má tedy stromovou strukturu. Je-li S-term ve tvaru $X(t_1 \dots t_m)$, pak S-termy $t_1, \dots, t_m$ jsou jeho potomky. Takový S-term budeme nazývat vnitřní S-term. S-Term $t \in T$ žádné potomky nemá a jedná se proto o listový S-term. Grafické znázornění stromu S-termu je vyobrazeno na obrázku \ref{img:Tree}.
 
 \begin{figure}
-  \begin{subfigure}[t]{0.3\textwidth} \centering
-   \includegraphics{trees0}
-   \caption{} \label{img:Tree:first}
-  \end{subfigure}
-%  
-  \begin{subfigure}[t]{0.3\textwidth} \centering
+  \centering
+   \hfill
+   \includegraphics{trees2} 
+   \hfill
    \includegraphics{trees1}
-   \caption{} \label{img:Tree:second}
-  \end{subfigure}
-%  
-  \begin{subfigure}[t]{0.3\textwidth} \centering
-   \includegraphics{trees2}
-   \caption{} \label{img:Tree:third}
-  \end{subfigure}
-  
- \caption{Stromy k příkladu \ref{ex:Trees}} \label{img:Tree}
+   \hfill
+   \includegraphics{trees0}
+   \hfill
+ \caption{Stromy S-termů $M(xx)$ (vlevo), $S(x)$ (uprostřed), $M(M(x S(y)) x)$ (vpravo)} \label{img:Tree}
 \end{figure}
 
-Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale občas vhodné mít lineární strukturu pro zápis téhož. Nadefinujeme si proto pseudotermy, protějšky termů predikátové logiky\footnote{Oproti termům predikátové logiky mají však jiný pohled na nulární funktory, které u pseudotermu neexistují}.
+Vzhledem k tomu, že S-termy jsou řetězce, můžeme hovořit o jazycích S-termů, případně fuzzy jazycích S-termů. 
 
-\begin{definition}[Pseudoterm]
- Označme $D_{(N,T)}^p$ nejmenší podmnožinu
-%    $D_{(N,T)}$ je bezkontextový jazyk: gramatika jej generující by mohla vypadat například takto: $(\{ S, N_T, N_N, L \}, T \cup N \cup \{ (, ) \}, P, S)$, kde $P = \{ S \rightarrow T_T | T_N ( L ), T_T \rightarrow T_1 | \dots | T_n, T_N \rightarrow N_1 | \dots | N_k, L \rightarrow S L | \epsilon \}$.}
- $(N \cup T \cup \{ (, ) \})^*$ splňující následující podmínky\footnote{
-    Předpokládáme, že symboly závorek, $($ a $)$ nejsou součástí $N \cup T$}:
- \begin{itemize}
-  \item $T \subset D_{(N,T)}^p$
-  \item pokud $n > 0$, $A \in N$ a $t_1, \dots, t_n \in D_{(N,T)}^p$, pak $A(t_1 \dots t_n) \in D_{(N,T)}^p$ 
- \end{itemize}
- Prvky množiny $t^p \in D_{(N,T)}^p$ nazývejme pseudotermy.
-\end{definition}
-
-\begin{note}
-  Definice pseudotermu lze snadno přepsat do gramatiky. Vzhledem k tomu, že taková gramatika bude jistě bezkontextová, bude jazyk $D_{(N, T)}$ bezkontextový. Tento fakt bude mít důsledek na konstrukci fuzzy tree automatu.
-\end{note}
-
-\begin{example} \label{ex:PseTerms}
- Pro částečně spořádanou abecedu $(N, T)$ s předchozího příkladu můžeme za termy označit například: $t^p_1 = y$, $t^p_2 = S(x)$, $t^p_3 = M(x x)$, $t^p_4 = M(M(x S(y)) x)$.
-\end{example}
-
-Mezi stromy a pseudotermy platí vzájemně převoditelný vztah. To bude nyní dokázáno.
-
-\begin{theorem}
- Pro každý strom $t \in D_{(N,T)}$ nad částečně spořádanou abecedou $(N, T)$ existuje odpovídající pseudoterm $p(t)$.
-\end{theorem}
-\begin{proof}
- Existenci pseudotermu dokážeme podle toho, zda-li je $t$ strom tvořený listovým nebo vnitřním uzlem. Je-li kořenový uzel stromu $t$ listový, tj. $t = a$, kde $a \in T$, pak $p(t) = a$. V opačném případě, tj. reprezentuje-li kořen stromu $t$ vnitřní uzel $t = X$, kde $X \in N$, pak $p(t) = X(p(t_1) \dots p(t_n))$, kde $t_1, \dots, t_n$ jsou podstromy stromu $t$.
-\end{proof}
-
-\begin{theorem}
- Ke každému pseudotermu $p(t) \in D_{(N,T)}^p$ existuje odpovídající strom $t$.
-\end{theorem}
-\begin{proof}
- Opět dokážeme strukturálně:
- \begin{itemize}
-  \item je-li pseudoterm atomický, tj. $p(t) = a$, kde $a \in T$, pak doménou stromu $t$ je množina $\{ \epsilon \}$ a $t(\epsilon) = a$
-  \item pokud je pseudoterm ve tvaru $p(t) = A(t_1^p \dots t_m^p)$, pak doménou stromu $t$ je množina $\bigcup_{i \leq m} \{ i w | w \in domain(t_i) \} \cup \{ \epsilon \}$ a 
-  $$
-   t(w) = 
-   \begin{cases}
-    A		& \text{ pokud $w = \epsilon$}	\\
-    t_i(w')	& \text{ pokud je $w = i w'$ a $w$ je v doméně $t$}
-   \end{cases}
-  $$
- \end{itemize}
-\end{proof}
-
-\begin{example} 
- Pseudoterm $t^p_4$ z předchozího příkladu odpovídá stromu na obrázku \ref{img:Tree:first} a pseudoterm $t^p_3$ stromu \ref{img:Tree:third} (a naopak).
-\end{example}
-
-Máme tedy prokázano, že mezi pseudotermy a stromy platí vzájemná převoditelnost. Označíme si nyní množinu stromů jako jazyk a fuzzy množinu stromů jako fuzzy jazyk. Obdobným způsobem bychom mohli nadefinovat i jazyk pseudotermů, ale ten nebudeme potřebovat.
-
-\begin{definition}[Fuzzy jazyk stromů]
- Fuzzy množinu $\tau$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
-\end{definition}
-
-%Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a listovými uzly. Termy jsou jejich zakódováním do řetězců. Máme tak nadefinován fuzzy jazyk stromů. Nyní se podíváme na fuzzy tree automaty, mechanizmy, které umožňují fuzzy jazyky stromů rozpoznávat.
+% 
+% Pro snadnější práci s nimi bylo navrženo zakódování do řetězců, kterým se říká pseudotermy. Oba tyto pojmy, a jejich vzájemný vztah budou rozebrány v následující podkapitole. Dále bude nadefinován fuzzy jazyk stromů a automat, fuzzy tree automat, který fuzzy jazyk stromů rozpoznává. Na závěr bude předloženo několik konkrétních ukázek využití fuzzy tree automatů.
+% 
+% Následující dvě podkapitoly budou doprovázeny příklady. Pro vyšší názornost se budou příklady vždy týkat syntaxe jednoduchého algebraického kalkulu. Tento kalkul bude disponovat dvěma proměnnými, $x$ a $y$. Dále pak unárním operátorem $S$ (symbolizující funkci \uv{sinus}) a binárním operátorem $M$ (symbolizujícím binární \uv{mínus}, resp. \uv{odečtení druhého argumentu od prvního}). Na závěr bude syntaxe našeho kalkulu fuzzyfikována, takže bude v určitém stupni pravdivosti možné považovat za výraz například $S(x, y)$ nebo $M(M(x))$.
+% 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{Stromy a pseudotermy}
+% %\TODO{Pokud se budu potřebovat zbavit stránky, nebo problémů s Stromy vs. pseudotermy, tak ty pojmy spojit do pojmu třeba \uv{pseudostrom} (= pseudoterm, u kterého budeme \uv{uvažovat} operace nad stromy) a vše patřičně překopat.}
+% 
+% \begin{definition}[Doména stromu]
+%   Mějme abecedu $\Sigma$ uspořádanou pomocí $\leq$. Pak konečnou množinu $U \subseteq \Sigma^*$ nazvěme doména konečného stromu, pokud splňuje následující podmínky:
+%   \begin{itemize}
+%    \item jestliže $w \in U$ a $w = uv$ pak $u \in U$ pro všechna $u, v, w \in \Sigma^+$ (tj. množina je prefixově uzavřena)
+%    \item $wn \in U$ a $m \leq n$ implikuje $wm \in U$, pro všechna $w \in \Sigma^+$ a $m, n \in \Sigma$
+%   \end{itemize}
+% \end{definition}
+%  Na doménu stromu můžeme nahlížet jako na množinu řetězců, které formují prefixový strom. Množinu $U$ tak lze rozložit na množinu $\overline{U}$ listových uzlů 
+% $$
+%  \overline{U} = \{ w \in U | w u \notin U \text{ pro všechna } u \in \Sigma^+ \}
+% $$
+% a množninu $U \setminus \overline{U}$ vnitřních uzlů.
+% 
+% \begin{definition}[Částečně spořádaná abeceda]
+%   Částečně spořádaná abeceda je dvojice $(N, T)$, kde $N$ a $T$ jsou dvě disjunktní konečné abecedy (tj. $N \cap T = \emptyset$).
+% \end{definition}
+% 
+% \begin{definition}[Strom] \label{def:Tree}
+%  Strom $t$ nad částečně spořádnou abecedou $(N, T)$ je zobrazení z domény $U$ stromu do $(N \cup T) $ (psáno $t: U \rightarrow (N, T)$) takové, že
+%  \begin{itemize}
+%   \item $t(w) \in N$ pokud $w \in U \setminus \overline{U}$
+%   \item $t(w) \in T$ pokud $w \in \overline{U}$
+%  \end{itemize}
+%  Místo $t(w)$ budeme psát jen $t$.
+% \end{definition}
+% \TODO{Takto definovaný strom však teoreticky může být nekonečný. Co s tím?}
+% Strom $t$ je tedy předpis pro \uv{přejmenování} uzlů prefixového stromu daného doménou $U$. Strom dle definice \ref{def:Tree} je v korespondenci s pojmem \uv{strom} (resp. \uv{kořenový strom}) z teorie grafů. Z tohoto důvodu si pro jednoduchost můžeme odpustit definici souvisejících pojmů z teorie grafů pro strom z definice \ref{def:Tree}. Můžeme tak stromy graficky zobrazovat, hovořit o jejich potomcích, podstromech, vnitřních a listových uzlech bez nutnosti formálního nadefinování.
+% 
+% \begin{example} \label{ex:Trees}
+%  Označme $T = \{ x, y \}$ a $N = \{ S, M \}$. Definujme doménu $U_1$ stromu pro abecedu $\Sigma = \mathbb{N}$ jako množinu řetězců $U_1 = \{ \epsilon, 1, 11, 12, 121, 2 \}$. Pak $\overline{U_1} = \{ 11, 121, 2 \}$. Strom $t_1: U_1 \rightarrow (T, N)$ nad $(T, N)$ pak může vypadat například takto:
+%  $$
+%  \begin{array}{lll}
+%    t_1(\epsilon) = M	& t_1(1) = M	& t_1(12) = S \\
+%    t_1(11) = x		& t_1(121) = y	& t_1(2) = x \\
+%   \end{array}
+%  $$
+%  Grafické znázornění stromu $t_1$ je na obrázku \ref{img:Tree:first}. Další ukázky stromů jsou na zbylých podobrázcích obrázku \ref{img:Tree}.  
+% \end{example}
+% 
+% 
+% Stromy nám přirozeně reprezentují stromovou hierarchii. Pro nás bude ale občas vhodné mít lineární strukturu pro zápis téhož. Nadefinujeme si proto pseudotermy, protějšky termů predikátové logiky\footnote{Oproti termům predikátové logiky mají však jiný pohled na nulární funktory, které u pseudotermu neexistují}.
+% 
+% \begin{definition}[Pseudoterm]
+%  Označme $D_{(N,T)}^p$ nejmenší podmnožinu
+% %    $D_{(N,T)}$ je bezkontextový jazyk: gramatika jej generující by mohla vypadat například takto: $(\{ S, N_T, N_N, L \}, T \cup N \cup \{ (, ) \}, P, S)$, kde $P = \{ S \rightarrow T_T | T_N ( L ), T_T \rightarrow T_1 | \dots | T_n, T_N \rightarrow N_1 | \dots | N_k, L \rightarrow S L | \epsilon \}$.}
+%  $(N \cup T \cup \{ (, ) \})^*$ splňující následující podmínky\footnote{
+%     Předpokládáme, že symboly závorek, $($ a $)$ nejsou součástí $N \cup T$}:
+%  \begin{itemize}
+%   \item $T \subset D_{(N,T)}^p$
+%   \item pokud $n > 0$, $A \in N$ a $t_1, \dots, t_n \in D_{(N,T)}^p$, pak $A(t_1 \dots t_n) \in D_{(N,T)}^p$ 
+%  \end{itemize}
+%  Prvky množiny $t^p \in D_{(N,T)}^p$ nazývejme pseudotermy.
+% \end{definition}
+% 
+% \begin{note}
+%   Definice pseudotermu lze snadno přepsat do gramatiky. Vzhledem k tomu, že taková gramatika bude jistě bezkontextová, bude jazyk $D_{(N, T)}$ bezkontextový. Tento fakt bude mít důsledek na konstrukci fuzzy tree automatu.
+% \end{note}
+% 
+% \begin{example} \label{ex:PseTerms}
+%  Pro částečně spořádanou abecedu $(N, T)$ s předchozího příkladu můžeme za termy označit například: $t^p_1 = y$, $t^p_2 = S(x)$, $t^p_3 = M(x x)$, $t^p_4 = M(M(x S(y)) x)$.
+% \end{example}
+% 
+% Mezi stromy a pseudotermy platí vzájemně převoditelný vztah. To bude nyní dokázáno.
+% 
+% \begin{theorem}
+%  Pro každý strom $t \in D_{(N,T)}$ nad částečně spořádanou abecedou $(N, T)$ existuje odpovídající pseudoterm $p(t)$.
+% \end{theorem}
+% \begin{proof}
+%  Existenci pseudotermu dokážeme podle toho, zda-li je $t$ strom tvořený listovým nebo vnitřním uzlem. Je-li kořenový uzel stromu $t$ listový, tj. $t = a$, kde $a \in T$, pak $p(t) = a$. V opačném případě, tj. reprezentuje-li kořen stromu $t$ vnitřní uzel $t = X$, kde $X \in N$, pak $p(t) = X(p(t_1) \dots p(t_n))$, kde $t_1, \dots, t_n$ jsou podstromy stromu $t$.
+% \end{proof}
+% 
+% \begin{theorem}
+%  Ke každému pseudotermu $p(t) \in D_{(N,T)}^p$ existuje odpovídající strom $t$.
+% \end{theorem}
+% \begin{proof}
+%  Opět dokážeme strukturálně:
+%  \begin{itemize}
+%   \item je-li pseudoterm atomický, tj. $p(t) = a$, kde $a \in T$, pak doménou stromu $t$ je množina $\{ \epsilon \}$ a $t(\epsilon) = a$
+%   \item pokud je pseudoterm ve tvaru $p(t) = A(t_1^p \dots t_m^p)$, pak doménou stromu $t$ je množina $\bigcup_{i \leq m} \{ i w | w \in domain(t_i) \} \cup \{ \epsilon \}$ a 
+%   $$
+%    t(w) = 
+%    \begin{cases}
+%     A		& \text{ pokud $w = \epsilon$}	\\
+%     t_i(w')	& \text{ pokud je $w = i w'$ a $w$ je v doméně $t$}
+%    \end{cases}
+%   $$
+%  \end{itemize}
+% \end{proof}
+% 
+% \begin{example} 
+%  Pseudoterm $t^p_4$ z předchozího příkladu odpovídá stromu na obrázku \ref{img:Tree:first} a pseudoterm $t^p_3$ stromu \ref{img:Tree:third} (a naopak).
+% \end{example}
+% 
+% Máme tedy prokázano, že mezi pseudotermy a stromy platí vzájemná převoditelnost. Označíme si nyní množinu stromů jako jazyk a fuzzy množinu stromů jako fuzzy jazyk. Obdobným způsobem bychom mohli nadefinovat i jazyk pseudotermů, ale ten nebudeme potřebovat.
+% 
+% \begin{definition}[Fuzzy jazyk stromů]
+%  Fuzzy množinu $\tau$ nad $D_{(N,T)}$ nazvěme fuzzy jazyk stromů.
+% \end{definition}
+% 
+% %Stromy nám tedy reprezentují \uv{stromovou} strukturu tvořenou vnitřními a listovými uzly. Termy jsou jejich zakódováním do řetězců. Máme tak nadefinován fuzzy jazyk stromů. Nyní se podíváme na fuzzy tree automaty, mechanizmy, které umožňují fuzzy jazyky stromů rozpoznávat.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fuzzy tree automat a jazyk jím rozpoznávaný}
-Začněme definicí fuzzy tree automatu.
+%\subsection{Fuzzy tree automat}
+(Fuzzy) Tree automaty jsou nástrojem, který rozpoznává S-termy, resp. (fuzzy) jazyky S-termů. Pro účely této práce se spokojíme pouze s popisem činnosti fuzzy tree automatu. 
 
-\begin{definition}[Fuzzy tree automat]
- Fuzzy tree automat $A$ je pětice $(Q, T, N, \mu, F)$, kde:
- \begin{itemize}
-  \item $Q$ je konečná množina symbolů stavů
-  \item $T$ je konečná množina terminálních symbolů uzlů
-  \item $N$ je konečná množina neterminálích symbolů uzlů taková, že $N \cap T = \emptyset$
-  \item $\mu: (N \cup T) \rightarrow \{ f | f: (\mathcal{Q} \cup \{ \epsilon \}) \times Q \rightarrow [0,1]  \}$ je fuzzy přechodová funkce, kde $\mathcal{Q}$ je konečná podmnožina $Q^+$. Pro $X \in N$ je $\mu(X) = \mu_X$, kde $\mu_X$ je zobrazení z $\mathcal{Q} \times Q$ do $[0,1]$. Pro $a \in T$ je $\mu(a) = \mu_a$, kde $\mu_a$ je zobrazení z $\{ \epsilon \} \times Q $ do $[0,1]$.
-  \item $F \subseteq Q$ je množina koncových stavů.
- \end{itemize}
-\end{definition}
+Automat má na svém vstupu S-term $x$. Automat rekurzivně prochází podtermy vstupního S-termu, při výpčtu si tedy zásobník zpracovávaných S-termů. Automat se při svém výpočtu může nacházet ve více stavech současně. Toho je dosaženo tak, že automat se nachází v řetězci stavů. 
 
-Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde při vstupu $a$. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud je na vstupu $X$ a automat se nachází ve stavech $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}. 
+Je-li $x$ listový S-term (tj. je tvořen symbolem $t \in T$), pak na základě symbolu $t$ přechodová funkce určí do jakého stavu a v jakém stupni má automat přejít. Je-li $x$ vnitřní S-term (tj. je ve tvaru $X(t_1 \dots t_m)$), pak automat rekurzivně zpracuje podtermy $t_1, \dots, t_m$ (čímž přejde do řetězce stavů $q_1 \dots q_m$) a následně přejde do stavu a v určeném stupni dle symbolu S-termu $X$ a řetězce stavů, v jakých se nachází.
+
+Pokud automat zkončí svůj výpočet v některém z koncových stavů je přijímán ve stupni, který je roven t-normě stupňů přechodů jeho podtermů. Pokud výpočet neskončí v koncovém stavu, je řetězec přijímán v nulovém stupni. Jazyk S-termů rozpoznávaný fuzzy tree automatem pak fuzzy množina všech S-termů ve stupni, v jakém jsou automatem přijímány.
 
 \begin{example}
- Uvažujme množiny $N$ a $T$ stejné, jako v předchozích příkladech. Stanovme $Q = \{ q_1, q_2 \}$. Fuzy množinu $F$ položme rovnu $\{ q_2 \}$ a zobrazení $\mu$ je zaznačeno v tabulce \ref{tab:MuOfFuzTreAut}. Pak $A = (Q, T, N, \mu, F)$ je fuzzy tree automatem.
+  Uvažujme fuzzy tree automat o stavech $q_1, q_2$. V tabulce \ref{tab:FuzTreAutTrans} je uveden příklad jeho možných přechodových pravidel.
 \end{example}
 
 \begin{table}
- \begin{subtable}[t]{0.3\textwidth}
-  \begin{tabular}{|l||c|c|}
+  \begin{tabular}{|l|c||c|c|}
     \hline 
-    $\mu_x$		& $q_1$	& $q_2$	\\
-    \hline
-    $\epsilon$		& $1$	& $0$	\\
+    zpracovávaný	& ze stavů	& \multicolumn{2}{|c|}{do stavu}	\\
+    S-term		& 		& $q_1$		& $q_2$		\\
     \hline \hline
-  
-    $\mu_y$		& $q_1$	& $q_2$	\\
+    $x$			& $\epsilon$	& $1$		& $1$		\\
+    \hline \hline
+    $y$			& $\epsilon$	& $1$		& $0$		\\
+    \hline \hline
+    $S(t_1)$		& $q_1$		& $0$		& $1$		\\
+    $S(t_1)$		& $q_2$		& $0$		& $0{,}4$	\\
+    $S(t_1 t_2)$	& $q_1 q_1$	& $0$		& $0{,}3$	\\  
     \hline
-    $\epsilon$		& $1$	& $0$	\\
+  \end{tabular} \hfill
+  \begin{tabular}{|l|c||c|c|}
+    \hline 
+    zpracovávaný	& ze stavů	& \multicolumn{2}{|c|}{do stavu}	\\
+    S-term		& 		& $q_1$		& $q_2$		\\
+    \hline \hline
+    $M(t_1)$		& $q_1$		& $0{,}1$	& $0{,}8$	\\
+    $M(t_1)$		& $q_2$		& $0$		& $0{,}5$	\\
+    $M(t_1 t_2)$	& $q_1 q_1$	& $0$		& $0{,}6$	\\
+    $M(t_1 t_2)$	& $q_1 q_2$	& $0$		& $1$		\\
+    $M(t_1 t_2)$	& $q_2 q_1$	& $0$		& $0{,}7$	\\ 
     \hline
   \end{tabular}
- \end{subtable}
-%
-  \begin{subtable}[t]{0.3\textwidth}
-    \begin{tabular}{|l||c|c|}
-      \hline 
-      $\mu_S$		& $q_1$	& $q_2$	\\
-      \hline
-      $q_1$		& $0$	& $1$	\\
-      $q_2$		& $0$	& $0.4$	\\
-      $q_1 q_1$		& $0$	& $0,3$	\\  
-      \hline
-    \end{tabular}
-  \end{subtable}
-%
-  \begin{subtable}[t]{0.3\textwidth}
-    \begin{tabular}{|l||c|c|}
-      \hline 
-      $\mu_M$		& $q_1$	& $q_2$	\\
-      \hline
-      $q_1$		& $0,1$	& $0,8$	\\
-      $q_2$		& $0$	& $0,5$	\\
-      $q_1 q_1$		& $0$	& $0,6$	\\
-      $q_1 q_2$		& $0$	& $1$	\\
-      $q_2 q_1$		& $0$	& $0,7$	\\
-      \hline 
-    \end{tabular}
-  \end{subtable}
   
-  \caption{Příklad přechodové funkce $\mu$ fuzzy tree automatu} \label{tab:MuOfFuzTreAut}
+  \caption[Příklad přechodů fuzzy tree automatu]{Příklad přechodů fuzzy tree automatu. $x, y$ jsou terminální symboly, $M, S$ neterminální a $t_1, t_2$ jsou S-termy.} \label{tab:FuzTreAutTrans}
 \end{table}
 
-Na přechodovou funkci se můžeme také podívat pohledem syntaktické analýzy zdola nahoru. Přechodové funkce $\mu_X$ ($X \in N$) realizují operaci \uv{redukce} a přechodové funkce $\mu_a$ ($a \in T$) operaci \uv{přesun}. Můžeme tedy říci, že jazyk stromů (resp. jazyk jim odpovídajících pseudotermů) je fuzzy bezkontextový. Předtím je ale třeba ukázat, že fuzzy tree automaty skutečně přijímají fuzzy jazyky stromů.
-
-\begin{definition}[Fuzzy přechodová funkce stromů]
- Pro strom $t \in D_{(N,T)}$ definujme fuzzy přechodovou funkci stromů jako zobrazení $\mu_t: Q \rightarrow [0,1]$ následovně:
- \begin{itemize}
-  \item Pokud stromu $t$ odpovídá pseudoterm $p(t) = X(p(t_1) \dots p(t_k))$, pak 
-  $$
-    \mu_t(q) 
-      = \mu_{X(t_1 \dots t_k)}(q) \\
-      = \bigvee_{\substack{w \in \mathcal{Q} \\ |w| = k}} \left( \mu_X(w, q) \wedge \bigwedge_{j=1}^{k} \mu_{t_j}(w_j) \right)
-  $$
-  \item pokud $t = a$, kde $a \in T$, pak $\mu_t = \mu_a$. 
- \end{itemize}
-\end{definition}
-
-Fuzzy přechodová funkce stromů je obdobou fuzzy rozšířené přechodové funkce. Pokud je vstupní strom atomický ($t = a$) je přechod realizován pomocí fuzzy přechodové funkce $\mu_a$. Pokud vstupní strom není atomický, je přechod realizován ve stupni, který je dán stupňem přechodu neterminálního symbolu a stupňů příslušných podstromů.
-
-Stupeň, ve kterém je strom $t$ automatem přijímán, pak lze určit vztahem
-$$
- A(t) = \bigvee\nolimits_{q \in F} \mu_t(q)
-$$
-
-\begin{definition}[Jazyk rozpoznávaný]
-\TODO{značení fuzzy jazyka}
- Fuzzy množinu $L(A)$ nad $D_{(N,T)}$ danou předpisem
- $$
-  L(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(q) \right\}
- $$
- nazvěme fuzzy jazyk rozpoznávaný fuzzy tree automatem.
-\end{definition}
-
-\begin{example}
- Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (kde $t_{1,1}$ značí levý podstrom kořene a $t_{1,2}$ pravý podstrom) z obrázku \ref{img:Tree:third} platí $\mu_{t_1}(q_2)$:
- \begin{align*}
-  \mu_{t_1}(q_2) 
-    &= 		\left( \mu_M(q_1 q_1, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_1) \right) \\
-    &\vee 	\left( \mu_M(q_1 q_2, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_2) \right) \\ 
-    &\vee 	\left( \mu_M(q_2 q_1, q_2) \wedge \mu_{t_{1,1}}(q_2) \wedge \mu_{t_{1,2}}(q_1) \right) \\ 
-    &= \left( 0,6 \wedge 1 \wedge 1 \right) \vee \left( 1 \wedge 1 \wedge 0 \right) \vee \left( 0,7 \wedge 0 \wedge 1 \right) 
-    = 0,6
- \end{align*}
- Pak tedy $A(t_1) = 0,6$. Pro stromy $t_2$ a $t_3$ z obrázku \ref{img:Tree:first} a \ref{img:Tree:first} platí $A(t_2) = 0.7$ a $A(t_3) = 1$.
-\end{example}
-
-Podobně jako u klasických automatů, i u tree automatů platí, že pro každý fuzzy jazyk stromů existuje automat, který tento jazyk rozpoznává.
-\begin{theorem}
- Pro jaždý fuzzy jazyk stromů existuje fuzzy tree automat, který ho rozpoznává.
-\end{theorem}
-\begin{proof}
- K dispozici v \cite{MorMal-FuzzyLangThe}.
-\end{proof}
-
-V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
-
-\begin{definition}[Automat rozpoznávající strom]
-  Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) kde $sub(t)$ značí množinu všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
-  \begin{itemize}
-   \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
-   \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
-   \item $\mu_X(w, q_{t'}) = 1$ pro všechny $t' \in sub(t)$, kde $w = q_1 \dots q_k$ a stromu $t_i$ odpovídá pseudoterm $p(t') = X(t_1 \dots t_k)$
-   \item $F = \{ q_t \}$ (koncovým stavem je stav odpovídající celému stromu $t$)
-  \end{itemize}
-\end{definition}
-
-Takovýto automat zřejmě rozpoznává jazyk $T = \{ (t, 1) \}$. 
+% 
+% 
+% 
+% 
+% 
+% 
+% \begin{definition}[Fuzzy tree automat]
+%  Fuzzy tree automat $A$ je pětice $(Q, T, N, \mu, F)$, kde:
+%  \begin{itemize}
+%   \item $Q$ je konečná množina symbolů stavů
+%   \item $T$ je konečná množina terminálních symbolů uzlů
+%   \item $N$ je konečná množina neterminálích symbolů uzlů taková, že $N \cap T = \emptyset$
+%   \item $\mu: (N \cup T) \rightarrow \{ f | f: (\mathcal{Q} \cup \{ \epsilon \}) \times Q \rightarrow [0,1]  \}$ je fuzzy přechodová funkce, kde $\mathcal{Q}$ je konečná podmnožina $Q^+$. Pro $X \in N$ je $\mu(X) = \mu_X$, kde $\mu_X$ je zobrazení z $\mathcal{Q} \times Q$ do $[0,1]$. Pro $a \in T$ je $\mu(a) = \mu_a$, kde $\mu_a$ je zobrazení z $\{ \epsilon \} \times Q $ do $[0,1]$.
+%   \item $F \subseteq Q$ je množina koncových stavů.
+%  \end{itemize}
+% \end{definition}
+% 
+% Podívejme se nyní podrobněji na fuzzy přechodovou funkci $\mu$. Pro terminální symbol $a \in T$ nám $\mu_a$ definuje fuzzy stav, do kterého automat přejde při vstupu $a$. Pro neterminál $X \in N$ nám definuje přechodovou funkci $\mu_X(q_1 \dots q_k, q') = c$ s významem \uv{pokud je na vstupu $X$ a automat se nachází ve stavech $q_1, \dots, q_k$, pak automat přejde do stavu $q'$ ve stupni $c$}. 
+% 
+% \begin{example}
+%  Uvažujme množiny $N$ a $T$ stejné, jako v předchozích příkladech. Stanovme $Q = \{ q_1, q_2 \}$. Fuzy množinu $F$ položme rovnu $\{ q_2 \}$ a zobrazení $\mu$ je zaznačeno v tabulce \ref{tab:MuOfFuzTreAut}. Pak $A = (Q, T, N, \mu, F)$ je fuzzy tree automatem.
+% \end{example}
+% 
+% \begin{table}
+%  \begin{subtable}[t]{0.3\textwidth}
+%   \begin{tabular}{|l||c|c|}
+%     \hline 
+%     $\mu_x$		& $q_1$	& $q_2$	\\
+%     \hline
+%     $\epsilon$		& $1$	& $0$	\\
+%     \hline \hline
+%   
+%     $\mu_y$		& $q_1$	& $q_2$	\\
+%     \hline
+%     $\epsilon$		& $1$	& $0$	\\
+%     \hline
+%   \end{tabular}
+%  \end{subtable}
+% %
+%   \begin{subtable}[t]{0.3\textwidth}
+%     \begin{tabular}{|l||c|c|}
+%       \hline 
+%       $\mu_S$		& $q_1$	& $q_2$	\\
+%       \hline
+%       $q_1$		& $0$	& $1$	\\
+%       $q_2$		& $0$	& $0.4$	\\
+%       $q_1 q_1$		& $0$	& $0,3$	\\  
+%       \hline
+%     \end{tabular}
+%   \end{subtable}
+% %
+%   \begin{subtable}[t]{0.3\textwidth}
+%     \begin{tabular}{|l||c|c|}
+%       \hline 
+%       $\mu_M$		& $q_1$	& $q_2$	\\
+%       \hline
+%       $q_1$		& $0,1$	& $0,8$	\\
+%       $q_2$		& $0$	& $0,5$	\\
+%       $q_1 q_1$		& $0$	& $0,6$	\\
+%       $q_1 q_2$		& $0$	& $1$	\\
+%       $q_2 q_1$		& $0$	& $0,7$	\\
+%       \hline 
+%     \end{tabular}
+%   \end{subtable}
+%   
+%   \caption{Příklad přechodové funkce $\mu$ fuzzy tree automatu} \label{tab:MuOfFuzTreAut}
+% \end{table}
+% 
+% Na přechodovou funkci se můžeme také podívat pohledem syntaktické analýzy zdola nahoru. Přechodové funkce $\mu_X$ ($X \in N$) realizují operaci \uv{redukce} a přechodové funkce $\mu_a$ ($a \in T$) operaci \uv{přesun}. Můžeme tedy říci, že jazyk stromů (resp. jazyk jim odpovídajících pseudotermů) je fuzzy bezkontextový. Předtím je ale třeba ukázat, že fuzzy tree automaty skutečně přijímají fuzzy jazyky stromů.
+% 
+% \begin{definition}[Fuzzy přechodová funkce stromů]
+%  Pro strom $t \in D_{(N,T)}$ definujme fuzzy přechodovou funkci stromů jako zobrazení $\mu_t: Q \rightarrow [0,1]$ následovně:
+%  \begin{itemize}
+%   \item Pokud stromu $t$ odpovídá pseudoterm $p(t) = X(p(t_1) \dots p(t_k))$, pak 
+%   $$
+%     \mu_t(q) 
+%       = \mu_{X(t_1 \dots t_k)}(q) \\
+%       = \bigvee_{\substack{w \in \mathcal{Q} \\ |w| = k}} \left( \mu_X(w, q) \wedge \bigwedge_{j=1}^{k} \mu_{t_j}(w_j) \right)
+%   $$
+%   \item pokud $t = a$, kde $a \in T$, pak $\mu_t = \mu_a$. 
+%  \end{itemize}
+% \end{definition}
+% 
+% Fuzzy přechodová funkce stromů je obdobou fuzzy rozšířené přechodové funkce. Pokud je vstupní strom atomický ($t = a$) je přechod realizován pomocí fuzzy přechodové funkce $\mu_a$. Pokud vstupní strom není atomický, je přechod realizován ve stupni, který je dán stupňem přechodu neterminálního symbolu a stupňů příslušných podstromů.
+% 
+% Stupeň, ve kterém je strom $t$ automatem přijímán, pak lze určit vztahem
+% $$
+%  A(t) = \bigvee\nolimits_{q \in F} \mu_t(q)
+% $$
+% 
+% \begin{definition}[Jazyk rozpoznávaný]
+% \TODO{značení fuzzy jazyka}
+%  Fuzzy množinu $L(A)$ nad $D_{(N,T)}$ danou předpisem
+%  $$
+%   L(A) = \left\{ (t, c) | c = \bigvee\nolimits_{q \in F} \mu_t(q) \right\}
+%  $$
+%  nazvěme fuzzy jazyk rozpoznávaný fuzzy tree automatem.
+% \end{definition}
+% 
+% \begin{example}
+%  Uvažujme automat $A$ z předchozího příkladu. Pak pro strom $t_1$ (kde $t_{1,1}$ značí levý podstrom kořene a $t_{1,2}$ pravý podstrom) z obrázku \ref{img:Tree:third} platí $\mu_{t_1}(q_2)$:
+%  \begin{align*}
+%   \mu_{t_1}(q_2) 
+%     &= 		\left( \mu_M(q_1 q_1, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_1) \right) \\
+%     &\vee 	\left( \mu_M(q_1 q_2, q_2) \wedge \mu_{t_{1,1}}(q_1) \wedge \mu_{t_{1,2}}(q_2) \right) \\ 
+%     &\vee 	\left( \mu_M(q_2 q_1, q_2) \wedge \mu_{t_{1,1}}(q_2) \wedge \mu_{t_{1,2}}(q_1) \right) \\ 
+%     &= \left( 0,6 \wedge 1 \wedge 1 \right) \vee \left( 1 \wedge 1 \wedge 0 \right) \vee \left( 0,7 \wedge 0 \wedge 1 \right) 
+%     = 0,6
+%  \end{align*}
+%  Pak tedy $A(t_1) = 0,6$. Pro stromy $t_2$ a $t_3$ z obrázku \ref{img:Tree:first} a \ref{img:Tree:first} platí $A(t_2) = 0.7$ a $A(t_3) = 1$.
+% \end{example}
+% 
+% Podobně jako u klasických automatů, i u tree automatů platí, že pro každý fuzzy jazyk stromů existuje automat, který tento jazyk rozpoznává.
+% \begin{theorem}
+%  Pro jaždý fuzzy jazyk stromů existuje fuzzy tree automat, který ho rozpoznává.
+% \end{theorem}
+% \begin{proof}
+%  K dispozici v \cite{MorMal-FuzzyLangThe}.
+% \end{proof}
+% 
+% V praxi se však nejčastěji setkáme s automatem, který rozpoznává právě jeden strom. Snadnou modifikací takového automatu pak obdržíme automat, který nerozpoznává ostře jen jeden strom, ale v určitém nenulovém stupni také stromy jemu podobné.
+% 
+% \begin{definition}[Automat rozpoznávající strom]
+%   Mějme strom $t \in D_{(N, T)}$ (\uv{vzor}) kde $sub(t)$ značí množinu všech jeho podstromů. Pak jako fuzzy tree automat rozpoznávající strom $t$ označme fuzzy tree automat $A = (Q, N, T, \mu, F)$, kde:
+%   \begin{itemize}
+%    \item $Q$ = $\{ q_{t'} | t' \in sub(t) \}$ (každému podstromu odpovídá jeden stav)
+%    \item $\mu_a(q_a) = 1$ pro všechna $a \in T$
+%    \item $\mu_X(w, q_{t'}) = 1$ pro všechny $t' \in sub(t)$, kde $w = q_1 \dots q_k$ a stromu $t_i$ odpovídá pseudoterm $p(t') = X(t_1 \dots t_k)$
+%    \item $F = \{ q_t \}$ (koncovým stavem je stav odpovídající celému stromu $t$)
+%   \end{itemize}
+% \end{definition}
+% 
+% Takovýto automat zřejmě rozpoznává jazyk $T = \{ (t, 1) \}$. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\uv{Bivalentní} buněčný automat}
-Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. Dle \cite{Wol-NewKinSci} je jejich studium dokonce označováno za naprosto samostatné matematické paradigma. I přesto je v určitém smyslu je možné je považovat za zobecnění \uv{klasických} deterministických automatů. Dá se totiž říci, že se jedná o $n$-dimenzionální mřížku tvořenou instancemi téže konečného automatu.
+% \subsection{\uv{Bivalentní} buněčný automat}
+\subsection{Buněčné fuzzy automaty}
+Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. Dle \cite{Wol-NewKinSci} je jejich studium dokonce označováno za naprosto samostatné matematické paradigma. I přesto je v určitém smyslu je možné je považovat za zobecnění \uv{klasických} deterministických automatů. Dá se totiž říci, že se jedná o $n$-dimenzionální mřížku tvořenou instancemi téže automatu.
 
 Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku (např. \cite{Wol-NewKiSci}, \cite{Wol-CelAut}, \cite{BatXie-CellCity})
 %, jiné konečnou se simulovanou nekonečností (odpovídající hrany jsou logicky propojeny\TODO{popsat to nějak lépe}) či 
@@ -880,21 +936,9 @@ jiné zase konečnou (např. \cite{Wu-ExpGenPolUrbGroCelAutCit}). Také se čast
 
 Vzhledem k tomu, že úkolem této práce není studovat obecné vlastnosti buněčných automatů ale jen jejich fuzifikace a následné použití v praxi, bude zde nadefinovanán pouze standardní dvoudimenzionální buněčný automat (pracující na čtvercové mřížce). Právě tento typ automatu totiž našel v praxi největší uplatnění. V této práci se také pro jednoduchost omezíme jen na automat se čtvercovou mřížkou velikosti $m$.
 
-Dvoudimenzionální buněčný automat je tedy mřížka $m \times m$ tvořena buňkami $c_{ij}$, $i, j \in [1,m]$. Každá buňka se nachází ve nějakém stavu $q$ z množiny $Q$. Přechody mezi těmito stavy jsou realizovány přechodovými pravidly. Ty popsiuje přechodová funkce $\mu$. Formálně tedy
+Dvoudimenzionální buněčný automat je tedy mřížka $m \times m$ tvořena buňkami $c_{ij}$, $i, j \in [1,m]$. Každá buňka se nachází ve nějakém stavu $q$ z množiny $Q$. Přechody mezi těmito stavy jsou realizovány přechodovými pravidly. 
 
-\begin{definition}[Bivalentní buněčný automat]
-  Pro přirozené číslo $m$ a konečnou množinu $Q$ označme $A_{m} = (Q, \mu)$ jako dvoudimenzionální buněčný automat o rozměrech $m \times m$, kde $Q$ je konečná množina stavů a $\mu$ přechodová funkce: $\mu: Q \times Q^k \rightarrow Q$ pro nějaké $1 \leq k \leq m^2$.
-\end{definition}
-
-\begin{note}
-  Buněčný automat se obvykle definuje jen předpisem pro přechodovou funkci, resp. výpisem přechodových pravidel. My se však budeme držet konceptu klasických automatů a budeme buněčný automat definovat jako strukturu.
-%\TODO{Tady \cite{MraZimLapBaj-FuzCelAut+} je definice, ale je pro nás moc zbytečná a tak jsme si vymysleli svoji}.
-\end{note}
-\begin{notation*}
-  Kde to bude možné, budeme indexy $i,j$ vynechávat a namísto $c_{i,j}$ psát jen $c$. Fakt, že $c$ je buňkou automatu $A$ budeme značit $c \in A$. Fakt, že nějaká buňka $c$ se nachází ve stavu $q$ budeme značit $c = q$. 
-\end{notation*}
-
-Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuálního stavu $q$ a stavu dalších, tzv. okolních, $k$ buněk. Označme $round(c_{ij})$ jako okolí buňky $c_{ij}$. Nejpoužívanějším okolím, které se používá, je Mooreovo okolí o poloměru $1$, které je definováno jako sousedních $8$ buněk buňky $c_{ij}$:
+Přechodová pravidla obvykle určují nový stav buňky na základě okolních buněk. Okolí buňky $c_{i,j}$ je osmice jejich sousedních buněk\footnote{U krajních buněk mřížky se okolí zmenšuje jen na pětici, popř. trojici sousedicích buněk}:
 \begin{align*}
  round(c_{i,j}) = (
   & c_{i-1, j-1},\ 	c_{i, j-1},\ 	c_{i+1, j-1},	\\
@@ -902,18 +946,42 @@ Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuáln
   & c_{i-1, j+1},\ 	c_{i, j+1},\ 	c_{i+1, j+1}	
  )
 \end{align*}
-s tím, že nedefinované hodnoty ($i,j < 1$ nebo naopak $i,j > m$) za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
 
-Přechodová funkce $\mu$ pak vypadá následovně:
-$$
-\mu(c, round(c)) = f(c, round(c))
-$$
-kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \ifthen pravidel.
+
+% % Ty popsiuje přechodová funkce $\mu$. Formálně tedy
+% % 
+% % \begin{definition}[Bivalentní buněčný automat]
+% %   Pro přirozené číslo $m$ a konečnou množinu $Q$ označme $A_{m} = (Q, \mu)$ jako dvoudimenzionální buněčný automat o rozměrech $m \times m$, kde $Q$ je konečná množina stavů a $\mu$ přechodová funkce: $\mu: Q \times Q^k \rightarrow Q$ pro nějaké $1 \leq k \leq m^2$.
+% % \end{definition}
+% % 
+% % \begin{note}
+% %   Buněčný automat se obvykle definuje jen předpisem pro přechodovou funkci, resp. výpisem přechodových pravidel. My se však budeme držet konceptu klasických automatů a budeme buněčný automat definovat jako strukturu.
+% % %\TODO{Tady \cite{MraZimLapBaj-FuzCelAut+} je definice, ale je pro nás moc zbytečná a tak jsme si vymysleli svoji}.
+% % \end{note}
+% % \begin{notation*}
+% %   Kde to bude možné, budeme indexy $i,j$ vynechávat a namísto $c_{i,j}$ psát jen $c$. Fakt, že $c$ je buňkou automatu $A$ budeme značit $c \in A$. Fakt, že nějaká buňka $c$ se nachází ve stavu $q$ budeme značit $c = q$. 
+% % \end{notation*}
+% % 
+% % Přechodová funkce $\mu$ přiřazuje buňce $c$ stav $q'$ na základě aktuálního stavu $q$ a stavu dalších, tzv. okolních, $k$ buněk. Označme $round(c_{ij})$ jako okolí buňky $c_{ij}$. Nejpoužívanějším okolím, které se používá, je Mooreovo okolí o poloměru $1$, které je definováno jako sousedních $8$ buněk buňky $c_{ij}$:
+% % \begin{align*}
+% %  round(c_{i,j}) = (
+% %   & c_{i-1, j-1},\ 	c_{i, j-1},\ 	c_{i+1, j-1},	\\
+% %   & c_{i-1, j  },\ 	\qquad \qquad\ 	c_{i+1, j  },	\\
+% %   & c_{i-1, j+1},\ 	c_{i, j+1},\ 	c_{i+1, j+1}	
+% %  )
+% % \end{align*}
+% % s tím, že nedefinované hodnoty ($i,j < 1$ nebo naopak $i,j > m$) za hranicemi mřížky se stanovují na nějakou pevně zvolenou hodnotu z $Q$.
+% % 
+% % Přechodová funkce $\mu$ pak vypadá následovně:
+% % $$
+% % \mu(c, round(c)) = f(c, round(c))
+% % $$
+% % kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nový stav. V praxi se nejčastěji používá sada tzv. \ifthen pravidel.
 
 \begin{example} \label{ex:GameOfLife}
   Typickým příkladem buněčného automatu je tzv. Hra života (Game of Life) (např. \cite{TofMar-CelAuMach+}). Jedná se o jednoduchý simulátor živého organizmu. 
   
-  Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$ a dvoudimenzionální mřížku ($n = 2$). Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Přechodová funkce $\mu$ je dána následujícími pravidly:
+  Hra života uvažuje dvoustavovou možinu stavů, tj. $Q = \{ 0, 1 \}$. Je-li hodnota buňky $c$ rovna $1$ hovoříme, že je buňka \uv{živá}, je-li rovna $0$ nazýváme buňku \uv{mrtvou}. Pravidla popisující její chod jsou následující:
   \begin{enumerate}
    \item Je-li buňka $c$ živá a je v jejím okolí méně, než $2$ živé buňky, buňka umírá (ve smyslu \uv{samoty})
    \item Je-li buňka $c$ živá a je v jejím okolí více, než $3$ živé bunky, buňka umírá (ve smyslu \uv{vyčerpání zdrojů})
@@ -945,44 +1013,51 @@ kde $f$ je funkce přiřazující buňce $c$ s okolními buňkami $round(c)$ nov
 %   $$
 \end{example}
 
-Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných automatů -- konfigurace buněčného automatu.
+Soubor všech stavů všech buněk nazvěme konfigurací buněčného automatu. Dvojice konfigurací tvoří krok výpočtu, pokud stav každé z buněk přešla ze svého stavu v první konfiguraci do stavu v druhé konfiguraci podle pravidel automatu. Posloupnost konfigurací, jejiž po sobě jdoucí dvojice konfigurací tvoří kroky konfigurace, se nazývá výpočet buněčného automatu.
 
-\begin{definition}[Konfigurace buněčného automatu]
- Zobrazení $C: [1,m] \times [1,m] \rightarrow Q$ se nazývá konfigurace buněčného automatu.
-\end{definition}
+Vzhledem k tomu, že pro každou konfiguraci existuje vždy právě jedna taková, která by s ní tvořila krok výpočtu, výpočet je tak jednoznačně svou určen první konfigurací. Tuto konfiguraci nazýváme počáteční konfigurace. Konfigurace pak číslujeme nultá, první, $\dots$, případně konfigurace nulté generace, konfigurace první generace a podob.
 
-Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Koncová konfigurace však pro buněčné automaty neexistuje. Výpočet buněčného automatu totiž nemá stanoven žádný konec. Můžeme však uvažovat konfiguraci dosažitelnou. Pro její zavední je však třeba nadefinovat výpočet buněčného automatu.
+Je zjevné, že výpočet buněčného automatu je obecně nekonečný. Nemá tedy smysl uvažovat konfiguraci koncovou.
 
-\begin{definition}[Krok výpočtu a výpočet buněčného automatu]
- Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ ($(C, C') \in \vdash$) a pro všechny $c_{i,j} \in A$ platí:
- $$
-  C'(i,j) = \mu(C(i,j), round(c_{i,j}))
- $$
- 
- Reflexivní a tranzitivní uzávěr $\vdash^*$ relace $\vdash$ nazvěme výpočtem buněčného automatu.
-\end{definition}
+% 
+% Soubor všech stavů všech buněk se nazývá -- podobně, jako u konečných automatů -- konfigurace buněčného automatu.
+% 
+% \begin{definition}[Konfigurace buněčného automatu]
+%  Zobrazení $C: [1,m] \times [1,m] \rightarrow Q$ se nazývá konfigurace buněčného automatu.
+% \end{definition}
+% 
+% Podobně jako u klasických automatů můžeme hovořit o počáteční konfiguraci. Ta -- na rozdíl od klasických automatů -- může být libovolná. Koncová konfigurace však pro buněčné automaty neexistuje. Výpočet buněčného automatu totiž nemá stanoven žádný konec. Můžeme však uvažovat konfiguraci dosažitelnou. Pro její zavední je však třeba nadefinovat výpočet buněčného automatu.
+% 
+% \begin{definition}[Krok výpočtu a výpočet buněčného automatu]
+%  Binární relaci $\vdash$ na množině konfigurací buněčného automatu nazvěme krok výpočtu, pokud $C \vdash C'$ ($(C, C') \in \vdash$) a pro všechny $c_{i,j} \in A$ platí:
+%  $$
+%   C'(i,j) = \mu(C(i,j), round(c_{i,j}))
+%  $$
+%  
+%  Reflexivní a tranzitivní uzávěr $\vdash^*$ relace $\vdash$ nazvěme výpočtem buněčného automatu.
+% \end{definition}
+% 
+% \begin{definition}[Konfigurace dosažitelná]
+%  Mějme konfiguraci $C$ buněčného automatu. Pak o konfiguraci $C'$ říkáme, že je dosažitelná z konfigurace $C$, pokud existuje výpočet z $C$ k $C'$, tj.
+%  $$
+%   C \vdash^* C'
+%  $$
+%  V opačném případě říkáme, že konfigurace je nedosažitelná.
+% \end{definition}
+% 
+% Vzhledem k tomu, že přechodová funkce buněčného automatu je deterministická, je zřejmě determinstický i její výpočet, tj. pro každou konfiguraci $C$ existuje právě jedna konfigurace $C'$, pro kterou platí $C \vdash C'$. Relace $\vdash$ tak generuje posloupnost konfigurací. Očíslujeme-li si tuto posloupnost, pak počáteční konfigurace výpočtu bude $C^{(0)}$ a posloupnost pak bude vypadat následovně:
+% $$
+%   C^{(0)} \vdash C^{(1)} \vdash C^{(2)} \vdash \dots
+% $$
+% Nazývejme $i$-tý prvek této posloupnosti jako konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
 
-\begin{definition}[Konfigurace dosažitelná]
- Mějme konfiguraci $C$ buněčného automatu. Pak o konfiguraci $C'$ říkáme, že je dosažitelná z konfigurace $C$, pokud existuje výpočet z $C$ k $C'$, tj.
- $$
-  C \vdash^* C'
- $$
- V opačném případě říkáme, že konfigurace je nedosažitelná.
-\end{definition}
-
-Vzhledem k tomu, že přechodová funkce buněčného automatu je deterministická, je zřejmě determinstický i její výpočet, tj. pro každou konfiguraci $C$ existuje právě jedna konfigurace $C'$, pro kterou platí $C \vdash C'$. Relace $\vdash$ tak generuje posloupnost konfigurací. Očíslujeme-li si tuto posloupnost, pak počáteční konfigurace výpočtu bude $C^{(0)}$ a posloupnost pak bude vypadat následovně:
-$$
-  C^{(0)} \vdash C^{(1)} \vdash C^{(2)} \vdash \dots
-$$
-Nazývejme $i$-tý prvek této posloupnosti jako konfigurace $i$-té generace a samotné hodnoty $i$ jako generace (hovoříme tak o nulté, první, druhé, $\dots$ generaci).
-
-Konfigurace buněčného automatu se často zobrazuje graficky. Zakresluje se jako bitmapa, kde jednotlivé pixely reprezentují stavy buněk na odpovídajících souřadnicích. Každému stavu je přiřazena barva, kterou je tento stav znázorněn. Pro zobrazení výpočtu se občas používá třírozměrné zobrazení (tj. voxelový obrázek), kde třetí rozměr odpovídá generaci.
+Konfigurace buněčného automatu se často zobrazuje graficky. Zakresluje se jako bitmapa, kde jednotlivé pixely reprezentují stavy buněk na odpovídajících souřadnicích. Každému stavu je přiřazena barva, kterou je tento stav znázorněn. Pro zobrazení výpočtu se obvykle používá obrazová animace či videosekvence.
 
 \begin{example}  
-  Ukázka výpočtu automatu $A_100$ realizující Hru života je na obrázku \ref{img:GameOfLife}. Černá barva symbolizuje mrtvou buňku, bílá pak živou. 
+  Ukázka výpočtu automatu $A$ se čtvercovou mřížkou velikosti $100$ realizující Hru života je na obrázku \ref{img:GameOfLife}. Černá barva symbolizuje mrtvou buňku, bílá pak živou. 
 \end{example}
 
-\begin{figure}[]
+\begin{figure}
  \centering
  \begin{subfigure}{0.4\textwidth} \centering
   \includegraphics[width=0.9\textwidth]{game-of-life-1}
@@ -1008,12 +1083,15 @@ Konfigurace buněčného automatu se často zobrazuje graficky. Zakresluje se ja
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Buněčné fuzzy automaty}
-Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým zobecněním bivalentního buněčného automatu. Hlavním důvodem je bezesporu fakt, že přechodová funkce bivalentního buněčného automatu je determinstická a úplná. Tedy, že každá buňka vždy přejde ze stavu $q$ do nějakého stavu $q'$. Buňka se tedy musí nacházet vždy v právě jednom stavu. Nemůže nastat situace, že by buňka přešla \uv{do více stavů současně}\footnote{Jak bude ukázáno, tento předpoklad lze obejít} (přechodová funkce by nebyla deterministická) nebo nepřešla do žádného (přechodová funkce by nebyla úplná).
+% \subsection{Buněčné fuzzy automaty}
+Buněčné fuzzy automaty se poté definují značně různě. Např. \cite{For-FuzCelAutConjNormForm} a \cite{MraZimLapBaj-FuzCelAut+} jej definuje jako buněčný automat, jehož množina stavů je interval $[0,1]$. Častěji však bývá chápán jako buněčný automat, jehož přechodová pravidla jsou \ifthen pravidla. Takovéto automaty často bývají nazývány buněčné automaty s fuzzy logikou. Takto bude buněčný fuzzy automat chápan i v této práci.
 
-Vzhledem k tomu, že stejné chování budeme vyžadovat i u buněčného fuzzy automatu, \uv{odstupňování} přechodové funkce (zavední fuzzy přechodové funkce) by nemělo smysl\footnote{Teoreticky by bylo možné nahradit stav buňky fuzzy stavem buňky. Takováto úprava by však výrazně zvýšila výpočetní šložitost výpočtu automatu a například také znesnadnila grafické znázornění jeho konfigurací a proto zde nebude uvažován.}.
 
-Lze se tak setkat s definicí buněčného fuzzy automatu jakožto buněčného automatu pracujícího s množinou stavů rovnu intervalu $[0,1]$. Časteji bšak bývá buněčný fuzzy automat definován jako buněčný automat, jehož přechodová funkce není určena \uv{klasickými} \ifthen pravidly, ale fuzzy \ifthen pravidly.
+% Buněčný fuzzy automat není na rozdíl od klasického fuzzy automatu prostým zobecněním bivalentního buněčného automatu. Hlavním důvodem je bezesporu fakt, že přechodová funkce bivalentního buněčného automatu je determinstická a úplná. Tedy, že každá buňka vždy přejde ze stavu $q$ do nějakého stavu $q'$. Buňka se tedy musí nacházet vždy v právě jednom stavu. Nemůže nastat situace, že by buňka přešla \uv{do více stavů současně}\footnote{Jak bude ukázáno, tento předpoklad lze obejít} (přechodová funkce by nebyla deterministická) nebo nepřešla do žádného (přechodová funkce by nebyla úplná).
+
+% Vzhledem k tomu, že stejné chování budeme vyžadovat i u buněčného fuzzy automatu, \uv{odstupňování} přechodové funkce (zavední fuzzy přechodové funkce) by nemělo smysl\footnote{Teoreticky by bylo možné nahradit stav buňky fuzzy stavem buňky. Takováto úprava by však výrazně zvýšila výpočetní šložitost výpočtu automatu a například také znesnadnila grafické znázornění jeho konfigurací a proto zde nebude uvažován.}.
+
+% Lze se tak setkat s definicí buněčného fuzzy automatu jakožto buněčného automatu pracujícího s množinou stavů rovnu intervalu $[0,1]$. Časteji bšak bývá buněčný fuzzy automat definován jako buněčný automat, jehož přechodová funkce není určena \uv{klasickými} \ifthen pravidly, ale fuzzy \ifthen pravidly.
 
 \begin{example}
  Příkladem buněčného fuzzy automatu může být například následující automat. Množina stavů bude obsahovat přirozená čísla z intervalu $[0, 150)$. Mějme lingvistickou proměnnou $\varsigma$ a její čtyři štítky $\varsigma_L$, $\varsigma_M$, a $\varsigma_H$.
@@ -1027,7 +1105,7 @@ Lze se tak setkat s definicí buněčného fuzzy automatu jakožto buněčného 
 \end{example}
 
 
-\TODO{desetinná čísla s desetinnou čárkou, ne tečkou!!!!}
+\TODO{desetinná čísla s desetinnou čárkou, ne tečkou. Navíc, při psaní desetinné čárky používat namísto $0,4$ zápis $0{,}6$ (nesází mezeru za čárkou)!!!!}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1037,7 +1115,7 @@ Lze se tak setkat s definicí buněčného fuzzy automatu jakožto buněčného 
 
 Fuzzy automaty či jim podobné modely zavedené v předchozích kapitolách jsou z pohledu pracktických aplikací pouze teoretické modely. V reálných aplikacích je často nutné pracovat s těmito modely spíše jen jako s kostrou, od které je poté odvozen výsledný model nebo algoritmus.
 
-V této kapitole budou některé ze základních technik, jak fuzzy automaty přiblížit reálným aplikacím, odprezentovány. Demonstrovány budou na nedeterministickém fuzzy automatu, nicméně není problém aplikovat je na jakýkoliv jiný typ fuzzy automatu.
+V této kapitole budou některé ze základních technik, jak fuzzy automaty přiblížit reálným aplikacím, odprezentovány. Demonstrovány budou na nedeterministickém fuzzy automatu, nicméně není problém aplikovat je na jakýkoliv jiný typ fuzzy (popř. pravděpodobnostního) automatu.
 
 % 
 % Rozpoznávání vzorů obecně je jednou z nejvýznamějších aplikací informatiky. V běžném životě se často setkáváme se situacemi, kdy je třeba v datech najít výskyt učitého vzoru, popř. jeho další vlastnosti. Případně určit podobnost ke vzoru, nebo nejpodobnější vzor.
@@ -1082,7 +1160,7 @@ V této kapitole budou některé ze základních technik, jak fuzzy automaty př
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automat bivalentního automatu}
-V některých situacích máme k dispozici \uv{klasický} bivalentní automat\footnote{Zde je vhodné připomenout, že automat můžeme získat například také konverzí regulérního výrazu nebo regulérní gramatiky} a potřebujeme k němu sestavit odpovídající fuzzy automat. Odpovídající ve smyslu, že řetězce, které bivalentní automat přijímá (zamítá) musí fuzzy automat přijímat ve stupni $1$ ($0$).
+V některých situacích máme k dispozici \uv{klasický} bivalentní automat\footnote{Zde je vhodné připomenout, že automat můžeme získat například také konverzí regulérního výrazu nebo regulérní gramatiky\TODO{nadefinovat RexEx a RegLang}} a potřebujeme k němu sestavit odpovídající fuzzy automat. Odpovídající ve smyslu, že řetězce, které bivalentní automat přijímá (zamítá) musí fuzzy automat přijímat ve stupni $1$ ($0$).
 
 Uvažujme automat $A = (Q, \Sigma, \mu, I, F)$ z definice \ref{def-NedBivAut}. Pak fuzzy automat $A' = (Q, \Sigma, \mu', \sigma, \eta)$ odpovídající tomuto automatu je následující:
 \begin{itemize}
@@ -1105,7 +1183,7 @@ Uvažujme automat $A = (Q, \Sigma, \mu, I, F)$ z definice \ref{def-NedBivAut}. P
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automat rozpoznávající $\omega$} \label{sec:FuzAutRozpOme}
-Další ze základních pomůcek pro práci s fuzzy automaty je automat, který v jednotkovém stupni rozpoznává pouze jeden konkrétní řetězec nad nějakou známou abecedou $\Sigma$. Tento řetězec budeme v této a některých dalších podkapitolách nazývat \uv{vzorový} a značit $\omega$.
+Další ze základních pomůcek pro práci s fuzzy automaty je automat, který v jednotkovém stupni rozpoznává pouze jeden konkrétní řetězec. Tento řetězec budeme v této a některých dalších podkapitolách nazývat \uv{vzorový} a značit $\omega$.
 
 Pro konstrukci automatu rozpoznávající řetězec omega bychom mohli použít následující postup:
 \begin{enumerate} 
@@ -1192,11 +1270,11 @@ My však použujeme jinou, intuitivnější, úvahu. Automat bude v každém kro
 \subsection{Podobnost symbolů}
 V této a následujících podkapitolách budou popsány základní techniky, jak chování automatu upravit tak, aby více odpovídalo reálným aplikacím. Například, máme fuzzy automat, který rozpoznovává určitý fuzzy jazyk. Řetězce, které se určitým způsobem \uv{podobají} řetězcům toho jazyka, však tento jazyk obvykle obsahuje v nulovém stupni. Vzniká zde tedy snaha přizpůsobit automat tak, aby i takovéto řetězce v určitém nenulovém stupni přijímal.
 
-Základním nástrojem, jak toho dosáhnout je pomocí podobnosti symbolů. Některé symboly mohou totiž vykazovat určitou formu podobnosti a tudiž možné zamněnitelnosti. Například znaky ASCII tabulky, které se liší v jednom bitu. Podobnost symbolů však nemusí být klasická \uv{bivalentní} relace, ale je výhodné použít fuzzy relaci. V takovém případě by podobnost znaků ASCII tabulky mohla být formulována následovně: \uv{znaky $x$ a $y$ se liší o $\delta$ bitů ve stupni $1 - \delta/8$}.
+Základním nástrojem, jak toho dosáhnout je pomocí podobnosti symbolů. Některé symboly mohou totiž vykazovat určitou formu podobnosti a tudiž možné zamněnitelnosti. Například znaky ASCII tabulky, které se liší v jednom bitu. Podobnost symbolů však nemusí být klasická \uv{bivalentní} relace (tj. \uv{podobné -- nepodobné}), ale je výhodné použít fuzzy relaci. V takovém případě by podobnost znaků ASCII tabulky mohla být formulována následovně: \uv{znaky $x$ a $y$ jsou si podobné ve stupni $1 - \delta/8$, pokud se liší o $\delta$ bitů}.
 
 Formálně se tedy jedná o fuzzy relaci $\mathbin{\simeq}: \Sigma \times \Sigma \rightarrow [0, 1]$. Tato relace zjevně musí splňovat symetrii ($\mathbin{\simeq}(x, x) = 1$) a reflexivitu ($\mathbin{\simeq}(x, y) = \mathbin{\simeq}(y, x)$) (pro všechny $x, y \in \Sigma$).\TODO{a tranzitivita?} Fuzzy relace podobnosti symbolů pak může být součástí automatu. V takovém případě dojde ke modifikaci výpočtu automatu takovým způsobem, že ve značení \ref{not:muOverSym} a definici \ref{def-RozPreFunFuzzStav} bude nahrazen výraz $\mu(q, x, q')$ následujícím výrazem
 $$
-  \bigvee_{y \in \Sigma} \mu(q, y, q') \otimes \mathbin{\simeq}(x, y)
+  \oplus_{y \in \Sigma} \mu(q, y, q') \otimes \mathbin{\simeq}(x, y)
 $$
 
 Tento zápis říká, že při vstupu $x$ automat má zkontrolovat všechny ostatní symboly $y$, které by mohly být se symbolem $x$ podobné a v takovém případě realizovat přechod přes symbol $y$. Takto modifikovaný automat tak umožňuje namísto symbolu $x$ \uv{rozpoznat} jiný symbol. Můžeme tak říci, že automat umožňuje ve vstupu náhradu symbolu.
@@ -1342,7 +1420,7 @@ Další informace a příklady k této technice jsou k nalezení v \cite{RamGir-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Editační operace, deformovaný automat} \label{sec:DefAut}
-Další technikou pro modifikaci chování automatu je využití editačních operací. Tato technika byla přejata z \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}. Základní idea této techniky spočívá v trojici jednoduchých editačních operací, jejiž složením jsme schopni popsat požadovanou transformaci vstupu na automatem reprezentovaný vzor. \uv{Množství} transformace pak udává podobnost pozorovaného a vzorového řetězce.
+Další technikou pro modifikaci chování automatu je využití editačních operací. Základní myšlenka této techniky spočívá v trojici jednoduchých editačních operací, jejiž složením jsme schopni popsat požadovanou transformaci vstupu na automatem reprezentovaný vzor. \uv{Množství} transformace pak udává podobnost pozorovaného a vzorového řetězce.
 
 Editační operace nám určují elementární (na úrovni symbolů) transformace z řetězce na jiný řetězec. Jak bylo zmíněno, tyto elementární transformace jsou tři, a to:
 \begin{enumerate}
@@ -1353,7 +1431,7 @@ Editační operace nám určují elementární (na úrovni symbolů) transformac
 
 Aplikováním posloupnosti těchto operací na vstupní řetězec tak můžeme obdržet řetězec, který odpovídá vzoru a je tak automatem přijímán. Posloupnost editačních operací budeme nazývat vyrovnání řetězců.
 
-Pracujme nyní s abecedou $\Sigma$. Editační operace budeme zapisovat jako uspořádané dvojice $(a, b) \in (\Sigma \cup \{ \epsilon \})^2 \setminus (\epsilon, \epsilon)$. Vložení symbolu $x$ značme $(\epsilon, x)$, odstranění symbolu $x$ pak $(x, \epsilon)$ a náhradu symbolu $x$ symbolem $y$ pak $(x, y)$.  Pak všechny tři posloupnosti editačních operací jsou vyrovnáním řětězce \str{ahoj} na řetězec \str{hello}:
+Pracujme nyní s abecedou $\Sigma$. Editační operace budeme zapisovat jako uspořádané dvojice $(a, b) \in (\Sigma \cup \{ \epsilon \})^2 \setminus (\epsilon, \epsilon)$. Vložení symbolu $x$ značme $(\epsilon, x)$, odstranění symbolu $x$ pak $(x, \epsilon)$ a náhradu symbolu $x$ symbolem $y$ pak $(x, y)$.  Pak aplikací každé z těchto posloupností editačních operací na řetězec \str{ahoj} obdržeíme řetězec \str{hello}:
 \begin{align*}
  & (a,\epsilon), (o,e), (j,l), (\epsilon,l), (\epsilon, o) \\
  & (a, \epsilon), (h,\epsilon), (o,\epsilon), (j,\epsilon), (\epsilon,h), (\epsilon,e), (\epsilon,l), (\epsilon,l), (\epsilon,o) \\
@@ -1369,7 +1447,7 @@ Označme $E$ jako množinu všech editačních operací, tj. $E = (\Sigma \cup \
   \mu' = 	& \{ (q, x, q', d) | (q, x, q', d) \in \mu \} 			& \text{(původní přechody)}	\\
     \cup 	& \{ (q, y, q, R(\epsilon, y)) | q \in Q, y \in \Sigma \} 	& \text{(vložení symbolu)}	\\
     \cup 	& \{ (q, \epsilon, q', R(x, \epsilon)) | (q, x, q', d) \in \mu \} & \text{(odstranění symbolu)}	\\
-    \cup 	& \{ (q, y, q', R(x, y)) | (q, x, q', d) \in \mu \} 	& \text{(nahrazení symbolu)}\\
+    \cup 	& \{ (q, y, q', R(x, y)) | (q, x, q', d) \in \mu \} 		& \text{(nahrazení symbolu)} \\
   \end{align*}
 \end{definition}
 
@@ -1399,29 +1477,29 @@ Je vidět, že pomocí editačních operací jsme schopni popsat libovolnou tran
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Učící se fuzzy automaty}
-Učící se automat je koncept pro propojení fuzzy automatů a strojového učení. Strojové učení je moderní přístup pro řešení obtížných úkolů. Návrh či přizpůsobení výpočetního modelu, který perfektně modeluje data z reálného světa je typický takovýto úkol. Takovým modelem může být i fuzzy automat. Velmi často se můžeme setkat s tím, že navržený fuzzy automat zcela nekoresponduje se vstupními daty (a jednoduché techniky pro ošetření těchto odchylek nebyly dostatečné). 
+Učící se automat je koncept pro propojení fuzzy automatů a strojového učení. Strojové učení je moderní přístup pro řešení obtížných úkolů. Návrh či přizpůsobení výpočetního modelu, který velmi přesně modeluje data z reálného světa je typický takovýto úkol. Takovým modelem může být i fuzzy automat. Velmi často se můžeme setkat s tím, že navržený fuzzy automat zcela nekoresponduje se vstupními daty (a jednoduché techniky pro ošetření těchto odchylek nebyly dostatečné). 
 
-Důležitým předpokladem pro strojové učení je velké množství vstupních, tzv. trénovacích, dat. Strojové učení totiž data obvykle zpracovává na značně nízké úrovni, takže toto nízké množství informace je třeba kompenzovat velkým množstvím vstupů.
+Důležitým předpokladem pro strojové učení je velké množství vstupních, tzv. trénovacích, dat. Strojové učení totiž data obvykle zpracovává na značně nízké úrovni, takže toto nízké množství informační hodnoty je třeba kompenzovat velkým množstvím vstupů.
 
-V této kapitole bude prezentován koncept učícího se fuzzy automatu. Jedná se o všeobecný koncept techniky, jak přizpůsobit chování automatu reálným datum. Praxe ukazuje, že učící automaty tento problém dokáží velmi efektivně řešit. Setkat se s nimi můžeme např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}, \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} nebo \cite{ZhiMinLan-EvoStraIndFuFiStaAu}. Vzhledem k tomu, že konkrétní výpočty, resp. algoritmy pro učení automatu bývají poměrně komplikované, spokojíme se pouze s obecným popisem principu.
+V této kapitole bude prezentován koncept učícího se fuzzy automatu. Jedná se o všeobecný koncept techniky, jak přizpůsobit chování automatu reálným datům. Praxe ukazuje, že učící automaty tento problém dokáží velmi efektivně řešit. Setkat se s nimi můžeme např. v \cite{FuLi-ForLeaAutAutGam}, \cite{WeeFu-FormFuzAutAppModLeaSys}, \cite{GilOmlTho-EquKnoRep+}, \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}, \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}, \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha}, \cite{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut} \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} nebo \cite{ZhiMinLan-EvoStraIndFuFiStaAu}. Vzhledem k tomu, že konkrétní techniky učení bývají poměrně komplikované, spokojíme se pouze s obecným popisem principu.
 
-Učení fuzzy automatů je obvykle založeno na tzv. shlukování. Mějme fuzzy automat $A$ rozpoznávající jazyk  $\mathcal{L}(A)$. Tento jazyk tvoří shluky. Shluk je podmnožina jazyka $\mathcal{L}(A)$, jejiž řetězce jsou si navzájem podobnější, než s řetězci ostatních shluků. Nyní si vezměme libovolný řetězec $\omega$, který do jazyka $\mathcal{L}(A)$ nepatří. Pak můžeme najít řetězec $\omega'$ z jazyka $\mathcal{L}(A)$, který je řetězci $\omega$ určitým způsobem nejpodobnější, tj. patřil by do jeho shluku. Pak můžeme automat (resp. části automatu, kterémají vliv na rozpoznávání řětězce $\omega$) upravit tak, aby tento shluk obsahoval i řetězec $\omega$.
-
-Konkrétní techniky jsou uvedeny v literatuře. \TODO{reálný ocitovaný příklad z některého z článků}
+Učení fuzzy automatů je obvykle založeno na tzv. shlukování. Mějme fuzzy automat $A$ rozpoznávající jazyk  $\mathcal{L}(A)$. Tento jazyk obvykle tvoří shluky. Shluk je podmnožina jazyka $\mathcal{L}(A)$, jejiž řetězce jsou si navzájem podobnější, než s řetězci ostatních shluků. Nyní si vezměme libovolný řetězec $\omega$, který do jazyka $\mathcal{L}(A)$ nepatří. Pak můžeme najít řetězec $\omega'$ z jazyka $\mathcal{L}(A)$, který je řetězci $\omega$ určitým způsobem nejpodobnější, tj. patřil by do jeho shluku. Pak můžeme automat (resp. části automatu, kterémají vliv na rozpoznávání řětězce $\omega$) upravit tak, aby tento shluk obsahoval i řetězec $\omega$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy automaty a neuronové sítě}
+Propojení fuzzy automatů s neuronovými sítěmi může přinést značně lepší výsledky, než učící se automaty. Budou tedy ve stručnosti uvedeny, spolu s popisem jejich vzájemného vztahu.
+
 Umělé neuronové sítě (dále jen \uv{neuronové sítě}) jsou jednou z nejzákladnějších a nejpoužívanějších technik strojového učení. Neuronové síťě jsou inspirovány zpracováním informací pomocí nervových buněk. Neuronová síť je tvořena sítí tzv. neuronů, které jsou propojeny zpravidla v rozsáhlou síť. Tato síť obsahuje spoustu parametrů a vah, které jsou nastaveny tak, aby síť řešila patřičný problém. Při výpočtu se sítí šíří tzv. vzruchy (typicky reálná čísla), které jsou neurony přepočítávány. Více o neuronových sítích je dispozici např. v \cite{FieRus-HanNeuCom}.
 
-Způsoby, jak sestavit neuronovou síť existují dva (v praxi se však obvykle tyto přístupy kombinují). A to pomocí trénovacích dat nebo pomocí znalostní báze. Konstrukce pomocí trénovacích dat je podobná, jako v předchozí podkapitole. Tedy, že vstupní data se postupně nechávají vyhodnocovat neuronovou sítí a ta je posléze přizpůsobována. Konstrukce pomocí znalostní báze je pak založena na kódování znalostní báze (\ifthen pravidel) do vah neuronové sítě.
+Způsoby, jak sestavit neuronovou síť existují dva (v praxi se však obvykle tyto přístupy kombinují). A to pomocí trénovacích dat nebo pomocí znalostní báze. Konstrukce pomocí trénovacích dat je podobná, jako v předchozí podkapitole. Tedy, že vstupní data se postupně nechávají vyhodnocovat neuronovou sítí a ta je posléze datům přizpůsobována. Konstrukce pomocí znalostní báze je pak založena na kódování znalostní báze ve formě \ifthen pravidel do vah neuronové sítě.
 
 Bylo zjištěno, že fuzzy automat může být konvertován do neuronové sítě. Této problematice se věnují např. v \cite{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}, \cite{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet} \cite{BlaDelPeg-FuzzAutIndUsNeuNet}, \cite{GilOmlTho-EquKnoRep+}, \cite{OmlThoGil-RepFuzFinStaAuConRecNeuNet}, \cite{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}, \cite{PedGac-LeaFuzzAut}.
 
-V jednodušších případech se jedná pouze o neuronovou síť, která realizuje jen přechodovou funkci automatu. Tedy neurnovou síť, jejimž vstupem je fuzzy stav, ve kterém se automat nachází, a symbol na vstupu a výstupem fuzzy stav, do kterého automat přejde. Existují však i způsoby, jak pomocí neuronové sítě reprezentovat celý automat.\TODO{najít, ve kterém článku to bylo?}
+V jednodušších případech se jedná pouze o neuronovou síť, která realizuje jen přechodovou funkci automatu. Tedy neurnovou síť, jejimž vstupem je fuzzy stav, ve kterém se automat nachází, a symbol na vstupu, a výstupem fuzzy stav, do kterého automat přejde. Existují však i způsoby, jak pomocí neuronové sítě reprezentovat celý automat.\TODO{najít, ve kterém článku to bylo?}
 
-Možnosti, jak takovou neuronovou síť sestavit, jsou stejné, jako při návrhu obecné neuronové sítě. Lze tedy využít jak konstrukci pomocí trénovacích dat, tak pomocí znalostní báze. Použití trénovacích dat spočívá ve vygenerování dostatečného množství kombinací fuzzy stavů a vstupních symbolů. Pomocí automatu je určen \uv{výstupní} fuzzy stav, který je spolu se vstupem předán neuronové síti k učení. Při použití znalostní báze jsou přechodová pravidla přepsána do fuzzy \ifthen pravidel, jak bylo uvedeno v kapitole \ref{subsec:FuzzEvMach}.
+Možnosti, jak takovou neuronovou síť sestavit, jsou stejné, jako při návrhu obecné neuronové sítě. Lze tedy využít jak konstrukci pomocí trénovacích dat, tak pomocí znalostní báze. Použití trénovacích dat spočívá ve vygenerování dostatečného množství kombinací fuzzy stavů a vstupních symbolů. Pomocí automatu jsou určeny \uv{výstupní} fuzzy stavy, které jsou spolu předány neuronové síti k učení. Při použití znalostní báze jsou přechodová pravidla přepsána do fuzzy \ifthen pravidel, jak bylo uvedeno v kapitole \ref{subsec:FuzzEvMach}.
 
-Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy automat. Postup je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. 
+Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy automat. Postup je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. Je tedy možné převést fuzzy automat na neuronovou síť, provést její přeučení trénovacími daty a poté ji převést zpět na automat.
 
 % 
 % Lze však použít i konstrukce s pomocí znalostní báze. V takovém případě je třeba zformulovat If-Then pravidla síť popisující. Pro každý přechod
@@ -1848,70 +1926,75 @@ Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rozpoznávání, klasifikace a korekce textových dat}
-Fuzzy (pravděpodobnostní) automat je nástroj, který v základu slouží k rozpoznávání řetězců. To znamená, že určuje, jak moc řetězce odpovídají automatem určenému vzoru.
+Automaty jsou nástroje, který v základu slouží k rozpoznávání řetězců. Fuzzy a pravděpodobnostní automaty pak rozpoznávání v určitém smyslu zobecňují z dvoustavového \uv{odpovídá vzoru -- neodpovídá vzoru} na stupeň shody, resp. pravděpodobnost shody. 
 
-Na tento koncept lze dále navázat. Máme-li vzorů více, můžeme určit, kterému z nich je vstup nejpodobnější. V takovém případě hovoříme o klasifikaci. Případně se pokusit odchylku od nejpodobnějšího vzoru odstranit, v takovém případě hovoříme o korekci.
+Můžeme tak určovat podobnost řetězce se vzorem. Tato myšlenka však může být dále rozvinuta. Máme-li vzorů více, můžeme určit, kterému z nich je vstup nejpodobnější. V takovém případě hovoříme o klasifikaci. Případně se můžeme pokusit odchylku od nejpodobnějšího vzoru odstranit. V takovém případě hovoříme o korekci.
 
-V této kapitole budou prezentovány některé reálné aplikace fuzzy a pravděpodobnostních  na problém rozpoznávání, klasifikace a korekce a to textových dat. Využití fuzzy automatu pro rozpoznávání (a případně klasifikace a korekci) netextových dat se věnuje následující kapitola. Navíc, rozpoznávání obrazových dat je popsáno v kapitole \TODO{doplnit odkaz na kapitolu}.
+V této kapitole budou prezentovány některé reálné aplikace fuzzy a pravděpodobnostních pro rozpoznávání, klasifikaci a korekci a to textových dat. Využití fuzzy automatu pro rozpoznávání (a případně klasifikace a korekci) netextových dat se věnuje následující kapitola. Speciálně pak, rozpoznávání obrazových dat je popsáno v kapitole \TODO{doplnit odkaz na kapitolu}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Výpočet podobnosti řetězců}
 Uvažujme, že máme dva (různé) řetězce, $w$ a $w'$ (nad společnou abecedou $\Sigma$). Jak moc jsou si \uv{podobné}? Jinými slovy, je třeba navrhnout zobrazení $f: \Sigma^* \times \Sigma^* \rightarrow [0,1]$, které jim přiřadí stupeň \uv{podobnosti}.
 
-Existuje několik technik, jak podobnost řetězců určit. Například Hammingova vzdálenost, která je definována jako počet rozdílných symbolů na odpovídajících pozicích (např. $H(abcd, bacc) = 3$). Hammingova vzdálenost však nedokáže například reflektovat řetězce různých délek.
+Existuje několik technik, jak podobnost řetězců určit. Například Hammingova vzdálenost, která je definována jako počet rozdílných symbolů na odpovídajících pozicích (např. $H(abcd, bacc) = 3$). Hammingova vzdálenost však nedokáže (mimo jiné) reflektovat řetězce různých délek.
 
-Pro určení podobnosti řetězců lze použít i fuzzy automaty. Sestavíme-li automat $A_w$ rozpoznávající řetězec $w$ (viz kapitola \ref{sec:FuzAutRozpOme}) a poté automat upravíme (např. pomocí deformací dle kapitoly \ref{sec:DefAut}), získáme nástroj pro určování podobnosti řetězců $w$ a $w'$. Podobnostní relace pak bude vypadat následovně:
+Pro určení podobnosti řetězců lze poměrně elegantně použít fuzzy automaty. Sestavíme-li automat $A_w$ rozpoznávající řetězec $w$ (viz kapitola \ref{sec:FuzAutRozpOme}) a poté automat upravíme (např. pomocí deformací dle kapitoly \ref{sec:DefAut}), obdržíme automat, který rozpoznává kromě řetězce $w$ také řetězce jemu podobné. Jinými slovy, automat realizuje relaci podobnosti řetězců $w$ a $w'$. Podobnostní relace pak bude vypadat následovně:
 $$
    f(w, w') = A_w(w')
 $$
 
 Používání fuzzy automatů pro výpočet podobnosti řetězců bývá v praxi poměrně časté. Setkat se s ním můžeme např. v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{Gar+-DefFuzAutCorImpStrFuzSym}, \cite{Ast+-ImpStrMaExpUsDefFuzAut}, \cite{RamGir-ConvFinAutFuzzAutStrComp}, \cite{SetWar-FuzzAutPattMatc}.
 
+\TODO{řetězce značit $w$ nebo $\omega$? Asi $w$, ne? !!!!}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Klasifikace a korekce textových řetězců}
-Jak již bylo uvedeno, fuzzy (a pravděpodobnostní) automaty lze využít pro klasifikaci a následnou korekci (obecných) textových řetězců. 
+Jak již bylo uvedeno, fuzzy a pravděpodobnostní automaty lze využít pro klasifikaci a následnou korekci (obecných) textových řetězců. V \cite{HigOnc-ComMosProStrProFiStaMa}, \cite{Mar+-ProAriAutApp}, \cite{Her-ProAriAutAppSoComFraBioSeqAna}, \cite{YorSinTis-PowAmnLeaPrAuVarMemLen} a \cite{Ron-AutLeaApp} řeší tento problém pomocí pravděpodobnostních automatů.
 
-Probablistické klasifikaci se věnují např. v \cite{HigOnc-ComMosProStrProFiStaMa}.
+V \cite{Ron-AutLeaApp} automat učí texty v přirozeném jazyce a poté s jeho pomocí opravují pozměněný text Bible. Techniku používají také pro segementaci DNA (která je podrobněji popsána v kapitole \TODO{doplnit odkaz}).
 
-V \cite{YorSinTis-PowAmnLeaPrAuVarMemLen} a \cite{Ron-AutLeaApp} zavádějí pravděpodobnostní automat v mírně modifikované podobě\footnote{Zavádějí automat s pamětí. Automat si kromě aktuálního stavu a nezpracovaného vstupu pamatuje také vstup již zpracovaný. Jeho výpočet tak může být v určitém smyslu kontextově závislý}. Tento automat nechávají učit text a poté s jeho pomocí opravují pozměněný text bible. Techniku používají také, pro segementaci DNA, která je podrobněji popsána v kapitole \TODO{doplnit odkaz}.
+Pozměněný automat\footnote{Zde se jedná o tzv. aritmetický pravděpodobnostní automat. Automat při přechodech provádí elementární algebraické operace, v tomto případě případě sčítání.} používají v \cite{Mar+-ProAriAutApp} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}. Automat tak dokáže počítat (pravděpodobný) počet výskytů vzoru ve vstupním řetězci.
 
-Další variantu automatu\footnote{Zde se jedná o tzv. aritmentický pravděpodobnostní automat. Automat při přechodech provádí elementární algebraické operace, v jejich případě sčítání.} používají v \cite{Mar+-ProAriAutApp} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}. Automat tak dokáže počítat počítat počet výskytů vzorů ve vstupním řetězci. Toho pak využívají pro rozpoznávání proteinů. Sledovaný vzorek proteinu nejdříve chemicky rozštěpí na jednotlivé peptidy. Ty jsou hmnosnostním spektrometrem analyzovány a naměřené hodnoty jsou kódovány do symbolů. Z naměřených symbolů jsou posléze sestaveny řetězce, které jsou vyhodnocovány automatem.
+Toho pak využívají pro rozpoznávání proteinů. Sledovaný vzorek proteinu nejdříve chemicky rozštěpí na jednotlivé peptidy. Ty jsou hmnotnostním spektrometrem analyzovány a naměřené hodnoty jsou kódovány do symbolů. Z naměřených symbolů jsou posléze sestaveny řetězce, které jsou vyhodnocovány automatem.
 
-V \cite{MohPerRoe-WeiFinStaTraSpeRec} a \cite{BahJel-DecChaWinDelSubApSpeRec} pomocí pravděpodobnostních automatů snaží překládat slova fonetické abecedy na \uv{běžnou} (angličtinu). Dá se totiž předpokládat, že vyřčené slovo nemuselo být řečeno zcela zprávně a navíc mohlo být upraveno určitým akcentem. Z databáze tak (podobně, jako při učení) sestavují automaty pro jednotlivá slova a ty spouštějí oproti vstupu.
+V \cite{MohPerRoe-WeiFinStaTraSpeRec} a \cite{BahJel-DecChaWinDelSubApSpeRec} pomocí pravděpodobnostních automatů snaží překládat slova fonetické abecedy na \uv{běžnou} (angličtinu). Dá se totiž předpokládat, že vyřčené slovo nemuselo být řečeno zcela zprávně a navíc mohlo být upraveno určitým akcentem. Učením sestavené automaty pro jednotlivá slova pak určijí nejpravděpodobněji vyřčené slovo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detekce překlepů} \label{subs:DetTyp}
-Pomocí fuzzy automatů lzde poměrně snadno detekovat a případně se pokoušet opravit překlepy. Využívá se při tom faktu, že překlep obvykle znamená vložení či náhradu symbolem, který je na klávesnici počítače v okolí očekávaného symbolu. Například řetězec \str{hrllo} zcela určitě vznikl překlepnutím při psaní \str{hello}, než kupříkladu \str{ahoj}. Je tak možné napsané slovo opravit. Tuto techniku popisují v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, popř. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}.% až na konci,  Fuzzy Aho-Corasick algorithm (popř. dohledat jiný zdroj).
+Pomocí fuzzy automatů lzde poměrně snadno detekovat a případně se pokoušet opravit překlepy. Využívá se při tom faktu, že překlep obvykle znamená vložení či náhradu symbolem, který je na klávesnici počítače v okolí očekávaného symbolu. Například řetězec \str{hrllo} zcela určitě vznikl překlepnutím při psaní \str{hello}, než kupříkladu \str{ahoj}. Je tak možné napsané slovo opravit. Tuto techniku popisují v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, popř. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}.
 
+% až na konci,  Fuzzy Aho-Corasick algorithm (popř. dohledat jiný zdroj).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy lexikální analyzátor}
-Lexikální analyzátor je základní součást všech překladačů (nejen) programovacích jazků. Jeho vstupem je konečný proud znaků (ten můžeme chápat jako řetězec) a výstupem pak sekvence tzv. tokenů. Token je dvojice tvořena typem tokenu a jeho hodnotou. Tokeny může být například \uv{číslo 42}, \uv{identifikátor \texttt{foo}}, \uv{operátor $+$} či \uv{symbol konce příkazu \texttt{;}}.
+Lexikální analyzátor je základní součást všech překladačů (nejen) programovacích jazků. Jeho úkolem je v sekvenci vstupních znaků rozpoznat jednotlivé elementy jazyka, tokeny. Tokenem může být například \uv{číslo $42$}, \uv{identifikátor \str{foo}}, \uv{operátor $+$} či \uv{symbol konce příkazu \texttt{;}}.
 
-Lexikální analyzátory obvykle rozpoznávají regulérní jazyky. Vzory pro jednotlivé typy tokenu bývají obvykle zapisovány pomocí regulérních výrazů. Při chodu lexikálního analyzátoru je vstup spouštěn s automaty jednotlivých vzorů a nejdelší shoda je použita jako výstup. Nevýhodou toto přístupu je, že nijak nereflektuje malé, bezvýznamné chyby ve vstupu. Například vstup \texttt{iif} by zřejmě měl být reprezentován jako token \uv{klíčové slovo \texttt{if}} než jako \uv{identifikátor \texttt{iif}}. Tyto problémy se snaží odstranit nahrazení \uv{klasického} lexikálního analyzátoru fuzzy Lexikálním analyzátorem.
+Pro rozpoznávání (resp. klasifikaci) jednotlivých tokenů se používají \uv{klasické} automaty. Jejich nevýhodou je, že nijak nereflektuje malé, často bezvýznamné chyby ve vstupu. Například vstup \texttt{iif} by zřejmě měl být reprezentován jako token \uv{klíčové slovo \str{if}} než jako \uv{identifikátor \str{iif}}. Obdobně, středník by mohl být nahrazen čárkou nebo uzavírající kulatá závorka složenou.
 
-Fuzzy lexikální analyzátor je popsán v \cite{MatSalSalYu-LexAnaSimFinFuzAutMod}. Oproti \uv{klasickému} lexikálnímu analyzátoru používá pro popis vzorů tokenů fuzzy regulérní výrazy. Výstupní token je pak zvolen ten, který nejvíce odpovídá vzoru.
+Dle \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} může tyto problém vyřešit fuzzy lexikální analyzátor. Fuzzy lexikální analyzátor používá fuzzy automaty namísto \uv{klasických} automatů.
 
 \TODO{mimochodem, v \cite{MatSalSalYu-LexAnaSimFinFuzAutMod} je poměrně pěkně popsaná teorie (determinsitické a nedeterministické automaty, regexy i reg. jazyky).}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravděpodobnostní rozpoznávání přirozeného textu}
-Pravděpodobnostní automaty lze uplatnit při zpracování přirozeného jazyka. Jako jazyk je zde chápána množina všech slov, jedná se tedy o syntaktickou analýzu vět v přirozeném (např. anglickém) jazykce. Přirozené jazyky bývají obvykle bezkontextové. Je proto nutné použít buď pravděpodobnostní tree automaty \cite{KniGra-OvProTreTraNatLanPro} nebo zásobníkové pravděpodobnostní automaty \cite{WaMan-ProFiStMaRegBaMTEva}.
+Pravděpodobnostní automaty lze uplatnit při zpracování přirozeného jazyka. Jako abeceda je zde chápána množina všech slov daného přirozeného jazyka. 
 
+Věty obvykle mívají složitější strukturu, než jakou dokáže pokrýt \uv{klasický} (pravděpodobnostní) automat, je proto nutné použít buď pravděpodobnostní tree automaty \cite{KniGra-OvProTreTraNatLanPro} nebo zásobníkové pravděpodobnostní automaty \cite{WaMan-ProFiStMaRegBaMTEva}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dvouúrovňové vyhledávání v dlouhém textu}
 
-V \cite{Hun-NoLiTexSeaUsFuFiStLiNoDetAut} používají dvouúrovňové rozpoznávání vzorů v dlouhém textu. Nejdřív sestaví jednoduchý (např. co do počtu stavů) automat pro přibližné rozpoznání vzoru. Tento rychlý automat je aplikován na každý větší blok textu, např. na každou stránku. Stránky, které prošly v nenulovém stupni (tj. je pravděpodoné, že obsahují vzor) pak prohledá přesným automatem a určí konkrétní výskyty.\TODO{Asi}
+V \cite{Hun-NoLiTexSeaUsFuFiStLiNoDetAut} používají dvouúrovňové vyhledávání vzorů v dlouhém textu. Nejdřív sestaví malý, jednoduchý (avšak nepřesný) automat pro přibližné vyhledání vzoru. Tento malý (a tudíž rychlý automat) je aplikován na každý větší blok textu, např. na každou stránku. Stránky, které tímto testem prošly v nenulovém stupni (tj. je pravděpodobné, že obsahují vzor) jsou pak prohledány přesným automatem. \TODO{Asi}
 
 \TODO{naprogramovat? hmm..}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Parsování referencí}
-V \cite{Kra+-BibMeExUsiPrFiStTra} pomocí automatu parsují reference z textu a rozpoznávají v nich strukturu. Reference v textu mají totiž pevnou strukturu. Např. dle normy ČSN ISO 690:2017\TODO{ocitovat: https://sites.google.com/site/novaiso690/}:
+V \cite{Kra+-BibMeExUsiPrFiStTra} pomocí pravděpodobnostního automatu parsují reference z textu a rozpoznávají v nich strukturu. Reference v textu mají totiž pevnou strukturu. Např. dle normy ČSN ISO 690:2017\TODO{ocitovat: https://sites.google.com/site/novaiso690/} má reference vypadat následovně:
 
 Tvůrce. \textit{Název publikace}. Vedlejší názvy. Vydání. Další tvůrce. Místo: nakladatel, rok. Počet stran. Edice, číslo edice. ISBN.
 
-Problém je však ten, že některé části (např. počet stran) jsou nepovinné. Dále také, např. rok vydání a počet stran jsou číselné údaje a může tak dojít ke zmatení. Běžný automat proto někdy může nalést více, než jednu shodu se vzorem. Proto používají \uv{pravděpodobnostní} (jedná se spíše o fuzzy než o pravděpdobnostní automat) automat, který dokáže určit nejbliší shodu.
-
+Automat nejdříve rozpoznává části oddělené tečkou a posléze jim doplňuje pravděpodobný význam. Některá pole totiž mohou být vynechána, nebo naopak obsahovat tečku. Automat by tak měl určit nejpravděpodobnější variantu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1919,42 +2002,50 @@ Problém je však ten, že některé části (např. počet stran) jsou nepovinn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Další oblasti pro rozpoznávání}
-V předchozí kapitole bylo prezentováno pár příkladů, kdy lze pomocí fuzzy a pravděpodobnostních automatů rozpoznávat, klasifikovat a případně opravovat textová data. V této kapitole bude na tyto problémy navázáno a budou rozšířeny na rozpoznávání a případně následnou klasifikace a korekci netextových dat.
+V předchozí kapitole bylo prezentováno pár příkladů, kdy lze pomocí fuzzy a pravděpodobnostních automatů rozpoznávat, klasifikovat a případně opravovat textová data. V této kapitole bude na tyto problémy navázáno a budou rozšířeny na rozpoznávání a případně následnou klasifikaci a korekci netextových dat.
 
 Základní myšlenka těchto technik vždy spočívá ve způsobu, jak vstupní data zakódovat do symbolů a řetězců. Data, která transformujeme do řetězců, pak můžeme předat patřičnému fuzzy nebo pravděpodobnostnímu automatu a pracovat s nimi jako v předchozí kapitole. Některé ukázky takových uplatnění zde budou prezentovány. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání signálů} \label{subs:RozpSign}
-Rozpoznávání signálů je jedna ze základních možností, jak využít rozpoznávání. Věnují se tomu např. v \cite{MukRay-StaSplMerProbFiStaAuSigRepAna}, \cite{Rig-FauDetIsoBasFuzzAut}, \cite{BaiTri-PattRecUsiTemFuzzAut} a \cite{KemAda-SeqPatRecEmpRecFuzSys}. Signál, jakožto spojitý průběh jedné proměnné (času) nejprve kvantujeme v čase. Obdržíme tak posloupnost po sobě jdoucích vzorků (typicky číselných hodnot). Každý takový vzorek můžeme snadno zakódovat do odpovídajícího symbolu. Takovými symboly může být například \uv{hodnota je vysoká}, \uv{hodnota je střední} či \uv{hodnota je nízká}. Pokud však symboly nahradíme ligvistickými štítky, můžeme s těmito symboly pracovat na fuzzy úrovni. Následně můžeme sestavit automat, který vzor z těchto fuzzy symbolů dokáže zpracovávat.
+Rozpoznávání signálů je jedna ze základních možností, jak využít rozpoznávání netextových dat. Věnují se tomu např. v \cite{MukRay-StaSplMerProbFiStaAuSigRepAna}, \cite{Rig-FauDetIsoBasFuzzAut}, \cite{BaiTri-PattRecUsiTemFuzzAut} a \cite{KemAda-SeqPatRecEmpRecFuzSys}.
+
+Signál, jakožto spojitý průběh jedné proměnné (času) nejprve kvantujeme v čase. Obdržíme tak posloupnost po sobě jdoucích vzorků (typicky číselných hodnot). Každý takový vzorek můžeme snadno zakódovat do odpovídajícího symbolu. Takovými symboly může být například $s_{0 \leq x < 10}$, $s_{10 \leq x < 20}$ a $s_{30 \leq x < 30}$\footnote{Alternativně lze použít ligvistickou proměnnou se štítky například \uv{hodnota $x$ je nízká}, \uv{hodnota $x$ je střední} a \uv{hodnota $x$} je vysoká}. Zakódujeme-li tímto způsobem nakvantovanou posloupnost vzorků, obdržíme řetězec.
 
 \TODO{Toto je vlastně něco, jako automat s fuzzy vstupy. Tedy ``Automat má na vstupu $x$ ve stupni $d$'' namísto ``Automat přejde při vstupu $x$ ve stupni $d$. Nadefinovat?}
 
 \TODO{by chtělo obrázek}
 
-V \cite{Rig-FauDetIsoBasFuzzAut} tuto techniku testují na detekci závady na elektromotoru. Vstupem je úhel natočení rotoru, jehož sinus by měl kopírovat sinusovku. Při poruše se však průhěh zdeformuje, což automat ropozná. Stejně tak používají tuto techniku pro rozpoznávání vzorů v datech z elektrokardiogramu (EKG). Problematice analýzy signálu EKG je věnována kapitola \TODO{odkaz}. V \cite{BaiTri-PattRecUsiTemFuzzAut} je rozpoznávání signálů demonstrováno na rozpoznávání gest rukou. To je podrobněji rozebráno v kapitole \TODO{odkaz na ni}.
+V \cite{Rig-FauDetIsoBasFuzzAut} tuto techniku testují na detekci závady na elektromotoru. Vstupem je úhel natočení rotoru, jehož sinus by měl kopírovat sinusoidu. Při poruše se však průhěh zdeformuje, což automat ropozná. Stejně tak používají tuto techniku pro rozpoznávání vzorů v datech z elektrokardiogramu (EKG). Problematice analýzy signálu EKG je věnována kapitola \TODO{odkaz}. V \cite{BaiTri-PattRecUsiTemFuzzAut} je rozpoznávání signálů demonstrováno na rozpoznávání gest rukou. To je podrobněji rozebráno v kapitole \TODO{odkaz na ni}.
 
-V \cite{KemAda-SeqPatRecEmpRecFuzSys} pomocí pokročilejších technik monitorují teplotu taženého profilu v ocelárně. Příliž nízká, vysoká (resp. některé specifické kombinace) teplota může způsobit, že se tažený profil zlomí. Monitorováním teploty a patřičným přizpůsobováním parametrů tažení lze zlomům předcházet. Automat autoři doporučují konstruovat učením.
+V \cite{KemAda-SeqPatRecEmpRecFuzSys} monitorují teplotu taženého profilu v ocelárně. Specifická kombinace změn teploty taženého profilu může způsobit jeho zlomení. Monitorováním teploty, jejím přepočtem na řetězec a následnou analýzou pomocí automatu tak lze předvídat hrozící zlom.
 
 Velmi podobnou techniku používají v \cite{ManPra-PriPatDetUsFiStMaFuzTra}. Autoři zde podobným způsobem modelují vzory ve vývoji cen na burze.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání dvourozměrného signálu}
-V \cite{Jin+-WavBasFeaExtUsPrFiStAuPatCla} je popisován způsob, jak rozpoznávat dvojrozměrný signál (mřížku signálů), např. data z termokamery\TODO{to jsem si vymyslel, jiný, lepší příklad? Nebo, je něco v článku?}. Používá se k tomu model podobný pravděpodobnostním buněčným automatům. Na rozdíl od nich však tento model lépe ošetřuje stavy (a přechody mezi nimi) na úkor větší složitosti.
+V \cite{Jin+-WavBasFeaExtUsPrFiStAuPatCla} je popisován způsob, jak rozpoznávat dvojrozměrný signál (mřížku signálů), např. data z termokamery\TODO{to jsem si vymyslel, jiný, lepší příklad? Nebo, je něco v článku?}. Používá se k tomu model podobný pravděpodobnostním buněčným automatům. 
 
-Vstupní signály jsou diskrétně kvantovány v čase a následně i v úrovni. Dále je stanoveno zobrazení, které každé buňce s daným okolím přiřadí určitý stav automatu. Pro každou buňku je poté vytvořen pravděpodobnostní automat s přechodovou funkcí ve tvaru \uv{Pravděpodobnost, že automat přejde do stavu $q''$ za předpokladu, že nyní se nachází ve stavu $q$ a na vstupu je vzorek odpovídající stavu $q'$, je rovna $p$}.
-
-Autoři tuto techniku demonstrují na problému detekce poruch u materiálu. Měřený kus testovaného materiálu je zatěžován stále větším tlakem a postupně proměřován ultrazvukovými signály. Při namáhání materiálu dochází k jeho systematickému poškození. Změna chování materiálu je detekována ultrazvukovými senzory a předány automatu, který v nich rozpozná vznikající poruchu.
+Autoři tuto techniku demonstrují na problému detekce poruch u materiálu. Měřený kus testovaného materiálu je zatěžován stále větším tlakem a postupně proměřován ultrazvukovými signály. Při namáhání materiálu dochází k jeho systematickému poškození. Změna chování materiálu je detekována ultrazvukovými senzory a předána automatu, který v nich rozpozná vznikající poruchu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání ručně psaného textu} \label{subs:RecHandWrit}
-Problém ručně psaného textu je v současné době velmi významný. V závislosti na konkrétní situaci může být vstupem buď přímo bitmapa (např. sken), nebo již vektorizovaný obrázek obsahující informace o cestě, kterou hrot pera při psaní písmene udělal.
+Problém rozpoznávání ručně psaného textu je v současné době velmi populární. V závislosti na konkrétní situaci může být jeho vstupem buď přímo bitmapa (např. sken), nebo již vektorizovaný obrázek obsahující informace o křivce, kterou hrot pera při psaní udělal.
 
-Uvažujme tedy, že máme k dispozici již cestu. Analýzou průběhu cesty, tj. rozkladem na podcesty (např. na základě směru či délky) získáme segmenty. Každému segmentu může být posléze přiřazen symbol (dán typicky jeho směrem). Celé cestě pak může být přiřazen řetězec, který může být následně rozpoznán automatem.
-\TODO{obrázek}
+Uvažujme tedy, že máme k dispozici již křivku, a to křivku, kterou tvoří jedno písmeno. V první fázi křivku podle určitého kritéria rozdělíme na podkřivky, segmenty. Kritériem pro rozklad křivky na segmenty může být například změna směru. Každému segmentu je posléze přiřazen symbol (např. na základě jeho směru). Celé křivce je tak přiřazen řetězec, který může být následně rozpoznán automatem. Tento proces je znázorněn na obrázku \ref{img:HandWritEx}.
 
-Této technice se věnují např. v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} \cite{WeeFu-FormFuzAutAppModLeaSys}. V obou případech poukazují, že pro řádově lepší výsledky rozpoznávání je vhodné systém vylepšit určitou formou strojového učení.
+\begin{figure}
+ \centering
+ 
+ \includegraphics[width=\textwidth]{rest1}
+ 
+ \caption[Ukázka postupu při rozpoznávání ručně psaného textu]{Ukázka postup při rozpoznávání ručně psaného textu. Vlevo vstupní křivka, uprostřed rozdělena na segmenty, vpravo pak jednotlivým segmentům přiřazeny směry. Přepis na řetězec by pak mohl vypadat např.: \str{right} \str{upright} \str{upleft} \str{downleft} \str{downright} \str{right} \str{upright}.}
+ \label{img:HandWritEx}
+\end{figure}
 
-Tato technika pro rozpoznávání ručně psaného textu byla naimplementována. Popis implementace a získané výsledky je popsán v \TODO{odkaz na implementaci}.
+Této technice se věnují např. v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} nebo \cite{WeeFu-FormFuzAutAppModLeaSys}. V obou případech poukazují, že pro řádově přesnější výsledky rozpoznávání je vhodné systém vylepšit strojovým učením.
+
+% Tato technika pro rozpoznávání ručně psaného textu byla naimplementována. Popis implementace a získané výsledky je popsán v \TODO{odkaz na implementaci}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání gest}
@@ -1964,7 +2055,7 @@ Při rozpoznávání gest je však značně komplikovanější konverze vstupní
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Práce se zvukem}
-Vzhledem k tomu, že zvuk je ve své podstatě analogový signál, může s ním být pracováno jako se signálem. To znamená, že může být rozpoznáván tak, jak bylo popsáno v kapitole \ref{subs:RozpSign}. V \cite{ForBel-GenMusAccUsFinStaTra} a \cite{OliWag-ComMusNeuNetProFiStMa} popisují způsob, jak takové automaty zkonstuovat. 
+Vzhledem k tomu, že zvuk je ve své podstatě analogový signál, může s ním být pracováno jako se signálem. To znamená, že může být rozpoznáván tak, jak bylo popsáno v kapitole \ref{subs:RozpSign}. Věnují se tomu v \cite{ForBel-GenMusAccUsFinStaTra} a \cite{OliWag-ComMusNeuNetProFiStMa}. V \cite{ForBel-GenMusAccUsFinStaTra} využívají tuto techniku pro konverzi zvukového záznamu do formátu MIDI.
 
 %V  používají pravděpodobnostní automat jako jednu komponentu procesu pro parsování \uv{MIDI} dat ze zvukového záznamu.
 %V  používají pravděpodobnostní automat pro reprezentaci databáze hudebních skladeb. Tj. že abeca jsou tóny a pravděpodobnosti přechodů pravděpodobnosti, v jakých se v testovacím datasetu vyskytoval za aktuálním tónem tón na vstupu automatu.
@@ -1972,13 +2063,12 @@ Vzhledem k tomu, že zvuk je ve své podstatě analogový signál, může s ním
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy programy}
-V \cite{Cha-ExeFuzProUsFiStaMa} popisují fuzzy programy. Fuzzy program je prakticky deklarativní program, fuzzy reguérní výraz, který popisuje, jak mají vypadat výsledky. Fuzzy automaty tak mohou sloužit jako interprety takovýchto programovacích jazyků. \TODO{napsat, že vůbec netuším, k čemu to slouží?}
-
+V \cite{Cha-ExeFuzProUsFiStaMa} popisují fuzzy programy. Fuzzy program je fuzzy regulérní výraz. Fuzzy program si lze představit jako deklarativní program, tj. program, který popisuje (fuzzy) jazyk přípustných řešení. Fuzzy automat tak může sloužit jako interpret takovýchto programů. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Metoda lisování dat}
 \TODO{zkusit nějaký známý dataset, něco z toho, co jsme dělali v KMI/ZZD}
-Autor práce prezentuje novou, jednoduchou, techniku strojového učení. Výhodou této techniky je, že je založena čistě na teorii fuzzy automatů, není třeba žádné další techniky strojového učení.
+Autor práce prezentuje novou, jednoduchou, techniku strojového učení. Výhodou této techniky je, že je založena čistě na teorii fuzzy automatů.
 
 Vstupem této techniky je (konečná a neprázdná) množina trénovacích dat ve formě jazyka $L$ nad známou abecedou $\Sigma$ a koeficient přesnosti $\sigma$. Výstupem je poté fuzzy automat $A_{L,\sigma}$, který jazyk $L$ přijímá tak, že pro všechna $w \in L$ platí:
 $$
@@ -1986,7 +2076,7 @@ $$
 $$
 tj. že řetězec $w$ je automatem přijímán alespoň ve stupni $\sigma$. U řetězců, které do jazyka $L$\footnote{Jazyk $L$ může být klidně fuzzy jazyk, následný postup se pak jen patřičně upraví} nepatří (tj. $w' \in \Sigma^* \setminus L$) by posléze měl automat být schopen určit jak moc se jazyku $L$ podobají, tj. určit stupeň $A_{L,\sigma}(w')$.
 
-Postup konstrukce automatu $A_{L,\sigma}$ je násleudjící:
+Postup konstrukce automatu $A_{L,\sigma}$ je následující:
 \begin{enumerate}
  \item Máme jazyk $L$, který je konečný. Je tedy zřejmě i regulérní.
  \item K jazyku $L$ sestavíme nedeterministický konečný automat $A_{L}$ rozpoznávající $L$. Takový automat bude v nejhorším případě obsahovat $\sum_{w \in L} |w|$ stavů.
@@ -1996,20 +2086,19 @@ Postup konstrukce automatu $A_{L,\sigma}$ je násleudjící:
 
 Klíčovým bodem této techniky je minimalizace automatu. Technika předpokládá, že jazyk trénovacích dat v sobě obsahuje jeden nebo více jednoduchých regulérních jazyků (ať už jako podmnožiny nebo jako podřetězce vybraných řetězců). Části automatu reprezentující tyto \uv{podjazyky} budou minimalizací zmenšeny. Ve výsledku se tak dá očekávat značné zmenšení velikosti automatu.
 
-Navíc, vygenerovaný automat poměrně přehledně popisuje strukturu ve vstupním jazyce. Technika tak může být použita pro odtranění šumu a nepřesností v jazyce $L$.
+Navíc, vygenerovaný automat poměrně přehledně popisuje strukturu ve vstupním jazyce. Technika tak může být použita pro osdranění šumu a nepřesností v jazyce $L$.
 
-Technika lisování dat bude naimplementována a experimentálně ověřena. \TODO{naprogramovat, ověrit} Jednou z možností, kde by mohla tato technika být uplatněna, by bylo určování síly přihlašovacícho hesla. Vstupem by byla databáze uživatelských hesel s informací od experta, která hesla jsou silná a která slabá. Ze silných hesel by poté byl sestaven jazyk, na který by bylo aplikováno lisování dat. Výsledkem by byl automat, který rozpoznává silná hesla. Tato aplikace však nebyla naimplementována, vzhledem k tomu, že je z bezpečnostních důvodů nemožné získat databázi uživatelských hesel.
+%Technika lisování dat bude naimplementována a experimentálně ověřena. \TODO{naprogramovat, ověrit} Jednou z možností, kde by mohla tato technika být uplatněna, by bylo určování síly přihlašovacícho hesla. Vstupem by byla databáze uživatelských hesel s informací od experta, která hesla jsou silná a která slabá. Ze silných hesel by poté byl sestaven jazyk, na který by bylo aplikováno lisování dat. Výsledkem by byl automat, který rozpoznává silná hesla. Tato aplikace však nebyla naimplementována, vzhledem k tomu, že je z bezpečnostních důvodů nemožné získat databázi uživatelských hesel.
 
-Další z možných aplikací je určování dělitelnosti čísel. Uvažujme abecedu symbolů číslic, tj. $\Sigma = \{ 0, \dots, 9 \}$ a jazyk $L \subseteq S^*$ čísel dělitelných čtyřmi. Při velikosti jazyka $x$ a koeficientu $\sigma = y$ se podařilo automatu dosáhnout $z$ úspěšného rozpoznávání čísel dělitelných $4$ ve stupni vyšším, než $w\%$. \TODO{naprogramovat, ověrit}
+%Další z možných aplikací je určování dělitelnosti čísel. Uvažujme abecedu symbolů číslic, tj. $\Sigma = \{ 0, \dots, 9 \}$ a jazyk $L \subseteq S^*$ čísel dělitelných čtyřmi. Při velikosti jazyka $x$ a koeficientu $\sigma = y$ se podařilo automatu dosáhnout $z$ úspěšného rozpoznávání čísel dělitelných $4$ ve stupni vyšším, než $w\%$. \TODO{naprogramovat, ověrit}
 
 Podobnou techniku používají v \cite{Hac+-ProAnaLarFinStaMac}, jen s pravděpodobnostními automaty.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detekce úplných $m$-árních stromů} \label{subs:DetComTrees}
-Fuzzy tree automaty mohou být použity pro velmi elegentní určení úplnnosti stromu. Úplný $m$-ární strom je takový strom, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly). Tato technika pochází z autorovy invence.
+Fuzzy tree automaty mohou být použity pro velmi elegentní určení úplnnosti stromu. Úplný $m$-ární strom je takový strom, jehož každý uzel má buďto právě $m$ potomků (vnitřní uzly) a nebo $0$ (listové uzly). %Tato technika pochází z autorovy invence.
 
-Zaveďme lingvistickou proměnnou $C$ \uv{vnitřní uzel $v$ o $n$ potomcích je vnitřní uzel úplného $m$-árního stromu} a její štítek \uv{ano, je}. Pak významovovu funkci $C(v)$  tohoto štítku může nadefinovat následovně:
+Zaveďme lingvistickou proměnnou $C$ \uv{vnitřní uzel $v$ o $n$ potomcích je vnitřní uzel úplného $m$-árního stromu} a její štíteky \uv{ano} a \uv{je}. Pak významovovu funkci $C(v)$  tohoto štítku může nadefinovat následovně:
 $$
   C(v) = \frac{n}{m}
 $$
@@ -2026,13 +2115,21 @@ Pro listové uzly můžeme $C(v)$ nadefinovat vždy jako $1$. Vzhledem k tomu, �
 % 
 % Nyí je třeba vyjádřit tento problém v terminologii fuzzy tree automatů. 
 
-Uvažujme, že strom $t$ je tvořen vnitřními uzly $I$ a listovými uzly $o$. Pak fuzzy jazyk $m$-árních úplných stromů bude fuzzy jazyk stromů nad $D_{(N,T)}$, kde $N = \{ I \}$ a $T = \{ o \}$. Zbývá tedy navrhnout fuzzy tree automat, který takový jazyk bude rozpoznávat.
+Uvažujme, že S-term $t$ je tvořen vnitřními uzly $I$ a listovými uzly $o$. Automat bude mít jeden stav $q_1$, který bude koncovým stavem. Přechodová funkce bude mít následující pravidla:
+\begin{enumerate}
+ \item Při vstupu $t = o$ přejdi do stavu $q_1$ ve stupni $1$
+ \item Při vstupu $t = I(t_1)$ přejdi ze stavu $q_1$ do stavu $q_1$ ve stupni $1/m$
+ \item[] $\dots$
+ \item[($m + 1$).] Při vstupu $t = I(t_1 \dots t_m)$ přejdi ze stavu $q_1 \dots q_1$ do stavu $q_1$ ve stupni $m/m = 1$
+\end{enumerate}
 
-Automat bude mít jeden stav $Q = \{ q_1 \}$ a přechodovou funkci $\mu_o(q_1) = 1$ a 
-$$
-  \mu_I(w, q_1) = \frac{|w|}{m}
-$$
-pro všechna $w \in \{ {q_1}^i |  1 \leq i \leq m \}$. Množina koncových stavů $F$ bude rovna $\{ q_1 \}$.
+% 
+% , první přejde při vstupu $o$ do stavu $q_1$ ve stupni $1$. Druhé pravidlo 
+% Automat bude mít jeden stav $Q = \{ q_1 \}$ a přechodovou funkci $\mu_o(q_1) = 1$ a 
+% $$
+%   \mu_I(w, q_1) = \frac{|w|}{m}
+% $$
+% pro všechna $w \in \{ {q_1}^i |  1 \leq i \leq m \}$. Množina koncových stavů $F$ bude rovna $\{ q_1 \}$.
 
 % Dokážeme nyní, že automat $A = (Q, N, T, \mu, F)$ rozpoznává fuzzy jazyk úplných $m$-árních stromů. 
 % 
@@ -2049,7 +2146,7 @@ pro všechna $w \in \{ {q_1}^i |  1 \leq i \leq m \}$. Množina koncových stav�
 %  Předpokládejme, že platí $\mu_t(q_1) = \alpha_t$ pro všechny atomické stromy $t = a$, kde $a \in T$. Pak $\mu_t(q_1) = \alpha_v \wedge \bigwedge_{t' \in t} \mu_{t'}(q_1) = \alpha_v \wedge \bigwedge_{t' \in t} \alpha_{t'} = \alpha_t$ pro všechny stromy $t$ tvořené vnitřními uzly. Pak tedy $\mu_t(q_1) = \alpha_t$ pro všechny $t \in D_{(N, T)}$.
 % \end{proof}
 
-Takto navržený automat zřejmě rozpoznává $m$-ární úplné stromy. Pro demonstraci byla tato technika naimplementovány. Soubory automatu a ukázkových vstupních stromů jsou k nalezení v adresáři \impl{fuzzy-tree-automata}{m-ary-trees}.
+Takto navržený automat zřejmě rozpoznává $m$-ární úplné stromy. %Pro demonstraci byla tato technika naimplementovány. Soubory automatu a ukázkových vstupních stromů jsou k nalezení v adresáři \impl{fuzzy-tree-automata}{m-ary-trees}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2057,16 +2154,22 @@ Takto navržený automat zřejmě rozpoznává $m$-ární úplné stromy. Pro de
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modelování a simulace}
 
-Modelování a simulace je odvětví jehož účelem je získat přehled o chování určitého systému. Jakmile takový model máme, můžeme například simulovat některé jevy, které by mohly nastat. Případně, naopak, předpovídat, který jev z nejvyšší pravděpodobností nastane.
+Modelování a simulace je odvětví jehož účelem je získat přehled o chování určitého systému. Jakmile toto chování známe, můžeme například simulovat různé jevy, které by mohly hypoteticky nastat.
 
-Fuzzy a pravděpodobnostní automaty v určitých situacích mohou posloužit jako takovéto modely. Podmínkou obvykle bývá, aby se modelovaný systém nacházel v určitém diskrétním stavu, popř. více stavech současně. Vzhledem k obvykle složitější struktuře dat, se kterými systém pracuje, bude velká část těchto systémů založena na událostmi řízených automatech.
+Fuzzy a pravděpodobnostní automaty v určitých situacích mohou posloužit jako počítačové modely. Jedinou podmínkou obvykle je, aby pozorovaný systém bylo možné popsat pomocí diskrétních stavů, mezi kterými se překlápí. 
+
+Pro modelování a simulace se obvykle používají událostmi řízené automaty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Skrytý Markovův model}
+Skrytý Markovův je pravděpodobnostní model, se kterým se lze setkat v mnoha oblastech. Jedná se o diskrétní systém stavový systém, který na základě podnětů z vnějšku náhodně přechází mezi svými stavy. Jedná se tak vlastně o pravděpodobnostní stavový stroj. Více informací o vzájemném vztahu skrytých Markovových modelů a pravděpodobnostních automatů je k nalezení v \cite{DupDenEsp-LiProAuHidMarMod+}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automobilismus}
-Automobily jsou v dnešní době zařízení vybavené značným množstvím palubní elektroniky. Je výhodné, aby elektronika měla přehled o tom, co se automobilem děje, případně, co se v nejbližších sekundách bude dít.
+Automobily jsou v dnešní době zařízení vybavené značným množstvím palubní elektroniky. Je výhodné, aby elektronika měla přehled o tom, co se s automobilem děje, případně, co se v nejbližších sekundách bude dít.
 
-V \cite{Hul+-ManRecUsProFinStaMacFuzLog} a \cite{TriHei-ExpDesSeqFuzPer} jsou prezentován způsoby, jak jednoduše modelovat manévry řidiče. Mezi takové manévry patří např. předjíždění, zatáčení doleva v křižovatce nebo pouštění chodce na přechodu. Model využívá sadu lingvistických proměnných jako např. \uv{aktuální rychlost}, \uv{zrychlení}, \uv{natočení volantu} nebo \uv{směrová světla jsou zapnuta}. Následně mohou být stanoveny vzory jednotlivých manévrů, např. při odbočování vlevo:
+V \cite{Hul+-ManRecUsProFinStaMacFuzLog} a \cite{TriHei-ExpDesSeqFuzPer} jsou prezentován způsoby, jak jednoduše modelovat manévry řidiče. Mezi takové manévry patří např. předjíždění, zatáčení doleva v křižovatce nebo pouštění chodce na přechodu. Model využívá sadu lingvistických proměnných jako např. \uv{aktuální rychlost}, \uv{zrychlení}, \uv{natočení volantu} nebo \uv{směrová světla}. Následně mohou být stanoveny vzory jednotlivých manévrů. Například při odbočování vlevo se jedná o následující posloupnost událostí:
 \begin{enumerate}
  \item řidič zapnul levý blinkr
  \item řidič otočil volantem lehce doleva (může být vynecháno)
@@ -2076,41 +2179,39 @@ V \cite{Hul+-ManRecUsProFinStaMacFuzLog} a \cite{TriHei-ExpDesSeqFuzPer} jsou pr
  \item řidič vypnul levý blinkr
 \end{enumerate}
 
-Takto navrženému vzoru může být sestaven automat, který jej rozpoznává.
+Takto navrženému vzoru může být sestaven automat, který jej rozpoznává, případně klasifikuje.
 
-Podobný způsob je popsán v \cite{Hul+-ManRecUsProFinStaMacFuzLog}. V tomto případě však jako vstupní data sloužila měření z trojice akcelerometrů (pro všechny tři osy, $x, y$ a $z$). Lingvistické proměnné pak sledovaly, zda-li bylo zrychlení ve směru patřičné osy kladné, neutrální či záporné. Vzory, které tento systém sledoval byly např. \uv{dlouhá táhlá zatáčka vlevo} nebo \uv{přejezd přes horizont}.
-
-\TODO{WTF? V \cite{GraFod-FuzAutIntHybConSys} také popisují řídící systém, avšak zavádějí distribuovaný model.}
+Podobný způsob je popsán v \cite{Hul+-ManRecUsProFinStaMacFuzLog}. V tomto případě však jako vstupní data slouží měření z trojice akcelerometrů (pro všechny tři osy, $x, y$ a $z$). Lingvistické proměnné popisují, zda-li je zrychlení ve směru patřičné osy kladné, neutrální či záporné. Manévry, které tento systém dokáže rozpoznávat jsou např. \uv{dlouhá táhlá zatáčka vlevo} nebo \uv{přejezd přes horizont}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Monitorování elektrických a počítačových sítí} \label{subs:MonElComNet}
-V \cite{DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis} používají fuzzy automaty pro sledování vytížení el. rozvodné sítě. Technika předpokládá znalost spotřebičů v síti a nástroj pro monitorování odběru el. proudu (elektroměr). Výstupem je pak rozpis, kdy byl jaký spotřebič (pravděpodobně) zapnut a kolik odebíral energie.
+V \cite{DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis} používají fuzzy automaty pro sledování vytížení elektrické rozvodné sítě. Technika předpokládá znalost spotřebičů v síti a nástroj pro monitorování odběru el. proudu (elektroměr) na jejím vstupu. Výstupem je pak rozpis, kdy byl jaký spotřebič (pravděpodobně) zapnut.
 
-Technika využívá faktu, že každý spotřebič se může nacházet v různých stavech. Například vysoušeč vlasů se může nacházet v jednom z těchto tří stavů: \uv{vypnut}, \uv{fouká studený vzduch} a \uv{fouká teplý vzduch}. Každému takovému stavu může být být asociována konkrétní hodnota odběru el. energie.  Pokud známe výkyvy spotřeby proudu při změnách těchto stavů, můžeme spotřebiči sestavit fuzzy automat. Zaveďme lingvistickou proměnnou \uv{spotřeba el. proudu ...} a její štítky \uv{výrazně klesla}, \uv{je konstantní} a \uv{lehce stoupla}. 
+Technika využívá faktu, že každý spotřebič se může nacházet v různých stavech. Například vysoušeč vlasů se může nacházet v jednom z těchto tří stavů: \uv{vypnut}, \uv{fouká studený vzduch} a \uv{fouká teplý vzduch}. Předpokládejme, že v každou časovou jednotku dojde vždy pouze k jedné změně stavu jednoho spotřebiče. Každému stavu je asociována konkrétní hodnota odběru energie.
 
-Nyní uvažujme elektrickou síť s více spotřebiči. Předpokládejme, že v každou časovou jednotku dojde vždy pouze k jedné změně stavu jednoho spotřebiče. Pak nastane-li v síti událost $x$ (např. pokles spotřeby), pak na základě znalosti stavů všech spotřebičů můžeme určit nejpravděpodobnější přechod (tj. jaký spotřebič přešel do jakého stavu), který nastal. Sledováním sítě tak můžeme neinvazivně sledovat, které spotřebiče, kdy a jak zatěžují síť.
+Označme změny odběru elektrické energie lingvistickou proměnnou \uv{spotřeba el. proudu ...} a se štítky např. \uv{výrazně klesla}, \uv{je konstantní} a \uv{lehce stoupla} (čím více štítků použijeme, tím přesnější model bude). Nastane-li v síti událost $x$ (např. značný pokles spotřeby), automat bude schopen určit, který ze spotřebičů změnil svůj stav. Tím způsobem tak můžeme neinvazivně sledovat, které spotřebiče, kdy a jak zatěžují síť.
 
+\TODO{příklad, pls}
 
-Obdobná technika je uvedena v \cite{Niz-ModComComNetViaPrAu}. V článku modelují pomocí pravděpodobnostního automatu počítačovou síť (zvlášť uzly a kanály, jejich matice pak matematicky spojují do jedné velké matice \uv{matice automatu sítě}). Stavy uzlu jsou délky front v bufferech u jednotlivých kanálů. (U kanálů nevím.) Výsledkem je návrh optimální směrovací tabulky pro celou síť. 
+V \cite{Niz-ModComComNetViaPrAu} modelují pomocí pravděpodobnostního automatu počítačovou síť. Model je tvořen automaty pro každý z uzlů sítě a dále pro každý kanál. Zasílání zpráv mezi uzly vede ke změnám stavů jednotlivých automatů. Výsledkem je návrh optimální směrovací tabulky pro celou síť.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Teorie her, počítačové hry}
-V \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha} je použit fuzzy automat pro modelování nálady hráče ve hře šachy. Automat je tvořen čtveřicí stavů reprezentující jednotlivé \uv{elementární} nálady, konkrétně \uv{zamyšlený}, \uv{překvapený}, \uv{radostný} a \uv{rozzuřený}. Přechodová abeceda je tvořena následnujícími nastanuvšími tahy:
+V \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha} je použit fuzzy automat pro modelování nálady hráče ve hře šachy. Automat je tvořen čtveřicí stavů reprezentující jednotlivé \uv{elementární} nálady, konkrétně \uv{zamyšlený} (označme $q_F$), \uv{překvapený} ($q_S$), \uv{radostný} ($q_H$) a \uv{rozzuřený} ($q_A$). Přechodová abeceda je tvořena následnujícími nastanuvšími tahy (ty tvoří abecedu událostí):
 \begin{itemize}
- \item tah, který hráče dostal do výhody
- \item tah, který dostal hráče do nevýhody
- \item tah, po kterém se hráč octl v šachu (popř. matu)
- \item tah, kdy se nestalo nic z předchozích
+ \item tah, který hráče dostal do výhody (označme $p_{+}$)
+ \item tah, který dostal hráče do nevýhody ($p_{-}$)
+ \item tah, po kterém se hráč octl v šachu ($c$)
+ \item tah, kdy se nestalo nic z předchozích ($n$
 \end{itemize}
-Výhoda a nevýhoda, resp. stupeň v jakém platí \uv{hráč se dostal do výhody, resp. nevýhody} lze snadno spočítat jako rozdíl ohodnocení šachovnice. Ohodnocení šachovnice lze určit například jako výžený součet figur hráče dle jejich síly. Tah zakončený šachem může být nadefinován dvojstavově nebo např. jako \uv{stupeň matu}, tj. pro šach např. $0.5$, pro mat $1$ (jinak $0$).
 
-Následně jsou navržena přechodová pravidla. Například, dostane-li se hráč v rozzuřeném stavu do výhodné pozice, přejde do radostného stavu.  Následně, pokud se v dalším tahu nestane nic zajímavého, přechází do zemyšleného stavu. Kompletní automat je k vidění na obrázku \ref{img:ChessEmosFA}.
+Přechodová pravidla pak mohou obsahovat například: dostane-li se hráč v rozzuřeném stavu do výhodné pozice, přejde do radostného stavu. Pokud se v dalším tahu nestane nic zajímavého, přechází do zamyšleného stavu. Kompletní automat je k vidění na obrázku \ref{img:ChessEmosFA}.
 
 \begin{figure}
  \centering
  \includegraphics{rest0}
  
- \caption{Automat pro modelování nálad hráče ve hře šachy. Stavy $q_F$, $q_S$, $q_H$ a $q_A$ reprezentují po řadě nálady \uv{zamyšlený}, \uv{překvapený}, \uv{radostný} a \uv{rozzuřený}. Symboly $p_{+}$ a $p_{-}$ značí přechod k výhodné, resp. nevýhodné situaci pro hráče, $c$ symbolizuje šach a $n$ tah bez žádné změny situace na šachovnici. Převzato z \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha}, upraveno.}
+ \caption{Automat pro modelování nálad hráče ve hře šachy. Stavy a události jsou popsány v textu. Převzato z \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha}, upraveno.}
  \label{img:ChessEmosFA}
 \end{figure}
 
@@ -2127,26 +2228,28 @@ Na základě aktuálního fuzzy stavu (kombinace různých stupňů elementárn�
 \TODO{If-Then pravidla jsou prý tzv. Takagi-Sugeno-Kang pravidla (dle \cite{HeiTri-SimEmoPerHumComInt})}
 \TODO{Minimálně u event-driven automatů uvést, že je vhodné nějak rozpoložit stupňě. Tedy, aby např. fuzzy stav měl v součtu vždycky $1$.}
 
-Podobná technika je popsána v \cite{Hua+-LeaProbAutModChe}. Zde ovšem neslouží k popisu emocí hráče, ale predikci možnému dalšímu vývoji hry.
+Podobná technika je popsána v \cite{Hua+-LeaProbAutModChe}. Zde ovšem neslouží k popisu emocí hráče, ale predikci možného dalšího vývoje hry.
 
-
-V \cite{FuLi-ForLeaAutAutGam} jsou učící automaty použity jako agenti v hře s nulovým součtem, která nemá jasné ekvilibrium. Automaty se postupným hraním tahů učí a vylepšují svoji strategii tak, aby bylo dosaženo ekvilibria.
-
+V \cite{FuLi-ForLeaAutAutGam} jsou učící automaty použity jako agenti v hře s nulovým součtem, která nemá jasné ekvilibrium, tj. vyvážený stav. Automaty se postupným hraním tahů učí a vylepšují svoji strategii tak, aby bylo dosaženo ekvilibria.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Interakce s člověkem}
-V \cite{HeiTri-SimEmoPerHumComInt} je prezentován prototyp systému pro modelování lidských emocí. Systém je založen na faktu, že velký vliv na emoce člověka má počasí. V jejich modelu (pro snažší sběr dat) pak konkrétně teplota vzduchu a množství světla. Pro reprezentaci emocí používají tzv. Plutchikovo kolo emocí. Jedná se o emoční model, který reprezentuje emoce pomocí dvojice ukazatelů, aktivace a ohodnocení. Např. pozitivní aktivace a negativní ohodnocení začí odpor či opovržení, negativní aktivace při neutrálním ohodnocení znamená strach.
+V \cite{HeiTri-SimEmoPerHumComInt} je prezentován prototyp systému pro modelování lidských emocí. Systém je založen na faktu, že velký vliv na emoce člověka má počasí. V jejich modelu pak konkrétně teplota vzduchu a množství světla. Oba tyto ukazatele popisují pomocí dvojice lingvistických proměnných, každá se třemi štítky. Navržený fuzzy automat je tvořen devíti stavy (odpovídající kombinacím hodnot těchto lingvistických proměnných).
 
-Autoři používají ligvistické proměnné \uv{negativní}, \uv{nutrální} a \uv{pozitivní} a jak pro aktivaci, tak pro ohodnocení. V jejich zjednodušeném modelu vstup do systému (data z teploměru a světelného čidla) nejprve transformují na odpovídající aktivaci (průměrná teplota znamená pozitivní aktivaci, nízká nebo naopak vysoká teplota pak negativní) a ohodnocení (čím je světleji, tím je ohodnocení pozitivnější).
+Přechody mezi jednotlivými stavy prostředí poté modelují fuzzy automatem na základě změn počasí. Na základě aktuálního stavu automatu pak pomocí tzv. Plutchikova kola emocí určijí emoční stav pozorované osoby.
 
-Následně konstruují automat. Automat má 9 stavů, každé kombinaci lingvistických proměnných aktivace a ohodnocení odpovídá jeden. Poté definují přechody mezi nimi. Má-li dojít ke zvýšení (snížení, ponechání) hodnoty patřičné lingvistické proměnné, pak automat přejde k stavu odpovídajícímu vyššímu (nižšímu, stejnému) stupni této lingvistické proměnné. Například při vstupu \uv{aktivace je pozitivní a ohodnocení je neutrální} při stavu \uv{aktivace je negativní a ohodnocení pozitivní} přejde do stavu \uv{aktivace je neutrální a ohodnocení je pozitivní}. 
+%Pro reprezentaci emocí používají tzv. Plutchikovo kolo emocí. Jedná se o emoční model, který reprezentuje emoce pomocí dvojice ukazatelů, aktivace a ohodnocení. Např. pozitivní aktivace a negativní ohodnocení začí odpor či opovržení, negativní aktivace při neutrálním ohodnocení znamená strach.
 
-Z fuzzy stavu pak lze zpětně zkonstruovat, v jakém emocionálním rozpoložení se člověk aktuálně nachází. Autoři poukazují, že při pozměnění konfigurace (úprava ohodnocujících fungkcí pro štítky lingvistických proměnných) lze chování systému přizpůsobit povaze člověka (např. klidná povaha, pesimista a podob.), což může výsledky značně zpřesnit.
+%Autoři používají ligvistické proměnné pro aktivaci, tak pro ohodnocení se štítky \uv{negativní}, \uv{nutrální} a \uv{pozitivní}. V jejich zjednodušeném modelu vstup do systému (data z teploměru a světelného čidla) nejprve transformují na odpovídající aktivaci (průměrná teplota znamená pozitivní aktivaci, nízká nebo naopak vysoká teplota pak negativní) a ohodnocení (čím je světleji, tím je ohodnocení pozitivnější).
+
+% Následně konstruují automat. Automat má $9$ stavů, každé kombinaci lingvistických proměnných aktivace a ohodnocení odpovídá jeden. Poté definují přechody mezi nimi. Má-li dojít ke zvýšení (snížení, ponechání) hodnoty patřičné lingvistické proměnné, pak automat přejde k stavu odpovídajícímu vyššímu (nižšímu, stejnému) stupni této lingvistické proměnné. Například při vstupu \uv{aktivace je pozitivní a ohodnocení je neutrální} při stavu \uv{aktivace je negativní a ohodnocení pozitivní} přejde do stavu \uv{aktivace je neutrální a ohodnocení je pozitivní}. 
+
+%Z fuzzy stavu pak lze zpětně zkonstruovat, v jakém emocionálním rozpoložení se člověk aktuálně nachází. Autoři poukazují, že při pozměnění konfigurace (úprava ohodnocujících funkcí pro štítky lingvistických proměnných) lze chování systému přizpůsobit povaze člověka (např. klidná povaha, pesimista a podob.), což může výsledky značně zpřesnit.
 
 
-V \cite{Cas+-ProAutAspBasSenAna} pomocí pravděpodobnístních automatů analyzují aspektová tvrzení (tj. zda-li je tvrzení míněno pozitivně, negaitvně, neutrálně nebo s rozporem). Stavy automatu jsou všechna slova z celé databáze, vstupní abeceda taktéž. Počáteční stav je první slovo tvrzení, koncový pak poslední. Pravidla jsou, pochopitelně, sestavena učením. Přechody automatu mohou popisovat fráze či použití stejných slov v různém kontextu. Každý stav má pak přiřazenu polaritu, zkomibnováním všech polarit napříč celým tvrtením (napčíř všemi stavy) se pak obdrží celková polarita tvrzení.
+V \cite{Cas+-ProAutAspBasSenAna} pomocí pravděpodobnostních automatů analyzují tvrzení. U tvrzení sledují jeho tzv. polaritu, tedy zda je tvrzení míněno pozitivně, negativně nebo neutrálně). Každému slovu tvrzení je přiřazena hodnota lingvistické proměnné \uv{polarita slova} (na základě slovníku). Automat pak obsahuje stavy popisující aktuální polaritu. Při zpracování pozitivního slova se přesouvá do stavu \uv{více} pozitivního, při negativném naopak a při neutrálním setrvává.
 
-V \cite{SchYou-ProSimHumMacDia} používají automat jako generátor strojového člověka, konkrétně jako pracovníka banky. Generuje dotazy a, a na základě podnětů od člověka získává informace, co a jak chce (v jejich příkladě, bankovním pracovníku, jestli chce člověk vybrat peníze, nebo provést transakci z účtu na účet). \TODO{Tak ale tohle je spíš práce pro gramatiky, ne?}
+V \cite{SchYou-ProSimHumMacDia} používají pravděpodobnostní automat pro řízení robotického pracovníka banky. Robot se ptá uživale v závislosti na tom, v jakém stavu se nachází (a na základě odpovědí svůj stav mění). Příkladem stavu může být \uv{Uživatel si chce vybrat peníze}. Dotazy mohou být \uv{Přejete si vybrat v Korunách?}, \uv{Přejete si vybrat v Eurech?} nebo \uv{Přejete si vrátit se k předchozí volbě?}.
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2155,13 +2258,13 @@ V \cite{SchYou-ProSimHumMacDia} používají automat jako generátor strojového
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sledování pohybu a aktivit osoby}
-V \cite{TriHei-LinSumHumActSkiConAcc} je prezentován postup, jak pomocí sledování různých parametrů (pohyb, získaný akcelerometrem, a el. vodivost kůže) určit pravděpodobnou činnost (nicnedělání, chůze, práce, odpočinek) osoby. Činnosti odpovídají stavům automatu a na základě parametrů se určijí přechody. Navíc, je pravděpodobnější, že člověk ze stavu nicnedělání přejde do stavu práce než do stavu relaxace.
+V \cite{TriHei-LinSumHumActSkiConAcc} je prezentován postup, jak pomocí sledování různých parametrů (pohyb získaný akcelerometrem a elektrická vodivost kůže) určit pravděpodobnou činnost (nicnedělání, chůze, práce, odpočinek) osoby. Ty jsou popsány lingvistickými proměnnými, které tvoří události automatu. Stavy automatu odpovídají aktivitám (např. odpočinek, pomalá chůze, běh). Pravidla jsou stanovena empiricky -- např. je pravděpodobnější, že člověk ze stavu nicnedělání přejde do stavu práce než do stavu běh.
 
-Stejnou techniku využívají v \cite{Alv+-HumActRec+}. Zde však detekují činnosti: chůze, práce u sebe, hovor s kolegy, dávání si kávy, míting, a to pomocí polohy zařízení (chytrý telefon) osoby (určené triangulací Wifi sítě) a polohy těla.
+Stejnou techniku využívají v \cite{Alv+-HumActRec+}. Zde však detekují činnosti: chůze, práce u sebe, hovor s kolegy, dávání si kávy, míting, a to pomocí polohy zařízení (chytrý telefon) (určené triangulací Wifi sítě) osoby a polohy těla. Poloha těla pak může být buď, že osoba stojí, sedí nebo jde. Tyto hodnoty jsou sledovány akcelerometrem, pohybovým čidlem, a gyroskopem. 
 
-Poloha těla pakl může být buď, že osoba stojí, sedí nebo jde. Tyto hodnoty jsou opět sledovány fuzzy automatem (přechody jsou realizovány na základě dat z akcelerometru, pohybového čidla, a gyroskopu (senzoru náklonu). 
+Podobnou techniku popisují v \cite{TurChe-MacRecHumActSur}. Zde však namísto fuzzy automatů používají pravděpodobnostní automat. Uvádějí však další aplikace pro tuto techniku, například identifikace pravděpodobného lupiče v bance.
 
-Podobnou techniku popisují v \cite{TurChe-MacRecHumActSur}. Zde však namísto fuzzy automatů používají pravděpodobnostní automat. Uvádějí však další aplikace pro tuto techniku (biometrika, sémantická analýza videa, bezpečnost, uživatelská rozhraní, syntéza animací). \TODO{něco víc konkrétního by nebylo?}
+%(biometrika, sémantická analýza videa, bezpečnost, uživatelská rozhraní, syntéza animací). \TODO{něco víc konkrétního by nebylo?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Průmyslové řídící systémy, fuzzy kontroléry}
@@ -2169,21 +2272,24 @@ Vztah fuzzy automatů a řídících systémů
 %pracujících na bázi ontologického řízení 
 jsou popsány např. zde \cite{HeKinSep-DecMakFuzEnvZUsOntCon+}, \cite{Gra+-ApFuStFuOuFinMaPrRecVioOntAss}, \cite{WeeFu-FormFuzAutAppModLeaSys} nebo \cite{GraFodDri-HybFuzBooAutOntCont}. 
 %Ontologické řídící systémy se vyznačují popisem ontologických předpokladů. Ontologické předpoklady jsou popisy stavu modelovaného systému, na jejiž základě systém provádí rozhodování. 
-Systémy bývají často tak složité, že je nemožné zanést do znalostní báze, která má jejich chod popisovat, všechny možné předpoklady. Z tohoto důvodu může u systému dojít k tzv. porušení 
-%ontologických 
-předpokladů (např. při chybě či nečekaném vnějším podnětu). Dalo by se říci, že systém se takto dostane do nekonzistentního stavu.
 
-Je-li systém modelován klasickým, bivalentním automatem \TODO{on ani tak není klasický bivalentní, ale event-driven} je pravděpodobné, že takovouto situaci nebude schopen ošetřit. Mohl by se tak ve snaze provést synchronizaci reálného a modelového stavu např. zacyklit mezi dvojicí diskrétních stavů.  
+Systémy k modelování bývají často tak složité, že je obvykle nemožné popsat je zcela kompletně. Mohlo by tak například z důvodu chyby nebo neočekávaného vnějšího podnětu dojít k tomu, že model se octne v nekonzistením stavu, ze kterého nebude schopen se zotavit. Použití fuzzy automatů umožňuje do modelů určitou formu zotavené zanést.
+
+%Z tohoto důvodu může u systému dojít k tzv. porušení %ontologických předpokladů (např. při chybě či nečekaném vnějším podnětu). Dalo by se říci, že systém se takto dostane do nekonzistentního stavu.
+
+%Je-li systém modelován klasickým, bivalentním automatem je pravděpodobné, že takovouto situaci nebude schopen ošetřit. Mohl by se tak ve snaze provést synchronizaci reálného a modelového stavu např. zacyklit mezi dvojicí diskrétních stavů. Fuzzy automaty mohou zotavení z nezkonzistence zvládat lépe.
 
 \TODO{vypsat z článků příklady}
 
-V \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut} používají učící se fuzzy událostmi řízené automaty, pro řízení výkonu při obloukovém svařování. Vstup automatu je realizován pomocí jedné lingvistické proměnné se štítky \uv{zvýšení výkonu} a \uv{snížení výkonu}. Automat je sestaven tak, aby správně rozpoznával vhodné posloupnosti zvýšení a snížení výkonu za účelem zvýšení kvality sváru. 
+V \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut} používají učící se fuzzy událostmi řízené automaty, pro řízení výkonu při obloukovém svařování. Vstup automatu je realizován pomocí lingvistické proměnné \uv{naposledy bylo provedeno} se štítky \uv{zvýšení výkonu} a \uv{snížení výkonu}. Automat je sestaven tak, aby správně rozpoznával vhodné posloupnosti zvýšení a snížení výkonu za účelem zvýšení kvality sváru. 
 
-V téže publikaci demonstrují obdobným způsobem uplatnění pro řízení robota pohybujícího se v neznámém prostředí. Pomocí ligvistické proměnné s dvojící štítků pro zvýšení výkonu motorů a snížení výkonu motorů si kladou za cíl navržení systému pro řízení robota. Tento systém má za cíl řídit přidávání a ubírání výkonu tak, aby se robot, bez ohledu na terén, pohyboval konstantní rychlostí.
+V téže publikaci demonstrují obdobným způsobem uplatnění pro řízení robota pohybujícího se v neznámém prostředí. Systém sleduje změny rychlosti pohybu robota a na jejich základě řídí přidávání a ubírání výkonu tak, aby se robot v libovolném terénu pohyboval konstantní rychlostí.
 
-V \cite{WeeFu-FormFuzAutAppModLeaSys} je fuzzy automat použit pro návrh řídících systému. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Množina možných událostí tak tvoří abecedu a řídící systém může být reprezentován automatem. Použitím nepřesností je tak možno získat fuzzy automat. \TODO{osamostatnit definici řídícího systému? Např. do ůvodu, kde budu zmiňovat, co všechno se podobá FA?} S pomocí znalosti očekávaného chování systému je pak možné pomocí učícího automatu sestavit adekvátní řídící systém.
+V \cite{WeeFu-FormFuzAutAppModLeaSys} a \cite{GraFod-FuzAutIntHybConSys} je fuzzy automat použit jako model pro návrh řídících systémů. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Řídící tak systém může být reprezentován automatem.
 
+\TODO{osamostatnit definici řídícího systému? Např. do ůvodu, kde budu zmiňovat, co všechno se podobá FA?} S pomocí znalosti očekávaného chování systému je pak možné pomocí učícího automatu sestavit adekvátní řídící systém.
 
+\TODO{WTF? V  také popisují řídící systém, avšak zavádějí distribuovaný model.}
 
 
 % \subsection{Predikce průběhu hry}
@@ -2196,34 +2302,25 @@ V \cite{WeeFu-FormFuzAutAppModLeaSys} je fuzzy automat použit pro návrh říd�
 \subsection{Problém městského růstu}
 Problém městského růstu je problém z oblasti urbanistiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve zobecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní problém, tedy městský růst.
 
-Buněčné fuzzy automaty byly již mnohokrát použity pro řešení tohoto problému. Pomocí těchto automatů byl například modelován rozvoj zástavby v městě Riyadh v Saudské Arábii \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, regionu Helensvale v Austrálii \cite{War+-StoConCelModUrbGro}, ostrova Sv. Lucie v Krabiském moři \cite{WhiEng-CelAutBasIntDynRegMod}, oblasti North Vancover v Kanadě \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod}, oblasti Mesogia v Řecku \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut}, oblasti Sanfranciského zálivu v Kalifornii \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} nebo části Tianhe města Guangzhou v jihovýchodní Číně \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
+Tento problém bývá často řešen pomocí buněčných fuzzy automatů. Věnují se jim např. v \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} \cite{War+-StoConCelModUrbGro} \cite{WhiEng-CelAutBasIntDynRegMod}  \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod} \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut} \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} či\cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
 %
-Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}.
+Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod}, \cite{WasPar-PreSpaDisEleEnCon+} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. V \cite{MraZimLapBaj-FuzCelAut+} podobnou technikou simulují šíření lesního požáru.
 
-\TODO{el. síť \cite{WasPar-PreSpaDisEleEnCon+}? Doprava (toho mám taky povícero)? }
+% \TODO{el. síť ? Doprava (toho mám taky povícero)? }
 
-Pojďme se nyní podívat, jak se buněčné fuzzy automaty pro řešení tohoto problému používají. Základní idea pro nasazení fuzzy automatů je následující: Stav zástavby reprezentujme jako konfiguraci fuzzy buněčného automatu. Pak růst zástavby bude odpovídat přechodům mezi těmito konfiguracemi.
+Problém bývá řešen obvykle tak, že sledovaná oblast (město) je rozděleno na parcely. Každá parcela je popsána obvykle několika ukazateli, např. jak moc je zastavěna či jak moc hluku parcela produkuje. Tyto ukazatele tvoří stav buňky bunečného automatu. Konfigurace automatu pak tedy popisuje celé město v určitý časový okamžik.
 
-V první fázi je nutné si sledovanou oblast (\uv{město}) rozdělit na dílčí parcely. Každé takové parcele pak bude odpovídat jedna buňka buněčného fuzzy automatu. U každé parcely je třeba zjistit rozličné ukazatele, např.:
-\begin{itemize}
- \item je-li parcela zastavěna (popř. jak moc)
- \item typ zástavby na parcele (např. rodinné domy, obytné domy, komerční prostory, prostory pro rekreaci, dopravní stavby, průmyslová zóna)
- \item jak moc žije na parcele obyvatel
- \item jak moc vysoké budovy stojí na parcele
- \item jak velké produkuje parcela znečištění ovzduší/hluku
-\end{itemize}
-Nejčastěji se jako ukazatel používá informace o zastavěnosti parcely. Ta se totiž dá poměrně snadno stanovit s pomocí satelitních snímků sledované oblasti.
+% 
+% Dále je třeba získat ukazatele, které mají vliv na růst zástavby. Mezi takovéto ukazatele patří například:
+% \begin{itemize}
+%  \item vzdálenost parcely od centra města (popř. škol, nákupních center, ...)
+%  \item dopravní obslužnost parcely (vzdálenost od hlavní silnice nebo zastávek hromadné dopravy)
+%  \item atraktivita lokality (výhled na město, okolní zástavba, ...)
+%  \item stavební podmínky (podloží, záplavová zóna, terén, ...)
+% \end{itemize}
+% Za povšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží).
 
-Dále je třeba získat ukazatele, které mají vliv na růst zástavby. Mezi takovéto ukazatele patří například:
-\begin{itemize}
- \item vzdálenost parcely od centra města (popř. škol, nákupních center, ...)
- \item dopravní obslužnost parcely (vzdálenost od hlavní silnice nebo zastávek hromadné dopravy)
- \item atraktivita lokality (výhled na město, okolní zástavba, ...)
- \item stavební podmínky (podloží, záplavová zóna, terén, ...)
-\end{itemize}
-Za povšimnutí stojí, že některé ukazatele jsou neměnné v čase (např. vzdálenost od centra města nebo podloží).
-
-Následně je možné sestavit přechodová pravidla. Ta mohou být například:
+Přechodová pravidla pak mohou vypadat například (ukázka vlivu různých pravidel na růst města je vyobrazen na obrázku \ref{img:VarTransRuls}):
 \begin{itemize}
  \item Je-li vzdálenost parcely od centra města malá, pak růst zástavby bude velký
  \item Je-li vzdálenost od hlavní silnice velmi malá, pak růst zástavby bude malý a množství hluku bude velké
@@ -2231,7 +2328,7 @@ Následně je možné sestavit přechodová pravidla. Ta mohou být například:
  \item Není-li lokalita atraktivní, pak růst zástavby bude malý
 \end{itemize}
 
-Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm} a\cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. Ukázku toho, jak se chová automat při různých počátečních konfiguracích lze spatřit na obrázku \ref{img-VarTransRuls}. 
+% Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \cite{ManHatPra-FuzzCellAutModAppAccUrbGroDynLingTerm} a\cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. Ukázku toho, jak se chová automat při různých počátečních konfiguracích lze spatřit na obrázku \ref{img-VarTransRuls}. 
 
 \begin{figure}[]
     \begin{subfigure}[t]{\textwidth} \centering
@@ -2249,10 +2346,10 @@ Další ukázky pravidel jsou např. v \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}, \
       \caption{Růst města bržděn řekou} 
     \end{subfigure}
 
-    \caption[Ukázky chování automatu]{(převzato z \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}, upraveno) Ukázky chování automatu při různých počátečních konfiguracích. Šedě jsou znázorněny prázdné parcely, červeně zástavba, zeleně hlavní silnice a modře řeky.} \label{img-VarTransRuls}
+    \caption[Ukázky chování automatu]{(převzato z \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}, upraveno) Ukázky chování automatu při různých počátečních konfiguracích. Šedě jsou znázorněny prázdné parcely, červeně zástavba, zeleně hlavní silnice a modře řeky.} \label{img:VarTransRuls}
 \end{figure}
 
-Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městského růstu. Na obrázku jsou pro porovnání zobrazeny jak vypočtené stavy zástavby, tak i skutečné (upravené satelitní snímky). Na snímcích je patrné, že simulace rozvoje mezi lety 1987 a 1997 dosáhla poměrně přesných výsledků. Stejně tak, v simulaci růstu mezi lety 1997 a 2005 naznačuje jen malý rozvoj. Při simulaci od roku 1987 do roku 2005 už jsou patrné větší odlišnosti (simulace nevyprodukovala tak výrazný růst, jaký doopravdy nastal).
+Na obrázku \ref{img:UrbGroProSample} je k vidění konkrétní ukázka městského růstu.
 
 \begin{figure}[]
     \begin{subfigure}[t]{\textwidth} \centering
@@ -2265,8 +2362,11 @@ Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městsk�
       \caption{Simulovaný stav zástavby. Modrá značí zástavbu na počátku sledovaného období, červená značí (novou) zástavbu na konci sledovaného období, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
     \end{subfigure}
 
-    \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img-UrbGroProSample}
+    \caption[Ukázky simulace městského růstu]{(převzato z \cite{Ahm+-CalFuzCelAutModUrbDynSauAr}) Ukázky simulace městského růstu} \label{img:UrbGroProSample}
 \end{figure}
+
+
+% \TODO{ popisuje šíření požáru stejnětak.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2298,26 +2398,22 @@ Na obrázku \ref{img-UrbGroProSample} je k vidění konkrétní ukázka městsk�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Další uplatnění}
 
-V \cite{Maz+-ProTreAutAppBehMod} prezentují nástroj založený na pravděpodobnostních automatech, jehož úkolem je určovat nejpravděpodobnější aktivitu počítačového programu. Autoři mají k dispozici softwarový nástroj pro výpis nízkoúrovňového chování (vybraných elementárních akcí) počítačového programu (systémová volání, změny na programovém zásobníku). Sledováním těchto informací při známém chování programu mohou stanovit vzory chování programu. Pokud jsou tyto vzory vloženy do pravděpodobnostního automatu, je možné obdržet automat modelující chování programu. Lze tak například z automatu vyčíst, že pokud program otevřel soubor, pak následující elementární akcí bude s nejvyšší pravděpodobností alokace paměti na haldě.
+V \cite{Maz+-ProTreAutAppBehMod} prezentují nástroj založený na pravděpodobnostních automatech, jehož úkolem je určovat nejpravděpodobnější aktivitu počítačového programu. Autoři mají k dispozici softwarový nástroj pro výpis nízkoúrovňového chování počítačového programu (např. systémová volání, změny na programovém zásobníku). Sledováním těchto informací při známém chování programu mohou stanovit vzory chování programu. Pravděpodobnostní automaty sestavené na základě těchto vzorů tak mohou modelovat chování programu. Automat tak například může předpovídat, že pokud program otevřel soubor, pak následující akcí bude s nejvyšší pravděpodobností alokace paměti na haldě.
 
-V \cite{PedGac-LeaFuzzAut} navrhují používat učení fuzzy automatů pro konstrukci logických klopných obvodů. Tj. obvodů, které se na základě vstupů překlápí mezi různými diskrétními stavy. Sami autoři uvádějí, že bylo výhodné pracovat s učícím fuzzy automatem a teprve poté jej \uv{diskretizovat}, tj. konvertovat na kýžený bivalentní.
-
-
-
-
+V \cite{PedGac-LeaFuzzAut} navrhují používat učení fuzzy automatů pro konstrukci logických klopných obvodů. Tj. obvodů, které se na základě vstupů překlápí mezi různými diskrétními stavy. Autoři doporučují navrhovat elektronické takové obvody tak, že se dle očekávaného chování obvodu sestaví fuzzy automat (pomocí učení). Ten se poté \uv{zaokrouhlí}, tj. převede na dvojstavový a převede na elektronický obvod.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Zpracování obrazu}
-Zpracování obrazu je velmi populární informatická disciplína. V této kapitole budou prezentovány některé problémy, které lze řešit pomocí fuzzy automatů. Vzhledem k tomu, že obraz bývá obvykle reprezentován bitmapou, bývá obraz obvykle zpracováván pomocí buněčných fuzzy automatů.
+Zpracování obrazu je velmi populární informatická disciplína. V této kapitole budou prezentovány některé problémy z této oblasti, které lze řešit pomocí fuzzy automatů. Vzhledem k tomu, že obraz bývá obvykle reprezentován bitmapou, bývá obraz obvykle zpracováván pomocí buněčných fuzzy automatů.
 
 \subsection{Konvoluce} \label{subs:Convol}
-Uvažujme obraz jako mřížku $m \times m$ pixelů s odstíny šedi jako hodnotami od $0$ do $1$. Hodnota $0$ značí černou, hodnota $1$ bílou. Jinými slovy, barva (resp. stupeň šedi) pixelu je ohodnocující funkce lingvistické proměnné se štítkem \uv{pixel má bílou barvu}. Tato skutečnost nám umožňuje pracovat s obrazem pomocí fuzzy logiky.
+Uvažujme obraz jako mřížku $m \times m$ pixelů s odstíny šedi jako hodnotami od $0$ do $1$. Hodnota $0$ značí černou, hodnota $1$ bílou. Jinými slovy, o pixelu můžeme hovořit jako o ligvistické proměnné \uv{pixel má bílou barvu}.
 
-Každý obraz tak také můžeme považovat za konfiguraci buněčného fuzzy automatu s množinou stavů $Q = [0,1]$. Návrhem vhodné přechodové funkce tak můžeme vytvořit automat, který provádí určitou operaci pro úpravu obrazu. Typickou operací je tzv. obrazový filtr, který obrazu $m \times m$ přiřazuje obraz $m \times m$.
+Každý obraz tak můžeme považovat za konfiguraci buněčného fuzzy automatu. Návrhem vhodné přechodové funkce tak můžeme vytvořit automat, který provádí určitou operaci pro úpravu obrazu. Typickou operací je tzv. obrazový filtr, což je zobrazení které obrazu přiřazuje jiný obraz stejných rozměrů.
 
-Speciálním případem takového automatu je automat realizující konvoluční metodu \cite{Rus-ImaProHan}. Konvoluce je v základu obrazový filtr, který přiřazuje (novou) hodnotu pixelu na základě váženého součtu (stávající) hodnoty pixelu a hodnot pixelů sousedních. Váhy bývají reprezentovány tzv. konvoluční maticí. Například matice
+Speciálním případem filtru konvoluce \cite{Rus-ImaProHan}. Konvoluce je v základu obrazový filtr, který přiřazuje (novou) hodnotu pixelu na základě váženého součtu (stávající) hodnoty pixelu a hodnot pixelů sousedních. Váhy bývají reprezentovány tzv. konvoluční maticí. Například matice
 $$
   B = \begin{pmatrix}
        1 & 2 & 1 \\
@@ -2325,11 +2421,11 @@ $$
        1 & 2 & 1 
       \end{pmatrix}
 $$
-je konvoluční maticí jednoduchého rozostření. Aplikuje se následujícím způsobem:
+je konvoluční maticí jednoduchého rozostření. Konvoluční matice se následujícím způsobem:
 $$
-  c'_{i,j} = \frac{1}{S} \sum_{k,l \in \{-1, 0, +1\}} B_{k+1, l+1} c_{i+k, j+l}
+  c'_{i,j} = \frac{1}{S} \; \sum_{\mathclap{k,l \in \{-1, 0, +1\}}} \; B_{k+1, l+1} c_{i+k, j+l}
 $$
-kde $S$ je součet hodnot v matici $B$, tj. $16$.
+kde $S$ je součet hodnot v matici $B$.
 
 Další ukázkou grafického filtru pracujícího s využitím buněčného fuzzy automatu je například filtr pro zvýraznění tvarů. Je daný následujícím předpisem
 $$
@@ -2341,20 +2437,20 @@ $$
     \end{dcases}
     ))
 $$
-kde $\epsilon > 1$ je parametr udávají agresivitu zvýrazňování a $neighs_{i,j}$ je součet hodnot okolních buňek (viz příklad \ref{ex:GameOfLife}).
+kde $\epsilon > 1$ je parametr udávají agresivitu zvýrazňování a $neighs_{i,j}$ je součet hodnot okolních buňek.
 
 Ukázky aplikací obou filtrů jsou k nalezení na obrázku \ref{img:Filters}. V následujících podkapitolách budou prezentovány některé další (pokročilejší) techniky zpracování obrazu využívající buněčné fuzzy automaty.
 
-\begin{figure}[]
+\begin{figure}
  \includegraphics[width=\textwidth]{filters}
  
- \caption{Ukázky jednoduchých filtrů. Vlevo původní obrázek, uprostřed obrázek po $5$ generacích jednoduchého rozostřovacího filtru a v pravo obrázek po $8$ generacích filtru pro zvýraznění tvarů ($\epsilon = 1,1$).} \label{img:Filters}
+ \caption{Ukázky jednoduchých filtrů. Vlevo původní obrázek, uprostřed obrázek po $5$ generacích jednoduchého rozostřovacího filtru a vpravo obrázek po $8$ generacích filtru pro zvýraznění tvarů ($\epsilon = 1{,}1$).} \label{img:Filters}
 \end{figure}
 
 \subsection{Hledání hran}
 Hledání hran je jednou ze základních technik zpracování obrazu. Hledání hran je často klíčové pro rozpoznávání vzorů v obrazech. V dnešní době existuje značné množství technik pro rozpoznávání hran \cite{MaiAgg-StuComVarImDetEdTec}. V \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} je popsán poměrně elegantní způsob, jak hledání hran vyřešit pomocí buněčných fuzzy automatů. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} a \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} pak tuto techniku vylepšují pomocí strojového učení.
 
-Označme osmici směrů dle obrázku \ref{img:Directions:8Directions}. Množinu těchto směrů nazvěme $dim$. Dále označme $c_X$ (kde $X \in dim$) jako sousední buňku buňky $c$ ve směru $X$.
+Označme osmici směrů dle obrázku \ref{img:Directions:8Directions} jako $U$, $UR$, $R$, $BR$, $B$, $BL$ $L$ a $UL$. Množinu těchto směrů označme $dim$. Dále označme $c_X$ (kde $X \in dim$) jako sousední buňku buňky $c$ ve směru $X \in dim$.
 
 \begin{figure}
    \begin{subfigure}[t]{0.4\textwidth}
@@ -2368,40 +2464,34 @@ Označme osmici směrů dle obrázku \ref{img:Directions:8Directions}. Množinu 
     \end{subfigure}
 \end{figure}
 
-Autoři vycházejí z následující úvahy: Prochází-li buňkou $c$ hrana ve směru $X \in dim$, pak má buňka $c_X$ výrazně jinou barvu, než buňka $c$ (viz obrázek \ref{img:Directions:Edges}). Prochází-li buňkou $c$ hrana v alespoň jednom směru $X \in dim$, pak můžeme říci, že buňka obsahuje hranu.
+Rozpoznávání hran vychází z následujcí úvahy: Má-li buňka $c_X$ výrazně jinou barvu, než buňka $c$, pak buňkou $c$ prochází hrana ve směru $X$ (červené šipky v obrázku \ref{img:Directions:Edges}). Má-li buňka $c_X$ velmi podobnou barvu než buňka $c$, pak buňkou $c$ neprochází hrana ve směru $X$ (zelené šipky v obrázku \ref{img:Directions:Edges}). 
 
-Nadefinujme fuzzy relaci \uv{buňky $c$ a $c'$ mají zcela rozdílnou barvu} předpisem:
-$$
-  \Delta(c, c') = 1 - | c - c' |
-$$
+% 
+% Nadefinujme lingvistickou proměnnou \uv{buňky $c$ a $c'$ mají zcela shodnou barvu} se štítkem \uv{ano}. Pak můžeme stanovit lingvistické proměnné $\epsilon_X$ (pro všechny $X \in dim$) ve smyslu \uv{buňkou $c$ prochází hrana ve směru $X$} se štítky \uv{ano} a \uv{ne}. Ohodnocovací funkce jejího štítku \uv{ano} by pro $X = U$ pak vypadala následovně:
+% \begin{itemize}
+%  \item Pokud pokud $c_{L} c_{UL})$, $\Delta'(c, c_{U})$ a $\Delta'(c_{R}, c_{UR})$ pak $\epsilon_U(c) = 0$
+%  \item Pokud $\Delta (c_{L}, c_{UL})$, $\Delta (c, c_{U})$ a $\Delta (c_{R}, c_{UR})$ pak $\epsilon_U(c) = 1$
+% \end{itemize}
+% 
+% Obdobným způsobem by se dodefinovaly zbývající fuzzy množiny $\epsilon_X$. Následně lze nadefinovat fuzzy množinu $\epsilon$ ve smyslu \uv{buňkou $c$ prochází hrana} pomocí pravidel:
+% \begin{itemize}
+%  \item Pokud $c = \epsilon_{U}$ pak $\epsilon = 1$
+%  \item $\dots$
+%  \item Pokud $c = \epsilon_{UR}$ pak $\epsilon = 1$
+%  \item Jinak $\epsilon = 0$
+% \end{itemize}
 
-Označme $\Delta'$ jako doplňek k $\Delta$, tedy \uv{buňky $c$ a $c'$ mají zcela shodnou barvu}. Pak můžeme stanovit fuzzy množiny $\epsilon_X$ (pro všechny $X \in dim$) ve smyslu \uv{buňkou $c$ prochází hrana ve směru $X$}. Pro $X = U$ by pravidla vypadala následovně:
-\begin{itemize}
- \item Pokud $\Delta'(c_{L}, c_{UL})$, $\Delta'(c, c_{U})$ a $\Delta'(c_{R}, c_{UR})$ pak $\epsilon_U(c) = 0$
- \item Pokud $\Delta (c_{L}, c_{UL})$, $\Delta (c, c_{U})$ a $\Delta (c_{R}, c_{UR})$ pak $\epsilon_U(c) = 1$
-\end{itemize}
+Pomocí těchto pravidel tak lze sestavit buněčný fuzzy automat, který rozpoznává hrany. 
 
-Obdobným způsobem by se dodefinovaly zbývající fuzzy množiny $\epsilon_X$. Následně lze nadefinovat fuzzy množinu $\epsilon$ ve smyslu \uv{buňkou $c$ prochází hrana} pomocí pravidel:
-\begin{itemize}
- \item Pokud $c = \epsilon_{U}$ pak $\epsilon = 1$
- \item $\dots$
- \item Pokud $c = \epsilon_{UR}$ pak $\epsilon = 1$
- \item Jinak $\epsilon = 0$
-\end{itemize}
-
-Pomocí těchto pravidel tak lze sestavit buněčný fuzzy automat s fuzzy logikou, který rozpoznává hrany. 
-
-Dle \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} může být hodnota stupně \uv{buňkou $c$ prochází hrana} použita jako parametr $\alpha$ tzv. Gas Diffusion Modelu, jednu z technik zaostřování obrazu.
+Dle \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} může být hodnota lingvistické proměnné \uv{buňkou $c$ prochází hrana} dále použita pro zaostřování obrazu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ostraňování šumu} \label{subs:NoisRem}
-Odstraňování šumu je další častý problém, který je třeba při zpracování obrazů řešit. Pro studium technik odstraňování šumu se používá zašumnění tzv. impulzním šumem popř. šumem \uv{sůl a pepř}. Zašumnění impulzním šumem nahradí stanovený počet pixelů náhodnými barvami. Šumění \uv{sůl a pepř} pak narazuje pixely buď bílou ($1$) nebo černou ($0$) barvou.
+Odstraňování šumu je další častý problém, který je třeba při zpracování obrazů řešit. Pro studium technik odstraňování šumu se používá typicky zašumnění tzv. impulzním šumem popř. šumem \uv{sůl a pepř}. Zašumnění impulzním šumem nahradí stanovený počet pixelů náhodnými barvami. Šumění \uv{sůl a pepř} pak narazuje pixely buď bílou ($1$) nebo černou ($0$) barvou.
 
 V \cite{SadRetKam-EfMetImpNoiRedImFuzCelAut} je prezentována jednoduchá avšak efektivní technika, která kombinuje klasický bivalentní buněčný automat s buněčnýcm fuzzy automatem. 
 
-V první fázi je klasickým buněčným automatem šum detekován. Buňka obsahuje šum, pokud rozdíl její barvy od průměrné barvy jejich sousedů překračuje stanovenou mez. Tato mez může být stanovena statisticky, například na základě směrodatné odchylky barev pixelů celého obrazu. V druhé fázi je aplikován buněčný fuzzy automat, který buňky obsahující šum nahradí hodnotami spočtenými z jejich okolí. 
-
-Jak autoři poukazují, tato technika je na odstraňování šumu velmi efektivní. Ukázky výsledků jsou na obrázku \ref{img:Noises}. 
+V první fázi je klasickým buněčným automatem šum detekován. Buňka obsahuje šum, pokud rozdíl její barvy od průměrné barvy jejich sousedů překračuje stanovenou mez. Tato mez může být stanovena statisticky, například na základě směrodatné odchylky barev pixelů celého obrazu. V druhé fázi je aplikován buněčný fuzzy automat, který buňky obsahující šum nahradí hodnotami spočtenými z jejich okolí. Ukázky výsledků jsou na obrázku \ref{img:Noises}. 
 
 \begin{figure}
    \begin{subfigure}[t]{0.3\textwidth}
@@ -2437,9 +2527,9 @@ Velmi podobný způsob ostranění šumu je popsán v \cite{SahUguSah-SalPepNoiF
 
 Ropoznávání vzorů je další z častých způsobů práce s obrazy. Obecně je problém definován (obdobně, jako rozpoznávání textových vzorů v kapitole \TODO{ref na kapitolu}) jako problém určení, zda-li obraz obsahuje předem stanovený vzor či ne. Obvykle nás také zajímá, kde přesně se vzor v obraze vyskytuje.
 
-Rozpoznávání vzorů v obrazech je však značně komplikované i pro buněčné fuzzy automaty. V \cite{MajCha-FuzCelAutModPatClas} je popsán způsob, který popisuje rozpoznávání vzorů v obrazu velikosti $1 \times m$ pomocí (jednodimenzionálního) buněčného automatu. Pomocí fuzzy množin reprezentující různé stupně šedi jsou sestavena pravidla, která popisují jak vzorový obraz, tak obrazy jemu podobné. Množina přechodových pravidel tak vyjmenovává téměř všechny možné kombinace hodnot fuzzy množin pro všechny buňky v okolí. Velikost přechodové funkce je tak exponenciální vzhledem k velikosti okolí buňky. Vzhledem k tomu, že okolí buňky je vlastně předpisem pro vzor, je tato technika nepoužitelná pro vzory větší než jednotky pixelů.
+V \cite{MajCha-FuzCelAutModPatClas} je popsán způsob, který popisuje rozpoznávání vzorů v obrazu velikosti $1 \times m$ pomocí (jednodimenzionálního) buněčného automatu. Automat pracuje s lingvistickou proměnnou \uv{pixel má šedou barvu}, která má několik štítků (reprezentující různé stupně šedi). Přechodová pravidla jsou navžena tak, aby rozpoznávaný (a případně jemu podobný) vzor zvýrazňovala. Přechodová pravidla však obvykle bývají tvořena všemi kombinacemi odstínů pro všechny sousední buňky, čímž značně roste její mohutnost. Tato technika je proto prakticky nepoužitelná.
 
-Zcela jiný přístup pužívají v \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}. Vzor nepovažují jako konkrétní kombinaci odstínů barev, ale jako část obrazu splňující určité vlastnosti. Konkrétně, skvrny jednolité barvy, které jsou obklopeny různorodě zabarvenou plochou. Podrobnější popis (včetně ukázky výstupů) je uveden v kapitole \TODO{odkaz na kapitolu}.
+Zcela jiný přístup pužívají v \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}. Vzor nepovažují za konkrétní kombinaci odstínů barev, ale jako část obrazu splňující určité vlastnosti. Konkrétně, skvrny jednolité barvy, které jsou obklopeny různorodě zabarvenou plochou. Podrobnější popis (včetně ukázky výstupů) je uveden v kapitole \TODO{odkaz na kapitolu}.
 % 
 % Autoři metodu doporučují na vyhledávání vzorů v lékařských snímcích (např. ultrazvuk, Röntgen). Techniku demonstrují na ultrazvukových snímcích vaječníků. Poukazují na to, že folikula\footnote{Folikula je dutinka ve vaječníku, v níž probíhá zrání vajíčka. \TODO{ocitovat: http://lekarske.slovniky.cz/pojem/folikul}} je na snímku tvořena jednolitou svrnou stejné barvy, obklopena ostatní tkání (barevné přechody). Ukázka několika snímků je k dispozici na obrázku \ref{img:Follicles:Screens}. Obecně tak lze hovořit o \uv{popředí} (folikula) vystupující z \uv{pozadí}.
 % 
@@ -2466,14 +2556,13 @@ Zcela jiný přístup pužívají v \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod}. Vzo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Složené geometrické útvary}
 
-V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree automatů rozpoznávat složené geometrické útvary. Složený geometrický útvar je chápán jako strom, jehož listové uzly reprezentují \uv{primitivní geometrické objekty} (čtverec, kruh, trojúhelník, aj.). Jeho vnitřní uzly pak popisují vzájemný vztah či vlastnost (např. vzájemnou polohu) jednotlivých podobjektů.
-
+V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree automatů rozpoznávat složené geometrické útvary. Složený geometrický útvar je chápán jako S-term, jehož listové S-termy reprezentují \uv{primitivní geometrické objekty} (čtverec, kruh, trojúhelník, aj.). Jeho vnitřní S-termy pak popisují vzájemný vztah či vlastnost (např. vzájemnou polohu) jednotlivých podobjektů.
 
 \begin{example}
-  Na obrázku \ref{img:Geoms} je vyobrazen složený geometrický útvar vyobrazující \uv{budovu kostela} a jemu odpovídající strom.
+  Na obrázku \ref{img:Geoms} je vyobrazena ukázka složeného geometrického útvaru vyobrazující \uv{budovu kostela} a stromová reprezentace jemu odpovídajícího S-termu.
 \end{example}
 
-\begin{figure}[htp]
+\begin{figure}
  \centering
  
  \begin{subfigure}{0.4\textwidth}
@@ -2484,112 +2573,118 @@ V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree auto
   \includegraphics{trees12}
  \end{subfigure}
  
- \caption{Příklad složeného geometrického tvaru a jeho stromu} \label{img:Geoms}
+ \caption{Příklad složeného geometrického tvaru a stromová reprezenace jemu odpovídajícímu S-termu} \label{img:Geoms}
 \end{figure}
 
-V příkladu, který autoři uvádějí, konstruují strom pro náčrt jednoduchého domu a následně kostela. Dům je tvořen čtvercem (\uv{budova}) a \uv{nad ním} se nachází rovnoramenný trojúhelník (\uv{střecha}). Kostel pak lze vyjádřit jako \uv{dům, nad kterým se nachází kříž}.
+% V příkladu, který autoři uvádějí, konstruují strom pro náčrt jednoduchého domu a následně kostela. Dům je tvořen čtvercem (\uv{budova}) a \uv{nad ním} se nachází rovnoramenný trojúhelník (\uv{střecha}). Kostel pak lze vyjádřit jako \uv{dům, nad kterým se nachází kříž}.
 
-Pro rozpozánávání takovýchto stromů fuzzy tree automatem je nutné tyto pojmy nejdříve formalizovat. Jakmile budeme mít pevně stanoveny jednotlivé pojmy, budeme moci provést jejich fuzzyfikaci a následně sestavit fuzzy tree automat, který stromy rozpoznává.
+% Pro rozpozánávání takovýchto stromů fuzzy tree automatem je nutné tyto pojmy nejdříve formalizovat. Jakmile budeme mít pevně stanoveny jednotlivé pojmy, budeme moci provést jejich fuzzyfikaci a následně sestavit fuzzy tree automat, který stromy rozpoznává.
 
-Uvažujme primitivní geometrický útvar $g$. Konkrétní podoba útvaru $g$ bude dána jeho typem. Například mnohoúhelníky budeme reprezentovat jako posloupnosti jejich vrcholů, kružncie bude reprezentována jako střed a poloměr. Připomeňme si nejdříve matematické definice některých základních primitivních geometrických tvarů. \TODO{je to nutné zdrojovat?}
+Mějme primitivní geometrický tvar $x$. Pak tento tvar je čtvercem, pokud je tvořen čtveřicí bodů a všechny jeho vnitřní úhly jsou pravé. Vlastnost \uv{být pravý úhel} můžeme snadno vyjádřit stupni pravdivosti. Tedy, že úhel $\pi/2$ je pravým ve stupni $1$ a například úhel $\pi$ v nulovém stupni. Díky tomu můžeme i vlastnost \uv{být čtvercem} uvažovat se stupni pravdivosti.
 
-\begin{notation*}
- Pro mnohoúhelník $g$ označme $\alpha_X$ jako velikost úhlu při vrcholu $X \in g$.
-\end{notation*}
+Obdobným způsobem můžeme popsat různé další primitivní geometrické tvary. Stejně tak můžeme stanovit stupně pravdivosti pro vlastnosti např. \uv{geometrický tvar $x$ má neprázdný průnik s geometrickým tvarem $y$} či \uv{geometrické tvary $x$ a $y$ jsou přímky a jsou navzájem rovnoběžné}.
 
-\begin{definition}[Obdélník]
- Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélník, pokud platí
- $$
-  \alpha_A = \alpha_B = \alpha_C = \alpha_D ( = 90° )
- $$
-\end{definition}
+Na základě těchto popisů může být navržen automat, který S-termy reprezentující geometrické tvary rozpoznává a to včetně geometrických tvarů \uv{podobných} vzoru.
 
-\begin{definition}[Čtverec]
- Mějme obdélník $g = A B C D$. Pak tento obdélník je čtverec, pokud
- $$
-  |A B| = |B C| = |C D| = |D A|
- $$
-\end{definition}
+%Konkrétní podoba útvaru $g$ bude dána jeho typem. Například mnohoúhelníky budeme reprezentovat jako posloupnosti jejich vrcholů, kružncie bude reprezentována jako střed a poloměr. Připomeňme si nejdříve matematické definice některých základních primitivních geometrických tvarů. \TODO{je to nutné zdrojovat?}
 
-\begin{definition}[Rovnoramenný trojúhelník]
-  Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný, pokud
-  $$
-    \alpha_A = \alpha_B
-  $$
-  Stranu $AB$ nazývejme základna, strany $AC$ a $BC$ ramena.
-\end{definition}
+% \begin{notation*}
+%  Pro mnohoúhelník $g$ označme $\alpha_X$ jako velikost úhlu při vrcholu $X \in g$.
+% \end{notation*}
+% 
+% \begin{definition}[Obdélník]
+%  Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélník, pokud platí
+%  $$
+%   \alpha_A = \alpha_B = \alpha_C = \alpha_D ( = 90° )
+%  $$
+% \end{definition}
+% 
+% \begin{definition}[Čtverec]
+%  Mějme obdélník $g = A B C D$. Pak tento obdélník je čtverec, pokud
+%  $$
+%   |A B| = |B C| = |C D| = |D A|
+%  $$
+% \end{definition}
+% 
+% \begin{definition}[Rovnoramenný trojúhelník]
+%   Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný, pokud
+%   $$
+%     \alpha_A = \alpha_B
+%   $$
+%   Stranu $AB$ nazývejme základna, strany $AC$ a $BC$ ramena.
+% \end{definition}
+% 
+% Obdobným způsobem bychom ve výčtu mohli pokračovat. Pro užití fuzzy tree automatů však bude vhodné nehovořit o \uv{útvar $g$ je/není obdélník}, ale \uv{útvar $g$ je obdélníkem ve stupni $c$}.
+% 
+% Označme $\varepsilon: \mathbb{R}_0^+ \times \mathbb{R}_0^+ \rightarrow [0,1]$ jako fuzzy ekvivalenci reálných čísel danou předpisem:
+% $$
+%   \varepsilon(x, y) =
+%     \begin{dcases}
+%      \frac{x}{y}	& \text{pokud $x \leq y$}	\\
+%      \frac{y}{x}	& \text{pokud $x > y$}
+%     \end{dcases}
+% $$
+% s tím, že $\frac{0}{0} = 1$. Zřejmě platí $\epsilon(x, x) = 1$ pro všechna $x \in \mathbb{R}_0^+$.
+% 
+% S využitím fuzzy ekvivalence $\varepsilon$ tka můžeme předchozí tři definice \uv{fuzzyfikovat}:
+% 
+% \begin{definition}[\uv{Fuzzy} obdélník]
+%  Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélníkem ve stupni $\gamma_r(g)$, kde
+%  $$
+%   \gamma_r(g) = \varepsilon(\alpha_A, \alpha_B) 
+%   \wedge \varepsilon(\alpha_B, \alpha_C)
+%   \wedge \varepsilon(\alpha_C, \alpha_D)
+%   \wedge \varepsilon(\alpha_D, \alpha_A)
+%  $$
+% \end{definition}
+% 
+% \begin{definition}[\uv{Fuzzy} čtverec]
+%  Mějme geometrický útvar $g = A B C D$, který je obdélníkem ve stupni $\gamma_r(g)$. Pak tento obdélník je čtvercem ve stupni $\gamma_s(g)$, kde
+%  $$
+%  \gamma_s(g) = \gamma_r(g)
+%   \wedge \varepsilon(|A B|, |B C|) 
+%   \wedge \varepsilon(|B C|, |C D|)
+%   \wedge \varepsilon(|C D|, |D A|)
+%   \wedge \varepsilon(|D A|, |A B|)
+%  $$
+% \end{definition}
+% 
+% \begin{definition}[\uv{Fuzzy} rovnoramenný trojúhelník]
+%   Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný ve stupni $\gamma_i(g)$, kde
+%   $$
+%     \gamma_i(g) = \varepsilon(\alpha_A, \alpha_B)
+%   $$
+% \end{definition}
 
-Obdobným způsobem bychom ve výčtu mohli pokračovat. Pro užití fuzzy tree automatů však bude vhodné nehovořit o \uv{útvar $g$ je/není obdélník}, ale \uv{útvar $g$ je obdélníkem ve stupni $c$}.
-
-Označme $\varepsilon: \mathbb{R}_0^+ \times \mathbb{R}_0^+ \rightarrow [0,1]$ jako fuzzy ekvivalenci reálných čísel danou předpisem:
-$$
-  \varepsilon(x, y) =
-    \begin{dcases}
-     \frac{x}{y}	& \text{pokud $x \leq y$}	\\
-     \frac{y}{x}	& \text{pokud $x > y$}
-    \end{dcases}
-$$
-s tím, že $\frac{0}{0} = 1$. Zřejmě platí $\epsilon(x, x) = 1$ pro všechna $x \in \mathbb{R}_0^+$.
-
-S využitím fuzzy ekvivalence $\varepsilon$ tka můžeme předchozí tři definice \uv{fuzzyfikovat}:
-
-\begin{definition}[\uv{Fuzzy} obdélník]
- Mějme čtyřúhelník $g = A B C D$. Pak tento čtyřúhelník je obdélníkem ve stupni $\gamma_r(g)$, kde
- $$
-  \gamma_r(g) = \varepsilon(\alpha_A, \alpha_B) 
-  \wedge \varepsilon(\alpha_B, \alpha_C)
-  \wedge \varepsilon(\alpha_C, \alpha_D)
-  \wedge \varepsilon(\alpha_D, \alpha_A)
- $$
-\end{definition}
-
-\begin{definition}[\uv{Fuzzy} čtverec]
- Mějme geometrický útvar $g = A B C D$, který je obdélníkem ve stupni $\gamma_r(g)$. Pak tento obdélník je čtvercem ve stupni $\gamma_s(g)$, kde
- $$
- \gamma_s(g) = \gamma_r(g)
-  \wedge \varepsilon(|A B|, |B C|) 
-  \wedge \varepsilon(|B C|, |C D|)
-  \wedge \varepsilon(|C D|, |D A|)
-  \wedge \varepsilon(|D A|, |A B|)
- $$
-\end{definition}
-
-\begin{definition}[\uv{Fuzzy} rovnoramenný trojúhelník]
-  Mějme trojúhelník $g = A B C$. Pak tento trojůhelník je rovnoramenný ve stupni $\gamma_i(g)$, kde
-  $$
-    \gamma_i(g) = \varepsilon(\alpha_A, \alpha_B)
-  $$
-\end{definition}
-
-Máme tedy fuzzifikovány vlastnosti primitivních geometrických útvarů. Nyní je třeba navrhnout fuzzyfikace jejich vzájemných vztahů. Pro vztah \uv{být nad} máme například:
-
-\begin{definition}[Vztah \uv{být nad}\footnote{Zde si dovolujeme značné zjednodušení. Vztah \uv{být nad} by měl být popsán například s využitím porovnávání y-ových souřadnic bodů. }]
- Mějme obdélník $r = A B C D$ a trojúhelník $q_t = E F G$. Pak \uv{trojúhleník $r$ je nad obdélníkem $q_t$ (a horní hrana $q_r$ splývá se základnou $t$)} právě tehdy, když:
- $$
-  top(r) = base(t)
- $$
- kde $top(r) \in \{ AB, BC, CD, DA \}$ je \uv{horní strana} obdélníku $r$ a $base(t) \in \{ EF, FG, GA \}$ je základna trojúhelníku $t$.
- 
- Mějme geometrický útvar $r' = A B C D$, který je obdélníkem ve stupni $\gamma_r(r')$ a trojúhelník $q'_t = E F G$. Pak \uv{trojúhleník $r'$ je nad obdélníkem $q'_t$ (a horní hrana $q'_r$ splývá se základnou $t'$)} ve stupni $\gamma_T(r', t')$, kde
- $$
-  \gamma_T(r', t') = \gamma_r(r') \wedge \varepsilon(top(r'), base(t'))
- $$
- a kde $\varepsilon(XY, ZW) = \varepsilon(X, Z) \wedge \varepsilon(Y, W)$ je fuzzy ekvivalence úseček a $\varepsilon(X, Y) = \bigwedge_{i} \varepsilon(X_i, Y_i)$ je fuzzy ekvivalence vrcholů.
-\end{definition}
-
-Máme tedy formálně popsány a fuzzifikovány vlastnosti primitivních gemetrických tvarů a (alespoň jednu) vlastnost popisující složený geometrický tvar. Položme $T = \{ r, s, t, i \}$ jako terminály symbolizující obdélník, čtverec, (obecný) trojúhelník a rovnoramenný trojúhelník. Dále stanovme $N = \{ T \}$. Pak pseudoterm $p(t_H) = T(i, s)$ nad $(N, T)$ symbolizuje dům popsaný výše.
-
-Označme $A_H = (Q, N, T, \mu, F)$ jako fuzzy tree automat rozpoznávající strom $t_H$. Označme $A'_H = (Q, N, T, \mu', F)$, kde $\mu'$ vznikla z $\mu$ nahrazením všech $1$ (pro všechna $X \in (N \cup T)$) výrazem $\gamma_X$.
-
-\begin{example}
- Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A'$ bude nějak vypadat. \TODO{domyslet to nějak!}.
-\end{example}
-
-Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze se svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
-
-I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
-
-\TODO{To samé dělá i v \cite{Lee-AppFuzLanPatRec}, akorát to dělá přes jazyky a gramatiky, ne přes automaty. Ale takových případů jsem měl víc, zmínit je v sekci problémy v metodice!}
+% Máme tedy fuzzifikovány vlastnosti primitivních geometrických útvarů. Nyní je třeba navrhnout fuzzyfikace jejich vzájemných vztahů. Pro vztah \uv{být nad} máme například:
+% 
+% \begin{definition}[Vztah \uv{být nad}\footnote{Zde si dovolujeme značné zjednodušení. Vztah \uv{být nad} by měl být popsán například s využitím porovnávání y-ových souřadnic bodů. }]
+%  Mějme obdélník $r = A B C D$ a trojúhelník $q_t = E F G$. Pak \uv{trojúhleník $r$ je nad obdélníkem $q_t$ (a horní hrana $q_r$ splývá se základnou $t$)} právě tehdy, když:
+%  $$
+%   top(r) = base(t)
+%  $$
+%  kde $top(r) \in \{ AB, BC, CD, DA \}$ je \uv{horní strana} obdélníku $r$ a $base(t) \in \{ EF, FG, GA \}$ je základna trojúhelníku $t$.
+%  
+%  Mějme geometrický útvar $r' = A B C D$, který je obdélníkem ve stupni $\gamma_r(r')$ a trojúhelník $q'_t = E F G$. Pak \uv{trojúhleník $r'$ je nad obdélníkem $q'_t$ (a horní hrana $q'_r$ splývá se základnou $t'$)} ve stupni $\gamma_T(r', t')$, kde
+%  $$
+%   \gamma_T(r', t') = \gamma_r(r') \wedge \varepsilon(top(r'), base(t'))
+%  $$
+%  a kde $\varepsilon(XY, ZW) = \varepsilon(X, Z) \wedge \varepsilon(Y, W)$ je fuzzy ekvivalence úseček a $\varepsilon(X, Y) = \bigwedge_{i} \varepsilon(X_i, Y_i)$ je fuzzy ekvivalence vrcholů.
+% \end{definition}
+% 
+% Máme tedy formálně popsány a fuzzifikovány vlastnosti primitivních gemetrických tvarů a (alespoň jednu) vlastnost popisující složený geometrický tvar. Položme $T = \{ r, s, t, i \}$ jako terminály symbolizující obdélník, čtverec, (obecný) trojúhelník a rovnoramenný trojúhelník. Dále stanovme $N = \{ T \}$. Pak pseudoterm $p(t_H) = T(i, s)$ nad $(N, T)$ symbolizuje dům popsaný výše.
+% 
+% Označme $A_H = (Q, N, T, \mu, F)$ jako fuzzy tree automat rozpoznávající strom $t_H$. Označme $A'_H = (Q, N, T, \mu', F)$, kde $\mu'$ vznikla z $\mu$ nahrazením všech $1$ (pro všechna $X \in (N \cup T)$) výrazem $\gamma_X$.
+% 
+% \begin{example}
+%  Uvažujme složený geometrický útvar $C$ z obrázku \ref{img:Geoms}. Pak automat $A'$ bude nějak vypadat. \TODO{domyslet to nějak!}.
+% \end{example}
+% 
+% Takto vytvořený automat dokáže rozpoznávat geometrické tvary \uv{podobné} (ve smyslu relací $\gamma$) vzorovému. Nevýhodou tohoto řešení je, že je pevně svázán s aritou (a pořadím potomků) uzlú vzorového stromu. Navíc, stupeň pravdivosti popisující vztah v uzlu $U$ stromu je schopen kalkulovat pouze se svými potomky (a nikoliv například svými sousedy či předky). Obě tyto výhody se však smývají, pokud se bude pozorovaný strom od vzoru lišit jen málo.
+% 
+% I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní rozpoznávání složených geometrických tvarů.
+% 
+% \TODO{To samé dělá i v \cite{Lee-AppFuzLanPatRec}, akorát to dělá přes jazyky a gramatiky, ne přes automaty. Ale takových případů jsem měl víc, zmínit je v sekci problémy v metodice!}
 
 
 
@@ -2597,44 +2692,38 @@ I přes tyto nevýhody však lze fuzzy tree automaty použít na podobnostní ro
 \subsection{Detekce požárů}
 V \cite{HamKoNam-FirFlaDetBasFuzFinAut} a \cite{KoHamNam-ModForFuFiAuDetIrrFirFla} používají fuzzy automaty pro rozpoznávání vzorů ve videosekvenci, konkrétně pro detekci požárů.
 
-V první fázi se snímek rozdělí na několik regionů a na základě barvy (teplé světlé barvy) se určí, zda-li jednotlivé regiony mohou být plamenem (tzv. kandidáti). Pro každého kandidáta je pak sestaven fuzzy automat o čtyřech stavech $q_{VL}, q_{L}, q_{H}, q_{VH}$. Pokud se automat regionu nachází ve stavu $q_VL$, pak platí, že \uv{region je velmi málo pravděpodobné, že je tvořen plamenem}. Obdobně pro $q_{L}$ (\uv{málo pravděpodobné}), $q_{H}$ (\uv{hodně pravděpodobné}) a $q_{VH}$ (\uv{velmi pravděpodobné}). Abecedou událostí jsou pak kombinace dalších atributů (svit, pohyb v určitém směru, vlnění) spočtených z předchozích snímků. Přechodové pravidlo pak může být např. \uv{pokud jsi ve stavu $q_{H}$ a došlo k velkému posunu směrem nahoru a malému snížení svitu, pak přejdi do stavu $q_{VH}$}. Přechodovou funkci pak navrhli statistickým pozorováním známých videosekvencí s požáry\footnote{Dá se říci, že automat vznikl pomocí učení s učitelem}.
+V první fázi se snímek rozdělí na několik regionů a na základě barvy (teplé světlé barvy) se určí, zda-li jednotlivé regiony mohou být plamenem (tzv. kandidáti). Pro každého kandidáta je pak sestaven fuzzy automat o čtyřech stavech $q_{VL}, q_{L}, q_{H}, q_{VH}$. Pokud se automat regionu nachází ve stavu $q_VL$, znamená to, že \uv{region je velmi málo pravděpodobně tvořen plamenem}. Obdobně pro $q_{L}$ (\uv{málo pravděpodobně}), $q_{H}$ (\uv{hodně pravděpodobně}) a $q_{VH}$ (\uv{velmi pravděpodobně}). Abecedou událostí jsou pak kombinace dalších atributů (svit, pohyb v určitém směru, vlnění) spočtených z předchozích snímků. Přechodové pravidlo pak může být např. \uv{pokud je region ve stavu $q_{H}$ a došlo k velkému posunu směrem nahoru a malému snížení svitu, pak přejdi do stavu $q_{VH}$}. Přesně byla přechodová funkce navržena statistickým pozorováním známých videosekvencí s požáry.
 
-Autoři tuto techniku experimentálně ověřili a ukázalo se, že požár detekuje správně ve vyšším množství případů, než některé vybrané další metody. Stejně tak, oproti jiným metodám, technika mnohem méně rozpoznávala požár tam, kde nebyl.
 \TODO{vložit obrázek s výsledkem?}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Biologie a medicína}
 
-Biologie a medicína jsou odvětví, které zpravidla disponují velikým množstvím dat, které je třeba zpracovat. Typicky, v datech získaných nějakým sledováním či měřením najít určité vzory. Fuzzy automaty mohou být v této oblasti nápomocny.
+Biologie a medicína jsou odvětví, které zpravidla disponují velikým množstvím dat, které je třeba zpracovat. Typicky, v datech získaných nějakým sledováním či měřením najít určité vzory. Fuzzy popř. pravděpodobnostní automaty mohou být v této oblasti nápomocny.
 
-Vzhledem k tomu, že většina těchto aplikací vyžaduje zásah experta na danou problematiku, budou tyto aplikace rozbrány pouze teoreticky.
-
+Vzhledem k tomu, že většina biologických a medicínských uplatnění vyžaduje znalost dané problematiky, budou tyto uplatnění rozebrána jen zevrubně.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání řetězců DNA}
-Řetězec DNA, neboli deoxyribonukleová kyselina je organická makromoleukula. Je tvořena sekvencí tzv. nukleotidů. Každý nukleotid obsahuje jednu ze čtyř nukleových bází, adeninu, guaninu, cytosinu a nebo thyminu. Nukleové báze se často značí po řadě A, G, C a T a celá DNA tak může být zapsána jako posloupnost těchto symbolů.
+Řetězec DNA (deoxyribonukleová kyselina) je organická makromoleukula. Je tvořena sekvencí tzv. nukleotidů. Každý nukleotid obsahuje jednu ze čtyř nukleových bází, adeninu, guaninu, cytosinu a nebo thyminu. Nukleové báze se často značí po řadě $A$, $G$, $C$ a $T$ a celá DNA tak může být zapsána jako řetězec těchto symbolů.
 
-Řětězce DNA kódují základní informace o živých organizmech a je proto snaha pochopit její strukturu. 
+Řětězce DNA často kódují základní informace o živých organizmech a je proto snaha pochopit její strukturu. 
 
-Použití fuzzy a pravděpodobnostních automatů s rozpoznáváním vzorců DNA je k dispozici v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{Ron-AutLeaApp}, \cite{ZlaSteSch-FiStaConTraFemPro} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}.
-
+Popis využití fuzzy a pravděpodobnostních automatů na rozpoznáváním rětězců DNA je uevend v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{Ron-AutLeaApp}, \cite{ZlaSteSch-FiStaConTraFemPro} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Biologické simulace}
 V \cite{CheMyn-ModAlgBloDutCosWat+} je prezentován model založený na buněčných fuzzy automatech modelujícící růst mořských řas. Funguje na velmi podobném principu jako problém městského růstu (viz kapitola \TODO{doplnit dokaz}).
 
-V \cite{MilAtl-ProAuModEpiCelNet} používají pravděpodobnostní automaty na epigenetiku. Princip je podobný, jak u buněčných automatů, jen množina \uv{buněk} není pevně daná. Jinými slovy neuvažuje se mřížka živých a neživých buněk, ale množina jen těch živých, která se postupně rozrůstá (popř. odumírá). Každá buňka se nachází v některém stavu z množiny stavů (jako je např. \uv{buňka se zrodila}, \uv{buňka je přípravena k dělení}, \uv{buňka je rodičovskou buňkou jiné buňky}). Přechodová pravidla poté v periodických časových kvantech provádějí přechody mezi těmito stavy. Například je-li buňka \uv{připravena k dělení}, pak v dalším kroku provede dělení, tj. vytvoří novou buňku ve stavu \uv{buňka se zrodila} a buňka samotná přechází do stavu \uv{buňka je rodičovskou buňkou jiné buňky}. Díky využití pravděpdobnostních automatů se takovéto modely mohou značně více přiblížit reálným buněčným sítím.
+V \cite{MilAtl-ProAuModEpiCelNet} používají pravděpodobnostní automaty na simulaci živého ogranizmu. Princip je podobný, jak u buněčných automatů, jen model není založen na pevné mřížce, ale buňky vznikají a mizí. Každá buňka se nachází v některém stavu z množiny stavů (jako je např. \uv{buňka se zrodila}, \uv{buňka je přípravena k dělení}, \uv{buňka je rodičovskou buňkou jiné buňky}). Přechodová pravidla mohou vypadat například následovně: je-li buňka \uv{připravena k dělení}, pak v dalším kroku provede dělení, tj. vytvoří novou buňku ve stavu \uv{buňka se zrodila} a buňka samotná přechází do stavu \uv{buňka je rodičovskou buňkou jiné buňky}. Díky využití pravděpdobnostních automatů se takovéto modely mohou značně více přiblížit reálným buněčným sítím.
 
 
-V \cite{BocChe-CriBePrAuNetModSprInfDis+} používají systém podobný pravděpodobnostnímu buněčnému automatu pro modelování šíření infekčních nemocí. Každá buňka je buďto prázdná nebo se v ní nachází osoba. Osoba může být ve stavu \uv{nenakažena} nebo \uv{nakažena}. Nachází-li se v okolí \uv{nenakažené} osoby $q$ alespoň jedna nakažená osoba, pak s pravděpodobností $p$ přejde při dalším časovém kroku do stavu \uv{nakažena}, jinak zůstává ve stavu \uv{nenakažena}. 
+V \cite{BocChe-CriBePrAuNetModSprInfDis+} používají systém podobný pravděpodobnostnímu buněčnému automatu pro modelování šíření infekčních nemocí. Každá buňka je buďto prázdná nebo se v ní nachází osoba. Osoba může být ve stavu \uv{nenakažena} nebo \uv{nakažena}. Nachází-li se v okolí \uv{nenakažené} osoby alespoň jedna nakažená osoba, pak s určitou pravděpodobností přejde při dalším časovém kroku do stavu \uv{nakažena}, jinak zůstává ve stavu \uv{nenakažena}. 
 
-Autoři navíc do modelu zanášejí pohyb jedinců, tj. že s určitou pravděpodobností se může osoba na buňce $c$ přesunout na některou sousední buňku $c'$ je-li neobsazena. Změnou parametrů systému (jednotlivých pravděpodobností) tak lze nasimulovat vymícení choroby nebo naopak vznik epidemie.
-
+Autoři navíc do modelu zanášejí pohyb jedinců, tj. že s určitou pravděpodobností se může osoba přesunout na některou sousední buňku je-li neobsazena. Změnou parametrů systému (jednotlivých pravděpodobností) tak lze nasimulovat vymícení choroby nebo naopak vznik epidemie.
 
 
 % \subsection{Rozpoznávání vzorů v lékařských snímcích}
@@ -2647,9 +2736,9 @@ Autoři navíc do modelu zanášejí pohyb jedinců, tj. že s určitou pravděp
 V \cite{Jia+-ExHeaSimMetBasIntHumTheMod}, \cite{GupRah-CliMonUsFuzSys}, \cite{CamMerNun-UsFuzAutDiagPrHeaPro} a \cite{SteAdl-CliMonFuzAut} je popisován způsob, jak pomocí fuzzy automatů sledovat zdravotní stav pacienta. 
 
 
-Technika pracuje s automatem s fuzzy If-Then pravidly. Stavy automatu v tomto případě reprezentují choroby (popř. stavy jedné choroby), přechodová funkce pak přechody mezi nimi. Přechodová pravidla, navržena expertem, pak popisují přechody při různých událostech či akcích (např. medikace). 
+Technika pracuje s událostmi řízeným automatem. Stavy automatu v tomto případě reprezentují choroby (popř. stádia jedné choroby), přechodová funkce pak přechody mezi nimi. Přechodová pravidla pak popisují přechody při různých událostech či akcích (např. medikace). 
 
-Důležitým předpokladem, který automat musí splňovat, je tzv. vlastnost pozdržení vrcholu\TODO{nadefinovat někde v úvodech?}. Tato vlastnost říká, že výpočet automatu pro libovolný vstup nikdy nezkončí v prázdném fuzzy stavu, tj. výpočet se vždy bude muset nacházet v nenulovém stupni v alespoň některém stavu.
+% Důležitým předpokladem, který automat musí splňovat, je tzv. vlastnost pozdržení vrcholu\TODO{nadefinovat někde v úvodech?}. Tato vlastnost říká, že výpočet automatu pro libovolný vstup nikdy nezkončí v prázdném fuzzy stavu, tj. výpočet se vždy bude muset nacházet v nenulovém stupni v alespoň některém stavu.
 
 \TODO{Příklad?}
 
@@ -2659,8 +2748,7 @@ Tato technika tak může sloužit ke porovnávání simulovaného a skutečného
 
 V \cite{GupRah-CliMonUsFuzSys} tuto techniku používají pro sledování systolického krevního tlaku a množství krevního cukru. V \cite{Jia+-ExHeaSimMetBasIntHumTheMod} používají podobnou techniku pro sledování těla při sportu (konkrétně tělní teplotu, dehydrataci a srdeční tep).
 
-V \cite{CamMerNun-UsFuzAutDiagPrHeaPro} se fuzzy automaty používají pro diagnózu srdečních chorob. Po spuštění automat na základě pohlaví a věkové skupiny přejde do odpovídajícího podautomatu. Ten si poté sám žádá měření různých parametrů (aktuální tepová frekvence, aktuální variabilita srdeční frekvence) v závislosti na tom, kdy je který pro proces diagnózy aktuálně významný. V případě stanovení rizika je riziko ohlášeno a automat se vrací do počátečního stavu a proces se spouští znovu (aby diagnózu ověřil). 
-
+V \cite{CamMerNun-UsFuzAutDiagPrHeaPro} se fuzzy automaty používají pro diagnózu srdečních chorob. Po spuštění automat na základě pohlaví a věkové skupiny přejde do odpovídajícího podautomatu. Ten si poté sám žádá měření různých parametrů (aktuální tepová frekvence, aktuální variabilita srdeční frekvence) v závislosti na tom, kdy je který pro proces diagnózy aktuálně potřebný. V případě stanovení rizika je riziko ohlášeno a automat se vrací do počátečního stavu a proces se spouští znovu (aby diagnózu ověřil). 
 
 % \subsection{Diagnóza a predikce chorob srdce}
 % V \cite{CamMerNun-UsFuzAutDiagPrHeaPro} je prezentována technika pro diagnózu a predikci chorob či problémů srdce. Využívají k tomu fuzzy automat s fuzzy If-Then pravidly a výstupem. 
@@ -2695,17 +2783,19 @@ Proces rozpoznávání probíhá následujícím způsobem:
  \item Strom je následně zakódován do řetězce a rozpoznán fuzzy automatem.
 \end{itemize}
 
-Stromy jsou do řetězců kódovány jako posloupnost čísel, kde každé číslo odpovídá počtu potomků jednotlivých uzlů stromu. Automat byl sestaven učením z veřejné databáze snímků. Autoři poukazují, že tato technika je na rozpoznávání účinější, než vybranné z dalších tehchnik.
+Stromy jsou do řetězců kódovány jako posloupnost čísel, kde každé číslo odpovídá počtu potomků jednotlivých uzlů stromu. Automat, který tyto řetězce rozpoznává, byl sestaven učením z veřejné databáze snímků. %Autoři poukazují, že tato technika je na rozpoznávání účinější, než vybranné z dalších tehchnik.
 
 \TODO{ukázka?} 
 
-V \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod} popisují, jak pomocí buněčných automatů rozpoznávat folikuly\footnote{Folikula je dutinka ve vaječníku, v níž probíhá zrání vajíčka. \TODO{ocitovat: http://lekarske.slovniky.cz/pojem/folikul}} v ultrazvukových snímcích vaječníků. Poukazují na to, že folikula je na snímku tvořena jednolitou svrnou stejné barvy, obklopena ostatní tkání (různorodě zabarvená plocha). Ukázka několika snímků je k dispozici na obrázku \ref{img:Follicles:Screens}. Obecně tak lze hovořit o \uv{popředí} (folikula) vystupující z \uv{pozadí}.
+V \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod} popisují, jak pomocí buněčných fuzzy automatů rozpoznávat folikuly\footnote{Folikula je dutinka ve vaječníku, v níž probíhá zrání vajíčka. \TODO{ocitovat: http://lekarske.slovniky.cz/pojem/folikul}} v ultrazvukových snímcích vaječníků. Poukazují na to, že folikula je na snímku tvořena jednolitou svrnou stejné barvy, obklopena ostatní tkání (různorodě zabarvená plocha).
 
-K nalezení popředí používají dvojici buněčných fuzzy automatů. První automat určuje hodnotu \uv{buňka je kandidát na buňku folikuly}. Druhý automat pak buňky, které nebyly označeny jako kandidáti, ostraňuje (nastavuje na $0$).
+Automat v první fázi vyhledává folikuly. Ty posléze automat zvýrazňuje. Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných folikul pomocí této techniky.
 
-Přechodová funkce první automatu je poměrně složitá, pracuje s 5 stupni šedi a třemi stupni kandidatury, takže zde nebude rozebírána. Druhý automat pak funguje elementárně. Buňky, jež nejsou označeny jako dostatečné kandidáty na folikuly, jsou odstraněny, ostatní ponechány.
+
+% K nalezení popředí používají dvojici buněčných fuzzy automatů. První automat určuje hodnotu \uv{buňka je kandidát na buňku folikuly}. Druhý automat pak buňky, které nebyly označeny jako kandidáti, ostraňuje (nastavuje na $0$).
+
+% Přechodová funkce první automatu je poměrně složitá, pracuje s 5 stupni šedi a třemi stupni kandidatury, takže zde nebude rozebírána. Druhý automat pak funguje elementárně. Buňky, jež nejsou označeny jako dostatečné kandidáty na folikuly, jsou odstraněny, ostatní ponechány.
  
-Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných folikul pomocí této techniky.
 
 \begin{figure}
   \begin{subfigure}[t]{\textwidth} \centering
@@ -2724,6 +2814,8 @@ Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných foliku
 
 V \cite{PatPal-FuzGraSynRecSkeMatXra} popisují způsob, jak pomocí fuzzy automatů sledovat vývoj kostí ruky dítěte. Z Röntgenového snímku ruky pomocí detekce hran obrdrží obrysy kostí. Ty pak pomocí techniky podobné rozpoznávání složených geometrických tvarů (kapitola \TODO{doplnit}) používají k určování stádia vývinu patřičné kosti.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Další aplikace}
 V \cite{PedGac-LeaFuzzAut}, popř. i \cite{RigTza-FuzAutFauDia} analyzují signál z elektrokardiogramu (EKG). Využivají při tom techniky uvedené v kapitole \TODO{odkaz na kapitolu}.
 
@@ -2747,21 +2839,21 @@ používají fuzzy automaty pro modelování fungovaní protézy dolní končeti
 \section{Implementace vybraných problémů}
 V rámci této práce byly vybrané aplikace naimplementovány. Tato kapitola popisuje základní informace o způsobu, jak byly tyto aplikace naimplementovány.
 
-Studium této kapitoly vyžaduje alespoň základní znalost objektového programování, nejlépe pak znalost programovacího jazyka Java.
+Studium této kapitoly předpokládá alespoň základní znalost objektového programování, nejlépe pak znalost programovacího jazyka Java.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Základní informace}
 Aplikace byly implementovány v programovacím jazyce Java na platformě Java Standart Edition. Projekt byl strukturován tak, aby bylo možné jej automaticky sestavit pomocí nástroje Apache Maven. Pro jeho sestavení a spuštění nejsou potřebné žádné dodatečné nástroje či knihovny.
 
-Samotný projekt je rozdělen na moduly (podprojekty) odpovídající použitému typu automatu, tj. \verb|fuzzy-automata| (nedeterministický fuzzy automat), \verb|event-driven-fuzzy-automata| (událostmi řízený fuzzy automat), \verb|fuzzy-tree-automata| (fuzzy tree automat) a \verb|cellular-fuzzy-automata|.
+Samotný projekt je rozdělen na moduly (podprojekty) odpovídající použitému typu automatu, tj. \verb|fuzzy-automata| (nedeterministický fuzzy automat), \verb|event-driven-fuzzy-automata| (událostmi řízený fuzzy automat), \verb|fuzzy-tree-automata| (fuzzy tree automat) a \verb|cellular-fuzzy-automata| (buněčný fuzzy automat).
 
-Každý z těchto modulů obsahuje vždy základní, abstraktní, třídu implementující definici patřičného automatu (tj. datovou strukturu). Každý modul poté obsahuje třídu, která je jejím potomkem a rozšiřuje ji o implementaci vybraných algoritmů (např. výpočet, determinizace a podob.).
+Každý z těchto modulů obsahuje vždy základní, abstraktní, třídu implementující definici patřičného automatu (tj. datovou strukturu). Dále pak obsahuje třídu, která je jejím potomkem a rozšiřuje ji o implementaci vybraných algoritmů (např. výpočet, determinizace a podob.).
 
-Každý modul tak může být používán jako softwarová knihovna. Pro snažší použití každý modul obsahuje obvykle několik spustitelných tříd (tj. tříd s metodou \verb|main|), které zaobalují vybranou funkcionalitu modulu do spustitelného programu. Každý modul spravidla obsahuje také adresář \verb|data/test| obsahující testovací data.
+Každý modul může být používán jako softwarová knihovna. Pro snažší použití každý modul obsahuje obvykle několik spustitelných tříd (tj. tříd s metodou \verb|main|), které zaobalují vybranou funkcionalitu modulu do spustitelného programu. Každý modul zpravidla obsahuje také adresář \verb|data/test| obsahující testovací data.
 
 Implementované aplikace jsou umístěny v modulech podle typu automatu, se kterým pracují. Každá aplikace je implementována (obvykle) samostatnou třídou a obsahuje patřičné spustitelné třídy a testovací data.
 
-Projekt dále obsahuje modul \verb|core|, který implementuje základní funkcionalitu společnou pro všechny moduly. Tedy implementaci abeced, symbolů, řetězců, stupňů pravdivosti, fuzzy množin a relací a podob. Implementuje také tzv. \textsc{TIMFile}, což je speciální formát souboru navržený pro vstup a výstup dat z aplikace.
+Projekt dále obsahuje modul \verb|core|, který implementuje základní funkcionalitu společnou pro všechny moduly. Tedy implementaci abeced, symbolů, řetězců, fuzzy množin a relací a podob. Implementuje také tzv. \textsc{TIMFile}, což je speciální formát souboru navržený pro vstup a výstup dat z aplikace.
 
 Veškeré podrobnější informace jsou k nalezení v javadoc dokumentaci v samotném kódu. Nyní budou ve stručnosti popsány jednotlivé aplikace, které byly implementovány.
 
@@ -2780,7 +2872,7 @@ Instance této třídy bere na svém vstupu textový řetězec tvořený jedním
  \item výstupem je slovo $x$, pokud žádné slovo ze slovníku mu není podobné
 \end{enumerate}
 
-Podobnost řetězců je určována pomocí deformovaných automatů rozpoznávající slova ze slovníku. Ukázka korekce překlepů (při výchozím nastavení) je uvedena v tabulce \ref{tab:TyposOut}. Jak je v tabulce vidět, program má problém s krátkými slovy, kde se často ztrácí, avšak u dlouhých slov dokáže obnovit i velmi \uv{poškozené slovo}.
+Podobnost řetězců je počítána pomocí deformovaných automatů rozpoznávající slova ze slovníku. Ukázka korekce překlepů (při výchozím nastavení) je uvedena v tabulce \ref{tab:TyposOut}. Jak je v tabulce vidět, program má problém s krátkými slovy, avšak u dlouhých slov dokáže obnovit i velmi \uv{poškozené} slovo.
 
 \begin{table}
  \centering
@@ -2800,7 +2892,7 @@ Podobnost řetězců je určována pomocí deformovaných automatů rozpoznávaj
 \subsection{Rozpoznávání ručně psaného textu}
 Rozpoznávání ručně psaného textu bylo naimplementováno dle kapitoly \ref{subs:RecHandWrit}. Tato aplikace je naimplementována jako interaktivní grafická aplikace spouštěná třídou \verb|HandwrittenTextGuiApp|. 
 
-V prostřední části okna aplikace se nachází plátno, kde je možno pomocí tahu myší psát. Na plátně se červeně zvýraznůjí body, ve kterých se lámou segmenty. Ve stavovém řádku se zobrazuje řetězec, který napsanému tvaru odpovídá. V levé části okna se nachází tabulka s automaty a stupni pravdivosti, jak moc je jimi napsaný tvar přijímán.Nástrojová lišta pak obsahuje prvky pro konfiguraci a ovládání programu. Parametr \textit{Shake reduction} udává minimální délku segmentu, zaškrtávací tlačítko \textit{Immediate} zapíná automatické spuštění výpočtu při uvolnění tlačítka myši.
+V prostřední části okna aplikace se nachází plátno, kde je možno pomocí tahu myší psát. Na plátně se červeně zvýraznůjí body, ve kterých se lámou segmenty. Ve stavovém řádku se zobrazuje řetězec, který napsanému tvaru odpovídá. V levé části okna se nachází tabulka s automaty a stupni pravdivosti, jak moc je jimi napsaný tvar přijímán. Nástrojová lišta pak obsahuje prvky pro konfiguraci a ovládání programu. Parametr \textit{Shake reduction} udává minimální délku segmentu, zaškrtávací tlačítko \textit{Immediate} zapíná automatické spuštění výpočtu při uvolnění tlačítka myši.
 
 Seznam automatů se zadává při spuštění programu. Pro vygenerování automatu rozpoznávající vzor a jeho následnou deformaci lze použít spustitelné třídy \verb|AutomatonOfWordApp| a \verb|DeformAutomatonApp|. Pro testování bylo v adresáři s testovacími daty vytvořeno $10$ vzorů odpovídající číslicím $0$ až $9$ (každá ve více variantách). 
 
@@ -2811,7 +2903,6 @@ Ukázka okna aplikace je na obrázku \ref{img:HandWritScreen}.
  \includegraphics[width=0.8\textwidth]{handwritrec-screen}
  \caption{Ukázka aplikace pro rozpoznávání ručně psaného textu} \label{img:HandWritScreen}
 \end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detekce úplných $m$-árních stromů}
@@ -2825,16 +2916,17 @@ Pomocí třídy \verb|PowerConsumptionsToFEDA| jsou tato data transformována na
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Zpracování obrazu}
-Naimplementovány byly také vybrané techniky pro zpracování obrazu. Realizovány byly pomocí buněčných fuzzy automatů.
+Naimplementovány byly také vybrané techniky pro zpracování obrazu. Realizovány byly pomocí buněčných fuzzy automatů. Pro import a export (převod mezi bitmapou a souborem konfigurace buněčného automatu) je slouží spustitelná třída \verb|ImageConfigConverter|.
 
 Byly implementovány některé grafické filtry uvedené v kapitole \ref{subs:Convol}. Třída \verb|ConvolutionalCFA| implementuje automat realizující obecnou konvoluci. Třída \verb|SimpleBlurFilterAutomaton| pak pomocí konvoluce implementuje jednoduché rozostření. Třída \verb|MyBEFilterAutomaton| implementuje BE filtr. 
 
-Třída \verb|NoiseReductionAutomaton| implementuje metodu pro odstranění šumu z obrazu popsanou v kapitole \ref{subs:NoisRem}. Pro přidání šumu je možné použít spustitelnou třídu \verb|ConfigNoiserTool|. Pro import a export (převod mezi bitmapou a souborem konfigurace buněčného automatu) je slouží spustitelná třída \verb|ImageConfigConverter|.
+Třída \verb|NoiseReductionAutomaton| implementuje metodu pro odstranění šumu z obrazu popsanou v kapitole \ref{subs:NoisRem}. Pro přidání šumu do obrázku je možné použít spustitelnou třídu \verb|ConfigNoiserTool|. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Metoda lisování dat}
 
 Bude doplněno, až budu mít nějaká data. \TODO{doplnit}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
