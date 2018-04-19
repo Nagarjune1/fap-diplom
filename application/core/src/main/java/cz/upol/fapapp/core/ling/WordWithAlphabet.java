@@ -9,6 +9,7 @@ import java.util.List;
  *
  */
 public class WordWithAlphabet extends Word {
+	
 	private final Alphabet alphabet;
 
 	public WordWithAlphabet(Alphabet alphabet, Word word) {

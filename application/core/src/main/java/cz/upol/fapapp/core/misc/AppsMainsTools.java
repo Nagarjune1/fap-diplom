@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.tnorm.BaseTNorm;
 import cz.upol.fapapp.core.fuzzy.tnorm.GodelTNorm;
 import cz.upol.fapapp.core.fuzzy.tnorm.LukasiewiczTNorm;
@@ -220,8 +221,11 @@ public class AppsMainsTools {
 	 * 
 	 * @param file
 	 * @param parser
+	 * @deprecated
+	 * @see #runParser(String, FATIMParser)
 	 * @return
 	 */
+	@Deprecated
 	public static <T> T runParser(File file, TIMObjectParser<T> parser) {
 		try {
 			return parser.parse(file);
@@ -230,6 +234,14 @@ public class AppsMainsTools {
 			System.err.println(4);
 			return null;
 		}
+	}
+
+	public static <T> T runParser(String file, TIMObjectParser<T> parser) {
+		return runParser(new File(file), parser);
+	}
+
+	public static <T> boolean runComposer(String file, T object, TIMObjectComposer<T> composer) {
+		return runComposer(new File(file), object, composer);
 	}
 
 	/*************************************************************************/
@@ -288,7 +300,7 @@ public class AppsMainsTools {
 	 * @param dflt
 	 * @return
 	 */
-	public static double toDouble(List<String> args, int index, double dflt) throws IllegalArgumentException {
+	public static Double toDouble(List<String> args, int index, Double dflt) throws IllegalArgumentException {
 		String value = null;
 		try {
 			value = args.get(index);
@@ -299,6 +311,15 @@ public class AppsMainsTools {
 
 		} catch (NumberFormatException e) {
 			throw new IllegalArgumentException("Not double " + value + " at index " + index, e);
+		}
+	}
+
+	public static Degree toDegree(List<String> args, int index) {
+		Double val = toDouble(args, index, null);
+		if (val != null) {
+			return new Degree(val);
+		} else {
+			return null;
 		}
 	}
 

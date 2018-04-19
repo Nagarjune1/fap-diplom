@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.automata.FuzzyState;
 import cz.upol.fapapp.core.automata.State;
@@ -19,6 +20,9 @@ import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
+import cz.upol.fapapp.fa.min.AutomataPartitioner;
+import cz.upol.fapapp.fa.min.AutomatonPartsWrapper;
+import cz.upol.fapapp.fa.min.DefaultPartitioner;
 import cz.upol.fapapp.fa.modifs.StatesCreator;
 
 /**
@@ -153,8 +157,91 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 
 	@Override
 	public BaseFuzzyAutomaton minimise() {
-		// TODO minimalisation
-		return null;
+		return minimise(Degree.ZERO);
+	}
+
+	@Override
+	public BaseFuzzyAutomaton minimise(Degree delta) {
+		Logger.get().moreinfo("Minimising automaton with delta " + delta);
+		FuzzyAutomaton prepared = prepare();
+
+		Set<Set<State>> partitions = computePartitionsClosure(prepared, delta);
+
+		FuzzyAutomaton minimised = computeAutomaton(partitions);
+
+		return minimised;
+	}
+
+	private FuzzyAutomaton prepare() {
+		// TODO remove redundant states
+		return this;
+	}
+
+	private Set<Set<State>> computePartitionsClosure(FuzzyAutomaton prepared, Degree delta) {
+		AutomataPartitioner partitioner = new DefaultPartitioner(prepared, delta);
+		return partitioner.compute();
+	}
+
+	private FuzzyAutomaton computeAutomaton(Set<Set<State>> partitions) {
+		Logger.get().moreinfo("Creating minimalised automaton by " + partitions);
+		
+		AutomatonPartsWrapper wrapper = new AutomatonPartsWrapper(this);
+		Map<Set<State>, State> partsToStates = generateStates(partitions);
+
+		Map<State, Degree> initials = new HashMap<>(partitions.size());
+		Map<State, Degree> finals = new HashMap<>(partitions.size());
+
+		Map<Triple<State, Symbol, State>, Degree> transitions = new HashMap<>(
+				partitions.size() * partitions.size() * alphabet.size());
+
+		for (Set<State> partition : partsToStates.keySet()) {
+			State state = partsToStates.get(partition);
+
+			Degree degreeOfInitial = wrapper.initalIn(partition);
+			Degree degreeOfFinal = wrapper.finalIn(partition);
+
+			initials.put(state, degreeOfInitial);
+			finals.put(state, degreeOfFinal);
+		}
+
+		for (Set<State> fromPart : partsToStates.keySet()) {
+			State fromState = partsToStates.get(fromPart);
+			for (Set<State> toPart : partsToStates.keySet()) {
+				State toState = partsToStates.get(toPart);
+				for (Symbol over : alphabet) {
+					Degree degree = wrapper.transition(fromPart, over, toPart);
+					Triple<State, Symbol, State> triple = new Triple<State, Symbol, State>(fromState, over, toState);
+					transitions.put(triple, degree);
+				}
+			}
+		}
+
+		Set<State> newStates = new HashSet<>(partsToStates.values());
+		Alphabet newAlphabet = new Alphabet(alphabet);
+		FuzzyTernaryRelation<State, Symbol, State> newTransitionFunction = new FuzzyTernaryRelation<>(transitions);
+		FuzzySet<State> newInitialStates = new FuzzySet<>(initials);
+		FuzzySet<State> newFinalStates = new FuzzySet<>(finals);
+
+		return new FuzzyAutomaton(newAlphabet, newStates, newTransitionFunction, newInitialStates, newFinalStates);
+	}
+
+	private Map<Set<State>, State> generateStates(Set<Set<State>> partitions) {
+		StatesCreator creator = new StatesCreator();
+
+		Map<Set<State>, State> result = new HashMap<>(partitions.size());
+		for (Set<State> partition : partitions) {
+			String label = generateStateLabel(partition);
+			State state = creator.next(label);
+
+			result.put(partition, state);
+		}
+
+		return result;
+	}
+
+	private String generateStateLabel(Set<State> partition) {
+		return partition.stream() //
+				.map((s) -> s.getLabel()).collect(Collectors.joining("_"));
 	}
 
 	///////////////////////////////////////////////////////////////////////////

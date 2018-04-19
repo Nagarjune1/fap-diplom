@@ -2,6 +2,8 @@ package cz.upol.fapapp.core.ling;
 
 import java.util.Set;
 
+import cz.upol.fapapp.core.misc.CollectionsUtils;
+
 /**
  * Language is set of words. No more to say.
  * 
@@ -15,6 +17,12 @@ public class Language {
 		super();
 		this.words = words;
 	}
+	
+	public Language(Word ...words) {
+		super();
+		this.words = CollectionsUtils.toSet(words);
+	}
+	
 
 	public Set<Word> getWords() {
 		return words;

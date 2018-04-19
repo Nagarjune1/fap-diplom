@@ -1,0 +1,49 @@
+type:
+	fuzzy automaton
+
+alphabet:
+	a	b
+
+states:
+	qq_5_2	qq_0_0	qq_1_q_3_1	qq_2_q_4_3
+
+transition function:
+	qq_2_q_4_3	a	qq_2_q_4_3	0.0
+	qq_0_0	a	qq_5_2	0.0
+	qq_2_q_4_3	a	qq_0_0	0.0
+	qq_2_q_4_3	b	qq_1_q_3_1	0.0
+	qq_0_0	a	qq_0_0	0.0
+	qq_1_q_3_1	b	qq_1_q_3_1	0.0
+	qq_5_2	b	qq_2_q_4_3	0.0
+	qq_1_q_3_1	a	qq_2_q_4_3	0.4
+	qq_5_2	b	qq_1_q_3_1	0.0
+	qq_0_0	a	qq_2_q_4_3	0.0
+	qq_1_q_3_1	b	qq_5_2	0.0
+	qq_5_2	a	qq_0_0	0.0
+	qq_0_0	b	qq_1_q_3_1	0.0
+	qq_2_q_4_3	a	qq_5_2	0.0
+	qq_1_q_3_1	b	qq_0_0	0.0
+	qq_5_2	a	qq_5_2	0.0
+	qq_2_q_4_3	b	qq_2_q_4_3	0.0
+	qq_2_q_4_3	b	qq_0_0	0.0
+	qq_2_q_4_3	a	qq_1_q_3_1	0.0
+	qq_1_q_3_1	a	qq_5_2	0.0
+	qq_0_0	b	qq_0_0	0.0
+	qq_5_2	a	qq_1_q_3_1	0.0
+	qq_0_0	b	qq_5_2	0.7
+	qq_1_q_3_1	a	qq_1_q_3_1	0.0
+	qq_1_q_3_1	b	qq_2_q_4_3	0.0
+	qq_5_2	a	qq_2_q_4_3	0.0
+	qq_0_0	b	qq_2_q_4_3	0.0
+	qq_5_2	b	qq_0_0	0.6
+	qq_2_q_4_3	b	qq_5_2	0.0
+	qq_0_0	a	qq_1_q_3_1	0.9
+	qq_1_q_3_1	a	qq_0_0	0.0
+	qq_5_2	b	qq_5_2	0.0
+
+initial states:
+	qq_1_q_3_1/0.0	qq_5_2/0.0	qq_2_q_4_3/0.0	qq_0_0/1.0
+
+final states:
+	qq_1_q_3_1/0.0	qq_5_2/0.5	qq_2_q_4_3/1.0	qq_0_0/0.4
+

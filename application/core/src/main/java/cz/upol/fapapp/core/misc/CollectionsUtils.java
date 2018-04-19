@@ -15,6 +15,7 @@ import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet.FuzzyTuple;
 import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
 import cz.upol.fapapp.core.ling.Alphabet;
+import cz.upol.fapapp.core.ling.Language;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.BinaryRelation;
@@ -187,6 +188,12 @@ public class CollectionsUtils {
 		return new Alphabet(word.getSymbols().stream().collect(Collectors.toSet()));
 	}
 
+	public static Alphabet inferAlphabetOfLanguage(Language language) {
+		return new Alphabet(language.getWords().stream() //
+				.flatMap((w) -> w.getSymbols().stream()) //
+				.collect(Collectors.toSet())); //
+	}
+
 	public static Alphabet createAlphabet(char from, char to) {
 		Set<Symbol> symbols = new HashSet<>();
 
@@ -206,13 +213,13 @@ public class CollectionsUtils {
 
 		return result;
 	}
-	
+
 	public static <E> Map<E, Degree> joinFuzzy(Map<E, Degree> first, Map<E, Degree> second) {
 		Map<E, Degree> result = new HashMap<>(first.size() + second.size());
 
 		addAllFuzzy(first, result);
 		addAllFuzzy(second, result);
-		
+
 		return result;
 	}
 
@@ -226,6 +233,13 @@ public class CollectionsUtils {
 			}
 			result.put(e, degree);
 		});
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+
+	@FunctionalInterface
+	public static interface BinaryFunction<TFI, TSI, TO> {
+		TO run(TFI first, TSI second);
 	}
 
 }

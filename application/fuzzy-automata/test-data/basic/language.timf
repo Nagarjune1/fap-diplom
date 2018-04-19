@@ -1,0 +1,15 @@
+type:
+	language
+
+alphabet:
+	a, b, c
+
+words:
+	a b c
+	a a b a
+	c a b a c a
+	c c c b
+	c a c
+	a b b a
+	c
+

@@ -32,7 +32,9 @@ public class TyposCorrecterApp {
 	private static final Degree INSERTS_MORE_DEGREE = new Degree(0.01);
 
 	public static void main(String[] args) {
-//		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/animals-dictionary.timf", // };
+		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/months.timf", };
+//		
+		//		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/animals-dictionary.timf", // };
 //				"dg", "doberman" };
 //		
 //		args = new String[] {   "--tnorm", "product", "test-data/typos/numbers.timf"}; //XXX debug

@@ -69,6 +69,15 @@ public class Degree implements Comparable<Degree> {
 	///////////////////////////////////////////////////////////////////////////
 
 	/**
+	 * Computes the negation, i.e. the {@value #ONE} - value.
+	 * 
+	 * @return
+	 */
+	public Degree negate() {
+		return new Degree(Degree.ONE.getValue() - value);
+	}
+
+	/**
 	 * Returns true if this degree is smaller or equal to given one.
 	 * 
 	 * @param o
@@ -130,6 +139,34 @@ public class Degree implements Comparable<Degree> {
 		} else {
 			return cmp < 0;
 		}
+	}
+
+	/**
+	 * Computes algebraical difference between theese two degrees. If returned
+	 * zero, they are completelly equal, if one they are completelly different.
+	 * 
+	 * @param first
+	 * @param second
+	 * @see Degree#equality(Degree, Degree)
+	 * @return
+	 */
+	public static Degree difference(Degree first, Degree second) {
+		double diff = Math.abs(first.getValue() - second.getValue());
+		return new Degree(diff);
+	}
+
+	/**
+	 * Computes quality of theese two. If returned one, they are completelly
+	 * equal, if zero they are completelly different.
+	 * 
+	 * @param first
+	 * @param second
+	 * @see Degree#difference(Degree, Degree)
+	 * @return
+	 */
+	public static Degree equality(Degree first, Degree second) {
+		Degree difference = difference(first, second);
+		return difference.negate();
 	}
 
 	///////////////////////////////////////////////////////////////////////////

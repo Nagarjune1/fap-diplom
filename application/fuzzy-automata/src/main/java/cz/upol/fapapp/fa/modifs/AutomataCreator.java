@@ -11,6 +11,7 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
+import cz.upol.fapapp.core.ling.Language;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.CollectionsUtils;
@@ -18,8 +19,10 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.fa.automata.FuzAutWithEpsilonMoves;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
+
 /**
  * Class performing creation of some testing automata.
+ * 
  * @author martin
  *
  */
@@ -145,7 +148,6 @@ public class AutomataCreator {
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
-	
 	public static FuzAutWithEpsilonMoves createAutomatonWET(int precision) {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
@@ -187,11 +189,8 @@ public class AutomataCreator {
 		return new FuzAutWithEpsilonMoves(alphabet, states, transitionFunction, initialStates, finalStates, precision);
 	}
 
-	
-	
 	///////////////////////////////////////////////////////////////////////////
-	
-	
+
 	public static FuzzyAutomaton automatonOfWord(Word word) {
 		Alphabet alphabet = CollectionsUtils.inferAlphabetOfWord(word);
 		FuzzyAutomaton automaton = automatonOfWord(alphabet, word);
@@ -200,7 +199,7 @@ public class AutomataCreator {
 
 	public static FuzzyAutomaton automatonOfWord(Alphabet alphabet, Word word) {
 		Logger.get().moreinfo("Creating automaton of " + word);
-		
+
 		StatesCreator creator = new StatesCreator();
 
 		Map<Triple<State, Symbol, State>, Degree> transitions = new HashMap<>();
@@ -217,10 +216,10 @@ public class AutomataCreator {
 
 			states.add(to);
 			previousState = to;
-			
+
 			Triple<State, Symbol, State> triple = new Triple<State, Symbol, State>(from, over, to);
 			transitions.put(triple, Degree.ONE);
-			
+
 		}
 
 		State finState = previousState;
@@ -232,4 +231,23 @@ public class AutomataCreator {
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
+	public static FuzzyAutomaton automatonOfLanguage(Language language) {
+		Alphabet alphabet = CollectionsUtils.inferAlphabetOfLanguage(language);
+		FuzzyAutomaton automaton = automatonOfLanguage(alphabet, language);
+		return automaton;
+	}
+
+	public static FuzzyAutomaton automatonOfLanguage(Alphabet alphabet, Language language) {
+		Logger.get().moreinfo("Creating automaton of " + language);
+
+		MutableAutomatonStructure struct = new MutableAutomatonStructure();
+		for (Word word : language.getWords()) {
+			FuzzyAutomaton autOfWord = automatonOfWord(word);
+			MutableAutomatonStructure structOfWord = new MutableAutomatonStructure(autOfWord);
+
+			struct = MutableAutomatonStructure.merge(struct, structOfWord);
+		}
+
+		return struct.toAutomaton(null);
+	}
 }

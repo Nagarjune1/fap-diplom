@@ -48,6 +48,19 @@ public class StatesCreator {
 
 		return state;
 	}
+	
+	/**
+	 * Gimme next state.
+	 * 
+	 * @return
+	 */
+	public State next(String infix) {
+		State state = create(infix, index);
+
+		index++;
+
+		return state;
+	}
 
 	/**
 	 * Gimme lastly created state.

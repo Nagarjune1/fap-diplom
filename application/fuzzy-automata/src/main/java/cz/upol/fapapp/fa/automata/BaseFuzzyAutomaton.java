@@ -21,6 +21,7 @@ import cz.upol.fapapp.core.misc.Printable;
  *
  */
 public abstract class BaseFuzzyAutomaton implements BaseAutomaton {
+	
 	protected final Alphabet alphabet;
 	protected final Set<State> states;
 	protected final FuzzyTernaryRelation<State, Symbol, State> transitionFunction;
@@ -57,15 +58,51 @@ public abstract class BaseFuzzyAutomaton implements BaseAutomaton {
 	public FuzzySet<State> getFinalStates() {
 		return finalStates;
 	}
+	
+////////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Runs computation on given word. Returns the final fuzzy state (w.r. to
+	 * the inital and final states).
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public abstract FuzzyState computeWord(Word word);
 
+	/**
+	 * Computes degree of acceptance of given word.
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public abstract Degree degreeOfWord(Word word);
 
+	/**
+	 * Determinises this automaton.
+	 * 
+	 * @return
+	 */
 	public abstract BaseFuzzyAutomaton determinise();
 
+	/**
+	 * Minimises this automaton with no tolerance.
+	 * 
+	 * @return
+	 */
 	public abstract BaseFuzzyAutomaton minimise();
 
+	/**
+	 * Minimises this automaton.
+	 * 
+	 * @param delta
+	 *            tollerance of nonsimilarity.
+	 * @return
+	 */
+	public abstract BaseFuzzyAutomaton minimise(Degree delta);
+
+	////////////////////////////////////////////////////////////////////////////
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
