@@ -10,11 +10,13 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzySet;
 import cz.upol.fapapp.core.fuzzy.sets.FuzzyTernaryRelation;
 import cz.upol.fapapp.core.ling.Alphabet;
+import cz.upol.fapapp.core.ling.Language;
 import cz.upol.fapapp.core.ling.Symbol;
+import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
+import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class TestAutomataCreator {
-	
 
 	/**
 	 * Constructs following automaton:
@@ -63,6 +65,20 @@ public class TestAutomataCreator {
 		FuzzySet<State> finalStates = new FuzzySet<>(finals);
 
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
+	}
+
+	/**
+	 * Creates automaton recogniting words "aab" and "bab".
+	 * 
+	 * @return
+	 */
+	public static FuzzyAutomaton createAutomatonOfLang() {
+		Word word1 = new Word(new Symbol("a"), new Symbol("a"), new Symbol("b"));
+		Word word2 = new Word(new Symbol("b"), new Symbol("a"), new Symbol("b"));
+		Language language = new Language(word1, word2);
+
+		return AutomataCreator.automatonOfLanguage(language);
+
 	}
 
 }

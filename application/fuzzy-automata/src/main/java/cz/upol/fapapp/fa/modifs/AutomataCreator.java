@@ -241,13 +241,25 @@ public class AutomataCreator {
 		Logger.get().moreinfo("Creating automaton of " + language);
 
 		MutableAutomatonStructure struct = new MutableAutomatonStructure();
+		StatesCreator states = new StatesCreator();
 		for (Word word : language.getWords()) {
 			FuzzyAutomaton autOfWord = automatonOfWord(word);
+			
 			MutableAutomatonStructure structOfWord = new MutableAutomatonStructure(autOfWord);
-
+			unifyStatesOf(states, structOfWord);
+			
 			struct = MutableAutomatonStructure.merge(struct, structOfWord);
 		}
 
 		return struct.toAutomaton(null);
+	}
+
+	private static void unifyStatesOf(StatesCreator creator, MutableAutomatonStructure struct) {
+		
+		for (State state: new TreeSet<>(struct.getStates())) {
+			String infix = "_" + state.getLabel();
+			State newState = creator.next(infix);
+			struct.replaceState(state, newState);
+		}
 	}
 }

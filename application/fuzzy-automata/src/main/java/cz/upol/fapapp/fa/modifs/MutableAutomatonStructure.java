@@ -70,10 +70,6 @@ public class MutableAutomatonStructure {
 
 	///////////////////////////////////////////////////////////////////////////
 
-	public Alphabet toAlphabet() {
-		return new Alphabet(alphabet);
-	}
-
 	public Set<Symbol> getAlphabet() {
 		return alphabet;
 	}
@@ -92,6 +88,10 @@ public class MutableAutomatonStructure {
 
 	public Set<State> getStates() {
 		return states;
+	}
+
+	public Alphabet toAlphabet() {
+		return new Alphabet(alphabet);
 	}
 
 	public FuzzyTernaryRelation<State, Symbol, State> toTransitionFunction() {

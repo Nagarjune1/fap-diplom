@@ -10,10 +10,12 @@ import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.fuzzy.tnorm.GodelTNorm;
 import cz.upol.fapapp.core.fuzzy.tnorm.TNorms;
+import cz.upol.fapapp.core.ling.Language;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.misc.TestUtils;
+import cz.upol.fapapp.fa.modifs.AutomataCreator;
 
 public class FuzzyAutomatonTest {
 
@@ -88,6 +90,23 @@ public class FuzzyAutomatonTest {
 	}
 
 	@Test
+	public void testDeteminiseAutOfFiniteLang() {
+		Word word1 = new Word(new Symbol("a"), new Symbol("b"));
+		Word word2 = new Word(new Symbol("a"), new Symbol("c"));
+		
+		Language language = new Language(word1, word2);
+		FuzzyAutomaton automaton = AutomataCreator.automatonOfLanguage(language);
+
+		
+		FuzzyAutomaton determinised = (FuzzyAutomaton) automaton.determinise();
+		determinised.print(System.out);
+		
+		assertEquals(5, determinised.getStates().size());
+		assertEquals(Degree.ONE, determinised.degreeOfWord(word1));
+		assertEquals(Degree.ONE, determinised.degreeOfWord(word2));
+	}
+	
+	@Test
 	public void testMinimalise() {
 		FuzzyAutomaton automaton = TestAutomataCreator.createAutomaton1();
 
@@ -106,13 +125,13 @@ public class FuzzyAutomatonTest {
 		assertEquals(automaton.degreeOfWord(wordBB), minAut00.degreeOfWord(wordBB));
 
 		FuzzyAutomaton minAut10 = (FuzzyAutomaton) automaton.minimise(Degree.ONE);
-		assertEquals(1, minAut10.getStates().size());
+		assertEquals(2, minAut10.getStates().size());
 		//minAut2.print(System.out);
 		
 		// this should behave totaly differently
-		assertEquals(new Degree(0.175), minAut10.degreeOfWord(wordAB));
-		assertEquals(new Degree(0.175), minAut10.degreeOfWord(wordAA));
-		assertEquals(new Degree(0.25), minAut10.degreeOfWord(wordBB));
+		assertEquals(new Degree(0.4), minAut10.degreeOfWord(wordAB));
+		assertEquals(new Degree(0.2), minAut10.degreeOfWord(wordAA));
+		assertEquals(new Degree(0.0), minAut10.degreeOfWord(wordBB));
 
 		FuzzyAutomaton minAut09 = (FuzzyAutomaton) automaton.minimise(new Degree(0.9));
 		//minAut3.print(System.out);

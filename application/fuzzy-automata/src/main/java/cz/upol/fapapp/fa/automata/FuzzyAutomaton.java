@@ -22,7 +22,7 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.TernaryRelation.Triple;
 import cz.upol.fapapp.fa.min.AutomataPartitioner;
 import cz.upol.fapapp.fa.min.AutomatonPartsWrapper;
-import cz.upol.fapapp.fa.min.DefaultPartitioner;
+import cz.upol.fapapp.fa.min.RightPartitioner;
 import cz.upol.fapapp.fa.modifs.StatesCreator;
 
 /**
@@ -178,8 +178,8 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 	}
 
 	private Set<Set<State>> computePartitionsClosure(FuzzyAutomaton prepared, Degree delta) {
-		AutomataPartitioner partitioner = new DefaultPartitioner(prepared, delta);
-		return partitioner.compute();
+		AutomataPartitioner partitioner = new RightPartitioner(this, delta);
+		return partitioner.compute().getPartitions();
 	}
 
 	private FuzzyAutomaton computeAutomaton(Set<Set<State>> partitions) {

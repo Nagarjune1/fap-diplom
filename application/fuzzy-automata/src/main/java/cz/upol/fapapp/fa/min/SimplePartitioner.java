@@ -14,19 +14,26 @@ import cz.upol.fapapp.core.misc.CollectionsUtils;
 import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
-public class DefaultPartitioner implements AutomataPartitioner {
+/**
+ * 
+ * @author martin
+ * @deprecated use {@link RightPartitioner} instead.
+ */
+@Deprecated
+public class SimplePartitioner implements AutomataPartitioner {
 
 	private final FuzzyAutomaton automaton;
 	private final Degree delta;
 
-	public DefaultPartitioner(FuzzyAutomaton automaton, Degree delta) {
+	public SimplePartitioner(FuzzyAutomaton automaton, Degree delta) {
 		this.automaton = automaton;
 		this.delta = delta;
 	}
 
 	@Override
-	public Set<Set<State>> compute() {
-		return computePartitionsClosure();
+	public SetsPartition<State> compute() {
+		Set<Set<State>> parts = computePartitionsClosure();
+		return new SetsPartition<>(parts);
 	}
 
 	private Set<Set<State>> computePartitionsClosure() {
