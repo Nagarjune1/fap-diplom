@@ -34,7 +34,7 @@ public class RightPartitioner implements AutomataPartitioner {
 
 	@Override
 	public SetsPartition<State> compute() {
-		System.out.println("-------");
+		//System.out.println("-------");
 		SetsPartition<State> oldPartition = null;
 		SetsPartition<State> newPartition = createInitialPartition();
 
@@ -85,11 +85,11 @@ public class RightPartitioner implements AutomataPartitioner {
 
 				boolean isInDelta = isMatchInDelta(match);
 				if (!isInDelta) {
-					System.out.println("NoMach " + first + " x " + second + " in " + " -> \t" + match);
+					//System.out.println("NoMach " + first + " x " + second + " in " + " -> \t" + match);
 					
 					SetsPartition.prepareSplit(keepInPart, removeFromPart, first, second);
 				} else {
-					System.out.println("Machtc " + first + " x " + second + " in " + " -> \t" + match);
+					//System.out.println("Machtc " + first + " x " + second + " in " + " -> \t" + match);
 				}
 
 				//System.out.println("State " + first + " x " + second + " in " + " -> \t" + match);

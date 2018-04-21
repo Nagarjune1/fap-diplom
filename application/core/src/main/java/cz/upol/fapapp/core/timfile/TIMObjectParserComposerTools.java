@@ -119,6 +119,16 @@ public class TIMObjectParserComposerTools {
 
 	/////////////////////////////////////////////////////////////////////////
 
+	public static boolean has(TIMFileData data, String... itemNames) {
+		for (String itemName : itemNames) {
+			if (data.hasItem(itemName)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+	
 	public static String findItemName(TIMFileData data, String... itemNames) {
 		for (String itemName : itemNames) {
 			if (data.hasItem(itemName)) {

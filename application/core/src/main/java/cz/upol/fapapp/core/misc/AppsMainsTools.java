@@ -208,7 +208,7 @@ public class AppsMainsTools {
 			composer.compose(object, file);
 			return true;
 		} catch (IOException e) {
-			Logger.get().error("Composition into file failed: " + e.getMessage());
+			Logger.get().error("Composition into file failed: " + e.toString());
 			System.err.println(3);
 			return false;
 		}
@@ -230,7 +230,7 @@ public class AppsMainsTools {
 		try {
 			return parser.parse(file);
 		} catch (IOException e) {
-			Logger.get().error("Parsing of file failed: " + e.getMessage());
+			Logger.get().error("Parsing of file failed: " + e.toString());
 			System.err.println(4);
 			return null;
 		}

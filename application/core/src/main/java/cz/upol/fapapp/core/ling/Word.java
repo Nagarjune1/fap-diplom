@@ -91,9 +91,13 @@ public class Word {
 	 * @return
 	 */
 	public String toSimpleHumanString() {
-		return symbols.stream() //
-				.map((s) -> s.getValue()) //
-				.collect(Collectors.joining(" "));
+		if (symbols.isEmpty()) {
+			return Symbol.EMPTY.getValue();
+		} else {
+			return symbols.stream() //
+					.map((s) -> s.getValue()) //
+					.collect(Collectors.joining(" "));
+		}
 	}
 
 }

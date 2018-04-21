@@ -36,6 +36,9 @@ public class TIMFileData implements Printable {
 	 */
 	public String getType() {
 		List<LineElements> types = data.get(TYPE_KEY);
+		if (types == null) {
+			throw new IllegalArgumentException("Type not specified");
+		}
 		if (types.size() < 1) {
 			throw new IllegalArgumentException("Type specifier is empty");
 		}

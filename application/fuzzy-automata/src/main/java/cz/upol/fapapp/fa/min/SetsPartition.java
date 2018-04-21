@@ -6,6 +6,12 @@ import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.misc.CollectionsUtils;
 
+/**
+ * ...
+ * @author martin
+ *
+ * @param <E>
+ */
 public class SetsPartition<E> implements Comparable<SetsPartition<E>>, Cloneable {
 
 	private final Set<Set<E>> partitions;
@@ -32,8 +38,6 @@ public class SetsPartition<E> implements Comparable<SetsPartition<E>>, Cloneable
 	}
 
 	public Set<E> merge(Set<E> first, Set<E> second) {
-		System.err.println(">> merging " + first + " + " + second);
-
 		boolean removed = true;
 		removed &= partitions.remove(first);
 		removed &= partitions.remove(second);
@@ -50,8 +54,6 @@ public class SetsPartition<E> implements Comparable<SetsPartition<E>>, Cloneable
 	}
 
 	public Set<E> split(Set<E> first, Set<E> second) {
-		System.err.println(">> splitting " + first + " + " + second);
-
 		Set<E> merged = CollectionsUtils.join(first, second);
 
 		boolean removed = partitions.remove(merged);
@@ -66,7 +68,6 @@ public class SetsPartition<E> implements Comparable<SetsPartition<E>>, Cloneable
 	}
 
 	public Set<E> move(E elem, Set<E> newPart) {
-		System.err.println(">> moving " + elem + " -> " + newPart);
 		Set<E> currentPart = remove(elem);
 
 		boolean removed = partitions.remove(newPart);
@@ -85,7 +86,6 @@ public class SetsPartition<E> implements Comparable<SetsPartition<E>>, Cloneable
 	}
 
 	public Set<E> separate(E elem) {
-		System.err.println(">> separating " + elem);
 		Set<E> currentPart = remove(elem);
 
 		if (!currentPart.isEmpty()) {
