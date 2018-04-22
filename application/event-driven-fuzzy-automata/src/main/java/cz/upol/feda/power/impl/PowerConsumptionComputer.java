@@ -40,6 +40,7 @@ public class PowerConsumptionComputer {
 		double melt = data.getMelt();
 		final PowerConsumptionsToFEDA pctf = new PowerConsumptionsToFEDA(melt, useGaussians, transitionThreshold);
 
+		Logger.get().info("Preparing automaton ...");
 		Map<ElectricalDevice, DeviceState> initialSituation = data.getInitial();
 		Set<PowerConsumptionChange> changes = data.getChanges();
 		Set<ElectricalDevice> devices = data.getDevices();
@@ -47,24 +48,28 @@ public class PowerConsumptionComputer {
 
 		EventDrivenFuzzyAutomaton automaton = pctf.toAutomaton(devices, changes, initialSituation);
 
+		Logger.get().info("Preparing events ...");
 		LingvisticVariable powerChangesVar = pctf.toVar(changes);
 
 		FuzzyEventsSequence events = pctf.toEvents(initialSituation, powerConsumptions, powerChangesVar);
 
 		checkAndLog(automaton, events);
 
+		Logger.get().info("Running events over automaton ...");
 		State state = automaton.run(events);
 
+		Logger.get().info("Converting result ...");
 		Map<ElectricalDevice, DeviceState> situation = pctf.stateToSituation(devices, state);
+		
 		return situation;
 	}
 
 	private void checkAndLog(EventDrivenFuzzyAutomaton automaton, FuzzyEventsSequence events) {
-		if (Logger.get().isVerbose()) {
-			Logger.get().moreinfo("Using automaton:");
+		if (Logger.get().isDebug()) {
+			Logger.get().debug("Using automaton:");
 			automaton.print(Logger.META_STREAM);
 
-			Logger.get().moreinfo("Over events:");
+			Logger.get().debug("Over events:");
 			events.print(Logger.META_STREAM);
 		}
 	}

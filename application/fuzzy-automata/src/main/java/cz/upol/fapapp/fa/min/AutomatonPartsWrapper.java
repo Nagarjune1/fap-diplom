@@ -9,6 +9,13 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.misc.CollectionsUtils.BinaryFunction;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
+/**
+ * Implementation of {@link AutomatonDescWrapper} working with set of states.
+ * Each value is computed as average of values for all states within this set.
+ * 
+ * @author martin
+ *
+ */
 public class AutomatonPartsWrapper implements AutomatonDescWrapper<Set<State>> {
 
 	private final FuzzyAutomaton automaton;

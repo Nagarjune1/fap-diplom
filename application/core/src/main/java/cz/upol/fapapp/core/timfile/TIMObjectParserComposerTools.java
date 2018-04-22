@@ -17,16 +17,16 @@ import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.lingvar.LingVarValue;
 import cz.upol.fapapp.core.misc.Logger;
-import cz.upol.fapapp.core.probability.Probability;
 
 /**
- * Various utilities for {@link TIMObjectParser}'s and {@link TIMObjectComposer}'s implementations.
+ * Various utilities for {@link TIMObjectParser}'s and
+ * {@link TIMObjectComposer}'s implementations.
  * 
  * @author martin
  *
  */
-//TODO javadoc
-//TODO rename to somehing shorter
+// TODO javadoc
+// TODO rename to somehing shorter
 public class TIMObjectParserComposerTools {
 
 	/////////////////////////////////////////////////////////////////////////
@@ -78,22 +78,15 @@ public class TIMObjectParserComposerTools {
 	}
 
 	public static Degree parseDegree(String degreeStr) {
-			double degreeDouble = parseDouble(degreeStr);
-			return new Degree(degreeDouble);
+		double degreeDouble = parseDouble(degreeStr);
+		return new Degree(degreeDouble);
 	}
 
-
-	public static Probability parseProbability(String probStr) {
-		double probDouble = parseDouble(probStr);
-		return new Probability(probDouble);
-	}
-
-	
 	public static LingVarValue parseLingVarValue(String valStr) {
 		double valDouble = parseDouble(valStr);
 		return new LingVarValue(valDouble);
 	}
-	
+
 	public static State parseState(String stateStr) {
 		return new State(stateStr);
 	}
@@ -128,7 +121,7 @@ public class TIMObjectParserComposerTools {
 
 		return false;
 	}
-	
+
 	public static String findItemName(TIMFileData data, String... itemNames) {
 		for (String itemName : itemNames) {
 			if (data.hasItem(itemName)) {
@@ -241,6 +234,5 @@ public class TIMObjectParserComposerTools {
 				.map((i) -> toStringFunction.apply(i)) //
 				.collect(Collectors.toList()));
 	}
-
 
 }

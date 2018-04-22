@@ -5,6 +5,12 @@ import java.util.List;
 
 import javafx.geometry.Point2D;
 
+/**
+ * Path segment is list of points.
+ * 
+ * @author martin
+ *
+ */
 public class PathSegment {
 	private final List<Point2D> points;
 
@@ -56,8 +62,6 @@ public class PathSegment {
 		Direction onScreen = Direction.compute(from, to);
 		return onScreen;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {
@@ -88,6 +92,5 @@ public class PathSegment {
 	public String toString() {
 		return "PathSegment [dir=" + getDirection() + ", count=" + points.size() + "]";
 	}
-	
-	
+
 }

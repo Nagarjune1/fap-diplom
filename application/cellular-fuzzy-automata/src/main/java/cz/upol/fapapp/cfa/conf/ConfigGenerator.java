@@ -5,6 +5,7 @@ import java.util.function.DoubleSupplier;
 import java.util.function.DoubleUnaryOperator;
 
 import cz.upol.fapapp.cfa.automata.CellState;
+import cz.upol.fapapp.core.misc.Logger;
 
 /**
  * Generator for {@link CFAConfiguration}s.
@@ -36,6 +37,7 @@ public class ConfigGenerator {
 	 * @return
 	 */
 	public CFAConfiguration generateBival(int size, int seed, double ratio) {
+		Logger.get().debug("Generating bivalent config of size " + size + ", seed " + seed + " and ratio " + ratio);
 		return generateRandom(size, seed, //
 				(d) -> (d > ratio ? 1 : 0));
 	}
@@ -48,6 +50,7 @@ public class ConfigGenerator {
 	 * @return
 	 */
 	public CFAConfiguration generateDoubles(int size, int seed) {
+		Logger.get().debug("Generating config with doubles of size " + size + " with seed " + seed);
 		return generateRandom(size, seed, //
 				(d) -> d);
 	}
@@ -60,12 +63,14 @@ public class ConfigGenerator {
 	 * @return
 	 */
 	public CFAConfiguration generateBidiag(int size) {
+		Logger.get().debug("Generating bidiagonal config of " + size);
 		return generate(size, //
 				(i, j) -> ((i == j) || (size - i == j)) ? 1.0 : 0.0);
 	}
 
-	/**************************************************************************/
-
+	
+	////////////////////////////////////////////////////////////////////////////
+	
 	/**
 	 * Generates configuration of given size with given supplier.
 	 * 

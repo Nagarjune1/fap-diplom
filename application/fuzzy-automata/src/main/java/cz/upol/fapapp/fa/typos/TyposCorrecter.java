@@ -99,8 +99,8 @@ public class TyposCorrecter {
 
 		FuzzyAutomaton deformed = deform(ofWord, similarity, removesOnes, insertsOnes, insertsMore);
 		
-		if (Logger.get().isVerbose()) {
-			Logger.get().moreinfo("Obtained deformed automata for word " + word + ":");
+		if (Logger.get().isDebug()) {
+			Logger.get().debug("Obtained deformed automata for word " + word + ":");
 			deformed.print(Logger.META_STREAM);
 		}
 
@@ -198,14 +198,14 @@ public class TyposCorrecter {
 		Word bestWord = word;
 		Degree bestDegree = Degree.ZERO;
 
-		Logger.get().moreinfo("Correcting word " + word + " ... ");
+		Logger.get().info("Correcting word " + word + " ... ");
 
 		for (Word pattern : automata.keySet()) {
 			FuzzyAutomaton automaton = automata.get(pattern);
 
 			Degree degree = automaton.degreeOfWord(word);
 
-			Logger.get().moreinfo("Word " + word + " matches " + pattern + " in " + degree);
+			Logger.get().debug("Word " + word + " matches " + pattern + " in " + degree);
 			//System.out.println(" in " + degree + "\t  matches " + pattern );
 
 			
@@ -236,13 +236,13 @@ public class TyposCorrecter {
 		CorrectionResult result = new CorrectionResult(word, bestWord, bestDegree);
 
 		if (result.isNoTypo()) {
-			Logger.get().moreinfo("Word " + word + " is in dictionary");
+			Logger.get().info("Word " + word + " is in dictionary");
 		} else if (result.isNoMatch()) {
-			Logger.get().moreinfo("Word " + word + " does not match to any of dictionary");
+			Logger.get().info("Word " + word + " does not match to any of dictionary");
 		} else if (result.isCorrected()) {
-			Logger.get().moreinfo("Word " + word + " will be corrected to " + bestWord + " in " + bestDegree);
+			Logger.get().info("Word " + word + " will be corrected to " + bestWord + " in " + bestDegree);
 		} else {
-			Logger.get().moreinfo("Something strange happened to word " + word);
+			Logger.get().info("Something strange happened to word " + word);
 		}
 
 		return result;

@@ -84,6 +84,7 @@ public class AppsMainsTools {
 		}
 
 		checkVerbocity(argsList);
+		checkDebug(argsList);
 		checkTNorm(argsList);
 
 		if ((minArgs != null && argsList.size() < minArgs) || (maxArgs != null && argsList.size() > maxArgs)) {
@@ -122,10 +123,11 @@ public class AppsMainsTools {
 	 * @param helpPrinter
 	 */
 	private static void printHelp(Runnable helpPrinter) {
-		System.out.println("General usage: PROGRAM FLAGS PROGRAM_ARGS");
+		System.out.println("General usage: <PROGRAM> <FLAGS> <PROGRAM_ARGS>");
+		System.out.println("FLAGS: [-v|--verbose] [-d|--debug] [-t|--tnorm <TNORM>]");
+		System.out.println("	where <TNORM> is Godel|product|Lukasiewicz");
+		System.out.println("Note: please keep this order (otherwise may fail)");
 		helpPrinter.run();
-		System.out.println("FLAGS: [-v|--verbose] [-t|--tnorm <TNORM>]");
-		System.out.println("	where <TNROM> is Godel|product|Lukasiewicz");
 
 	}
 
@@ -138,10 +140,26 @@ public class AppsMainsTools {
 	private static void checkVerbocity(List<String> argsList) {
 		if (argsList.size() >= 1 && ("--verbose".equals(argsList.get(0)) || "-v".equals(argsList.get(0)))) {
 			Logger.get().setVerbose(true);
+			Logger.get().info("Will be verbose");
+			argsList.remove(0);
+			
+		}
+	}
+
+	/**
+	 * If first arg is {@code -d} or {@code --debug}, sets debug of
+	 * {@link Logger} to true and removes flag from args.
+	 * @param argsList
+	 */
+	private static void checkDebug(List<String> argsList) {
+		if (argsList.size() >= 1 && ("--debug".equals(argsList.get(0)) || "-d".equals(argsList.get(0)))) {
+			Logger.get().setDebug(true);
+			Logger.get().debug("Will be in debug mode");
 			argsList.remove(0);
 		}
 	}
 
+	
 	/**
 	 * If first arg is {@code -t} or {@code --tnorm}, parses next one. If
 	 * succeeds, sets appropiate instance into {@link TNorms}.
@@ -166,7 +184,7 @@ public class AppsMainsTools {
 			argsList.remove(0);
 
 			TNorms.setTnorm(tnorm);
-			Logger.get().moreinfo("Will use " + tnorm.getClass().getSimpleName());
+			Logger.get().debug("Will use " + tnorm.getClass().getSimpleName());
 		}
 	}
 
@@ -203,8 +221,9 @@ public class AppsMainsTools {
 	 * @param composer
 	 * @return
 	 */
-	public static <T> boolean runComposer(File file, T object, TIMObjectComposer<T> composer) {
+	private static <T> boolean runComposer(File file, T object, TIMObjectComposer<T> composer) {
 		try {
+			Logger.get().info("Composing file " + file.getAbsolutePath());
 			composer.compose(object, file);
 			return true;
 		} catch (IOException e) {
@@ -221,13 +240,11 @@ public class AppsMainsTools {
 	 * 
 	 * @param file
 	 * @param parser
-	 * @deprecated
-	 * @see #runParser(String, FATIMParser)
 	 * @return
 	 */
-	@Deprecated
-	public static <T> T runParser(File file, TIMObjectParser<T> parser) {
+	private static <T> T runParser(File file, TIMObjectParser<T> parser) {
 		try {
+			Logger.get().info("Parsing file " + file.getAbsolutePath());
 			return parser.parse(file);
 		} catch (IOException e) {
 			Logger.get().error("Parsing of file failed: " + e.toString());

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>cz.upol</groupId>
 		<artifactId>fapapp</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 
 	<artifactId>event-driven-fuzzy-automaton</artifactId>
@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>cz.upol</groupId>
 			<artifactId>core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 </project>

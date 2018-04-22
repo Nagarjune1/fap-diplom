@@ -51,7 +51,7 @@ public class CommonDropletsGenerator implements DropletsGenerator {
 
 		CellState cell = generateDropletCell();
 
-		Logger.get().moreinfo("Setting droplet at " + i + " " + j + " with value " + cell.getValue());
+		Logger.get().debug("Setting droplet at " + i + " " + j + " with value " + cell.getValue());
 
 		config.setCell(i, j, cell);
 		config.setDroplet(i, j, true);

@@ -36,21 +36,21 @@ public class EventDrivenFuzzyAutomaton extends BaseEventDrivenFA {
 	}
 
 	public FuzzyState runEvents(FuzzyEventsSequence events) {
-		Logger.get().moreinfo("Starting from: " + initialStates + " events: " + events);
+		Logger.get().debug("Starting from: " + initialStates + " events: " + events);
 		FuzzyState currentState = new FuzzyState(initialStates);
 
 		for (FuzzyEvent event : events.getEvents()) {
 			currentState = runEvent(currentState, event);
 		}
 
-		Logger.get().moreinfo("Completed in: " + currentState);
+		Logger.get().debug("Completed in: " + currentState);
 		return currentState;
 	}
 
 	protected FuzzyState runEvent(FuzzyState fromFuzzyState, FuzzyEvent event) {
 		Map<State, Degree> toFuzzyStateMap = CollectionsUtils.createMap(states, Degree.ZERO);
 
-		Logger.get().moreinfo("Going from : " + fromFuzzyState + " at " + event + " ...");
+		Logger.get().debug("Going from : " + fromFuzzyState + " at " + event + " ...");
 		
 		for (State from : states) {
 			for (BaseLingVarLabel label : event.getLabels()) {
@@ -73,7 +73,7 @@ public class EventDrivenFuzzyAutomaton extends BaseEventDrivenFA {
 
 		FuzzyState toFuzzyState = new FuzzyState(toFuzzyStateMap);
 		
-		Logger.get().moreinfo("Into fuzzy state: " + toFuzzyState);
+		Logger.get().debug("Into fuzzy state: " + toFuzzyState);
 		return toFuzzyState;
 
 	}

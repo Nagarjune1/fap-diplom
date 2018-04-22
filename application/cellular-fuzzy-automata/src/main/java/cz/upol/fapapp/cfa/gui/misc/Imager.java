@@ -41,7 +41,7 @@ public class Imager {
 	 */
 	public CFAConfiguration imageToConfig(File imageFile, Color chanel) throws IOException {
 
-		Logger.get().moreinfo("Loading config from image " + imageFile);
+		Logger.get().info("Loading config from image " + imageFile);
 		try {
 			Image image = readImage(imageFile);
 			return convert(image, chanel);
@@ -62,7 +62,7 @@ public class Imager {
 	public void configToImage(CFAConfiguration config, File imageFile, ColorModel colors, int scale)
 			throws IOException {
 
-		Logger.get().moreinfo("Rendering config to image " + imageFile);
+		Logger.get().info("Rendering config to image " + imageFile);
 
 		Image image = convert(config, colors, scale);
 		saveImage(image, imageFile);

@@ -5,10 +5,10 @@
 	<groupId>cz.upol</groupId>
 	<artifactId>fapapp</artifactId>
 
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
-	<name>Fuzzy and probablistic automata applications application</name>
+	<name>Fuzzy automata applications application</name>
 	<description>Set of programs implementing fuzzy and probablistic automata applications</description>
 
 	<developers>
@@ -26,8 +26,7 @@
 		<module>fuzzy-tree-automata</module>
 		<module>cellular-fuzzy-automata</module>
 		<module>event-driven-fuzzy-automata</module>
-		<module>probabilistic-automata</module>
-    <module>fuzzy-automata</module>
+   	 	<module>fuzzy-automata</module>
   </modules>
 
 	<properties>

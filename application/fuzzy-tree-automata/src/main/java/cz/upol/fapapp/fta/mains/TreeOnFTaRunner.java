@@ -1,11 +1,10 @@
 package cz.upol.fapapp.fta.mains;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fta.automata.FTATIMParser;
 import cz.upol.fapapp.fta.automata.FuzzyTreeAutomaton;
 import cz.upol.fapapp.fta.tree.BaseTree;
@@ -41,29 +40,12 @@ public class TreeOnFTaRunner {
 		System.out.println(degree.getValue());
 	}
 
-	private static Degree run(String automatonFilePath, String treeFilePath) {
-		File automatonFile = new File(automatonFilePath);
-		File treeFile = new File(treeFilePath);
+	private static Degree run(String automatonFile, String treeFile) {
+		FuzzyTreeAutomaton automaton = AppsMainsTools.runParser(automatonFile, new FTATIMParser());
 
-		return run(automatonFile, treeFile);
-	}
+		BaseTree tree = AppsMainsTools.runParser(treeFile, new TreeTIMParser());
 
-	private static Degree run(File automatonFile, File treeFile) {
-		FTATIMParser automatonParser = new FTATIMParser();
-		FuzzyTreeAutomaton automaton;
-		try {
-			automaton = automatonParser.parse(automatonFile);
-		} catch (IOException e) {
-			System.err.println("Cannot load automaton file");
-			return null;
-		}
-
-		TreeTIMParser treeParser = new TreeTIMParser();
-		BaseTree tree;
-		try {
-			tree = treeParser.parse(treeFile);
-		} catch (IOException e) {
-			System.err.println("Cannot load tree file");
+		if (automaton == null || tree == null) {
 			return null;
 		}
 
@@ -73,6 +55,8 @@ public class TreeOnFTaRunner {
 	private static Degree run(FuzzyTreeAutomaton automaton, BaseTree tree) {
 		// automaton.print(System.out);
 		// System.out.println(automaton);
+
+		Logger.get().info("Runnin tree over automaton");
 
 		return automaton.accept(tree);
 	}

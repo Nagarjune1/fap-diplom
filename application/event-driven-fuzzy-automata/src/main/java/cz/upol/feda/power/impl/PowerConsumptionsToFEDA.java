@@ -326,7 +326,7 @@ public class PowerConsumptionsToFEDA {
 				.map((ch) -> toLabel(ch)) //
 				.collect(Collectors.toSet());
 
-		Logger.get().moreinfo("Created labels for ling var power: " + labels);
+		Logger.get().debug("Created labels for ling var power: " + labels);
 
 		return new LingvisticVariable("power", labels);
 	}
@@ -395,7 +395,7 @@ public class PowerConsumptionsToFEDA {
 			LingvisticVariable powerChangesVar) {
 		double previous = combinationToPower(initial);
 
-		Logger.get().moreinfo("Consumption " + previous + " is initial");
+		Logger.get().debug("Consumption " + previous + " is initial");
 
 		List<FuzzyEvent> events = new ArrayList<>(powerConsumptions.size());
 
@@ -405,7 +405,7 @@ public class PowerConsumptionsToFEDA {
 			FuzzyEvent event = toEvent(change, powerChangesVar);
 			events.add(event);
 
-			Logger.get().moreinfo("Consumption " + consumption + " makes change " + change + ", so event " + event);
+			Logger.get().debug("Consumption " + consumption + " makes change " + change + ", so event " + event);
 
 			previous = consumption;
 		}

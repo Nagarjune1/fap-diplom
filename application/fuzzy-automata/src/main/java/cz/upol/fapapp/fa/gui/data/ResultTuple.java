@@ -2,6 +2,11 @@ package cz.upol.fapapp.fa.gui.data;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 
+/**
+ * Result of some process, do not use.
+ * @author martin
+ *
+ */
 @Deprecated
 public class ResultTuple {
 	private final String name;

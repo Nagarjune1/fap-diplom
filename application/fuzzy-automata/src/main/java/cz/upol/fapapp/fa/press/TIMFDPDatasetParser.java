@@ -10,6 +10,12 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectParser;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectParser} for {@link DataPressureDataset}.
+ * 
+ * @author martin
+ *
+ */
 public class TIMFDPDatasetParser extends TIMObjectParser<DataPressureDataset> {
 
 	public static final String TYPE = "data pressure dataset";
@@ -24,17 +30,17 @@ public class TIMFDPDatasetParser extends TIMObjectParser<DataPressureDataset> {
 
 		DatasetRow thresholds = parseThresholds(data);
 		int columnCount;
-		if (thresholds != null) { 
-				columnCount = thresholds.count();
+		if (thresholds != null) {
+			columnCount = thresholds.count();
 		} else {
 			columnCount = 0;
 		}
 
 		List<DatasetRow> trainingData = parseTrainingData(data, columnCount);
-		if (columnCount == 0) { 
+		if (columnCount == 0) {
 			columnCount = trainingData.get(0).count();
 		}
-		
+
 		List<DatasetRow> testData = parseTestData(data, columnCount);
 
 		return new DataPressureDataset(delta, thresholds, trainingData, testData);

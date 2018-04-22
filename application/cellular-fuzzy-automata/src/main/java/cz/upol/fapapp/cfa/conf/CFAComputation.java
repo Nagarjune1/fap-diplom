@@ -71,7 +71,7 @@ public class CFAComputation implements Printable {
 		currentConfig = automaton.computeNextGeneration(currentConfig);
 		currentGeneration++;
 
-		Logger.get().moreinfo("Computed generation " + currentGeneration);
+		Logger.get().debug("Computed generation " + currentGeneration);
 	}
 
 	/**************************************************************************/

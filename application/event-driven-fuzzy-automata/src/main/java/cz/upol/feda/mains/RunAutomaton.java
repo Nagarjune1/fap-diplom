@@ -1,10 +1,10 @@
 package cz.upol.feda.mains;
 
-import java.io.File;
 import java.util.List;
 
 import cz.upol.fapapp.core.automata.State;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.feda.automata.EDFATIMParser;
 import cz.upol.feda.automata.EventDrivenFuzzyAutomaton;
 import cz.upol.feda.event.FESTIMParser;
@@ -28,14 +28,8 @@ public class RunAutomaton {
 
 	}
 
-	private static State run(String automatonFileName, String sequenceFileName) {
-		File automatonFile = new File(automatonFileName);
-		File sequenceFile = new File(sequenceFileName);
 
-		return run(automatonFile, sequenceFile);
-	}
-
-	private static State run(File automatonFile, File sequenceFile) {
+	private static State run(String automatonFile, String sequenceFile) {
 		EventDrivenFuzzyAutomaton automaton = AppsMainsTools.runParser(automatonFile, new EDFATIMParser());
 		FuzzyEventsSequence sequence = AppsMainsTools.runParser(sequenceFile, new FESTIMParser());
 
@@ -47,6 +41,7 @@ public class RunAutomaton {
 	}
 
 	private static State run(EventDrivenFuzzyAutomaton automaton, FuzzyEventsSequence sequence) {
+		Logger.get().info("Running automaton over sequence of " + sequence.getEvents().size() + " events");
 		return automaton.run(sequence);
 	}
 

@@ -35,7 +35,7 @@ public abstract class TIMObjectParser<T> {
 	 * @throws IOException
 	 */
 	public T parse(File file) throws IOException {
-		Logger.get().moreinfo("Parsing TIM file " + file.getPath() + " of type '" + type + "'");
+		Logger.get().info("Parsing TIM file " + file.getPath() + " of type '" + type + "'");
 
 		TIMFileParser parser = new TIMFileParser();
 		TIMFileData data = parser.parse(file);

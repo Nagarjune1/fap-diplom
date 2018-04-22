@@ -38,7 +38,7 @@ public class FuzzyTreeAutomaton extends BaseFuzzyTreeAutomaton {
 
 		return MathUtils.bigSupremum(finalStates, (s) -> { //
 			Degree degree = extendedMu(tree, s);
-			Logger.get().moreinfo("Run of tree to " + s + " ended with degree " + degree);
+			Logger.get().debug("Run of tree to " + s + " ended with degree " + degree);
 			return degree;
 		});
 	}

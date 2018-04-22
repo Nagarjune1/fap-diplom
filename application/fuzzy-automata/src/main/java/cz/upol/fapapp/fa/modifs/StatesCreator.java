@@ -14,21 +14,40 @@ public class StatesCreator {
 	private int index;
 	private final String infix;
 
+	/**
+	 * Creates creator with initial index and empty infix.
+	 */
 	public StatesCreator() {
 		this.index = 0;
 		this.infix = "";
 	}
 
+	/**
+	 * Creates creator with initial index and empty infix.
+	 * 
+	 * @param initialIndex
+	 */
 	public StatesCreator(int initialIndex) {
 		this.index = initialIndex;
 		this.infix = "";
 	}
 
+	/**
+	 * Creates creator with empty initial index and given infix.
+	 * 
+	 * @param infix
+	 */
 	public StatesCreator(String infix) {
 		this.index = 0;
 		this.infix = infix;
 	}
 
+	/**
+	 * Creates creator with given initial index and given infix.
+	 * 
+	 * @param infix
+	 * @param initialIndex
+	 */
 	public StatesCreator(String infix, int initialIndex) {
 		this.index = initialIndex;
 		this.infix = infix;
@@ -48,9 +67,10 @@ public class StatesCreator {
 
 		return state;
 	}
-	
+
 	/**
-	 * Gimme next state.
+	 * Gimme next state with given infix (overrides the infix specified in
+	 * constructor).
 	 * 
 	 * @return
 	 */

@@ -27,7 +27,7 @@ public class ConfigNoiser {
 	 * @param whitesRatio
 	 */
 	public void addNoiseSaltAndPepper(CFAConfiguration config, int seed, double ratio, double whitesRatio) {
-		Logger.get().moreinfo("Generating salt and pepper noise with seed " + seed + ", ratio " + ratio
+		Logger.get().debug("Generating salt and pepper noise with seed " + seed + ", ratio " + ratio
 				+ " and whitesRatio " + whitesRatio);
 
 		addNoise(config, seed, ratio, //
@@ -42,7 +42,7 @@ public class ConfigNoiser {
 	 * @param ratio
 	 */
 	public void addImpulseNoise(CFAConfiguration config, int seed, double ratio) {
-		Logger.get().moreinfo("Generating impulse noise with seed " + seed + ", ratio " + ratio);
+		Logger.get().debug("Generating impulse noise with seed " + seed + ", ratio " + ratio);
 
 		addNoise(config, seed, ratio, //
 				(c, r) -> r.nextDouble());//
@@ -59,7 +59,7 @@ public class ConfigNoiser {
 	public void addGeneralNoise(CFAConfiguration config, int seed, double ratio,
 			ToDoubleBiFunction<CellState, Random> valuesProvider) {
 
-		Logger.get().moreinfo(
+		Logger.get().debug(
 				"Generating general noise with seed " + seed + ", ratio " + ratio + " and provider: " + valuesProvider);
 
 		addNoise(config, seed, ratio, //

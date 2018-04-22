@@ -19,6 +19,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
+/**
+ * Canvas allowing to draw on. Records drawn path.
+ * @author martin
+ *
+ */
 public class FxPathableCanvas extends Canvas {
 	public static final EventType<Event> NEW_POINT_EVENT = new EventType<>("new point");
 	public static final EventType<Event> NEW_SEGMENT_EVENT = new EventType<>("new segment");
@@ -228,7 +233,7 @@ public class FxPathableCanvas extends Canvas {
 	/////////////////////////////////////////////////////////////////////////
 
 	public Word getWord() {
-		Logger.get().moreinfo("Computing on multipath: " + paths);
+		Logger.get().debug("Computing on multipath: " + paths);
 		Multipath paths = getPaths();
 		int shake = this.shake.get();
 		return strategy.convertToWord(paths, shake);

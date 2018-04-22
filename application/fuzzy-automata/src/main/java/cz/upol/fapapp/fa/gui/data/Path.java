@@ -6,6 +6,11 @@ import java.util.stream.Collectors;
 
 import javafx.geometry.Point2D;
 
+/**
+ * Path contains from segments.
+ * @author martin
+ *
+ */
 public class Path {
 	private final List<PathSegment> segments;
 

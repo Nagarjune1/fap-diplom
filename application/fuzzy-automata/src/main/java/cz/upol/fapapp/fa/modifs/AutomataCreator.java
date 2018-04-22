@@ -77,6 +77,12 @@ public class AutomataCreator {
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
+	/**
+	 * Creates some another, more sophisticated automaton with two states and
+	 * some another transitions over "a" and "b".
+	 * 
+	 * @return
+	 */
 	public static FuzzyAutomaton createAutomaton2() {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
@@ -113,41 +119,12 @@ public class AutomataCreator {
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
-	public static FuzzyAutomaton createAutomaton3() {
-		final State stateQ0 = new State("q_0");
-
-		final Symbol symbolU = new Symbol("u");
-		final Symbol symbolUL = new Symbol("ul");
-		final Symbol symbolUR = new Symbol("ur");
-		final Symbol symbolL = new Symbol("l");
-		final Symbol symbolR = new Symbol("r");
-
-		Set<State> states = new TreeSet<>();
-		states.add(stateQ0);
-
-		Set<Symbol> symbols = new TreeSet<>();
-		symbols.add(symbolU);
-		symbols.add(symbolUL);
-		symbols.add(symbolUR);
-		symbols.add(symbolR);
-		symbols.add(symbolL);
-		Alphabet alphabet = new Alphabet(symbols);
-
-		Map<Triple<State, Symbol, State>, Degree> transitions = new HashMap<>();
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolU, stateQ0), Degree.ONE);
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolUL, stateQ0), new Degree(0.9));
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolUR, stateQ0), new Degree(0.8));
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolUR, stateQ0), new Degree(0.7));
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolR, stateQ0), new Degree(0.6));
-		transitions.put(new Triple<State, Symbol, State>(stateQ0, symbolL, stateQ0), new Degree(0.5));
-		FuzzyTernaryRelation<State, Symbol, State> transitionFunction = new FuzzyTernaryRelation<>(transitions);
-
-		FuzzySet<State> initialStates = CollectionsUtils.singletonFuzzySet(states, stateQ0);
-		FuzzySet<State> finalStates = CollectionsUtils.singletonFuzzySet(states, stateQ0);
-
-		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
-	}
-
+	/**
+	 * Creates some automaton with epsilon transitions.
+	 * 
+	 * @param precision
+	 * @return
+	 */
 	public static FuzAutWithEpsilonMoves createAutomatonWET(int precision) {
 		final State stateQ0 = new State("q_0");
 		final State stateQ1 = new State("q_1");
@@ -191,14 +168,27 @@ public class AutomataCreator {
 
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Creates automaton recogniting given word.
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public static FuzzyAutomaton automatonOfWord(Word word) {
 		Alphabet alphabet = CollectionsUtils.inferAlphabetOfWord(word);
 		FuzzyAutomaton automaton = automatonOfWord(alphabet, word);
 		return automaton;
 	}
 
+	/**
+	 * Creates automaton recogniting given word (of given alphabet).
+	 * 
+	 * @param alphabet
+	 * @param word
+	 * @return
+	 */
 	public static FuzzyAutomaton automatonOfWord(Alphabet alphabet, Word word) {
-		Logger.get().moreinfo("Creating automaton of " + word);
+		Logger.get().debug("Creating automaton of " + word);
 
 		StatesCreator creator = new StatesCreator();
 
@@ -231,32 +221,50 @@ public class AutomataCreator {
 		return new FuzzyAutomaton(alphabet, states, transitionFunction, initialStates, finalStates);
 	}
 
+	/**
+	 * Creates automaton recogniting given language.
+	 * 
+	 * @param language
+	 * @return
+	 */
 	public static FuzzyAutomaton automatonOfLanguage(Language language) {
 		Alphabet alphabet = CollectionsUtils.inferAlphabetOfLanguage(language);
 		FuzzyAutomaton automaton = automatonOfLanguage(alphabet, language);
 		return automaton;
 	}
 
+	/**
+	 * Creates automaton recogniting given language (with specified alphabet).
+	 * 
+	 * @param alphabet
+	 * @param language
+	 * @return
+	 */
 	public static FuzzyAutomaton automatonOfLanguage(Alphabet alphabet, Language language) {
-		Logger.get().moreinfo("Creating automaton of " + language);
+		Logger.get().debug("Creating automaton of " + language);
 
 		MutableAutomatonStructure struct = new MutableAutomatonStructure();
 		StatesCreator states = new StatesCreator();
 		for (Word word : language.getWords()) {
 			FuzzyAutomaton autOfWord = automatonOfWord(word);
-			
+
 			MutableAutomatonStructure structOfWord = new MutableAutomatonStructure(autOfWord);
 			unifyStatesOf(states, structOfWord);
-			
+
 			struct = MutableAutomatonStructure.merge(struct, structOfWord);
 		}
 
 		return struct.toAutomaton(null);
 	}
 
+	/**
+	 * Renames states of given struct to be unique, but still contain current labels.
+	 * @param creator
+	 * @param struct
+	 */
 	private static void unifyStatesOf(StatesCreator creator, MutableAutomatonStructure struct) {
-		
-		for (State state: new TreeSet<>(struct.getStates())) {
+
+		for (State state : new TreeSet<>(struct.getStates())) {
 			String infix = "_" + state.getLabel();
 			State newState = creator.next(infix);
 			struct.replaceState(state, newState);

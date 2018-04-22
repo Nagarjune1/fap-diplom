@@ -10,11 +10,10 @@ import cz.upol.fapapp.cfa.impls.droplets.CommonDropletsGenerator;
 import cz.upol.fapapp.cfa.impls.droplets.DropletsAutomaton;
 import cz.upol.fapapp.cfa.impls.droplets.DropletsConfigGenerator;
 import cz.upol.fapapp.cfa.impls.droplets.DropletsGenerator;
+import cz.upol.fapapp.core.misc.AppsFxTools;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -31,14 +30,14 @@ public class DropletsSimulatorApp extends Application {
 	private static final double STEP_MIN_VALUE = 0.0;
 
 	public static void main(String[] args) {
+		// args = new String[] { "--verbose","--debug", "300", "1", "42"};
 		// args = new String[] { "300", "1", "42"};
+		Logger.get().info("Starting the GUI app ...");
 		Application.launch(args);
 	}
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("/cz/upol/fapapp/cfa/gui/frame/SimulationFrame.fxml"));
 
 		CFAComputation computation = initComputation(getParameters());
 		if (computation == null) {
@@ -46,14 +45,10 @@ public class DropletsSimulatorApp extends Application {
 		}
 
 		SimulationFrameController controller = new SimulationFrameController(computation);
-		loader.setController(controller);
 
-		Parent root = loader.load();
-		Scene scene = new Scene(root);
-
-		stage.setScene(scene);
-		stage.setTitle("Cellular fuzzy automaton simulator (Droplets automaton)");
-		stage.show();
+		AppsFxTools.startFXMLApp(stage, controller, //
+				"/cz/upol/fapapp/cfa/gui/frame/SimulationFrame.fxml", //
+				"Cellular fuzzy automaton simulator (droplets automaton)");
 	}
 
 	private CFAComputation initComputation(Parameters parameters) {

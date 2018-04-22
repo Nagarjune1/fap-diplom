@@ -3,11 +3,17 @@ package cz.upol.fapapp.fa.mains;
 import java.util.List;
 
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.press.DataPressureDataset;
 import cz.upol.fapapp.fa.press.DataPressurePerformer;
 import cz.upol.fapapp.fa.press.TIMFDPDatasetParser;
 import cz.upol.fapapp.fa.press.TIMFDPDatesetComposer;
 
+/**
+ * Application performing data pressure data mining technique.
+ * @author martin
+ *
+ */
 public class DataPressureApp {
 
 
@@ -32,6 +38,7 @@ public class DataPressureApp {
 			return;
 		}
 		
+		Logger.get().info("Running data pressure ...");
 		DataPressurePerformer performer = new DataPressurePerformer();
 		performer.run(dataset);
 		

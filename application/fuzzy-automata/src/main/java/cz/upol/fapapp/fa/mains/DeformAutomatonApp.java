@@ -50,32 +50,16 @@ public class DeformAutomatonApp {
 		deform(inputAutomatonFileName, outputAutomatonFileName, deforms);
 	}
 
-	private static void deform(String inputAutomatonFileName, String outputAutomatonFileName, List<String> deforms) {
-		File inputAutomatonFile = new File(inputAutomatonFileName);
-		File outputAutomatonFile = new File(outputAutomatonFileName);
-
-		deform(inputAutomatonFile, outputAutomatonFile, deforms);
-	}
-
-	private static void deform(File inputAutomatonFile, File outputAutomatonFile, List<String> deforms) {
-		FATIMParser automatonParser = new FATIMParser();
-		FuzzyAutomaton inputAutomaton;
-		try {
-			inputAutomaton = (FuzzyAutomaton) automatonParser.parse(inputAutomatonFile);
-		} catch (IOException e) {
-			Logger.get().error("Cannot load input automaton: " + e);
+	private static void deform(String inputAutomatonFile, String outputAutomatonFile, List<String> deforms) {
+		FuzzyAutomaton inputAutomaton = (FuzzyAutomaton) AppsMainsTools.runParser(inputAutomatonFile,
+				new FATIMParser());
+		if (inputAutomaton == null) {
 			return;
 		}
 
 		FuzzyAutomaton outputAutomaton = deform(inputAutomaton, deforms);
 
-		FATIMComposer automatonComposer = new FATIMComposer();
-		try {
-			automatonComposer.compose(outputAutomaton, outputAutomatonFile);
-		} catch (IOException e) {
-			Logger.get().error("Cannot save output automaton: " + e);
-			return;
-		}
+		AppsMainsTools.runComposer(outputAutomatonFile, outputAutomaton, new FATIMComposer());
 	}
 
 	private static FuzzyAutomaton deform(FuzzyAutomaton inputAutomaton, List<String> deforms) {
@@ -83,6 +67,8 @@ public class DeformAutomatonApp {
 			Logger.get().warning("It seems that " + (deforms.size() % 3) + " args are extra, doing nothing");
 			return inputAutomaton;
 		}
+
+		Logger.get().info("Running deformations ...");
 
 		Iterator<String> deformsIters = deforms.iterator();
 		AutomatonDeformer deformer = new AutomatonDeformer(inputAutomaton);
@@ -104,6 +90,8 @@ public class DeformAutomatonApp {
 		if (data == null) {
 			return;
 		}
+
+		Logger.get().debug("Running deformation " + what + " with" + dataSpec + " which is " + how);
 
 		switch (what) {
 		case "replace":

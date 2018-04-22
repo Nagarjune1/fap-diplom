@@ -1,11 +1,11 @@
 package cz.upol.feda.mains;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.feda.power.data.DeviceState;
 import cz.upol.feda.power.data.ElectricalDevice;
 import cz.upol.feda.power.data.PCCDTIMFileParser;
@@ -23,9 +23,12 @@ public class PowerConsumptionComputeApp {
 	private static final Degree TRANSTION_THRESHOLD = new Degree(0.9);
 
 	public static void main(String[] args) {
-		//args = new String[] { "--verbose", "--tnorm", "product", "test-data/powers/debug.timf" };
-		// args = new String[] { "--verbose", "--tnorm", "product", "test-data/powers/some.timf" };
-		 args = new String[] {"--verbose", "--tnorm", "product", "test-data/powers/better.timf" };
+		// args = new String[] { "--verbose", "--tnorm", "product",
+		// "test-data/powers/debug.timf" };
+		// args = new String[] { "--verbose", "--tnorm", "product",
+		// "test-data/powers/some.timf" };
+		// args = new String[] {"--verbose", "--tnorm", "product",
+		// "test-data/powers/better.timf" };
 
 		List<String> argsList = AppsMainsTools.checkArgs(args, 1, 1, () -> printHelp());
 
@@ -35,8 +38,10 @@ public class PowerConsumptionComputeApp {
 	}
 
 	private static void process(String pccdFileName) {
+		
 		PowerConsumptionComputaitionData pccd = inferData(pccdFileName);
 
+		Logger.get().info("Starting power consumptions computation ...");
 		Map<ElectricalDevice, DeviceState> state = compute(pccd);
 
 		printState(state);
@@ -44,8 +49,7 @@ public class PowerConsumptionComputeApp {
 
 	///////////////////////////////////////////////////////////////////////////
 
-	private static PowerConsumptionComputaitionData inferData(String pccdFileName) {
-		File pccdFile = new File(pccdFileName);
+	private static PowerConsumptionComputaitionData inferData(String pccdFile) {
 
 		PowerConsumptionComputaitionData pccd = AppsMainsTools.runParser(pccdFile, new PCCDTIMFileParser());
 

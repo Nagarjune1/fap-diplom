@@ -31,11 +31,13 @@ public class ImageConfigConverter extends Application {
 
 	public static void main(String[] args) {
 		// args = new String[] { "--verbose", "data/test/images/random-100.png",
-		// "data/test/configs/random-config-100.timf" };// XXX debug
+		// "data/test/configs/random-config-100.timf" };
 
-		args = new String[] { "--verbose", "data/test/configs/random-config-100.timf",
-				"data/test/images/random-100.png" };// XXX debug
+//		args = new String[] { "--verbose", "data/test/configs/random-config-100.timf",
+//				"data/test/images/random-100.png" };
 
+
+		
 		Application.launch(args);
 	}
 
@@ -73,7 +75,7 @@ public class ImageConfigConverter extends Application {
 	/**************************************************************************/
 
 	private void convertImageToConfig(File imageFile, File configFile) {
-		Logger.get().moreinfo("Converting image " + imageFile + " to config " + configFile);
+		Logger.get().info("Converting image " + imageFile + " to config " + configFile);
 		try {
 			Imager imager = new Imager();
 			CFAConfiguration config = imager.imageToConfig(imageFile, CHANEL);
@@ -87,7 +89,7 @@ public class ImageConfigConverter extends Application {
 	}
 
 	private void convertConfigToImage(File configFile, File imageFile) {
-		Logger.get().moreinfo("Converting config " + configFile + " to image " + imageFile);
+		Logger.get().info("Converting config " + configFile + " to image " + imageFile);
 		try {
 			CFAConfTIMParser parser = new CFAConfTIMParser();
 			CFAConfiguration config = parser.parse(configFile);

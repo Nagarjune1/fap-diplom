@@ -2,6 +2,13 @@ package cz.upol.fapapp.fa.press;
 
 import java.util.List;
 
+/**
+ * Row of {@link DataPressureDataset}. Contains list of values and resulting
+ * attribute value, both doubles.
+ * 
+ * @author martin
+ *
+ */
 public class DatasetRow {
 	private final List<Double> values;
 	private Double result;

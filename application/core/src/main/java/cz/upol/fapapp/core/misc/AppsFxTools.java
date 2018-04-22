@@ -5,13 +5,16 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 
@@ -22,6 +25,41 @@ import javafx.stage.Window;
  *
  */
 public class AppsFxTools {
+
+	/**
+	 * Runs FX app. Invoke from {@link Application#start(Stage)} method, pass
+	 * stage, create controller, specify path to FXML file and frame title.
+	 * 
+	 * @param stage
+	 *            the stage passed from start method
+	 * @param controller
+	 *            controller object
+	 * @param pathToFXMLFile
+	 *            absolute path, i.e. "/cz/upol/fapapp/foo/Bar.fxml"
+	 * @param title
+	 *            the title of frame
+	 */
+	public static void startFXMLApp(Stage stage, Object controller, String pathToFXMLFile, String title) {
+		Logger.get().info("Starting GUI app ...");
+
+		FXMLLoader loader = new FXMLLoader(controller.getClass().getResource(pathToFXMLFile));
+
+		loader.setController(controller);
+
+		Parent root;
+		try {
+			root = loader.load();
+		} catch (IOException e) {
+			Logger.get().error("Cannot load FXML: " + e.toString());
+			return;
+		}
+		Scene scene = new Scene(root);
+
+		stage.setScene(scene);
+		stage.setTitle(title);
+		stage.show();
+
+	}
 
 	/**
 	 * Loads given fxml name (note: not the path, but only name (in the same

@@ -13,7 +13,7 @@ import cz.upol.fapapp.core.ling.Symbol;
  * Fuzzy automaton with epsilon moves is extension of {@link FuzzyAutomaton}.
  * Allows transtition function to operate with {@link Symbol#EMPTY} and perform
  * so-called epsilon closures. Since the closure can cause infinite
- * approximation, requires as well precision.
+ * approximation, requires as well precision (max. number of closure computation steps).
  * 
  * @author martin
  *

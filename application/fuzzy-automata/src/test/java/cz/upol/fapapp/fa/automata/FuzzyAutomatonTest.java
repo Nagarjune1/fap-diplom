@@ -37,7 +37,9 @@ public class FuzzyAutomatonTest {
 		FuzzyAutomaton automaton = TestAutomataCreator.createAutomaton1();
 
 		//
-		Word word3 = new Word(new Symbol("a"));
+		 Word word3 = new Word(new Symbol("a"));
+//		Word word3 = new Word(new Symbol("j"), new Symbol("a"), new Symbol("n"), new Symbol("i"), new Symbol("n"),
+//				new Symbol("k"), new Symbol("a"));
 		FuzzyState excepted3 = TestUtils.createFuzzyState(//
 				new State("q_0"), new Degree(0.2), new State("q_1"), new Degree(0.5));
 
@@ -93,19 +95,18 @@ public class FuzzyAutomatonTest {
 	public void testDeteminiseAutOfFiniteLang() {
 		Word word1 = new Word(new Symbol("a"), new Symbol("b"));
 		Word word2 = new Word(new Symbol("a"), new Symbol("c"));
-		
+
 		Language language = new Language(word1, word2);
 		FuzzyAutomaton automaton = AutomataCreator.automatonOfLanguage(language);
 
-		
 		FuzzyAutomaton determinised = (FuzzyAutomaton) automaton.determinise();
 		determinised.print(System.out);
-		
+
 		assertEquals(5, determinised.getStates().size());
 		assertEquals(Degree.ONE, determinised.degreeOfWord(word1));
 		assertEquals(Degree.ONE, determinised.degreeOfWord(word2));
 	}
-	
+
 	@Test
 	public void testMinimalise() {
 		FuzzyAutomaton automaton = TestAutomataCreator.createAutomaton1();
@@ -114,10 +115,9 @@ public class FuzzyAutomatonTest {
 		Word wordAA = new Word(new Symbol("a"), new Symbol("a"));
 		Word wordBB = new Word(new Symbol("b"), new Symbol("b"));
 
-		
 		FuzzyAutomaton minAut00 = (FuzzyAutomaton) automaton.minimise(Degree.ZERO);
 		assertEquals(2, minAut00.getStates().size());
-		//minAut1.print(System.out);
+		// minAut1.print(System.out);
 
 		// these automata should behave totaly equally !!!
 		assertEquals(automaton.degreeOfWord(wordAB), minAut00.degreeOfWord(wordAB));
@@ -126,23 +126,23 @@ public class FuzzyAutomatonTest {
 
 		FuzzyAutomaton minAut10 = (FuzzyAutomaton) automaton.minimise(Degree.ONE);
 		assertEquals(2, minAut10.getStates().size());
-		//minAut2.print(System.out);
-		
+		// minAut2.print(System.out);
+
 		// this should behave totaly differently
 		assertEquals(new Degree(0.4), minAut10.degreeOfWord(wordAB));
 		assertEquals(new Degree(0.2), minAut10.degreeOfWord(wordAA));
 		assertEquals(new Degree(0.0), minAut10.degreeOfWord(wordBB));
 
 		FuzzyAutomaton minAut09 = (FuzzyAutomaton) automaton.minimise(new Degree(0.9));
-		//minAut3.print(System.out);
-		// same as previous, no other change 
+		// minAut3.print(System.out);
+		// same as previous, no other change
 		assertEquals(minAut10.degreeOfWord(wordAB), minAut09.degreeOfWord(wordAB));
 		assertEquals(minAut10.degreeOfWord(wordAA), minAut09.degreeOfWord(wordAA));
 		assertEquals(minAut10.degreeOfWord(wordBB), minAut09.degreeOfWord(wordBB));
 
 		FuzzyAutomaton minAut03 = (FuzzyAutomaton) automaton.minimise(new Degree(0.3));
-		//minAut3.print(System.out);
-		// similar to previous, no other change 
+		// minAut3.print(System.out);
+		// similar to previous, no other change
 		assertEquals(minAut00.degreeOfWord(wordAB), minAut03.degreeOfWord(wordAB));
 		assertEquals(minAut00.degreeOfWord(wordAA), minAut03.degreeOfWord(wordAA));
 		assertEquals(minAut00.degreeOfWord(wordBB), minAut03.degreeOfWord(wordBB));

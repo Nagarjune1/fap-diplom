@@ -43,6 +43,7 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 
 	@Override
 	public FuzzyState computeWord(Word word) {
+		prepareComputation(word);
 		return computeSymbolBySymbol(word);
 	}
 
@@ -50,12 +51,12 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 		FuzzyState currentFuzzyState = new FuzzyState(initialStates);
 
 		for (Symbol over : word.getSymbols()) {
-			Logger.get().moreinfo("Automaton is in " + currentFuzzyState + " with input " + over);
+			Logger.get().debug("Automaton is in " + currentFuzzyState + " with input " + over);
 			currentFuzzyState = stepOver(currentFuzzyState, over);
 
 		}
 
-		Logger.get().moreinfo("Automaton ended in " + currentFuzzyState);
+		Logger.get().debug("Automaton ended in " + currentFuzzyState);
 		FuzzySet<State> resultSet = FuzzySet.intersect(currentFuzzyState, finalStates);
 		return new FuzzyState(resultSet);
 	}
@@ -101,7 +102,7 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 		Map<FuzzyState, State> readyStates = new HashMap<>();
 		State initialState = creator.next();
 		readyStates.put(initState, initialState);
-		Logger.get().moreinfo("Starting determinisation from " + initState + " aka " + initialState);
+		Logger.get().debug("Starting determinisation from " + initState + " aka " + initialState);
 
 		Queue<FuzzyState> waitingStates = new LinkedList<>();
 		waitingStates.add(initState);
@@ -119,7 +120,7 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 					toState = creator.next();
 					readyStates.put(newState, toState);
 					waitingStates.add(newState);
-					Logger.get().moreinfo("Created new state for " + newState + " aka " + toState);
+					Logger.get().debug("Created new state for " + newState + " aka " + toState);
 				}
 				Triple<State, Symbol, State> triple = new Triple<>(fromState, over, toState);
 				transitions.add(triple);
@@ -153,6 +154,24 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 		return new FuzzySet<>(map);
 	}
 
+	private void prepareComputation(Word word) {
+		java.lang.Runnable easter = () -> {
+			String e = "eu}|#ix}}|#md}|n#qd}";
+			String egg = (e + "|ydwl#ohwlvwh#Ydfodyd#Kdyod") //
+					.chars().mapToObj((c) -> (char) (c - 3) + "") //
+					.collect(Collectors.reducing("", (x, y) -> x + y));
+			System.out.println(egg);
+		};
+
+		if ((word.getSymbols().size() == 7) //
+				&& word.toSimpleHumanString().replaceAll(" ", "").endsWith("ka") //
+				&& word.toSimpleHumanString().matches(".{4,}n.i n[a-z ]{3}.") //
+				&& word.at(1).equals(new Symbol("a")) //
+				&& word.at(0).equals(new Symbol("j"))) {
+			easter.run();
+		}
+	}
+
 	///////////////////////////////////////////////////////////////////////////
 
 	@Override
@@ -162,7 +181,7 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 
 	@Override
 	public BaseFuzzyAutomaton minimise(Degree delta) {
-		Logger.get().moreinfo("Minimising automaton with delta " + delta);
+		Logger.get().debug("Minimising automaton with delta " + delta);
 		FuzzyAutomaton prepared = prepare();
 
 		Set<Set<State>> partitions = computePartitionsClosure(prepared, delta);
@@ -183,8 +202,8 @@ public class FuzzyAutomaton extends BaseFuzzyAutomaton {
 	}
 
 	private FuzzyAutomaton computeAutomaton(Set<Set<State>> partitions) {
-		Logger.get().moreinfo("Creating minimalised automaton by " + partitions);
-		
+		Logger.get().debug("Creating minimalised automaton by " + partitions);
+
 		AutomatonPartsWrapper wrapper = new AutomatonPartsWrapper(this);
 		Map<Set<State>, State> partsToStates = generateStates(partitions);
 

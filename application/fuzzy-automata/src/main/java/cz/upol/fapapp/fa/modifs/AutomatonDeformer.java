@@ -15,7 +15,8 @@ import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
 /**
- * Class performing deformations of fuzzy automaton. 
+ * Class performing deformations of fuzzy automaton.
+ * 
  * @author martin
  *
  */
@@ -28,6 +29,12 @@ public class AutomatonDeformer {
 		this.newly = new MutableAutomatonStructure();
 	}
 
+	/**
+	 * Returns currently deformed automaton.
+	 * 
+	 * @param precisionOrNull
+	 * @return
+	 */
 	public FuzzyAutomaton getAutomaton(Integer precisionOrNull) {
 		MutableAutomatonStructure merged = MutableAutomatonStructure.merge(old, newly);
 		return merged.toAutomaton(precisionOrNull);
@@ -35,13 +42,23 @@ public class AutomatonDeformer {
 
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Adds replaces with specified degree of all characters.
+	 * 
+	 * @param degreeOf
+	 */
 	public void addReplace(Degree degreeOf) {
 		FuzzyBinaryRelation<Symbol, Symbol> similarity = degreeToFuzzyBinaryRelation(old.getAlphabet(), degreeOf);
 		addReplace(similarity);
 	}
 
+	/**
+	 * Adds replaces based by given symbols similarity relation.
+	 * 
+	 * @param similarity
+	 */
 	public void addReplace(FuzzyBinaryRelation<Symbol, Symbol> similarity) {
-		Logger.get().moreinfo("Adding replaces " + similarity);
+		Logger.get().debug("Adding replaces " + similarity);
 		checkSimilarity(similarity);
 
 		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
@@ -58,13 +75,23 @@ public class AutomatonDeformer {
 		});
 	}
 
+	/**
+	 * Adds inserts of one or more symbols with specified degree of all symbols.
+	 * 
+	 * @param degreeOf
+	 */
 	public void addInsertMore(Degree degreeOf) {
 		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addInsertMore(degreesOf);
 	}
 
+	/**
+	 * Adds inserts of one or more symbols based on given fuzzy set.
+	 * 
+	 * @param degreesOf
+	 */
 	public void addInsertMore(FuzzySet<Symbol> degreesOf) {
-		Logger.get().moreinfo("Adding inserts more " + degreesOf);
+		Logger.get().debug("Adding inserts more " + degreesOf);
 
 		old.getStates().stream().forEach((state) -> {
 			old.getAlphabet().stream().forEach((symbol) -> {
@@ -75,13 +102,23 @@ public class AutomatonDeformer {
 		});
 	}
 
+	/**
+	 * Adds removals of one symbol based on given degree of all of symbols.
+	 * 
+	 * @param degreeOf
+	 */
 	public void addRemoveOne(Degree degreeOf) {
 		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addRemoveOne(degreesOf);
 	}
 
+	/**
+	 * Adds removals of one symbol based on given fuzy set.
+	 * 
+	 * @param degreesOf
+	 */
 	public void addRemoveOne(FuzzySet<Symbol> degreesOf) {
-		Logger.get().moreinfo("Adding removes ones " + degreesOf);
+		Logger.get().debug("Adding removes ones " + degreesOf);
 
 		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
 			if (Symbol.EMPTY.equals(over)) {
@@ -95,13 +132,23 @@ public class AutomatonDeformer {
 		});
 	}
 
+	/**
+	 * Adds inserts of exactly one symbol by given degree.
+	 * 
+	 * @param degreeOf
+	 */
 	public void addInsertOne(Degree degreeOf) {
 		FuzzySet<Symbol> degreesOf = degreeToFuzzySet(old.getAlphabet(), degreeOf);
 		addInsertOne(degreesOf);
 	}
 
+	/**
+	 * Adds inserts of exactly one symbol based on given fuzzy set.
+	 * 
+	 * @param degreesOf
+	 */
 	public void addInsertOne(FuzzySet<Symbol> degreesOf) {
-		Logger.get().moreinfo("Adding inserts ones " + degreesOf);
+		Logger.get().debug("Adding inserts ones " + degreesOf);
 		StatesCreator creator = new StatesCreator("'", old.getStates().size());
 
 		old.doWithTransitionFunction((transition, from, over, to, degree) -> {
@@ -126,6 +173,13 @@ public class AutomatonDeformer {
 
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Converts degree to fuzzy set filled with given degree.
+	 * 
+	 * @param alphabet
+	 * @param degreeOf
+	 * @return
+	 */
 	private static FuzzySet<Symbol> degreeToFuzzySet(Set<Symbol> alphabet, Degree degreeOf) {
 		Map<Symbol, Degree> tuples = new HashMap<>(alphabet.size());
 
@@ -136,6 +190,14 @@ public class AutomatonDeformer {
 		return new FuzzySet<>(tuples);
 	}
 
+	/**
+	 * Converts to fuzzy relation containing given degree (for differents) or
+	 * {@link Degree#ONE} for twos, whose are equal.
+	 * 
+	 * @param alphabet
+	 * @param degreeOfOthers
+	 * @return
+	 */
 	private static FuzzyBinaryRelation<Symbol, Symbol> degreeToFuzzyBinaryRelation(Set<Symbol> alphabet,
 			Degree degreeOfOthers) {
 
@@ -159,6 +221,12 @@ public class AutomatonDeformer {
 		return new FuzzyBinaryRelation<>(tuples);
 	}
 
+	/**
+	 * Checks whether given similarity matches criteria that two equal elements
+	 * must be similar in degree of {@link Degree#ONE}. If not, warns.
+	 * 
+	 * @param similarity
+	 */
 	private static <E> void checkSimilarity(FuzzyBinaryRelation<E, E> similarity) {
 
 		for (Couple<E, E> couple : similarity.domain()) {

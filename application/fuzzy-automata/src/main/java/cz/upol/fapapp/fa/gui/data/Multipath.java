@@ -6,6 +6,11 @@ import java.util.stream.Collectors;
 
 import javafx.geometry.Point2D;
 
+/**
+ * Holds list of paths.
+ * @author martin
+ *
+ */
 public class Multipath {
 	private final List<Path> paths;
 
@@ -29,6 +34,7 @@ public class Multipath {
 		return paths;
 	}
 
+	
 	public List<PathSegment> listSegments() {
 		return paths.stream() //
 				.flatMap((p) -> p.getSegments().stream()).collect(Collectors.toList());

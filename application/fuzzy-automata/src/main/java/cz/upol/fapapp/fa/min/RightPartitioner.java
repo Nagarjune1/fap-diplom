@@ -14,6 +14,13 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.core.sets.BinaryRelation.Couple;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
+/**
+ * Partitioner trying to implement as much as possible partitioning algorithm
+ * based right-invariant equvivalences.
+ * 
+ * @author martin
+ *
+ */
 public class RightPartitioner implements AutomataPartitioner {
 
 	private final Set<State> states;
@@ -34,14 +41,13 @@ public class RightPartitioner implements AutomataPartitioner {
 
 	@Override
 	public SetsPartition<State> compute() {
-		//System.out.println("-------");
 		SetsPartition<State> oldPartition = null;
 		SetsPartition<State> newPartition = createInitialPartition();
 
 		do {
 			oldPartition = newPartition.clone();
 			newPartition = recomputePartition(newPartition);
-			Logger.get().moreinfo("Computed partitions: " + newPartition);
+			Logger.get().debug("Computed current partitions: " + newPartition);
 		} while (!newPartition.equals(oldPartition));
 
 		return newPartition;
@@ -56,7 +62,7 @@ public class RightPartitioner implements AutomataPartitioner {
 
 			Set<State> firstSub = partDifferents.getDomain();
 			Set<State> secondSub = partDifferents.getTarget();
-			
+
 			if (!firstSub.isEmpty() && !secondSub.isEmpty()) {
 				partition.split(firstSub, secondSub);
 			}
@@ -68,95 +74,32 @@ public class RightPartitioner implements AutomataPartitioner {
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
-
 	private Couple<Set<State>, Set<State>> checkPart(Set<State> part, SetsPartition<State> partition) {
 
 		Set<State> keepInPart = new HashSet<>(part);
 		Set<State> removeFromPart = new HashSet<>(part.size());
-		
-		//for (State first : part) {
+
 		State first = part.iterator().next();
-			for (State second : part) {
-				if (first.equals(second)) {
-					continue;
-				}
-
-				Degree match = matchOfPart(first, second, partition);
-
-				boolean isInDelta = isMatchInDelta(match);
-				if (!isInDelta) {
-					//System.out.println("NoMach " + first + " x " + second + " in " + " -> \t" + match);
-					
-					SetsPartition.prepareSplit(keepInPart, removeFromPart, first, second);
-				} else {
-					//System.out.println("Machtc " + first + " x " + second + " in " + " -> \t" + match);
-				}
-
-				//System.out.println("State " + first + " x " + second + " in " + " -> \t" + match);
-				
+		for (State second : part) {
+			if (first.equals(second)) {
+				continue;
 			}
-		//}
 
-		//System.out.println("+++" + keepInPart + " / "+ removeFromPart);
+			Degree match = matchOfPart(first, second, partition);
+
+			boolean isInDelta = isMatchInDelta(match);
+			if (!isInDelta) {
+
+				SetsPartition.prepareSplit(keepInPart, removeFromPart, first, second);
+			} else {
+			}
+
+		}
 
 		return new Couple<>(keepInPart, removeFromPart);
 	}
 
-	@Deprecated
-	private boolean fitsToItsPartition(State state, SetsPartition<State> partition) {
-		Set<State> part = partition.findPartContaining(state);
-		Degree matchOfPart = matchOfPart(state, null, partition);
-		Degree diff = matchToDiff(matchOfPart);
-
-		return isInDelta(diff);
-	}
-
-	private void removeFromCurrentPartition(State state, SetsPartition<State> partition) {
-		Set<State> currentPart = partition.findPartContaining(state);
-		Set<State> betterPart = computeBetterPart(state, currentPart, partition);
-
-		if (betterPart == null) {
-			separate(state, partition);
-		} else {
-			move(state, betterPart, partition);
-		}
-	}
-
-	@Deprecated
-	private Set<State> computeBetterPart(State state, Set<State> currentPart, SetsPartition<State> partition) {
-		Set<State> betterPart = currentPart;
-		Degree betterMatch = matchOfPart(state, null, partition);
-
-		for (Set<State> part : partition.getPartitions()) {
-			Degree match = matchOfPart(state, null, partition);
-			System.err.println("BTR " + state + " -> " + part + "\t ==> " + match);
-			Degree diff = match.negate();
-			if (!isInDelta(diff)) {
-				continue;
-			}
-			if (Degree.isSmallerThan(betterMatch, match, false)) {
-				betterPart = part;
-				betterMatch = match;
-			}
-		}
-
-		System.err.println("BBB " + state + " ==>" + betterPart + " \t :: " + betterMatch + " ? "
-				+ betterPart.equals(currentPart));
-		if (betterPart.equals(currentPart)) {
-			return null;
-		} else {
-			return betterPart;
-		}
-	}
 	/////////////////////////////////////////////////////////////////////////////////////
-
-	private void move(State state, Set<State> betterPart, SetsPartition<State> partition) {
-		partition.move(state, betterPart);
-	}
-
-	private void separate(State state, SetsPartition<State> partition) {
-		partition.separate(state);
-	}
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
@@ -174,12 +117,6 @@ public class RightPartitioner implements AutomataPartitioner {
 				Degree equality = equality(degreeOfState, degreeOfAnother);
 				result = tnorm(result, equality);
 
-				// if (state.getLabel().equals("q_q_1_5") &&
-				// anotherFrom.getLabel().equals("q_q_1_1")) {
-				// System.out.println("- over " + over + " to " + to + " -> " +
-				// degreeOfState + " / " + degreeOfAnother + " ==> " + equality
-				// + ", " + result);
-				// }
 			}
 		}
 
@@ -208,7 +145,6 @@ public class RightPartitioner implements AutomataPartitioner {
 		return part;
 	}
 
-	@Deprecated
 	private SetsPartition<State> computeSimpleClosureOf(SetsPartition<State> partition, //
 			Function<Set<State>, Degree> degreeOfPartComputer) {
 
@@ -225,7 +161,6 @@ public class RightPartitioner implements AutomataPartitioner {
 		return partition;
 	}
 
-	@Deprecated
 	private Couple<Set<State>, Set<State>> findClosestFeasiblePair(SetsPartition<State> partition, //
 			Function<Set<State>, Degree> degreeOfPartComputer) {
 
@@ -261,8 +196,6 @@ public class RightPartitioner implements AutomataPartitioner {
 
 	/////////////////////////////////////////////////////////////////////////////////////
 
-	/////////////////////////////////////////////////////////////////////////////////////
-
 	private Degree differenceBy(Set<State> first, Set<State> second,
 			Function<Set<State>, Degree> degreeOfPartComputer) {
 		Degree firstFinalIn = degreeOfPartComputer.apply(first);
@@ -272,10 +205,6 @@ public class RightPartitioner implements AutomataPartitioner {
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////
-
-	private Degree matchToDiff(Degree degree) {
-		return degree.negate();
-	}
 
 	private Degree equality(Degree first, Degree second) {
 		return difference(first, second).negate();
@@ -294,7 +223,7 @@ public class RightPartitioner implements AutomataPartitioner {
 
 		return diffValue <= deltaValue;
 	}
-	
+
 	private boolean isMatchInDelta(Degree match) {
 		double matchValue = match.getValue();
 		double deltaValue = delta.getValue();

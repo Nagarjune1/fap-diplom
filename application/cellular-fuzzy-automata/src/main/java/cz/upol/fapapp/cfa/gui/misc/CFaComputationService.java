@@ -54,14 +54,14 @@ public class CFaComputationService extends Service<CFAComputation> {
 
 		@Override
 		protected CFAComputation call() throws Exception {
-			Logger.get().moreinfo("Running computation task since generation " + computation.getGeneration());
+			Logger.get().info("Running computation task since generation " + computation.getGeneration());
 			while (!this.isCancelled()) {
 				doOneStep();
 
 				sleepItself();
 			}
 
-			Logger.get().moreinfo("Finished computation at generation " + computation.getGeneration());
+			Logger.get().info("Finished computation at generation " + computation.getGeneration());
 			return computation;
 		}
 

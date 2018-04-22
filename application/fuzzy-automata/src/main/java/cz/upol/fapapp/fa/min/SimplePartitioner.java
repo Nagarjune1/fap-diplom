@@ -15,6 +15,8 @@ import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
 /**
+ * Simple partitioner. It's so simple it does not work properly. And also
+ * outdated (does not use SetsPartition as its primary data structure).
  * 
  * @author martin
  * @deprecated use {@link RightPartitioner} instead.
@@ -43,7 +45,7 @@ public class SimplePartitioner implements AutomataPartitioner {
 		do {
 			oldPartition = newPartition;
 			newPartition = computePartition(oldPartition);
-			Logger.get().moreinfo("Computed partitions: " + newPartition);
+			Logger.get().debug("Computed partitions: " + newPartition);
 		} while (!newPartition.equals(oldPartition));
 
 		return newPartition;

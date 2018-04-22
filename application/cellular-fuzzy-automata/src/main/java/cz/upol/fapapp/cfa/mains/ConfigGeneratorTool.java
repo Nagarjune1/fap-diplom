@@ -1,6 +1,5 @@
 package cz.upol.fapapp.cfa.mains;
 
-import java.io.File;
 import java.util.List;
 
 import cz.upol.fapapp.cfa.automata.CellState;
@@ -8,6 +7,7 @@ import cz.upol.fapapp.cfa.conf.CFAConfTIMComposer;
 import cz.upol.fapapp.cfa.conf.CFAConfiguration;
 import cz.upol.fapapp.cfa.conf.ConfigGenerator;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 
 /**
  * Application generating configs.
@@ -27,14 +27,14 @@ public class ConfigGeneratorTool {
 		String sizeStr = argsList.get(1);
 		String typeStr = argsList.get(2);
 
-		File file = new File(fileStr);
 		int size = Integer.parseInt(sizeStr);
 
-		generate(file, size, typeStr);
+		generate(fileStr, size, typeStr);
 
 	}
 
-	private static void generate(File file, int size, String typeSpec) {
+	private static void generate(String file, int size, String typeSpec) {
+		Logger.get().info("Generated config of type" + typeSpec);
 		CFAConfiguration configuration = generateConfig(size, typeSpec);
 
 		CFAConfTIMComposer composer = new CFAConfTIMComposer();

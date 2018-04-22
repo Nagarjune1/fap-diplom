@@ -6,6 +6,13 @@ import java.util.stream.Collectors;
 
 import cz.upol.fapapp.core.misc.Printable;
 
+/**
+ * Dataset for the data pressure technique. Holds delta, thresholds (if so) and
+ * training and tes data tables.
+ * 
+ * @author martin
+ *
+ */
 public class DataPressureDataset implements Printable {
 
 	private double delta;
@@ -48,6 +55,11 @@ public class DataPressureDataset implements Printable {
 
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * Lists values of training data at given column.
+	 * @param columnIndex
+	 * @return
+	 */
 	protected List<Double> listColumn(int columnIndex) {
 		return trainingData.stream() //
 				.map((r) -> r.getValue(columnIndex)) //

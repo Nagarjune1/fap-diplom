@@ -1,7 +1,5 @@
 package cz.upol.fapapp.fa.mains;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import cz.upol.fapapp.core.fuzzy.Degree;
@@ -35,29 +33,11 @@ public class ComputeWordApp {
 		System.out.println(degree);
 	}
 
-	private static Degree run(String automatonFileName, String wordFileName) {
-		File automatonFile = new File(automatonFileName);
-		File wordFile = new File(wordFileName);
+	private static Degree run(String automatonFile, String wordFile) {
+		FuzzyAutomaton automaton = (FuzzyAutomaton) AppsMainsTools.runParser(automatonFile, new FATIMParser());
+		Word word = AppsMainsTools.runParser(wordFile, new WordTIMParser());
 
-		return run(automatonFile, wordFile);
-	}
-
-	private static Degree run(File automatonFile, File wordFile) {
-		FATIMParser automatonParser = new FATIMParser();
-		FuzzyAutomaton automaton;
-		try {
-			automaton = (FuzzyAutomaton) automatonParser.parse(automatonFile);
-		} catch (IOException e) {
-			Logger.get().error("Cannot load automaton file: " + e);
-			return null;
-		}
-
-		WordTIMParser wordParser = new WordTIMParser();
-		Word word;
-		try {
-			word = wordParser.parse(wordFile);
-		} catch (IOException e) {
-			Logger.get().error("Cannot load word file: " + e);
+		if (automaton == null || word == null) {
 			return null;
 		}
 
@@ -65,6 +45,7 @@ public class ComputeWordApp {
 	}
 
 	private static Degree run(FuzzyAutomaton automaton, Word word) {
+		Logger.get().info("Runs word " + word + " over automaton");
 		return automaton.degreeOfWord(word);
 	}
 

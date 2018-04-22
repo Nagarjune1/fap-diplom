@@ -5,6 +5,11 @@ import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.fa.automata.FuzzyAutomaton;
 
+/**
+ * Simple {@link AutomatonDescWrapper} working with states. Just simple encapsulates the automaton's API.
+ * @author martin
+ *
+ */
 public class AutomatonStatesWrapper implements AutomatonDescWrapper<State> {
 
 	private final FuzzyAutomaton automaton;

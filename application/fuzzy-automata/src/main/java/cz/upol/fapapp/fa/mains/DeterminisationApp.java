@@ -3,18 +3,24 @@ package cz.upol.fapapp.fa.mains;
 import java.util.List;
 
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.automata.BaseFuzzyAutomaton;
 import cz.upol.fapapp.fa.automata.FATIMComposer;
 import cz.upol.fapapp.fa.automata.FATIMParser;
 
+/**
+ * Application performing automaton determinisation.
+ * @author martin
+ *
+ */
 public class DeterminisationApp {
 
 	public static void main(String[] args) {
-		args = new String[] { //
-				"--tnorm", "godel",
-				"test-data/basic/nondet.timf", //
-				"test-data/basic/det.timf" //
-		};
+//		args = new String[] { //
+//				"--tnorm", "godel",
+//				"test-data/basic/nondet.timf", //
+//				"test-data/basic/det.timf" //
+//		};
 
 		List<String> argsList = AppsMainsTools.checkArgs(args, 2, 2, () -> printHelp());
 
@@ -27,7 +33,12 @@ public class DeterminisationApp {
 
 	private static void perform(String inFile, String outFile) {
 		BaseFuzzyAutomaton automaton = AppsMainsTools.runParser(inFile, new FATIMParser());
-
+		if (automaton == null) {
+			return;
+		}
+		
+		
+		Logger.get().debug("Running determinisation");
 		BaseFuzzyAutomaton determinised = automaton.determinise();
 
 		AppsMainsTools.runComposer(outFile, determinised, new FATIMComposer());

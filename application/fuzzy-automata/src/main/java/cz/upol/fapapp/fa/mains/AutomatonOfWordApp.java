@@ -1,7 +1,5 @@
 package cz.upol.fapapp.fa.mains;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import cz.upol.fapapp.core.ling.Alphabet;
@@ -37,43 +35,26 @@ public class AutomatonOfWordApp {
 		generate(wordFileName, automatonFileName);
 	}
 
-	private static void generate(String wordFileName, String automatonFileName) {
-		File wordFile = new File(wordFileName);
-		File automatonFile = new File(automatonFileName);
 
-		generate(wordFile, automatonFile);
-	}
-
-	private static void generate(File wordFile, File automatonFile) {
-		WordTIMParser wordParser = new WordTIMParser();
-		WordWithAlphabet word;
-		try {
-			word = wordParser.parse(wordFile);
-
-		} catch (IOException e) {
-			Logger.get().error("Cannot load file with word: " + e);
+	private static void generate(String wordFile, String automatonFile) {
+		WordWithAlphabet word = AppsMainsTools.runParser(wordFile, new WordTIMParser());
+		if (word == null) {
 			return;
 		}
-
+		
 		FuzzyAutomaton automaton = generate(word.getAlphabet(), word);
 
-		FATIMComposer automatonComposer = new FATIMComposer();
-		try {
-			automatonComposer.compose(automaton, automatonFile);
-		} catch (IOException e) {
-			Logger.get().error("Canno save file with automaton: " + e);
-			return;
-		}
-
+		AppsMainsTools.runComposer(automatonFile, automaton, new FATIMComposer());
 	}
 
 	private static FuzzyAutomaton generate(Alphabet alphabet, Word word) {
+		Logger.get().info("Generates automaton of word " + word);
 		return AutomataCreator.automatonOfWord(alphabet, word);
 	}
 
 	private static void printHelp() {
 		System.out.println("AutomatonOfWordApp");
-		System.out.println("Usage: AutomatonOfWordApp word.timf automaton.timf ");
+		System.out.println("Usage: AutomatonOfWordApp WORD.timf AUTOMATON.timf ");
 	}
 
 }

@@ -8,6 +8,12 @@ import cz.upol.fapapp.core.timfile.TIMFileData;
 import cz.upol.fapapp.core.timfile.TIMObjectComposer;
 import cz.upol.fapapp.core.timfile.TIMObjectParserComposerTools;
 
+/**
+ * {@link TIMObjectComposer} for {@link DataPressureDataset}.
+ * 
+ * @author martin
+ *
+ */
 public class TIMFDPDatesetComposer extends TIMObjectComposer<DataPressureDataset> {
 
 	public TIMFDPDatesetComposer() {
@@ -40,7 +46,6 @@ public class TIMFDPDatesetComposer extends TIMObjectComposer<DataPressureDataset
 		processRows(testData, data, "test data");
 	}
 
-	
 	private void processRows(List<DatasetRow> rows, TIMFileData data, String name) {
 		for (DatasetRow row : rows) {
 

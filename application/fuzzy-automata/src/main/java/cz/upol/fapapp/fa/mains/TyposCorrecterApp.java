@@ -1,6 +1,5 @@
 package cz.upol.fapapp.fa.mains;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
@@ -10,13 +9,16 @@ import java.util.stream.Collectors;
 import cz.upol.fapapp.core.fuzzy.Degree;
 import cz.upol.fapapp.core.ling.Word;
 import cz.upol.fapapp.core.misc.AppsMainsTools;
+import cz.upol.fapapp.core.misc.Logger;
 import cz.upol.fapapp.fa.typos.DefaultKeymap;
 import cz.upol.fapapp.fa.typos.KeyboardMap;
 import cz.upol.fapapp.fa.typos.TyposCorrecter;
 import cz.upol.fapapp.fa.typos.WordsTimFileParser;
 
 /**
- * Application for typos correcting. Can be used both with input or iteractivelly (words read from stdin).
+ * Application for typos correcting. Can be used both with input or
+ * iteractivelly (words read from stdin).
+ * 
  * @author martin
  *
  */
@@ -32,18 +34,23 @@ public class TyposCorrecterApp {
 	private static final Degree INSERTS_MORE_DEGREE = new Degree(0.01);
 
 	public static void main(String[] args) {
-		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/months.timf", };
-//		
-		//		args = new String[] { /* "--verbose", */ "--tnorm", "product", "test-data/typos/animals-dictionary.timf", // };
-//				"dg", "doberman" };
-//		
-//		args = new String[] {   "--tnorm", "product", "test-data/typos/numbers.timf"}; //XXX debug
-//		
-//		args = new String[] {  "--tnorm", "product", "test-data/typos/100-words.timf", // };
-//				//"peqple" };
-//				"nan use yout peqple sou thus thibng i thinl" };
-//		
+		// args = new String[] { /* "--verbose", */ "--tnorm", "product",
+		// "test-data/typos/months.timf", };
+		//
+		// args = new String[] { /* "--verbose", */ "--tnorm", "product",
+		// "test-data/typos/animals-dictionary.timf", // };
+		// "dg", "doberman" };
+		//
+		// args = new String[] { "--tnorm", "product",
+		// "test-data/typos/numbers.timf"}; //XXX debug
+		//
+		// args = new String[] { "--tnorm", "product",
+		// "test-data/typos/100-words.timf", // };
+		// //"peqple" };
+		// "nan use yout peqple sou thus thibng i thinl" };
+		//
 
+		
 		List<String> argsList = AppsMainsTools.checkArgs(args, 1, null, () -> printHelp());
 		if (argsList == null) {
 			System.exit(1);
@@ -57,13 +64,9 @@ public class TyposCorrecterApp {
 
 	///////////////////////////////////////////////////////////////////////////
 
-	private static void correct(String dictionaryFileName, List<String> wordsList) {
-		File dictionaryFile = new File(dictionaryFileName);
-
-		correct(dictionaryFile, wordsList);
-	}
-
-	private static void correct(File dictionaryFile, List<String> wordsList) {
+	private static void correct(String dictionaryFile, List<String> wordsList) {
+		Logger.get().debug("Loading dictionary " + dictionaryFile);
+		
 		List<Word> dictionary = AppsMainsTools.runParser(dictionaryFile, new WordsTimFileParser());
 		if (dictionary == null) {
 			return;
@@ -71,20 +74,24 @@ public class TyposCorrecterApp {
 
 		KeyboardMap keymap = KEYMAP;
 
+		
 		correct(dictionary, keymap, wordsList);
 
 	}
 
 	private static void correct(List<Word> dictionary, KeyboardMap keymap, List<String> wordsList) {
+		
 		TyposCorrecter correcter = new TyposCorrecter(dictionary, keymap, //
 				REPLACES_DEGREE, REMOVES_DEGREE, INSERTS_ONES_DEGREE, INSERTS_MORE_DEGREE);
 
 		if (wordsList.isEmpty()) {
+			Logger.get().debug("Running correction of stdin");
 			correctStream(correcter, System.in);
+			
 		} else {
+			Logger.get().debug("Running correction of " + wordsList);
 			correctList(correcter, wordsList);
 		}
-
 	}
 
 	private static void correctList(TyposCorrecter correcter, List<String> wordsList) {

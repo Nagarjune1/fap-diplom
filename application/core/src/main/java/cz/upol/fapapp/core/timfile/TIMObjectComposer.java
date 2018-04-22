@@ -36,7 +36,7 @@ public abstract class TIMObjectComposer<T> {
 	 * @throws IOException
 	 */
 	public void compose(T object, File file) throws IOException {
-		Logger.get().moreinfo("Composing TIM file of type '" + type + "' into " + file.getPath());
+		Logger.get().info("Composing TIM file of type '" + type + "' into " + file.getPath());
 
 		TIMFileComposer composer = new TIMFileComposer();
 		TIMFileData data = composeTIMData(object);
