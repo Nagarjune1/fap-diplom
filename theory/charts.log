@@ -1,4 +1,4 @@
-This is MetaPost, version 1.9991 (TeX Live 2016/Debian) (kpathsea version 6.2.2)  22 JAN 2018 01:57
+This is MetaPost, version 1.9991 (TeX Live 2016/Debian) (kpathsea version 6.2.2)  22 APR 2018 11:06
 **charts.mp
 (/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
 (/usr/share/texlive/texmf-dist/metapost/base/plain.mp
@@ -8,7 +8,27 @@ Preloading the plain mem file, version 1.005) ) (./charts.mp
 (/usr/share/texlive/texmf-dist/metapost/base/string.mp))
 (/usr/share/texlive/texmf-dist/metapost/base/format.mp
 (/usr/share/texlive/texmf-dist/metapost/base/string.mp)
-(/usr/share/texlive/texmf-dist/metapost/base/texnum.mp))) [0{psfonts.map}<cmr10
-.pfb>] )
+(/usr/share/texlive/texmf-dist/metapost/base/texnum.mp)))
+>> XXXXX.do
+! Isolated expression.
+<to be read again> 
+                   not
+l.7 XXXXX do not
+                 use
+? 
+! Extra tokens will be flushed.
+<to be read again> 
+                   not
+l.7 XXXXX do not
+                 use
+? 
+[0{psfonts.map}<cmr10.pfb>]
+! Extra `endgroup'.
+endfig->scantokens.extra_endfig;shipit;endgroup
+                                               
+l.40 endfig
+           ;
+? 
+ )
 1 output file written: charts0.mps
 

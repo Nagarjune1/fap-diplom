@@ -2,6 +2,7 @@ input automata;
 outputtemplate:="%j%c.mps";
 
 
+XXXXXXXXXXXXXXXXXXXXXX
 
 beginfig(0);	% automata representing faces emotions of chess player
   

@@ -6,6 +6,7 @@ outputtemplate:="%j%c.mps";
 %% XXXXX THIS FILE IS TO BE DELETED
 %% XXXXX
 
+XXXXXXXXXXXXXXXXXXXXX
 
 %verbatimtex
 %btex
@@ -98,7 +99,7 @@ beginfig(4);	% automat na bázi editačních operací rozpoznávající abc/1
   loopsize := 30;
   
   bordercolor := black; nodelabelcolor := black;
-  node.a[1][1](btex $q_0$ etex);
+  node.a[1][1](btex $\substack{ q_0 \\ x}$ etex);
   node.a[1][2](btex $q_1$ etex);
   node.a[1][3](btex $q_2$ etex);
   node.a[1][4](btex $q_3$ etex);

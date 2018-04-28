@@ -1,0 +1,43 @@
+%% compile with: mpost -tex=latex  mpimg-charts.mp
+prologues := 3;
+outputtemplate:="%j%c.mps";
+input graph
+
+verbatimtex 
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+etex
+
+beginfig(0);	% lingusitic variables
+
+
+  draw begingraph(8cm,3cm)
+    gdraw "ling-vars-height-meanings.txt" withpen pencircle scaled 1.0pt;
+    glabel.top(btex $X_m$ etex, 1);
+    
+    gdraw "ling-vars-height-meanings.txt" withpen pencircle scaled 1.2pt;
+    glabel.ulft(btex $X_s$ etex, 3);
+    
+    gdraw "ling-vars-height-meanings.txt" withpen pencircle scaled 1.4pt;
+    glabel.top(btex $X_v$ etex, 5);
+    
+    gdraw "ling-vars-height-meanings.txt" withpen pencircle scaled 1.8pt;
+    glabel.top(btex $X_{vv}$ etex, 7);
+    
+    
+    grid.lft((btex $0$ etex), newy(0)) withcolor .5white;
+    grid.lft((btex $1$ etex), newy(1)) withcolor .5white;
+
+    
+    frame.llft;
+    glabel.bot(btex Výška osoby (cm) etex, OUT);
+    glabel.lft(btex Stupeň etex rotated 90, OUT);
+  endgraph;
+
+%draw (0, 0)--(10,10)--(5,8);
+
+endfig;
+  
+  
+end

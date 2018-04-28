@@ -4,6 +4,8 @@ outputtemplate:="%j%c.mps";
 
 
 
+XXXXXXX
+
 size := 25;
 incominglength := 30;
 loopsize := 20;
