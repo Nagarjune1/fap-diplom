@@ -345,7 +345,7 @@ Následuje popis, jak pojmy týkající se nedeterministického bivalentního au
 \subsection{Nedeterministický fuzzy automat}
 Stejně tak, jak fuzzy množiny jsou zobecněním klasických \uv{bivalentních} množin, dá se předpokládat, že i fuzzy automaty budou v určitém smyslu zobecněním klasických bivalentních automatů. A nebude tomu jinak ani u nedeterministického automatu.
 
-Vzhledem k tomu, že automat je definován jako struktura, je zprvu třeba stanovit, které její části má smysl zobecňovat na fuzzy množiny (relace, funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{Bel-DetAndFuzzAut} \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc})\footnote{Mezi oběma druhy automatů existuje ekvivalence.}. Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i 
+Vzhledem k tomu, že automat je definován jako struktura, je zprvu třeba stanovit, které její části má smysl zobecňovat na fuzzy množiny (relace, funkce). Abeceda symbolů i množina stavů zcela určitě můsí zůstat zachovány jako konečné bivalentní množiny. U přechodové funkce naopak očekáváme ostupňovanost (očekáváme možnost říkat \uv{automat přejde do stavu $q$ ve stupni $d$}). Co se počátečních a koncových stavů týče, někde se lze setkat s reprezentací bivalentní množinou (např. v. \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}), jinde zase s fuzzy množinami (\cite{StaCir-ConsFuzzAutFuzzRegExp}, \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}, \cite{Bel-DetFuzzAut} \cite{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc})\footnote{Mezi oběma druhy automatů existuje ekvivalence.}. Vzhledem k tomu, že druhý jmenovaný, tj. automat s fuzzy množinou vstupních i 
 výstupních stavů, je zřejmě obecnější, bude nadále uvažován pouze tento.
 
 \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
@@ -735,9 +735,7 @@ Pokud automat zkončí svůj výpočet v některém z koncových stavů je přij
 \subsection{Buněčné fuzzy automaty}
 Buněčné automaty a fuzzy buněčné automaty jsou výpočetní modely, které se koncepčně značně liší od klasických automatů. Dle \cite{Wol-NewKinSci} je jejich studium dokonce označováno za naprosto samostatné matematické paradigma. I přesto je v určitém smyslu je možné je považovat za zobecnění \uv{klasických} deterministických automatů. Dá se totiž říci, že se jedná o $n$-dimenzionální mřížku tvořenou instancemi téže automatu.
 
-Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku (např. \cite{Wol-NewKiSci}, \cite{Wol-CelAut}, \cite{BatXie-CellCity})
-%, jiné konečnou se simulovanou nekonečností (odpovídající hrany jsou logicky propojeny\T O D O {popsat to nějak lépe}) či 
-jiné zase konečnou (např. \cite{Wu-ExpGenPolUrbGroCelAutCit}). Také se často kromě klasické čtvercové mřížky pracuje s s mřížkou trojúhelníkovou nebo šestiúhelníkovou (např. \cite{For-FuzCelAutConjNormForm}).
+Přesné vymezení pojmu \uv{buněčný automat} se často různí. Některé definice uvažují nekonečnou mřížku (např. \cite{Wol-NewKinSci}, \cite{Wol-CelAut}, \cite{BatXie-CellCity}) jiné zase konečnou (např. \cite{Wu-ExpGenPolUrbGroCelAutCit}). Také se často kromě klasické čtvercové mřížky pracuje s s mřížkou trojúhelníkovou nebo šestiúhelníkovou (např. \cite{For-FuzCelAutConjNormForm}).
 
 Vzhledem k tomu, že úkolem této práce není studovat obecné vlastnosti buněčných automatů ale jen jejich fuzifikace a následné použití v praxi, bude zde nadefinovanán pouze standardní dvoudimenzionální buněčný automat (pracující na čtvercové mřížce). Právě tento typ automatu totiž našel v praxi největší uplatnění. V této práci se také pro jednoduchost omezíme jen na automat se čtvercovou mřížkou velikosti $m$.
 
@@ -955,7 +953,7 @@ Význam jednotlivých složek přechodové funkce (deformací) je názorně zobr
   \caption[Ukázka deformovaného automatu]{Ukázka deformovaného automatu. Černé přechody jsou přechody původního automatu, červený přechod realizuje náhradu symbolu $e$ za $a$, zelené přechody odebrání symbolu $l$ a modré přechody vložení symbolu symbolu $-$.} \label{img:DefAut}
 \end{figure}
  
-Je vidět, že pomocí editačních operací jsme schopni popsat libovolnou transformaci. Deformovaný automat tak může být schopen rozpoznat v nenulovém stupni jakoukoliv transformaci řetězce, který původní automat přijímal. Je také vidět, že deformovaný automat nedokáže ošetřit pokročilejší transformace, jako je vložení právě jednoho symbolu, vložení symbolu na určité pozici či nahrazení podřetězce jiným podřetězcem. Takovéto deformace automatu je zpravidla potřeba provést ručně. Další informace ohledně editačních operací a deformovaných automatů lze nalést např. v \cite{AstGonMenGar-FuzzAutEpsMovCmpFuzzMeasBtwStrs}.
+Je vidět, že pomocí editačních operací jsme schopni popsat libovolnou transformaci. Deformovaný automat tak může být schopen rozpoznat v nenulovém stupni jakoukoliv transformaci řetězce, který původní automat přijímal. Je také vidět, že deformovaný automat nedokáže ošetřit pokročilejší transformace, jako je vložení právě jednoho symbolu, vložení symbolu na určité pozici či nahrazení podřetězce jiným podřetězcem. Takovéto deformace automatu je zpravidla potřeba provést ručně. Další informace ohledně editačních operací a deformovaných automatů lze nalést např. v \cite{Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Učící se fuzzy automaty}
@@ -1047,7 +1045,7 @@ V \cite{Hun-NoLiTexSeaUsFuFiStLiNoDetAut} používají dvouúrovňové vyhledáv
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Parsování referencí}
-V \cite{Kra+-BibMeExUsiPrFiStTra} pomocí pravděpodobnostního automatu parsují reference z textu a rozpoznávají v nich strukturu. Reference v textu mají totiž pevnou strukturu. Např. dle normy ČSN ISO 690:2017\cite{web-CesCitNorm} má reference vypadat následovně:
+V \cite{Kra+-BibMeExUsiPrFiStTra} pomocí pravděpodobnostního automatu parsují reference z textu a rozpoznávají v nich strukturu, kterou pak následně exportují do \textsc{Bib}\TeX u. Reference v textu mají totiž pevnou strukturu. Např. dle normy ČSN ISO 690:2017\cite{web-CesCitNorm} má reference vypadat následovně:
 
 Tvůrce. \textit{Název publikace}. Vedlejší názvy. Vydání. Další tvůrce. Místo: nakladatel, rok. Počet stran. Edice, číslo edice. ISBN.
 
@@ -1170,7 +1168,9 @@ Pro modelování a simulace se obvykle používají událostmi řízené automat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Skrytý Markovův model}
-Skrytý Markovův je pravděpodobnostní model, se kterým se lze setkat v mnoha oblastech. Jedná se o diskrétní systém stavový systém, který na základě podnětů z vnějšku náhodně přechází mezi svými stavy. Jedná se tak vlastně o pravděpodobnostní stavový stroj. Více informací o vzájemném vztahu skrytých Markovových modelů a pravděpodobnostních automatů je k nalezení v \cite{DupDenEsp-LiProAuHidMarMod+}.
+\TODO{Skrytý markovův model vs. Markovův řetěz}
+Skrytý Markovův je pravděpodobnostní model, se kterým se lze setkat v mnoha oblastech. Jedná se o diskrétní systém stavový systém, který na základě podnětů z vnějšku náhodně přechází mezi svými stavy. Jedná se tak vlastně o pravděpodobnostní stavový stroj. Více informací o vzájemném vztahu skrytých Markovových modelů a pravděpodobnostních automatů je k nalezení v \cite{DupDenEsp-LiProAuHidMarMod+} nebo 
+\cite{Hac+-ProAnaLarFinStaMac}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automobilismus}
@@ -1279,7 +1279,7 @@ V \cite{WeeFu-FormFuzAutAppModLeaSys} a \cite{GraFod-FuzAutIntHybConSys} je fuzz
 \subsection{Problém městského růstu} \label{subs:UrbGrow}
 Problém městského růstu je problém z oblasti urbanistiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve zobecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní problém, tedy městský růst.
 
-Tento problém bývá často řešen pomocí buněčných fuzzy automatů. Věnují se jim např. v \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} \cite{War+-StoConCelModUrbGro} \cite{WhiEng-CelAutBasIntDynRegMod}  \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod} \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut} \cite{ClaHopHay-SelModCelAutModHistUrbSanFraBayAre} či\cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
+Tento problém bývá často řešen pomocí buněčných fuzzy automatů. Věnují se jim např. v \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} \cite{War+-StoConCelModUrbGro} \cite{WhiEng-CelAutBasIntDynRegMod}  \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod} \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut} či \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
 %
 Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod}, \cite{WasPar-PreSpaDisEleEnCon+} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. V \cite{MraZimLapBaj-FuzCelAut+} podobnou technikou simulují šíření lesního požáru.
 
@@ -1677,11 +1677,18 @@ Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v praxi
 
 Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle bojuje s korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
 
-Přes to všechno je patrný rostoucí zájem o uplatnění fuzzy a pravděpodobnostních automatů. Jen za poslední tři roky, kdy tato práce vznikala, byla vydána další publikace věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
+Přes to všechno je patrný rostoucí zájem o uplatnění fuzzy a pravděpodobnostních automatů. Jen za poslední tři roky, kdy tato práce vznikala, byla vydány další publikace (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna}, \cite{ManPra-PriPatDetUsFiStMaFuzTra}, \cite{Jia+-ExHeaSimMetBasIntHumTheMod}, \cite{GupRah-CliMonUsFuzSys}, \cite{CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
 
 Další z poznatků, který dle autorova názoru práce přinesla, je, že značné množství autorů si nedostatečně uvědomuje rozdíl, mezi fuzzy a pravděpodobnostním přístupem. V práci bylo opakovaně naráženo na problémy, které bylo vhodné řešeit spíše pomocí fuzzy automatů namísto pravděpodobnostních (a naopak). Stejnětak, některá literatura popisující aplikace fuzzy automatů na problematiku nahlížela z pohledu gramatik, přestože to není zcela přesné.
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{alpha}
+\bibliography{resources}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
