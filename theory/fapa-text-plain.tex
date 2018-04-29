@@ -1,0 +1,109 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[czech]{babel}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+
+
+%% číslovaný cases
+\usepackage[subnum]{cases}
+
+%% colspan a rowspan v tabulkách
+\usepackage{multirow}
+
+%%  http://tex.stackexchange.com/a/361157
+\usepackage{showlabels}
+
+%% subfigures, https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
+\usepackage{subcaption}
+
+%% číslování řádků, https://texblog.org/2012/02/08/adding-line-numbers-to-documents/
+\usepackage{lineno}
+
+%% chorvatská jména autorů, https://tex.stackexchange.com/questions/14872/croatian-serbian-letters-in-cv-problem
+\usepackage[T1]{fontenc}
+
+%% https://tex.stackexchange.com/questions/4465/put-a-slash-through-a-word?rq=1
+%% \usepackage{cancel}
+
+%% \verb , https://tex.stackexchange.com/questions/2790/when-should-one-use-verb-and-when-texttt
+%\usepackage{verbatim}
+
+%Definice, věta, důkaz!
+\newtheorem{definition}{Definice}
+\newtheorem{theorem}{Věta}
+\newtheorem*{notation*}{Značení} %\TODO{nahrazeno 'notation'}
+\newtheorem{notation}{Značení}
+\newtheorem{note}{Poznámka}
+\newtheorem{example}{Příklad}
+
+
+\numberwithin{definition}{section}
+\numberwithin{theorem}{section}
+%\numberwithin{notation}{section}
+\numberwithin{note}{section}
+\numberwithin{example}{section}
+
+
+%Ostatní makra
+\newcommand{\TODO}[1]{$\ast$} 	%\textit{\small(zde bude doplněno: #1)}} 
+\newcommand{\RLY}{?? }
+
+\newcommand{\lattL}{\mathbb{L}}
+\newcommand{\fsubsets}[1]{\mathcal{F}(#1)}
+
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\str}[1]{{\ttfamily#1}}
+\newcommand{\regex}[1]{{\ttfamily#1}}
+\newcommand{\ifthen}{\textsc{If--Then} }
+
+\newcommand{\impl}[2]{{\ttfamily#1/}{\ttfamily test/data/}{\ttfamily#2}}
+
+
+\newcommand{\url}[1]{{\ttfamily#1}}
+
+% Speciální nastavení
+
+% vycentrované floating objekty
+% http://tex.stackexchange.com/questions/2651/should-i-use-center-or-centering-for-figures-and-tables
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+
+% line numbering
+\linenumbers
+\modulolinenumbers[10]
+
+%opening
+\title{Aplikace fuzzy a pravděpodobnostních automatů}
+\author{Martin Jašek}
+\date{12. září 2016 --- ???}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+
+\include{fapa-text}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+\bibliography{resources}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

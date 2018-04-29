@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  29 APR 2018 16:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  29 APR 2018 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,7 +477,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-1.eps>
 (epstopdf)                    size: 134831 bytes
 (epstopdf)             Output file: <genimg-game-of-life-1-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 16:21:33
+(epstopdf)                    date: 2018-04-29 17:02:57
 (epstopdf)                    size: 23676 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-1-eps-
 converted-to.pdf genimg-game-of-life-1.eps>
@@ -495,7 +495,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-2.eps>
 (epstopdf)                    size: 109721 bytes
 (epstopdf)             Output file: <genimg-game-of-life-2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 16:21:34
+(epstopdf)                    date: 2018-04-29 17:02:58
 (epstopdf)                    size: 20413 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-2-eps-
 converted-to.pdf genimg-game-of-life-2.eps>
@@ -514,7 +514,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-3.eps>
 (epstopdf)                    size: 103820 bytes
 (epstopdf)             Output file: <genimg-game-of-life-3-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 16:21:35
+(epstopdf)                    date: 2018-04-29 17:03:00
 (epstopdf)                    size: 19455 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-3-eps-
 converted-to.pdf genimg-game-of-life-3.eps>
@@ -533,7 +533,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-4.eps>
 (epstopdf)                    size: 53636 bytes
 (epstopdf)             Output file: <genimg-game-of-life-4-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 16:21:36
+(epstopdf)                    date: 2018-04-29 17:03:01
 (epstopdf)                    size: 11798 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-4-eps-
 converted-to.pdf genimg-game-of-life-4.eps>
@@ -590,7 +590,7 @@ Package epstopdf Info: Source file: <genimg-chess-emos-screens.eps>
 (epstopdf)                    size: 287911 bytes
 (epstopdf)             Output file: <genimg-chess-emos-screens-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 16:38:40
+(epstopdf)                    date: 2018-04-29 17:03:04
 (epstopdf)                    size: 96164 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-chess-emos-screens-
 eps-converted-to.pdf genimg-chess-emos-screens.eps>
@@ -610,7 +610,7 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-1.eps>
 (epstopdf)                    size: 11883 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-1-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:22
+(epstopdf)                    date: 2018-04-29 17:03:06
 (epstopdf)                    size: 5413 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-1-eps-converted-to.pdf genimg-urban-growt-transitions-1.eps>
@@ -630,7 +630,7 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-2.eps>
 (epstopdf)                    size: 12145 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-2-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:22
+(epstopdf)                    date: 2018-04-29 17:03:07
 (epstopdf)                    size: 5984 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-2-eps-converted-to.pdf genimg-urban-growt-transitions-2.eps>
@@ -650,7 +650,7 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-3.eps>
 (epstopdf)                    size: 12511 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-3-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:23
+(epstopdf)                    date: 2018-04-29 17:03:08
 (epstopdf)                    size: 6097 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-3-eps-converted-to.pdf genimg-urban-growt-transitions-3.eps>
@@ -665,17 +665,12 @@ pdf)
 Package pdftex.def Info: genimg-urban-growt-transitions-3-eps-converted-to.pdf 
 used on input line 1305.
 (pdftex.def)             Requested size: 310.4979pt x 87.41428pt.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1314.
-
 Package epstopdf Info: Source file: <genimg-urban-growt-city-1.eps>
 (epstopdf)                    date: 2017-08-13 23:00:51
 (epstopdf)                    size: 3840124 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-1-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 16:35:30
+(epstopdf)                    date: 2018-04-29 17:03:16
 (epstopdf)                    size: 338565 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-1-
 eps-converted-to.pdf genimg-urban-growt-city-1.eps>
@@ -694,7 +689,7 @@ Package epstopdf Info: Source file: <genimg-urban-growt-city-2.eps>
 (epstopdf)                    size: 2578822 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-2-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 16:35:34
+(epstopdf)                    date: 2018-04-29 17:03:22
 (epstopdf)                    size: 215473 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-2-
 eps-converted-to.pdf genimg-urban-growt-city-2.eps>
@@ -716,7 +711,7 @@ Package epstopdf Info: Source file: <genimg-filters.eps>
 (epstopdf)                    date: 2017-08-27 12:31:53
 (epstopdf)                    size: 53874 bytes
 (epstopdf)             Output file: <genimg-filters-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:35
+(epstopdf)                    date: 2018-04-29 17:03:23
 (epstopdf)                    size: 16746 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-filters-eps-convert
 ed-to.pdf genimg-filters.eps>
@@ -749,8 +744,8 @@ Package epstopdf Info: Source file: <genimg-noises-1.eps>
 (epstopdf)                    date: 2017-08-27 15:28:24
 (epstopdf)                    size: 1640478 bytes
 (epstopdf)             Output file: <genimg-noises-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:38
-(epstopdf)                    size: 544487 bytes
+(epstopdf)                    date: 2018-04-29 17:03:27
+(epstopdf)                    size: 544489 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-noises-1-eps-conver
 ted-to.pdf genimg-noises-1.eps>
 (epstopdf)             \includegraphics on input line 1413.
@@ -767,7 +762,7 @@ Package epstopdf Info: Source file: <genimg-noises-2.eps>
 (epstopdf)                    date: 2017-08-27 15:28:33
 (epstopdf)                    size: 1640487 bytes
 (epstopdf)             Output file: <genimg-noises-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:41
+(epstopdf)                    date: 2018-04-29 17:03:31
 (epstopdf)                    size: 544500 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-noises-2-eps-conver
 ted-to.pdf genimg-noises-2.eps>
@@ -785,7 +780,7 @@ Package epstopdf Info: Source file: <genimg-noises-3.eps>
 (epstopdf)                    date: 2017-08-27 15:28:44
 (epstopdf)                    size: 1640510 bytes
 (epstopdf)             Output file: <genimg-noises-3-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:44
+(epstopdf)                    date: 2018-04-29 17:03:35
 (epstopdf)                    size: 544496 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-noises-3-eps-conver
 ted-to.pdf genimg-noises-3.eps>
@@ -826,7 +821,7 @@ Package epstopdf Info: Source file: <genimg-follicles-1.eps>
 (epstopdf)                    date: 2017-08-24 20:01:51
 (epstopdf)                    size: 34492 bytes
 (epstopdf)             Output file: <genimg-follicles-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:45
+(epstopdf)                    date: 2018-04-29 17:03:37
 (epstopdf)                    size: 27064 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-1-eps-con
 verted-to.pdf genimg-follicles-1.eps>
@@ -844,7 +839,7 @@ Package epstopdf Info: Source file: <genimg-follicles-2.eps>
 (epstopdf)                    date: 2017-08-24 20:02:17
 (epstopdf)                    size: 4635 bytes
 (epstopdf)             Output file: <genimg-follicles-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 16:35:46
+(epstopdf)                    date: 2018-04-29 17:03:39
 (epstopdf)                    size: 4226 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-2-eps-con
 verted-to.pdf genimg-follicles-2.eps>
@@ -926,9 +921,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 655--659
 [63] [64]) [65] (./fapa-text.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
