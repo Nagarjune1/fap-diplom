@@ -677,11 +677,11 @@ Je patrné, že S-termy mají rekurentní strukturu, tj. že S-term může obsah
 \begin{figure}
   \centering
    \hfill
-   \includegraphics{trees2} 
+   \includegraphics{mpimg-rest0} 
    \hfill
-   \includegraphics{trees1}
+   \includegraphics{mpimg-rest1}
    \hfill
-   \includegraphics{trees0}
+   \includegraphics{mpimg-rest2}
    \hfill
  \caption{Stromy S-termů $M(xx)$ (vlevo), $S(x)$ (uprostřed), $M(M(x S(y)) x)$ (vpravo)} \label{img:Tree}
 \end{figure}
@@ -775,24 +775,23 @@ Konfigurace buněčného automatu se často zobrazuje graficky. Zakresluje se ja
 \end{example}
 
 \begin{figure}
- \centering
- \begin{subfigure}{0.4\textwidth} \centering
-  \includegraphics[width=0.9\textwidth]{game-of-life-1}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.9\textwidth]{genimg-game-of-life-1}
   \caption{$t = 0$}
  \end{subfigure}%
  %
- \begin{subfigure}{0.4\textwidth} \centering
-  \includegraphics[width=0.9\textwidth]{game-of-life-2}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.9\textwidth]{genimg-game-of-life-2}
   \caption{$t = 1$}
  \end{subfigure}
  
- \begin{subfigure}{0.4\textwidth} \centering
-  \includegraphics[width=0.9\textwidth]{game-of-life-3}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.9\textwidth]{genimg-game-of-life-3}
   \caption{$t = 3$}
  \end{subfigure}%
  %
- \begin{subfigure}{0.4\textwidth} \centering
-  \includegraphics[width=0.9\textwidth]{game-of-life-4}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.9\textwidth]{genimg-game-of-life-4}
   \caption{$t = 44$}
  \end{subfigure}
  
@@ -1090,9 +1089,7 @@ Problém rozpoznávání ručně psaného textu je v současné době velmi popu
 Uvažujme tedy, že máme k dispozici již křivku, a to křivku, kterou tvoří jedno písmeno. V první fázi křivku podle určitého kritéria rozdělíme na podkřivky, segmenty. Kritériem pro rozklad křivky na segmenty může být například změna směru. Každému segmentu je posléze přiřazen symbol (např. na základě jeho směru). Celé křivce je tak přiřazen řetězec, který může být následně rozpoznán automatem. Tento proces je znázorněn na obrázku \ref{img:HandWritEx}.
 
 \begin{figure}
- \centering
- 
- \includegraphics[width=\textwidth]{rest1}
+ \includegraphics[width=\textwidth]{mpimg-rest3}
  
  \caption[Ukázka postupu při rozpoznávání ručně psaného textu]{Ukázka postup při rozpoznávání ručně psaného textu. Vlevo vstupní křivka, uprostřed rozdělena na segmenty, vpravo pak jednotlivým segmentům přiřazeny směry. Přepis na řetězec by pak mohl vypadat např.: \str{right} \str{upright} \str{upleft} \str{downleft} \str{downright} \str{right} \str{upright}.}
  \label{img:HandWritEx}
@@ -1222,7 +1219,7 @@ Přechodová pravidla pak mohou obsahovat například: dostane-li se hráč v ro
 
 \begin{figure}
  \centering
- \includegraphics{rest0}
+ \includegraphics{mpimg-apps-diags1}
  
  \caption{Automat pro modelování nálad hráče ve hře šachy. Stavy a události jsou popsány v textu. Převzato z \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha}, upraveno.}
  \label{img:ChessEmosFA}
@@ -1232,7 +1229,7 @@ Na základě aktuálního fuzzy stavu (kombinace různých stupňů elementárn�
 
 \begin{figure}
  \centering
- \includegraphics[width=\textwidth]{chess-emos-screens}
+ \includegraphics[width=\textwidth]{genimg-chess-emos-screens}
  
  \caption{Ukázka výrazů ve tváři hráče při ztrátě pěšce (vlevo) a při sebrání dámy (vpravo). Převzato z \cite{AlvJoaCru-FuStMaAppEmoModEleGamCha}.} \label{img:ChessEmosScreens}
 \end{figure}
@@ -1293,19 +1290,19 @@ Přechodová pravidla pak mohou vypadat například (ukázka vlivu různých pra
  \item Není-li lokalita atraktivní, pak růst zástavby bude malý
 \end{itemize}
 
-\begin{figure}[]
-    \begin{subfigure}[t]{\textwidth} \centering
-      \includegraphics[width=\textwidth]{urban-growt-transitions-1}
+\begin{figure}
+    \begin{subfigure}{0.9\textwidth}
+      \includegraphics[width=\textwidth]{genimg-urban-growt-transitions-1}
       \caption{Růst města bez dalších dodatečných podmínek} 
     \end{subfigure}
     \\
-    \begin{subfigure}[t]{\textwidth} \centering
-      \includegraphics[width=\textwidth]{urban-growt-transitions-2}
+    \begin{subfigure}{0.9\textwidth}
+      \includegraphics[width=\textwidth]{genimg-urban-growt-transitions-2}
       \caption{Růst města podél silnice} 
     \end{subfigure}
     \\
-    \begin{subfigure}[t]{\textwidth} \centering
-      \includegraphics[width=\textwidth]{urban-growt-transitions-3}
+    \begin{subfigure}{0.9\textwidth}
+      \includegraphics[width=\textwidth]{genimg-urban-growt-transitions-3}
       \caption{Růst města bržděn řekou} 
     \end{subfigure}
 
@@ -1315,13 +1312,13 @@ Přechodová pravidla pak mohou vypadat například (ukázka vlivu různých pra
 Na obrázku \ref{img:UrbGroProSample} je k vidění konkrétní ukázka městského růstu.
 
 \begin{figure}[]
-    \begin{subfigure}[t]{\textwidth} \centering
-      \includegraphics[width=\textwidth]{urban-growt-city-1}
+    \begin{subfigure}[t]{\textwidth}
+      \includegraphics[width=\textwidth]{genimg-urban-growt-city-1}
       \caption{Skutečný stav zástavby v uvedeném roce. Červená značí zástavbu, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
     \end{subfigure}
     \\
     \begin{subfigure}[t]{\textwidth} \centering
-      \includegraphics[width=\textwidth]{urban-growt-city-2}
+      \includegraphics[width=\textwidth]{genimg-urban-growt-city-2}
       \caption{Simulovaný stav zástavby. Modrá značí zástavbu na počátku sledovaného období, červená značí (novou) zástavbu na konci sledovaného období, zelená přírodní oblasti (např. vodní plochy) a šedá nezastavěné plochy.} 
     \end{subfigure}
 
@@ -1375,7 +1372,7 @@ kde $\epsilon > 1$ je parametr udávají agresivitu zvýrazňování a $neighs_{
 Ukázky aplikací obou filtrů jsou k nalezení na obrázku \ref{img:Filters}. V následujících podkapitolách budou prezentovány některé další (pokročilejší) techniky zpracování obrazu využívající buněčné fuzzy automaty.
 
 \begin{figure}
- \includegraphics[width=\textwidth]{filters}
+ \includegraphics[width=\textwidth]{genimg-filters}
  
  \caption{Ukázky jednoduchých filtrů. Vlevo původní obrázek, uprostřed obrázek po $5$ generacích jednoduchého rozostřovacího filtru a vpravo obrázek po $8$ generacích filtru pro zvýraznění tvarů ($\epsilon = 1{,}1$).} \label{img:Filters}
 \end{figure}
@@ -1387,12 +1384,12 @@ Označme osmici směrů dle obrázku \ref{img:Directions:8Directions} jako $U$, 
 
 \begin{figure}
    \begin{subfigure}[t]{0.4\textwidth}
-      \includegraphics[width=\textwidth]{miscs0}
+      \includegraphics[width=\textwidth]{mpimg-rest4}
       \caption{8 směrů}  \label{img:Directions:8Directions}
     \end{subfigure}%
 %
     \begin{subfigure}[t]{0.4\textwidth}
-      \includegraphics[width=\textwidth]{miscs1}
+      \includegraphics[width=\textwidth]{mpimg-rest5}
       \caption{Ukázka hrany procházející buňkou. Ve směru $U$ (červené šipky) prochází hrana, ve směru $R$ (zelené šipky) neprochází.}  \label{img:Directions:Edges}
     \end{subfigure}
 \end{figure}
@@ -1413,17 +1410,17 @@ V první fázi je klasickým buněčným automatem šum detekován. Buňka obsah
 
 \begin{figure}
    \begin{subfigure}[t]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{noises1}
+      \includegraphics[width=\textwidth]{genimg-noises-1}
       \caption{Vstupní obraz}  
     \end{subfigure}%
 %
     \begin{subfigure}[t]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{noises2}
+      \includegraphics[width=\textwidth]{genimg-noises-2}
       \caption{Zašumněný obraz}
     \end{subfigure}%
 %
     \begin{subfigure}[t]{0.3\textwidth}
-      \includegraphics[width=\textwidth]{noises3}
+      \includegraphics[width=\textwidth]{genimg-noises-3}
       \caption{Obraz s odstraněným šumem}
     \end{subfigure}
     
@@ -1450,15 +1447,13 @@ V \cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree auto
   Na obrázku \ref{img:Geoms} je vyobrazena ukázka složeného geometrického útvaru vyobrazující \uv{budovu kostela} a stromová reprezentace jemu odpovídajícího S-termu.
 \end{example}
 
-\begin{figure}
- \centering
- 
+\begin{figure} 
  \begin{subfigure}{0.4\textwidth}
-  \includegraphics{trees11}
+  \includegraphics{mpimg-rest6}
  \end{subfigure}
  %
  \begin{subfigure}{0.4\textwidth}
-  \includegraphics{trees12}
+  \includegraphics{mpimg-rest7}
  \end{subfigure}
  
  \caption{Příklad složeného geometrického tvaru a stromová reprezenace jemu odpovídajícímu S-termu} \label{img:Geoms}
@@ -1538,13 +1533,13 @@ V \cite{WanJiaZhoDu-ImProcBasFuzCelAuMod} popisují, jak pomocí buněčných fu
 Automat v první fázi vyhledává folikuly. Ty posléze automat zvýrazňuje. Na obrázku \ref{img:Follicles} jsou k nahlédnutí ukázky rozpoznaných folikul pomocí této techniky.
 
 \begin{figure}
-  \begin{subfigure}[t]{\textwidth} \centering
-    \includegraphics[width=\textwidth]{follicles-1}
+  \begin{subfigure}[t]{\textwidth}
+    \includegraphics[width=\textwidth]{genimg-follicles-1}
     \caption{Ultrazvukové snímky vaječníků} \label{img:Follicles:Screens}
   \end{subfigure}
   \\
-  \begin{subfigure}[t]{\textwidth} \centering
-    \includegraphics[width=\textwidth]{follicles-2}
+  \begin{subfigure}[t]{\textwidth}
+    \includegraphics[width=\textwidth]{genimg-follicles-2}
     \caption{Rozpoznané folikuly}
   \end{subfigure}
  
@@ -1624,7 +1619,7 @@ Ukázka okna aplikace je na obrázku \ref{img:HandWritScreen}.
 
 \begin{figure}
  \centering
- \includegraphics[width=0.8\textwidth]{handwritrec-screen}
+ \includegraphics[width=0.8\textwidth]{genimg-handwritrec-screen}
  \caption{Ukázka aplikace pro rozpoznávání ručně psaného textu} \label{img:HandWritScreen}
 \end{figure}
 

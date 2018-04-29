@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: fapa-text.aux
+The style file: alpha.bst
+Database file #1: resources.bib
+Warning--I didn't find a database entry for "Bel-DetFuzzAut"
+Warning--empty journal in AlAhHep+-ModUrbGroDynUsCelAutGIS
+Warning--empty publisher in Com+-TreeAutTecApp
+You've used 139 entries,
+            2543 wiz_defined-function locations,
+            1254 strings with 31785 characters,
+and the built_in function-call counts, 46783 in all, are:
+= -- 4487
+> -- 2886
+< -- 30
++ -- 1014
+- -- 989
+* -- 2994
+:= -- 8450
+add.period$ -- 418
+call.type$ -- 139
+change.case$ -- 887
+chr.to.int$ -- 136
+cite$ -- 141
+duplicate$ -- 1848
+empty$ -- 2872
+format.name$ -- 1149
+if$ -- 9051
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 146
+newline$ -- 700
+num.names$ -- 417
+pop$ -- 882
+preamble$ -- 1
+purify$ -- 1043
+quote$ -- 0
+skip$ -- 1649
+stack$ -- 0
+substring$ -- 995
+swap$ -- 137
+text.length$ -- 30
+text.prefix$ -- 30
+top$ -- 0
+type$ -- 1052
+warning$ -- 2
+while$ -- 387
+width$ -- 147
+write$ -- 1670
+(There were 3 warnings)

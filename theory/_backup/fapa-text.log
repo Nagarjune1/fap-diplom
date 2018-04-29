@@ -1,0 +1,1846 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.16)  29 APR 2018 16:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**fapa-text.tex
+(./fapa-text.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 32 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count87
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-czech/czech.ldf
+Language: czech 2008/07/06 v3.1a Czech support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count89
+Package babel Info: Making - an active character on input line 226.
+))
+\@input{headers.aux}
+\openout2 = `headers.aux'.
+
+(./headers.tex (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks25
+\ex@=\dimen104
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks26
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks27
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks28
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen113
+\calc@Bdimen=\dimen114
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count104
+\calc@Cskip=\skip51
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count105
+\l_MT_multwidth_dim=\dimen115
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen116
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen117
+\l_MT_above_intertext_sep=\dimen118
+\l_MT_below_intertext_sep=\dimen119
+\l_MT_above_shortintertext_sep=\dimen120
+\l_MT_below_shortintertext_sep=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cases/cases.sty
+Package: cases 2002/05/02 ver 2.5 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip53
+\multirow@cntb=\count106
+\multirow@dima=\skip54
+\bigstrutjot=\dimen122
+)
+(/usr/share/texlive/texmf-dist/tex/latex/showlabels/showlabels.sty
+Package: showlabels 2016/06/09 v1.8
+
+Package: `showlabels' v1.8 <2016/06/09>
+with amsmath equation tags
+\SL@labelposition=\count107
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
+)
+\c@ContinuedFloat=\count108
+)
+\c@subfigure=\count109
+\c@subtable=\count110
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count111
+\output=\toks31
+\linenoprevgraf=\count112
+\linenumbersep=\dimen130
+\linenumberwidth=\dimen131
+\c@linenumber=\count113
+\c@pagewiselinenumber=\count114
+\c@LN@truepage=\count115
+\c@internallinenumber=\count116
+\c@internallinenumbers=\count117
+\quotelinenumbersep=\dimen132
+\bframerule=\dimen133
+\bframesep=\dimen134
+\bframebox=\box28
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/02/22 v2.0g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+\c@definition=\count118
+\c@theorem=\count119
+\c@notation=\count120
+\c@note=\count121
+\c@example=\count122
+) (./fapa-text.aux)
+\openout1 = `fapa-text.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count123
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count124
+\scratchdimen=\dimen135
+\scratchbox=\box29
+\nofMPsegments=\count125
+\nofMParguments=\count126
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count127
+\MPscratchDim=\dimen136
+\MPnumerator=\count128
+\makeMPintoPDFobject=\count129
+\everyMPtoPDFconversion=\toks33
+))) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 14.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) (./fapa-text.toc
+[1
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
+\tf@toc=\write3
+\openout3 = `fapa-text.toc'.
+
+ [3]
+
+LaTeX Warning: Citation `Bel-FuzRelSys' on page 4 undefined on input line 45.
+
+[4]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 95.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [5]
+
+LaTeX Warning: Citation `Joh-ProbStaComSci' on page 6 undefined on input line 1
+16.
+
+[6] [7]
+
+LaTeX Warning: Citation `Zad-ConLingVarAppApprRea' on page 8 undefined on input
+ line 184.
+
+File: mpimg-charts0.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-charts0.mps)
+
+LaTeX Warning: Citation `Jan-FouFuzzContPracAppr' on page 8 undefined on input 
+line 203.
+
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 212.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 212.
+
+
+LaTeX Warning: Citation `Koz-AutComp' on page 9 undefined on input line 245.
+
+[9]
+
+LaTeX Warning: Citation `HopUl-IntrAutTheLangComp' on page 10 undefined on inpu
+t line 295.
+
+
+LaTeX Warning: Citation `GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
+10 undefined on input line 295.
+
+[10]
+
+LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 11 undefined on input lin
+e 303.
+
+[11]
+
+LaTeX Warning: Citation `AndAbdAsm-ApprPattMatcFuzzLog' on page 12 undefined on
+ input line 348.
+
+
+LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 12 undefin
+ed on input line 348.
+
+
+LaTeX Warning: Citation `StaCir-ConsFuzzAutFuzzRegExp' on page 12 undefined on 
+input line 348.
+
+
+LaTeX Warning: Citation `AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
+page 12 undefined on input line 348.
+
+
+LaTeX Warning: Citation `Bel-DetFuzzAut' on page 12 undefined on input line 348
+.
+
+
+LaTeX Warning: Citation `GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
+12 undefined on input line 348.
+
+[12]
+
+LaTeX Warning: Reference `not:muOverSym' on page 13 undefined on input line 355
+.
+
+
+LaTeX Warning: Citation `DooKre-NewDirFuzzAut' on page 13 undefined on input li
+ne 363.
+
+
+LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 13 undefin
+ed on input line 367.
+
+
+LaTeX Warning: Citation `StaCir-ConsFuzzAutFuzzRegExp' on page 13 undefined on 
+input line 367.
+
+
+Overfull \hbox (10.34613pt too wide) in paragraph at lines 367--368
+\T1/cmr/m/n/10 na-hra-zuje ma-ti-co-vým zp·-so-bem (nap°. [[]], [[]]). O£ís-luj
+me si stavy $\temp Q \temp = \OMS/cmsy/m/n/10 f\temp q[]; [] q[]\OMS/cmsy/m/n/1
+0 g$\T1/cmr/m/n/10 .
+ []
+
+
+Overfull \hbox (4.73958pt too wide) in paragraph at lines 367--368
+\T1/cmr/m/n/10 Poté pro kaºdý sym-bol $\temp x \OMS/cmsy/m/n/10 2 \temp ^^F$ \T
+1/cmr/m/n/10 se-sta-víme ma-tici $\temp ^^V[]$ \T1/cmr/m/n/10 ta-ko-vou, ºe $\t
+emp ^^V[]; [] \temp = \temp ^^V\temp (\temp q[]; x; q[]\temp )$
+ []
+
+
+LaTeX Warning: Citation `DooKre-NewDirFuzzAut' on page 13 undefined on input li
+ne 369.
+
+
+LaTeX Warning: Citation `GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
+13 undefined on input line 369.
+
+
+LaTeX Warning: Citation `StaCir-ConsFuzzAutFuzzRegExp' on page 13 undefined on 
+input line 369.
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 371.
+File: mpimg-theory-diags0.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-theory-diags0.mps) [13] [14]
+Overfull \hbox (16.98228pt too wide) in paragraph at lines 460--461
+\T1/cmr/m/it/10 min-si-tický fuzzy au-to-mat $\OT1/cmr/bx/n/10 A$\T1/cmr/m/it/1
+0 . Kaº-dou po-sloup-nost kon-fi-gu-rací $\temp (\temp w[]; []\temp )\temp ; []
+ ; \temp (\temp w[]; []\temp )$
+ []
+
+
+LaTeX Warning: Citation `IgnCirBog-DetFuzAutMemValComResLat' on page 15 undefin
+ed on input line 468.
+
+[15]
+
+LaTeX Warning: Citation `SebJoh-InvFuzzAutInvFuzzLang' on page 16 undefined on 
+input line 498.
+
+
+LaTeX Warning: Citation `IgnCirBog-DetFuzAutMemValComResLat' on page 16 undefin
+ed on input line 498.
+
+
+LaTeX Warning: Citation `Bel-DetFuzAut' on page 16 undefined on input line 498.
+
+
+
+Overfull \hbox (18.70755pt too wide) in paragraph at lines 498--499
+\T1/cmr/bx/n/10 Poznámka 3.2. \T1/cmr/m/it/10 V li-te-ra-tu°e (nap°. [[]] [[]] 
+[[]]) se ob-vykle lze se-tkat s ^^Rtechni£t¥j²ím^^P
+ []
+
+[16]
+
+LaTeX Warning: Citation `Rab-ProbAut' on page 17 undefined on input line 545.
+
+
+LaTeX Warning: Citation `San-ReaFuzLanProMaxMaxAut' on page 17 undefined on inp
+ut line 547.
+
+
+Overfull \hbox (4.59523pt too wide) in paragraph at lines 553--554
+[]\T1/cmr/m/n/10 P°echodovou funkci lze £íst ná-sle-du-jí-cím zp·-so-bem. Por l
+i-bo-volné $\temp (\temp q; a; q[]; p\temp ) \OMS/cmsy/m/n/10 2
+ []
+
+[17]
+Overfull \hbox (26.19646pt too wide) in paragraph at lines 581--582
+\OMS/cmsy/m/n/10 f\temp (\temp q[]; \temp 1\temp =\temp 2)\temp ; \temp (\temp 
+q[]; \temp 1\temp =\temp 2)\OMS/cmsy/m/n/10 g$\T1/cmr/m/it/10 , $\temp ^^V\temp
+ (\temp q[]; a\temp ) = \OMS/cmsy/m/n/10 f\temp (\temp q[]; \temp 1)\OMS/cmsy/m
+/n/10 g$\T1/cmr/m/it/10 , $\temp ^^V\temp (\temp q[]; b\temp ) = \OMS/cmsy/m/n/
+10 f\temp (\temp q[]; \temp 1)\OMS/cmsy/m/n/10 g$\T1/cmr/m/it/10 . Pak $\OT1/cm
+r/bx/n/10 A \temp = (\temp Q; \temp ^^F\temp ; ^^V; q[]; F\temp )$
+ []
+
+
+LaTeX Warning: Citation `Bel-DetFuzAut' on page 18 undefined on input line 606.
+
+
+
+LaTeX Warning: Citation `LiLiLi-RelAmoSevTypFuzAut' on page 18 undefined on inp
+ut line 606.
+
+[18]
+
+LaTeX Warning: Citation `GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
+19 undefined on input line 608.
+
+
+Overfull \hbox (0.65985pt too wide) in paragraph at lines 616--617
+\T1/cmr/m/n/10 fuzzy au-to-matu. Toto roz-²í-°ení je re-a-li-zo-váno po-mocí tz
+v. $\temp ^^O$\T1/cmr/m/n/10 -p°echod·. ^^RKlasický^^P
+ []
+
+
+LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 19 undefin
+ed on input line 618.
+
+
+LaTeX Warning: Citation `LiLiLi-RelAmoSevTypFuzAut' on page 19 undefined on inp
+ut line 618.
+
+
+LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 19 undefined on input lin
+e 622.
+
+
+LaTeX Warning: Citation `DooKre-NewDirFuzzAut' on page 19 undefined on input li
+ne 622.
+
+
+LaTeX Warning: Citation `San-MaxAut' on page 19 undefined on input line 622.
+
+
+LaTeX Warning: Citation `BlaDelPeg-FuzzAutIndUsNeuNet' on page 19 undefined on 
+input line 626.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 19 undefined on input line 
+626.
+
+
+LaTeX Warning: Citation `BlaDelPeg-FuzzGraIntUsiNeuNet' on page 19 undefined on
+ input line 626.
+
+
+LaTeX Warning: Citation `CheMo-MinAlgFuzFinAut' on page 19 undefined on input l
+ine 626.
+
+
+LaTeX Warning: Citation `ThoMar-DetAccRegFuzLang' on page 19 undefined on input
+ line 626.
+
+[19]
+
+LaTeX Warning: Citation `Qiu-ChaFuzFinAut' on page 20 undefined on input line 6
+32.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 20 undefin
+ed on input line 632.
+
+
+LaTeX Warning: Citation `TriHei-ExpDesSeqFuzPer' on page 20 undefined on input 
+line 642.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 20 undefin
+ed on input line 642.
+
+
+LaTeX Warning: Citation `TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 20
+ undefined on input line 642.
+
+
+LaTeX Warning: Citation `BucPas-FuzPusAut' on page 20 undefined on input line 6
+50.
+
+
+LaTeX Warning: Citation `Com+-TreeAutTecApp' on page 20 undefined on input line
+ 664.
+
+
+LaTeX Warning: Citation `Hua-SyntPattRecSeisOilExp' on page 20 undefined on inp
+ut line 664.
+
+
+LaTeX Warning: Citation `Bez+-FuzModAlgPatRecImProc' on page 20 undefined on in
+put line 664.
+
+
+LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 20 undefined on input 
+line 664.
+
+
+LaTeX Warning: Citation `MogZadAme-NewDirInFuzzTreeAut' on page 20 undefined on
+ input line 664.
+
+
+LaTeX Warning: Citation `ChaJos-NoteFuzzTreeAut' on page 20 undefined on input 
+line 664.
+
+
+LaTeX Warning: Citation `EsiLiu-FuzzTreeAut' on page 20 undefined on input line
+ 664.
+
+
+LaTeX Warning: Citation `MorMal-FuzzyAutLang' on page 20 undefined on input lin
+e 664.
+
+[20]
+File: mpimg-rest0.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-rest0.mps)
+File: mpimg-rest1.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-rest1.mps)
+File: mpimg-rest2.mps Graphic file (type mps)
+
+[MP to PDF] (./mpimg-rest2.mps) [21]
+
+LaTeX Warning: Citation `Wol-NewKinSci' on page 22 undefined on input line 736.
+
+
+
+LaTeX Warning: Citation `Wol-NewKinSci' on page 22 undefined on input line 738.
+
+
+
+LaTeX Warning: Citation `Wol-CelAut' on page 22 undefined on input line 738.
+
+
+LaTeX Warning: Citation `BatXie-CellCity' on page 22 undefined on input line 73
+8.
+
+
+LaTeX Warning: Citation `Wu-ExpGenPolUrbGroCelAutCit' on page 22 undefined on i
+nput line 738.
+
+
+LaTeX Warning: Citation `For-FuzCelAutConjNormForm' on page 22 undefined on inp
+ut line 738.
+
+
+LaTeX Warning: Citation `TofMar-CelAuMach+' on page 22 undefined on input line 
+754.
+
+
+Overfull \hbox (0.67088pt too wide) in paragraph at lines 754--755
+\T1/cmr/bx/n/10 P°íklad 5.2. \T1/cmr/m/it/10 Ty-pic-kým p°í-kla-dem bu-n¥£-ného
+ au-to-matu je tzv. Hra ºi-vota (Game
+ []
+
+[22]
+Package epstopdf Info: Source file: <genimg-game-of-life-1.eps>
+(epstopdf)                    date: 2017-08-21 21:01:42
+(epstopdf)                    size: 134831 bytes
+(epstopdf)             Output file: <genimg-game-of-life-1-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-04-29 16:21:33
+(epstopdf)                    size: 23676 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-1-eps-
+converted-to.pdf genimg-game-of-life-1.eps>
+(epstopdf)             \includegraphics on input line 779.
+Package epstopdf Info: Output file is already uptodate.
+ <genimg-game-of-life-1-eps-converted-to.pdf, id=106, 80.3pt x 81.30376pt>
+File: genimg-game-of-life-1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-game-of-life-1-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-game-of-life-1-eps-converted-to.pdf used on inp
+ut line 779.
+(pdftex.def)             Requested size: 124.19725pt x 125.754pt.
+Package epstopdf Info: Source file: <genimg-game-of-life-2.eps>
+(epstopdf)                    date: 2017-08-21 21:02:01
+(epstopdf)                    size: 109721 bytes
+(epstopdf)             Output file: <genimg-game-of-life-2-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-04-29 16:21:34
+(epstopdf)                    size: 20413 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-2-eps-
+converted-to.pdf genimg-game-of-life-2.eps>
+(epstopdf)             \includegraphics on input line 784.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-game-of-life-2-eps-converted-to.pdf, id=107, 80.3pt x 81.30376pt>
+File: genimg-game-of-life-2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-game-of-life-2-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-game-of-life-2-eps-converted-to.pdf used on inp
+ut line 784.
+(pdftex.def)             Requested size: 124.19725pt x 125.754pt.
+Package epstopdf Info: Source file: <genimg-game-of-life-3.eps>
+(epstopdf)                    date: 2017-08-21 21:02:23
+(epstopdf)                    size: 103820 bytes
+(epstopdf)             Output file: <genimg-game-of-life-3-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-04-29 16:21:35
+(epstopdf)                    size: 19455 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-3-eps-
+converted-to.pdf genimg-game-of-life-3.eps>
+(epstopdf)             \includegraphics on input line 789.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-game-of-life-3-eps-converted-to.pdf, id=108, 80.3pt x 81.30376pt>
+File: genimg-game-of-life-3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-game-of-life-3-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-game-of-life-3-eps-converted-to.pdf used on inp
+ut line 789.
+(pdftex.def)             Requested size: 124.19725pt x 125.754pt.
+Package epstopdf Info: Source file: <genimg-game-of-life-4.eps>
+(epstopdf)                    date: 2017-08-21 21:02:35
+(epstopdf)                    size: 53636 bytes
+(epstopdf)             Output file: <genimg-game-of-life-4-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2018-04-29 16:21:36
+(epstopdf)                    size: 11798 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-4-eps-
+converted-to.pdf genimg-game-of-life-4.eps>
+(epstopdf)             \includegraphics on input line 794.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-game-of-life-4-eps-converted-to.pdf, id=109, 80.3pt x 81.30376pt>
+File: genimg-game-of-life-4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-game-of-life-4-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-game-of-life-4-eps-converted-to.pdf used on inp
+ut line 794.
+(pdftex.def)             Requested size: 124.19725pt x 125.754pt.
+
+
+LaTeX Warning: Citation `For-FuzCelAutConjNormForm' on page 23 undefined on inp
+ut line 801.
+
+
+LaTeX Warning: Citation `MraZimLapBaj-FuzCelAut+' on page 23 undefined on input
+ line 801.
+
+[23] [24 <./genimg-game-of-life-1-eps-converted-to.pdf> <./genimg-game-of-life-
+2-eps-converted-to.pdf> <./genimg-game-of-life-3-eps-converted-to.pdf> <./genim
+g-game-of-life-4-eps-converted-to.pdf>] [25]
+File: mpimg-theory-diags1.mps Graphic file (type mps)
+ [MP to PDF]
+(./mpimg-theory-diags1.mps)
+
+LaTeX Warning: Reference `not:muOverSym' on page 26 undefined on input line 891
+.
+
+[26]
+
+LaTeX Warning: Citation `RamGir-ConvFinAutFuzzAutStrComp' on page 27 undefined 
+on input line 898.
+
+
+LaTeX Warning: Citation `Ech-DefSyssConPre' on page 27 undefined on input line 
+898.
+
+[27]
+File: mpimg-theory-diags2.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-theory-diags2.mps)
+File: mpimg-theory-diags3.mps Graphic file (type mps)
+ [MP to PDF]
+(./mpimg-theory-diags3.mps)
+File: mpimg-theory-diags4.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-theory-diags4.mps)
+File: mpimg-theory-diags5.mps Graphic file (type mps)
+
+[MP to PDF] (./mpimg-theory-diags5.mps)
+
+LaTeX Warning: Citation `Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs' on page 28 undef
+ined on input line 955.
+
+[28]
+
+LaTeX Warning: Citation `FuLi-ForLeaAutAutGam' on page 29 undefined on input li
+ne 963.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 29 undefined on 
+input line 963.
+
+
+LaTeX Warning: Citation `GilOmlTho-EquKnoRep+' on page 29 undefined on input li
+ne 963.
+
+
+LaTeX Warning: Citation `TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 29
+ undefined on input line 963.
+
+
+LaTeX Warning: Citation `PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro' on page 29
+ undefined on input line 963.
+
+
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 29 un
+defined on input line 963.
+
+
+LaTeX Warning: Citation `SinGha+HybrEdgDetMetFuzSetTheCelLeaAut' on page 29 und
+efined on input line 963.
+
+
+LaTeX Warning: Citation `AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
+page 29 undefined on input line 963.
+
+
+LaTeX Warning: Citation `ZhiMinLan-EvoStraIndFuFiStaAu' on page 29 undefined on
+ input line 963.
+
+
+LaTeX Warning: Citation `FieRus-HanNeuCom' on page 29 undefined on input line 9
+71.
+
+[29]
+
+LaTeX Warning: Citation `DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod' on page
+ 30 undefined on input line 975.
+
+
+LaTeX Warning: Citation `OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet' on page 
+30 undefined on input line 975.
+
+
+LaTeX Warning: Citation `BlaDelPeg-FuzzAutIndUsNeuNet' on page 30 undefined on 
+input line 975.
+
+
+LaTeX Warning: Citation `GilOmlTho-EquKnoRep+' on page 30 undefined on input li
+ne 975.
+
+
+LaTeX Warning: Citation `OmlThoGil-RepFuzFinStaAuConRecNeuNet' on page 30 undef
+ined on input line 975.
+
+
+LaTeX Warning: Citation `UnaKha-FuzDFinStaMachImpBasNeuFuzSys' on page 30 undef
+ined on input line 975.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 30 undefined on input line 
+975.
+
+
+LaTeX Warning: Citation `BlaDelFlo-MethIndFuzzAutUsNeuNet' on page 30 undefined
+ on input line 981.
+
+
+LaTeX Warning: Citation `BlaDelPeg-FuzzGraIntUsiNeuNet' on page 30 undefined on
+ input line 981.
+
+[30]
+
+LaTeX Warning: Citation `AndAbdAsm-ApprPattMatcFuzzLog' on page 31 undefined on
+ input line 1006.
+
+
+LaTeX Warning: Citation `Gar+-DefFuzAutCorImpStrFuzSym' on page 31 undefined on
+ input line 1006.
+
+
+LaTeX Warning: Citation `Ast+-ImpStrMaExpUsDefFuzAut' on page 31 undefined on i
+nput line 1006.
+
+
+LaTeX Warning: Citation `RamGir-ConvFinAutFuzzAutStrComp' on page 31 undefined 
+on input line 1006.
+
+
+LaTeX Warning: Citation `SetWar-FuzzAutPattMatc' on page 31 undefined on input 
+line 1006.
+
+
+LaTeX Warning: Citation `HigOnc-ComMosProStrProFiStaMa' on page 31 undefined on
+ input line 1010.
+
+
+LaTeX Warning: Citation `Mar+-ProAriAutApp' on page 31 undefined on input line 
+1010.
+
+
+LaTeX Warning: Citation `Her-ProAriAutAppSoComFraBioSeqAna' on page 31 undefine
+d on input line 1010.
+
+
+LaTeX Warning: Citation `YorSinTis-PowAmnLeaPrAuVarMemLen' on page 31 undefined
+ on input line 1010.
+
+
+LaTeX Warning: Citation `Ron-AutLeaApp' on page 31 undefined on input line 1010
+.
+
+
+LaTeX Warning: Citation `Ron-AutLeaApp' on page 31 undefined on input line 1012
+.
+
+
+LaTeX Warning: Citation `Mar+-ProAriAutApp' on page 31 undefined on input line 
+1014.
+
+
+LaTeX Warning: Citation `Her-ProAriAutAppSoComFraBioSeqAna' on page 31 undefine
+d on input line 1014.
+
+
+LaTeX Warning: Citation `MohPerRoe-WeiFinStaTraSpeRec' on page 31 undefined on 
+input line 1018.
+
+
+LaTeX Warning: Citation `BahJel-DecChaWinDelSubApSpeRec' on page 31 undefined o
+n input line 1018.
+
+
+LaTeX Warning: Citation `AndAbdAsm-ApprPattMatcFuzzLog' on page 31 undefined on
+ input line 1022.
+
+
+LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 31 undefin
+ed on input line 1022.
+
+[31]
+Overfull \hbox (4.86696pt too wide) in paragraph at lines 1030--1031
+[]\T1/cmr/m/n/10 Pro roz-po-zná-vání (resp. kla-si-fi-kaci) jed-not-li-vých to-
+ken· se po-u-ºí-vají ^^Rklasické^^P
+ []
+
+
+LaTeX Warning: Citation `MatSalSalYu-LexAnaSimFinFuzAutMod' on page 32 undefine
+d on input line 1032.
+
+
+LaTeX Warning: Citation `KniGra-OvProTreTraNatLanPro' on page 32 undefined on i
+nput line 1038.
+
+
+LaTeX Warning: Citation `WaMan-ProFiStMaRegBaMTEva' on page 32 undefined on inp
+ut line 1038.
+
+
+LaTeX Warning: Citation `Hun-NoLiTexSeaUsFuFiStLiNoDetAut' on page 32 undefined
+ on input line 1043.
+
+
+LaTeX Warning: Citation `Kra+-BibMeExUsiPrFiStTra' on page 32 undefined on inpu
+t line 1047.
+
+
+LaTeX Warning: Citation `web-CesCitNorm' on page 32 undefined on input line 104
+7.
+
+[32]
+
+LaTeX Warning: Citation `MukRay-StaSplMerProbFiStaAuSigRepAna' on page 33 undef
+ined on input line 1065.
+
+
+LaTeX Warning: Citation `Rig-FauDetIsoBasFuzzAut' on page 33 undefined on input
+ line 1065.
+
+
+LaTeX Warning: Citation `BaiTri-PattRecUsiTemFuzzAut' on page 33 undefined on i
+nput line 1065.
+
+
+LaTeX Warning: Citation `KemAda-SeqPatRecEmpRecFuzSys' on page 33 undefined on 
+input line 1065.
+
+
+LaTeX Warning: Citation `Rig-FauDetIsoBasFuzzAut' on page 33 undefined on input
+ line 1071.
+
+
+LaTeX Warning: Citation `BaiTri-PattRecUsiTemFuzzAut' on page 33 undefined on i
+nput line 1071.
+
+
+LaTeX Warning: Citation `KemAda-SeqPatRecEmpRecFuzSys' on page 33 undefined on 
+input line 1073.
+
+
+LaTeX Warning: Citation `ManPra-PriPatDetUsFiStMaFuzTra' on page 33 undefined o
+n input line 1075.
+
+
+LaTeX Warning: Citation `Jin+-WavBasFeaExtUsPrFiStAuPatCla' on page 33 undefine
+d on input line 1079.
+
+[33]
+File: mpimg-rest3.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-rest3.mps)
+
+LaTeX Warning: Citation `AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
+page 34 undefined on input line 1098.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 34 undefined on 
+input line 1098.
+
+
+LaTeX Warning: Citation `Tho-FinFuzzAutRegFuzLangPatRec' on page 34 undefined o
+n input line 1104.
+
+
+LaTeX Warning: Citation `BaiTri-PattRecUsiTemFuzzAut' on page 34 undefined on i
+nput line 1104.
+
+
+LaTeX Warning: Citation `ForBel-GenMusAccUsFinStaTra' on page 34 undefined on i
+nput line 1108.
+
+
+LaTeX Warning: Citation `OliWag-ComMusNeuNetProFiStMa' on page 34 undefined on 
+input line 1108.
+
+
+LaTeX Warning: Citation `ForBel-GenMusAccUsFinStaTra' on page 34 undefined on i
+nput line 1108.
+
+
+LaTeX Warning: Citation `Cha-ExeFuzProUsFiStaMa' on page 34 undefined on input 
+line 1112.
+
+[34]
+
+LaTeX Warning: Citation `Hac+-ProAnaLarFinStaMac' on page 35 undefined on input
+ line 1129.
+
+[35]
+
+LaTeX Warning: Citation `DupDenEsp-LiProAuHidMarMod+' on page 36 undefined on i
+nput line 1169.
+
+
+LaTeX Warning: Citation `Hac+-ProAnaLarFinStaMac' on page 36 undefined on input
+ line 1170.
+
+
+LaTeX Warning: Citation `Hul+-ManRecUsProFinStaMacFuzLog' on page 36 undefined 
+on input line 1176.
+
+
+LaTeX Warning: Citation `TriHei-ExpDesSeqFuzPer' on page 36 undefined on input 
+line 1176.
+
+
+LaTeX Warning: Citation `Hul+-ManRecUsProFinStaMacFuzLog' on page 36 undefined 
+on input line 1188.
+
+[36]
+
+LaTeX Warning: Citation `DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis' on page 37 u
+ndefined on input line 1192.
+
+
+Overfull \hbox (1.56671pt too wide) in paragraph at lines 1196--1197
+[]\T1/cmr/m/n/10 Ozna£me zm¥ny od-b¥ru elek-trické ener-gie lin-gvis-tic-kou pr
+o-m¥n-nou ^^Rspot°eba
+ []
+
+File: mpimg-apps-diags0.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-apps-diags0.mps)
+
+LaTeX Warning: Citation `Niz-ModComComNetViaPrAu' on page 37 undefined on input
+ line 1206.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 37 undefin
+ed on input line 1210.
+
+File: mpimg-apps-diags1.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-apps-diags1.mps)
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 37 undefin
+ed on input line 1224.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 37 undefin
+ed on input line 1224.
+
+Package epstopdf Info: Source file: <genimg-chess-emos-screens.eps>
+(epstopdf)                    date: 2018-04-29 16:25:51
+(epstopdf)                    size: 287911 bytes
+(epstopdf)             Output file: <genimg-chess-emos-screens-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2018-04-29 16:38:40
+(epstopdf)                    size: 96164 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-chess-emos-screens-
+eps-converted-to.pdf genimg-chess-emos-screens.eps>
+(epstopdf)             \includegraphics on input line 1232.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-chess-emos-screens-eps-converted-to.pdf, id=166, 451.6875pt x 158.5925p
+t>
+File: genimg-chess-emos-screens-eps-converted-to.pdf Graphic file (type pdf)
+ <use genimg-chess-emos-screens-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-chess-emos-screens-eps-converted-to.pdf used on
+ input line 1232.
+(pdftex.def)             Requested size: 345.0pt x 121.14134pt.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 37 undefin
+ed on input line 1234.
+
+
+LaTeX Warning: Citation `AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 37 undefin
+ed on input line 1234.
+
+
+LaTeX Warning: Citation `Hua+-LeaProbAutModChe' on page 37 undefined on input l
+ine 1237.
+
+
+LaTeX Warning: Citation `FuLi-ForLeaAutAutGam' on page 37 undefined on input li
+ne 1239.
+
+[37] [38]
+
+LaTeX Warning: Citation `HeiTri-SimEmoPerHumComInt' on page 39 undefined on inp
+ut line 1243.
+
+
+LaTeX Warning: Citation `Cas+-ProAutAspBasSenAna' on page 39 undefined on input
+ line 1248.
+
+
+LaTeX Warning: Citation `SchYou-ProSimHumMacDia' on page 39 undefined on input 
+line 1250.
+
+
+LaTeX Warning: Citation `TriHei-LinSumHumActSkiConAcc' on page 39 undefined on 
+input line 1255.
+
+[39 <./genimg-chess-emos-screens-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Alv+-HumActRec+' on page 40 undefined on input line 12
+57.
+
+
+LaTeX Warning: Citation `TurChe-MacRecHumActSur' on page 40 undefined on input 
+line 1259.
+
+
+LaTeX Warning: Citation `HeKinSep-DecMakFuzEnvZUsOntCon+' on page 40 undefined 
+on input line 1263.
+
+
+LaTeX Warning: Citation `Gra+-ApFuStFuOuFinMaPrRecVioOntAss' on page 40 undefin
+ed on input line 1263.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 40 undefined on 
+input line 1263.
+
+
+LaTeX Warning: Citation `GraFodDri-HybFuzBooAutOntCont' on page 40 undefined on
+ input line 1263.
+
+
+LaTeX Warning: Citation `TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 40
+ undefined on input line 1269.
+
+
+LaTeX Warning: Citation `WeeFu-FormFuzAutAppModLeaSys' on page 40 undefined on 
+input line 1273.
+
+
+LaTeX Warning: Citation `GraFod-FuzAutIntHybConSys' on page 40 undefined on inp
+ut line 1273.
+
+
+LaTeX Warning: Citation `AlAhHep+-ModUrbGroDynUsCelAutGIS' on page 40 undefined
+ on input line 1279.
+
+
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 40 undefined 
+on input line 1279.
+
+
+LaTeX Warning: Citation `War+-StoConCelModUrbGro' on page 40 undefined on input
+ line 1279.
+
+
+LaTeX Warning: Citation `WhiEng-CelAutBasIntDynRegMod' on page 40 undefined on 
+input line 1279.
+
+
+LaTeX Warning: Citation `LaiDraSch-IntMulEvCelAutMetLanSimMod' on page 40 undef
+ined on input line 1279.
+
+
+LaTeX Warning: Citation `ManHatPra-FuzCelAutBasSheModUrGro+' on page 40 undefin
+ed on input line 1279.
+
+
+LaTeX Warning: Citation `ManHatPra-ModUrbGroUsFuzCelAut' on page 40 undefined o
+n input line 1279.
+
+
+LaTeX Warning: Citation `Wu-CalStoCelAutAppRurUrbLanConv' on page 40 undefined 
+on input line 1279.
+
+
+LaTeX Warning: Citation `PowSimWhi-HieFuzzPattMatcRegCompLanUseMap' on page 40 
+undefined on input line 1281.
+
+
+LaTeX Warning: Citation `Dra-CouFuzSetTheGisBaCelAutLanUseChaMod' on page 40 un
+defined on input line 1281.
+
+
+LaTeX Warning: Citation `WasPar-PreSpaDisEleEnCon+' on page 40 undefined on inp
+ut line 1281.
+
+
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 40 unde
+fined on input line 1281.
+
+
+LaTeX Warning: Citation `MraZimLapBaj-FuzCelAut+' on page 40 undefined on input
+ line 1281.
+
+[40]
+Package epstopdf Info: Source file: <genimg-urban-growt-transitions-1.eps>
+(epstopdf)                    date: 2017-08-13 21:43:11
+(epstopdf)                    size: 11883 bytes
+(epstopdf)             Output file: <genimg-urban-growt-transitions-1-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:22
+(epstopdf)                    size: 5413 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
+ions-1-eps-converted-to.pdf genimg-urban-growt-transitions-1.eps>
+(epstopdf)             \includegraphics on input line 1295.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-urban-growt-transitions-1-eps-converted-to.pdf, id=184, 238.8925pt x 67
+.25125pt>
+File: genimg-urban-growt-transitions-1-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use genimg-urban-growt-transitions-1-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-urban-growt-transitions-1-eps-converted-to.pdf 
+used on input line 1295.
+(pdftex.def)             Requested size: 310.4979pt x 87.41428pt.
+Package epstopdf Info: Source file: <genimg-urban-growt-transitions-2.eps>
+(epstopdf)                    date: 2017-08-13 21:43:04
+(epstopdf)                    size: 12145 bytes
+(epstopdf)             Output file: <genimg-urban-growt-transitions-2-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:22
+(epstopdf)                    size: 5984 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
+ions-2-eps-converted-to.pdf genimg-urban-growt-transitions-2.eps>
+(epstopdf)             \includegraphics on input line 1300.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-urban-growt-transitions-2-eps-converted-to.pdf, id=185, 238.8925pt x 67
+.25125pt>
+File: genimg-urban-growt-transitions-2-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use genimg-urban-growt-transitions-2-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-urban-growt-transitions-2-eps-converted-to.pdf 
+used on input line 1300.
+(pdftex.def)             Requested size: 310.4979pt x 87.41428pt.
+Package epstopdf Info: Source file: <genimg-urban-growt-transitions-3.eps>
+(epstopdf)                    date: 2017-08-13 21:42:49
+(epstopdf)                    size: 12511 bytes
+(epstopdf)             Output file: <genimg-urban-growt-transitions-3-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:23
+(epstopdf)                    size: 6097 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
+ions-3-eps-converted-to.pdf genimg-urban-growt-transitions-3.eps>
+(epstopdf)             \includegraphics on input line 1305.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-urban-growt-transitions-3-eps-converted-to.pdf, id=186, 238.8925pt x 67
+.25125pt>
+File: genimg-urban-growt-transitions-3-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use genimg-urban-growt-transitions-3-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-urban-growt-transitions-3-eps-converted-to.pdf 
+used on input line 1305.
+(pdftex.def)             Requested size: 310.4979pt x 87.41428pt.
+
+
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 41 unde
+fined on input line 1309.
+
+
+LaTeX Warning: Citation `LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 41 unde
+fined on input line 1309.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1314.
+
+Package epstopdf Info: Source file: <genimg-urban-growt-city-1.eps>
+(epstopdf)                    date: 2017-08-13 23:00:51
+(epstopdf)                    size: 3840124 bytes
+(epstopdf)             Output file: <genimg-urban-growt-city-1-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:30
+(epstopdf)                    size: 338565 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-1-
+eps-converted-to.pdf genimg-urban-growt-city-1.eps>
+(epstopdf)             \includegraphics on input line 1316.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-urban-growt-city-1-eps-converted-to.pdf, id=187, 563.10374pt x 252.945p
+t>
+File: genimg-urban-growt-city-1-eps-converted-to.pdf Graphic file (type pdf)
+ <use genimg-urban-growt-city-1-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-urban-growt-city-1-eps-converted-to.pdf used on
+ input line 1316.
+(pdftex.def)             Requested size: 345.0pt x 154.97551pt.
+Package epstopdf Info: Source file: <genimg-urban-growt-city-2.eps>
+(epstopdf)                    date: 2017-08-13 23:11:53
+(epstopdf)                    size: 2578822 bytes
+(epstopdf)             Output file: <genimg-urban-growt-city-2-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:34
+(epstopdf)                    size: 215473 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-2-
+eps-converted-to.pdf genimg-urban-growt-city-2.eps>
+(epstopdf)             \includegraphics on input line 1321.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-urban-growt-city-2-eps-converted-to.pdf, id=188, 563.10374pt x 256.96pt
+>
+File: genimg-urban-growt-city-2-eps-converted-to.pdf Graphic file (type pdf)
+ <use genimg-urban-growt-city-2-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-urban-growt-city-2-eps-converted-to.pdf used on
+ input line 1321.
+(pdftex.def)             Requested size: 345.0pt x 157.43544pt.
+
+
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 41 undefined 
+on input line 1325.
+
+
+LaTeX Warning: Citation `Ahm+-CalFuzCelAutModUrbDynSauAr' on page 41 undefined 
+on input line 1325.
+
+[41 <./genimg-urban-growt-transitions-1-eps-converted-to.pdf> <./genimg-urban-g
+rowt-transitions-2-eps-converted-to.pdf> <./genimg-urban-growt-transitions-3-ep
+s-converted-to.pdf>] [42 <./genimg-urban-growt-city-1-eps-converted-to.pdf> <./
+genimg-urban-growt-city-2-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Maz+-ProTreAutAppBehMod' on page 43 undefined on input
+ line 1331.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 43 undefined on input line 
+1333.
+
+
+LaTeX Warning: Citation `Rus-ImaProHan' on page 43 undefined on input line 1346
+.
+
+[43]
+Package epstopdf Info: Source file: <genimg-filters.eps>
+(epstopdf)                    date: 2017-08-27 12:31:53
+(epstopdf)                    size: 53874 bytes
+(epstopdf)             Output file: <genimg-filters-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:35
+(epstopdf)                    size: 16746 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-filters-eps-convert
+ed-to.pdf genimg-filters.eps>
+(epstopdf)             \includegraphics on input line 1375.
+Package epstopdf Info: Output file is already uptodate.
+ <genimg-filters-eps-converted-to.pdf, id=212, 281.05pt x 81.30376pt>
+File: genimg-filters-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-filters-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-filters-eps-converted-to.pdf used on input line
+ 1375.
+(pdftex.def)             Requested size: 345.0pt x 99.80946pt.
+
+
+LaTeX Warning: Citation `MaiAgg-StuComVarImDetEdTec' on page 44 undefined on in
+put line 1381.
+
+
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 44 un
+defined on input line 1381.
+
+
+LaTeX Warning: Citation `PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro' on page 44
+ undefined on input line 1381.
+
+
+LaTeX Warning: Citation `PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro' on page 44
+ undefined on input line 1381.
+
+File: mpimg-rest4.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-rest4.mps)
+File: mpimg-rest5.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-rest5.mps)
+Underfull \hbox (badness 4713) in paragraph at lines 1393--1393
+[]\T1/cmr/m/n/9 (b) |Ukázka hrany pro-chá-ze-jící
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 1393--1393
+\T1/cmr/m/n/9 bu¬-kou. Ve sm¥ru $\OML/cmm/m/it/9 U$ \T1/cmr/m/n/9 (£er-vené
+ []
+
+
+LaTeX Warning: Citation `MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 44 un
+defined on input line 1401.
+
+[44 <./genimg-filters-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 45 undefi
+ned on input line 1407.
+
+Package epstopdf Info: Source file: <genimg-noises-1.eps>
+(epstopdf)                    date: 2017-08-27 15:28:24
+(epstopdf)                    size: 1640478 bytes
+(epstopdf)             Output file: <genimg-noises-1-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:38
+(epstopdf)                    size: 544487 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-noises-1-eps-conver
+ted-to.pdf genimg-noises-1.eps>
+(epstopdf)             \includegraphics on input line 1413.
+Package epstopdf Info: Output file is already uptodate.
+<genimg-noises-1-eps-converted-to.pdf, id=221, 80.3pt x 80.3pt>
+File: genimg-noises-1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-noises-1-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-noises-1-eps-converted-to.pdf used on input lin
+e 1413.
+(pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
+Package epstopdf Info: Source file: <genimg-noises-2.eps>
+(epstopdf)                    date: 2017-08-27 15:28:33
+(epstopdf)                    size: 1640487 bytes
+(epstopdf)             Output file: <genimg-noises-2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:41
+(epstopdf)                    size: 544500 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-noises-2-eps-conver
+ted-to.pdf genimg-noises-2.eps>
+(epstopdf)             \includegraphics on input line 1418.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-noises-2-eps-converted-to.pdf, id=222, 80.3pt x 80.3pt>
+File: genimg-noises-2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-noises-2-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-noises-2-eps-converted-to.pdf used on input lin
+e 1418.
+(pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
+Package epstopdf Info: Source file: <genimg-noises-3.eps>
+(epstopdf)                    date: 2017-08-27 15:28:44
+(epstopdf)                    size: 1640510 bytes
+(epstopdf)             Output file: <genimg-noises-3-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:44
+(epstopdf)                    size: 544496 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-noises-3-eps-conver
+ted-to.pdf genimg-noises-3.eps>
+(epstopdf)             \includegraphics on input line 1423.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-noises-3-eps-converted-to.pdf, id=223, 80.3pt x 80.3pt>
+File: genimg-noises-3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-noises-3-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-noises-3-eps-converted-to.pdf used on input lin
+e 1423.
+(pdftex.def)             Requested size: 103.50105pt x 103.50409pt.
+
+
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 45 undefi
+ned on input line 1427.
+
+
+LaTeX Warning: Citation `SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 45 undefi
+ned on input line 1427.
+
+
+LaTeX Warning: Citation `SahUguSah-SalPepNoiFilFuzCelAut' on page 45 undefined 
+on input line 1430.
+
+[45 <./genimg-noises-1-eps-converted-to.pdf> <./genimg-noises-2-eps-converted-t
+o.pdf> <./genimg-noises-3-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `MajCha-FuzCelAutModPatClas' on page 46 undefined on in
+put line 1437.
+
+
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 46 undefined
+ on input line 1439.
+
+
+LaTeX Warning: Citation `Lee-FuzTreAutSynPatRec' on page 46 undefined on input 
+line 1444.
+
+File: mpimg-rest6.mps Graphic file (type mps)
+[MP to PDF] (./mpimg-rest6.mps)
+File: mpimg-rest7.mps Graphic file (type mps)
+ [MP to PDF] (./mpimg-rest7.mps)
+Overfull \hbox (31.63585pt too wide) in paragraph at lines 1456--1457
+[][] 
+ []
+
+
+Overfull \hbox (27.56998pt too wide) in paragraph at lines 1464--1465
+\T1/cmr/m/n/10 tvary. Stejn¥ tak m·-ºeme sta-no-vit stupn¥ prav-di-vosti pro vl
+ast-nosti nap°. ^^Rgeometrický
+ []
+
+
+Overfull \hbox (18.9921pt too wide) in paragraph at lines 1466--1467
+\T1/cmr/m/n/10 zen-tu-jící ge-o-me-t-rické tvary roz-po-znává a to v£etn¥ ge-o-
+me-t-ric-kých tvar· ^^Rpodobných^^P
+ []
+
+[46]
+
+LaTeX Warning: Citation `HamKoNam-FirFlaDetBasFuzFinAut' on page 47 undefined o
+n input line 1470.
+
+
+LaTeX Warning: Citation `KoHamNam-ModForFuFiAuDetIrrFirFla' on page 47 undefine
+d on input line 1470.
+
+
+LaTeX Warning: Citation `SnaKepAbrHas-AproxStriMatchFuzzAut' on page 47 undefin
+ed on input line 1490.
+
+
+LaTeX Warning: Citation `Ron-AutLeaApp' on page 47 undefined on input line 1490
+.
+
+
+LaTeX Warning: Citation `ZlaSteSch-FiStaConTraFemPro' on page 47 undefined on i
+nput line 1490.
+
+
+LaTeX Warning: Citation `Her-ProAriAutAppSoComFraBioSeqAna' on page 47 undefine
+d on input line 1490.
+
+
+LaTeX Warning: Citation `CheMyn-ModAlgBloDutCosWat+' on page 47 undefined on in
+put line 1494.
+
+
+LaTeX Warning: Citation `MilAtl-ProAuModEpiCelNet' on page 47 undefined on inpu
+t line 1496.
+
+[47]
+
+LaTeX Warning: Citation `BocChe-CriBePrAuNetModSprInfDis+' on page 48 undefined
+ on input line 1498.
+
+
+LaTeX Warning: Citation `Jia+-ExHeaSimMetBasIntHumTheMod' on page 48 undefined 
+on input line 1504.
+
+
+LaTeX Warning: Citation `GupRah-CliMonUsFuzSys' on page 48 undefined on input l
+ine 1504.
+
+
+LaTeX Warning: Citation `CamMerNun-UsFuzAutDiagPrHeaPro' on page 48 undefined o
+n input line 1504.
+
+
+LaTeX Warning: Citation `SteAdl-CliMonFuzAut' on page 48 undefined on input lin
+e 1504.
+
+
+LaTeX Warning: Citation `GupRah-CliMonUsFuzSys' on page 48 undefined on input l
+ine 1511.
+
+
+LaTeX Warning: Citation `Jia+-ExHeaSimMetBasIntHumTheMod' on page 48 undefined 
+on input line 1511.
+
+
+LaTeX Warning: Citation `CamMerNun-UsFuzAutDiagPrHeaPro' on page 48 undefined o
+n input line 1513.
+
+
+LaTeX Warning: Citation `Est+-CytImAnaGenFuFiStMa' on page 48 undefined on inpu
+t line 1518.
+
+[48]
+
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 49 undefined
+ on input line 1531.
+
+
+LaTeX Warning: Citation `web-Folikul' on page 49 undefined on input line 1531.
+
+Package epstopdf Info: Source file: <genimg-follicles-1.eps>
+(epstopdf)                    date: 2017-08-24 20:01:51
+(epstopdf)                    size: 34492 bytes
+(epstopdf)             Output file: <genimg-follicles-1-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:45
+(epstopdf)                    size: 27064 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-follicles-1-eps-con
+verted-to.pdf genimg-follicles-1.eps>
+(epstopdf)             \includegraphics on input line 1537.
+Package epstopdf Info: Output file is already uptodate.
+<genimg-follicles-1-eps-converted-to.pdf, id=245, 281.05pt x 62.2325pt>
+File: genimg-follicles-1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-follicles-1-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-follicles-1-eps-converted-to.pdf used on input 
+line 1537.
+(pdftex.def)             Requested size: 345.0pt x 76.39737pt.
+Package epstopdf Info: Source file: <genimg-follicles-2.eps>
+(epstopdf)                    date: 2017-08-24 20:02:17
+(epstopdf)                    size: 4635 bytes
+(epstopdf)             Output file: <genimg-follicles-2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-04-29 16:35:46
+(epstopdf)                    size: 4226 bytes
+(epstopdf)             Command: <repstopdf --outfile=genimg-follicles-2-eps-con
+verted-to.pdf genimg-follicles-2.eps>
+(epstopdf)             \includegraphics on input line 1542.
+Package epstopdf Info: Output file is already uptodate.
+
+<genimg-follicles-2-eps-converted-to.pdf, id=246, 281.05pt x 60.225pt>
+File: genimg-follicles-2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use genimg-follicles-2-eps-converted-to.pdf>
+Package pdftex.def Info: genimg-follicles-2-eps-converted-to.pdf used on input 
+line 1542.
+(pdftex.def)             Requested size: 345.0pt x 73.93292pt.
+
+
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 49 undefined
+ on input line 1546.
+
+
+LaTeX Warning: Citation `WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 49 undefined
+ on input line 1546.
+
+
+LaTeX Warning: Citation `PatPal-FuzGraSynRecSkeMatXra' on page 49 undefined on 
+input line 1549.
+
+
+LaTeX Warning: Citation `PedGac-LeaFuzzAut' on page 49 undefined on input line 
+1553.
+
+
+LaTeX Warning: Citation `RigTza-FuzAutFauDia' on page 49 undefined on input lin
+e 1553.
+
+
+LaTeX Warning: Citation `Alv-HumGaiModUsGenFuzFinStaMac' on page 49 undefined o
+n input line 1555.
+
+
+LaTeX Warning: Citation `AlvTri-ComModQuaPerSig' on page 49 undefined on input 
+line 1555.
+
+[49 <./genimg-follicles-1-eps-converted-to.pdf> <./genimg-follicles-2-eps-conve
+rted-to.pdf>]
+Overfull \hbox (46.76656pt too wide) in paragraph at lines 1570--1571
+[]\T1/cmtt/m/n/10 event-driven-fuzzy-automata \T1/cmr/m/n/10 (udá-lostmi °í-zen
+ý fuzzy au-to-mat), []\T1/cmtt/m/n/10 fuzzy-tree-automata
+ []
+
+[50] <genimg-handwritrec-screen.png, id=264, 739.76375pt x 475.7775pt>
+File: genimg-handwritrec-screen.png Graphic file (type png)
+
+<use genimg-handwritrec-screen.png>
+Package pdftex.def Info: genimg-handwritrec-screen.png used on input line 1622.
+
+(pdftex.def)             Requested size: 276.00105pt x 177.50864pt.
+ [51]
+Overfull \hbox (3.91846pt too wide) in paragraph at lines 1642--1643
+[]\T1/cmr/m/n/10 T°ída []\T1/cmtt/m/n/10 NoiseReductionAutomaton \T1/cmr/m/n/10
+ im-ple-men-tuje me-todu pro od-stra-n¥ní ²umu
+ []
+
+
+LaTeX Warning: Citation `Koz-AutComp' on page 52 undefined on input line 1649.
+
+[52 <./genimg-handwritrec-screen.png>]
+
+LaTeX Warning: Citation `web-IrisDataset' on page 53 undefined on input line 16
+51.
+
+
+LaTeX Warning: Citation `web-FlagsDataset' on page 53 undefined on input line 1
+655.
+
+[53]
+Overfull \hbox (3.52588pt too wide) in paragraph at lines 1673--1674
+\T1/cmr/m/n/10 Stává se, ºe au-to-mat chybn¥ krátký °e-t¥-zec roz-po-zná, pro-t
+oºe au-to-mat ^^Rnestihne^^P
+ []
+
+
+LaTeX Warning: Citation `MukRay-StaSplMerProbFiStaAuSigRepAna' on page 54 undef
+ined on input line 1675.
+
+
+LaTeX Warning: Citation `ManPra-PriPatDetUsFiStMaFuzTra' on page 54 undefined o
+n input line 1675.
+
+
+LaTeX Warning: Citation `Jia+-ExHeaSimMetBasIntHumTheMod' on page 54 undefined 
+on input line 1675.
+
+
+LaTeX Warning: Citation `GupRah-CliMonUsFuzSys' on page 54 undefined on input l
+ine 1675.
+
+
+LaTeX Warning: Citation `CamMerNun-UsFuzAutDiagPrHeaPro' on page 54 undefined o
+n input line 1675.
+
+[54] (./fapa-text.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 7281 strings out of 494330
+ 105876 string characters out of 6163450
+ 224271 words of memory out of 5000000
+ 10372 multiletter control sequences out of 15000+600000
+ 31239 words of font info for 86 fonts, out of 8000000 for 9000
+ 360 hyphenation exceptions out of 8191
+ 53i,17n,42p,1029b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.60
+0pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.
+600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx080
+0.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1
+000.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecc
+c0800.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+ccc1000.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ectt0900.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecti1000.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecrm0800.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecrm0600.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecrm0700.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1200.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecss0500.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm1000.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/lj
+four/jknappen/ec/ecbx1000.600pk> </home/martin/.texlive2016/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecbx1440.600pk> </home/martin/.texlive2016/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1200.600pk> </home/martin/.texlive2016/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on fapa-text.pdf (54 pages, 2995457 bytes).
+PDF statistics:
+ 1057 PDF objects out of 1200 (max. 8388607)
+ 286 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+
