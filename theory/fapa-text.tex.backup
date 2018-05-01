@@ -160,7 +160,7 @@ Dalším důležitým pojmem je podmíněná pravděpodobnost. Zjednodušeně ř
 \subsection{Fuzzy vs. pravděpodobnostní přístup} \label{subsec:FuzzyVsProb}
 V předchozích dvou podkapitolách byly zavedeny základní pojmy z oblasti fuzzy množin a pravděpodobnostního počtu. Je vidět, že jak stupeň pravdivosti, tak pravděpodobnostní míra, jsou obě reálná čísla z intervalu $[0, 1]$. Oba tyto pojmy totiž popisují určitou formu neurčitosti, avšak každá jinou. 
 
-Popisujeme-li nějaký jev, pak stupeň pravdivosti udává, jak moc jev odpovídá jeho popisu. Například tvrzení \uv{osoba $X$ je vysoká} může být pravdivé ve stupni $1$, pokud je osoba vysoká $180$ centimetrů a víc a ve stupni $0{,}5$, pokud osoba měří $160$ centimetrů. Popisujeme tedy skutečnost, která je nám známá, avšak při jejím popisu používáme vágní pojem (\uv{vysoká}). Ohodnocení stupňem pravdivosti tak záleží na skutečné výšce osoby.
+Popisujeme-li nějaký jev, pak stupeň pravdivosti udává, jak moc jev odpovídá jeho popisu. Například tvrzení \uv{osoba $X$ je vysoká} může být pravdivé ve stupni $1$, pokud je osoba vysoká $180$ centimetrů a víc a ve stupni $0,5$, pokud osoba měří $160$ centimetrů. Popisujeme tedy skutečnost, která je nám známá, avšak při jejím popisu používáme vágní pojem (\uv{vysoká}). Ohodnocení stupňem pravdivosti tak záleží na skutečné výšce osoby.
 
 Naopak, tvrzení \uv{zítra mi ujede autobus} je popsáno přesně (nepoužívá žádné vágní pojmy), avšak nejistota je zde skryta v pozorovaném jevu. Zda-li tento jev nastane (a tvrzení je tudíž pravdivé) nebo nenastane nám není známo. Můžeme se však bavit o pravděpodobnosti, s jakou nastane.
 
@@ -528,12 +528,12 @@ Podobně, jak u bivalentních automatů, jazyk rozpoznávaný automatem je množ
   \{ (q_0, 0{,}9), 		 	(q_2, 0{,}8) 	\}, 
   \{ (q_0, 0{,}9), 	(q_1, 0{,}8) 		 	\}
  $$
- Řetězec je tak přijímán ve stupni $0{,}8$.\footnote{Pokud namísto Gödelovy t-normy použijeme \L{}ukasiewiczovu, je řětězec přijímán ve stupni $0{,}7$. Pokud použijeme produktovou, je příjímán ve stupni $0{,}72$.}
+ Řetězec je tak přijímán ve stupni $0{,}8$.\footnote{Pokud namísto Gödelovy t-normy použijeme \L{}ukasiewiczovu, je řětězec přijímán ve stupni $0,7$. Pokud použijeme produktovou, je příjímán ve stupni $0{,}72$.}
  
  Dále pak řetězec \str{a a b b b} je příjímán ve stupni $0{,}6$ a řetězec \str{b a} ve stupni $0{,}8$.
 \end{example}
 
-%\ T O D O{ověřit, že mám u všech převzatých obrázků zdroj.}
+\TODO{ověřit, že mám u všech převzatých obrázků zdroj.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pravděpodobností automat}
@@ -813,7 +813,7 @@ Buněčné fuzzy automaty se poté definují značně různě. Např. \cite{For-
 \end{example}
 
 
-%\ T O D O{desetinná čísla s desetinnou čárkou, ne tečkou. Navíc, při psaní desetinné čárky používat namísto $0,4$ zápis $0{,}6$ (nesází mezeru za čárkou)!!!!}
+\TODO{desetinná čísla s desetinnou čárkou, ne tečkou. Navíc, při psaní desetinné čárky používat namísto $0,4$ zápis $0{,}6$ (nesází mezeru za čárkou)!!!!}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -978,7 +978,7 @@ V jednodušších případech se jedná pouze o neuronovou síť, která realizu
 
 Možnosti, jak takovou neuronovou síť sestavit, jsou stejné, jako při návrhu obecné neuronové sítě. Lze tedy využít jak konstrukci pomocí trénovacích dat, tak pomocí znalostní báze. Použití trénovacích dat spočívá ve vygenerování dostatečného množství kombinací fuzzy stavů a vstupních symbolů. Pomocí automatu jsou určeny \uv{výstupní} fuzzy stavy, které jsou spolu předány neuronové síti k učení. Při použití znalostní báze jsou přechodová pravidla přepsána do fuzzy \ifthen pravidel, jak bylo uvedeno v kapitole \ref{subsec:FuzzEvMach}.
 
-Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy automat. Postup je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet, BlaDelPeg-FuzzGraIntUsiNeuNet}. Je tedy možné převést fuzzy automat na neuronovou síť, provést její přeučení trénovacími daty a poté ji převést zpět na automat.
+Stejně tak existují způsoby, jak konvertovat neuronovou síť zpět na fuzzy automat. Postup je popsán např. v \cite{BlaDelFlo-MethIndFuzzAutUsNeuNet}, \cite{BlaDelPeg-FuzzGraIntUsiNeuNet}. Je tedy možné převést fuzzy automat na neuronovou síť, provést její přeučení trénovacími daty a poté ji převést zpět na automat.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1003,23 +1003,23 @@ $$
    f(w, w') = A_w(w')
 $$
 
-Používání fuzzy automatů pro výpočet podobnosti řetězců bývá v praxi poměrně časté. Setkat se s ním můžeme např. v \cite{AndAbdAsm-ApprPattMatcFuzzLog, Gar+-DefFuzAutCorImpStrFuzSym, Ast+-ImpStrMaExpUsDefFuzAut, RamGir-ConvFinAutFuzzAutStrComp, SetWar-FuzzAutPattMatc}.
+Používání fuzzy automatů pro výpočet podobnosti řetězců bývá v praxi poměrně časté. Setkat se s ním můžeme např. v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, \cite{Gar+-DefFuzAutCorImpStrFuzSym}, \cite{Ast+-ImpStrMaExpUsDefFuzAut}, \cite{RamGir-ConvFinAutFuzzAutStrComp}, \cite{SetWar-FuzzAutPattMatc}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Klasifikace a korekce textových řetězců}
-Jak již bylo uvedeno, fuzzy a pravděpodobnostní automaty lze využít pro klasifikaci a následnou korekci (obecných) textových řetězců. V \cite{HigOnc-ComMosProStrProFiStaMa, Mar+-ProAriAutApp, Her-ProAriAutAppSoComFraBioSeqAna, YorSinTis-PowAmnLeaPrAuVarMemLen, Ron-AutLeaApp} řeší tento problém pomocí pravděpodobnostních automatů.
+Jak již bylo uvedeno, fuzzy a pravděpodobnostní automaty lze využít pro klasifikaci a následnou korekci (obecných) textových řetězců. V \cite{HigOnc-ComMosProStrProFiStaMa}, \cite{Mar+-ProAriAutApp}, \cite{Her-ProAriAutAppSoComFraBioSeqAna}, \cite{YorSinTis-PowAmnLeaPrAuVarMemLen} a \cite{Ron-AutLeaApp} řeší tento problém pomocí pravděpodobnostních automatů.
 
 V \cite{Ron-AutLeaApp} automat učí texty v přirozeném jazyce a poté s jeho pomocí opravují pozměněný text Bible. Techniku používají také pro segementaci DNA (která je podrobněji popsána v kapitole \ref{subs:DNA}).
 
-Pozměněný automat\footnote{Zde se jedná o tzv. aritmetický pravděpodobnostní automat. Automat při přechodech provádí elementární algebraické operace, v tomto případě případě sčítání.} používají v \cite{Mar+-ProAriAutApp, Her-ProAriAutAppSoComFraBioSeqAna}. Automat tak dokáže počítat (pravděpodobný) počet výskytů vzoru ve vstupním řetězci.
+Pozměněný automat\footnote{Zde se jedná o tzv. aritmetický pravděpodobnostní automat. Automat při přechodech provádí elementární algebraické operace, v tomto případě případě sčítání.} používají v \cite{Mar+-ProAriAutApp} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}. Automat tak dokáže počítat (pravděpodobný) počet výskytů vzoru ve vstupním řetězci.
 
 Toho pak využívají pro rozpoznávání proteinů. Sledovaný vzorek proteinu nejdříve chemicky rozštěpí na jednotlivé peptidy. Ty jsou hmnotnostním spektrometrem analyzovány a naměřené hodnoty jsou kódovány do symbolů. Z naměřených symbolů jsou posléze sestaveny řetězce, které jsou vyhodnocovány automatem.
 
-V \cite{MohPerRoe-WeiFinStaTraSpeRec, BahJel-DecChaWinDelSubApSpeRec} pomocí pravděpodobnostních automatů snaží překládat slova fonetické abecedy na \uv{běžnou} (angličtinu). Dá se totiž předpokládat, že vyřčené slovo nemuselo být řečeno zcela zprávně a navíc mohlo být upraveno určitým akcentem. Učením sestavené automaty pro jednotlivá slova pak určijí nejpravděpodobněji vyřčené slovo.
+V \cite{MohPerRoe-WeiFinStaTraSpeRec} a \cite{BahJel-DecChaWinDelSubApSpeRec} pomocí pravděpodobnostních automatů snaží překládat slova fonetické abecedy na \uv{běžnou} (angličtinu). Dá se totiž předpokládat, že vyřčené slovo nemuselo být řečeno zcela zprávně a navíc mohlo být upraveno určitým akcentem. Učením sestavené automaty pro jednotlivá slova pak určijí nejpravděpodobněji vyřčené slovo.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detekce překlepů} \label{subs:DetTyp}
-Pomocí fuzzy automatů lzde poměrně snadno detekovat a případně se pokoušet opravit překlepy. Využívá se při tom faktu, že překlep obvykle znamená vložení či náhradu symbolem, který je na klávesnici počítače v okolí očekávaného symbolu. Například řetězec \str{hrllo} zcela určitě vznikl překlepnutím při psaní \str{hello}, než kupříkladu \str{ahoj}. Je tak možné napsané slovo opravit. Tuto techniku popisují v \cite{AndAbdAsm-ApprPattMatcFuzzLog, SnaKepAbrHas-AproxStriMatchFuzzAut}.
+Pomocí fuzzy automatů lzde poměrně snadno detekovat a případně se pokoušet opravit překlepy. Využívá se při tom faktu, že překlep obvykle znamená vložení či náhradu symbolem, který je na klávesnici počítače v okolí očekávaného symbolu. Například řetězec \str{hrllo} zcela určitě vznikl překlepnutím při psaní \str{hello}, než kupříkladu \str{ahoj}. Je tak možné napsané slovo opravit. Tuto techniku popisují v \cite{AndAbdAsm-ApprPattMatcFuzzLog}, popř. \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}.
 
 % až na konci,  Fuzzy Aho-Corasick algorithm (popř. dohledat jiný zdroj).
 
@@ -1062,7 +1062,7 @@ Základní myšlenka těchto technik vždy spočívá ve způsobu, jak vstupní 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání signálů} \label{subs:RozpSign}
-Rozpoznávání signálů je jedna ze základních možností, jak využít rozpoznávání netextových dat. Věnují se tomu např. v \cite{MukRay-StaSplMerProbFiStaAuSigRepAna, Rig-FauDetIsoBasFuzzAut, BaiTri-PattRecUsiTemFuzzAut, KemAda-SeqPatRecEmpRecFuzSys}.
+Rozpoznávání signálů je jedna ze základních možností, jak využít rozpoznávání netextových dat. Věnují se tomu např. v \cite{MukRay-StaSplMerProbFiStaAuSigRepAna}, \cite{Rig-FauDetIsoBasFuzzAut}, \cite{BaiTri-PattRecUsiTemFuzzAut} a \cite{KemAda-SeqPatRecEmpRecFuzSys}.
 
 Signál, jakožto spojitý průběh jedné proměnné (času) nejprve kvantujeme v čase. Obdržíme tak posloupnost po sobě jdoucích vzorků (typicky číselných hodnot). Každý takový vzorek můžeme snadno zakódovat do odpovídajícího symbolu. Takovými symboly může být například $s_{0 \leq x < 10}$, $s_{10 \leq x < 20}$ a $s_{30 \leq x < 30}$\footnote{Alternativně lze použít ligvistickou proměnnou se štítky například \uv{hodnota $x$ je nízká}, \uv{hodnota $x$ je střední} a \uv{hodnota $x$} je vysoká}. Zakódujeme-li tímto způsobem nakvantovanou posloupnost vzorků, obdržíme řetězec.
 
@@ -1095,7 +1095,7 @@ Uvažujme tedy, že máme k dispozici již křivku, a to křivku, kterou tvoří
  \label{img:HandWritEx}
 \end{figure}
 
-Této technice se věnují např. v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr, WeeFu-FormFuzAutAppModLeaSys}. V obou případech poukazují, že pro řádově přesnější výsledky rozpoznávání je vhodné systém vylepšit strojovým učením.
+Této technice se věnují např. v \cite{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr} nebo \cite{WeeFu-FormFuzAutAppModLeaSys}. V obou případech poukazují, že pro řádově přesnější výsledky rozpoznávání je vhodné systém vylepšit strojovým učením.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Rozpoznávání gest} \label{subs:GestRec}
@@ -1105,7 +1105,7 @@ Při rozpoznávání gest je však značně komplikovanější konverze vstupní
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Práce se zvukem}
-Vzhledem k tomu, že zvuk je ve své podstatě analogový signál, může s ním být pracováno jako se signálem. To znamená, že může být rozpoznáván tak, jak bylo popsáno v kapitole \ref{subs:RozpSign}. Věnují se tomu v \cite{ForBel-GenMusAccUsFinStaTra, OliWag-ComMusNeuNetProFiStMa}. V \cite{ForBel-GenMusAccUsFinStaTra} využívají tuto techniku pro konverzi zvukového záznamu do formátu MIDI.
+Vzhledem k tomu, že zvuk je ve své podstatě analogový signál, může s ním být pracováno jako se signálem. To znamená, že může být rozpoznáván tak, jak bylo popsáno v kapitole \ref{subs:RozpSign}. Věnují se tomu v \cite{ForBel-GenMusAccUsFinStaTra} a \cite{OliWag-ComMusNeuNetProFiStMa}. V \cite{ForBel-GenMusAccUsFinStaTra} využívají tuto techniku pro konverzi zvukového záznamu do formátu MIDI.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fuzzy programy}
@@ -1166,13 +1166,14 @@ Pro modelování a simulace se obvykle používají událostmi řízené automat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Skrytý Markovův model}
 \TODO{Skrytý markovův model vs. Markovův řetěz}
-Skrytý Markovův je pravděpodobnostní model, se kterým se lze setkat v mnoha oblastech. Jedná se o diskrétní systém stavový systém, který na základě podnětů z vnějšku náhodně přechází mezi svými stavy. Jedná se tak vlastně o pravděpodobnostní stavový stroj. Více informací o vzájemném vztahu skrytých Markovových modelů a pravděpodobnostních automatů je k nalezení v \cite{DupDenEsp-LiProAuHidMarMod+, Hac+-ProAnaLarFinStaMac}.
+Skrytý Markovův je pravděpodobnostní model, se kterým se lze setkat v mnoha oblastech. Jedná se o diskrétní systém stavový systém, který na základě podnětů z vnějšku náhodně přechází mezi svými stavy. Jedná se tak vlastně o pravděpodobnostní stavový stroj. Více informací o vzájemném vztahu skrytých Markovových modelů a pravděpodobnostních automatů je k nalezení v \cite{DupDenEsp-LiProAuHidMarMod+} nebo 
+\cite{Hac+-ProAnaLarFinStaMac}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Automobilismus}
 Automobily jsou v dnešní době zařízení vybavené značným množstvím palubní elektroniky. Je výhodné, aby elektronika měla přehled o tom, co se s automobilem děje, případně, co se v nejbližších sekundách bude dít.
 
-V \cite{Hul+-ManRecUsProFinStaMacFuzLog, TriHei-ExpDesSeqFuzPer} jsou prezentován způsoby, jak jednoduše modelovat manévry řidiče. Mezi takové manévry patří např. předjíždění, zatáčení doleva v křižovatce nebo pouštění chodce na přechodu. Model využívá sadu lingvistických proměnných jako např. \uv{aktuální rychlost}, \uv{zrychlení}, \uv{natočení volantu} nebo \uv{směrová světla}. Následně mohou být stanoveny vzory jednotlivých manévrů. Například při odbočování vlevo se jedná o následující posloupnost událostí:
+V \cite{Hul+-ManRecUsProFinStaMacFuzLog} a \cite{TriHei-ExpDesSeqFuzPer} jsou prezentován způsoby, jak jednoduše modelovat manévry řidiče. Mezi takové manévry patří např. předjíždění, zatáčení doleva v křižovatce nebo pouštění chodce na přechodu. Model využívá sadu lingvistických proměnných jako např. \uv{aktuální rychlost}, \uv{zrychlení}, \uv{natočení volantu} nebo \uv{směrová světla}. Následně mohou být stanoveny vzory jednotlivých manévrů. Například při odbočování vlevo se jedná o následující posloupnost událostí:
 \begin{enumerate}
  \item řidič zapnul levý blinkr
  \item řidič otočil volantem lehce doleva (může být vynecháno)
@@ -1259,7 +1260,7 @@ Podobnou techniku popisují v \cite{TurChe-MacRecHumActSur}. Zde však namísto 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Průmyslové řídící systémy, fuzzy kontroléry}
-Vztah fuzzy automatů a řídících systémů jsou popsány např. v \cite{HeKinSep-DecMakFuzEnvZUsOntCon+, Gra+-ApFuStFuOuFinMaPrRecVioOntAss, WeeFu-FormFuzAutAppModLeaSys, GraFodDri-HybFuzBooAutOntCont}. 
+Vztah fuzzy automatů a řídících systémů jsou popsány např. zde \cite{HeKinSep-DecMakFuzEnvZUsOntCon+}, \cite{Gra+-ApFuStFuOuFinMaPrRecVioOntAss}, \cite{WeeFu-FormFuzAutAppModLeaSys} nebo \cite{GraFodDri-HybFuzBooAutOntCont}. 
 
 Systémy k modelování bývají často tak složité, že je obvykle nemožné popsat je zcela kompletně. Mohlo by tak například z důvodu chyby nebo neočekávaného vnějšího podnětu dojít k tomu, že model se octne v nekonzistením stavu, ze kterého nebude schopen se zotavit. Použití fuzzy automatů umožňuje do modelů určitou formu zotavené zanést.
 
@@ -1269,15 +1270,15 @@ V \cite{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut} používají učící se fuz
 
 V téže publikaci demonstrují obdobným způsobem uplatnění pro řízení robota pohybujícího se v neznámém prostředí. Systém sleduje změny rychlosti pohybu robota a na jejich základě řídí přidávání a ubírání výkonu tak, aby se robot v libovolném terénu pohyboval konstantní rychlostí.
 
-V \cite{WeeFu-FormFuzAutAppModLeaSys, GraFod-FuzAutIntHybConSys} je fuzzy automat použit jako model pro návrh řídících systémů. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Řídící tak systém může být reprezentován automatem.
+V \cite{WeeFu-FormFuzAutAppModLeaSys} a \cite{GraFod-FuzAutIntHybConSys} je fuzzy automat použit jako model pro návrh řídících systémů. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Řídící tak systém může být reprezentován automatem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Problém městského růstu} \label{subs:UrbGrow}
 Problém městského růstu je problém z oblasti urbanistiky. Řešením tohoto problému je co nejpřesnější predikce rozvoje městské zástavby na základě historických záznamů a současné situace. Ve zobecněné podobě se nemusí jednat jen o růst městské zástavby, ale například nárust vytíženosti silnic, kácení lesů nebo vytěženost ložisk. Stejně tak se nutně nemusí jednat o růst, ale obecný vývoj v čase. V této kapitole však budeme pro jednoduchost uvažovat standardní problém, tedy městský růst.
 
-Tento problém bývá často řešen pomocí buněčných fuzzy automatů. Věnují se jim např. v \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS, Ahm+-CalFuzCelAutModUrbDynSauAr, War+-StoConCelModUrbGro, WhiEng-CelAutBasIntDynRegMod, LaiDraSch-IntMulEvCelAutMetLanSimMod, ManHatPra-FuzCelAutBasSheModUrGro+, ManHatPra-ModUrbGroUsFuzCelAut, Wu-CalStoCelAutAppRurUrbLanConv}. %
+Tento problém bývá často řešen pomocí buněčných fuzzy automatů. Věnují se jim např. v \cite{AlAhHep+-ModUrbGroDynUsCelAutGIS}, \cite{Ahm+-CalFuzCelAutModUrbDynSauAr} \cite{War+-StoConCelModUrbGro} \cite{WhiEng-CelAutBasIntDynRegMod}  \cite{LaiDraSch-IntMulEvCelAutMetLanSimMod} \cite{ManHatPra-FuzCelAutBasSheModUrGro+}, \cite{ManHatPra-ModUrbGroUsFuzCelAut} či \cite{Wu-CalStoCelAutAppRurUrbLanConv}. %
 %
-Další informace věnující se uplatnění (fuzzy) buněčných automatů při řešení problému městského růstu jsou k dispozici např. v \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap, Dra-CouFuzSetTheGisBaCelAutLanUseChaMod, WasPar-PreSpaDisEleEnCon+, LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. V \cite{MraZimLapBaj-FuzCelAut+} podobnou technikou simulují šíření lesního požáru.
+Další literatura věnující se uplatnění (fuzzy) buněčných automatů při řešení problém městského růstu je k dispozici např. zde: \cite{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}, \cite{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod}, \cite{WasPar-PreSpaDisEleEnCon+} a \cite{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}. V \cite{MraZimLapBaj-FuzCelAut+} podobnou technikou simulují šíření lesního požáru.
 
 Problém bývá řešen obvykle tak, že sledovaná oblast (město) je rozděleno na parcely. Každá parcela je popsána obvykle několika ukazateli, např. jak moc je zastavěna či jak moc hluku parcela produkuje. Tyto ukazatele tvoří stav buňky bunečného automatu. Konfigurace automatu pak tedy popisuje celé město v určitý časový okamžik.
 
@@ -1377,7 +1378,7 @@ Ukázky aplikací obou filtrů jsou k nalezení na obrázku \ref{img:Filters}. V
 \end{figure}
 
 \subsection{Hledání hran}
-Hledání hran je jednou ze základních technik zpracování obrazu. Hledání hran je často klíčové pro rozpoznávání vzorů v obrazech. V dnešní době existuje značné množství technik pro rozpoznávání hran \cite{MaiAgg-StuComVarImDetEdTec}. V \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} je popsán poměrně elegantní způsob, jak hledání hran vyřešit pomocí buněčných fuzzy automatů. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro, PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} pak tuto techniku vylepšují pomocí strojového učení.
+Hledání hran je jednou ze základních technik zpracování obrazu. Hledání hran je často klíčové pro rozpoznávání vzorů v obrazech. V dnešní době existuje značné množství technik pro rozpoznávání hran \cite{MaiAgg-StuComVarImDetEdTec}. V \cite{MarMeySol-HybMetGasDifModFuzCelAutImSha} je popsán poměrně elegantní způsob, jak hledání hran vyřešit pomocí buněčných fuzzy automatů. V \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} a \cite{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro} pak tuto techniku vylepšují pomocí strojového učení.
 
 Označme osmici směrů dle obrázku \ref{img:Directions:8Directions} jako $U$, $UR$, $R$, $BR$, $B$, $BL$ $L$ a $UL$. Množinu těchto směrů označme $dim$. Dále označme $c_X$ (kde $X \in dim$) jako sousední buňku buňky $c$ ve směru $X \in dim$.
 
@@ -1466,7 +1467,7 @@ Na základě těchto popisů může být navržen automat, který S-termy reprez
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detekce požárů}
-V \cite{HamKoNam-FirFlaDetBasFuzFinAut, KoHamNam-ModForFuFiAuDetIrrFirFla} používají fuzzy automaty pro rozpoznávání vzorů ve videosekvenci, konkrétně pro detekci požárů.
+V \cite{HamKoNam-FirFlaDetBasFuzFinAut} a \cite{KoHamNam-ModForFuFiAuDetIrrFirFla} používají fuzzy automaty pro rozpoznávání vzorů ve videosekvenci, konkrétně pro detekci požárů.
 
 V první fázi se snímek rozdělí na několik regionů a na základě barvy (teplé světlé barvy) se určí, zda-li jednotlivé regiony mohou být plamenem (tzv. kandidáti). Pro každého kandidáta je pak sestaven fuzzy automat o čtyřech stavech $q_{VL}, q_{L}, q_{H}, q_{VH}$. Pokud se automat regionu nachází ve stavu $q_VL$, znamená to, že \uv{region je velmi málo pravděpodobně tvořen plamenem}. Obdobně pro $q_{L}$ (\uv{málo pravděpodobně}), $q_{H}$ (\uv{hodně pravděpodobně}) a $q_{VH}$ (\uv{velmi pravděpodobně}). Abecedou událostí jsou pak kombinace dalších atributů (svit, pohyb v určitém směru, vlnění) spočtených z předchozích snímků. Přechodové pravidlo pak může být např. \uv{pokud je region ve stavu $q_{H}$ a došlo k velkému posunu směrem nahoru a malému snížení svitu, pak přejdi do stavu $q_{VH}$}. Přesně byla přechodová funkce navržena statistickým pozorováním známých videosekvencí s požáry.
 
@@ -1486,7 +1487,7 @@ Vzhledem k tomu, že většina biologických a medicínských uplatnění vyžad
 
 Řětězce DNA často kódují základní informace o živých organizmech a je proto snaha pochopit její strukturu. 
 
-Popis využití fuzzy a pravděpodobnostních automatů na rozpoznáváním rětězců DNA je uevend v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut, Ron-AutLeaApp, ZlaSteSch-FiStaConTraFemPro, Her-ProAriAutAppSoComFraBioSeqAna}.
+Popis využití fuzzy a pravděpodobnostních automatů na rozpoznáváním rětězců DNA je uevend v \cite{SnaKepAbrHas-AproxStriMatchFuzzAut}, \cite{Ron-AutLeaApp}, \cite{ZlaSteSch-FiStaConTraFemPro} a \cite{Her-ProAriAutAppSoComFraBioSeqAna}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Biologické simulace}
@@ -1500,7 +1501,7 @@ Autoři navíc do modelu zanášejí pohyb jedinců, tj. že s určitou pravděp
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Analýza zdravotního stavu pacienta}
-V \cite{Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro, SteAdl-CliMonFuzAut} je popisován způsob, jak pomocí fuzzy automatů sledovat zdravotní stav pacienta. 
+V \cite{Jia+-ExHeaSimMetBasIntHumTheMod}, \cite{GupRah-CliMonUsFuzSys}, \cite{CamMerNun-UsFuzAutDiagPrHeaPro} a \cite{SteAdl-CliMonFuzAut} je popisován způsob, jak pomocí fuzzy automatů sledovat zdravotní stav pacienta. 
 
 
 Technika pracuje s událostmi řízeným fuzzy automatem. Stavy automatu v tomto případě reprezentují choroby (popř. stádia jedné choroby), přechodová funkce pak přechody mezi nimi. Přechodová pravidla pak popisují přechody při různých událostech či akcích (např. medikace). 
@@ -1671,7 +1672,7 @@ Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v praxi
 
 Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle bojuje s korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
 
-Přes to všechno je patrný rostoucí zájem o uplatnění fuzzy a pravděpodobnostních automatů. Jen za poslední tři roky, kdy tato práce vznikala, byla vydány další publikace (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
+Přes to všechno je patrný rostoucí zájem o uplatnění fuzzy a pravděpodobnostních automatů. Jen za poslední tři roky, kdy tato práce vznikala, byla vydány další publikace (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna}, \cite{ManPra-PriPatDetUsFiStMaFuzTra}, \cite{Jia+-ExHeaSimMetBasIntHumTheMod}, \cite{GupRah-CliMonUsFuzSys}, \cite{CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
 
 Další z poznatků, který dle autorova názoru práce přinesla, je, že značné množství autorů si nedostatečně uvědomuje rozdíl, mezi fuzzy a pravděpodobnostním přístupem. V práci bylo opakovaně naráženo na problémy, které bylo vhodné řešeit spíše pomocí fuzzy automatů namísto pravděpodobnostních (a naopak). Stejnětak, některá literatura popisující aplikace fuzzy automatů na problematiku nahlížela z pohledu gramatik, přestože to není zcela přesné.
 

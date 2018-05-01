@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {6.5}U\IeC {\v c}\IeC {\'\i }c\IeC {\'\i } se fuzzy automaty}{28}
 \contentsline {subsection}{\numberline {6.6}Fuzzy automaty a neuronov\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}{29}
 \contentsline {section}{\numberline {7}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i }, klasifikace a korekce textov\IeC {\'y}ch dat}{30}
-\contentsline {subsection}{\numberline {7.1}V\IeC {\'y}po\IeC {\v c}et podobnosti \IeC {\v r}et\IeC {\v e}zc\IeC {\r u}}{31}
+\contentsline {subsection}{\numberline {7.1}V\IeC {\'y}po\IeC {\v c}et podobnosti \IeC {\v r}et\IeC {\v e}zc\IeC {\r u}}{30}
 \contentsline {subsection}{\numberline {7.2}Klasifikace a korekce textov\IeC {\'y}ch \IeC {\v r}et\IeC {\v e}zc\IeC {\r u}}{31}
 \contentsline {subsection}{\numberline {7.3}Detekce p\IeC {\v r}eklep\IeC {\r u}}{31}
 \contentsline {subsection}{\numberline {7.4}Fuzzy lexik\IeC {\'a}ln\IeC {\'\i } analyz\IeC {\'a}tor}{32}
@@ -54,29 +54,29 @@
 \contentsline {subsection}{\numberline {9.3}Monitorov\IeC {\'a}n\IeC {\'\i } elektrick\IeC {\'y}ch a po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'y}ch s\IeC {\'\i }t\IeC {\'\i }}{37}
 \contentsline {subsection}{\numberline {9.4}Teorie her, po\IeC {\v c}\IeC {\'\i }ta\IeC {\v c}ov\IeC {\'e} hry}{37}
 \contentsline {subsection}{\numberline {9.5}Interakce s \IeC {\v c}lov\IeC {\v e}kem}{39}
-\contentsline {subsection}{\numberline {9.6}Sledov\IeC {\'a}n\IeC {\'\i } pohybu a aktivit osoby}{40}
+\contentsline {subsection}{\numberline {9.6}Sledov\IeC {\'a}n\IeC {\'\i } pohybu a aktivit osoby}{39}
 \contentsline {subsection}{\numberline {9.7}Pr\IeC {\r u}myslov\IeC {\'e} \IeC {\v r}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } syst\IeC {\'e}my, fuzzy kontrol\IeC {\'e}ry}{40}
 \contentsline {subsection}{\numberline {9.8}Probl\IeC {\'e}m m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu}{40}
-\contentsline {subsection}{\numberline {9.9}Dal\IeC {\v s}\IeC {\'\i } uplatn\IeC {\v e}n\IeC {\'\i }}{41}
-\contentsline {section}{\numberline {10}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{41}
-\contentsline {subsection}{\numberline {10.1}Konvoluce}{44}
-\contentsline {subsection}{\numberline {10.2}Hled\IeC {\'a}n\IeC {\'\i } hran}{45}
-\contentsline {subsection}{\numberline {10.3}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{45}
-\contentsline {subsection}{\numberline {10.4}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{46}
+\contentsline {subsection}{\numberline {9.9}Dal\IeC {\v s}\IeC {\'\i } uplatn\IeC {\v e}n\IeC {\'\i }}{43}
+\contentsline {section}{\numberline {10}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{43}
+\contentsline {subsection}{\numberline {10.1}Konvoluce}{43}
+\contentsline {subsection}{\numberline {10.2}Hled\IeC {\'a}n\IeC {\'\i } hran}{44}
+\contentsline {subsection}{\numberline {10.3}Ostra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}{44}
+\contentsline {subsection}{\numberline {10.4}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } jednoduch\IeC {\'y}ch vzor\IeC {\r u}}{45}
 \contentsline {subsection}{\numberline {10.5}Slo\IeC {\v z}en\IeC {\'e} geometrick\IeC {\'e} \IeC {\'u}tvary}{46}
 \contentsline {subsection}{\numberline {10.6}Detekce po\IeC {\v z}\IeC {\'a}r\IeC {\r u}}{47}
 \contentsline {section}{\numberline {11}Biologie a medic\IeC {\'\i }na}{47}
-\contentsline {subsection}{\numberline {11.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{48}
-\contentsline {subsection}{\numberline {11.2}Biologick\IeC {\'e} simulace}{48}
+\contentsline {subsection}{\numberline {11.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{47}
+\contentsline {subsection}{\numberline {11.2}Biologick\IeC {\'e} simulace}{47}
 \contentsline {subsection}{\numberline {11.3}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{48}
-\contentsline {subsection}{\numberline {11.4}Anal\IeC {\'y}za l\IeC {\'e}ka\IeC {\v r}sk\IeC {\'y}ch sn\IeC {\'\i }mk\IeC {\r u}}{49}
-\contentsline {subsection}{\numberline {11.5}Dal\IeC {\v s}\IeC {\'\i } aplikace}{50}
+\contentsline {subsection}{\numberline {11.4}Anal\IeC {\'y}za l\IeC {\'e}ka\IeC {\v r}sk\IeC {\'y}ch sn\IeC {\'\i }mk\IeC {\r u}}{48}
+\contentsline {subsection}{\numberline {11.5}Dal\IeC {\v s}\IeC {\'\i } aplikace}{49}
 \contentsline {section}{\numberline {12}Implementace vybran\IeC {\'y}ch probl\IeC {\'e}m\IeC {\r u}}{50}
 \contentsline {subsection}{\numberline {12.1}Z\IeC {\'a}kladn\IeC {\'\i } informace}{50}
-\contentsline {subsection}{\numberline {12.2}Korekce p\IeC {\v r}eklep\IeC {\r u}}{51}
+\contentsline {subsection}{\numberline {12.2}Korekce p\IeC {\v r}eklep\IeC {\r u}}{50}
 \contentsline {subsection}{\numberline {12.3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{51}
-\contentsline {subsection}{\numberline {12.4}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{52}
+\contentsline {subsection}{\numberline {12.4}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{51}
 \contentsline {subsection}{\numberline {12.5}Simulace spot\IeC {\v r}eby elektrick\IeC {\'e}ho produdu}{52}
-\contentsline {subsection}{\numberline {12.6}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{53}
-\contentsline {subsection}{\numberline {12.7}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{53}
-\contentsline {section}{\numberline {13}Z\IeC {\'a}v\IeC {\v e}r}{54}
+\contentsline {subsection}{\numberline {12.6}Zpracov\IeC {\'a}n\IeC {\'\i } obrazu}{52}
+\contentsline {subsection}{\numberline {12.7}Metoda lisov\IeC {\'a}n\IeC {\'\i } dat}{52}
+\contentsline {section}{\numberline {13}Z\IeC {\'a}v\IeC {\v e}r}{53}

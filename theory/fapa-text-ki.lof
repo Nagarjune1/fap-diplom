@@ -5,35 +5,35 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2}{\ignorespaces Fuzzy automat reprezentov\IeC {\'a}n grafem\relax }}{21}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Stromy S-term\IeC {\r u} $M(xx)$ (vlevo), $S(x)$ (uprost\IeC {\v r}ed), $M(M(x S(y)) x)$ (vpravo)\relax }}{29}{figure.caption.10}
+\contentsline {figure}{\numberline {3}{\ignorespaces Stromy S-term\IeC {\r u}}}{28}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4}{\ignorespaces N\IeC {\v e}kolik generac\IeC {\'\i } v\IeC {\'y}po\IeC {\v c}tu bun\IeC {\v e}\IeC {\v c}n\IeC {\'e}ho automatu \enquote {Hra \IeC {\v z}ivota} s n\IeC {\'a}hodnou po\IeC {\v c}\IeC {\'a}te\IeC {\v c}n\IeC {\'\i } konfigurac\IeC {\'\i }\relax }}{32}{figure.caption.12}
+\contentsline {figure}{\numberline {4}{\ignorespaces Uk\IeC {\'a}zka generac\IeC {\'\i } v\IeC {\'y}po\IeC {\v c}tu bun\IeC {\v e}\IeC {\v c}n\IeC {\'e}ho automatu}}{31}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } {\ttfamily hello}\relax }}{34}{figure.caption.13}
+\contentsline {figure}{\numberline {5}{\ignorespaces Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } {\ttfamily hello}\relax }}{33}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Uk\IeC {\'a}zka deformovan\IeC {\'e}ho automatu}}{37}{figure.caption.15}
+\contentsline {figure}{\numberline {6}{\ignorespaces Uk\IeC {\'a}zka deformovan\IeC {\'e}ho automatu}}{36}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces Uk\IeC {\'a}zka postupu p\IeC {\v r}i rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}}{43}{figure.caption.16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Uk\IeC {\'a}zka postupu p\IeC {\v r}i rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}}{42}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Automat pro monitorov\IeC {\'a}n\IeC {\'\i } elektrick\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}}{48}{figure.caption.17}
+\contentsline {figure}{\numberline {8}{\ignorespaces Automat pro monitorov\IeC {\'a}n\IeC {\'\i } elektrick\IeC {\'e} s\IeC {\'\i }t\IeC {\v e}}}{46}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces Automat pro modelov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}lad hr\IeC {\'a}\IeC {\v c}e ve h\IeC {\v r}e \IeC {\v s}achy. Stavy a ud\IeC {\'a}losti jsou pops\IeC {\'a}ny v textu. P\IeC {\v r}evzato z \cite {AlvJoaCru-FuStMaAppEmoModEleGamCha}, upraveno.\relax }}{49}{figure.caption.18}
+\contentsline {figure}{\numberline {9}{\ignorespaces Automat pro modelov\IeC {\'a}n\IeC {\'\i } n\IeC {\'a}lad hr\IeC {\'a}\IeC {\v c}e ve h\IeC {\v r}e \IeC {\v s}achy}}{47}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {10}{\ignorespaces Uk\IeC {\'a}zka v\IeC {\'y}raz\IeC {\r u} ve tv\IeC {\'a}\IeC {\v r}i hr\IeC {\'a}\IeC {\v c}e p\IeC {\v r}i ztr\IeC {\'a}t\IeC {\v e} p\IeC {\v e}\IeC {\v s}ce (vlevo) a p\IeC {\v r}i sebr\IeC {\'a}n\IeC {\'\i } d\IeC {\'a}my (vpravo). P\IeC {\v r}evzato z \cite {AlvJoaCru-FuStMaAppEmoModEleGamCha}.\relax }}{49}{figure.caption.19}
+\contentsline {figure}{\numberline {10}{\ignorespaces Uk\IeC {\'a}zka v\IeC {\'y}raz\IeC {\r u} ve tv\IeC {\'a}\IeC {\v r}i hr\IeC {\'a}\IeC {\v c}e}}{47}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {11}{\ignorespaces Uk\IeC {\'a}zky chov\IeC {\'a}n\IeC {\'\i } automatu}}{53}{figure.caption.20}
+\contentsline {figure}{\numberline {11}{\ignorespaces Uk\IeC {\'a}zky chov\IeC {\'a}n\IeC {\'\i } automatu}}{50}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {12}{\ignorespaces Uk\IeC {\'a}zky simulace m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu}}{54}{figure.caption.21}
+\contentsline {figure}{\numberline {12}{\ignorespaces Uk\IeC {\'a}zky simulace m\IeC {\v e}stsk\IeC {\'e}ho r\IeC {\r u}stu}}{51}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Uk\IeC {\'a}zky jednoduch\IeC {\'y}ch filtr\IeC {\r u}. Vlevo p\IeC {\r u}vodn\IeC {\'\i } obr\IeC {\'a}zek, uprost\IeC {\v r}ed obr\IeC {\'a}zek po $5$ generac\IeC {\'\i }ch jednoduch\IeC {\'e}ho rozost\IeC {\v r}ovac\IeC {\'\i }ho filtru a vpravo obr\IeC {\'a}zek po $8$ generac\IeC {\'\i }ch filtru pro zv\IeC {\'y}razn\IeC {\v e}n\IeC {\'\i } tvar\IeC {\r u} ($\epsilon = 1{,}1$).\relax }}{56}{figure.caption.22}
+\contentsline {figure}{\numberline {13}{\ignorespaces Uk\IeC {\'a}zky jednoduch\IeC {\'y}ch filtr\IeC {\r u}}}{53}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces (p\IeC {\v r}evzato z \cite {SadRetKam-EfMetImpNoiRedImFuzCelAut}) Uk\IeC {\'a}zka odstra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu\relax }}{57}{figure.caption.24}
+\contentsline {figure}{\numberline {15}{\ignorespaces Uk\IeC {\'a}zka odstra\IeC {\v n}ov\IeC {\'a}n\IeC {\'\i } \IeC {\v s}umu}}{54}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad slo\IeC {\v z}en\IeC {\'e}ho geometrick\IeC {\'e}ho tvaru a stromov\IeC {\'a} reprezenace jemu odpov\IeC {\'\i }daj\IeC {\'\i }c\IeC {\'\i }mu S-termu\relax }}{58}{figure.caption.25}
+\contentsline {figure}{\numberline {16}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad slo\IeC {\v z}en\IeC {\'e}ho geometrick\IeC {\'e}ho tvaru a stromov\IeC {\'a} reprezenace jemu odpov\IeC {\'\i }daj\IeC {\'\i }c\IeC {\'\i }mu S-termu\relax }}{55}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces (p\IeC {\v r}evzato z \cite {WanJiaZhoDu-ImProcBasFuzCelAuMod}, upraveno) Uk\IeC {\'a}zky rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } folikul\relax }}{62}{figure.caption.26}
+\contentsline {figure}{\numberline {17}{\ignorespaces Uk\IeC {\'a}zky rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } folikul}}{59}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {18}{\ignorespaces Uk\IeC {\'a}zka aplikace pro rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu\relax }}{64}{figure.caption.28}
+\contentsline {figure}{\numberline {18}{\ignorespaces Uk\IeC {\'a}zka aplikace pro rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu\relax }}{61}{figure.caption.28}
 \babel@toc {czech}{}
 \babel@toc {czech}{}
 \babel@toc {english}{}

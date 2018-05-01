@@ -103,7 +103,6 @@
 %% (zvolenou nepovinným parametrem biblatex makra
 %% \documentclass). Použijte pouze při této sazbě, ne při (výchozí)
 %% sazbě v prostředí thebibliography.
-\bibliographystyle{plain}
 \bibliography{resources.bib}
 
 %% Další dodatečné styly (balíky) potřebné pro sazbu vlastního textu
@@ -123,14 +122,15 @@
 %% colspan a rowspan v tabulkách
 \usepackage{multirow}
 
-%%  http://tex.stackexchange.com/a/361157
-\usepackage{showlabels}
 
 %% subfigures, https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
 \usepackage{subcaption}
 
+%% zobrazování labelů, http://tex.stackexchange.com/a/361157
+%\usepackage{showlabels}
+
 %% číslování řádků, https://texblog.org/2012/02/08/adding-line-numbers-to-documents/
-\usepackage{lineno}
+%\usepackage{lineno}
 
 %% chorvatská jména autorů, https://tex.stackexchange.com/questions/14872/croatian-serbian-letters-in-cv-problem
 \usepackage[T1]{fontenc}
@@ -257,6 +257,7 @@ Thesis conclusions in \uv{English}.
 %% Sazba i v textu necitovaných zdrojů, při použití
 %% BibLaTeXu. Volitelné.
 \nocite{*}
+
 %% Vlastní sazba bibliografie při použití BibLaTeXu.
 \printbibliography
 

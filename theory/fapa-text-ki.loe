@@ -9,7 +9,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {2.4}Definice\thmtformatoptarg {Fuzzy relace}}{11}{definition.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {2.5}P\v {r}\'{i}klad}{11}{example.5}
+\contentsline {example}{\numberline {2.5}P\v {r}\'{i}klad\thmtformatoptarg {Fuzzy mno\IeC {\v z}iny a fuzzy relace}}{11}{example.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {2.6}Definice\thmtformatoptarg {Prostor jev\IeC {\r u}, jev}}{11}{definition.6}
 \defcounter {refsection}{0}\relax 
@@ -19,33 +19,33 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {2.9}Definice\thmtformatoptarg {Podm\IeC {\'\i }n\IeC {\v e}n\IeC {\'a} pravd\IeC {\v e}podobnost}}{12}{definition.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {2.10}P\v {r}\'{i}klad}{12}{example.10}
+\contentsline {example}{\numberline {2.10}P\v {r}\'{i}klad\thmtformatoptarg {Pravd\IeC {\v e}podobnost}}{12}{example.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {note}{\numberline {2.1}Pozn\IeC {\'a}mka}{13}{note.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {2.11}P\v {r}\'{i}klad}{14}{example.11}
+\contentsline {example}{\numberline {2.11}P\v {r}\'{i}klad\thmtformatoptarg {Ligvistick\IeC {\'e} prom\IeC {\v e}nn\IeC {\'e}}}{14}{example.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {note}{\numberline {2.2}Pozn\IeC {\'a}mka}{14}{note.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {2.12}P\v {r}\'{i}klad}{14}{example.12}
+\contentsline {example}{\numberline {2.12}P\v {r}\'{i}klad\thmtformatoptarg {\textsc {If--Then} pravidla}}{14}{example.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {2.13}P\v {r}\'{i}klad}{15}{example.13}
+\contentsline {example}{\numberline {2.13}P\v {r}\'{i}klad\thmtformatoptarg {Fuzzy \textsc {If--Then} pravidla}}{15}{example.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {note}{\numberline {2.3}Pozn\IeC {\'a}mka}{16}{note.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.1}Definice\thmtformatoptarg {Nedeterministick\IeC {\'y} bivalentn\IeC {\'\i } automat}}{18}{definition.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {3.2}P\v {r}\'{i}klad}{18}{example.2}
+\contentsline {example}{\numberline {3.2}P\v {r}\'{i}klad\thmtformatoptarg {Nedeterministick\IeC {\'y} bivalentn\IeC {\'\i } automat}}{18}{example.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.3}Definice\thmtformatoptarg {Nedeterministick\IeC {\'y} fuzzy automat}}{19}{definition.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {notation}{\numberline {1}Zna\IeC {\v c}en\IeC {\'\i }}{19}{notation.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {3.4}P\v {r}\'{i}klad}{20}{example.4}
+\contentsline {example}{\numberline {3.4}P\v {r}\'{i}klad\thmtformatoptarg {Fuzzy automat a jeho reprezentace}}{20}{example.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.5}Definice\thmtformatoptarg {Fuzzy stav}}{20}{definition.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {note}{\numberline {3.1}Pozn\IeC {\'a}mka}{21}{note.1}
+\contentsline {note}{\numberline {3.1}Pozn\IeC {\'a}mka}{20}{note.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.6}Definice\thmtformatoptarg {Konfigurace nedeterministick\IeC {\'e}ho fuzzy automatu}}{21}{definition.6}
 \defcounter {refsection}{0}\relax 
@@ -63,34 +63,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.12}Definice\thmtformatoptarg {Jazyk rozpozn\IeC {\'a}van\IeC {\'y} automatem}}{23}{definition.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {3.13}P\v {r}\'{i}klad}{23}{example.13}
+\contentsline {example}{\numberline {3.13}P\v {r}\'{i}klad\thmtformatoptarg {V\IeC {\'y}po\IeC {\v c}et fuzzy automatu}}{23}{example.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.14}Definice\thmtformatoptarg {Pravd\IeC {\v e}podobnostn\IeC {\'\i } automat}}{24}{definition.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{\numberline {3.15}Definice\thmtformatoptarg {Pravd\IeC {\v e}podobnost p\IeC {\v r}ijet\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zce}}{25}{definition.15}
+\contentsline {definition}{\numberline {3.15}Definice\thmtformatoptarg {Pravd\IeC {\v e}podobnost p\IeC {\v r}ijet\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zce}}{24}{definition.15}
 \defcounter {refsection}{0}\relax 
 \contentsline {definition}{\numberline {3.16}Definice\thmtformatoptarg {Jazyk rozpozn\IeC {\'a}van\IeC {\'y} pravd\IeC {\v e}podobnostn\IeC {\'\i }m automatem}}{25}{definition.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {3.17}P\v {r}\'{i}klad}{25}{example.17}
+\contentsline {example}{\numberline {3.17}P\v {r}\'{i}klad\thmtformatoptarg {Pravd\IeC {\v e}podobnostn\IeC {\'\i } automat}}{25}{example.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {note}{\numberline {4.1}Pozn\IeC {\'a}mka}{25}{note.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {note}{\numberline {4.2}Pozn\IeC {\'a}mka}{27}{note.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {5.1}P\v {r}\'{i}klad}{29}{example.1}
+\contentsline {example}{\numberline {5.1}P\v {r}\'{i}klad\thmtformatoptarg {Fuzzy tree automat}}{29}{example.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {5.2}P\v {r}\'{i}klad}{30}{example.2}
+\contentsline {example}{\numberline {5.2}P\v {r}\'{i}klad\thmtformatoptarg {Bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} automat Hra \IeC {\v z}ivota}}{30}{example.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {5.3}P\v {r}\'{i}klad}{31}{example.3}
+\contentsline {example}{\numberline {5.3}P\v {r}\'{i}klad\thmtformatoptarg {V\IeC {\'y}po\IeC {\v c}et bun\IeC {\v e}\IeC {\v c}n\IeC {\'e}ho automatu}}{31}{example.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {5.4}P\v {r}\'{i}klad}{31}{example.4}
+\contentsline {example}{\numberline {5.4}P\v {r}\'{i}klad\thmtformatoptarg {Bun\IeC {\v e}\IeC {\v c}n\IeC {\'y} fuzzy automat}}{31}{example.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{\numberline {6.1}Definice\thmtformatoptarg {Fuzzy automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $w$}}{34}{definition.1}
+\contentsline {definition}{\numberline {6.1}Definice\thmtformatoptarg {Fuzzy automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $w$}}{33}{definition.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {6.2}P\v {r}\'{i}klad}{34}{example.2}
+\contentsline {example}{\numberline {6.2}P\v {r}\'{i}klad\thmtformatoptarg {Automat rozpozn\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } $w$}}{33}{example.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {definition}{\numberline {6.3}Definice\thmtformatoptarg {Deformovan\IeC {\'y} automat}}{36}{definition.3}
+\contentsline {definition}{\numberline {6.3}Definice\thmtformatoptarg {Deformovan\IeC {\'y} automat}}{35}{definition.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {note}{\numberline {8.1}Pozn\IeC {\'a}mka}{45}{note.1}
+\contentsline {note}{\numberline {8.1}Pozn\IeC {\'a}mka}{43}{note.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {example}{\numberline {10.1}P\v {r}\'{i}klad}{58}{example.1}
+\contentsline {example}{\numberline {10.1}P\v {r}\'{i}klad\thmtformatoptarg {Slo\IeC {\v z}en\IeC {\'y} geometrick\IeC {\'y} \IeC {\'u}tvar}}{55}{example.1}

@@ -14,7 +14,8 @@ generate:
 	mpost -tex=latex mpimg-rest.mp
 	# vlna fapa-text.tex
 	pdflatex fapa-text-ki.tex
-	bibtex fapa-text-ki.aux
+	# bibtex fapa-text-ki.aux
+	biber fapa-text-ki
 	pdflatex fapa-text-ki.tex
 	pdflatex fapa-text-ki.tex
 
