@@ -4,12 +4,11 @@ The top-level auxiliary file: fapa-text-plain.aux
 A level-1 auxiliary file: fapa-text.aux
 The style file: plain.bst
 Database file #1: resources.bib
-Warning--I didn't find a database entry for "Bel-DetFuzzAut"
 Warning--empty journal in AlAhHep+-ModUrbGroDynUsCelAutGIS
 Warning--empty publisher in Com+-TreeAutTecApp
 You've used 139 entries,
             2118 wiz_defined-function locations,
-            1194 strings with 31364 characters,
+            1192 strings with 31336 characters,
 and the built_in function-call counts, 35600 in all, are:
 = -- 3290
 > -- 2127
@@ -48,4 +47,4 @@ warning$ -- 2
 while$ -- 278
 width$ -- 142
 write$ -- 1391
-(There were 3 warnings)
+(There were 2 warnings)
