@@ -5,46 +5,45 @@ A level-1 auxiliary file: fapa-text.aux
 The style file: plain.bst
 Database file #1: resources.bib
 Warning--empty journal in AlAhHep+-ModUrbGroDynUsCelAutGIS
-Warning--empty publisher in Com+-TreeAutTecApp
-You've used 139 entries,
+You've used 138 entries,
             2118 wiz_defined-function locations,
-            1192 strings with 31336 characters,
-and the built_in function-call counts, 35600 in all, are:
-= -- 3290
-> -- 2127
+            1188 strings with 30992 characters,
+and the built_in function-call counts, 35157 in all, are:
+= -- 3256
+> -- 2088
 < -- 0
-+ -- 857
-- -- 696
-* -- 1997
-:= -- 6651
-add.period$ -- 418
-call.type$ -- 139
-change.case$ -- 748
++ -- 842
+- -- 682
+* -- 1955
+:= -- 6568
+add.period$ -- 414
+call.type$ -- 138
+change.case$ -- 741
 chr.to.int$ -- 0
-cite$ -- 141
-duplicate$ -- 1401
-empty$ -- 2455
-format.name$ -- 696
-if$ -- 7049
+cite$ -- 139
+duplicate$ -- 1379
+empty$ -- 2433
+format.name$ -- 682
+if$ -- 6966
 int.to.chr$ -- 0
-int.to.str$ -- 139
-missing$ -- 146
-newline$ -- 699
-num.names$ -- 278
-pop$ -- 844
+int.to.str$ -- 138
+missing$ -- 140
+newline$ -- 693
+num.names$ -- 276
+pop$ -- 830
 preamble$ -- 1
-purify$ -- 626
+purify$ -- 617
 quote$ -- 0
-skip$ -- 1009
+skip$ -- 1007
 stack$ -- 0
-substring$ -- 717
-swap$ -- 137
+substring$ -- 712
+swap$ -- 136
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 526
-warning$ -- 2
-while$ -- 278
-width$ -- 142
-write$ -- 1391
-(There were 2 warnings)
+type$ -- 528
+warning$ -- 1
+while$ -- 276
+width$ -- 141
+write$ -- 1378
+(There was 1 warning)

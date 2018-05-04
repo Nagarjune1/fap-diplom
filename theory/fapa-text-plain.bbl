@@ -85,12 +85,6 @@ M.~Batty and Y.~Xie.
 \newblock From cells to cities.
 \newblock {\em Environment and Planning B: Planning and Design}, 1994.
 
-\bibitem{Bez+-FuzModAlgPatRecImProc}
-James~C. Bezdek, James Keller, Raghu Krisnapuram, and Nikhil~R. Pal.
-\newblock {\em Fuzzy models and algorithms for pattern recognition and image
-  processing}.
-\newblock Springer, 1999.
-
 \bibitem{BlaDelFlo-MethIndFuzzAutUsNeuNet}
 A.~Blanco, M.~Delgado, and M.~C. Pegalajar.
 \newblock A method to induce fuzzy automata using neural networks.
@@ -153,12 +147,6 @@ Qiuwen Chen and Arthur~E. Mynett.
 Wei Cheng and Zhi-Wen Mo.
 \newblock Minimization algorithm of fuzzy finite automata.
 \newblock {\em Fuzzy sets and systems}, 2004.
-
-\bibitem{Com+-TreeAutTecApp}
-Hubert Comon, Max Dauchet, R\'{e}mi Gilleron, and Christof L\"{o}ding.
-\newblock {\em Tree Automata Techniques and Applications}.
-\newblock 2008.
-\newblock Dostupn\'{e} online na \url{http://www.grappa.univ-lille3.fr/tata}.
 
 \bibitem{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}
 Manuj Darbari, Hasan Ahmed, and Vivek~Kr. Singh.
@@ -247,6 +235,11 @@ Jonathan~P. Forsyth and Juan~P. Bello.
 \newblock {\em Proceedings of the 16th Int. Conference on Digital Audio
   Effects}, 2013.
 
+\bibitem{web-Maven}
+The Apache~Software Foundation.
+\newblock Apache maven project.
+\newblock Dostupn\'{e} online na \url{https://maven.apache.org}.
+
 \bibitem{FuLi-ForLeaAutAutGam}
 K.~S. Fu and T.~J. Li.
 \newblock Formulation of learning automata and automata games.
@@ -315,11 +308,6 @@ Inke Herms.
 John~E. Hopcroft, Rajeev Motwani, and Jeffrey~D. Ullman.
 \newblock {\em Introduction to Automata Theory, Languages, and Computation}.
 \newblock Addison-Wesley, 1979.
-
-\bibitem{Hua-SyntPattRecSeisOilExp}
-Kou-Yuan Huang.
-\newblock {\em Syntactic Pattern Recognition for Seismic Oil Exploration}.
-\newblock World Scientific Publishing, 2002.
 
 \bibitem{Hul+-ManRecUsProFinStaMacFuzLog}
 Till H\"{u}lnhagen, Ingo Dengler, Andreas Tamke, Thao Dang, and Gabi Breuel.
@@ -762,6 +750,11 @@ R.~White and G.~Engelen.
 \newblock Cellular automata as the basis of integrated dynamic regional
   modelling.
 \newblock {\em Environment and Planning B: Planning and Design}, 1997.
+
+\bibitem{web-Lenna}
+Wikipedie.
+\newblock Lenna.
+\newblock Dostupn\'{e} online na \url{https://en.wikipedia.org/wiki/Lenna}.
 
 \bibitem{Wol-CelAut}
 Stephen Wolfram.

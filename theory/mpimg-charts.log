@@ -1,4 +1,4 @@
-This is MetaPost, version 2.00 (TeX Live 2018/Debian) (kpathsea version 6.3.0)  29 APR 2018 22:03
+This is MetaPost, version 2.00 (TeX Live 2018/Debian) (kpathsea version 6.3.0)  5 MAY 2018 01:30
 **mpimg-charts.mp
 (/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
 (/usr/share/texlive/texmf-dist/metapost/base/plain.mp
@@ -9,6 +9,6 @@ Preloading the plain mem file, version 1.005) ) (./mpimg-charts.mp
 (/usr/share/texlive/texmf-dist/metapost/base/format.mp
 (/usr/share/texlive/texmf-dist/metapost/base/string.mp)
 (/usr/share/texlive/texmf-dist/metapost/base/texnum.mp))) [0{psfonts.map}<cmr10
-.pfb><cmmi10.pfb><cmmi7.pfb>] )
-1 output file written: mpimg-charts0.mps
+.pfb><cmmi10.pfb><cmmi7.pfb>] [1<cmr10.pfb>] [2<cmr10.pfb>] )
+3 output files written: mpimg-charts0.mps .. mpimg-charts2.mps
 

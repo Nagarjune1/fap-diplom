@@ -104,37 +104,37 @@ beginfig(4);	% 8 dimms around the cell
     
    enddef;
    
-   dimm(-1, -1, btex $UL$ etex, btex $c_{i-1,j-1}$ etex, btex vlevo nahoře etex);
-   dimm( 0, -1, btex $U$ etex, btex $c_{i,j-1}$ etex, btex nahoře etex);
-   dimm(+1, -1, btex $UR$ etex, btex $c_{i+1,j-1}$ etex, btex vpravo nahoře etex);
+   dimm(-1, -1, btex $LH$ etex, btex $c_{i-1,j-1}$ etex, btex vlevo nahoře etex);
+   dimm( 0, -1, btex $H$ etex, btex $c_{i,j-1}$ etex, btex nahoře etex);
+   dimm(+1, -1, btex $PH$ etex, btex $c_{i+1,j-1}$ etex, btex vpravo nahoře etex);
    
    dimm(-1,  0, btex $L$ etex, btex $c_{i-1,j}$ etex, btex vlevo etex);
    dimm( 0,  0, btex $\ $ etex, btex $c_{i,j}$ etex, btex etex);
-   dimm(+1,  0, btex $R$ etex, btex $c_{i+1,j}$ etex, btex vpravo etex);
+   dimm(+1,  0, btex $P$ etex, btex $c_{i+1,j}$ etex, btex vpravo etex);
    
-   dimm(-1, +1, btex $BL$ etex, btex $c_{i-1,j+1}$ etex, btex vlevo dole etex);
-   dimm( 0, +1, btex $B$ etex, btex $c_{i,j+1}$ etex, btex dole etex);
-   dimm(+1, +1, btex $BR$ etex, btex $c_{i+1,j+1}$ etex, btex vpravo dole etex);
+   dimm(-1, +1, btex $LD$ etex, btex $c_{i-1,j+1}$ etex, btex vlevo dole etex);
+   dimm( 0, +1, btex $D$ etex, btex $c_{i,j+1}$ etex, btex dole etex);
+   dimm(+1, +1, btex $PD$ etex, btex $c_{i+1,j+1}$ etex, btex vpravo dole etex);
 
    %    label.top(btex $UL$ etex, 		(0.5 * s, 2.5 * s));
 %    label.bot(btex $c_{i-1,j-1}$ etex, 	(0.5 * s, 2.5 * s));
-%    label.top(btex $U$ etex, 		(1.5 * s, 2.5 * s));
+%    label.top(btex $H$ etex, 		(1.5 * s, 2.5 * s));
 %    label.bot(btex $c_{i,j-1}$ etex, 	(1.5 * s, 2.5 * s));
-%    label.top(btex $UR$ etex, 		(2.5 * s, 2.5 * s));
+%    label.top(btex $PH$ etex, 		(2.5 * s, 2.5 * s));
 %    label.bot(btex $c_{i+1,j-1}$ etex, 	(2.5 * s, 2.5 * s));
 %   
 %    label.top(btex $L$ etex, 		(0.5 * s, 1.5 * s));
 %    label.bot(btex $c_{i-1,j}$ etex, 	(0.5 * s, 1.5 * s));
 %    label.top(btex $ $ etex, 		(1.5 * s, 1.5 * s));
 %    label.bot(btex $c_{i,j}$ etex, 	(1.5 * s, 1.5 * s));
-%    label.top(btex $R$ etex, 		(2.5 * s, 1.5 * s));
+%    label.top(btex $P$ etex, 		(2.5 * s, 1.5 * s));
 %    label.bot(btex $c_{i+1,j}$ etex, 	(2.5 * s, 1.5 * s));
 %    
-%    label.top(btex $BL$ etex, 		(0.5 * s, 0.5 * s));
+%    label.top(btex $LD$ etex, 		(0.5 * s, 0.5 * s));
 %    label.bot(btex $c_{i-1,j+1}$ etex, 	(0.5 * s, 0.5 * s));
 %    label.top(btex $B$ etex, 		(1.5 * s, 0.5 * s));
 %    label.bot(btex $c_{i,j+1}$ etex, 	(1.5 * s, 0.5 * s));
-%    label.top(btex $BR$ etex, 		(2.5 * s, 0.5 * s));
+%    label.top(btex $PD$ etex, 		(2.5 * s, 0.5 * s));
 %    label.bot(btex $c_{i+1,j+1}$ etex, 	(2.5 * s, 0.5 * s));
 %   
 %   draw (0, 1*s) -- (3*s, 1*s);
@@ -207,15 +207,15 @@ beginfig(6);	%simple church
   draw Main;	draw RoofM;
   draw ToverR;	draw RoofTR;
   
-  label.bot(btex $t_l$ etex, center ToverL);
-  label.bot(btex $r_l$ etex, center RoofTL);
+  label.bot(btex $o$ etex, center ToverL);
+  label.bot(btex $t$ etex, center RoofTL);
   
-  label.bot(btex $b_m$ etex, center Main);
-  label.bot(btex $r_m$ etex, center RoofM);
+  label.bot(btex $c$ etex, center Main);
+  label.bot(btex $t$ etex, center RoofM);
   
   
-  label.bot(btex $t_r$ etex, center ToverR);
-  label.bot(btex $r_l$ etex, center RoofTR);
+  label.bot(btex $o$ etex, center ToverR);
+  label.bot(btex $t$ etex, center RoofTR);
 
 endfig;
 
@@ -230,16 +230,16 @@ beginfig(7);	%tree of church
   NlR := (60, 20);	NmR := (120, 20);	NrR := (180, 20);	
   
   
-  dotlabel.ulft(btex $C$ etex, NR);
-  dotlabel.ulft(btex $T_l$ etex, NlT);
-  dotlabel.urt(btex $M$ etex, NmT);
-  dotlabel.urt(btex $T_r$ etex, NrT);
-  dotlabel.bot(btex $t_l$ etex, NlB);
-  dotlabel.bot(btex $t_m$ etex, NmB);
-  dotlabel.bot(btex $t_r$ etex, NrB);
-  dotlabel.bot(btex $r_l$ etex, NlR);
-  dotlabel.bot(btex $r_m$ etex, NmR);
-  dotlabel.bot(btex $r_r$ etex, NrR);
+  dotlabel.ulft(btex $V$ etex, NR);
+  dotlabel.ulft(btex $N$ etex, NlT);
+  dotlabel.urt(btex $N$ etex, NmT);
+  dotlabel.urt(btex $N$ etex, NrT);
+  dotlabel.bot(btex $t$ etex, NlB);
+  dotlabel.bot(btex $t$ etex, NmB);
+  dotlabel.bot(btex $t$ etex, NrB);
+  dotlabel.bot(btex $o$ etex, NlR);
+  dotlabel.bot(btex $c$ etex, NmR);
+  dotlabel.bot(btex $o$ etex, NrR);
   
   draw NR -- NlT;	draw NR -- NmT;		draw NR -- NrT;
   draw NlT -- NlB;	draw NlT -- NlR;

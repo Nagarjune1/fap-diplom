@@ -2,12 +2,12 @@
 %%BoundingBox: -101 -101 101 101 
 %%HiResBoundingBox: -100.25 -100.25 100.25 100.25 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.04.29:2203
+%%CreationDate: 2018.05.04:2201
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font TYHETD-CMMI10 UJOQAE-CMMI7
+%%+ font RFTKTD-CMMI10 UJOQAE-CMMI7
 %%DocumentSuppliedResources: procset mpost-minimal
-%%+ font TYHETD-CMMI10 UJOQAE-CMMI7
+%%+ font RFTKTD-CMMI10 UJOQAE-CMMI7
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -18,7 +18,7 @@
 /ScaleFont{dup fmc 0 get Amul 0 exch put dup dup 3 get Amul 3 exch put fmd}bd
 /SlantFont{fmc 2 get dup 0 eq{pop 1}if Amul FontMatrix 0 get mul 2 exch put fmd}bd
 %%EndResource
-%%BeginResource: font TYHETD-CMMI10
+%%BeginResource: font RFTKTD-CMMI10
 %!PS-AdobeFont-1.0: CMMI10 003.002
 %%Title: CMMI10
 %Version: 003.002
@@ -30,7 +30,7 @@
 % This license is in the accompanying file OFL.txt, and is also
 % available with a FAQ at: http://scripts.sil.org/OFL.
 %%EndComments
-FontDirectory/TYHETD-CMMI10 known{/TYHETD-CMMI10 findfont dup/UniqueID known{dup
+FontDirectory/RFTKTD-CMMI10 known{/RFTKTD-CMMI10 findfont dup/UniqueID known{dup
 /UniqueID get 5087385 eq exch/FontType get 1 eq and}{pop false}ifelse
 {save true}{false}ifelse}{false}ifelse
 11 dict begin

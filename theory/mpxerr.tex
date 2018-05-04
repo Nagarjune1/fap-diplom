@@ -1,0 +1,137 @@
+ 
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\begin{document}
+
+\gdef\mpxshipout{\shipout\hbox\bgroup%
+  \setbox0=\hbox\bgroup}%
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 29 ./mpimg-apps-diags.mp
+foo bar%
+\stopmpxshipout
+\mpxshipout% line 31 ./mpimg-apps-diags.mp
+\begin{tabular}{c} $V = \text{stud}$ \\ $S = \text{vyp}$ \end{tabular}%
+\stopmpxshipout
+\mpxshipout% line 32 ./mpimg-apps-diags.mp
+\begin{tabular}{c} $V = \text{tep}$ \\ $S = \text{vyp}$ \end{tabular}%
+\stopmpxshipout
+\mpxshipout% line 33 ./mpimg-apps-diags.mp
+\begin{tabular}{c} $V = \text{vyp}$ \\ $S = \text{zap}$ \end{tabular}%
+\stopmpxshipout
+\mpxshipout% line 34 ./mpimg-apps-diags.mp
+\begin{tabular}{c} $V = \text{stud}$ \\ $S = \text{zap}$ \end{tabular}%
+\stopmpxshipout
+\mpxshipout% line 35 ./mpimg-apps-diags.mp
+\begin{tabular}{c} $V = \text{tep}$ \\ $S = \text{zap}$ \end{tabular}%
+\stopmpxshipout
+\mpxshipout% line 40 ./mpimg-apps-diags.mp
+$ m+    $%
+\stopmpxshipout
+\mpxshipout% line 41 ./mpimg-apps-diags.mp
+$ m-    $%
+\stopmpxshipout
+\mpxshipout% line 43 ./mpimg-apps-diags.mp
+$ s+    $%
+\stopmpxshipout
+\mpxshipout% line 44 ./mpimg-apps-diags.mp
+$ s-    $%
+\stopmpxshipout
+\mpxshipout% line 46 ./mpimg-apps-diags.mp
+$ v+    $%
+\stopmpxshipout
+\mpxshipout% line 47 ./mpimg-apps-diags.mp
+$ v-    $%
+\stopmpxshipout
+\mpxshipout% line 50 ./mpimg-apps-diags.mp
+$ m+    $%
+\stopmpxshipout
+\mpxshipout% line 51 ./mpimg-apps-diags.mp
+$ m-    $%
+\stopmpxshipout
+\mpxshipout% line 53 ./mpimg-apps-diags.mp
+$ s+    $%
+\stopmpxshipout
+\mpxshipout% line 54 ./mpimg-apps-diags.mp
+$ s-    $%
+\stopmpxshipout
+\mpxshipout% line 56 ./mpimg-apps-diags.mp
+$ v+    $%
+\stopmpxshipout
+\mpxshipout% line 57 ./mpimg-apps-diags.mp
+$ v-    $%
+\stopmpxshipout
+\mpxshipout% line 60 ./mpimg-apps-diags.mp
+$ m+    $%
+\stopmpxshipout
+\mpxshipout% line 61 ./mpimg-apps-diags.mp
+$ m-    $%
+\stopmpxshipout
+\mpxshipout% line 63 ./mpimg-apps-diags.mp
+$ m+    $%
+\stopmpxshipout
+\mpxshipout% line 64 ./mpimg-apps-diags.mp
+$ m-    $%
+\stopmpxshipout
+\mpxshipout% line 66 ./mpimg-apps-diags.mp
+$ m+    $%
+\stopmpxshipout
+\mpxshipout% line 67 ./mpimg-apps-diags.mp
+$ m-    $%
+\stopmpxshipout
+\mpxshipout% line 83 ./mpimg-apps-diags.mp
+$q_Z$%
+\stopmpxshipout
+\mpxshipout% line 84 ./mpimg-apps-diags.mp
+$q_P$%
+\stopmpxshipout
+\mpxshipout% line 85 ./mpimg-apps-diags.mp
+$q_R$%
+\stopmpxshipout
+\mpxshipout% line 86 ./mpimg-apps-diags.mp
+$q_N$%
+\stopmpxshipout
+\mpxshipout% line 91 ./mpimg-apps-diags.mp
+$ š     $%
+\stopmpxshipout
+\mpxshipout% line 92 ./mpimg-apps-diags.mp
+$ n     $%
+\stopmpxshipout
+\mpxshipout% line 94 ./mpimg-apps-diags.mp
+$ t_{-} $%
+\stopmpxshipout
+\mpxshipout% line 95 ./mpimg-apps-diags.mp
+$ t_{+} $%
+\stopmpxshipout
+\mpxshipout% line 97 ./mpimg-apps-diags.mp
+$ t_{+} $%
+\stopmpxshipout
+\mpxshipout% line 98 ./mpimg-apps-diags.mp
+$ n     $%
+\stopmpxshipout
+\mpxshipout% line 100 ./mpimg-apps-diags.mp
+$ t_{-} $%
+\stopmpxshipout
+\mpxshipout% line 101 ./mpimg-apps-diags.mp
+$ š     $%
+\stopmpxshipout
+\mpxshipout% line 103 ./mpimg-apps-diags.mp
+$ t_{-} $%
+\stopmpxshipout
+\mpxshipout% line 104 ./mpimg-apps-diags.mp
+$ n     $%
+\stopmpxshipout
+\mpxshipout% line 106 ./mpimg-apps-diags.mp
+$ t_{+} $%
+\stopmpxshipout
+\mpxshipout% line 107 ./mpimg-apps-diags.mp
+$ š     $%
+\stopmpxshipout
+\end{document}

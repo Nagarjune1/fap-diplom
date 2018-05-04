@@ -2,7 +2,7 @@
 %%BoundingBox: 69 -78 171 -25 
 %%HiResBoundingBox: 69.65 -77.85 170.35 -25.03716 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.05.02:2114
+%%CreationDate: 2018.05.04:2201
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font PBFZMH-CMR10 VAWWEG-CMMI10
