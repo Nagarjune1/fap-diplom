@@ -2,7 +2,7 @@
 %%BoundingBox: -20 -21 116 88 
 %%HiResBoundingBox: -19.89984 -20.68156 115.6358 87.28935 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.05.05:0130
+%%CreationDate: 2018.05.05:0344
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font IDZHVN-CMR10
@@ -482,31 +482,31 @@ grestore
 newpath 0 85.03935 moveto
 0 0 lineto
 113.3858 0 lineto stroke
- 0.5 0.5 0.5 setrgbcolor
+ 0.8 0.8 0.8 setrgbcolor
 newpath 0 5.2233 moveto
 113.3858 5.2233 lineto stroke
  0 0 0 setrgbcolor
 -7.98134 2.0131 moveto
 (0) cmr10 9.96265 fshow
- 0.5 0.5 0.5 setrgbcolor
+ 0.8 0.8 0.8 setrgbcolor
 newpath 0 23.87163 moveto
 113.3858 23.87163 lineto stroke
  0 0 0 setrgbcolor
 -7.98134 20.66144 moveto
 (1) cmr10 9.96265 fshow
- 0.5 0.5 0.5 setrgbcolor
+ 0.8 0.8 0.8 setrgbcolor
 newpath 0 42.51997 moveto
 113.3858 42.51997 lineto stroke
  0 0 0 setrgbcolor
 -7.98134 39.30978 moveto
 (2) cmr10 9.96265 fshow
- 0.5 0.5 0.5 setrgbcolor
+ 0.8 0.8 0.8 setrgbcolor
 newpath 0 61.1683 moveto
 113.3858 61.1683 lineto stroke
  0 0 0 setrgbcolor
 -7.98134 57.95811 moveto
 (3) cmr10 9.96265 fshow
- 0.5 0.5 0.5 setrgbcolor
+ 0.8 0.8 0.8 setrgbcolor
 newpath 0 79.81664 moveto
 113.3858 79.81664 lineto stroke
  0 0 0 setrgbcolor

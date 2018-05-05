@@ -208,21 +208,21 @@ Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi
 
 Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle \uv{bojuje} s~korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná ve vyšším stupni, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
 
-Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta značnou část z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
+Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
 \end{kiconclusions}
 
 \begin{kiconclusions}[english]
-The main task of this thesis was to show that fuzzy and probabilistic automata can be used in practice. It have been read over $200$ publications within this thesis and there have been found many of practical applications of such models.
+The main task of this thesis was to show, that fuzzy and probabilistic automata can be used in practice. Within this thesis have been read over $200$ publications, where have been found many of practical applications of such models.
 
 This thesis have prooved that fuzzy and probabilistic automata can be used to solve various problems. In many cases fuzzy or probabilistic automata makes such solution much easier or more clear.
 
 On the other hand, using of theese models is linked with some further problems. In the most of cases is necessarily to perform data preprocessing, which strongly affects the resulting automaton. Moreover, the automata itself mostly cannot precisely work with the real-world inputs, so the automaton has to be somehow modified, for instance by deformation or machine learning.
 
-Another circumstance, which makes application of fuzzy automata much more complicated, is the time complexity of their computation. Yet during the experiments within this thesis and on quite small data, was shown that one computation on common computer often exceed one second. There are required some optimalisations to make this model usable. In many cases this leads to completely new model, which's the fuzzy automaton just a basic idea.
+Another circumstance, which makes application of fuzzy automata much more complicated, is the time complexity of their computation. Yet during the experiments within this thesis and on quite small data was shown, that one computation of common computer often exceed one second. There are required some optimalisations to make this model usable. In many cases this leads to completely new model, which's the fuzzy automaton just a basic idea.
 
 While for the longer inputs the automaton challenges the computation time, for the short ones automaton usually faces correctness of results. The automaton often incorrectly accepts short input string with higher degree, because automaton have not enough time to ``escape'' to state, which may reject the string.
 
-However, there is obvious increase of interrest of applications of fuzzy and probabilistic automata. Just during the work on this thesis have been released a few more publications (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) about applications of fuzzy automata. However, by the author's opinion, the usage of fuzzy and probabilistic automata will be in the future more and more bounded by increasing popularity of artifical intelligence. The artifical intelligence can solve many of presented problems more simply, but in less elegant way.
+However, there is obvious increase of interrest of applications of fuzzy and probabilistic automata. Just during the work on this thesis have been released a few more publications (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) about applications of fuzzy automata. However, by the author's opinion, the usage of fuzzy and probabilistic automata will be in the future more and more bounded by still increasing popularity of artifical intelligence. The Artifical intelligence can solve most of presented problems in many cases simplier, but in less elegant way.
 \end{kiconclusions}
 
 %% Přílohy obsahu textu práce, za makrem \appendix.
@@ -230,22 +230,42 @@ However, there is obvious increase of interrest of applications of fuzzy and pro
 
 %% Obsah přiloženého CD/DVD. Poslední příloha. Upravte podle vlastní
 %% práce!
-\section{Obsah přiloženého CD} \label{sec:ObsahCD}
+\section{Obsah přiloženého CD/DVD} \label{sec:ObsahCD}
 
-Přiložené CD je tvořeno následujícími soubory a adresáři:
+
+
 \begin{description}
 
-\item[\texttt{README.txt}] \hfill \\
-  Textový soubor popisující základní informace o adresářové struktuře a instrukce k sestavení a spuštění aplikace a k vysázení plného textu práce.
+\item[\texttt{bin/}] \hfill \\
+  Instalátor \textsc{Instalator} programu, popř.~program
+  \textsc{Program}, spustitelné přímo z~CD/DVD. / Kompletní adresářová
+  struktura webové aplikace \textsc{Webovka} (v~ZIP archivu) pro
+  zkopírování na webový server. Adresář obsahuje i~všechny runtime
+  knihovny a~další soubory potřebné pro bezproblémový běh instalátoru
+  a~programu z~CD/DVD / pro bezproblémový provoz webové aplikace na
+  webovém serveru.
 
 \item[\texttt{doc/}] \hfill \\
-  Adresář se zdrojovými soubory tohoto textu. Obsahuje plný text práce, veškeré obrázky a databázi referencí. Dále obsahuje distribuci stylů \verb|kidiplom| a Makefile pro vysázení práce do formátu PDF.
+  Text práce ve formátu PDF, vytvořený s~použitím závazného stylu KI
+  PřF UP v~Olomouci pro závěrečné práce, včetně všech příloh,
+  a~všechny soubory potřebné pro bezproblémové vygenerování PDF
+  dokumentu textu (v~ZIP archivu), tj.~zdrojový text textu, vložené
+  obrázky, apod.
 
 \item[\texttt{src/}] \hfill \\
-  Zdrojové kódy aplikace \verb|fapapp| implementující vybrané aplikace. Adresář dále obsahuje programátorskou dokumentaci a testovací data. 
-  
-\item[\texttt{run/}] \hfill \\
-  Adresář se sestavenými JAR soubory aplikace \verb|fapapp| včetně pomocných skriptů pro snažší spouštění.
+  Kompletní zdrojové texty programu \textsc{Program} / webové aplikace
+  \textsc{Webovka} se všemi potřebnými (příp.~převzatými) zdrojovými
+  texty, knihovnami a~dalšími soubory potřebnými pro bezproblémové
+  vytvoření spustitelných verzí programu / adresářové struktury pro
+  zkopírování na webový server.
+
+\item[\texttt{readme.txt}] \hfill \\
+  Instrukce pro instalaci a~spuštění programu \textsc{Program}, včetně
+  všech požadavků pro jeho bezproblémový provoz. / Instrukce pro
+  nasazení webové aplikace \textsc{Webovka} na webový server, včetně
+  všech požadavků pro její bezproblémový provoz, a~webová adresa, na
+  které je aplikace nasazena pro účel testování při tvorbě posudků
+  práce a~pro účel obhajoby práce.
 
 \end{description}
 

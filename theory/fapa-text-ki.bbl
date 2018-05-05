@@ -1,0 +1,4149 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Bel-FuzRelSys}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1d723876381eea4e518f2ff3b9a6cb81}{%
+           family={Bělohlávek},
+           familyi={B\bibinitperiod},
+           given={Radim},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{fullhash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{bibnamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authorbibnamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authornamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authorfullhash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fuzzy relational systems}
+      \field{year}{2002}
+    \endentry
+    \entry{Joh-ProbStaComSci}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bfdded5bfb08425f83f439302b0f6fd3}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={James\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Willey \& Sons, Inc.}%
+      }
+      \strng{namehash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \strng{fullhash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \strng{bibnamehash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \strng{authorbibnamehash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \strng{authornamehash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \strng{authorfullhash}{bfdded5bfb08425f83f439302b0f6fd3}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Probability and Statistics for Computer Science}
+      \field{year}{2003}
+    \endentry
+    \entry{Zad-ConLingVarAppApprRea}{article}{}
+      \name{author}{1}{}{%
+        {{hash=35fa7cade71054603c7dd6151cdc9055}{%
+           family={Zadeh},
+           familyi={Z\bibinitperiod},
+           given={Lotfi\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{35fa7cade71054603c7dd6151cdc9055}
+      \strng{fullhash}{35fa7cade71054603c7dd6151cdc9055}
+      \strng{bibnamehash}{35fa7cade71054603c7dd6151cdc9055}
+      \strng{authorbibnamehash}{35fa7cade71054603c7dd6151cdc9055}
+      \strng{authornamehash}{35fa7cade71054603c7dd6151cdc9055}
+      \strng{authorfullhash}{35fa7cade71054603c7dd6151cdc9055}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{The Concept of a Linguistic Variable and its Application to Approximate Reasoning}
+      \field{year}{1975}
+    \endentry
+    \entry{Jan-FouFuzzContPracAppr}{book}{}
+      \name{author}{1}{}{%
+        {{hash=32e06c540604e80afb590280b5076804}{%
+           family={Jantzen},
+           familyi={J\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Ltd.}%
+      }
+      \strng{namehash}{32e06c540604e80afb590280b5076804}
+      \strng{fullhash}{32e06c540604e80afb590280b5076804}
+      \strng{bibnamehash}{32e06c540604e80afb590280b5076804}
+      \strng{authorbibnamehash}{32e06c540604e80afb590280b5076804}
+      \strng{authornamehash}{32e06c540604e80afb590280b5076804}
+      \strng{authorfullhash}{32e06c540604e80afb590280b5076804}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Foundations of Fuzzy Control: A Practical Approach}
+      \field{year}{2013}
+    \endentry
+    \entry{Koz-AutComp}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0670b7d5655e1c9b776e521e96604c4e}{%
+           family={Kozen},
+           familyi={K\bibinitperiod},
+           given={Dexter\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0670b7d5655e1c9b776e521e96604c4e}
+      \strng{fullhash}{0670b7d5655e1c9b776e521e96604c4e}
+      \strng{bibnamehash}{0670b7d5655e1c9b776e521e96604c4e}
+      \strng{authorbibnamehash}{0670b7d5655e1c9b776e521e96604c4e}
+      \strng{authornamehash}{0670b7d5655e1c9b776e521e96604c4e}
+      \strng{authorfullhash}{0670b7d5655e1c9b776e521e96604c4e}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automata and Computability}
+      \field{year}{1999}
+    \endentry
+    \entry{HopUl-IntrAutTheLangComp}{book}{}
+      \name{author}{3}{}{%
+        {{hash=82dc86a4264e447735c63e003975833c}{%
+           family={Hopcroft},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{%
+           family={Motwani},
+           familyi={M\bibinitperiod},
+           given={Rajeev},
+           giveni={R\bibinitperiod}}}%
+        {{hash=92ae47ad19ab31712f1234e1f42c6ca1}{%
+           family={Ullman},
+           familyi={U\bibinitperiod},
+           given={Jeffrey\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \strng{fullhash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \strng{bibnamehash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \strng{authorbibnamehash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \strng{authornamehash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \strng{authorfullhash}{8c2ea595cf74c5ba412b6203fe6cb859}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to Automata Theory, Languages, and Computation}
+      \field{year}{1979}
+    \endentry
+    \entry{GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6a86285cca6d9dd77ddc7880bc16f63d}{%
+           family={Mendívil},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelimb R.\bibnamedelimi González},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=f6e1d982df64e9bf032d0ea942fbeb8f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={José\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \strng{fullhash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \strng{bibnamehash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \strng{authorbibnamehash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \strng{authornamehash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \strng{authorfullhash}{b5292d4e328d7668ae04c3c68800cd4d}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy sets and systems}
+      \field{title}{Fuzzy languages with infinite range accepted by fuzzy automata: Pumping Lemma and determinization procedure}
+      \field{year}{2014}
+    \endentry
+    \entry{MorMal-FuzzyAutLang}{book}{}
+      \name{author}{2}{}{%
+        {{hash=74f2ecb19b8da1eba471e018266fe6d3}{%
+           family={Mordeson},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=e3a703d25f76327afa182596f19e26d7}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Davender\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Chapman}%
+        {Hall/CRC}%
+      }
+      \strng{namehash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \strng{fullhash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \strng{bibnamehash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \strng{authorbibnamehash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \strng{authornamehash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \strng{authorfullhash}{b67caa0e1a4a181546c5ff09c20657e1}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fuzzy Automata and Languages}
+      \field{year}{2002}
+    \endentry
+    \entry{AndAbdAsm-ApprPattMatcFuzzLog}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b783079e46b6f35af1af94dedfe94d51}{%
+           family={Andrejková},
+           familyi={A\bibinitperiod},
+           given={Gabriela},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5a97193a621911d28a2e2446fd32e469}{%
+           family={Almarimi},
+           familyi={A\bibinitperiod},
+           given={Abdulwahed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=da23eca9e19a0088d6cfcea03afee0f7}{%
+           family={Mahmoud},
+           familyi={M\bibinitperiod},
+           given={Asmaa},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \strng{fullhash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \strng{bibnamehash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \strng{authorbibnamehash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \strng{authornamehash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \strng{authorfullhash}{48a2ac28ff5f2f16b788d0c99cc70c94}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CEUR Workshop Proceedings Vol. 1003}
+      \field{title}{Approximate Pattern Matching using Fuzzy Logic}
+      \field{year}{2013}
+    \endentry
+    \entry{SnaKepAbrHas-AproxStriMatchFuzzAut}{article}{}
+      \name{author}{4}{}{%
+        {{hash=4f341350f03f0b0781dbeb54a65dc157}{%
+           family={Snášel},
+           familyi={S\bibinitperiod},
+           given={Václav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=f61020ca200cbc57bcb3d9fe9c509eeb}{%
+           family={Keprt},
+           familyi={K\bibinitperiod},
+           given={Aleš},
+           giveni={A\bibinitperiod}}}%
+        {{hash=504ef9be34aef151081b41093b347caa}{%
+           family={Abraham},
+           familyi={A\bibinitperiod},
+           given={Ajith},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6e276270580056882117661fd73981fb}{%
+           family={Hassanien},
+           familyi={H\bibinitperiod},
+           given={Aboul\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{3fb1bc48334a5aca258b5663f9813b83}
+      \strng{fullhash}{3fb1bc48334a5aca258b5663f9813b83}
+      \strng{bibnamehash}{3fb1bc48334a5aca258b5663f9813b83}
+      \strng{authorbibnamehash}{3fb1bc48334a5aca258b5663f9813b83}
+      \strng{authornamehash}{3fb1bc48334a5aca258b5663f9813b83}
+      \strng{authorfullhash}{3fb1bc48334a5aca258b5663f9813b83}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Man-Machine Interactions}
+      \field{title}{Approximate String Matching by Fuzzy Automata}
+      \field{year}{2009}
+    \endentry
+    \entry{StaCir-ConsFuzzAutFuzzRegExp}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f760452e571173f7854c7a793e9a563a}{%
+           family={Stamenković},
+           familyi={S\bibinitperiod},
+           given={Aleksandar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=90c83530c4aac3aa286cff02c5f8a5b3}{%
+           family={Ćirić},
+           familyi={Ć\bibinitperiod},
+           given={Miroslav},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{355ef647da95a95b34295a79cb90c510}
+      \strng{fullhash}{355ef647da95a95b34295a79cb90c510}
+      \strng{bibnamehash}{355ef647da95a95b34295a79cb90c510}
+      \strng{authorbibnamehash}{355ef647da95a95b34295a79cb90c510}
+      \strng{authornamehash}{355ef647da95a95b34295a79cb90c510}
+      \strng{authorfullhash}{355ef647da95a95b34295a79cb90c510}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy sets and systems}
+      \field{title}{Construction of fuzzy automata from fuzzy regular expressions}
+      \field{year}{2012}
+    \endentry
+    \entry{AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b1f27b1f7f48f6a6ffd14b8dc5cc3b2c}{%
+           family={Astrain},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1e4ff1aa1f611050a0cd512ef654f17f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4d5555d2b53397104953244c4392f846}{%
+           family={Mendívil},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi R.\bibnamedelimi Gonzalez\bibnamedelima De},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=cdb1d42d5fcda182af38f79b8cb6cb3e}{%
+           family={Villadangos},
+           familyi={V\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b1bbbeb0af6b53823b25a00920ca0af9}{%
+           family={Fariña},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \strng{fullhash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \strng{bibnamehash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \strng{authorbibnamehash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \strng{authornamehash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \strng{authorfullhash}{6a93c01f7e5f74ed4dd1aad335f227ba}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Optimization and Decision Making}
+      \field{title}{Approximate String Matching Using Deformed Fuzzy Automata: A Learning Experience}
+      \field{year}{2004}
+    \endentry
+    \entry{Bel-DetFuzAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1d723876381eea4e518f2ff3b9a6cb81}{%
+           family={Bělohlávek},
+           familyi={B\bibinitperiod},
+           given={Radim},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{fullhash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{bibnamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authorbibnamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authornamehash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \strng{authorfullhash}{1d723876381eea4e518f2ff3b9a6cb81}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Determinism and fuzzy automata}
+      \field{year}{2002}
+    \endentry
+    \entry{DooKre-NewDirFuzzAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2d710a6d2711abe2525331cb0ff35fa5}{%
+           family={Doostfatemeh},
+           familyi={D\bibinitperiod},
+           given={Mansoor},
+           giveni={M\bibinitperiod}}}%
+        {{hash=55264633691b510ceaafda50654f7f29}{%
+           family={Kremer},
+           familyi={K\bibinitperiod},
+           given={Stefan\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{d9e525c597ae1329b623c955511b7f4f}
+      \strng{fullhash}{d9e525c597ae1329b623c955511b7f4f}
+      \strng{bibnamehash}{d9e525c597ae1329b623c955511b7f4f}
+      \strng{authorbibnamehash}{d9e525c597ae1329b623c955511b7f4f}
+      \strng{authornamehash}{d9e525c597ae1329b623c955511b7f4f}
+      \strng{authorfullhash}{d9e525c597ae1329b623c955511b7f4f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Approximate Reasoning}
+      \field{title}{New directions in fuzzy automata}
+      \field{year}{2005}
+    \endentry
+    \entry{IgnCirBog-DetFuzAutMemValComResLat}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1cef84e3646b5715d11a174bff28b99c}{%
+           family={Ignjatović},
+           familyi={I\bibinitperiod},
+           given={Jelena},
+           giveni={J\bibinitperiod}}}%
+        {{hash=844432169ff97fe03b65e889b777be36}{%
+           family={ćirić},
+           familyi={ć\bibinitperiod},
+           given={Miroslav},
+           giveni={M\bibinitperiod}}}%
+        {{hash=77b8eb8d5572a90403c77da0d6c200cd}{%
+           family={Bogdanović},
+           familyi={B\bibinitperiod},
+           given={Stojan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \strng{fullhash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \strng{bibnamehash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \strng{authorbibnamehash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \strng{authornamehash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \strng{authorfullhash}{8f35fdfdc1a1e841a2d40ce6827c19de}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Determinization of fuzzy automata with membership values in complete residuated lattices}
+      \field{year}{2018}
+    \endentry
+    \entry{SebJoh-InvFuzzAutInvFuzzLang}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7a83197690887f00be713c470257499c}{%
+           family={Sebastian},
+           familyi={S\bibinitperiod},
+           given={Pamy},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8422649d9c3a1bbd5a9788cc61694da6}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={T.\bibnamedelimi P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{097bd56f8f2bb45da1c557091d67e240}
+      \strng{fullhash}{097bd56f8f2bb45da1c557091d67e240}
+      \strng{bibnamehash}{097bd56f8f2bb45da1c557091d67e240}
+      \strng{authorbibnamehash}{097bd56f8f2bb45da1c557091d67e240}
+      \strng{authornamehash}{097bd56f8f2bb45da1c557091d67e240}
+      \strng{authorfullhash}{097bd56f8f2bb45da1c557091d67e240}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Fuzzy Mathematics and Informatics}
+      \field{title}{Inverse fuzzy automata and inverse fuzzy languages}
+      \field{year}{2013}
+    \endentry
+    \entry{Rab-ProbAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=755f719073b9032722550536facb7dcd}{%
+           family={Rabin},
+           familyi={R\bibinitperiod},
+           given={Michael\bibnamedelima O.},
+           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{755f719073b9032722550536facb7dcd}
+      \strng{fullhash}{755f719073b9032722550536facb7dcd}
+      \strng{bibnamehash}{755f719073b9032722550536facb7dcd}
+      \strng{authorbibnamehash}{755f719073b9032722550536facb7dcd}
+      \strng{authornamehash}{755f719073b9032722550536facb7dcd}
+      \strng{authorfullhash}{755f719073b9032722550536facb7dcd}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and Control}
+      \field{title}{Probabilistic Automata}
+      \field{year}{1963}
+    \endentry
+    \entry{San-ReaFuzLanProMaxMaxAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=487099f7572aa55f9275ebaa3c1c526a}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={Eugene\bibnamedelima E.},
+           giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{fullhash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{bibnamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authorbibnamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authornamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authorfullhash}{487099f7572aa55f9275ebaa3c1c526a}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Realizations of Fuzzy Languages by Probabilistic, Max-Product, and Maximin Automata}
+      \field{year}{1975}
+    \endentry
+    \entry{LiLiLi-RelAmoSevTypFuzAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b52e28e9063ee2eb64fa5716e65b9646}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhihui\bibnamedelimb Li.\bibnamedelimi Ping},
+           giveni={Z\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2b54894d52260a091ded68d4c00d62ad}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yongming},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \strng{fullhash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \strng{bibnamehash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \strng{authorbibnamehash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \strng{authornamehash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \strng{authorfullhash}{24e604ffa977ff5f22e38b263d93bc6d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{The relationships among several types of fuzzy automata}
+      \field{year}{2006}
+    \endentry
+    \entry{San-MaxAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=487099f7572aa55f9275ebaa3c1c526a}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={Eugene\bibnamedelima E.},
+           giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{fullhash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{bibnamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authorbibnamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authornamehash}{487099f7572aa55f9275ebaa3c1c526a}
+      \strng{authorfullhash}{487099f7572aa55f9275ebaa3c1c526a}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and Control}
+      \field{title}{Maxmin automata}
+      \field{year}{1968}
+    \endentry
+    \entry{BlaDelPeg-FuzzAutIndUsNeuNet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=966506982b2010ae09693018eef8e178}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4c474325ba142171d3979b2ffb7f2871}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f999897d88aa553e588f5b066b5e817a}{%
+           family={Pegalajar},
+           familyi={P\bibinitperiod},
+           given={M.C.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{fullhash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{bibnamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authorbibnamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authornamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authorfullhash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Approximate Reasoning}
+      \field{title}{Fuzzy automaton induction using neural network}
+      \field{year}{2001}
+    \endentry
+    \entry{PedGac-LeaFuzzAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=39780bf561ecea3f3fd53ead57031446}{%
+           family={Pedrycz},
+           familyi={P\bibinitperiod},
+           given={Witold},
+           giveni={W\bibinitperiod}}}%
+        {{hash=43264839e41a61fc49258839354f2298}{%
+           family={Gacek},
+           familyi={G\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{421cbf27b24142778da88bffb1361a49}
+      \strng{fullhash}{421cbf27b24142778da88bffb1361a49}
+      \strng{bibnamehash}{421cbf27b24142778da88bffb1361a49}
+      \strng{authorbibnamehash}{421cbf27b24142778da88bffb1361a49}
+      \strng{authornamehash}{421cbf27b24142778da88bffb1361a49}
+      \strng{authorfullhash}{421cbf27b24142778da88bffb1361a49}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computational Intelligence and Applications}
+      \field{title}{Learning of fuzzy automata}
+      \field{year}{2001}
+    \endentry
+    \entry{BlaDelPeg-FuzzGraIntUsiNeuNet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=966506982b2010ae09693018eef8e178}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4c474325ba142171d3979b2ffb7f2871}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f999897d88aa553e588f5b066b5e817a}{%
+           family={Pegalajar},
+           familyi={P\bibinitperiod},
+           given={M.C.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{fullhash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{bibnamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authorbibnamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authornamehash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \strng{authorfullhash}{d4bb600c77851e2849a2e2cd0210b5b6}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathware \& Soft computing}
+      \field{title}{Fuzzy gramatical inference using neural network}
+      \field{year}{1998}
+    \endentry
+    \entry{CheMo-MinAlgFuzFinAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6daab9c045b3d0fc9e6183326e04b8ff}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=bcf47bcdec0962ed4e158673c98d132b}{%
+           family={Mo},
+           familyi={M\bibinitperiod},
+           given={Zhi-Wen},
+           giveni={Z\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{605593d22fa959fc1aaf0f59e2228409}
+      \strng{fullhash}{605593d22fa959fc1aaf0f59e2228409}
+      \strng{bibnamehash}{605593d22fa959fc1aaf0f59e2228409}
+      \strng{authorbibnamehash}{605593d22fa959fc1aaf0f59e2228409}
+      \strng{authornamehash}{605593d22fa959fc1aaf0f59e2228409}
+      \strng{authorfullhash}{605593d22fa959fc1aaf0f59e2228409}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy sets and systems}
+      \field{title}{Minimization algorithm of fuzzy finite automata}
+      \field{year}{2004}
+    \endentry
+    \entry{ThoMar-DetAccRegFuzLang}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3e06fa3927cbdf4e9d93ba4541acce86}{%
+           family={Michael},
+           familyi={M\bibinitperiod}}}%
+        {{hash=275839a6ddadbbc0631d91a4f6554b41}{%
+           family={Thomason},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=73edf67e935e956a2f84aa696f5d40c9}{%
+           family={Marinos},
+           familyi={M\bibinitperiod},
+           given={Peter\bibnamedelima N.},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \strng{fullhash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \strng{bibnamehash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \strng{authorbibnamehash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \strng{authornamehash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \strng{authorfullhash}{41f944d52e7f29a3fc7bf2dde8c9584c}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
+      \field{title}{Deterministic Acceptors of Regular Fuzzy Languages}
+      \field{year}{1974}
+    \endentry
+    \entry{Qiu-ChaFuzFinAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a3ec99b8a4083d379bbea27afdd4c25d}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={Daowen},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \strng{fullhash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \strng{bibnamehash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \strng{authorbibnamehash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \strng{authornamehash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \strng{authorfullhash}{a3ec99b8a4083d379bbea27afdd4c25d}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy sets and systems}
+      \field{title}{Characterizations of fuzzy finite automata}
+      \field{year}{2004}
+    \endentry
+    \entry{AlvJoaCru-FuStMaAppEmoModEleGamCha}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8e3bffe6a15ac1057554ad6f9c9292bd}{%
+           family={Alvim},
+           familyi={A\bibinitperiod},
+           given={Leandro\bibnamedelimb G.\bibnamedelimi M.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=65659d5cfc77c2004b16be0936f7bcb1}{%
+           family={Oliveira\bibnamedelima Cruz},
+           familyi={O\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Adriano\bibnamedelima Joaquim},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \strng{fullhash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \strng{bibnamehash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \strng{authorbibnamehash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \strng{authornamehash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \strng{authorfullhash}{201b91523c3a16e2dfd55fe1c823e32e}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EEE International Conference on Fuzzy Systems}
+      \field{title}{A Fuzzy State Machine Applied to an Emotion Model for Electronic Game Characters}
+      \field{year}{2008}
+    \endentry
+    \entry{TriHei-ExpDesSeqFuzPer}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6f616426a130b67ce8b8197b8ccbaaee}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={Gracian},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4e7dc240abb1b6e2a0f9fcf44225cbb7}{%
+           family={Heide},
+           familyi={H\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{fullhash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{bibnamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authorbibnamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authornamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authorfullhash}{8de32bfd788c485e987891e125fd1f09}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eighth International Conference on Hybrid Intelligent Systems}
+      \field{title}{An experiment on the description of sequences of fuzzy perceptions}
+      \field{year}{2008}
+    \endentry
+    \entry{TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c6e587675c3343ded15a16399124d015}{%
+           family={Tzafestas},
+           familyi={T\bibinitperiod},
+           given={S.G.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=aba1deccbeecdc5b519658994f1c42e7}{%
+           family={Rigatos},
+           familyi={R\bibinitperiod},
+           given={G.G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \strng{fullhash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \strng{bibnamehash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \strng{authorbibnamehash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \strng{authornamehash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \strng{authorfullhash}{b66bc2a6da4ce9a58ec2f318cee21afe}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematics and Computers in Simulation}
+      \field{title}{Stability analysis of an adaptive fuzzy control system using Petri Nets and learning automata}
+      \field{year}{2000}
+    \endentry
+    \entry{BucPas-FuzPusAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=60b4607c5203dc282625f3259f1c33a4}{%
+           family={Bucurescu},
+           familyi={B\bibinitperiod},
+           given={Irina},
+           giveni={I\bibinitperiod}}}%
+        {{hash=8e7eebd361a97e833bbfca42405e7147}{%
+           family={Pascu},
+           familyi={P\bibinitperiod},
+           given={Anca},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \strng{fullhash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \strng{bibnamehash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \strng{authorbibnamehash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \strng{authornamehash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \strng{authorfullhash}{a9551a19be05f7f49327b7cd10bd1d55}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Mathematics}
+      \field{title}{Fuzzy Pushdown Automata}
+      \field{year}{1981}
+    \endentry
+    \entry{Lee-FuzTreAutSynPatRec}{article}{}
+      \name{author}{1}{}{%
+        {{hash=de848acd0d9040ca163226a1cb6e6c47}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Edward\bibnamedelima T.},
+           giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{de848acd0d9040ca163226a1cb6e6c47}
+      \strng{fullhash}{de848acd0d9040ca163226a1cb6e6c47}
+      \strng{bibnamehash}{de848acd0d9040ca163226a1cb6e6c47}
+      \strng{authorbibnamehash}{de848acd0d9040ca163226a1cb6e6c47}
+      \strng{authornamehash}{de848acd0d9040ca163226a1cb6e6c47}
+      \strng{authorfullhash}{de848acd0d9040ca163226a1cb6e6c47}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{title}{Fuzzy Tree Automata and Syntactic Pattern Recognition}
+      \field{year}{1982}
+    \endentry
+    \entry{MogZadAme-NewDirInFuzzTreeAut}{article}{}
+      \name{author}{3}{}{%
+        {{hash=dc9874671e160e2b8df48f9f1f2358ff}{%
+           family={Moghari},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=bf7cffb823bdef2f9e4ee30cec937909}{%
+           family={Zadehi},
+           familyi={Z\bibinitperiod},
+           given={M.\bibnamedelimi M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5b1ae7797cef262159f25ec697cabc45}{%
+           family={Ameri},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ebd942e00267bdee312bbc08e408e23}
+      \strng{fullhash}{7ebd942e00267bdee312bbc08e408e23}
+      \strng{bibnamehash}{7ebd942e00267bdee312bbc08e408e23}
+      \strng{authorbibnamehash}{7ebd942e00267bdee312bbc08e408e23}
+      \strng{authornamehash}{7ebd942e00267bdee312bbc08e408e23}
+      \strng{authorfullhash}{7ebd942e00267bdee312bbc08e408e23}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Iranian Journal of Fuzzy Systems}
+      \field{title}{New direction in fuzzy tree automata}
+      \field{year}{2011}
+    \endentry
+    \entry{ChaJos-NoteFuzzTreeAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=65a419774ee82ee33960516f1893e2f3}{%
+           family={Chaudhari},
+           familyi={C\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=815c03911a85a434ef968e8d613c651a}{%
+           family={Joshi},
+           familyi={J\bibinitperiod},
+           given={Mukta\bibnamedelima N.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe146c66c5bd5233060763894a8447dd}
+      \strng{fullhash}{fe146c66c5bd5233060763894a8447dd}
+      \strng{bibnamehash}{fe146c66c5bd5233060763894a8447dd}
+      \strng{authorbibnamehash}{fe146c66c5bd5233060763894a8447dd}
+      \strng{authornamehash}{fe146c66c5bd5233060763894a8447dd}
+      \strng{authorfullhash}{fe146c66c5bd5233060763894a8447dd}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Applications}
+      \field{title}{A Note on Fuzzy Tree Automata}
+      \field{year}{2012}
+    \endentry
+    \entry{EsiLiu-FuzzTreeAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=78b636f23e0d6159d65a22a731069a39}{%
+           family={Ésik},
+           familyi={É\bibinitperiod},
+           given={Zoltán},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=1132ad363e3ab5d85b6f337a0a11d7f5}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Guangwu},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \strng{fullhash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \strng{bibnamehash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \strng{authorbibnamehash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \strng{authornamehash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \strng{authorfullhash}{39bd069d1a0b40b6f5c09ee3e06e82f9}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Fuzzy tree automata}
+      \field{year}{2007}
+    \endentry
+    \entry{Wol-NewKinSci}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fc7f119c141fbcc7810a4b3a86f599db}{%
+           family={Wolfram},
+           familyi={W\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wolfram Media}%
+      }
+      \strng{namehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{fullhash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{bibnamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authorbibnamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authornamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authorfullhash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A new kind of science}
+      \field{year}{2002}
+    \endentry
+    \entry{Wol-CelAut}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fc7f119c141fbcc7810a4b3a86f599db}{%
+           family={Wolfram},
+           familyi={W\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wolfram Media}%
+      }
+      \strng{namehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{fullhash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{bibnamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authorbibnamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authornamehash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \strng{authorfullhash}{fc7f119c141fbcc7810a4b3a86f599db}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cellular Automata and Complexity: Collected Papers}
+      \field{year}{1994}
+    \endentry
+    \entry{BatXie-CellCity}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6fd6a1329b389828b158ea2833e5bdf5}{%
+           family={Batty},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e46cdf3409b88799863b435fc178f24c}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{74826ad69979ca7386eaa674cac0b3b9}
+      \strng{fullhash}{74826ad69979ca7386eaa674cac0b3b9}
+      \strng{bibnamehash}{74826ad69979ca7386eaa674cac0b3b9}
+      \strng{authorbibnamehash}{74826ad69979ca7386eaa674cac0b3b9}
+      \strng{authornamehash}{74826ad69979ca7386eaa674cac0b3b9}
+      \strng{authorfullhash}{74826ad69979ca7386eaa674cac0b3b9}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment and Planning B: Planning and Design}
+      \field{title}{From cells to cities}
+      \field{year}{1994}
+    \endentry
+    \entry{Wu-ExpGenPolUrbGroCelAutCit}{article}{}
+      \name{author}{1}{}{%
+        {{hash=632f9c2d92096e686efb4af0dd1071b4}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{fullhash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{bibnamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authorbibnamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authornamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authorfullhash}{632f9c2d92096e686efb4af0dd1071b4}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment and Planning B: Planning and Design}
+      \field{title}{An experiment on the generic polycentricity of urban growth in a cellular automatic city}
+      \field{year}{1998}
+    \endentry
+    \entry{For-FuzCelAutConjNormForm}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=ab7702e75d4c8fa0862d6cd1638f1756}{%
+           family={Forrester},
+           familyi={F\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université d'Ottawa}%
+      }
+      \strng{namehash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \strng{fullhash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \strng{bibnamehash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \strng{authorbibnamehash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \strng{authornamehash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \strng{authorfullhash}{ab7702e75d4c8fa0862d6cd1638f1756}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fuzzy Cellular Automata in Conjunctive Normal Form}
+      \field{type}{mathesis}
+      \field{year}{2011}
+    \endentry
+    \entry{TofMar-CelAuMach+}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f894d4e2e0b8bcc08846b7836e09c502}{%
+           family={Toffoli},
+           familyi={T\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod}}}%
+        {{hash=4fa0973d60c71ceb2ea99c04910a1535}{%
+           family={Mangolus},
+           familyi={M\bibinitperiod},
+           given={Norman},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{ab310607e3092130239a273ebac1a84a}
+      \strng{fullhash}{ab310607e3092130239a273ebac1a84a}
+      \strng{bibnamehash}{ab310607e3092130239a273ebac1a84a}
+      \strng{authorbibnamehash}{ab310607e3092130239a273ebac1a84a}
+      \strng{authornamehash}{ab310607e3092130239a273ebac1a84a}
+      \strng{authorfullhash}{ab310607e3092130239a273ebac1a84a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cellular automata machines}
+      \field{year}{1985}
+    \endentry
+    \entry{MraZimLapBaj-FuzCelAut+}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3fb2d70822007796ded7a1a04b6211cc}{%
+           family={Mraz},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4a091b1e39abaa243852c56ded58f48a}{%
+           family={Zimic},
+           familyi={Z\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=29ff79127810622f23934c202bb73f72}{%
+           family={Lapanja},
+           familyi={L\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f4b1b8845fe9f388c065b61266ed8f2a}{%
+           family={Bajec},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffa56e8b4cfa49684f53af8582865915}
+      \strng{fullhash}{ffa56e8b4cfa49684f53af8582865915}
+      \strng{bibnamehash}{ffa56e8b4cfa49684f53af8582865915}
+      \strng{authorbibnamehash}{ffa56e8b4cfa49684f53af8582865915}
+      \strng{authornamehash}{ffa56e8b4cfa49684f53af8582865915}
+      \strng{authorfullhash}{ffa56e8b4cfa49684f53af8582865915}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tools with Artificial Intelligence}
+      \field{title}{Fuzzy Cellular Automata: From Theory to Applications}
+      \field{year}{2000}
+    \endentry
+    \entry{RamGir-ConvFinAutFuzzAutStrComp}{article}{}
+      \name{author}{2}{}{%
+        {{hash=33818dcb9fece84cb307211a73557b3e}{%
+           family={Ramaswamy},
+           familyi={R\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=75b089358a80b2cd43e7040b02339180}{%
+           family={Girijamma},
+           familyi={G\bibinitperiod},
+           given={H.\bibnamedelimi A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b1728e5ec8be24695975ba9fa630776}
+      \strng{fullhash}{4b1728e5ec8be24695975ba9fa630776}
+      \strng{bibnamehash}{4b1728e5ec8be24695975ba9fa630776}
+      \strng{authorbibnamehash}{4b1728e5ec8be24695975ba9fa630776}
+      \strng{authornamehash}{4b1728e5ec8be24695975ba9fa630776}
+      \strng{authorfullhash}{4b1728e5ec8be24695975ba9fa630776}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Applications}
+      \field{title}{Conversion of Finite Automata to Fuzzy Automata for String Comparison}
+      \field{year}{2012}
+    \endentry
+    \entry{Ech-DefSyssConPre}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3d25c0a01b0508ce6d1433e3c47e5fd8}{%
+           family={Echanobe},
+           familyi={E\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6a86285cca6d9dd77ddc7880bc16f63d}{%
+           family={Mendívil},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelimb R.\bibnamedelimi González},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=f6e1d982df64e9bf032d0ea942fbeb8f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={José\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=e083334991b1460912372bbd9424e326}{%
+           family={Alastruey},
+           familyi={A\bibinitperiod},
+           given={Carlos\bibnamedelima F.},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f1994d1eb0220db315534b90623b532}
+      \strng{fullhash}{4f1994d1eb0220db315534b90623b532}
+      \strng{bibnamehash}{4f1994d1eb0220db315534b90623b532}
+      \strng{authorbibnamehash}{4f1994d1eb0220db315534b90623b532}
+      \strng{authornamehash}{4f1994d1eb0220db315534b90623b532}
+      \strng{authorfullhash}{4f1994d1eb0220db315534b90623b532}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Deformed systems for contextual postprocessing}
+      \field{year}{1996}
+    \endentry
+    \entry{Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b1f27b1f7f48f6a6ffd14b8dc5cc3b2c}{%
+           family={Astrain},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6a86285cca6d9dd77ddc7880bc16f63d}{%
+           family={Mendívil},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelimb R.\bibnamedelimi González},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=f6e1d982df64e9bf032d0ea942fbeb8f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={José\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6bca87f46415eba7527ed744c9154ad3}
+      \strng{fullhash}{6bca87f46415eba7527ed744c9154ad3}
+      \strng{bibnamehash}{6bca87f46415eba7527ed744c9154ad3}
+      \strng{authorbibnamehash}{6bca87f46415eba7527ed744c9154ad3}
+      \strng{authornamehash}{6bca87f46415eba7527ed744c9154ad3}
+      \strng{authorfullhash}{6bca87f46415eba7527ed744c9154ad3}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Fuzzy automata with $\epsilon$-moves compute fuzzy measures between strings}
+      \field{year}{2006}
+    \endentry
+    \entry{FuLi-ForLeaAutAutGam}{article}{}
+      \name{author}{2}{}{%
+        {{hash=10dbf857dc9de469c8524ec00c2bd747}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={K.\bibnamedelimi S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=7ee2f78aac51f2c1bc4a1861feefc229}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={T.\bibnamedelimi J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \strng{fullhash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \strng{bibnamehash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \strng{authorbibnamehash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \strng{authornamehash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \strng{authorfullhash}{23790a7e8ced9f78d4d19d8e4d927537}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Formulation of learning automata and automata Games}
+      \field{year}{1969}
+    \endentry
+    \entry{WeeFu-FormFuzAutAppModLeaSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=248cea4d5b9a4ac5abd1ba7cebfdb093}{%
+           family={Wee},
+           familyi={W\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=10dbf857dc9de469c8524ec00c2bd747}{%
+           family={Fu},
+           familyi={F\bibinitperiod},
+           given={K.\bibnamedelimi S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \strng{fullhash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \strng{bibnamehash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \strng{authorbibnamehash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \strng{authornamehash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \strng{authorfullhash}{ca766e77cfdb2d0246ca7118207eac4c}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on systems science and cybernetics}
+      \field{title}{A formulation of fuzzy automata and its application as a model of learning systems}
+      \field{year}{1969}
+    \endentry
+    \entry{GilOmlTho-EquKnoRep+}{article}{}
+      \name{author}{3}{}{%
+        {{hash=61a8b52e6276272f3ff7546a9487af07}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ea40de0f7d2b7f4f90a763f73fb3a910}{%
+           family={Omlin},
+           familyi={O\bibinitperiod},
+           given={Christian\bibnamedelima W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ea0bc61a63d7e518b38e6f43b7e51992}{%
+           family={Thornber},
+           familyi={T\bibinitperiod},
+           given={Karvel\bibnamedelima K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d970317f37a64a0f255706a32e8a38fb}
+      \strng{fullhash}{d970317f37a64a0f255706a32e8a38fb}
+      \strng{bibnamehash}{d970317f37a64a0f255706a32e8a38fb}
+      \strng{authorbibnamehash}{d970317f37a64a0f255706a32e8a38fb}
+      \strng{authornamehash}{d970317f37a64a0f255706a32e8a38fb}
+      \strng{authorfullhash}{d970317f37a64a0f255706a32e8a38fb}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{title}{Equivalence in Knowledge Representation: Automata, Recurrent Neural Networks, and Dynamical Fuzzy Systems}
+      \field{year}{1999}
+    \endentry
+    \entry{PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6ec6da72b05ee3fda0e1c096996d97f9}{%
+           family={Patel},
+           familyi={P\bibinitperiod},
+           given={Dhiraj\bibnamedelima Kumar},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=9c2500ec018db803395cae96c0292d3a}{%
+           family={More},
+           familyi={M\bibinitperiod},
+           given={Sagar\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \strng{fullhash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \strng{bibnamehash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \strng{authorbibnamehash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \strng{authornamehash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \strng{authorfullhash}{24a1dfab7a928c17535afd76a6a3f7c8}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Computer Communication and Informatics}
+      \field{title}{Edge Detection Technique by Fuzzy Logic and Cellular Learning Automata using Fuzzy Image Processing}
+      \field{year}{2013}
+    \endentry
+    \entry{MarMeySol-HybMetGasDifModFuzCelAutImSha}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2487e18330da613fa1d9c8178fafea33}{%
+           family={Mahdavifard},
+           familyi={M\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=00d3049e87e44d7eccec6f8856131f26}{%
+           family={Meybodi},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c2b2811e22fca9266faa7f0123800be}
+      \strng{fullhash}{8c2b2811e22fca9266faa7f0123800be}
+      \strng{bibnamehash}{8c2b2811e22fca9266faa7f0123800be}
+      \strng{authorbibnamehash}{8c2b2811e22fca9266faa7f0123800be}
+      \strng{authornamehash}{8c2b2811e22fca9266faa7f0123800be}
+      \strng{authorfullhash}{8c2b2811e22fca9266faa7f0123800be}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Electrical Engineering}
+      \field{title}{A Hybrid Method based on Gas Diffusion Model and Fuzzy Cellular Automata for Image Sharpening}
+      \field{year}{2007}
+    \endentry
+    \entry{SinGha+HybrEdgDetMetFuzSetTheCelLeaAut}{article}{}
+      \name{author}{4}{}{%
+        {{hash=359a7670155c189d899198be70500d7a}{%
+           family={Sinaie},
+           familyi={S\bibinitperiod},
+           given={Saman},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c19be21e2f3d8b8a4591bc5206b6109e}{%
+           family={Ghanizadeh},
+           familyi={G\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2c9fc778bc0b56f4e04b24429543d41d}{%
+           family={Shamsuddin},
+           familyi={S\bibinitperiod},
+           given={Siti\bibnamedelima Mariyam},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=32c907228ad2bbbca7dce0c6b2df97d7}{%
+           family={Majd},
+           familyi={M\bibinitperiod},
+           given={Emadaldin\bibnamedelima Mozafari},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{603c9906315017a8aa721fe0dc0da545}
+      \strng{fullhash}{603c9906315017a8aa721fe0dc0da545}
+      \strng{bibnamehash}{603c9906315017a8aa721fe0dc0da545}
+      \strng{authorbibnamehash}{603c9906315017a8aa721fe0dc0da545}
+      \strng{authornamehash}{603c9906315017a8aa721fe0dc0da545}
+      \strng{authorfullhash}{603c9906315017a8aa721fe0dc0da545}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Computational Science and Its Applications}
+      \field{title}{A Hybrid Edge Detection Method Based on Fuzzy Set Theory and Cellular Learning Automata}
+      \field{year}{2009}
+    \endentry
+    \entry{ZhiMinLan-EvoStraIndFuFiStaAu}{article}{}
+      \name{author}{3}{}{%
+        {{hash=98f120d28eabed707fa0a42f51b6c85a}{%
+           family={Zhiwen},
+           familyi={Z\bibinitperiod},
+           given={Mo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a18c924bafdc954933859e151efa4819}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Wan},
+           giveni={W\bibinitperiod}}}%
+        {{hash=64a965740141da087188e6bee1aedb5a}{%
+           family={Lan},
+           familyi={L\bibinitperiod},
+           given={Shu},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \strng{fullhash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \strng{bibnamehash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \strng{authorbibnamehash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \strng{authornamehash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \strng{authorfullhash}{a374c2ea44ff85690cd73dd8ab98bd96}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Conference on Granular Computing}
+      \field{title}{An evolution strategy for the induction of fuzzy finite-state automata}
+      \field{year}{2005}
+    \endentry
+    \entry{FieRus-HanNeuCom}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f2b76a6bb0067bf3413eb3c9bafffcd2}{%
+           family={Fiesler},
+           familyi={F\bibinitperiod},
+           given={Emile},
+           giveni={E\bibinitperiod}}}%
+        {{hash=258015ab598ccb4a638ad6e0611f1899}{%
+           family={Beale},
+           familyi={B\bibinitperiod},
+           given={Russell},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of physics publishing, Oxford university press}%
+      }
+      \strng{namehash}{70caeba956087ef42fb9646b0bee89c5}
+      \strng{fullhash}{70caeba956087ef42fb9646b0bee89c5}
+      \strng{bibnamehash}{70caeba956087ef42fb9646b0bee89c5}
+      \strng{authorbibnamehash}{70caeba956087ef42fb9646b0bee89c5}
+      \strng{authornamehash}{70caeba956087ef42fb9646b0bee89c5}
+      \strng{authorfullhash}{70caeba956087ef42fb9646b0bee89c5}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of Neural Computation}
+      \field{year}{1997}
+    \endentry
+    \entry{DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2edaf3a99d1586cdd24dec576b679ddd}{%
+           family={Darbari},
+           familyi={D\bibinitperiod},
+           given={Manuj},
+           giveni={M\bibinitperiod}}}%
+        {{hash=17635cfa20e0b87de809a369f2fe0ad4}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Hasan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=dcd4a4343ae19d7a1cf9c955d27623f8}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Vivek\bibnamedelima Kr.},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \strng{fullhash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \strng{bibnamehash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \strng{authorbibnamehash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \strng{authornamehash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \strng{authorfullhash}{43c1e7e19e6cbf2553a3ff2312831d1a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Technology and Application}
+      \field{title}{Application of Fuzzy Automata Theory and Knowledge Based Neural Networks for Development of Basic Learning Model}
+      \field{year}{2011}
+    \endentry
+    \entry{OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ea40de0f7d2b7f4f90a763f73fb3a910}{%
+           family={Omlin},
+           familyi={O\bibinitperiod},
+           given={Christian\bibnamedelima W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ea0bc61a63d7e518b38e6f43b7e51992}{%
+           family={Thornber},
+           familyi={T\bibinitperiod},
+           given={Karvel\bibnamedelima K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=61a8b52e6276272f3ff7546a9487af07}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{fullhash}{9222869b57b9244a208b025854ae2a75}
+      \strng{bibnamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authorbibnamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authornamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authorfullhash}{9222869b57b9244a208b025854ae2a75}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on fuzzy systems}
+      \field{title}{Fuzzy Finite-State Automata Can Be Deterministically Encoded into Recurrent Neural Networks}
+      \field{year}{1998}
+    \endentry
+    \entry{OmlThoGil-RepFuzFinStaAuConRecNeuNet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ea40de0f7d2b7f4f90a763f73fb3a910}{%
+           family={Omlin},
+           familyi={O\bibinitperiod},
+           given={Christian\bibnamedelima W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ea0bc61a63d7e518b38e6f43b7e51992}{%
+           family={Thornber},
+           familyi={T\bibinitperiod},
+           given={Karvel\bibnamedelima K.},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=61a8b52e6276272f3ff7546a9487af07}{%
+           family={Giles},
+           familyi={G\bibinitperiod},
+           given={C.\bibnamedelimi Lee},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{fullhash}{9222869b57b9244a208b025854ae2a75}
+      \strng{bibnamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authorbibnamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authornamehash}{9222869b57b9244a208b025854ae2a75}
+      \strng{authorfullhash}{9222869b57b9244a208b025854ae2a75}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Conference on Neural networks}
+      \field{title}{Representation of Fuzzy Finite State Automata in Continuous Recurrent Neural Networks}
+      \field{year}{1996}
+    \endentry
+    \entry{UnaKha-FuzDFinStaMachImpBasNeuFuzSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=64c65e6b6cf5a07a4c4d293fac6fecb9}{%
+           family={Unal},
+           familyi={U\bibinitperiod},
+           given={Fatih\bibnamedelima A.},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=529c4aafc6365f15043d4e5a0e3f77c1}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Emdad},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \strng{fullhash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \strng{bibnamehash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \strng{authorbibnamehash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \strng{authornamehash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \strng{authorfullhash}{13834fbba998d55c3ed0667f7bb5cfd1}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of 1994 IEEE 3rd International Fuzzy Systems Conference}
+      \field{title}{A Fuzzy Finite State Machine Implementation Based on a Neural Fuzzy System}
+      \field{year}{1994}
+    \endentry
+    \entry{BlaDelFlo-MethIndFuzzAutUsNeuNet}{article}{}
+      \name{author}{3}{}{%
+        {{hash=966506982b2010ae09693018eef8e178}{%
+           family={Blanco},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4c474325ba142171d3979b2ffb7f2871}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d8a01eadc84583b208c0844f313d3cbf}{%
+           family={Pegalajar},
+           familyi={P\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \strng{fullhash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \strng{bibnamehash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \strng{authorbibnamehash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \strng{authornamehash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \strng{authorfullhash}{15e46f9f3e8733c5fcaa5b1fae951561}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings Joint 9th IFSA World Congress and 20th NAFIPS International Conference}
+      \field{title}{A Method to Induce Fuzzy Automata using Neural Networks}
+      \field{year}{2001}
+    \endentry
+    \entry{Gar+-DefFuzAutCorImpStrFuzSym}{article}{}
+      \name{author}{5}{}{%
+        {{hash=1e4ff1aa1f611050a0cd512ef654f17f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=4d5555d2b53397104953244c4392f846}{%
+           family={Mendívil},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi R.\bibnamedelimi Gonzalez\bibnamedelima De},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=dd88e4e22ff4d9498b39c3e65aeb57b9}{%
+           family={Echanobe},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b1f27b1f7f48f6a6ffd14b8dc5cc3b2c}{%
+           family={Astrain},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b1bbbeb0af6b53823b25a00920ca0af9}{%
+           family={Fariña},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \strng{fullhash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \strng{bibnamehash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \strng{authorbibnamehash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \strng{authornamehash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \strng{authorfullhash}{bf5ec0b3903364f97e781098e32e8a7f}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on fuzzy systems}
+      \field{title}{Deformed Fuzzy Automata for Correcting Imperfect Strings of Fuzzy Symbols}
+      \field{year}{2003}
+    \endentry
+    \entry{Ast+-ImpStrMaExpUsDefFuzAut}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b1f27b1f7f48f6a6ffd14b8dc5cc3b2c}{%
+           family={Astrain},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1e4ff1aa1f611050a0cd512ef654f17f}{%
+           family={Garitagoitia},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=cdb1d42d5fcda182af38f79b8cb6cb3e}{%
+           family={Villadangos},
+           familyi={V\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b1bbbeb0af6b53823b25a00920ca0af9}{%
+           family={Fariña},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=286d06dcea2248148e85cfe13d24df4c}{%
+           family={Mendivil},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi R.\bibnamedelimi Gonzalez\bibnamedelima De},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{8ffc5b97d8fe5345b73c652923251539}
+      \strng{fullhash}{8ffc5b97d8fe5345b73c652923251539}
+      \strng{bibnamehash}{8ffc5b97d8fe5345b73c652923251539}
+      \strng{authorbibnamehash}{8ffc5b97d8fe5345b73c652923251539}
+      \strng{authornamehash}{8ffc5b97d8fe5345b73c652923251539}
+      \strng{authorfullhash}{8ffc5b97d8fe5345b73c652923251539}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Optimization and Decision Making}
+      \field{title}{An imperfect string matching experience using deformed fuzzy automata}
+      \field{year}{2004}
+    \endentry
+    \entry{SetWar-FuzzAutPattMatc}{book}{}
+      \name{author}{2}{}{%
+        {{hash=aeb39d968f801ad011f585604f6b202f}{%
+           family={Setzer},
+           familyi={S\bibinitperiod},
+           given={C.\bibnamedelimi B.},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=efc68a594077cfb4c00c1bdc6a83d28e}{%
+           family={Warst},
+           familyi={W\bibinitperiod},
+           given={N.\bibnamedelimi A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {NASA Langley research center}%
+      }
+      \strng{namehash}{1e7b855d7518e0d4a32c6506f2867853}
+      \strng{fullhash}{1e7b855d7518e0d4a32c6506f2867853}
+      \strng{bibnamehash}{1e7b855d7518e0d4a32c6506f2867853}
+      \strng{authorbibnamehash}{1e7b855d7518e0d4a32c6506f2867853}
+      \strng{authornamehash}{1e7b855d7518e0d4a32c6506f2867853}
+      \strng{authorfullhash}{1e7b855d7518e0d4a32c6506f2867853}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fuzzy automata and pattern matching}
+      \field{year}{1986}
+    \endentry
+    \entry{HigOnc-ComMosProStrProFiStaMa}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c73e710eba1bceeed8c2b23566a85429}{%
+           family={Higuera},
+           familyi={H\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           prefix={de\bibnamedelima la},
+           prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod}}}%
+        {{hash=d9b234897d67e420135c85ba66d24fce}{%
+           family={Oncina},
+           familyi={O\bibinitperiod},
+           given={Jose},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a20574e3a500aee11dabf95e443c6d30}
+      \strng{fullhash}{a20574e3a500aee11dabf95e443c6d30}
+      \strng{bibnamehash}{a20574e3a500aee11dabf95e443c6d30}
+      \strng{authorbibnamehash}{a20574e3a500aee11dabf95e443c6d30}
+      \strng{authornamehash}{a20574e3a500aee11dabf95e443c6d30}
+      \strng{authorfullhash}{a20574e3a500aee11dabf95e443c6d30}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 11th International Conference on Finite State Methods and Natural Language Processing}
+      \field{title}{Computing the Most Probable String with a Probabilistic Finite State Machine}
+      \field{year}{2013}
+    \endentry
+    \entry{Mar+-ProAriAutApp}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f1d4fb58a7a97b8d3884d2ccef9aa214}{%
+           family={Marschall},
+           familyi={M\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bf4e3fc11e097927f25b37cbf15c51a2}{%
+           family={Herms},
+           familyi={H\bibinitperiod},
+           given={Inke},
+           giveni={I\bibinitperiod}}}%
+        {{hash=75da02cae69c3b74cbdd926e642361e7}{%
+           family={Kaltenbach},
+           familyi={K\bibinitperiod},
+           given={Hans-Michael},
+           giveni={H\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=a7ba800f2b98bb53214bb9fbd730b411}{%
+           family={Rahmann},
+           familyi={R\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \strng{fullhash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \strng{bibnamehash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \strng{authorbibnamehash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \strng{authornamehash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \strng{authorfullhash}{dedfa657ad1d4621a1acd6aad1f5a3f3}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE/ACM Transactions on Computational Biology and Bioinformatics}
+      \field{title}{Probabilistic Arithmetic Automata and Their Applications}
+      \field{year}{2012}
+    \endentry
+    \entry{Her-ProAriAutAppSoComFraBioSeqAna}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=bf4e3fc11e097927f25b37cbf15c51a2}{%
+           family={Herms},
+           familyi={H\bibinitperiod},
+           given={Inke},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Faculty of Technology, Bielefeld University, Germany}%
+      }
+      \strng{namehash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \strng{fullhash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \strng{bibnamehash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \strng{authorbibnamehash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \strng{authornamehash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \strng{authorfullhash}{bf4e3fc11e097927f25b37cbf15c51a2}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Probabilistic Arithmetic Automata}
+      \field{type}{phdthesis}
+      \field{year}{2009}
+    \endentry
+    \entry{YorSinTis-PowAmnLeaPrAuVarMemLen}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7b627268839731a21945ba2830618803}{%
+           family={Ron},
+           familyi={R\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=300d4990e626d975e0c28630444f63c3}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={Yoram},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4e62b78dfc3dad1032ffab359db7276b}{%
+           family={Tishby},
+           familyi={T\bibinitperiod},
+           given={Naftali},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{5928eb7c7300c38670dd035d839194ee}
+      \strng{fullhash}{5928eb7c7300c38670dd035d839194ee}
+      \strng{bibnamehash}{5928eb7c7300c38670dd035d839194ee}
+      \strng{authorbibnamehash}{5928eb7c7300c38670dd035d839194ee}
+      \strng{authornamehash}{5928eb7c7300c38670dd035d839194ee}
+      \strng{authorfullhash}{5928eb7c7300c38670dd035d839194ee}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Machine Learning}
+      \field{title}{The Power of Amnesia: Learning Probabilistic Automata with Variable Memory Length}
+      \field{year}{1996}
+    \endentry
+    \entry{Ron-AutLeaApp}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=7b627268839731a21945ba2830618803}{%
+           family={Ron},
+           familyi={R\bibinitperiod},
+           given={Dana},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Hebrew University}%
+      }
+      \strng{namehash}{7b627268839731a21945ba2830618803}
+      \strng{fullhash}{7b627268839731a21945ba2830618803}
+      \strng{bibnamehash}{7b627268839731a21945ba2830618803}
+      \strng{authorbibnamehash}{7b627268839731a21945ba2830618803}
+      \strng{authornamehash}{7b627268839731a21945ba2830618803}
+      \strng{authorfullhash}{7b627268839731a21945ba2830618803}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Automata Learning and its Applications}
+      \field{type}{phdthesis}
+      \field{year}{1995}
+    \endentry
+    \entry{MohPerRoe-WeiFinStaTraSpeRec}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8298c87c77cd46a5b2b7e799ba087945}{%
+           family={Mohri},
+           familyi={M\bibinitperiod},
+           given={Mehryar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3ef139cfd819ad7d3af54f3d2e9507b9}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=25433f7325fdf9811b6d237284481232}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fdd8c0754e732d66951dc726fa021d4}
+      \strng{fullhash}{8fdd8c0754e732d66951dc726fa021d4}
+      \strng{bibnamehash}{8fdd8c0754e732d66951dc726fa021d4}
+      \strng{authorbibnamehash}{8fdd8c0754e732d66951dc726fa021d4}
+      \strng{authornamehash}{8fdd8c0754e732d66951dc726fa021d4}
+      \strng{authorfullhash}{8fdd8c0754e732d66951dc726fa021d4}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Speech and Language}
+      \field{title}{Weighted finite-state transducers in speech Recognition}
+      \field{year}{2002}
+    \endentry
+    \entry{BahJel-DecChaWinDelSubApSpeRec}{article}{}
+      \name{author}{2}{}{%
+        {{hash=40e3baf41eecfcd19bab613f2c54af18}{%
+           family={Bahr},
+           familyi={B\bibinitperiod},
+           given={Lalit\bibnamedelima R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=48d2d6e25183229596dbf23cf956498e}{%
+           family={Jelinek},
+           familyi={J\bibinitperiod},
+           given={Frederick},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{80eaf6cd3dcae176e041445378ddc5df}
+      \strng{fullhash}{80eaf6cd3dcae176e041445378ddc5df}
+      \strng{bibnamehash}{80eaf6cd3dcae176e041445378ddc5df}
+      \strng{authorbibnamehash}{80eaf6cd3dcae176e041445378ddc5df}
+      \strng{authornamehash}{80eaf6cd3dcae176e041445378ddc5df}
+      \strng{authorfullhash}{80eaf6cd3dcae176e041445378ddc5df}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on information theory}
+      \field{title}{Decoding for Channels with Insertions, Deletions, and Substitutions with Applications to Speech Recognition}
+      \field{year}{1975}
+    \endentry
+    \entry{MatSalSalYu-LexAnaSimFinFuzAutMod}{article}{}
+      \name{author}{4}{}{%
+        {{hash=1c80eca9c775a710a78e7074f1dbccbe}{%
+           family={Mateescu},
+           familyi={M\bibinitperiod},
+           given={Alexandru},
+           giveni={A\bibinitperiod}}}%
+        {{hash=27586e2da87e1abd2dedf337cf78bb12}{%
+           family={Salomaa},
+           familyi={S\bibinitperiod},
+           given={Arto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=94a67830fd06d3ac34079d91587e719a}{%
+           family={Salomaa},
+           familyi={S\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d513fd1a5890f3ffd95a33db0d0612f9}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d0722abdd03260f10ee08820019fda0}
+      \strng{fullhash}{5d0722abdd03260f10ee08820019fda0}
+      \strng{bibnamehash}{5d0722abdd03260f10ee08820019fda0}
+      \strng{authorbibnamehash}{5d0722abdd03260f10ee08820019fda0}
+      \strng{authornamehash}{5d0722abdd03260f10ee08820019fda0}
+      \strng{authorfullhash}{5d0722abdd03260f10ee08820019fda0}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Universal Computer Science}
+      \field{title}{Lexical Analysis with a Simple Finite-Fuzzy-Automaton Model}
+      \field{year}{1995}
+    \endentry
+    \entry{KniGra-OvProTreTraNatLanPro}{article}{}
+      \name{author}{2}{}{%
+        {{hash=49fbfd99532ca0bf67fc21d5b6c1328a}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c0057f3db6134bb2db9aa1c73a76d2b8}{%
+           family={Graehl},
+           familyi={G\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \strng{fullhash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \strng{bibnamehash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \strng{authorbibnamehash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \strng{authornamehash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \strng{authorfullhash}{b0a1476a43cb3f371ba92d06a2f13596}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Sixth International Conference on Intelligent Text Processing and Computational Linguistics}
+      \field{title}{An Overview of Probabilistic Tree Transducers for Natural Language Processing}
+      \field{year}{2005}
+    \endentry
+    \entry{WaMan-ProFiStMaRegBaMTEva}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a28baaa1c36a3c0f9e194e2c768dcf1f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Mengqiu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=016fc1e04b3b878ce0ba16c74854c0f6}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \strng{fullhash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \strng{bibnamehash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \strng{authorbibnamehash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \strng{authornamehash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \strng{authorfullhash}{4b45a2bc5316dc0bbdefa23a2da36a2e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2012 Joint Conference on Empirical Methods in Natural Language Processing and Computational Natural Language Learning}
+      \field{title}{Probabilistic Finite State Machines for Regression-based MT Evaluation}
+      \field{year}{2012}
+    \endentry
+    \entry{Hun-NoLiTexSeaUsFuFiStLiNoDetAut}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=647371dc573ce3be4efe671ec7be098a}{%
+           family={and},
+           familyi={a\bibinitperiod},
+           given={Kenneth\bibnamedelimb M.\bibnamedelimi Hunter},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{647371dc573ce3be4efe671ec7be098a}
+      \strng{fullhash}{647371dc573ce3be4efe671ec7be098a}
+      \strng{bibnamehash}{647371dc573ce3be4efe671ec7be098a}
+      \strng{authorbibnamehash}{647371dc573ce3be4efe671ec7be098a}
+      \strng{authornamehash}{647371dc573ce3be4efe671ec7be098a}
+      \strng{authorfullhash}{647371dc573ce3be4efe671ec7be098a}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Non-literal textual search using fuzzy finite-state linear nondeterministic automata}
+      \field{year}{2000}
+    \endentry
+    \entry{Kra+-BibMeExUsiPrFiStTra}{article}{}
+      \name{author}{4}{}{%
+        {{hash=649d24f04a2ef7624293458d54b21dd8}{%
+           family={Krämer},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c861339c07b796e088403bb2d5796682}{%
+           family={Kaprykowsky},
+           familyi={K\bibinitperiod},
+           given={Hagen},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f1c8b9825fb787670cd8f32a95bf0158}{%
+           family={Keysers},
+           familyi={K\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=866060a7e97418d9c531536fe95fe150}{%
+           family={Breuel},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{68671adde3dd6c87126422d3aaba4ac3}
+      \strng{fullhash}{68671adde3dd6c87126422d3aaba4ac3}
+      \strng{bibnamehash}{68671adde3dd6c87126422d3aaba4ac3}
+      \strng{authorbibnamehash}{68671adde3dd6c87126422d3aaba4ac3}
+      \strng{authornamehash}{68671adde3dd6c87126422d3aaba4ac3}
+      \strng{authorfullhash}{68671adde3dd6c87126422d3aaba4ac3}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ninth International Conference on Document Analysis and Recognition}
+      \field{title}{Bibliographic Meta-Data Extraction Using Probabilistic Finite State Transducers}
+      \field{year}{2007}
+    \endentry
+    \entry{web-CesCitNorm}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b89e11aab9ebd4bc2ef1209321f87202}{%
+           family={Firstová},
+           familyi={F\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \strng{fullhash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \strng{bibnamehash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \strng{authorbibnamehash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \strng{authornamehash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \strng{authorfullhash}{b89e11aab9ebd4bc2ef1209321f87202}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{https://sites.google.com/site/novaiso690/}}
+      \field{title}{Nová citační norma ČSN ISO 690:2011}
+      \verb{urlraw}
+      \verb https://sites.google.com/site/novaiso690/
+      \endverb
+      \verb{url}
+      \verb https://sites.google.com/site/novaiso690/
+      \endverb
+    \endentry
+    \entry{MukRay-StaSplMerProbFiStaAuSigRepAna}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8b07274eb17749959cc9a912f8276b33}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Kushal},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5cf7dc3204f6438cb3e33166efd82a55}{%
+           family={Ray},
+           familyi={R\bibinitperiod},
+           given={Asok},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca61e275133090bc97fddfcc2502ada7}
+      \strng{fullhash}{ca61e275133090bc97fddfcc2502ada7}
+      \strng{bibnamehash}{ca61e275133090bc97fddfcc2502ada7}
+      \strng{authorbibnamehash}{ca61e275133090bc97fddfcc2502ada7}
+      \strng{authornamehash}{ca61e275133090bc97fddfcc2502ada7}
+      \strng{authorfullhash}{ca61e275133090bc97fddfcc2502ada7}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Signal processing}
+      \field{title}{State Splitting \& Merging in Probabilistic Finite State Automata for Signal Analysis and Representation}
+      \field{year}{2014}
+    \endentry
+    \entry{Rig-FauDetIsoBasFuzzAut}{article}{}
+      \name{author}{1}{}{%
+        {{hash=656f1f8237b16d0a94686769100e8516}{%
+           family={Rigatos},
+           familyi={R\bibinitperiod},
+           given={Gerasimos\bibnamedelima G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{656f1f8237b16d0a94686769100e8516}
+      \strng{fullhash}{656f1f8237b16d0a94686769100e8516}
+      \strng{bibnamehash}{656f1f8237b16d0a94686769100e8516}
+      \strng{authorbibnamehash}{656f1f8237b16d0a94686769100e8516}
+      \strng{authornamehash}{656f1f8237b16d0a94686769100e8516}
+      \strng{authorfullhash}{656f1f8237b16d0a94686769100e8516}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Fault detection and isolation based on fuzzy automata}
+      \field{year}{2009}
+    \endentry
+    \entry{BaiTri-PattRecUsiTemFuzzAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9aa94134ed54d5dc8c8039a745968f7a}{%
+           family={Bailador},
+           familyi={B\bibinitperiod},
+           given={Gonzalo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ef80821f14ab38ddd9e15534e34b84b4}{%
+           family={Triviño},
+           familyi={T\bibinitperiod},
+           given={Gracián},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1bc537823fee7dc26a4cb991fb649247}
+      \strng{fullhash}{1bc537823fee7dc26a4cb991fb649247}
+      \strng{bibnamehash}{1bc537823fee7dc26a4cb991fb649247}
+      \strng{authorbibnamehash}{1bc537823fee7dc26a4cb991fb649247}
+      \strng{authornamehash}{1bc537823fee7dc26a4cb991fb649247}
+      \strng{authorfullhash}{1bc537823fee7dc26a4cb991fb649247}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Pattern recognition using temporal fuzzy automata}
+      \field{year}{2010}
+    \endentry
+    \entry{KemAda-SeqPatRecEmpRecFuzSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ef3f6f1c1dbeb5eb0d8a4250c6dc2c1e}{%
+           family={Kempf},
+           familyi={K\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4edea4189187594eb2e98d5778052403}{%
+           family={Adamy},
+           familyi={A\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{06f1e6c1730a63cf294991d83a05d67c}
+      \strng{fullhash}{06f1e6c1730a63cf294991d83a05d67c}
+      \strng{bibnamehash}{06f1e6c1730a63cf294991d83a05d67c}
+      \strng{authorbibnamehash}{06f1e6c1730a63cf294991d83a05d67c}
+      \strng{authornamehash}{06f1e6c1730a63cf294991d83a05d67c}
+      \strng{authorfullhash}{06f1e6c1730a63cf294991d83a05d67c}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Sequential pattern recognition employing recurrent fuzzy systems}
+      \field{year}{2004}
+    \endentry
+    \entry{ManPra-PriPatDetUsFiStMaFuzTra}{article}{}
+      \name{author}{2}{}{%
+        {{hash=de77a6cb0e46359468dea57078c6937b}{%
+           family={Maneesilp},
+           familyi={M\bibinitperiod},
+           given={Kraimon},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c11c46bb081e026052ba90af58b16224}{%
+           family={Prasartkaew},
+           familyi={P\bibinitperiod},
+           given={Chutima},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \strng{fullhash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \strng{bibnamehash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \strng{authorbibnamehash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \strng{authornamehash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \strng{authorfullhash}{f93987dd22aa55fac0dd2ce4f95c4834}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on e-Business Engineering}
+      \field{title}{Price Pattern Detection using Finite State Machines with Fuzzy Transitions}
+      \field{year}{2014}
+    \endentry
+    \entry{Jin+-WavBasFeaExtUsPrFiStAuPatCla}{article}{}
+      \name{author}{4}{}{%
+        {{hash=25d35f1e3db69ef117155be8b0774e3c}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=2cba03bcd5ccac175abd09ca028bde03}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Shalabh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8b07274eb17749959cc9a912f8276b33}{%
+           family={Mukherjee},
+           familyi={M\bibinitperiod},
+           given={Kushal},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5cf7dc3204f6438cb3e33166efd82a55}{%
+           family={Ray},
+           familyi={R\bibinitperiod},
+           given={Asok},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{46773f1a69844ccc47d670e7a94e723c}
+      \strng{fullhash}{46773f1a69844ccc47d670e7a94e723c}
+      \strng{bibnamehash}{46773f1a69844ccc47d670e7a94e723c}
+      \strng{authorbibnamehash}{46773f1a69844ccc47d670e7a94e723c}
+      \strng{authornamehash}{46773f1a69844ccc47d670e7a94e723c}
+      \strng{authorfullhash}{46773f1a69844ccc47d670e7a94e723c}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition}
+      \field{title}{Wavelet-based feature extraction using probabilistic finite state automata for pattern classification}
+      \field{year}{2010}
+    \endentry
+    \entry{Tho-FinFuzzAutRegFuzLangPatRec}{article}{}
+      \name{author}{1}{}{%
+        {{hash=93c1466d7ade5ab8c12085ebc01ac652}{%
+           family={Thomason},
+           familyi={T\bibinitperiod},
+           given={M.\bibnamedelimi G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \strng{fullhash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \strng{bibnamehash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \strng{authorbibnamehash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \strng{authornamehash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \strng{authorfullhash}{93c1466d7ade5ab8c12085ebc01ac652}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition}
+      \field{title}{Finite Fuzzy Automata, Regular Fuzzy Languages, and Pattern Recognition}
+      \field{year}{1973}
+    \endentry
+    \entry{ForBel-GenMusAccUsFinStaTra}{article}{}
+      \name{author}{2}{}{%
+        {{hash=493b7441a9255f9c26574cb2554477eb}{%
+           family={Forsyth},
+           familyi={F\bibinitperiod},
+           given={Jonathan\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ac8741c69538d01285a28ea8ed863cdd}{%
+           family={Bello},
+           familyi={B\bibinitperiod},
+           given={Juan\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \strng{fullhash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \strng{bibnamehash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \strng{authorbibnamehash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \strng{authornamehash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \strng{authorfullhash}{9ec0abe78db4a4ca8e78e96c3760b71d}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 16th Int. Conference on Digital Audio Effects}
+      \field{title}{Generating Musical Accompaniment Using Finite State Transducers}
+      \field{year}{2013}
+    \endentry
+    \entry{OliWag-ComMusNeuNetProFiStMa}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7a051f582ad9f05c4c70c0762a085df1}{%
+           family={Oliwa},
+           familyi={O\bibinitperiod},
+           given={Tomasz},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e677be29346d195622b44f23db10f01f}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{50aed4be6810a8ff16a69cacf032702d}
+      \strng{fullhash}{50aed4be6810a8ff16a69cacf032702d}
+      \strng{bibnamehash}{50aed4be6810a8ff16a69cacf032702d}
+      \strng{authorbibnamehash}{50aed4be6810a8ff16a69cacf032702d}
+      \strng{authornamehash}{50aed4be6810a8ff16a69cacf032702d}
+      \strng{authorfullhash}{50aed4be6810a8ff16a69cacf032702d}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Workshops on Applications of Evolutionary Computation}
+      \field{title}{Composing Music with Neural Networks and Probabilistic Finite-State Machines}
+      \field{year}{2008}
+    \endentry
+    \entry{Cha-ExeFuzProUsFiStaMa}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e652c26c2183f949815ecbcf352390c4}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Shi-Kuo},
+           giveni={S\bibinithyphendelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{e652c26c2183f949815ecbcf352390c4}
+      \strng{fullhash}{e652c26c2183f949815ecbcf352390c4}
+      \strng{bibnamehash}{e652c26c2183f949815ecbcf352390c4}
+      \strng{authorbibnamehash}{e652c26c2183f949815ecbcf352390c4}
+      \strng{authornamehash}{e652c26c2183f949815ecbcf352390c4}
+      \strng{authorfullhash}{e652c26c2183f949815ecbcf352390c4}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on computers}
+      \field{title}{On the execution of Fuzzy programs using Finite-State Machines}
+      \field{year}{1972}
+    \endentry
+    \entry{Hac+-ProAnaLarFinStaMac}{article}{}
+      \name{author}{4}{}{%
+        {{hash=2299a7f09806c8ff4418c86b9160b185}{%
+           family={Hachtel},
+           familyi={H\bibinitperiod},
+           given={Gary\bibnamedelima D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=5bed14704cdb65a2b775fc02f917dc2b}{%
+           family={Macii},
+           familyi={M\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+        {{hash=514ee1defaeefe2a8370930494a9fb22}{%
+           family={Pardo},
+           familyi={P\bibinitperiod},
+           given={Abelardo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ad8ab6fb6e98869ac8d0b96ea11ee519}{%
+           family={Somenzi},
+           familyi={S\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f41078d0fc90fff00639b885fc2e8254}
+      \strng{fullhash}{f41078d0fc90fff00639b885fc2e8254}
+      \strng{bibnamehash}{f41078d0fc90fff00639b885fc2e8254}
+      \strng{authorbibnamehash}{f41078d0fc90fff00639b885fc2e8254}
+      \strng{authornamehash}{f41078d0fc90fff00639b885fc2e8254}
+      \strng{authorfullhash}{f41078d0fc90fff00639b885fc2e8254}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 31st annual Design Automation Conference}
+      \field{title}{Probabilistic Analysis of Large Finite State Machines}
+      \field{year}{1994}
+    \endentry
+    \entry{DupDenEsp-LiProAuHidMarMod+}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e58302f4a454345f302dd9106a6ccf54}{%
+           family={Dupont},
+           familyi={D\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a573ddd5fe093101bd9cafc2954966df}{%
+           family={Denis},
+           familyi={D\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fb12138e94e73b83a68697e0e89d3d2f}{%
+           family={Esposito},
+           familyi={E\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b088e6726c7f7ad05489009423c544c3}
+      \strng{fullhash}{b088e6726c7f7ad05489009423c544c3}
+      \strng{bibnamehash}{b088e6726c7f7ad05489009423c544c3}
+      \strng{authorbibnamehash}{b088e6726c7f7ad05489009423c544c3}
+      \strng{authornamehash}{b088e6726c7f7ad05489009423c544c3}
+      \strng{authorfullhash}{b088e6726c7f7ad05489009423c544c3}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition}
+      \field{title}{Links between probabilistic automata and hidden Markov models: probability distributions, learning models and induction algorithms}
+      \field{year}{2005}
+    \endentry
+    \entry{Hul+-ManRecUsProFinStaMacFuzLog}{article}{}
+      \name{author}{5}{}{%
+        {{hash=84f704f6897bb0fc1a99d46cf7ce85eb}{%
+           family={Hülnhagen},
+           familyi={H\bibinitperiod},
+           given={Till},
+           giveni={T\bibinitperiod}}}%
+        {{hash=49801b55df161885c02c01c3108da5d0}{%
+           family={Dengler},
+           familyi={D\bibinitperiod},
+           given={Ingo},
+           giveni={I\bibinitperiod}}}%
+        {{hash=425df3007e3f1bf2e4a83d76a76daeab}{%
+           family={Tamke},
+           familyi={T\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b59c7389a6d9b7e52167bd932201b133}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={Thao},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1ce9265fc14284005d2691e2daa1a768}{%
+           family={Breuel},
+           familyi={B\bibinitperiod},
+           given={Gabi},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{cda72149983510e5209534cd22e1e45a}
+      \strng{fullhash}{cda72149983510e5209534cd22e1e45a}
+      \strng{bibnamehash}{cda72149983510e5209534cd22e1e45a}
+      \strng{authorbibnamehash}{cda72149983510e5209534cd22e1e45a}
+      \strng{authornamehash}{cda72149983510e5209534cd22e1e45a}
+      \strng{authorfullhash}{cda72149983510e5209534cd22e1e45a}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Intelligent Vehicles Symposium}
+      \field{title}{Maneuver recognition using Probabilistic Finite-State Machines and Fuzzy Logic}
+      \field{year}{2010}
+    \endentry
+    \entry{DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b718febb9bc7ea896aa7ef2f396de6f0}{%
+           family={Ducange},
+           familyi={D\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=76aac47e85d5434f94b2dbb6cb512b04}{%
+           family={Marcelloni},
+           familyi={M\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=d31d95c1457ab916c6a1ba3e00dc6b63}{%
+           family={Marinari},
+           familyi={M\bibinitperiod},
+           given={Dario},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1527934c437b0d505f7f5a64b71f934a}
+      \strng{fullhash}{1527934c437b0d505f7f5a64b71f934a}
+      \strng{bibnamehash}{1527934c437b0d505f7f5a64b71f934a}
+      \strng{authorbibnamehash}{1527934c437b0d505f7f5a64b71f934a}
+      \strng{authornamehash}{1527934c437b0d505f7f5a64b71f934a}
+      \strng{authorfullhash}{1527934c437b0d505f7f5a64b71f934a}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sustainable Internet and ICT for Sustainability (SustainIT)}
+      \field{title}{An Algorithm based on Finite State Machines with Fuzzy Transitions for Non-Intrusive Load Disaggregation}
+      \field{year}{2012}
+    \endentry
+    \entry{Niz-ModComComNetViaPrAu}{article}{}
+      \name{author}{1}{}{%
+        {{hash=838c9e4c08089ffd1a9d4d46bc3f51ba}{%
+           family={Niznik},
+           familyi={N\bibinitperiod},
+           given={Carol\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \strng{fullhash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \strng{bibnamehash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \strng{authorbibnamehash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \strng{authornamehash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \strng{authorfullhash}{838c9e4c08089ffd1a9d4d46bc3f51ba}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Kybernetes}
+      \field{title}{Modelling of computer communication networks via probabilistic automata}
+      \field{year}{1980}
+    \endentry
+    \entry{Hua+-LeaProbAutModChe}{article}{}
+      \name{author}{6}{}{%
+        {{hash=3c34ba309dd49b3512fdf13abae4e8cd}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Hua},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d0424f99a4a683bbec4b5c1932018682}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yingke},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0fe81a928b8a7073589ef6daab4a047c}{%
+           family={Jaeger},
+           familyi={J\bibinitperiod},
+           given={Manfred},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d6a71af4b7a9644d8cba130892c2cb8d}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Thomas\bibnamedelima Dyhre},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=2851929cd7289798e0d582b018b18ec3}{%
+           family={Larsen},
+           familyi={L\bibinitperiod},
+           given={Kim\bibnamedelima Guldstrand},
+           giveni={K\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=edbd89c6f09d392eb2d0df156b86b9ce}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c30d387da5dac0dca81b41d6be122876}
+      \strng{fullhash}{c30d387da5dac0dca81b41d6be122876}
+      \strng{bibnamehash}{c30d387da5dac0dca81b41d6be122876}
+      \strng{authorbibnamehash}{c30d387da5dac0dca81b41d6be122876}
+      \strng{authornamehash}{c30d387da5dac0dca81b41d6be122876}
+      \strng{authorfullhash}{c30d387da5dac0dca81b41d6be122876}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Quantitative Evaluation of Systems}
+      \field{title}{Learning Probabilistic Automata for Model Checking}
+      \field{year}{2011}
+    \endentry
+    \entry{HeiTri-SimEmoPerHumComInt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4e7dc240abb1b6e2a0f9fcf44225cbb7}{%
+           family={Heide},
+           familyi={H\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=6f616426a130b67ce8b8197b8ccbaaee}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={Gracian},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \strng{fullhash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \strng{bibnamehash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \strng{authorbibnamehash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \strng{authornamehash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \strng{authorfullhash}{8dad3649ffdf55f1a6e4b8db2888cd13}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE international Conference of fuzzy systems}
+      \field{title}{Simulating Emotional Personality in Human Computer Interfaces}
+      \field{year}{2010}
+    \endentry
+    \entry{Cas+-ProAutAspBasSenAna}{article}{}
+      \name{author}{8}{}{%
+        {{hash=16e9ffc58768eb34986ce5a721fe6381}{%
+           family={Castañeda},
+           familyi={C\bibinitperiod},
+           given={Yenier},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=76fc2bdf9bf389220446a3d3b1dfb2a8}{%
+           family={Collazo},
+           familyi={C\bibinitperiod},
+           given={Armando},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9f32fadad123069747c01fdf55b21af3}{%
+           family={Crego},
+           familyi={C\bibinitperiod},
+           given={Elvis},
+           giveni={E\bibinitperiod}}}%
+        {{hash=be8f22023b87d9f7a875315f81a46601}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Jorge\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=452be25d0a7fc40f9d5d8611f886f00a}{%
+           family={Gutiérrez},
+           familyi={G\bibinitperiod},
+           given={Yoan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=df9986c1d3359522c3a8bc9214f85101}{%
+           family={Tomás},
+           familyi={T\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bab20e756cca630ff1b16cab83f03f9b}{%
+           family={Montoyo},
+           familyi={M\bibinitperiod},
+           given={Andrés},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f3aeaf52758d7ee8236db0a6c0d0799f}{%
+           family={Muñoz},
+           familyi={M\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{beadfe0eb3b157ec614f6c1991e50def}
+      \strng{fullhash}{beadfe0eb3b157ec614f6c1991e50def}
+      \strng{bibnamehash}{beadfe0eb3b157ec614f6c1991e50def}
+      \strng{authorbibnamehash}{beadfe0eb3b157ec614f6c1991e50def}
+      \strng{authornamehash}{beadfe0eb3b157ec614f6c1991e50def}
+      \strng{authorfullhash}{beadfe0eb3b157ec614f6c1991e50def}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 8th International Workshop on Semantic Evaluation}
+      \field{title}{UMCC\_DLSI\_Prob: A Probabilistic Automata for Aspect Based Sentiment Analysis}
+      \field{year}{2014}
+    \endentry
+    \entry{SchYou-ProSimHumMacDia}{article}{}
+      \name{author}{2}{}{%
+        {{hash=861a49ebe64923d64988bdcc7868b2f7}{%
+           family={Scheffler},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=56067bd619a64dc42b8c521c77020e33}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{90dc7323f03f70a3f79164e34898ef42}
+      \strng{fullhash}{90dc7323f03f70a3f79164e34898ef42}
+      \strng{bibnamehash}{90dc7323f03f70a3f79164e34898ef42}
+      \strng{authorbibnamehash}{90dc7323f03f70a3f79164e34898ef42}
+      \strng{authornamehash}{90dc7323f03f70a3f79164e34898ef42}
+      \strng{authorfullhash}{90dc7323f03f70a3f79164e34898ef42}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Acoustics, Speech, and Signal Processing, 2000. ICASSP '00. Proceedings. 2000 IEEE International Conference on}
+      \field{title}{Probabilistic simulation of human-machine dialogues}
+      \field{year}{2000}
+    \endentry
+    \entry{TriHei-LinSumHumActSkiConAcc}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6f616426a130b67ce8b8197b8ccbaaee}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={Gracian},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4e7dc240abb1b6e2a0f9fcf44225cbb7}{%
+           family={Heide},
+           familyi={H\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{fullhash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{bibnamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authorbibnamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authornamehash}{8de32bfd788c485e987891e125fd1f09}
+      \strng{authorfullhash}{8de32bfd788c485e987891e125fd1f09}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of Information Processing and Management of Uncertainty in Knowledge-Based Systems}
+      \field{title}{Linguistic summarization of the human activity using skin conductivity and accelerometers}
+      \field{year}{2008}
+    \endentry
+    \entry{Alv+-HumActRec+}{article}{}
+      \name{author}{7}{}{%
+        {{hash=393ff6db4396c1949576571cb7eb899b}{%
+           family={Alvarez-Alvarez},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d3fc668e2569f129472b3cb31dcad03f}{%
+           family={Alonso},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7263305e0d39cec7d6750fde03ec0c66}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=44fa45b1df4cd945406f78308a6db015}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=727e4d018521c49fde548661f9c81bc8}{%
+           family={Herranz},
+           familyi={H\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1972be3c201b38190938b21909932974}{%
+           family={Llamazares},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=eeb3f8921a23c087608971d6216510fb}{%
+           family={Ocaña},
+           familyi={O\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \strng{fullhash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \strng{bibnamehash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \strng{authorbibnamehash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \strng{authornamehash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \strng{authorfullhash}{cf044b8d7cfadfbde65d461c5f5cb0b6}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE international Conference of fuzzy systems}
+      \field{title}{Human Activity Recognition applying Computational Intelligence techniques for fusing information related to WiFi positioning and body posture}
+      \field{year}{2010}
+    \endentry
+    \entry{TurChe-MacRecHumActSur}{article}{}
+      \name{author}{4}{}{%
+        {{hash=731e354b98cb9fdede56d4edae562ace}{%
+           family={Turaga},
+           familyi={T\bibinitperiod},
+           given={Pavan},
+           giveni={P\bibinitperiod}}}%
+        {{hash=58e34e482e0dd6e755329ae57da3b293}{%
+           family={Chellappa},
+           familyi={C\bibinitperiod},
+           given={Rama},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c168388a31479da043dc92565a1d3545}{%
+           family={Subrahmanian},
+           familyi={S\bibinitperiod},
+           given={V.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=55a1c24df6366490357a44febb224b10}{%
+           family={Udrea},
+           familyi={U\bibinitperiod},
+           given={Octavian},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{2dae7186d941c2066c73213a60699533}
+      \strng{fullhash}{2dae7186d941c2066c73213a60699533}
+      \strng{bibnamehash}{2dae7186d941c2066c73213a60699533}
+      \strng{authorbibnamehash}{2dae7186d941c2066c73213a60699533}
+      \strng{authornamehash}{2dae7186d941c2066c73213a60699533}
+      \strng{authorfullhash}{2dae7186d941c2066c73213a60699533}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on circuits and systems for video technology}
+      \field{title}{Machine Recognition of Human Activities: A Survey}
+      \field{year}{2008}
+    \endentry
+    \entry{HeKinSep-DecMakFuzEnvZUsOntCon+}{article}{}
+      \name{author}{3}{}{%
+        {{hash=adfefaa85b31c9e30a67c95f9858f3f3}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=69a61c4e75f384e860e6273771ea394b}{%
+           family={Kinsner},
+           familyi={K\bibinitperiod},
+           given={Witold},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ca2f7d5e8f613fb8d1536c8ee3c52842}{%
+           family={Sepehri},
+           familyi={S\bibinitperiod},
+           given={Nariman},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \strng{fullhash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \strng{bibnamehash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \strng{authorbibnamehash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \strng{authornamehash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \strng{authorfullhash}{db2ddf9cd588605c24b1d3a21601b8ca}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of 9th IEEE International Conference on Cognitive Informatics}
+      \field{title}{Decision-Making in Fuzzy Environments Using Ontological Control with Fuzzy Automata}
+      \field{year}{2010}
+    \endentry
+    \entry{Gra+-ApFuStFuOuFinMaPrRecVioOntAss}{article}{}
+      \name{author}{4}{}{%
+        {{hash=335779675ae98c93cc6aa35f2a5c4200}{%
+           family={Grantner},
+           familyi={G\bibinitperiod},
+           given={Janos\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=42d29925423c754e812dfb5a253e9558}{%
+           family={Fodor},
+           familyi={F\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8c9c5b4f1e6fe2c63d6018515f05f324}{%
+           family={Driankov},
+           familyi={D\bibinitperiod},
+           given={Dimiter},
+           giveni={D\bibinitperiod}}}%
+        {{hash=da1f45b771e18b7fdef9ef40718abc5b}{%
+           family={Patyra},
+           familyi={P\bibinitperiod},
+           given={Marek\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fcef3d80dff793baf7913fa819fb96b}
+      \strng{fullhash}{8fcef3d80dff793baf7913fa819fb96b}
+      \strng{bibnamehash}{8fcef3d80dff793baf7913fa819fb96b}
+      \strng{authorbibnamehash}{8fcef3d80dff793baf7913fa819fb96b}
+      \strng{authornamehash}{8fcef3d80dff793baf7913fa819fb96b}
+      \strng{authorfullhash}{8fcef3d80dff793baf7913fa819fb96b}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Intelligent Engineering Systems Through Artificial Neural Networks}
+      \field{title}{Application of the fuzzy state fuzzy output finite state machine to the problem of recovery from violations of ontological assumptions}
+      \field{year}{1996}
+    \endentry
+    \entry{GraFodDri-HybFuzBooAutOntCont}{article}{}
+      \name{author}{3}{}{%
+        {{hash=335779675ae98c93cc6aa35f2a5c4200}{%
+           family={Grantner},
+           familyi={G\bibinitperiod},
+           given={Janos\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=42d29925423c754e812dfb5a253e9558}{%
+           family={Fodor},
+           familyi={F\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8c9c5b4f1e6fe2c63d6018515f05f324}{%
+           family={Driankov},
+           familyi={D\bibinitperiod},
+           given={Dimiter},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b5c8308297198f2019caab0a5c62bdf8}
+      \strng{fullhash}{b5c8308297198f2019caab0a5c62bdf8}
+      \strng{bibnamehash}{b5c8308297198f2019caab0a5c62bdf8}
+      \strng{authorbibnamehash}{b5c8308297198f2019caab0a5c62bdf8}
+      \strng{authornamehash}{b5c8308297198f2019caab0a5c62bdf8}
+      \strng{authorfullhash}{b5c8308297198f2019caab0a5c62bdf8}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE World Congress on Computational Intelligence}
+      \field{title}{Hybrid Fuzzy-Boolean Automata for Ontological Controllers}
+      \field{year}{1998}
+    \endentry
+    \entry{GraFod-FuzAutIntHybConSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=335779675ae98c93cc6aa35f2a5c4200}{%
+           family={Grantner},
+           familyi={G\bibinitperiod},
+           given={Janos\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=42d29925423c754e812dfb5a253e9558}{%
+           family={Fodor},
+           familyi={F\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{fullhash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{bibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authorbibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authornamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authorfullhash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Conference on fuzzy systems}
+      \field{title}{Fuzzy Automaton for Intelligent Hybrid Control Systems}
+      \field{year}{2002}
+    \endentry
+    \entry{AlAhHep+-ModUrbGroDynUsCelAutGIS}{article}{}
+      \name{author}{4}{}{%
+        {{hash=992df9c0ca459648ce0c80aa69ed8ad3}{%
+           family={Al-Ahmadi},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Khalid},
+           giveni={K\bibinitperiod}}}%
+        {{hash=783576ad7785c55d7d22ed0a92307fcc}{%
+           family={Heppenstall},
+           familyi={H\bibinitperiod},
+           given={Alison},
+           giveni={A\bibinitperiod}}}%
+        {{hash=72590b59c16e3b5cdc6d24fa7500a37d}{%
+           family={See},
+           familyi={S\bibinitperiod},
+           given={Linda},
+           giveni={L\bibinitperiod}}}%
+        {{hash=47523d2d4272280ad88f0709b0ea7b2c}{%
+           family={Hogg},
+           familyi={H\bibinitperiod},
+           given={Jim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{43c3946f64714cb625bcedbba11c2368}
+      \strng{fullhash}{43c3946f64714cb625bcedbba11c2368}
+      \strng{bibnamehash}{43c3946f64714cb625bcedbba11c2368}
+      \strng{authorbibnamehash}{43c3946f64714cb625bcedbba11c2368}
+      \strng{authornamehash}{43c3946f64714cb625bcedbba11c2368}
+      \strng{authorfullhash}{43c3946f64714cb625bcedbba11c2368}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Dostupné online na \url{https://pdfs.semanticscholar.org/6e2a/c1dbea43cd06b4f7bab26f3f04ce6816908b.pdf}}
+      \field{title}{Modeling Urban Growth Dynamics using Cellular Automata and GIS}
+      \field{year}{2008}
+    \endentry
+    \entry{Ahm+-CalFuzCelAutModUrbDynSauAr}{article}{}
+      \name{author}{4}{}{%
+        {{hash=992df9c0ca459648ce0c80aa69ed8ad3}{%
+           family={Al-Ahmadi},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Khalid},
+           giveni={K\bibinitperiod}}}%
+        {{hash=72590b59c16e3b5cdc6d24fa7500a37d}{%
+           family={See},
+           familyi={S\bibinitperiod},
+           given={Linda},
+           giveni={L\bibinitperiod}}}%
+        {{hash=783576ad7785c55d7d22ed0a92307fcc}{%
+           family={Heppenstall},
+           familyi={H\bibinitperiod},
+           given={Alison},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9a53ee1c6c7de50a21b01140cc159e0d}{%
+           family={Hogg},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8fa3b6ec693371b1ea42b723e723924a}
+      \strng{fullhash}{8fa3b6ec693371b1ea42b723e723924a}
+      \strng{bibnamehash}{8fa3b6ec693371b1ea42b723e723924a}
+      \strng{authorbibnamehash}{8fa3b6ec693371b1ea42b723e723924a}
+      \strng{authornamehash}{8fa3b6ec693371b1ea42b723e723924a}
+      \strng{authorfullhash}{8fa3b6ec693371b1ea42b723e723924a}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ecological complexity}
+      \field{title}{Calibration of a fuzzy cellular automata model of urban dynamics in Saudi Arabia}
+      \field{year}{2008}
+    \endentry
+    \entry{War+-StoConCelModUrbGro}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a59c718f903985cb7e9876966d92d7d5}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={D.\bibnamedelimi P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=68828c46740e1dd9bf3260c6a256eae6}{%
+           family={Murray},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi T.},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=05e95f94f854a667205a85fe5f32f897}{%
+           family={Phinn},
+           familyi={P\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \strng{fullhash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \strng{bibnamehash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \strng{authorbibnamehash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \strng{authornamehash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \strng{authorfullhash}{e1ca6303f03829bb97ca52fe56d2d850}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers, Environment and Urban Systems}
+      \field{title}{A stochastically constrained cellular model of urban growth}
+      \field{year}{2000}
+    \endentry
+    \entry{WhiEng-CelAutBasIntDynRegMod}{article}{}
+      \name{author}{2}{}{%
+        {{hash=62def975722d13f533626350a3bacf62}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f6b55fd7d8f1a3d6cd175809ff168d1a}{%
+           family={Engelen},
+           familyi={E\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{26773d081022a313630a857bade369b0}
+      \strng{fullhash}{26773d081022a313630a857bade369b0}
+      \strng{bibnamehash}{26773d081022a313630a857bade369b0}
+      \strng{authorbibnamehash}{26773d081022a313630a857bade369b0}
+      \strng{authornamehash}{26773d081022a313630a857bade369b0}
+      \strng{authorfullhash}{26773d081022a313630a857bade369b0}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment and Planning B: Planning and Design}
+      \field{title}{Cellular automata as the basis of integrated dynamic regional modelling}
+      \field{year}{1997}
+    \endentry
+    \entry{LaiDraSch-IntMulEvCelAutMetLanSimMod}{article}{}
+      \name{author}{3}{}{%
+        {{hash=57cb0e373dbc19d0ce75521b9460e1a4}{%
+           family={Lai},
+           familyi={L\bibinitperiod},
+           given={Terence},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8b781618dfca22115415e9e9a30ddbf3}{%
+           family={Dragićević},
+           familyi={D\bibinitperiod},
+           given={Suzana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9b25e3c0093fa38123d67f99729a7b0b}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Margaret},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3832cb623188df234c506c6d473b432f}
+      \strng{fullhash}{3832cb623188df234c506c6d473b432f}
+      \strng{bibnamehash}{3832cb623188df234c506c6d473b432f}
+      \strng{authorbibnamehash}{3832cb623188df234c506c6d473b432f}
+      \strng{authornamehash}{3832cb623188df234c506c6d473b432f}
+      \strng{authorfullhash}{3832cb623188df234c506c6d473b432f}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geomatics, Natural Hazards and Risk}
+      \field{title}{Integration of multicriteria evaluation and cellular automata methods for landslide simulation Modelling}
+      \field{year}{2013}
+    \endentry
+    \entry{ManHatPra-FuzCelAutBasSheModUrGro+}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a7f56b8adfa23c5ba47d4b504cd09106}{%
+           family={Mandelas},
+           familyi={M\bibinitperiod},
+           given={Eleftherios\bibnamedelima A.},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=44725263c00c4f8f9254c0bd78ba9de0}{%
+           family={Hatzichristos},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a2ea7997f5063942a1c3bd3d4e3e1139}{%
+           family={Prastacos},
+           familyi={P\bibinitperiod},
+           given={Poulicos},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{04718119452ff355dc5190dc4588716a}
+      \strng{fullhash}{04718119452ff355dc5190dc4588716a}
+      \strng{bibnamehash}{04718119452ff355dc5190dc4588716a}
+      \strng{authorbibnamehash}{04718119452ff355dc5190dc4588716a}
+      \strng{authornamehash}{04718119452ff355dc5190dc4588716a}
+      \strng{authorfullhash}{04718119452ff355dc5190dc4588716a}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGILE International Conference on Geographic Information Science}
+      \field{title}{A Fuzzy Cellular Automata Based Shell for Modeling Urban Growth – A Pilot Application in Mesogia Area}
+      \field{year}{2007}
+    \endentry
+    \entry{ManHatPra-ModUrbGroUsFuzCelAut}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a769449a538c05ab7f2f79f5a875db15}{%
+           family={Mantelas},
+           familyi={M\bibinitperiod},
+           given={Lefteris\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a2ea7997f5063942a1c3bd3d4e3e1139}{%
+           family={Prastacos},
+           familyi={P\bibinitperiod},
+           given={Poulicos},
+           giveni={P\bibinitperiod}}}%
+        {{hash=44725263c00c4f8f9254c0bd78ba9de0}{%
+           family={Hatzichristos},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{e498c21ed320f1defa70912f6693f7eb}
+      \strng{fullhash}{e498c21ed320f1defa70912f6693f7eb}
+      \strng{bibnamehash}{e498c21ed320f1defa70912f6693f7eb}
+      \strng{authorbibnamehash}{e498c21ed320f1defa70912f6693f7eb}
+      \strng{authornamehash}{e498c21ed320f1defa70912f6693f7eb}
+      \strng{authorfullhash}{e498c21ed320f1defa70912f6693f7eb}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AGILE International Conference on Geographic Information Science}
+      \field{title}{Modeling Urban Growth using Fuzzy Cellular Automata}
+      \field{year}{2008}
+    \endentry
+    \entry{Wu-CalStoCelAutAppRurUrbLanConv}{article}{}
+      \name{author}{1}{}{%
+        {{hash=632f9c2d92096e686efb4af0dd1071b4}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{fullhash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{bibnamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authorbibnamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authornamehash}{632f9c2d92096e686efb4af0dd1071b4}
+      \strng{authorfullhash}{632f9c2d92096e686efb4af0dd1071b4}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geographical Information Science}
+      \field{title}{Calibration of stochastic cellular automata: the application to rural-urban land conversions}
+      \field{year}{2002}
+    \endentry
+    \entry{PowSimWhi-HieFuzzPattMatcRegCompLanUseMap}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2f4425d490c440daab19bbaf0ed01391}{%
+           family={Power},
+           familyi={P\bibinitperiod},
+           given={Conrad},
+           giveni={C\bibinitperiod}}}%
+        {{hash=868a4c8e4f1f9a45b721c993997029df}{%
+           family={Simms},
+           familyi={S\bibinitperiod},
+           given={Alvin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=89c41732d32e2867fcbe71a8656873f0}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \strng{fullhash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \strng{bibnamehash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \strng{authorbibnamehash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \strng{authornamehash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \strng{authorfullhash}{4a9378156853f4c674a1e50dd1aed6a6}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Geographical Information Science}
+      \field{title}{Hierarchical fuzzy pattern matching for the regional comparison of land use maps}
+      \field{year}{2010}
+    \endentry
+    \entry{Dra-CouFuzSetTheGisBaCelAutLanUseChaMod}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c3554e094dc6c470ecfea163cc60dbad}{%
+           family={Dragicevic},
+           familyi={D\bibinitperiod},
+           given={Suzana},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c3554e094dc6c470ecfea163cc60dbad}
+      \strng{fullhash}{c3554e094dc6c470ecfea163cc60dbad}
+      \strng{bibnamehash}{c3554e094dc6c470ecfea163cc60dbad}
+      \strng{authorbibnamehash}{c3554e094dc6c470ecfea163cc60dbad}
+      \strng{authornamehash}{c3554e094dc6c470ecfea163cc60dbad}
+      \strng{authorfullhash}{c3554e094dc6c470ecfea163cc60dbad}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Annuinformational Meeting of the fuzzy}
+      \field{title}{Coupling fuzzy sets theory and GIs-based cellular automata for land-use change modeling}
+      \field{year}{2004}
+    \endentry
+    \entry{WasPar-PreSpaDisEleEnCon+}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bf41fc8471c3aa210f7654bcedb0cc80}{%
+           family={Wasilewski},
+           familyi={W\bibinitperiod},
+           given={Jacek},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e12b6c84f6a9e619c33d4ef30430325d}{%
+           family={Parol},
+           familyi={P\bibinitperiod},
+           given={Mirosław},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9494d717d17ac2c90c596a66aabbb446}
+      \strng{fullhash}{9494d717d17ac2c90c596a66aabbb446}
+      \strng{bibnamehash}{9494d717d17ac2c90c596a66aabbb446}
+      \strng{authorbibnamehash}{9494d717d17ac2c90c596a66aabbb446}
+      \strng{authornamehash}{9494d717d17ac2c90c596a66aabbb446}
+      \strng{authorfullhash}{9494d717d17ac2c90c596a66aabbb446}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Przegląd elektrotechniczny}
+      \field{title}{Prediction of spatial distribution of electric energy consumers with the use of fuzzy cellular automata}
+      \field{year}{2009}
+    \endentry
+    \entry{LiuPhi-DevCelAutModUrbGroIncFuzSetApp}{article}{}
+      \name{author}{2}{}{%
+        {{hash=92f7474e36f4f2b59a14e85c0e738e40}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=aa7150366fa9d40d355064a89770ab44}{%
+           family={Phinn},
+           familyi={P\bibinitperiod},
+           given={Stuart\bibnamedelima R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d53c14b30bf96fc7e8a0de249b062047}
+      \strng{fullhash}{d53c14b30bf96fc7e8a0de249b062047}
+      \strng{bibnamehash}{d53c14b30bf96fc7e8a0de249b062047}
+      \strng{authorbibnamehash}{d53c14b30bf96fc7e8a0de249b062047}
+      \strng{authornamehash}{d53c14b30bf96fc7e8a0de249b062047}
+      \strng{authorfullhash}{d53c14b30bf96fc7e8a0de249b062047}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers, Environment and Urban Systems}
+      \field{title}{Developing a Cellular Automaton Model of Urban Growth Incorporating Fuzzy Set Approaches}
+      \field{year}{2003}
+    \endentry
+    \entry{Maz+-ProTreAutAppBehMod}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6cdb45c059a02945f9593ec5bbae86d9}{%
+           family={Mazeroff},
+           familyi={M\bibinitperiod},
+           given={Geoff},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7b93b2bae06f741ac09fec7a7bc24ac5}{%
+           family={Cerqueira},
+           familyi={C\bibinitperiod},
+           given={Victor\bibnamedelima De},
+           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7ee0366e365e8a19e4405af41d04dc13}{%
+           family={Gregor},
+           familyi={G\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8ff2559bd5f72468098402699a2a113c}{%
+           family={Thomason},
+           familyi={T\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{64d420a48ffe4294ea69d687984fd019}
+      \strng{fullhash}{64d420a48ffe4294ea69d687984fd019}
+      \strng{bibnamehash}{64d420a48ffe4294ea69d687984fd019}
+      \strng{authorbibnamehash}{64d420a48ffe4294ea69d687984fd019}
+      \strng{authornamehash}{64d420a48ffe4294ea69d687984fd019}
+      \strng{authorfullhash}{64d420a48ffe4294ea69d687984fd019}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Southeast Regional Conference Proceedings}
+      \field{title}{Probabilistic Trees and Automata for Application Behavior Modeling}
+      \field{year}{2003}
+    \endentry
+    \entry{Rus-ImaProHan}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9374ab631ed362b1505f2d98d3032cc8}{%
+           family={Russ},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{9374ab631ed362b1505f2d98d3032cc8}
+      \strng{fullhash}{9374ab631ed362b1505f2d98d3032cc8}
+      \strng{bibnamehash}{9374ab631ed362b1505f2d98d3032cc8}
+      \strng{authorbibnamehash}{9374ab631ed362b1505f2d98d3032cc8}
+      \strng{authornamehash}{9374ab631ed362b1505f2d98d3032cc8}
+      \strng{authorfullhash}{9374ab631ed362b1505f2d98d3032cc8}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Image Processing Handbook}
+      \field{year}{2011}
+    \endentry
+    \entry{web-Lenna}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=91e5f9f56096fe3cd2cead79518a0885}{%
+           family={Wikipedie},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{91e5f9f56096fe3cd2cead79518a0885}
+      \strng{fullhash}{91e5f9f56096fe3cd2cead79518a0885}
+      \strng{bibnamehash}{91e5f9f56096fe3cd2cead79518a0885}
+      \strng{authorbibnamehash}{91e5f9f56096fe3cd2cead79518a0885}
+      \strng{authornamehash}{91e5f9f56096fe3cd2cead79518a0885}
+      \strng{authorfullhash}{91e5f9f56096fe3cd2cead79518a0885}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{https://en.wikipedia.org/wiki/Lenna}}
+      \field{title}{Lenna}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Lenna
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Lenna
+      \endverb
+    \endentry
+    \entry{MaiAgg-StuComVarImDetEdTec}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3780b17792488f049c74d40527133b65}{%
+           family={Maini},
+           familyi={M\bibinitperiod},
+           given={Raman},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e1cd823693ae7bb85517df7be440520b}{%
+           family={Aggarwal},
+           familyi={A\bibinitperiod},
+           given={Dr.\bibnamedelimi Himanshu},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a670a758c62a94df728cb39ef8afff00}
+      \strng{fullhash}{a670a758c62a94df728cb39ef8afff00}
+      \strng{bibnamehash}{a670a758c62a94df728cb39ef8afff00}
+      \strng{authorbibnamehash}{a670a758c62a94df728cb39ef8afff00}
+      \strng{authornamehash}{a670a758c62a94df728cb39ef8afff00}
+      \strng{authorfullhash}{a670a758c62a94df728cb39ef8afff00}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Image Processing}
+      \field{title}{Study and Comparison of Various Image Edge Detection Techniques}
+      \field{year}{2009}
+    \endentry
+    \entry{SadRetKam-EfMetImpNoiRedImFuzCelAut}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ff64a291c93be283da064b09c5450516}{%
+           family={Sadeghi},
+           familyi={S\bibinitperiod},
+           given={Sana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=588a86d99f969ad3408552674542e104}{%
+           family={Rezvanian},
+           familyi={R\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4b76102c75f880a75718297ecfb3dc57}{%
+           family={Kamrani},
+           familyi={K\bibinitperiod},
+           given={Ebrahim},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{077be7916161000a3bf95a4be565507b}
+      \strng{fullhash}{077be7916161000a3bf95a4be565507b}
+      \strng{bibnamehash}{077be7916161000a3bf95a4be565507b}
+      \strng{authorbibnamehash}{077be7916161000a3bf95a4be565507b}
+      \strng{authornamehash}{077be7916161000a3bf95a4be565507b}
+      \strng{authorfullhash}{077be7916161000a3bf95a4be565507b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Electronics and Communications}
+      \field{title}{An efficient method for impulse noise reduction from images using fuzzy cellular Automata}
+      \field{year}{2012}
+    \endentry
+    \entry{SahUguSah-SalPepNoiFilFuzCelAut}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e18b5e6db7e32c9cd53bad6be5062428}{%
+           family={Sahin},
+           familyi={S\bibinitperiod},
+           given={Ugur},
+           giveni={U\bibinitperiod}}}%
+        {{hash=1ae1b83691295e4d50dfdcefe90942fd}{%
+           family={Uğuz},
+           familyi={U\bibinitperiod},
+           given={Selman},
+           giveni={S\bibinitperiod}}}%
+        {{hash=29fe0a8675f19f1b0400e111ed6bb957}{%
+           family={Sahin},
+           familyi={S\bibinitperiod},
+           given={Ferat},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c36da44cff9305b115ceaaf518dc660}
+      \strng{fullhash}{6c36da44cff9305b115ceaaf518dc660}
+      \strng{bibnamehash}{6c36da44cff9305b115ceaaf518dc660}
+      \strng{authorbibnamehash}{6c36da44cff9305b115ceaaf518dc660}
+      \strng{authornamehash}{6c36da44cff9305b115ceaaf518dc660}
+      \strng{authorfullhash}{6c36da44cff9305b115ceaaf518dc660}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers \& Electrical Engineering}
+      \field{title}{Salt and pepper noise filtering with fuzzy-cellular automata}
+      \field{year}{2013}
+    \endentry
+    \entry{MajCha-FuzCelAutModPatClas}{article}{}
+      \name{author}{2}{}{%
+        {{hash=75cef1450dd3f9e16a70ca6ac1940116}{%
+           family={Maji},
+           familyi={M\bibinitperiod},
+           given={Pradipta},
+           giveni={P\bibinitperiod}}}%
+        {{hash=33a7e2a914f177559dbd4e7d23379998}{%
+           family={Chaudhuri},
+           familyi={C\bibinitperiod},
+           given={Parimal\bibnamedelima Pal},
+           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \strng{fullhash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \strng{bibnamehash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \strng{authorbibnamehash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \strng{authornamehash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \strng{authorfullhash}{d819f4d91010c548e4dc91c6809c8d9f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEICE - Transactions on Information and Systems}
+      \field{title}{Fuzzy Cellular Automata for Modeling Pattern Classifier}
+      \field{year}{2005}
+    \endentry
+    \entry{WanJiaZhoDu-ImProcBasFuzCelAuMod}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6b170f4c37010a14987a849eab01fe7b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Hong},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4ef18c503f1e6ddf9f740d903eb9f9bf}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Junna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9f9c0a9474488e99b0660398c836d516}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Lihui},
+           giveni={L\bibinitperiod}}}%
+        {{hash=090711193fc79d017ee86e1f9d2491cf}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Liping},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \strng{fullhash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \strng{bibnamehash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \strng{authorbibnamehash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \strng{authornamehash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \strng{authorfullhash}{2d842f6ef41b32a2d70c31b6669ee4e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fourth International Conference on Innovative Computing, Information and Control}
+      \field{title}{Image Processing Based on Fuzzy Cellular Automata Model}
+      \field{year}{2009}
+    \endentry
+    \entry{HamKoNam-FirFlaDetBasFuzFinAut}{article}{}
+      \name{author}{3}{}{%
+        {{hash=31fb337d6bb67426ee77f300cc4a0f68}{%
+           family={Ham},
+           familyi={H\bibinitperiod},
+           given={Sun\bibnamedelima Jae},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6659e8ebad56931ae6a8e4a425f04fac}{%
+           family={Ko},
+           familyi={K\bibinitperiod},
+           given={Byoung\bibnamedelima Chul},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=919c44209a7163386539e61343a45a3a}{%
+           family={Nam},
+           familyi={N\bibinitperiod},
+           given={Jae\bibnamedelima Yeal},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef12e3679d3501833089fe0d744279b5}
+      \strng{fullhash}{ef12e3679d3501833089fe0d744279b5}
+      \strng{bibnamehash}{ef12e3679d3501833089fe0d744279b5}
+      \strng{authorbibnamehash}{ef12e3679d3501833089fe0d744279b5}
+      \strng{authornamehash}{ef12e3679d3501833089fe0d744279b5}
+      \strng{authorfullhash}{ef12e3679d3501833089fe0d744279b5}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference on Pattern Recognition}
+      \field{title}{Fire-Flame Detection based on Fuzzy Finite Automation}
+      \field{year}{2010}
+    \endentry
+    \entry{KoHamNam-ModForFuFiAuDetIrrFirFla}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6659e8ebad56931ae6a8e4a425f04fac}{%
+           family={Ko},
+           familyi={K\bibinitperiod},
+           given={Byoung\bibnamedelima Chul},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=31fb337d6bb67426ee77f300cc4a0f68}{%
+           family={Ham},
+           familyi={H\bibinitperiod},
+           given={Sun\bibnamedelima Jae},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=919c44209a7163386539e61343a45a3a}{%
+           family={Nam},
+           familyi={N\bibinitperiod},
+           given={Jae\bibnamedelima Yeal},
+           giveni={J\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \strng{fullhash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \strng{bibnamehash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \strng{authorbibnamehash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \strng{authornamehash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \strng{authorfullhash}{fb5cc14a23eaaecd38f99ad24f7bf39e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on circuits and systems for video technology}
+      \field{title}{Modeling and Formalization of Fuzzy Finite Automata for Detection of Irregular Fire Flames}
+      \field{year}{2011}
+    \endentry
+    \entry{ZlaSteSch-FiStaConTraFemPro}{article}{}
+      \name{author}{3}{}{%
+        {{hash=cff7a36a85e9937cac25a2329c63e703}{%
+           family={Zlatnik},
+           familyi={Z\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7761634ffa9d589a8e57f65235209977}{%
+           family={Steiner},
+           familyi={S\bibinitperiod},
+           given={Beatrice},
+           giveni={B\bibinitperiod}}}%
+        {{hash=53b68b71dc4fb2acc5ba2022e8764e61}{%
+           family={Schweitzer},
+           familyi={S\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \strng{fullhash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \strng{bibnamehash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \strng{authorbibnamehash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \strng{authornamehash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \strng{authorfullhash}{1f0d4d832ca2469fd902bcb73e7bf4f1}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on control systems technology}
+      \field{title}{Finite-State Control of a Trans-Femoral (TF) Prosthesis}
+      \field{year}{2002}
+    \endentry
+    \entry{CheMyn-ModAlgBloDutCosWat+}{article}{}
+      \name{author}{2}{}{%
+        {{hash=94f7bad96b3556e848d1c35a51cd5d3a}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Qiuwen},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=4556033b58cf4a2ea41f518f3bf87a21}{%
+           family={Mynett},
+           familyi={M\bibinitperiod},
+           given={Arthur\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf81badc8bee5256180504af34f5220f}
+      \strng{fullhash}{cf81badc8bee5256180504af34f5220f}
+      \strng{bibnamehash}{cf81badc8bee5256180504af34f5220f}
+      \strng{authorbibnamehash}{cf81badc8bee5256180504af34f5220f}
+      \strng{authornamehash}{cf81badc8bee5256180504af34f5220f}
+      \strng{authorfullhash}{cf81badc8bee5256180504af34f5220f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ecological modeling}
+      \field{title}{Modelling algal blooms in the Dutch coastal waters by integrated numerical and fuzzy cellular automata approaches}
+      \field{year}{2006}
+    \endentry
+    \entry{MilAtl-ProAuModEpiCelNet}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1ae48797d157a567ab24e547a877c381}{%
+           family={Milgram},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bc05400c3428e8998aeaca16d3197e82}{%
+           family={Atlan},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \strng{fullhash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \strng{bibnamehash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \strng{authorbibnamehash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \strng{authornamehash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \strng{authorfullhash}{5207ffc3c7a41f4f5a8328f6e1d10522}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of theoretical biology}
+      \field{title}{Probabilistic Automata as a Model for Epigenesis of Cellular Networks}
+      \field{year}{1983}
+    \endentry
+    \entry{BocChe-CriBePrAuNetModSprInfDis+}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8f85fdf510cc7c33201458ff1ce3fbf4}{%
+           family={Boccaratt},
+           familyi={B\bibinitperiod},
+           given={Nino},
+           giveni={N\bibinitperiod}}}%
+        {{hash=d8aa58e4856a9987233771e7fa5dc234}{%
+           family={Cheongt},
+           familyi={C\bibinitperiod},
+           given={Kyeong},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \strng{fullhash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \strng{bibnamehash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \strng{authorbibnamehash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \strng{authornamehash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \strng{authorfullhash}{74c9311c87c3236b122d9351b9dbcfd1}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Physics A: Mathematical and General}
+      \field{title}{Critical behaviour of a probabilistic automata network SIS model for the spread of an infectious disease in a population of moving individuals}
+      \field{year}{1993}
+    \endentry
+    \entry{Jia+-ExHeaSimMetBasIntHumTheMod}{article}{}
+      \name{author}{6}{}{%
+        {{hash=eec658e8a898a201071f44da12990749}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6c6851240f65824ce08e14c46bc0d94f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod}}}%
+        {{hash=6e179b37ac2319805ed0b07b8975e83c}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=2e25ef022235f4d7551a464313a40cc7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ruomei},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4b6b6c41d23607a0d7b52de379128b56}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Kaixing},
+           giveni={K\bibinitperiod}}}%
+        {{hash=23fe96d1eee032f76623bc7613ce4c22}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Xiaonan},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b64fbfa898895216fc8eff7ebee565e}
+      \strng{fullhash}{5b64fbfa898895216fc8eff7ebee565e}
+      \strng{bibnamehash}{5b64fbfa898895216fc8eff7ebee565e}
+      \strng{authorbibnamehash}{5b64fbfa898895216fc8eff7ebee565e}
+      \strng{authornamehash}{5b64fbfa898895216fc8eff7ebee565e}
+      \strng{authorfullhash}{5b64fbfa898895216fc8eff7ebee565e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational and Mathematical Methods in Medicine}
+      \field{title}{An Exercise Health Simulation Method Based on Integrated Human Thermophysiological Model}
+      \field{year}{2017}
+    \endentry
+    \entry{GupRah-CliMonUsFuzSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=16704f9e41d1959fd428a53f2a62b408}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Himadrishekhar},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c924209879effb0689ecebd2868b3e06}{%
+           family={Raha},
+           familyi={R\bibinitperiod},
+           given={Swapan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \strng{fullhash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \strng{bibnamehash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \strng{authorbibnamehash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \strng{authornamehash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \strng{authorfullhash}{22ecb73fe6a649a0ebbae952012ed0e4}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Fuzzy Mathematics and Informatics}
+      \field{title}{Clinical monitoring using fuzzy system}
+      \field{year}{2014}
+    \endentry
+    \entry{CamMerNun-UsFuzAutDiagPrHeaPro}{article}{}
+      \name{author}{3}{}{%
+        {{hash=05cca97c2f786ec5330e0f9f80f0ca5e}{%
+           family={Camacho},
+           familyi={C\bibinitperiod},
+           given={Azahara},
+           giveni={A\bibinitperiod}}}%
+        {{hash=464ba9cb81f2ae77f2f25c7794415e66}{%
+           family={Merayo},
+           familyi={M\bibinitperiod},
+           given={Mercedes\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6ed2b5e9aa377164dfb2d64c17a7ae1b}{%
+           family={Núñez},
+           familyi={N\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \strng{fullhash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \strng{bibnamehash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \strng{authorbibnamehash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \strng{authornamehash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \strng{authorfullhash}{daffdc53e8a53c38c484cdeb50f9b816}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Congress on Evolutionary Computation}
+      \field{title}{Using fuzzy automata to diagnose and predict heart problems}
+      \field{year}{2017}
+    \endentry
+    \entry{SteAdl-CliMonFuzAut}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e8544a76dbb1e852ae4aa5df4abd7394}{%
+           family={Steimann},
+           familyi={S\bibinitperiod},
+           given={Friedrich},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f7145876c769a89665ebc40950611afc}{%
+           family={Adlassnig},
+           familyi={A\bibinitperiod},
+           given={Klaus-Peter},
+           giveni={K\bibinithyphendelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ffb9d31ff91f191d3277246b1744b47}
+      \strng{fullhash}{9ffb9d31ff91f191d3277246b1744b47}
+      \strng{bibnamehash}{9ffb9d31ff91f191d3277246b1744b47}
+      \strng{authorbibnamehash}{9ffb9d31ff91f191d3277246b1744b47}
+      \strng{authornamehash}{9ffb9d31ff91f191d3277246b1744b47}
+      \strng{authorfullhash}{9ffb9d31ff91f191d3277246b1744b47}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Fuzzy Sets and Systems}
+      \field{title}{Clinical monitoring with fuzzy automata}
+      \field{year}{1993}
+    \endentry
+    \entry{Est+-CytImAnaGenFuFiStMa}{article}{}
+      \name{author}{5}{}{%
+        {{hash=2efd20c1cb7ea733404073779d4ea5bc}{%
+           family={Estevez},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f42c3c2aa0e71bf522ee0461dbe2f1bb}{%
+           family={Alayón},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d6944a0f183188178c895438c58d648f}{%
+           family={Moreno},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f3883a99128079d5bc902317ba7e86de}{%
+           family={Sisut},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0304be45c537e42866380d3ead3c4d43}{%
+           family={Asuilar},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{21b2925caac771538048e093f16dfe03}
+      \strng{fullhash}{21b2925caac771538048e093f16dfe03}
+      \strng{bibnamehash}{21b2925caac771538048e093f16dfe03}
+      \strng{authorbibnamehash}{21b2925caac771538048e093f16dfe03}
+      \strng{authornamehash}{21b2925caac771538048e093f16dfe03}
+      \strng{authorfullhash}{21b2925caac771538048e093f16dfe03}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Methods and Programs in Biomedicine}
+      \field{title}{Cytological image analysis with a genetic fuzzy finite state machine}
+      \field{year}{2005}
+    \endentry
+    \entry{web-Folikul}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5401bcac5968aac29cb6bfb258e50aa2}{%
+           family={slovniky.cz},
+           familyi={s\bibinitperiod}}}%
+      }
+      \strng{namehash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \strng{fullhash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \strng{bibnamehash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \strng{authorbibnamehash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \strng{authornamehash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \strng{authorfullhash}{5401bcac5968aac29cb6bfb258e50aa2}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{http://lekarske.slovniky.cz/pojem/folikul}}
+      \field{title}{folikul}
+      \verb{urlraw}
+      \verb http://lekarske.slovniky.cz/pojem/folikul
+      \endverb
+      \verb{url}
+      \verb http://lekarske.slovniky.cz/pojem/folikul
+      \endverb
+    \endentry
+    \entry{PatPal-FuzGraSynRecSkeMatXra}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a259263cafd2a47ae892a3dc249318b4}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Amita},
+           giveni={A\bibinitperiod}}}%
+        {{hash=60613afce67e3eeb509488892f29f8a0}{%
+           family={Pal},
+           familyi={P\bibinitperiod},
+           given={Sankar\bibnamedelima K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed4a38710de5610bace076c89ea8d298}
+      \strng{fullhash}{ed4a38710de5610bace076c89ea8d298}
+      \strng{bibnamehash}{ed4a38710de5610bace076c89ea8d298}
+      \strng{authorbibnamehash}{ed4a38710de5610bace076c89ea8d298}
+      \strng{authornamehash}{ed4a38710de5610bace076c89ea8d298}
+      \strng{authorfullhash}{ed4a38710de5610bace076c89ea8d298}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions systems, man and cybernetics}
+      \field{title}{Fuzzy Grammars in Syntactic Recognition of Skeletal Maturity from X-Rays}
+      \field{year}{1986}
+    \endentry
+    \entry{RigTza-FuzAutFauDia}{article}{}
+      \name{author}{2}{}{%
+        {{hash=656f1f8237b16d0a94686769100e8516}{%
+           family={Rigatos},
+           familyi={R\bibinitperiod},
+           given={Gerasimos\bibnamedelima G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b99ff69c2aa0e3652a96a3d6615cefac}{%
+           family={Tzafestas},
+           familyi={T\bibinitperiod},
+           given={Spyros\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa858384e525bfb41677b300fcb1062d}
+      \strng{fullhash}{aa858384e525bfb41677b300fcb1062d}
+      \strng{bibnamehash}{aa858384e525bfb41677b300fcb1062d}
+      \strng{authorbibnamehash}{aa858384e525bfb41677b300fcb1062d}
+      \strng{authornamehash}{aa858384e525bfb41677b300fcb1062d}
+      \strng{authorfullhash}{aa858384e525bfb41677b300fcb1062d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Methods and Applications of Artificial Intelligence.}
+      \field{title}{Fuzzy Automata for Fault Diagnosis: A Syntactic Analysis Approach}
+      \field{year}{2004}
+    \endentry
+    \entry{Alv-HumGaiModUsGenFuzFinStaMac}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f09c8e61384c5e8ab541353395d98b1c}{%
+           family={Alvarez-Alvarez},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6f616426a130b67ce8b8197b8ccbaaee}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={Gracian},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4118e4aa6b174ebd6d7f239f11b0f23c}{%
+           family={Cordon},
+           familyi={C\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9de16b021d336bc33acfae7f241a4977}
+      \strng{fullhash}{9de16b021d336bc33acfae7f241a4977}
+      \strng{bibnamehash}{9de16b021d336bc33acfae7f241a4977}
+      \strng{authorbibnamehash}{9de16b021d336bc33acfae7f241a4977}
+      \strng{authornamehash}{9de16b021d336bc33acfae7f241a4977}
+      \strng{authorfullhash}{9de16b021d336bc33acfae7f241a4977}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Fuzzy Systems}
+      \field{title}{Human gait modeling using a genetic fuzzy finite state machine}
+      \field{year}{2013}
+    \endentry
+    \entry{AlvTri-ComModQuaPerSig}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f09c8e61384c5e8ab541353395d98b1c}{%
+           family={Alvarez-Alvarez},
+           familyi={A\bibinithyphendelim A\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6f616426a130b67ce8b8197b8ccbaaee}{%
+           family={Trivino},
+           familyi={T\bibinitperiod},
+           given={Gracian},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{34a252edbee753a390968b665040a03a}
+      \strng{fullhash}{34a252edbee753a390968b665040a03a}
+      \strng{bibnamehash}{34a252edbee753a390968b665040a03a}
+      \strng{authorbibnamehash}{34a252edbee753a390968b665040a03a}
+      \strng{authornamehash}{34a252edbee753a390968b665040a03a}
+      \strng{authorfullhash}{34a252edbee753a390968b665040a03a}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ninth International Conference on Intelligent Systems Design and Applications}
+      \field{title}{Comprehensible model of a quasi-periodic signal}
+      \field{year}{2009}
+    \endentry
+    \entry{web-Maven}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ffe4cf17ca8c1f982178700c0396c583}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={The\bibnamedelimb Apache\bibnamedelima Software},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{fullhash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{bibnamehash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{authorbibnamehash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{authornamehash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{authorfullhash}{ffe4cf17ca8c1f982178700c0396c583}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{https://maven.apache.org}}
+      \field{title}{Apache Maven project}
+      \verb{urlraw}
+      \verb https://maven.apache.org
+      \endverb
+      \verb{url}
+      \verb https://maven.apache.org
+      \endverb
+    \endentry
+    \entry{web-IrisDataset}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8d4224da922a0818044b45ac8fe6c146}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={R.A.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d4224da922a0818044b45ac8fe6c146}
+      \strng{fullhash}{8d4224da922a0818044b45ac8fe6c146}
+      \strng{bibnamehash}{8d4224da922a0818044b45ac8fe6c146}
+      \strng{authorbibnamehash}{8d4224da922a0818044b45ac8fe6c146}
+      \strng{authornamehash}{8d4224da922a0818044b45ac8fe6c146}
+      \strng{authorfullhash}{8d4224da922a0818044b45ac8fe6c146}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Iris}}
+      \field{title}{Iris Data Set}
+      \verb{urlraw}
+      \verb https://archive.ics.uci.edu/ml/datasets/Iris
+      \endverb
+      \verb{url}
+      \verb https://archive.ics.uci.edu/ml/datasets/Iris
+      \endverb
+    \endentry
+    \entry{web-FlagsDataset}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=09237b68d7915b7ccf7b55e1ed58e16f}{%
+           family={Publishers},
+           familyi={P\bibinitperiod},
+           given={Collins},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{fullhash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{bibnamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{authorbibnamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{authornamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{authorfullhash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Flags}}
+      \field{title}{Flags Data Set}
+      \verb{urlraw}
+      \verb https://archive.ics.uci.edu/ml/datasets/Flags
+      \endverb
+      \verb{url}
+      \verb https://archive.ics.uci.edu/ml/datasets/Flags
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

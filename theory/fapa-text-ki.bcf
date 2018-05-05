@@ -2206,6 +2206,11 @@
     <bcf:citekey order="132">Jia+-ExHeaSimMetBasIntHumTheMod</bcf:citekey>
     <bcf:citekey order="132">GupRah-CliMonUsFuzSys</bcf:citekey>
     <bcf:citekey order="132">CamMerNun-UsFuzAutDiagPrHeaPro</bcf:citekey>
+    <bcf:citekey order="133">MukRay-StaSplMerProbFiStaAuSigRepAna</bcf:citekey>
+    <bcf:citekey order="133">ManPra-PriPatDetUsFiStMaFuzTra</bcf:citekey>
+    <bcf:citekey order="133">Jia+-ExHeaSimMetBasIntHumTheMod</bcf:citekey>
+    <bcf:citekey order="133">GupRah-CliMonUsFuzSys</bcf:citekey>
+    <bcf:citekey order="133">CamMerNun-UsFuzAutDiagPrHeaPro</bcf:citekey>
     <bcf:citekey order="0">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->

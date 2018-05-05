@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Debian) (preloaded format=pdflatex 2018.4.29)  5 MAY 2018 01:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Debian) (preloaded format=pdflatex 2018.4.29)  5 MAY 2018 03:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,133 +381,75 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 307.
 
 Package hyperref Info: Option `hypertexnames' set `true' on input line 307.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
-\c@tracingmulticols=\count118
-\mult@box=\box30
-\multicol@leftmargin=\dimen116
-\c@unbalance=\count119
-\c@collectmore=\count120
-\doublecol@number=\count121
-\multicoltolerance=\count122
-\multicolpretolerance=\count123
-\full@width=\dimen117
-\page@free=\dimen118
-\premulticols=\dimen119
-\postmulticols=\dimen120
-\multicolsep=\skip47
-\multicolbaselineskip=\skip48
-\partial@page=\box31
-\last@line=\box32
-\maxbalancingoverflow=\dimen121
-\mult@rightbox=\box33
-\mult@grightbox=\box34
-\mult@gfirstbox=\box35
-\mult@firstbox=\box36
-\@tempa=\box37
-\@tempa=\box38
-\@tempa=\box39
-\@tempa=\box40
-\@tempa=\box41
-\@tempa=\box42
-\@tempa=\box43
-\@tempa=\box44
-\@tempa=\box45
-\@tempa=\box46
-\@tempa=\box47
-\@tempa=\box48
-\@tempa=\box49
-\@tempa=\box50
-\@tempa=\box51
-\@tempa=\box52
-\@tempa=\box53
-\c@columnbadness=\count124
-\c@finalcolumnbadness=\count125
-\last@try=\dimen122
-\multicolovershoot=\dimen123
-\multicolundershoot=\dimen124
-\mult@nat@firstbox=\box54
-\colbreak@box=\box55
-\mc@col@check@num=\count126
-)
-\@indexfile=\write3
-\openout3 = `fapa-text-ki.idx'.
-
-
-Writing index file fapa-text-ki.idx
-\c@indexno=\count127
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count128
+\lrq@indent=\count118
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\@xs@message=\write4
-\integerpart=\count129
-\decimalpart=\count130
+\@xs@message=\write3
+\integerpart=\count119
+\decimalpart=\count120
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count131
-\c@listtotal=\count132
-\c@listcount=\count133
-\c@liststart=\count134
-\c@liststop=\count135
-\c@citecount=\count136
-\c@citetotal=\count137
-\c@multicitecount=\count138
-\c@multicitetotal=\count139
-\c@instcount=\count140
-\c@maxnames=\count141
-\c@minnames=\count142
-\c@maxitems=\count143
-\c@minitems=\count144
-\c@citecounter=\count145
-\c@savedcitecounter=\count146
-\c@uniquelist=\count147
-\c@uniquename=\count148
-\c@refsection=\count149
-\c@refsegment=\count150
-\c@maxextratitle=\count151
-\c@maxextratitleyear=\count152
-\c@maxextradate=\count153
-\c@maxextraalpha=\count154
-\c@abbrvpenalty=\count155
-\c@highnamepenalty=\count156
-\c@lownamepenalty=\count157
-\c@maxparens=\count158
-\c@parenlevel=\count159
-\blx@tempcnta=\count160
-\blx@tempcntb=\count161
-\blx@tempcntc=\count162
-\blx@maxsection=\count163
-\blx@maxsegment@0=\count164
-\blx@notetype=\count165
-\blx@parenlevel@text=\count166
-\blx@parenlevel@foot=\count167
-\blx@sectionciteorder@0=\count168
-\labelnumberwidth=\skip49
-\labelalphawidth=\skip50
-\biblabelsep=\skip51
-\bibitemsep=\skip52
-\bibnamesep=\skip53
-\bibinitsep=\skip54
-\bibparsep=\skip55
-\bibhang=\skip56
+\c@tabx@nest=\count121
+\c@listtotal=\count122
+\c@listcount=\count123
+\c@liststart=\count124
+\c@liststop=\count125
+\c@citecount=\count126
+\c@citetotal=\count127
+\c@multicitecount=\count128
+\c@multicitetotal=\count129
+\c@instcount=\count130
+\c@maxnames=\count131
+\c@minnames=\count132
+\c@maxitems=\count133
+\c@minitems=\count134
+\c@citecounter=\count135
+\c@savedcitecounter=\count136
+\c@uniquelist=\count137
+\c@uniquename=\count138
+\c@refsection=\count139
+\c@refsegment=\count140
+\c@maxextratitle=\count141
+\c@maxextratitleyear=\count142
+\c@maxextradate=\count143
+\c@maxextraalpha=\count144
+\c@abbrvpenalty=\count145
+\c@highnamepenalty=\count146
+\c@lownamepenalty=\count147
+\c@maxparens=\count148
+\c@parenlevel=\count149
+\blx@tempcnta=\count150
+\blx@tempcntb=\count151
+\blx@tempcntc=\count152
+\blx@maxsection=\count153
+\blx@maxsegment@0=\count154
+\blx@notetype=\count155
+\blx@parenlevel@text=\count156
+\blx@parenlevel@foot=\count157
+\blx@sectionciteorder@0=\count158
+\labelnumberwidth=\skip47
+\labelalphawidth=\skip48
+\biblabelsep=\skip49
+\bibitemsep=\skip50
+\bibnamesep=\skip51
+\bibinitsep=\skip52
+\bibparsep=\skip53
+\bibhang=\skip54
 \blx@bcfin=\read1
-\blx@bcfout=\write5
-\c@mincomprange=\count169
-\c@maxcomprange=\count170
-\c@mincompwidth=\count171
+\blx@bcfout=\write4
+\c@mincomprange=\count159
+\c@maxcomprange=\count160
+\c@mincompwidth=\count161
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -522,90 +464,90 @@ File: iso-numeric.dbx 2017/04/25 v0.3.2 biblatex data model extension
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count172
-\c@savedafterword=\count173
-\c@annotator=\count174
-\c@savedannotator=\count175
-\c@author=\count176
-\c@savedauthor=\count177
-\c@bookauthor=\count178
-\c@savedbookauthor=\count179
-\c@commentator=\count180
-\c@savedcommentator=\count181
-\c@editor=\count182
-\c@savededitor=\count183
-\c@editora=\count184
-\c@savededitora=\count185
-\c@editorb=\count186
-\c@savededitorb=\count187
-\c@editorc=\count188
-\c@savededitorc=\count189
-\c@foreword=\count190
-\c@savedforeword=\count191
-\c@holder=\count192
-\c@savedholder=\count193
-\c@introduction=\count194
-\c@savedintroduction=\count195
-\c@namea=\count196
-\c@savednamea=\count197
-\c@nameb=\count198
-\c@savednameb=\count199
-\c@namec=\count266
-\c@savednamec=\count267
-\c@translator=\count268
-\c@savedtranslator=\count269
-\c@shortauthor=\count270
-\c@savedshortauthor=\count271
-\c@shorteditor=\count272
-\c@savedshorteditor=\count273
-\c@supervisor=\count274
-\c@savedsupervisor=\count275
-\c@labelname=\count276
-\c@savedlabelname=\count277
-\c@institution=\count278
-\c@savedinstitution=\count279
-\c@lista=\count280
-\c@savedlista=\count281
-\c@listb=\count282
-\c@savedlistb=\count283
-\c@listc=\count284
-\c@savedlistc=\count285
-\c@listd=\count286
-\c@savedlistd=\count287
-\c@liste=\count288
-\c@savedliste=\count289
-\c@listf=\count290
-\c@savedlistf=\count291
-\c@location=\count292
-\c@savedlocation=\count293
-\c@organization=\count294
-\c@savedorganization=\count295
-\c@origlocation=\count296
-\c@savedoriglocation=\count297
-\c@origpublisher=\count298
-\c@savedorigpublisher=\count299
-\c@publisher=\count300
-\c@savedpublisher=\count301
-\c@language=\count302
-\c@savedlanguage=\count303
-\c@origlanguage=\count304
-\c@savedoriglanguage=\count305
-\c@pageref=\count306
-\c@savedpageref=\count307
-\shorthandwidth=\skip57
-\shortjournalwidth=\skip58
-\shortserieswidth=\skip59
-\shorttitlewidth=\skip60
-\shortauthorwidth=\skip61
-\shorteditorwidth=\skip62
-\locallabelnumberwidth=\skip63
-\locallabelalphawidth=\skip64
-\localshorthandwidth=\skip65
-\localshortjournalwidth=\skip66
-\localshortserieswidth=\skip67
-\localshorttitlewidth=\skip68
-\localshortauthorwidth=\skip69
-\localshorteditorwidth=\skip70
+\c@afterword=\count162
+\c@savedafterword=\count163
+\c@annotator=\count164
+\c@savedannotator=\count165
+\c@author=\count166
+\c@savedauthor=\count167
+\c@bookauthor=\count168
+\c@savedbookauthor=\count169
+\c@commentator=\count170
+\c@savedcommentator=\count171
+\c@editor=\count172
+\c@savededitor=\count173
+\c@editora=\count174
+\c@savededitora=\count175
+\c@editorb=\count176
+\c@savededitorb=\count177
+\c@editorc=\count178
+\c@savededitorc=\count179
+\c@foreword=\count180
+\c@savedforeword=\count181
+\c@holder=\count182
+\c@savedholder=\count183
+\c@introduction=\count184
+\c@savedintroduction=\count185
+\c@namea=\count186
+\c@savednamea=\count187
+\c@nameb=\count188
+\c@savednameb=\count189
+\c@namec=\count190
+\c@savednamec=\count191
+\c@translator=\count192
+\c@savedtranslator=\count193
+\c@shortauthor=\count194
+\c@savedshortauthor=\count195
+\c@shorteditor=\count196
+\c@savedshorteditor=\count197
+\c@supervisor=\count198
+\c@savedsupervisor=\count199
+\c@labelname=\count266
+\c@savedlabelname=\count267
+\c@institution=\count268
+\c@savedinstitution=\count269
+\c@lista=\count270
+\c@savedlista=\count271
+\c@listb=\count272
+\c@savedlistb=\count273
+\c@listc=\count274
+\c@savedlistc=\count275
+\c@listd=\count276
+\c@savedlistd=\count277
+\c@liste=\count278
+\c@savedliste=\count279
+\c@listf=\count280
+\c@savedlistf=\count281
+\c@location=\count282
+\c@savedlocation=\count283
+\c@organization=\count284
+\c@savedorganization=\count285
+\c@origlocation=\count286
+\c@savedoriglocation=\count287
+\c@origpublisher=\count288
+\c@savedorigpublisher=\count289
+\c@publisher=\count290
+\c@savedpublisher=\count291
+\c@language=\count292
+\c@savedlanguage=\count293
+\c@origlanguage=\count294
+\c@savedoriglanguage=\count295
+\c@pageref=\count296
+\c@savedpageref=\count297
+\shorthandwidth=\skip55
+\shortjournalwidth=\skip56
+\shortserieswidth=\skip57
+\shorttitlewidth=\skip58
+\shortauthorwidth=\skip59
+\shorteditorwidth=\skip60
+\locallabelnumberwidth=\skip61
+\locallabelalphawidth=\skip62
+\localshorthandwidth=\skip63
+\localshortjournalwidth=\skip64
+\localshortserieswidth=\skip65
+\localshorttitlewidth=\skip66
+\localshortauthorwidth=\skip67
+\localshorteditorwidth=\skip68
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -617,13 +559,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
-\c@textcitecount=\count308
-\c@textcitetotal=\count309
-\c@textcitemaxnames=\count310
-\c@biburlnumpenalty=\count311
-\c@biburlucpenalty=\count312
-\c@biburllcpenalty=\count313
-\c@smartand=\count314
+\c@textcitecount=\count298
+\c@textcitetotal=\count299
+\c@textcitemaxnames=\count300
+\c@biburlnumpenalty=\count301
+\c@biburlucpenalty=\count302
+\c@biburllcpenalty=\count303
+\c@smartand=\count304
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -703,7 +645,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip71
+\@mathmargin=\skip69
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -712,49 +654,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
-\ex@=\dimen125
+\ex@=\dimen116
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen126
+\pmbraise@=\dimen117
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count315
+\inf@bad=\count305
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count316
-\leftroot@=\count317
+\uproot@=\count306
+\leftroot@=\count307
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count318
-\DOTSCASE@=\count319
+\classnum@=\count308
+\DOTSCASE@=\count309
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box56
-\strutbox@=\box57
-\big@size=\dimen127
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen118
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count320
-\c@MaxMatrixCols=\count321
+\macc@depth=\count310
+\c@MaxMatrixCols=\count311
 \dotsspace@=\muskip11
-\c@parentequation=\count322
-\dspbrk@lvl=\count323
+\c@parentequation=\count312
+\dspbrk@lvl=\count313
 \tag@help=\toks22
-\row@=\count324
-\column@=\count325
-\maxfields@=\count326
+\row@=\count314
+\column@=\count315
+\maxfields@=\count316
 \andhelp@=\toks23
-\eqnshift@=\dimen128
-\alignsep@=\dimen129
-\tagshift@=\dimen130
-\tagwidth@=\dimen131
-\totwidth@=\dimen132
-\lineht@=\dimen133
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
 \@envbody=\toks24
-\multlinegap=\skip72
-\multlinetaggap=\skip73
+\multlinegap=\skip70
+\multlinetaggap=\skip71
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
@@ -766,15 +708,15 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headfont=\toks28
 \thm@notefont=\toks29
 \thm@headpunct=\toks30
-\thm@preskip=\skip74
-\thm@postskip=\skip75
-\thm@headsep=\skip76
+\thm@preskip=\skip72
+\thm@postskip=\skip73
+\thm@headsep=\skip74
 \dth@everypar=\toks31
 )
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2014/04/21 v66
 \thmt@toks=\toks32
-\c@thmt@dummyctr=\count327
+\c@thmt@dummyctr=\count317
 
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2014/04/21 v66
@@ -809,21 +751,21 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=kiproofstyle' on input line 715.
-\c@definition=\count328
+\c@definition=\count318
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/03/24 v5.7 Page Geometry
-\Gm@cnth=\count329
-\Gm@cntv=\count330
-\c@Gm@tempcnt=\count331
-\Gm@bindingoffset=\dimen134
-\Gm@wd@mp=\dimen135
-\Gm@odd@mp=\dimen136
-\Gm@even@mp=\dimen137
-\Gm@layoutwidth=\dimen138
-\Gm@layoutheight=\dimen139
-\Gm@layouthoffset=\dimen140
-\Gm@layoutvoffset=\dimen141
+\Gm@cnth=\count319
+\Gm@cntv=\count320
+\c@Gm@tempcnt=\count321
+\Gm@bindingoffset=\dimen125
+\Gm@wd@mp=\dimen126
+\Gm@odd@mp=\dimen127
+\Gm@even@mp=\dimen128
+\Gm@layoutwidth=\dimen129
+\Gm@layoutheight=\dimen130
+\Gm@layouthoffset=\dimen131
+\Gm@layoutvoffset=\dimen132
 \Gm@dimlist=\toks35
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
@@ -853,16 +795,16 @@ Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count332
-\calc@Bcount=\count333
-\calc@Adimen=\dimen142
-\calc@Bdimen=\dimen143
-\calc@Askip=\skip77
-\calc@Bskip=\skip78
+\calc@Acount=\count322
+\calc@Bcount=\count323
+\calc@Adimen=\dimen133
+\calc@Bdimen=\dimen134
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count334
-\calc@Cskip=\skip79
+\calc@Ccount=\count324
+\calc@Cskip=\skip77
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
@@ -871,25 +813,25 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count335
-\l_MT_multwidth_dim=\dimen144
-\origjot=\skip80
-\l_MT_shortvdotswithinadjustabove_dim=\dimen145
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen146
-\l_MT_above_intertext_sep=\dimen147
-\l_MT_below_intertext_sep=\dimen148
-\l_MT_above_shortintertext_sep=\dimen149
-\l_MT_below_shortintertext_sep=\dimen150
+\g_MT_multlinerow_int=\count325
+\l_MT_multwidth_dim=\dimen135
+\origjot=\skip78
+\l_MT_shortvdotswithinadjustabove_dim=\dimen136
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen137
+\l_MT_above_intertext_sep=\dimen138
+\l_MT_below_intertext_sep=\dimen139
+\l_MT_above_shortintertext_sep=\dimen140
+\l_MT_below_shortintertext_sep=\dimen141
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cases/cases.sty
 Package: cases 2002/05/02 ver 2.5 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip81
-\multirow@cntb=\count336
-\multirow@dima=\skip82
-\bigstrutjot=\dimen151
+\multirow@colwidth=\skip79
+\multirow@cntb=\count326
+\multirow@dima=\skip80
+\bigstrutjot=\dimen142
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
@@ -900,20 +842,20 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen152
-\captionmargin@=\dimen153
-\captionwidth=\dimen154
-\caption@tempdima=\dimen155
-\caption@indent=\dimen156
-\caption@parindent=\dimen157
-\caption@hangindent=\dimen158
+\captionmargin=\dimen143
+\captionmargin@=\dimen144
+\captionwidth=\dimen145
+\caption@tempdima=\dimen146
+\caption@indent=\dimen147
+\caption@parindent=\dimen148
+\caption@hangindent=\dimen149
 )
-\c@ContinuedFloat=\count337
+\c@ContinuedFloat=\count327
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@subfigure=\count338
-\c@subtable=\count339
+\c@subfigure=\count328
+\c@subtable=\count329
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
@@ -922,8 +864,8 @@ Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-\c@notation=\count340
-\c@note=\count341
+\c@notation=\count330
+\c@note=\count331
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Enabling multilingual quotes.
@@ -964,37 +906,37 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./fapa-text-ki.aux (./fapa-text.aux))
 \openout1 = `fapa-text-ki.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 179.
-LaTeX Font Info:    ... okay on input line 179.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 179.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 180.
+LaTeX Font Info:    ... okay on input line 180.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 180.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
-\scratchdimen=\dimen159
-\scratchbox=\box58
-\nofMPsegments=\count343
-\nofMParguments=\count344
+\scratchcounter=\count332
+\scratchdimen=\dimen150
+\scratchbox=\box32
+\nofMPsegments=\count333
+\nofMParguments=\count334
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count345
-\MPscratchDim=\dimen160
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen151
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
 \everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1013,8 +955,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring ON on input line 179.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring ON on input line 180.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1022,23 +964,23 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count348
+\c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 179.
-LaTeX Info: Redefining \pageref on input line 179.
-LaTeX Info: Redefining \nameref on input line 179.
-\c@lstlisting=\count349
+LaTeX Info: Redefining \ref on input line 180.
+LaTeX Info: Redefining \pageref on input line 180.
+LaTeX Info: Redefining \nameref on input line 180.
+\c@lstlisting=\count339
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Data encoding 'utf8' specified.
 (biblatex)             No need to reencode data.
-\openout5 = `fapa-text-ki.bcf'.
+\openout4 = `fapa-text-ki.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'fapa-text-ki.bbl' found.
 
 (./fapa-text-ki.bbl)
-Package biblatex Info: Reference section=0 on input line 179.
-Package biblatex Info: Reference segment=0 on input line 179.
+Package biblatex Info: Reference section=0 on input line 180.
+Package biblatex Info: Reference segment=0 on input line 180.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1075,79 +1017,74 @@ Package biblatex Info: Reference segment=0 on input line 179.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 179.
+(lastpage)             ! on input line 180.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 <graphics/kititle-cz-nofont.pdf, id=4, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 184
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 185
 .
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
 <graphics/UP_znak.pdf, id=5, 101.59215pt x 101.59215pt>
 File: graphics/UP_znak.pdf Graphic file (type pdf)
 <use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 184.
+Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 185.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 184.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 185.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 184.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 185.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 184
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 185
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 184
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 185
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 184.
+(Font)              <12> on input line 185.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 184.
+(Font)              <8> on input line 185.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 184.
-LaTeX Font Info:    Try loading font information for U+msa on input line 184.
+(Font)              <6> on input line 185.
+LaTeX Font Info:    Try loading font information for U+msa on input line 185.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 184.
+LaTeX Font Info:    Try loading font information for U+msb on input line 185.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 184.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 185.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-Underfull \hbox (badness 10000) in paragraph at lines 184--184
-[]|\T1/lmr/m/n/12 VedoucÌ pr·ce: doc. Mi-chal
- []
-
-[1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./graphics/kititle-cz-nofo
 nt.pdf> <./graphics/UP_znak.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 184.
+(Font)              <10.95> on input line 185.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.184 \maketitle
+l.185 \maketitle
                  [1] [2
 
 ] [3
@@ -1155,223 +1092,96 @@ l.184 \maketitle
 ] (./fapa-text-ki.toc [4
 
 ] [5])
-\tf@toc=\write6
-\openout6 = `fapa-text-ki.toc'.
+\tf@toc=\write5
+\openout5 = `fapa-text-ki.toc'.
 
  [6]
 (./fapa-text-ki.lof)
-\tf@lof=\write7
-\openout7 = `fapa-text-ki.lof'.
+\tf@lof=\write6
+\openout6 = `fapa-text-ki.lof'.
 
  (./fapa-text-ki.lot)
-\tf@lot=\write8
-\openout8 = `fapa-text-ki.lot'.
+\tf@lot=\write7
+\openout7 = `fapa-text-ki.lot'.
 
+ [7
 
-showing definition
-showing consequence
-showing lemma
-showing remark
-showing theorem
-showing proof
-showing example
-(./fapa-text-ki.loe [7
-
-]) (./fapa-text-ki.lol)
-\tf@lol=\write9
-\openout9 = `fapa-text-ki.lol'.
-
- [8]
+]
 \openout2 = `fapa-text.aux'.
 
  (./fapa-text.tex
+Overfull \hbox (10.1173pt too wide) in paragraph at lines 23--24
+\T1/lmr/m/n/12 mno-∫i-nami. Ob-dobn•, prav-d•-po-dob-nostnÌ au-to-maty spo-jujÌ
+ te-o-rii au-to-mat∑ s prav-
+ []
+
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 43.
- [9
+[8
 
 
 ]
-
-LaTeX Warning: Citation 'Bel-FuzRelSys' on page 10 undefined on input line 45.
-
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 47.
 Package hyperref Info: bookmark level for unknown notation* defaults to 0 on in
 put line 52.
-[10]
+ [9]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 119.
- [11]
-
-LaTeX Warning: Citation 'Joh-ProbStaComSci' on page 12 undefined on input line 
-129.
-
-[12] [13]
+ [10] [11] [12]
 Package hyperref Info: bookmark level for unknown note defaults to 0 on input l
 ine 187.
-
-
-LaTeX Warning: Citation 'Zad-ConLingVarAppApprRea' on page 14 undefined on inpu
-t line 197.
-
 File: mpimg-charts0.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-charts0.mps)
-
-LaTeX Warning: Citation 'Jan-FouFuzzContPracAppr' on page 14 undefined on input
- line 216.
-
-[14]
+ [MP to PDF] (./mpimg-charts0.mps) [13]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 225.
 
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 225.
- [15]
-
-LaTeX Warning: Citation 'Koz-AutComp' on page 16 undefined on input line 258.
-
-[16]
-
-LaTeX Warning: Citation 'HopUl-IntrAutTheLangComp' on page 17 undefined on inpu
-t line 308.
-
-
-LaTeX Warning: Citation 'GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
-17 undefined on input line 308.
-
-
-Overfull \hbox (238.8311pt too wide) in paragraph at lines 308--309
-\T1/lmr/m/n/12 z [[]], po-pis fuzzy au-to-matu z [[]]
+ [14] [15]
+Overfull \hbox (5.37604pt too wide) in paragraph at lines 326--327
+[]\T1/lmr/m/n/12 D·le, u ka∫-dÈho au-to-matu musÌ b˝t sta-no-ven po-£·-te£nÌ st
+av. Vzhle-dem k tomu,
  []
 
-
-LaTeX Warning: Citation 'MorMal-FuzzyAutLang' on page 17 undefined on input lin
-e 316.
-
-
-Overfull \hbox (10.86026pt too wide) in paragraph at lines 320--321
-[]\T1/lmr/m/n/12 D∑le∫itÈ je takÈ d•-lenÌ au-to-mat∑ na de-ter-mi-nis-tickÈ a n
-e-de-ter-mi-nis-tickÈ. Obecn·
- []
-
-[17]pdfTeX warning (ext4): destination with the same identifier (name{definitio
+[16]pdfTeX warning (ext4): destination with the same identifier (name{definitio
 n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.337  N
         edeterministick√Ω koneƒçn√Ω (bivalentn√≠) automat $\mathbf{A}$ je pƒ...
-[18]
-
-LaTeX Warning: Citation 'AndAbdAsm-ApprPattMatcFuzzLog' on page 19 undefined on
- input line 360.
-
-
-LaTeX Warning: Citation 'SnaKepAbrHas-AproxStriMatchFuzzAut' on page 19 undefin
-ed on input line 360.
-
-
-LaTeX Warning: Citation 'StaCir-ConsFuzzAutFuzzRegExp' on page 19 undefined on 
-input line 360.
-
-
-LaTeX Warning: Citation 'AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
-page 19 undefined on input line 360.
-
-
-LaTeX Warning: Citation 'Bel-DetFuzAut' on page 19 undefined on input line 360.
-
-
-
-LaTeX Warning: Citation 'GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
-19 undefined on input line 360.
-
-
-Overfull \hbox (30.19962pt too wide) in paragraph at lines 360--361
-\T1/lmr/m/n/12 re-pre-zen-tacÌ bi-va-lentnÌ mno-∫i-nou (nap∞. v. [[],
- []
-
-
-Overfull \hbox (142.78706pt too wide) in paragraph at lines 360--361
-[]\T1/lmr/m/n/12 ]) i fuzzy mno-∫i-nami ([[],
- []
-
-
-Overfull \hbox (23.6094pt too wide) in paragraph at lines 360--361
-[]\T1/lmr/m/n/12 , [],
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{definition.3}
-) has been already used, duplicate ignored
+[17]pdfTeX warning (ext4): destination with the same identifier (name{definitio
+n.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.363  N
         edeterministick√Ω fuzzy automat $\mathbf{A}$ je pƒõtice $(Q, \Sigma,...
 Package hyperref Info: bookmark level for unknown notation defaults to 0 on inp
 ut line 366.
-
-LaTeX Warning: Citation 'DooKre-NewDirFuzzAut' on page 19 undefined on input li
-ne 374.
-
-[19]
-
-LaTeX Warning: Citation 'SnaKepAbrHas-AproxStriMatchFuzzAut' on page 20 undefin
-ed on input line 378.
-
-
-LaTeX Warning: Citation 'StaCir-ConsFuzzAutFuzzRegExp' on page 20 undefined on 
-input line 378.
-
-
-Overfull \hbox (37.70917pt too wide) in paragraph at lines 378--379
-\T1/lmr/m/n/12 na-hra-zuje ma-ti-co-v˝m zp∑-so-bem (nap∞. [[],
- []
-
-
-Overfull \hbox (0.87773pt too wide) in paragraph at lines 378--379
-[]\T1/lmr/m/n/12 ]). O£Ìs-lujme si stavy $\OML/lmm/m/it/12 Q \OT1/lmr/m/n/12 = 
-\OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 q[]; [] q[]\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12
- . PotÈ
- []
-
-
-LaTeX Warning: Citation 'DooKre-NewDirFuzzAut' on page 20 undefined on input li
-ne 380.
-
-
-LaTeX Warning: Citation 'GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
-20 undefined on input line 380.
-
-
-LaTeX Warning: Citation 'StaCir-ConsFuzzAutFuzzRegExp' on page 20 undefined on 
-input line 380.
-
-
-Overfull \hbox (82.9154pt too wide) in paragraph at lines 380--381
-[]\T1/lmr/m/n/12 PoslednÌm po-u-∫Ì-va-n˝m zp∑-so-bem je re-pre-zen-tace gra-fem
- (nap∞. [[],
- []
-
-
-Overfull \hbox (128.61182pt too wide) in paragraph at lines 380--381
-[]\T1/lmr/m/n/12 , []]).
+[18]
+Overfull \hbox (11.50401pt too wide) in paragraph at lines 378--379
+\T1/lmr/m/n/12 na-hra-zuje ma-ti-co-v˝m zp∑-so-bem (nap∞. [[][]10[][], [][]11[]
+[]]). O£Ìs-lujme si stavy $\OML/lmm/m/it/12 Q \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/1
+2 f\OML/lmm/m/it/12 q[]; [] q[]\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12 .
  []
 
 File: mpimg-theory-diags0.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-theory-diags0.mps)pdfTeX warning (ext4): destination with 
-the same identifier (name{definition.5}) has been already used, duplicate ignor
-ed
+[MP to PDF] (./mpimg-theory-diags0.mps) [19]pdfTeX warning (ext4): destination 
+with the same identifier (name{definition.5}) has been already used, duplicate 
+ignored
 <to be read again> 
                    \relax 
 l.447  M
         ƒõjme nedeterministick√Ω fuzzy automat $\mathbf{A}$. Pak jako fuzzy ...
-[20] [21]pdfTeX warning (ext4): destination with the same identifier (name{note
-.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{note.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.451  F
@@ -1394,119 +1204,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{definition.9}
                    \relax 
 l.470   M
          ƒõjme nedeterminsitick√Ω fuzzy automat $\mathbf{A}$. Ka≈ædou poslou...
-
-LaTeX Warning: Citation 'IgnCirBog-DetFuzAutMemValComResLat' on page 22 undefin
-ed on input line 478.
-
-
-Overfull \hbox (32.56316pt too wide) in paragraph at lines 478--479
-\T1/lmr/m/n/12 po-doby roz-≤Ì-∞enÈ p∞e-cho-dovÈ funkce [[]]. 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{definition.10
-}) has been already used, duplicate ignored
+[20]pdfTeX warning (ext4): destination with the same identifier (name{definitio
+n.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.481  M
         ƒõjme nedeterministick√Ω fuzzy automat $\mathbf{A}$. Pak roz≈°√≠≈ôen...
-[22]pdfTeX warning (ext4): destination with the same identifier (name{note.2}) 
-has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{note.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.501   V
-          literatu≈ôe (nap≈ô. \cite{SebJoh-InvFuzzAutInvFuzzLang, IgnCirBog-...
-
-LaTeX Warning: Citation 'SebJoh-InvFuzzAutInvFuzzLang' on page 23 undefined on 
-input line 501.
-
-
-LaTeX Warning: Citation 'IgnCirBog-DetFuzAutMemValComResLat' on page 23 undefin
-ed on input line 501.
-
-
-LaTeX Warning: Citation 'Bel-DetFuzAut' on page 23 undefined on input line 501.
-
-
-
-Overfull \hbox (228.4693pt too wide) in paragraph at lines 501--502
-[][]\T1/lmr/bx/n/12 Pozn·mka 3.2. []\T1/lmr/m/it/12 V li-te-ra-tu∞e (nap∞. [[],
- [],
- []
-
-
-Overfull \hbox (21.52031pt too wide) in paragraph at lines 515--516
-\T1/lmr/m/it/12 ch·-pat tak, ∫e au-to-mat pro-jde v≤echny $\OT1/lmr/m/n/12 (\OM
-L/lmm/m/it/12 n \OT1/lmr/m/n/12 + 1)$ \T1/lmr/m/it/12 prv-kovÈ po-sloup-nosti s
-tav∑ $\OML/lmm/m/it/12 q; q[]; [] ; q[]; q$
- []
-
-[23]pdfTeX warning (ext4): destination with the same identifier (name{example.1
+         ~literatu≈ôe (nap≈ô. \cite{SebJoh-InvFuzzAutInvFuzzLang, IgnCirBog-...
+[21]pdfTeX warning (ext4): destination with the same identifier (name{example.1
 3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.527  U
-        va≈æujme automat $\mathbf{A}$ z p≈ô√≠kladu \ref{ex:FuzAut} a ≈ôetƒõz...
-
-LaTeX Warning: Citation 'Rab-ProbAut' on page 24 undefined on input line 548.
-
-
-Overfull \hbox (40.78127pt too wide) in paragraph at lines 548--549
-[]\T1/lmr/m/n/12 N·sleduje de-fi-nice prav-d•-po-dob-nost-nÌho au-to-matu. Byla
- p∞e-vzata z [[]].
- []
-
-
-LaTeX Warning: Citation 'San-ReaFuzLanProMaxMaxAut' on page 24 undefined on inp
-ut line 550.
-
-[24]
+        va≈æujme automat $\mathbf{A}$ z~p≈ô√≠kladu \ref{ex:FuzAut} a ≈ôetƒõz...
+[22]
 Overfull \hbox (1.36694pt too wide) in paragraph at lines 556--557
 []\T1/lmr/m/n/12 P∞echodovou funkci lze £Ìst n·-sle-du-jÌ-cÌm zp∑-so-bem: Pro l
 i-bo-volnÈ $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 q; a; q[]; p\OT1/lmr/m/n/12 ) \OM
 S/lmsy/m/n/12 2
  []
 
-
-Overfull \hbox (19.69666pt too wide) in paragraph at lines 558--559
-[]\T1/lmr/m/n/12 P∞ejd•me nynÌ k po-pisu v˝-po-£tu au-to-matu. O£Ìs-lujme si st
-avy $\OML/lmm/m/it/12 Q \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 q[
-]; q[]; [] q[]\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12 .
- []
-
-
-Overfull \hbox (44.25171pt too wide) in paragraph at lines 586--587
-[] []\T1/lmr/m/n/12 M•jme $\OML/lmm/m/it/12 Q \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/1
-2 f\OML/lmm/m/it/12 q[]; q[]\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12 , $\OT1/lmr/m/n/1
-2 ^^F = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 a; b\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/1
-2 , $\OML/lmm/m/it/12 F \OT1/lmr/m/n/12 = \OMS/lmsy/m/n/12 f\OML/lmm/m/it/12 q[
-]\OMS/lmsy/m/n/12 g$ \T1/lmr/m/n/12 a $\OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\OM
-L/lmm/m/it/12 q[]; a\OT1/lmr/m/n/12 ) = \OML/lmm/m/it/12 ^^V\OT1/lmr/m/n/12 (\O
-ML/lmm/m/it/12 q[]; b\OT1/lmr/m/n/12 ) = \OMS/lmsy/m/n/12 f\OT1/lmr/m/n/12 (\OM
-L/lmm/m/it/12 q[]; \OT1/lmr/m/n/12 1\OML/lmm/m/it/12 =\OT1/lmr/m/n/12 2)\OML/lm
-m/m/it/12 ; \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 q[]; \OT1/lmr/m/n/12 1\OML/lmm/m/
-it/12 =\OT1/lmr/m/n/12 2)\OMS/lmsy/m/n/12 g$\T1/lmr/m/n/12 ,
- []
-
-[25]pdfTeX warning (ext4): destination with the same identifier (name{note.1}) 
+[23]pdfTeX warning (ext4): destination with the same identifier (name{note.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.602  V
         ybrann√© varianty automat≈Ø se mohou kombinovat. Nap≈ô√≠klad automat...
-
-LaTeX Warning: Citation 'Bel-DetFuzAut' on page 26 undefined on input line 611.
-
-
-
-LaTeX Warning: Citation 'LiLiLi-RelAmoSevTypFuzAut' on page 26 undefined on inp
-ut line 611.
-
-
-LaTeX Warning: Citation 'GonGar-FuzzLangInfRanAccGuzzAutPumLemDetProc' on page 
-26 undefined on input line 613.
-
+[24]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 620.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 620.
@@ -1519,192 +1251,38 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 620.
 
-[26]
 
-LaTeX Warning: Citation 'SnaKepAbrHas-AproxStriMatchFuzzAut' on page 27 undefin
-ed on input line 623.
-
-
-LaTeX Warning: Citation 'LiLiLi-RelAmoSevTypFuzAut' on page 27 undefined on inp
-ut line 623.
-
-
-Overfull \hbox (140.71211pt too wide) in paragraph at lines 623--624
-\T1/lmr/m/n/12 matu lze na-lÈst nap∞. v [[], []]. 
+Overfull \hbox (2.47607pt too wide) in paragraph at lines 623--624
+[]\T1/lmr/m/n/12 Takov˝to au-to-mat na-lÈz· uplat-n•nÌ p∞e-de-v≤Ìm v prak-tic-k
+˝ch apli-ka-cÌch. S jeho
  []
 
-
-LaTeX Warning: Citation 'MorMal-FuzzyAutLang' on page 27 undefined on input lin
-e 627.
-
-
-LaTeX Warning: Citation 'DooKre-NewDirFuzzAut' on page 27 undefined on input li
-ne 627.
-
-
-LaTeX Warning: Citation 'San-MaxAut' on page 27 undefined on input line 627.
-
-
-LaTeX Warning: Citation 'BlaDelPeg-FuzzAutIndUsNeuNet' on page 27 undefined on 
-input line 631.
-
-
-LaTeX Warning: Citation 'PedGac-LeaFuzzAut' on page 27 undefined on input line 
-631.
-
-
-LaTeX Warning: Citation 'BlaDelPeg-FuzzGraIntUsiNeuNet' on page 27 undefined on
- input line 631.
-
-
-LaTeX Warning: Citation 'CheMo-MinAlgFuzFinAut' on page 27 undefined on input l
-ine 631.
-
-
-LaTeX Warning: Citation 'ThoMar-DetAccRegFuzLang' on page 27 undefined on input
- line 631.
-
-
-Overfull \hbox (132.53334pt too wide) in paragraph at lines 631--632
-[]\T1/lmr/m/n/12 , [], []]. 
- []
-
-
-LaTeX Warning: Citation 'Qiu-ChaFuzFinAut' on page 27 undefined on input line 6
-37.
-
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 27 undefin
-ed on input line 637.
-
-
-Overfull \hbox (186.84357pt too wide) in paragraph at lines 637--638
-[]\T1/lmr/m/n/12 Takov˝to au-to-mat je uve-den nap∞. v [[], []]. 
- []
-
-
-LaTeX Warning: Citation 'TriHei-ExpDesSeqFuzPer' on page 27 undefined on input 
-line 647.
-
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 27 undefin
-ed on input line 647.
-
-
-LaTeX Warning: Citation 'TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 27
- undefined on input line 647.
-
-
-Overfull \hbox (18.1205pt too wide) in paragraph at lines 647--648
-\T1/lmr/m/n/12 ne∫ po-mocÌ sym-bol∑. Se-tkat se s nimi m∑-∫eme nap∞. v [[],
- []
-
-
-Overfull \hbox (163.74191pt too wide) in paragraph at lines 647--648
-[]\T1/lmr/m/n/12 , []]. 
- []
-
-[27]
-
-LaTeX Warning: Citation 'BucPas-FuzPusAut' on page 28 undefined on input line 6
-55.
-
-
-LaTeX Warning: Citation 'Lee-FuzTreAutSynPatRec' on page 28 undefined on input 
-line 669.
-
-
-LaTeX Warning: Citation 'MogZadAme-NewDirInFuzzTreeAut' on page 28 undefined on
- input line 669.
-
-
-LaTeX Warning: Citation 'ChaJos-NoteFuzzTreeAut' on page 28 undefined on input 
-line 669.
-
-
-LaTeX Warning: Citation 'EsiLiu-FuzzTreeAut' on page 28 undefined on input line
- 669.
-
-
-LaTeX Warning: Citation 'MorMal-FuzzyAutLang' on page 28 undefined on input lin
-e 669.
-
-
-Overfull \hbox (55.74817pt too wide) in paragraph at lines 669--671
-\T1/lmr/m/n/12 mat∑. Pro-ble-ma-tice fuzzy tree au-to-mat∑ se v•-nuje na-p∞Ì-kl
-ad [[],
- []
-
-
-Overfull \hbox (89.30234pt too wide) in paragraph at lines 669--671
-[]\T1/lmr/m/n/12 , [], [],
- []
-
-[28]
+[25] [26]
 File: mpimg-rest0.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest0.mps)
 File: mpimg-rest1.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest1.mps)
 File: mpimg-rest2.mps Graphic file (type mps)
 
-[MP to PDF] (./mpimg-rest2.mps)
-
-LaTeX Warning: Citation 'Wol-NewKinSci' on page 29 undefined on input line 740.
-
-
-[29]
-
-LaTeX Warning: Citation 'Wol-NewKinSci' on page 30 undefined on input line 742.
-
-
-
-LaTeX Warning: Citation 'Wol-CelAut' on page 30 undefined on input line 742.
-
-
-LaTeX Warning: Citation 'BatXie-CellCity' on page 30 undefined on input line 74
-2.
-
-
-LaTeX Warning: Citation 'Wu-ExpGenPolUrbGroCelAutCit' on page 30 undefined on i
-nput line 742.
-
-
-LaTeX Warning: Citation 'For-FuzCelAutConjNormForm' on page 30 undefined on inp
-ut line 742.
-
-
-Overfull \hbox (44.99976pt too wide) in paragraph at lines 742--743
-\T1/lmr/m/n/12 uva-∫ujÌ ne-ko-ne£-nou m∞Ì∫ku (nap∞. [[], [], []])
- []
-
-
-Overfull \hbox (1.37505pt too wide) in paragraph at lines 742--743
-\T1/lmr/m/n/12 jinÈ zase ko-ne£-nou (nap∞. [[]]). TakÈ se £asto
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{example.2}) h
-as been already used, duplicate ignored
+[MP to PDF] (./mpimg-rest2.mps) [27] [28]pdfTeX warning (ext4): destination wit
+h the same identifier (name{example.2}) has been already used, duplicate ignore
+d
 <to be read again> 
                    \relax 
 l.756   T
          ypick√Ωm p≈ô√≠kladem bunƒõƒçn√©ho automatu je tzv. Hra ≈æivota (Gam...
-
-LaTeX Warning: Citation 'TofMar-CelAuMach+' on page 30 undefined on input line 
-756.
-
-[30]
 Package epstopdf Info: Source file: <genimg-game-of-life-1.eps>
 (epstopdf)                    date: 2017-08-21 21:01:42
 (epstopdf)                    size: 134831 bytes
 (epstopdf)             Output file: <genimg-game-of-life-1-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 17:02:57
+(epstopdf)                    date: 2018-05-05 03:44:11
 (epstopdf)                    size: 23676 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-1-eps-
 converted-to.pdf genimg-game-of-life-1.eps>
 (epstopdf)             \includegraphics on input line 784.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-game-of-life-1-eps-converted-to.pdf, id=546, 80.3pt x 81.30376pt>
+<genimg-game-of-life-1-eps-converted-to.pdf, id=590, 80.3pt x 81.30376pt>
 File: genimg-game-of-life-1-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-game-of-life-1-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-game-of-life-1-eps-converted-to.pdf  used on in
@@ -1715,13 +1293,13 @@ Package epstopdf Info: Source file: <genimg-game-of-life-2.eps>
 (epstopdf)                    size: 109721 bytes
 (epstopdf)             Output file: <genimg-game-of-life-2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 17:02:58
+(epstopdf)                    date: 2018-05-05 03:44:12
 (epstopdf)                    size: 20413 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-2-eps-
 converted-to.pdf genimg-game-of-life-2.eps>
 (epstopdf)             \includegraphics on input line 789.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-game-of-life-2-eps-converted-to.pdf, id=547, 80.3pt x 81.30376pt>
+<genimg-game-of-life-2-eps-converted-to.pdf, id=591, 80.3pt x 81.30376pt>
 File: genimg-game-of-life-2-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-game-of-life-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-game-of-life-2-eps-converted-to.pdf  used on in
@@ -1732,13 +1310,13 @@ Package epstopdf Info: Source file: <genimg-game-of-life-3.eps>
 (epstopdf)                    size: 103820 bytes
 (epstopdf)             Output file: <genimg-game-of-life-3-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 17:03:00
+(epstopdf)                    date: 2018-05-05 03:44:13
 (epstopdf)                    size: 19455 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-3-eps-
 converted-to.pdf genimg-game-of-life-3.eps>
 (epstopdf)             \includegraphics on input line 794.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-game-of-life-3-eps-converted-to.pdf, id=548, 80.3pt x 81.30376pt>
+<genimg-game-of-life-3-eps-converted-to.pdf, id=592, 80.3pt x 81.30376pt>
 File: genimg-game-of-life-3-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-game-of-life-3-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-game-of-life-3-eps-converted-to.pdf  used on in
@@ -1749,42 +1327,27 @@ Package epstopdf Info: Source file: <genimg-game-of-life-4.eps>
 (epstopdf)                    size: 53636 bytes
 (epstopdf)             Output file: <genimg-game-of-life-4-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-04-29 17:03:01
+(epstopdf)                    date: 2018-05-05 03:44:14
 (epstopdf)                    size: 11798 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-4-eps-
 converted-to.pdf genimg-game-of-life-4.eps>
 (epstopdf)             \includegraphics on input line 799.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-game-of-life-4-eps-converted-to.pdf, id=549, 80.3pt x 81.30376pt>
+<genimg-game-of-life-4-eps-converted-to.pdf, id=593, 80.3pt x 81.30376pt>
 File: genimg-game-of-life-4-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-game-of-life-4-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-game-of-life-4-eps-converted-to.pdf  used on in
 put line 799.
 (pdftex.def)             Requested size: 147.41718pt x 149.2645pt.
-
-
-LaTeX Warning: Citation 'For-FuzCelAutConjNormForm' on page 31 undefined on inp
-ut line 806.
-
-
-LaTeX Warning: Citation 'MraZimLapBaj-FuzCelAut+' on page 31 undefined on input
- line 806.
-
-
-Overfull \hbox (102.95758pt too wide) in paragraph at lines 806--807
-[]\T1/lmr/m/n/12 Bun•£nÈ fuzzy au-to-maty se potÈ de-fi-nujÌ zna£n• r∑zn•. Nap∞
-. [[],
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{example.4}) h
-as been already used, duplicate ignored
+[29]pdfTeX warning (ext4): destination with the same identifier (name{example.4
+}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.810  P
         ≈ô√≠kladem bunƒõƒçn√©ho fuzzy automatu m≈Ø≈æe b√Ωt nap≈ô√≠klad n√°sl...
-[31] [32 <./genimg-game-of-life-1-eps-converted-to.pdf> <./genimg-game-of-life-
-2-eps-converted-to.pdf> <./genimg-game-of-life-3-eps-converted-to.pdf> <./genim
-g-game-of-life-4-eps-converted-to.pdf>]
+[30 <./genimg-game-of-life-1-eps-converted-to.pdf> <./genimg-game-of-life-2-eps
+-converted-to.pdf> <./genimg-game-of-life-3-eps-converted-to.pdf> <./genimg-gam
+e-of-life-4-eps-converted-to.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 853.
@@ -1793,7 +1356,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 853.
 
-[33]pdfTeX warning (ext4): destination with the same identifier (name{definitio
+[31]pdfTeX warning (ext4): destination with the same identifier (name{definitio
 n.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1806,23 +1369,9 @@ as been already used, duplicate ignored
 l.881  P
         ≈ô√≠klad fuzzy automatu rozpozn√°vaj√≠c√≠ ≈ôetƒõzec $w = $ \str{hell...
 File: mpimg-theory-diags1.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-theory-diags1.mps) [34]
-
-LaTeX Warning: Citation 'RamGir-ConvFinAutFuzzAutStrComp' on page 35 undefined 
-on input line 903.
-
-
-LaTeX Warning: Citation 'Ech-DefSyssConPre' on page 35 undefined on input line 
-903.
-
-
-Overfull \hbox (141.19296pt too wide) in paragraph at lines 903--904
-[]\T1/lmr/m/n/12 Dal≤Ì in-for-mace a p∞Ì-klady k tÈto tech-nice jsou k na-le-ze
-nÌ v [[]].
- []
-
-[35]pdfTeX warning (ext4): destination with the same identifier (name{definitio
-n.3}) has been already used, duplicate ignored
+[MP to PDF] (./mpimg-theory-diags1.mps) [32] [33]pdfTeX warning (ext4): destina
+tion with the same identifier (name{definition.3}) has been already used, dupli
+cate ignored
 <to be read again> 
                    \relax 
 l.928  M
@@ -1834,400 +1383,31 @@ File: mpimg-theory-diags3.mps Graphic file (type mps)
 File: mpimg-theory-diags4.mps Graphic file (type mps)
 [MP to PDF] (./mpimg-theory-diags4.mps)
 File: mpimg-theory-diags5.mps Graphic file (type mps)
- [MP to PDF] (./mpimg-theory-diags5.mps)
-
-LaTeX Warning: Citation 'Ast+-FuzzAutEpsMovCmpFuzzMeasBtwStrs' on page 36 undef
-ined on input line 960.
-
-
-Overfull \hbox (133.9138pt too wide) in paragraph at lines 960--961
-\T1/lmr/m/n/12 ope-racÌ a de-for-mo-va-n˝ch au-to-mat∑ lze na-lÈst nap∞. v [[]]
-. 
- []
-
-[36] [37]
-
-LaTeX Warning: Citation 'FuLi-ForLeaAutAutGam' on page 38 undefined on input li
-ne 968.
-
-
-LaTeX Warning: Citation 'WeeFu-FormFuzAutAppModLeaSys' on page 38 undefined on 
-input line 968.
-
-
-LaTeX Warning: Citation 'GilOmlTho-EquKnoRep+' on page 38 undefined on input li
-ne 968.
-
-
-LaTeX Warning: Citation 'TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 38
- undefined on input line 968.
-
-
-LaTeX Warning: Citation 'PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro' on page 38
- undefined on input line 968.
-
-
-LaTeX Warning: Citation 'MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 38 un
-defined on input line 968.
-
-
-LaTeX Warning: Citation 'SinGha+HybrEdgDetMetFuzSetTheCelLeaAut' on page 38 und
-efined on input line 968.
-
-
-LaTeX Warning: Citation 'AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
-page 38 undefined on input line 968.
-
-
-LaTeX Warning: Citation 'ZhiMinLan-EvoStraIndFuFiStaAu' on page 38 undefined on
- input line 968.
-
-
-Overfull \hbox (111.618pt too wide) in paragraph at lines 968--969
-\T1/lmr/m/n/12 tkat se s nimi m∑-∫eme nap∞. v [[], [],
- []
-
-
-Overfull \hbox (48.31204pt too wide) in paragraph at lines 968--969
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (189.72484pt too wide) in paragraph at lines 968--969
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (213.99927pt too wide) in paragraph at lines 968--969
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-LaTeX Warning: Citation 'FieRus-HanNeuCom' on page 38 undefined on input line 9
-76.
-
-[38]
-
-LaTeX Warning: Citation 'DarAhmSin-AppFuzzAutTheKnBsNeuNetDevBasLeaMod' on page
- 39 undefined on input line 980.
-
-
-LaTeX Warning: Citation 'OmlThoGil-FuzzFinStaAutCanDetEncIntRecNeuNet' on page 
-39 undefined on input line 980.
-
-
-LaTeX Warning: Citation 'BlaDelPeg-FuzzAutIndUsNeuNet' on page 39 undefined on 
-input line 980.
-
-
-LaTeX Warning: Citation 'GilOmlTho-EquKnoRep+' on page 39 undefined on input li
-ne 980.
-
-
-LaTeX Warning: Citation 'OmlThoGil-RepFuzFinStaAuConRecNeuNet' on page 39 undef
-ined on input line 980.
-
-
-LaTeX Warning: Citation 'UnaKha-FuzDFinStaMachImpBasNeuFuzSys' on page 39 undef
-ined on input line 980.
-
-
-LaTeX Warning: Citation 'PedGac-LeaFuzzAut' on page 39 undefined on input line 
-980.
-
-
-Overfull \hbox (94.36607pt too wide) in paragraph at lines 980--981
-\T1/lmr/m/n/12 pro-ble-ma-tice se v•-nujÌ nap∞. v [[],
- []
-
-
-Overfull \hbox (111.01392pt too wide) in paragraph at lines 980--981
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (18.3231pt too wide) in paragraph at lines 980--981
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-LaTeX Warning: Citation 'BlaDelFlo-MethIndFuzzAutUsNeuNet' on page 39 undefined
- on input line 986.
-
-
-LaTeX Warning: Citation 'BlaDelPeg-FuzzGraIntUsiNeuNet' on page 39 undefined on
- input line 986.
-
-
+ [MP to PDF] (./mpimg-theory-diags5.mps) [34] [35] [36]
 Overfull \hbox (1.42123pt too wide) in paragraph at lines 993--993
 []\T1/lmr/bx/n/17.28 Rozpozn·v·nÌ, kla-si-fi-kace a ko-rekce tex-to-v˝ch
  []
 
-[39]
-
-LaTeX Warning: Citation 'AndAbdAsm-ApprPattMatcFuzzLog' on page 40 undefined on
- input line 1011.
-
-
-LaTeX Warning: Citation 'Gar+-DefFuzAutCorImpStrFuzSym' on page 40 undefined on
- input line 1011.
-
-
-LaTeX Warning: Citation 'Ast+-ImpStrMaExpUsDefFuzAut' on page 40 undefined on i
-nput line 1011.
-
-
-LaTeX Warning: Citation 'RamGir-ConvFinAutFuzzAutStrComp' on page 40 undefined 
-on input line 1011.
-
-
-LaTeX Warning: Citation 'SetWar-FuzzAutPattMatc' on page 40 undefined on input 
-line 1011.
-
-
-Overfull \hbox (39.85991pt too wide) in paragraph at lines 1011--1012
-\T1/lmr/m/n/12 m•rn• £astÈ. Se-tkat se s nÌm m∑-∫eme nap∞. v [[],
- []
-
-
-Overfull \hbox (12.61047pt too wide) in paragraph at lines 1011--1012
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-LaTeX Warning: Citation 'HigOnc-ComMosProStrProFiStaMa' on page 40 undefined on
- input line 1015.
-
-
-LaTeX Warning: Citation 'Mar+-ProAriAutApp' on page 40 undefined on input line 
-1015.
-
-
-LaTeX Warning: Citation 'Her-ProAriAutAppSoComFraBioSeqAna' on page 40 undefine
-d on input line 1015.
-
-
-LaTeX Warning: Citation 'YorSinTis-PowAmnLeaPrAuVarMemLen' on page 40 undefined
- on input line 1015.
-
-
-LaTeX Warning: Citation 'Ron-AutLeaApp' on page 40 undefined on input line 1015
-.
-
-
-Overfull \hbox (99.92482pt too wide) in paragraph at lines 1015--1016
-\T1/lmr/m/n/12 kaci a n·-sled-nou ko-rekci (obec-n˝ch) tex-to-v˝ch ∞e-t•zc∑. V 
-[[],
- []
-
-
-Overfull \hbox (219.1058pt too wide) in paragraph at lines 1015--1016
-[]\T1/lmr/m/n/12 , [], [],
- []
-
-
-LaTeX Warning: Citation 'Ron-AutLeaApp' on page 40 undefined on input line 1017
-.
-
-
-LaTeX Warning: Citation 'Mar+-ProAriAutApp' on page 40 undefined on input line 
-1019.
-
-
-LaTeX Warning: Citation 'Her-ProAriAutAppSoComFraBioSeqAna' on page 40 undefine
-d on input line 1019.
-
-
-Overfull \hbox (167.40497pt too wide) in paragraph at lines 1019--1020
-[]\T1/lmr/m/n/12 Pozm•n•n˝ au-to-mat[][][][][] po-u-∫Ì-vajÌ v [[], []].
- []
-
-
-LaTeX Warning: Citation 'MohPerRoe-WeiFinStaTraSpeRec' on page 40 undefined on 
-input line 1023.
-
-
-LaTeX Warning: Citation 'BahJel-DecChaWinDelSubApSpeRec' on page 40 undefined o
-n input line 1023.
-
-
-Overfull \hbox (54.03416pt too wide) in paragraph at lines 1023--1024
-[]\T1/lmr/m/n/12 V [[], []]
- []
-
-[40]
-
-LaTeX Warning: Citation 'AndAbdAsm-ApprPattMatcFuzzLog' on page 41 undefined on
- input line 1027.
-
-
-LaTeX Warning: Citation 'SnaKepAbrHas-AproxStriMatchFuzzAut' on page 41 undefin
-ed on input line 1027.
-
-
-Overfull \hbox (65.74693pt too wide) in paragraph at lines 1027--1028
-\T1/lmr/m/n/12 [[], []]. 
- []
-
+[37]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 1033.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-
-LaTeX Warning: Citation 'MatSalSalYu-LexAnaSimFinFuzAutMod' on page 41 undefine
-d on input line 1037.
-
-
-LaTeX Warning: Citation 'KniGra-OvProTreTraNatLanPro' on page 41 undefined on i
-nput line 1043.
-
-
-LaTeX Warning: Citation 'WaMan-ProFiStMaRegBaMTEva' on page 41 undefined on inp
-ut line 1043.
-
-
-LaTeX Warning: Citation 'Hun-NoLiTexSeaUsFuFiStLiNoDetAut' on page 41 undefined
- on input line 1048.
-
-[41]
-
-LaTeX Warning: Citation 'Kra+-BibMeExUsiPrFiStTra' on page 42 undefined on inpu
-t line 1052.
-
-
-LaTeX Warning: Citation 'web-CesCitNorm' on page 42 undefined on input line 105
-2.
-
-
-LaTeX Warning: Citation 'MukRay-StaSplMerProbFiStaAuSigRepAna' on page 42 undef
-ined on input line 1070.
-
-
-LaTeX Warning: Citation 'Rig-FauDetIsoBasFuzzAut' on page 42 undefined on input
- line 1070.
-
-
-LaTeX Warning: Citation 'BaiTri-PattRecUsiTemFuzzAut' on page 42 undefined on i
-nput line 1070.
-
-
-LaTeX Warning: Citation 'KemAda-SeqPatRecEmpRecFuzSys' on page 42 undefined on 
-input line 1070.
-
-
-Overfull \hbox (61.4871pt too wide) in paragraph at lines 1070--1071
-\T1/lmr/m/n/12 ne-tex-to-v˝ch dat. V•-nujÌ se tomu nap∞. v [[],
- []
-
-
-Overfull \hbox (160.3704pt too wide) in paragraph at lines 1070--1071
-[]\T1/lmr/m/n/12 , [], []]. 
- []
-
+) [38] [39]
 File: mpimg-charts1.mps Graphic file (type mps)
+
 [MP to PDF] (./mpimg-charts1.mps)
 File: mpimg-charts2.mps Graphic file (type mps)
- [MP to PDF] (./mpimg-charts2.mps)
-
-LaTeX Warning: Citation 'Rig-FauDetIsoBasFuzzAut' on page 42 undefined on input
- line 1085.
-
-
-LaTeX Warning: Citation 'BaiTri-PattRecUsiTemFuzzAut' on page 42 undefined on i
-nput line 1085.
-
-[42]
-
-LaTeX Warning: Citation 'KemAda-SeqPatRecEmpRecFuzSys' on page 43 undefined on 
-input line 1087.
-
-
-Overfull \hbox (3.54118pt too wide) in paragraph at lines 1087--1088
-[]\T1/lmr/m/n/12 V [[]] mo-ni-to-rujÌ tep-lotu ta-∫e-nÈho pro-
- []
-
-
-LaTeX Warning: Citation 'ManPra-PriPatDetUsFiStMaFuzTra' on page 43 undefined o
-n input line 1089.
-
-
-Overfull \hbox (22.37025pt too wide) in paragraph at lines 1089--1090
-[]\T1/lmr/m/n/12 Velmi po-dob-nou tech-niku po-u-∫Ì-vajÌ v [[]].
- []
-
-
-LaTeX Warning: Citation 'Jin+-WavBasFeaExtUsPrFiStAuPatCla' on page 43 undefine
-d on input line 1093.
-
-[43]
+ [MP to PDF] (./mpimg-charts2.mps) [40]
 File: mpimg-rest3.mps Graphic file (type mps)
- [MP to PDF] (./mpimg-rest3.mps)
 
-LaTeX Warning: Citation 'AstGariGonVillFar-ApprStrMatUsiDefFuzzAutLearExpr' on 
-page 44 undefined on input line 1112.
-
-
-LaTeX Warning: Citation 'WeeFu-FormFuzAutAppModLeaSys' on page 44 undefined on 
-input line 1112.
-
-
-Overfull \hbox (103.55316pt too wide) in paragraph at lines 1112--1113
-[]\T1/lmr/m/n/12 TÈto tech-nice se v•-nujÌ nap∞. v [[],
- []
-
-
-LaTeX Warning: Citation 'Tho-FinFuzzAutRegFuzLangPatRec' on page 44 undefined o
-n input line 1118.
-
-
-LaTeX Warning: Citation 'BaiTri-PattRecUsiTemFuzzAut' on page 44 undefined on i
-nput line 1118.
-
-
-Overfull \hbox (140.631pt too wide) in paragraph at lines 1118--1119
-\T1/lmr/m/n/12 na po-sloup-nost sym-bol∑. Vstu-pem m∑∫e b˝t nap∞. vi-deo-sek-ve
-nce [[]],
- []
-
-
-Overfull \hbox (48.71684pt too wide) in paragraph at lines 1118--1119
-\T1/lmr/m/n/12 nebo nap∞. data z ak-ce-le-ro-me-tr∑ umÌs-t•-n˝ch na ruce [[]]. 
-
- []
-
-
-LaTeX Warning: Citation 'ForBel-GenMusAccUsFinStaTra' on page 44 undefined on i
-nput line 1122.
-
-
-LaTeX Warning: Citation 'OliWag-ComMusNeuNetProFiStMa' on page 44 undefined on 
-input line 1122.
-
-
-LaTeX Warning: Citation 'ForBel-GenMusAccUsFinStaTra' on page 44 undefined on i
-nput line 1122.
-
-
-Overfull \hbox (21.7051pt too wide) in paragraph at lines 1122--1123
-[]\T1/lmr/m/n/12 ]. V [[]]
- []
-
-
-LaTeX Warning: Citation 'Cha-ExeFuzProUsFiStaMa' on page 44 undefined on input 
-line 1126.
-
-[44]pdfTeX warning (ext4): destination with the same identifier (name{note.1}) 
-has been already used, duplicate ignored
+[MP to PDF] (./mpimg-rest3.mps) [41] [42]pdfTeX warning (ext4): destination wit
+h the same identifier (name{note.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1143   P
           odobnou techniku, zalo≈æenou na pravdƒõpodobnostn√≠ch automatech, ...
 
-LaTeX Warning: Citation 'Hac+-ProAnaLarFinStaMac' on page 45 undefined on input
- line 1143.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1148.
 
@@ -2235,288 +1415,43 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1148.
 
-[45]
-
-LaTeX Warning: Citation 'DupDenEsp-LiProAuHidMarMod+' on page 46 undefined on i
-nput line 1183.
-
-
-LaTeX Warning: Citation 'Hac+-ProAnaLarFinStaMac' on page 46 undefined on input
- line 1183.
-
-
-Overfull \hbox (87.61827pt too wide) in paragraph at lines 1183--1184
-\T1/lmr/m/n/12 mat∑ je k na-le-zenÌ v [[], []]. 
- []
-
-
-LaTeX Warning: Citation 'Hul+-ManRecUsProFinStaMacFuzLog' on page 46 undefined 
-on input line 1189.
-
-
-LaTeX Warning: Citation 'TriHei-ExpDesSeqFuzPer' on page 46 undefined on input 
-line 1189.
-
-
-Overfull \hbox (11.90454pt too wide) in paragraph at lines 1189--1190
-[]\T1/lmr/m/n/12 V [[], []]
- []
-
-[46]
-
-LaTeX Warning: Citation 'Hul+-ManRecUsProFinStaMacFuzLog' on page 47 undefined 
-on input line 1201.
-
-
-LaTeX Warning: Citation 'DucMarMar-AlgBasFiStMacFuzTrNoIntrLoaDis' on page 47 u
-ndefined on input line 1205.
-
+[43] [44]
 File: mpimg-apps-diags0.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-apps-diags0.mps)
-
-LaTeX Warning: Citation 'Niz-ModComComNetViaPrAu' on page 47 undefined on input
- line 1219.
-
-[47] [48]
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 49 undefin
-ed on input line 1223.
-
+ [MP to PDF] (./mpimg-apps-diags0.mps)
 File: mpimg-apps-diags1.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-apps-diags1.mps)
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 49 undefin
-ed on input line 1237.
-
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 49 undefin
-ed on input line 1237.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1237--1237
-[]\T1/lmr/m/n/12 Obr·zek 10: |Au-to-mat pro mo-de-lo-v·nÌ n·-lad hr·£e ve h∞e ≤
-a-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1237--1237
-\T1/lmr/m/n/12 chy. Stavy a ud·-losti jsou po-ps·ny v textu. P∞e-vzato z
- []
-
+ [MP to PDF]
+(./mpimg-apps-diags1.mps) [45] [46]
 Package epstopdf Info: Source file: <genimg-chess-emos-screens.eps>
 (epstopdf)                    date: 2018-04-29 16:25:51
 (epstopdf)                    size: 287911 bytes
 (epstopdf)             Output file: <genimg-chess-emos-screens-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 17:03:04
+(epstopdf)                    date: 2018-05-05 03:44:18
 (epstopdf)                    size: 96164 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-chess-emos-screens-
 eps-converted-to.pdf genimg-chess-emos-screens.eps>
 (epstopdf)             \includegraphics on input line 1245.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-chess-emos-screens-eps-converted-to.pdf, id=697, 451.6875pt x 158.5925p
+<genimg-chess-emos-screens-eps-converted-to.pdf, id=869, 451.6875pt x 158.5925p
 t>
 File: genimg-chess-emos-screens-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-chess-emos-screens-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-chess-emos-screens-eps-converted-to.pdf  used o
 n input line 1245.
 (pdftex.def)             Requested size: 409.50119pt x 143.78941pt.
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 49 undefin
-ed on input line 1247.
-
-
-LaTeX Warning: Citation 'AlvJoaCru-FuStMaAppEmoModEleGamCha' on page 49 undefin
-ed on input line 1247.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-[]\T1/lmr/m/n/12 Obr·zek 11: |Uk·zka v˝-raz∑ ve tv·∞i hr·£e p∞i ztr·t•
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1247
-\T1/lmr/m/n/12 p•≤ce (vlevo) a p∞i se-br·nÌ d·my (vpravo). P∞e-vzato z
- []
-
-
-LaTeX Warning: Citation 'Hua+-LeaProbAutModChe' on page 49 undefined on input l
-ine 1250.
-
-
-LaTeX Warning: Citation 'FuLi-ForLeaAutAutGam' on page 49 undefined on input li
-ne 1252.
-
-[49]
-
-LaTeX Warning: Citation 'HeiTri-SimEmoPerHumComInt' on page 50 undefined on inp
-ut line 1256.
-
-
-LaTeX Warning: Citation 'Cas+-ProAutAspBasSenAna' on page 50 undefined on input
- line 1261.
-
-
-Overfull \hbox (0.74188pt too wide) in paragraph at lines 1261--1262
-[]\T1/lmr/m/n/12 V [[]] po-mocÌ prav-d•-po-dob-nost-nÌch au-to-mat∑
- []
-
-
-LaTeX Warning: Citation 'SchYou-ProSimHumMacDia' on page 50 undefined on input 
-line 1263.
-
-[50 <./genimg-chess-emos-screens-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation 'TriHei-LinSumHumActSkiConAcc' on page 51 undefined on 
-input line 1268.
-
-
-LaTeX Warning: Citation 'Alv+-HumActRec+' on page 51 undefined on input line 12
-70.
-
-
-LaTeX Warning: Citation 'TurChe-MacRecHumActSur' on page 51 undefined on input 
-line 1272.
-
-
-LaTeX Warning: Citation 'HeKinSep-DecMakFuzEnvZUsOntCon+' on page 51 undefined 
-on input line 1276.
-
-
-LaTeX Warning: Citation 'Gra+-ApFuStFuOuFinMaPrRecVioOntAss' on page 51 undefin
-ed on input line 1276.
-
-
-LaTeX Warning: Citation 'WeeFu-FormFuzAutAppModLeaSys' on page 51 undefined on 
-input line 1276.
-
-
-LaTeX Warning: Citation 'GraFodDri-HybFuzBooAutOntCont' on page 51 undefined on
- input line 1276.
-
-
-Overfull \hbox (148.10342pt too wide) in paragraph at lines 1276--1277
-\T1/lmr/m/n/12 Vztah fuzzy au-to-mat∑ a ∞Ì-dÌ-cÌch sys-tÈm∑ jsou po-ps·ny nap∞.
- v [[],
- []
-
-
-Overfull \hbox (67.46988pt too wide) in paragraph at lines 1276--1277
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-LaTeX Warning: Citation 'WeeFu-FormFuzAutAppModLeaSys' on page 51 undefined on 
-input line 1280.
-
-
-LaTeX Warning: Citation 'GraFod-FuzAutIntHybConSys' on page 51 undefined on inp
-ut line 1280.
-
-
-Overfull \hbox (23.298pt too wide) in paragraph at lines 1280--1281
-[]\T1/lmr/m/n/12 V [[], []]
- []
-
-
-LaTeX Warning: Citation 'TzaRig-StaAnaAdaFuzzConSysUsiPetrNetLeaAut' on page 51
- undefined on input line 1284.
-
-[51]
-
-LaTeX Warning: Citation 'AlAhHep+-ModUrbGroDynUsCelAutGIS' on page 52 undefined
- on input line 1293.
-
-
-LaTeX Warning: Citation 'Ahm+-CalFuzCelAutModUrbDynSauAr' on page 52 undefined 
-on input line 1293.
-
-
-LaTeX Warning: Citation 'War+-StoConCelModUrbGro' on page 52 undefined on input
- line 1293.
-
-
-LaTeX Warning: Citation 'WhiEng-CelAutBasIntDynRegMod' on page 52 undefined on 
-input line 1293.
-
-
-LaTeX Warning: Citation 'LaiDraSch-IntMulEvCelAutMetLanSimMod' on page 52 undef
-ined on input line 1293.
-
-
-LaTeX Warning: Citation 'ManHatPra-FuzCelAutBasSheModUrGro+' on page 52 undefin
-ed on input line 1293.
-
-
-LaTeX Warning: Citation 'ManHatPra-ModUrbGroUsFuzCelAut' on page 52 undefined o
-n input line 1293.
-
-
-LaTeX Warning: Citation 'Wu-CalStoCelAutAppRurUrbLanConv' on page 52 undefined 
-on input line 1293.
-
-
-LaTeX Warning: Citation 'PowSimWhi-HieFuzzPattMatcRegCompLanUseMap' on page 52 
-undefined on input line 1293.
-
-
-LaTeX Warning: Citation 'Dra-CouFuzSetTheGisBaCelAutLanUseChaMod' on page 52 un
-defined on input line 1293.
-
-
-LaTeX Warning: Citation 'WasPar-PreSpaDisEleEnCon+' on page 52 undefined on inp
-ut line 1293.
-
-
-LaTeX Warning: Citation 'LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 52 unde
-fined on input line 1293.
-
-
-LaTeX Warning: Citation 'MraZimLapBaj-FuzCelAut+' on page 52 undefined on input
- line 1293.
-
-
-Overfull \hbox (151.10547pt too wide) in paragraph at lines 1293--1294
-\T1/lmr/m/n/12 jim nap∞. v [[], [],
- []
-
-
-Overfull \hbox (253.54185pt too wide) in paragraph at lines 1293--1294
-[]\T1/lmr/m/n/12 , [], [],
- []
-
-
-Overfull \hbox (84.62491pt too wide) in paragraph at lines 1293--1294
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (139.49449pt too wide) in paragraph at lines 1293--1294
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (68.37895pt too wide) in paragraph at lines 1293--1294
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (54.02864pt too wide) in paragraph at lines 1293--1294
-[]\T1/lmr/m/n/12 ]. V [[]]
- []
-
+ [47 <./genimg-chess-emos-screens-eps-converted-to.pdf>] [48]
 Package epstopdf Info: Source file: <genimg-urban-growt-transitions-1.eps>
 (epstopdf)                    date: 2018-05-04 23:44:04
 (epstopdf)                    size: 34731 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-1-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-04 23:44:50
+(epstopdf)                    date: 2018-05-05 03:44:20
 (epstopdf)                    size: 17344 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-1-eps-converted-to.pdf genimg-urban-growt-transitions-1.eps>
 (epstopdf)             \includegraphics on input line 1309.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-1-eps-converted-to.pdf, id=716, 238.8925pt x 66
+<genimg-urban-growt-transitions-1-eps-converted-to.pdf, id=926, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-1-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2529,13 +1464,13 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-2.eps>
 (epstopdf)                    size: 40948 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-2-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-04 23:44:51
+(epstopdf)                    date: 2018-05-05 03:44:21
 (epstopdf)                    size: 17618 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-2-eps-converted-to.pdf genimg-urban-growt-transitions-2.eps>
 (epstopdf)             \includegraphics on input line 1314.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-2-eps-converted-to.pdf, id=717, 238.8925pt x 66
+<genimg-urban-growt-transitions-2-eps-converted-to.pdf, id=927, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-2-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2548,13 +1483,13 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-3.eps>
 (epstopdf)                    size: 34733 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-3-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-04 23:44:52
+(epstopdf)                    date: 2018-05-05 03:44:22
 (epstopdf)                    size: 17661 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-3-eps-converted-to.pdf genimg-urban-growt-transitions-3.eps>
 (epstopdf)             \includegraphics on input line 1319.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-3-eps-converted-to.pdf, id=718, 238.8925pt x 66
+<genimg-urban-growt-transitions-3-eps-converted-to.pdf, id=928, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-3-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2562,26 +1497,18 @@ pdf)
 Package pdftex.def Info: genimg-urban-growt-transitions-3-eps-converted-to.pdf 
  used on input line 1319.
 (pdftex.def)             Requested size: 368.54857pt x 102.20947pt.
-
-LaTeX Warning: Citation 'LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 52 unde
-fined on input line 1323.
-
-
-LaTeX Warning: Citation 'LiuPhi-DevCelAutModUrbGroIncFuzSetApp' on page 52 unde
-fined on input line 1323.
-
 Package epstopdf Info: Source file: <genimg-urban-growt-city-1.eps>
 (epstopdf)                    date: 2017-08-13 23:00:51
 (epstopdf)                    size: 3840124 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-1-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 17:03:16
-(epstopdf)                    size: 338565 bytes
+(epstopdf)                    date: 2018-05-05 03:44:27
+(epstopdf)                    size: 338563 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-1-
 eps-converted-to.pdf genimg-urban-growt-city-1.eps>
 (epstopdf)             \includegraphics on input line 1328.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-city-1-eps-converted-to.pdf, id=719, 563.10374pt x 252.945p
+<genimg-urban-growt-city-1-eps-converted-to.pdf, id=931, 563.10374pt x 252.945p
 t>
 File: genimg-urban-growt-city-1-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-urban-growt-city-1-eps-converted-to.pdf>
@@ -2593,86 +1520,42 @@ Package epstopdf Info: Source file: <genimg-urban-growt-city-2.eps>
 (epstopdf)                    size: 2578822 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-2-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-04-29 17:03:22
+(epstopdf)                    date: 2018-05-05 03:44:31
 (epstopdf)                    size: 215473 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-2-
 eps-converted-to.pdf genimg-urban-growt-city-2.eps>
 (epstopdf)             \includegraphics on input line 1333.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-city-2-eps-converted-to.pdf, id=720, 563.10374pt x 256.96pt
+<genimg-urban-growt-city-2-eps-converted-to.pdf, id=932, 563.10374pt x 256.96pt
 >
 File: genimg-urban-growt-city-2-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-urban-growt-city-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-city-2-eps-converted-to.pdf  used o
 n input line 1333.
 (pdftex.def)             Requested size: 409.50119pt x 186.86955pt.
-
-LaTeX Warning: Citation 'Ahm+-CalFuzCelAutModUrbDynSauAr' on page 52 undefined 
-on input line 1337.
-
-
-LaTeX Warning: Citation 'Ahm+-CalFuzCelAutModUrbDynSauAr' on page 52 undefined 
-on input line 1337.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1337--1337
-[]\T1/lmr/m/n/12 Obr·zek 13: |Uk·zky si-mu-lace m•st-skÈho r∑stu. P∞e-vzato z
- []
-
-
-LaTeX Warning: Citation 'Maz+-ProTreAutAppBehMod' on page 52 undefined on input
- line 1343.
-
-[52] [53 <./genimg-urban-growt-transitions-1-eps-converted-to.pdf> <./genimg-ur
-ban-growt-transitions-2-eps-converted-to.pdf> <./genimg-urban-growt-transitions
--3-eps-converted-to.pdf>] [54 <./genimg-urban-growt-city-1-eps-converted-to.pdf
-> <./genimg-urban-growt-city-2-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation 'PedGac-LeaFuzzAut' on page 55 undefined on input line 
-1345.
-
-
-LaTeX Warning: Citation 'Rus-ImaProHan' on page 55 undefined on input line 1359
-.
-
-[55]
+ [49] [50 <./genimg-urban-growt-transitions-1-eps-converted-to.pdf> <./genimg-u
+rban-growt-transitions-2-eps-converted-to.pdf> <./genimg-urban-growt-transition
+s-3-eps-converted-to.pdf>] [51 <./genimg-urban-growt-city-1-eps-converted-to.pd
+f> <./genimg-urban-growt-city-2-eps-converted-to.pdf>]
+[52]
 Package epstopdf Info: Source file: <genimg-filters.eps>
 (epstopdf)                    date: 2018-05-05 00:05:13
 (epstopdf)                    size: 105161 bytes
 (epstopdf)             Output file: <genimg-filters-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 00:15:32
+(epstopdf)                    date: 2018-05-05 03:44:32
 (epstopdf)                    size: 33165 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-filters-eps-convert
 ed-to.pdf genimg-filters.eps>
 (epstopdf)             \includegraphics on input line 1388.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-filters-eps-converted-to.pdf, id=754, 281.05pt x 75.28125pt>
+<genimg-filters-eps-converted-to.pdf, id=985, 281.05pt x 75.28125pt>
 File: genimg-filters-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-filters-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-filters-eps-converted-to.pdf  used on input lin
 e 1388.
 (pdftex.def)             Requested size: 409.50119pt x 109.69373pt.
-
-
-LaTeX Warning: Citation 'web-Lenna' on page 56 undefined on input line 1390.
-
-
-LaTeX Warning: Citation 'web-Lenna' on page 56 undefined on input line 1390.
-
-
-LaTeX Warning: Citation 'MaiAgg-StuComVarImDetEdTec' on page 56 undefined on in
-put line 1395.
-
-
-LaTeX Warning: Citation 'MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 56 un
-defined on input line 1395.
-
-
-LaTeX Warning: Citation 'PatMor-EdgDetTecFuzzLogCEllLeaAutFuzzImPro' on page 56
- undefined on input line 1395.
-
 File: mpimg-rest4.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-rest4.mps)
+ [MP to PDF] (./mpimg-rest4.mps)
 File: mpimg-rest5.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest5.mps)
 Underfull \hbox (badness 4144) in paragraph at lines 1407--1407
@@ -2685,66 +1568,26 @@ Underfull \hbox (badness 2189) in paragraph at lines 1407--1407
 £er-venÈ
  []
 
-
-LaTeX Warning: Citation 'MarMeySol-HybMetGasDifModFuzCelAutImSha' on page 56 un
-defined on input line 1415.
-
-
-Overfull \hbox (1.09116pt too wide) in paragraph at lines 1415--1416
-[]\T1/lmr/m/n/12 Dle [[]] m∑∫e b˝t hod-
- []
-
-[56 <./genimg-filters-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation 'SadRetKam-EfMetImpNoiRedImFuzCelAut' on page 57 undefi
-ned on input line 1421.
-
+[53 <./genimg-filters-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <genimg-noises.eps>
 (epstopdf)                    date: 2018-05-05 00:12:53
 (epstopdf)                    size: 56906 bytes
 (epstopdf)             Output file: <genimg-noises-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 00:44:41
+(epstopdf)                    date: 2018-05-05 03:44:34
 (epstopdf)                    size: 31368 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-noises-eps-converte
 d-to.pdf genimg-noises.eps>
 (epstopdf)             \includegraphics on input line 1427.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-noises-eps-converted-to.pdf, id=773, 276.03125pt x 75.28125pt>
+<genimg-noises-eps-converted-to.pdf, id=1012, 276.03125pt x 75.28125pt>
 File: genimg-noises-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-noises-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-noises-eps-converted-to.pdf  used on input line
  1427.
 (pdftex.def)             Requested size: 409.50119pt x 111.69362pt.
-
-LaTeX Warning: Citation 'web-Lenna' on page 57 undefined on input line 1429.
-
-
-LaTeX Warning: Citation 'web-Lenna' on page 57 undefined on input line 1429.
-
-
-LaTeX Warning: Citation 'SahUguSah-SalPepNoiFilFuzCelAut' on page 57 undefined 
-on input line 1432.
-
-
-Overfull \hbox (86.11096pt too wide) in paragraph at lines 1432--1433
-[]\T1/lmr/m/n/12 Velmi po-dobn˝ zp∑-sob os-t-ra-n•nÌ ≤umu je po-ps·n v [[]].
- []
-
-[57]
-
-LaTeX Warning: Citation 'MajCha-FuzCelAutModPatClas' on page 58 undefined on in
-put line 1439.
-
-
-LaTeX Warning: Citation 'WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 58 undefined
- on input line 1441.
-
-
-LaTeX Warning: Citation 'Lee-FuzTreAutSynPatRec' on page 58 undefined on input 
-line 1446.
-
+ [54 <./genimg-noises-eps-converted-to.pdf>]
 File: mpimg-rest6.mps Graphic file (type mps)
-[MP to PDF] (./mpimg-rest6.mps)
+ [MP to PDF] (./mpimg-rest6.mps)
 File: mpimg-rest7.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest7.mps)
 Overfull \hbox (1.82079pt too wide) in paragraph at lines 1457--1458
@@ -2757,131 +1600,18 @@ Overfull \hbox (4.88448pt too wide) in paragraph at lines 1465--1466
 e-o-me-t-rickÈ tvary.
  []
 
-[58 <./genimg-noises-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation 'HamKoNam-FirFlaDetBasFuzFinAut' on page 59 undefined o
-n input line 1471.
-
-
-LaTeX Warning: Citation 'KoHamNam-ModForFuFiAuDetIrrFirFla' on page 59 undefine
-d on input line 1471.
-
-
-Overfull \hbox (79.47057pt too wide) in paragraph at lines 1471--1472
-\T1/lmr/m/n/12 V [[], []]
- []
-
-[59]
-
-LaTeX Warning: Citation 'SnaKepAbrHas-AproxStriMatchFuzzAut' on page 60 undefin
-ed on input line 1488.
-
-
-LaTeX Warning: Citation 'Ron-AutLeaApp' on page 60 undefined on input line 1488
-.
-
-
-LaTeX Warning: Citation 'ZlaSteSch-FiStaConTraFemPro' on page 60 undefined on i
-nput line 1488.
-
-
-LaTeX Warning: Citation 'Her-ProAriAutAppSoComFraBioSeqAna' on page 60 undefine
-d on input line 1488.
-
-
-Overfull \hbox (79.88988pt too wide) in paragraph at lines 1488--1489
-\T1/lmr/m/n/12 mat∑ na roz-po-zn·-v·nÌ ∞•-t•zc∑ DNA je uve-den v [[],
- []
-
-
-Overfull \hbox (132.95644pt too wide) in paragraph at lines 1488--1489
-[]\T1/lmr/m/n/12 , [], []]. 
- []
-
-
-LaTeX Warning: Citation 'CheMyn-ModAlgBloDutCosWat+' on page 60 undefined on in
-put line 1492.
-
-
-LaTeX Warning: Citation 'MilAtl-ProAuModEpiCelNet' on page 60 undefined on inpu
-t line 1494.
-
-
-LaTeX Warning: Citation 'BocChe-CriBePrAuNetModSprInfDis+' on page 60 undefined
- on input line 1496.
-
-
-LaTeX Warning: Citation 'Jia+-ExHeaSimMetBasIntHumTheMod' on page 60 undefined 
-on input line 1502.
-
-
-LaTeX Warning: Citation 'GupRah-CliMonUsFuzSys' on page 60 undefined on input l
-ine 1502.
-
-
-LaTeX Warning: Citation 'CamMerNun-UsFuzAutDiagPrHeaPro' on page 60 undefined o
-n input line 1502.
-
-
-LaTeX Warning: Citation 'SteAdl-CliMonFuzAut' on page 60 undefined on input lin
-e 1502.
-
-
-Overfull \hbox (6.32028pt too wide) in paragraph at lines 1502--1503
-\T1/lmr/m/n/12 V [[], [],
- []
-
-
-Overfull \hbox (2.48906pt too wide) in paragraph at lines 1502--1503
-[]\T1/lmr/m/n/12 , []] jsou po-
- []
-
-[60]
-
-LaTeX Warning: Citation 'CamMerNun-UsFuzAutDiagPrHeaPro' on page 61 undefined o
-n input line 1508.
-
-
-LaTeX Warning: Citation 'GupRah-CliMonUsFuzSys' on page 61 undefined on input l
-ine 1510.
-
-
-LaTeX Warning: Citation 'Jia+-ExHeaSimMetBasIntHumTheMod' on page 61 undefined 
-on input line 1510.
-
-
-Overfull \hbox (1.63884pt too wide) in paragraph at lines 1510--1511
-[]\T1/lmr/m/n/12 V [[]] tuto tech-niku po-u-∫Ì-vajÌ pro sle-do-v·nÌ systo-
- []
-
-
-Overfull \hbox (98.08043pt too wide) in paragraph at lines 1510--1511
-\T1/lmr/m/n/12 lic-kÈho krev-nÌho tlaku a mno∫-stvÌ krev-nÌho cukru. V [[]]
- []
-
-
-LaTeX Warning: Citation 'Est+-CytImAnaGenFuFiStMa' on page 61 undefined on inpu
-t line 1515.
-
-
-LaTeX Warning: Citation 'WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 61 undefined
- on input line 1528.
-
-
-LaTeX Warning: Citation 'web-Folikul' on page 61 undefined on input line 1528.
-
-[61]
+[55] [56] [57]
 Package epstopdf Info: Source file: <genimg-follicles-1.eps>
 (epstopdf)                    date: 2017-08-24 20:01:51
 (epstopdf)                    size: 34492 bytes
 (epstopdf)             Output file: <genimg-follicles-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 17:03:37
+(epstopdf)                    date: 2018-05-05 03:44:36
 (epstopdf)                    size: 27064 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-1-eps-con
 verted-to.pdf genimg-follicles-1.eps>
 (epstopdf)             \includegraphics on input line 1534.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-follicles-1-eps-converted-to.pdf, id=806, 281.05pt x 62.2325pt>
+<genimg-follicles-1-eps-converted-to.pdf, id=1080, 281.05pt x 62.2325pt>
 File: genimg-follicles-1-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-follicles-1-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-follicles-1-eps-converted-to.pdf  used on input
@@ -2891,77 +1621,34 @@ Package epstopdf Info: Source file: <genimg-follicles-2.eps>
 (epstopdf)                    date: 2017-08-24 20:02:17
 (epstopdf)                    size: 4635 bytes
 (epstopdf)             Output file: <genimg-follicles-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-04-29 17:03:39
+(epstopdf)                    date: 2018-05-05 03:44:36
 (epstopdf)                    size: 4226 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-2-eps-con
 verted-to.pdf genimg-follicles-2.eps>
 (epstopdf)             \includegraphics on input line 1539.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-follicles-2-eps-converted-to.pdf, id=807, 281.05pt x 60.225pt>
+<genimg-follicles-2-eps-converted-to.pdf, id=1081, 281.05pt x 60.225pt>
 File: genimg-follicles-2-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-follicles-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-follicles-2-eps-converted-to.pdf  used on input
  line 1539.
 (pdftex.def)             Requested size: 409.50119pt x 87.75497pt.
-
-
-LaTeX Warning: Citation 'WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 62 undefined
- on input line 1543.
-
-
-LaTeX Warning: Citation 'WanJiaZhoDu-ImProcBasFuzCelAuMod' on page 62 undefined
- on input line 1543.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1543
-[]\T1/lmr/m/n/12 Obr·zek 18: |Uk·zky roz-po-zn·-v·nÌ fo-li-kul. P∞e-vzato z
- []
-
-
-LaTeX Warning: Citation 'PatPal-FuzGraSynRecSkeMatXra' on page 62 undefined on 
-input line 1546.
-
-
-LaTeX Warning: Citation 'PedGac-LeaFuzzAut' on page 62 undefined on input line 
-1550.
-
-
-LaTeX Warning: Citation 'RigTza-FuzAutFauDia' on page 62 undefined on input lin
-e 1550.
-
-
-LaTeX Warning: Citation 'Alv-HumGaiModUsGenFuzFinStaMac' on page 62 undefined o
-n input line 1554.
-
-
-LaTeX Warning: Citation 'AlvTri-ComModQuaPerSig' on page 62 undefined on input 
-line 1554.
-
-
-Overfull \hbox (69.40948pt too wide) in paragraph at lines 1554--1556
-[]\T1/lmr/m/n/12 V [[]] (pop∞. i [[]])
- []
-
-[62 <./genimg-follicles-1-eps-converted-to.pdf> <./genimg-follicles-2-eps-conve
-rted-to.pdf>]
-
-LaTeX Warning: Citation 'web-Maven' on page 63 undefined on input line 1567.
-
-
+ [58]
 Overfull \hbox (10.39764pt too wide) in paragraph at lines 1569--1570
 [][]\T1/pcr/m/n/12 fuzzy-tree-automata []\T1/lmr/m/n/12 (fuzzy tree au-to-mat) 
 a [][]\T1/pcr/m/n/12 cellular-fuzzy-automata
  []
 
-
-Overfull \hbox (26.54247pt too wide) in paragraph at lines 1583--1584
+[59 <./genimg-follicles-1-eps-converted-to.pdf> <./genimg-follicles-2-eps-conve
+rted-to.pdf>]
+Overfull \hbox (54.28569pt too wide) in paragraph at lines 1583--1584
 [][]\T1/lmr/m/n/12 7.3[][]. Re-a-li-zuje ji t∞Ìda [][]\T1/pcr/m/n/12 TyposCorre
-cter []\T1/lmr/m/n/12 a spou≤tÌ se po-mocÌ [][]\T1/pcr/m/n/12 TyposCorrecterApp
-[]\T1/lmr/m/n/12 .
+cter []\T1/lmr/m/n/12 a spou≤tÌ se po-mocÌ t∞Ìdy [][]\T1/pcr/m/n/12 TyposCorrec
+terApp[]\T1/lmr/m/n/12 .
  []
 
-[63]
-<genimg-handwritrec-screen.png, id=833, 739.76375pt x 475.7775pt>
+[60]
+<genimg-handwritrec-screen.png, id=1131, 739.76375pt x 475.7775pt>
 File: genimg-handwritrec-screen.png Graphic file (type png)
 <use genimg-handwritrec-screen.png>
 Package pdftex.def Info: genimg-handwritrec-screen.png  used on input line 1620
@@ -2976,158 +1663,722 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1625.
 
-[64]
+[61 <./genimg-handwritrec-screen.png>]
 Overfull \hbox (4.7603pt too wide) in paragraph at lines 1638--1639
 [][]\T1/pcr/m/n/12 ConvolutionalCFA []\T1/lmr/m/n/12 im-ple-men-tuje au-to-mat 
 re-a-li-zu-jÌcÌ obec-nou kon-vo-luci. T∞Ìda
  []
 
-[65 <./genimg-handwritrec-screen.png>]
-
-LaTeX Warning: Citation 'Koz-AutComp' on page 66 undefined on input line 1649.
+[62]) [63] [64
 
 
-LaTeX Warning: Citation 'web-IrisDataset' on page 66 undefined on input line 16
-51.
-
-
-LaTeX Warning: Citation 'web-FlagsDataset' on page 66 undefined on input line 1
-655.
-
-[66]
-
-LaTeX Warning: Citation 'MukRay-StaSplMerProbFiStaAuSigRepAna' on page 67 undef
-ined on input line 1675.
-
-
-LaTeX Warning: Citation 'ManPra-PriPatDetUsFiStMaFuzTra' on page 67 undefined o
-n input line 1675.
-
-
-LaTeX Warning: Citation 'Jia+-ExHeaSimMetBasIntHumTheMod' on page 67 undefined 
-on input line 1675.
-
-
-LaTeX Warning: Citation 'GupRah-CliMonUsFuzSys' on page 67 undefined on input l
-ine 1675.
-
-
-LaTeX Warning: Citation 'CamMerNun-UsFuzAutDiagPrHeaPro' on page 67 undefined o
-n input line 1675.
-
-
-Overfull \hbox (51.40347pt too wide) in paragraph at lines 1675--1676
-[]\T1/lmr/m/n/12 , [],
- []
-
-
-Overfull \hbox (5.03267pt too wide) in paragraph at lines 1675--1676
-[]\T1/lmr/m/n/12 , []]) v•-
- []
-
-) [67] [68
-
-
-] [69
+] [65
 
 ]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 218.
-
-Overfull \hbox (28.62613pt too wide) in paragraph at lines 218--226
-\T1/lmr/m/n/12 p∞Ìmo z CD/DVD. / Kom-pletnÌ ad-re-s·-∞ov· struk-tura webovÈ apl
-i-kace \T1/lmr/m/sc/12 Webovka
- []
-
-
-Overfull \hbox (7.71727pt too wide) in paragraph at lines 218--226
-\T1/lmr/m/n/12 (v ZIP ar-chivu) pro zko-pÌ-ro-v·nÌ na webov˝ ser-ver. Ad-re-s·∞
- ob-sa-huje i v≤echny
- []
-
-
-Overfull \hbox (8.70828pt too wide) in paragraph at lines 234--240
-\T1/lmr/m/n/12 KompletnÌ zdro-jovÈ texty pro-gramu \T1/lmr/m/sc/12 Pro-gram \T1
-/lmr/m/n/12 / webovÈ apli-kace \T1/lmr/m/sc/12 Webovka
- []
-
-
-Overfull \hbox (2.8623pt too wide) in paragraph at lines 234--240
-\T1/lmr/m/n/12 se v≤emi po-t∞eb-n˝mi (p∞Ìp. p∞e-vza-t˝mi) zdro-jo-v˝mi texty, k
-nihov-nami a dal-
- []
-
-[70
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 238.
+ [66
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 265.
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (12.10776pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 ANDREJKOV¡, Gab-riela; AL-MA-RIMI, Ab-du-lwa-hed; MA-HMOUD, As
+maa.
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[67
+
+]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[68]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[69]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[70]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (3.67448pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 MOHRI, Me-hryar; PE-RE-IRA, Fer-nando; RI-LEY, Mi-chael. Wei-g
+h-ted finite-
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (164.85773pt too wide) in paragraph at lines 267--267
+\T1/lmr/m/n/12 na [][]https://sites.google.com/site/novaiso690/[][]]. Do-stupnÈ
+ takÈ z: [][]https://sites.google.com/site/novaiso690/[][]. 
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[71]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (0.32076pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 BAILADOR, Gon-zalo; TRI-VI—O, Gra-ci·n. Pat-tern re-co-gni-tio
+n using tem-
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (4.01825pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 KEMPF, Ro-land; ADAMY, J¸r-gen. Sequen-tial pat-tern re-co-gni
+-tion employ-
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[72]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (9.18307pt too wide) in paragraph at lines 267--267
+\T1/lmr/m/n/12 MU-—OZ, Ra-fael. UMCC_DLSI_Prob: A Pro-ba-bi-lis-tic Au-to-mata 
+for Aspect
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[73]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (183.06508pt too wide) in paragraph at lines 267--267
+\T1/lmr/m/n/12 2008. Do-stupnÈ on-line na [][]https://pdfs.semanticscholar.org/
+6e2a/c1dbea43cd06b4f7bab26f3f04ce6816908b.pdf[][]. 
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[74]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (35.99811pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 WIKIPEDIE. \T1/lmr/m/it/12 Lenna \T1/lmr/m/n/12 [Do-stupnÈ on-
+line na [][]https://en.wikipedia.org/wiki/Lenna[][]].
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (3.43118pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 ZLATNIK, Da-niel; STEI-NER, Be-a-t-rice; SCHWEI-T-ZER, Ger-har
+d. Finite-
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+[75]
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (71.95634pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 SLOVNIKY.CZ. \T1/lmr/m/it/12 fo-li-kul \T1/lmr/m/n/12 [Do-stup
+nÈ on-line na [][]http://lekarske.slovniky.cz/pojem/folikul[][]].
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (2.99373pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 ALVAREZ-ALVAREZ, Al-berto; TRI-VINO, Gra-cian. Com-pre-hensi-b
+le mo-
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (35.08722pt too wide) in paragraph at lines 267--267
+\T1/lmr/m/n/12 on-line na [][]https://maven.apache.org[][]]. Do-stupnÈ takÈ z: 
+[][]https://maven.apache.org[][]. 
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (106.80888pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 FISHER, R.A. \T1/lmr/m/it/12 Iris Data Set \T1/lmr/m/n/12 [Do-
+stupnÈ on-line na [][]https://archive.ics.uci.edu/ml/datasets/Iris[][]].
+ []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Overfull \hbox (172.32881pt too wide) in paragraph at lines 267--267
+[]\T1/lmr/m/n/12 PUBLISHERS, Col-lins. \T1/lmr/m/it/12 Flags Data Set \T1/lmr/m
+/n/12 [Do-stupnÈ on-line na [][]https://archive.ics.uci.edu/ml/datasets/Flags[]
+[]].
+ []
 
 
 AED: lastpage setting LastPage
-\tf@loe=\write10
-\openout10 = `fapa-text-ki.loe'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 279.
-(./fapa-text-ki.aux (./fapa-text.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 279.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                fapa-text-ki
-(biblatex)                and rerun LaTeX afterwards.
-
+[76]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 280.
+ (./fapa-text-ki.aux (./fapa-text.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 280.
 Package logreq Info: Writing requests to 'fapa-text-ki.run.xml'.
 \openout1 = `fapa-text-ki.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
  ) 
 Here is how much of TeX's memory you used:
- 24051 strings out of 493979
- 377511 string characters out of 6160469
- 901716 words of memory out of 5000000
- 26912 multiletter control sequences out of 15000+600000
- 119213 words of font info for 99 fonts, out of 8000000 for 9000
+ 24358 strings out of 493979
+ 396927 string characters out of 6160469
+ 901710 words of memory out of 5000000
+ 27085 multiletter control sequences out of 15000+600000
+ 116218 words of font info for 98 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
- 55i,18n,48p,2610b,1813s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.34} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fo
-nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{
-/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on fapa-text-ki.pdf (71 pages, 1564915 bytes).
+ 55i,18n,52p,2610b,2873s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
+}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc
+/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmm
+i8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/font
+s/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on fapa-text-ki.pdf (77 pages, 1603747 bytes).
 PDF statistics:
- 1326 PDF objects out of 1440 (max. 8388607)
- 1171 compressed objects within 12 object streams
- 322 named destinations out of 1000 (max. 500000)
- 798 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1715 PDF objects out of 1728 (max. 8388607)
+ 1543 compressed objects within 16 object streams
+ 464 named destinations out of 1000 (max. 500000)
+ 790 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,7 @@
 %%BoundingBox: -101 -101 101 101 
 %%HiResBoundingBox: -100.25 -100.25 100.25 100.25 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.05.04:2201
+%%CreationDate: 2018.05.05:0344
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font RFTKTD-CMMI10 UJOQAE-CMMI7

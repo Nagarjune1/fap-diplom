@@ -2,7 +2,7 @@
 %%BoundingBox: 29 -1 121 121 
 %%HiResBoundingBox: 29.75 -0.25 120.25 120.25 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.05.04:2201
+%%CreationDate: 2018.05.05:0344
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font TCYDUA-CMMI10

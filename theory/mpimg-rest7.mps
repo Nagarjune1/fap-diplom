@@ -2,7 +2,7 @@
 %%BoundingBox: 18 10 183 69 
 %%HiResBoundingBox: 18.2012 10.8722 182.41455 68.90779 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2018.05.04:2201
+%%CreationDate: 2018.05.05:0344
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font MGKGAV-CMMI10

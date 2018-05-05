@@ -1,5 +1,0 @@
-[1] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'fapa-text-plain.tex.blg'
-[128] biber:313> INFO - === Pá kvě  4, 2018, 22:39:17
-[266] Utils.pm:209> ERROR - Cannot find control file 'fapa-text-plain.tex.bcf'! - Did latex run successfully on your .tex file before you ran biber?
-[267] Biber.pm:114> INFO - ERRORS: 1

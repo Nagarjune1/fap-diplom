@@ -194,7 +194,7 @@ Vzhledem k~tomu, že účelem této práce je studovat uplatění fuzzy a pravd�
 
 Pravděpodobnostní počet k~tomuto účelu používá slovní označení jevů. Je poměrně přirozené říkat \uv{Pravděpodobnost jevu $e$ je $p$.} nebo \uv{Jev $e$ jistý}.
 
-Pro popis stupňů pravdivosti by bylo možné používat obdobný přístup, tj. říkat \uv{Tvrzení $t$ je pravdivé ve stupni $d$.}. Taková formulace však zní poněkud kostrbatě. Mnohem elegantněji lze podobná tvrzení vyjádřit pomocí tzv. lingvistikých proměnných \cite{Zad-ConLingVarAppApprRea}. Každá lingvistická proměnná $\alpha$ je tvořena univerzem $U$ hodnot a množinou lingvistických štítků $T$. Pro každý štítek $X \in T$ pak $\alpha$ definuje jeho \uv{význam} (významovou funkci) jako fuzzy množinu $M(X)$ nad $U$ (tj. funkci, která hodnotě z~univerza přiřadí stupeň pravdivosti). Fakt, že lingvistická proměnná $\alpha$ nabývá \uv{hodnoty} (štítku) $X$ budeme zapisovat $\alpha = X$. Významová funkce štítku $X$ poté určuje stupeň pravdivosti tohoto tvrzení.
+Pro popis stupňů pravdivosti by bylo možné používat obdobný přístup, tj. říkat \uv{Tvrzení $t$ je pravdivé ve stupni $d$.}. Taková formulace však zní poněkud kostrbatě. Mnohem elegantněji lze podobná tvrzení vyjádřit pomocí tzv. lingvistických proměnných \cite{Zad-ConLingVarAppApprRea}. Každá lingvistická proměnná $\alpha$ je tvořena univerzem $U$ hodnot a množinou lingvistických štítků $T$. Pro každý štítek $X \in T$ pak $\alpha$ definuje jeho \uv{význam} (významovou funkci) jako fuzzy množinu $M(X)$ nad $U$ (tj. funkci, která hodnotě z~univerza přiřadí stupeň pravdivosti). Fakt, že lingvistická proměnná $\alpha$ nabývá \uv{hodnoty} (štítku) $X$ budeme zapisovat $\alpha = X$. Významová funkce štítku $X$ poté určuje stupeň pravdivosti tohoto tvrzení.
 
 \begin{example}[Ligvistické proměnné]
  Mějme lingvistickou proměnnou $\alpha$ s~významem \uv{výška osoby}. Univerzem hodnot jsou všechna nezáporná reálná čísla. Lingvistické štítky jsou $X_m$ (\uv{malá}), $X_s$ (\uv{střední}), $X_v$ (\uv{velká}) a $X_{vv}$ (\uv{velmi velká}). Významové funkce jednotlivých štítků jsou vyobrazeny na obrázku \ref{fig:lingVarsMeansChart}.
@@ -206,7 +206,7 @@ Pro popis stupňů pravdivosti by bylo možné používat obdobný přístup, tj
  \centering
  \includegraphics{mpimg-charts0}
  
- \caption[Graf významových funkcí štítků]{Graf významových funkcí štítků $X_m$ (\uv{malá}), $X_s$ (\uv{střední}), $X_v$ (\uv{velká}) a $X_{vv}$ (\uv{velmi velká}) lingvistické porměnné \uv{výška osoby}.} \label{fig:lingVarsMeansChart}
+ \caption[Graf významových funkcí štítků]{Graf významových funkcí štítků $X_m$ (\uv{malá}), $X_s$ (\uv{střední}), $X_v$ (\uv{velká}) a $X_{vv}$ (\uv{velmi velká}) lingvistické proměnné \uv{výška osoby}.} \label{fig:lingVarsMeansChart}
 \end{figure}
 
 \begin{note}
@@ -254,7 +254,7 @@ kde $\alpha_1, \dots \alpha_n, \beta$ jsou lingvistické proměnné a $x_1, \dot
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Teorie automatů}
+\subsection{Řetězce a jazyky}
 Definice a značení následujících pojmů jsou převzaty z~\cite{Koz-AutComp}.
 
 Základním pojmem při studiu automatů je abeceda. Abeceda je neprázdná a konečná množina symbolů a značí se typicky $\Sigma$. Abecedou může být například \uv{všechna malá písmena latinky}, nebo např. číslice $0$ -- $9$.
@@ -317,7 +317,7 @@ Automat se řadí mezi tzv. výpočetní modely. Výpočetní model je označen�
 
 Automaty také často bývají nazývany jako stavové stroje. Na automat lze totiž nahlížet jako na určité zařízení. Toto zařízení je charakterizováno svým vnitřním stavem a v~závislosti na vstupu se tento stav diskrétně mění, tj. můžeme tvrdit, že automat přecháhází od jednoho stavu k~jinému.
 
-Důležité je také dělení automatů na deterministické a nedeterministické. Obecná definice říká, že u~deterministického automatu je jednoznačně dáno, do kterého stavu v~každý moment výpočtu automat přejde. Naopak u~nedeterminstického tento předpoklad neplatí, tj. výpočet automatu se může octnout v~situaci, kdy má možnost přejít do dvou a více stavů \uv{současně}.
+Důležité je také dělení automatů na deterministické a nedeterministické. \\ Obecná definice říká, že u~deterministického automatu je jednoznačně dáno, do kterého stavu v~každý moment výpočtu automat přejde. Naopak u~nedeterminstického tento předpoklad neplatí, tj. výpočet automatu se může octnout v~situaci, kdy má možnost přejít do dvou a více stavů \uv{současně}.
 
 Tuto situaci budeme u~nedeterministických automatů reprezentovat tak, že automat se při svém výpočtu nebude nacházet vždy v~jednom stavu, ale jeho \uv{aktuální stav} bude popsán celou množinou stavů, ve kterých se aktuálně nachází.
 
@@ -512,7 +512,7 @@ Stupeň $\mathbf{A}(w)$, v~jakém je řetězec $w$ automatem $\mathbf{A}$ přija
      \dots \otimes &\mu(p_n, a_n, q') \otimes \eta(q'))
   \end{align*}
 
-  Tento zápis intuitivněji popsuje výpočet automatu. Tento zápis totiž můžeme chápat tak, že automat projde všechny $(n+1)$ prvkové posloupnosti stavů $q, q_n, \dots, q_1, q$ (tj. všechny možné cesty v~grafu automatu) pro každou z~nich spočítá stupeň, v~jakém by byl automatem přijat a vybere tu s~nejvyšším stupňěm.
+  Tento zápis intuitivněji popsuje výpočet automatu. Tento zápis totiž můžeme chápat tak, že automat projde všechny $(n+1)$ prvkové posloupnosti stavů $q, q_n,$ $\dots,$ $q_1, q$ (tj. všechny možné cesty v~grafu automatu) pro každou z~nich spočítá stupeň, v~jakém by byl automatem přijat a vybere tu s~nejvyšším stupňěm.
   
   Vzhledem k~tomu, že počet cest je roven $|Q|^{n+1}$ a každá cesta je tvořena $n+1$ stavy, automat při svém výpočtu musí navštívit $|Q|^{n+1}(n+1)$ stavů. Časová složitost je tak exponenciální vzhledem k~délce vstupního řetězce\footnote{Výpočet však může být optimalizován. Pokud některý přechod není definován (tj. automat by jej realizoval v~nulovém stupni) můžou být cesty, procházející tímto přechodem při vypočtu vynechány.}.
 \end{note}
@@ -555,7 +555,7 @@ Následuje definice pravděpodobnostního automatu. Byla převzata z~\cite{Rab-P
 
 Přechodovou funkci lze číst následujícím způsobem: Pro libovolné $(q, a, q', p) \in \mu$: \uv{jestliže se automat nachází ve stavu $q$ a na vstupu je symbol $a$, automat přejde do stavu $q'$ s~pravděpodobností $p$}.
 
-Přejděme nyní k~popisu výpočtu automatu. Očíslujme si stavy $Q = \{ q_0, q_1, \dots q_n \}$. Dále označme $B(a)$ jako čtvercovou matici velikosti $n \times n$ symbolu $a \in \Sigma$ tak, že:
+Přejděme nyní k~popisu výpočtu automatu. Očíslujme si stavy $Q = \{ q_0, q_1,$ $\dots,$ $q_n \}$. Dále označme $B(a)$ jako čtvercovou matici velikosti $n \times n$ symbolu $a \in \Sigma$ tak, že:
 $$
   B(a)_{i, j} = P_{q_i, a}(q_j)
 $$
@@ -583,7 +583,7 @@ Jazyk řetězců rozpoznávaných automatem je pak určen tzv. řezem (tj. minim
 \end{definition}
 
 \begin{example}[Pravděpodobnostní automat]
- Mějme $Q = \{ q_0, q_1 \}$, $\Sigma = \{ a, b \}$, $F = \{ q_1 \}$ a $\mu(q_0, a) = \mu(q_0, b) = \{ (q_0, 1/2), (q_1, 1/2) \}$, $\mu(q_1, a) = \{ (q_0, 1) \}$, $\mu(q_1, b) = \{ (q_1, 1) \}$. Pak $\mathbf{A} = (Q, \Sigma, \mu, q_0, F)$ je pravděpodobnostní automat.
+ Mějme $Q = \{ q_0, q_1 \}$, $\Sigma = \{ a, b \}$, $F = \{ q_1 \}$ a $\mu(q_0, a) = \mu(q_0, b)$ $= \{ (q_0, 1/2),$ $(q_1, 1/2) \}$, $\mu(q_1, a) = \{ (q_0, 1) \}$, $\mu(q_1, b) = \{ (q_1, 1) \}$. Pak $\mathbf{A} = (Q, \Sigma, \mu, q_0, F)$ je pravděpodobnostní automat.
  
  Tento automat řetězec \str{a b a} přijímá s~pravděpodobnostní $1/8$ a řetězec \str{a a b} s~pravděpodobnostní $5/8$.
 \end{example}
@@ -1580,7 +1580,7 @@ Veškeré podrobnější informace jsou k~nalezení v~javadoc dokumentaci v~samo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Korekce překlepů}
-Detekce a korekce překlepů byla implementována na základě popisu v~kapitole \ref{subs:DetTyp}. Realizuje ji třída \verb|TyposCorrecter| a spouští se pomocí \verb|TyposCorrecterApp|. Proces korekce je konfigurován slovníkem (seznam korektních slov), popisem klávesnice a stupni, v~jakých má být akceptován stisk právě jedné extra klávesy, stisk více extra kláves, stisk jiné klávesy či vynechání klávesy.
+Detekce a korekce překlepů byla implementována na základě popisu v~kapitole \ref{subs:DetTyp}. Realizuje ji třída \verb|TyposCorrecter| a spouští se pomocí třídy \verb|TyposCorrecterApp|. Proces korekce je konfigurován slovníkem (seznam korektních slov), popisem klávesnice a stupni, v~jakých má být akceptován stisk právě jedné extra klávesy, stisk více extra kláves, stisk jiné klávesy či vynechání klávesy.
 
 Instance třídy \verb|TyposCorrecter| bere na svém vstupu textový řetězec tvořený jedním nebo více slovy oddělených mezerou. Výstupem je posloupnost slov dle následujího klíče:
 \begin{enumerate}
@@ -1661,20 +1661,20 @@ Je vhodné upozornit, že metoda lisování dat je přímo závislá jednak na k
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Závěr}
-Úkolem této práce bylo ukázat, že fuzzy a pravděpodobnostní automaty mohou najít uplatnění v~praxi. V~rámci této práce bylo nastudováno více než $200$ kusů literatury (článků a knih), ve kterých bylo vyhledáno značné množství praktických aplikací těchto modelů.
+% \section{Závěr}
+% Úkolem této práce bylo ukázat, že fuzzy a pravděpodobnostní automaty mohou najít uplatnění v~praxi. V~rámci této práce bylo nastudováno více než $200$ kusů literatury (článků a knih), ve kterých bylo vyhledáno značné množství praktických aplikací těchto modelů.
+% 
+% Tato práce tedy prokázala, že fuzzy a pravděpodobnostní automaty nacházejí uplatnění pro řešení různých problémů. V~mnoha případech fuzzy či pravděpodobnostní automaty značně zjednodušují či zpřehledňují řešení patřičného problému.
+% 
+% Na druhou stranu, použití těchto modelů je spjato s~některými dalšími problémy. V~drivé většině případů je nutné provést vhodné předzpracování dat, které výrazně ovlivňuje podobu použitého automatu. Stejnětak, samotný automat obvykle nedokáže dostatečně pružně pracovat s~reálnými vstupy a je třeba jej upravit např. deformováním nebo strojovým učením.
+% 
+% Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi, je časová složitost jejich výpočtu. Již při prováděných experimentech na relativně malých datech se ukázalo, že $1$ výpočet na běžném počítači mnohdy překročí jednu sekundu. Pro použití v~praxi je tak obvykle nutné provést značné optimalizace. To často vede ke vzniku kompletně nového modelu, jehož je fuzzy automat pouze základní myšlenkou.
+% 
+% Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle \uv{bojuje} s~korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná ve vyšším stupni, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
+% 
+% Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
 
-Tato práce tedy prokázala, že fuzzy a pravděpodobnostní automaty nacházejí uplatnění pro řešení různých problémů. V~mnoha případech fuzzy či pravděpodobnostní automaty značně zjednodušují či zpřehledňují řešení patřičného problému.
-
-Na druhou stranu, použití těchto modelů je spjato s~některými dalšími problémy. V~drivé většině případů je nutné provést vhodné předzpracování dat, které výrazně ovlivňuje podobu použitého automatu. Stejnětak, samotný automat obvykle nedokáže dostatečně pružně pracovat s~reálnými vstupy a je třeba upravit např. deformováním nebo strojovým učením.
-
-Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi, je časová složitost jejich výpočtu. Již při prováděných experimentech na relativně malých datech se ukázalo, že $1$ výpočet na běžném počítači mnohdy překročí jednu sekundu. Pro použití v~praxi je tak obvykle nutné provést značné optimalizace. To často vede ke vzniku kompletně nového modelu, jehož je fuzzy automat pouze základní myšlenkou.
-
-Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle \uv{bojuje} s~korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná ve vyšším stupni, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
-
-Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za poslední tři roky, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
-
-Další z~poznatků, který dle autorova názoru práce přinesla, je, že značné množství autorů si nedostatečně uvědomuje rozdíl, mezi fuzzy a pravděpodobnostním přístupem. V~práci bylo opakovaně naráženo na problémy, které bylo vhodné řešit spíše pomocí fuzzy automatů namísto pravděpodobnostních (a naopak). Stejnětak, některá literatura popisující aplikace fuzzy automatů na problematiku nahlížela z~pohledu gramatik, přestože to není zcela přesné.
+%Další z~poznatků, který dle autorova názoru práce přinesla, je, že značné množství autorů si nedostatečně uvědomuje rozdíl, mezi fuzzy a pravděpodobnostním přístupem. V~práci bylo opakovaně naráženo na problémy, které bylo vhodné řešit spíše pomocí fuzzy automatů namísto pravděpodobnostních (a naopak). Stejnětak, některá literatura popisující aplikace fuzzy automatů na problematiku nahlížela z~pohledu gramatik, přestože to není zcela přesné.
 
 % 
 % 
