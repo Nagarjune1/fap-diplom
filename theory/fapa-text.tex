@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Úvod}
-Fuzzy automaty jsou výpočetní modely, které propojují teorii automatů s~fuzzy množinami. Obdobně, pravděpodobnostní automaty spojují teorii automatů s~pravděpodobnostním počtem.
+Fuzzy automaty jsou výpočetní modely, které propojují teorii automatů s~fuzzy množinami. Obdobně, pravděpodobnostní automaty propojují teorii automatů s~pravděpodobnostním počtem.
 
 Teorie automatů, fuzzy množiny i pravděpodobnostní počet jsou v~současné době poměrně hluboce prozkoumány. Je proto přirozené, že se současný výzkum zabývá také jejich vzájemným propojováním, tj. fuzzy a pravděpodobnostními automaty. Teoretický výzkum těchto modelů přinesl mnohé výsledky. Otázkou však je, jaké je uplatnění těchto modelů v~praxi.
 
@@ -100,7 +100,7 @@ V~tabulce \ref{tbl:Norms} jsou uvedeny nejpoužívanější tři t-normy a jim o
   název	 		& $a \otimes b$		& název				& $a \oplus b$		\\\hline \hline
   Gödelova 		& $\min(a, b)$ 		& maximální 			& $\max(a, b)$		\\
   (minimální) 		&			&				&			\\\hline
-  Produktová 		& $a b$ 		& probabilistický  		& $a + b - a b$		\\
+  produktová 		& $a b$ 		& probabilistický  		& $a + b - a b$		\\
 			&			& součet			&			\\\hline
   \L{}ukasiewiczova 	& $\max(0, a + b - 1)$ 	& ohraničený 			& $\min(a + b, 1)$	\\
 			&			& součet			&			\\\hline
@@ -701,7 +701,7 @@ Fuzzy tree automaty jsou nástrojem, který rozpoznává S-termy, resp. fuzzy ja
 Stupeň pravdivosti, v~jakém je S-term přijímán, je dán 1) průnikem (t-normou) pravivostí jednotlivých přechodů a 2) zda-li výpočet zkončil v~koncovém nebo stavu či nikoliv. Jazyk S-termů rozpoznávaný fuzzy tree automatem pak fuzzy množina všech S-termů ve stupni, v~jakém jsou automatem přijímány.
 
 \begin{example}[Fuzzy tree automat]
-  Uvažujme fuzzy tree automat o~stavech $q_1, q_2$. V~tabulce \ref{tab:FuzTreAutTrans} je uveden příklad jeho možných přechodových pravidel.
+  Uvažujme fuzzy tree automat o~stavech $q_1, q_2$ pracující s terminálními symboly $x, y$ a neterminálními $M, S$. V~tabulce \ref{tab:FuzTreAutTrans} je uveden příklad jeho možných přechodových pravidel.
 \end{example}
 
 \begin{table}
@@ -732,7 +732,7 @@ Stupeň pravdivosti, v~jakém je S-term přijímán, je dán 1) průnikem (t-nor
     \hline
   \end{tabular}
   
-  \caption[Příklad přechodů fuzzy tree automatu]{Příklad přechodů fuzzy tree automatu. $x, y$ jsou terminální symboly, $M, S$ neterminální a $t_1, t_2$ jsou označení pro libovolné S-termy.} \label{tab:FuzTreAutTrans}
+  \caption[Příklad přechodů fuzzy tree automatu]{Příklad přechodů fuzzy tree automatu} \label{tab:FuzTreAutTrans}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1134,7 +1134,7 @@ Vstupem této techniky je (konečná) trénovací množina a parametr $\delta$. 
 
 Myšlenka metody lisování dat je založena na zakódování vstupních dat do řetězců a jejich následném zpracování fuzzy automatem. V~první fázi jsou z~trénovací množiny odebrány záznamy, jejiž výstupní atribut není roven $1$. Následně je každý záznam trénovací množiny zapsán jako řetězec nad abecedou $\Sigma = \{ 0, 1 \}$. Celá trénovací množina tak může být konvertována na jazyk nad abecedou $\Sigma$. Vzhledem k~tomu, že trénovací množina je konečná, bude i tento jazyk konečný. Může tak být sestaven konečný bivalentní automat a následně fuzzy automat, který tento jazyk rozpoznává.
 
-Takový automat však obykle obsahuje velké množství stavů. Je proto třeba provést jeho determinizaci a minimalizaci\footnote{Minimalizace fuzzy automatu je proces konstrukce automatu rozpoznávající stejný jazyk, avšak s~menším počtem stavů. Fuzzy minimalizace pak minimalizovanému automatu umožňuje rozpoznávat jazyk \uv{podobný} (míra povolené podobnosti je dána parametrem $\delta$).}. Zde je vhodné použít fuzzy minimalizaci s~parametrem $\delta$. Fuzzy minimalizace v~takovém případě \uv{vyhladí} ostrost mezi řetězci, které automat přijímal, a řetězci, které zamítal. Lze říci, že automat se \uv{naučí} rozpoznávat také řetězce, které jsou podobné trénovacím, avšak nebyly součástí trénovací množiny.
+Takový automat však obykle obsahuje velké množství stavů. Je proto třeba provést jeho determinizaci a minimalizaci\footnote{Minimalizace fuzzy automatu je proces konstrukce automatu rozpoznávající stejný jazyk, avšak s~menším (popř. nejmenším možným) počtem stavů. Fuzzy minimalizace pak minimalizovanému automatu umožňuje rozpoznávat jazyk \uv{podobný} (míra povolené odlišnosti je dána parametrem $\delta$).}. Zde je vhodné použít fuzzy minimalizaci s~parametrem $\delta$. Fuzzy minimalizace v~takovém případě \uv{vyhladí} ostrost mezi řetězci, které automat přijímal, a řetězci, které zamítal. Lze říci, že automat se \uv{naučí} rozpoznávat také řetězce, které jsou podobné trénovacím, avšak nebyly součástí trénovací množiny.
 
 Je-li proveden výpočet automatu s~řetězcem, který byl sestaven ze záznamu z~testovacích dat (stejným způsobem jako u~trénovací množiny), automat určí stupeň v~jakém je pravdivé trvzení \uv{záznam má hodnotu výstupního atributu rovnu $1$}.
 
@@ -1157,14 +1157,15 @@ Pro listové uzly můžeme $\gamma(v)$ nadefinovat vždy jako $1$. Pro určení 
 
 Uvažujme, že S-term $t$ je tvořen vnitřními uzly $I$ a listovými uzly $o$ (např. $I(ooI(oo)o)$). Strom tohoto S-termu odpovídá vstupnímu stromu. Fuzzy tree automat bude mít jeden stav $q_1$, který bude koncovým stavem. Přechodová funkce bude mít následující pravidla:
 \begin{enumerate}
+ \setlength{\itemindent}{2em}
  \item Při vstupu $t = o$ přejdi do stavu $q_1$ ve stupni $1$
  \item Při vstupu $t = I(t_1)$ přejdi ze stavu $q_1$ do stavu $q_1$ ve stupni $1/m$
  \item Při vstupu $t = I(t_1 t_2)$ přejdi ze stavů $q_1 q_1$ do stavu $q_1$ ve stupni $2/m$
  \item[] $\dots$
- \item[($m + 1$).] Při vstupu $t = I(t_1 \dots t_m)$ přejdi ze stavu $q_1 \dots q_1$ do stavu $q_1$ ve stupni $m/m = 1$
+ \item[($m + 1$).] Při vstupu $t = I(t_1 \dots t_m)$ přejdi ze stavů $q_1 \dots q_1$ do stavu $q_1$ ve stupni $m/m = 1$
 \end{enumerate}
 
-Takto navržený automat zřejmě rozpoznává $m$-ární úplné stromy.
+%Takto navržený automat zřejmě rozpoznává $m$-ární úplné stromy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1273,11 +1274,9 @@ Podobnou techniku popisují v~\cite{TurChe-MacRecHumActSur}. Zde však namísto 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Průmyslové řídící systémy, fuzzy kontroléry}
-Vztah fuzzy automatů a řídících systémů jsou popsány např. v~\cite{HeKinSep-DecMakFuzEnvZUsOntCon+, Gra+-ApFuStFuOuFinMaPrRecVioOntAss, WeeFu-FormFuzAutAppModLeaSys, GraFodDri-HybFuzBooAutOntCont}. 
+Vztah fuzzy automatů a řídících systémů je popsán např. v~\cite{HeKinSep-DecMakFuzEnvZUsOntCon+, Gra+-ApFuStFuOuFinMaPrRecVioOntAss, WeeFu-FormFuzAutAppModLeaSys, GraFodDri-HybFuzBooAutOntCont}. 
 
-Systémy k~modelování bývají často tak složité, že je obvykle nemožné popsat je zcela kompletně. Mohlo by tak například z~důvodu chyby nebo neočekávaného vnějšího podnětu dojít k~tomu, že model se octne v~nekonzistením stavu, ze kterého nebude schopen se zotavit. Použití fuzzy automatů umožňuje do modelů určitou formu zotavení zanést.
-
-V~\cite{WeeFu-FormFuzAutAppModLeaSys, GraFod-FuzAutIntHybConSys} je fuzzy automat použit jako model pro návrh (obecných) řídících systémů. Řídící systém je stavový stroj, který je překlápěn mezi diskrétními stavy pomocí událostí. Řídící tak systém může být reprezentován automatem.
+Systémy, jež mají být řídícím systémem řízeny, bývají často tak složité, že je obvykle nemožné popsat je zcela kompletně. Mohlo by tak například z~důvodu chyby nebo neočekávaného vnějšího podnětu dojít k~tomu, že model se octne v~nekonzistením stavu, ze kterého nebude schopen se zotavit. Použití fuzzy automatů umožňuje do modelů určitou formu zotavení zanést.
 
 \TODO{vypsat z~článků příklady}
 
@@ -1449,13 +1448,15 @@ V~\cite{Lee-FuzTreAutSynPatRec} byl popsán způsob, jak pomocí fuzzy tree auto
 %\end{example}
 
 \begin{figure} 
+ \hfill
  \begin{subfigure}{0.4\textwidth}
   \includegraphics{mpimg-rest6}
- \end{subfigure}
- %
+ \end{subfigure} %
+ \hfill %
  \begin{subfigure}{0.4\textwidth}
   \includegraphics{mpimg-rest7}
  \end{subfigure}
+ \hfill
  
  \caption[Příklad složeného geometrického tvaru]{Příklad složeného geometrického tvaru a stromová reprezentace jemu odpovídajícímu S-termu. Symbol $t$ reprezentuje trojúhelník, symbol $o$ obdélník, symbol $c$ čtverec. S-term $N(t_1 t_2)$ symbolizuje \uv{$t_1$ je nad $t_2$} a $V(t_1 t_2 t_3)$ značí \uv{$t_1$, $t_2$ a $t_3$ leží vedle sebe}.} \label{img:Geoms}
 \end{figure}
@@ -1564,7 +1565,7 @@ Studium této kapitoly předpokládá alespoň základní znalost objektového p
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Základní informace}
-Aplikace byly implementovány v~programovacím jazyce Java na platformě Java Standart Edition. Projekt byl strukturován tak, aby bylo možné jej automaticky sestavit a spustit pomocí nástroje Apache Maven \cite{web-Maven}. Pro jeho sestavení a spuštění nejsou potřebné žádné dodatečné nástroje či knihovny. Implementace by měla být platformově nezávislá, vyvíjena a testována byla na platformě GNU/Linux.
+Aplikace byly implementovány v~programovacím jazyce Java na platformě Java Standart Edition. Aplikace byla pojmenována \verb|fapapp|. Projekt aplikace byl strukturován tak, aby bylo možné jej automaticky sestavit a spustit pomocí nástroje Apache Maven \cite{web-Maven}. Pro jeho sestavení a spuštění nejsou potřebné žádné dodatečné nástroje či knihovny. Implementace by měla být platformově nezávislá, vyvíjena a testována byla na platformě \mbox{GNU/Linux}.
 
 Samotný projekt je rozdělen na moduly (podprojekty) odpovídající použitému typu automatu, tj. \verb|fuzzy-automata| (nedeterministický fuzzy automat), \verb|event-driven-fuzzy-automata| (událostmi řízený fuzzy automat), \verb|fuzzy-tree-automata| (fuzzy tree automat) a \verb|cellular-fuzzy-automata| (buněčný fuzzy automat). Pravděpodobnostní automaty implementovány nebyly.
 
@@ -1580,7 +1581,7 @@ Veškeré podrobnější informace jsou k~nalezení v~javadoc dokumentaci v~samo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Korekce překlepů}
-Detekce a korekce překlepů byla implementována na základě popisu v~kapitole \ref{subs:DetTyp}. Realizuje ji třída \verb|TyposCorrecter| a spouští se pomocí třídy \verb|TyposCorrecterApp|. Proces korekce je konfigurován slovníkem (seznam korektních slov), popisem klávesnice a stupni, v~jakých má být akceptován stisk právě jedné extra klávesy, stisk více extra kláves, stisk jiné klávesy či vynechání klávesy.
+Detekce a korekce překlepů byla implementována na základě popisu v~kapitole \ref{subs:DetTyp}. Realizuje ji třída \verb|TyposCorrecter| a spouští se pomocí spustitelné třídy \verb|TyposCorrecterApp|. Proces korekce je konfigurován slovníkem (seznam korektních slov), popisem klávesnice a stupni, v~jakých má být akceptován stisk právě jedné extra klávesy, stisk více extra kláves, stisk jiné klávesy či vynechání klávesy.
 
 Instance třídy \verb|TyposCorrecter| bere na svém vstupu textový řetězec tvořený jedním nebo více slovy oddělených mezerou. Výstupem je posloupnost slov dle následujího klíče:
 \begin{enumerate}

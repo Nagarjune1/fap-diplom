@@ -4,6 +4,7 @@
 # use with `make` tool
 # 
 
+# generates PDF
 generate:
 	# wget http://www.inf.upol.cz/downloads/dokumenty/kidiplom.zip
 	# unzip kidiplom.zip
@@ -18,6 +19,11 @@ generate:
 	biber fapa-text-ki
 	pdflatex fapa-text-ki.tex
 	pdflatex fapa-text-ki.tex
+	## just for sure ... 
+	pdflatex fapa-text-ki.tex
 
+# cleans all helper files
 clean:
-	rm *.aux *.bbl *.blg *.log *.toc *.mpx *.mps *-eps-converted-to.pdf
+	rm *.mpx *.mps *-eps-converted-to.pdf
+	rm *.aux *.bbl *.blg *.log *.acn *.bcf *.glo *.idx *.ist *.loe *.lof *.lol *.lot *.run.xml
+

@@ -1,14 +1,14 @@
 [1] Config.pm:302> INFO - This is Biber 2.11
 [2] Config.pm:305> INFO - Logfile is 'fapa-text-ki.blg'
-[217] biber:313> INFO - === So kvě  5, 2018, 03:44:42
-[324] Biber.pm:371> INFO - Reading 'fapa-text-ki.bcf'
-[810] Biber.pm:854> INFO - Using all citekeys in bib section 0
-[919] Biber.pm:3976> INFO - Processing section 0
-[983] Biber.pm:4136> INFO - Looking for bibtex format file 'resources.bib' for section 0
-[1001] bibtex.pm:1489> INFO - LaTeX decoding ...
-[1743] bibtex.pm:1305> INFO - Found BibTeX data source 'resources.bib'
-[6175] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[6176] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
-[6177] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
-[6620] bbl.pm:617> INFO - Writing 'fapa-text-ki.bbl' with encoding 'UTF-8'
-[6847] bbl.pm:720> INFO - Output to fapa-text-ki.bbl
+[162] biber:313> INFO - === Ne kvě  6, 2018, 22:40:58
+[260] Biber.pm:371> INFO - Reading 'fapa-text-ki.bcf'
+[668] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[747] Biber.pm:3976> INFO - Processing section 0
+[803] Biber.pm:4136> INFO - Looking for bibtex format file 'resources.bib' for section 0
+[822] bibtex.pm:1489> INFO - LaTeX decoding ...
+[1561] bibtex.pm:1305> INFO - Found BibTeX data source 'resources.bib'
+[5830] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[5831] UCollate.pm:68> INFO - Overriding locale 'cs_CZ' defaults 'variable = shifted' with 'variable = non-ignorable'
+[5831] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'cs_CZ'
+[6245] bbl.pm:617> INFO - Writing 'fapa-text-ki.bbl' with encoding 'UTF-8'
+[6474] bbl.pm:720> INFO - Output to fapa-text-ki.bbl

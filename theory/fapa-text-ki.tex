@@ -83,9 +83,9 @@
 
 %% Anotace práce, včetně anglické (obvykle překlad z jazyka
 %% práce). Jeden odstavec!
-\annotation{Fuzzy a pravděpodobnostní automaty jsou poměrně moderní výpočetní modely. Tato práce se zabývá jejich možným uplatněním v praxi. Práce prezentuje značné množství oblastí, kde nacházejí tyto modely uplatnění, a to včetně konkrétních příkladů jejich aplikací. Součástí práce je software, který některé aplikace implementuje.}
+\annotation{Fuzzy a pravděpodobnostní automaty jsou poměrně moderní výpočetní modely. Tato práce se zabývá jejich uplatněním v praxi. Práce prezentuje značné množství oblastí, kde nacházejí tyto modely uplatnění, a to včetně konkrétních příkladů jejich aplikací. Součástí práce je software, který některé aplikace implementuje.}
 
-\annotation[english]{Fuzzy and probabilistic automata are quite modern computational models. This thesis is about their possible practical applications. Thesis presents considerable amount of domains, where theese models find usage, so with the particular examples of their applications. This thesis also includes software, which some of such applications implements.}
+\annotation[english]{Fuzzy and probabilistic automata are quite modern computational models. This thesis is about their practical applications. Thesis presents considerable amount of domains, where theese models find usage, so with the particular examples of their applications. This thesis also includes software, which some of such applications implements.}
 
 %% Klíčová slova práce, včetně anglických. Oddělená (obvykle) středníkem.
 \keywords{automaty; fuzzy množiny; pravděpodobnostní počet; aplikace}
@@ -98,7 +98,7 @@
 
 %% Volitelné poděkování. Stručné! Výchozí je prázdné. Makro nemá
 %% nepovinný parametr pro uvedení jazyka.
-\thanks{Chtěl bych poděkovat vedoucímu práce, doc.~RNDr.~Michalovi Krupkovi,~Ph.D., za velmi cenné a přínosné rady. Dále bych chtěl poděkovat všem svým blízkým, kteří mi po dobu vypracovávání této práce byli oporou.}
+\thanks{Chtěl bych poděkovat vedoucímu práce, doc.~RNDr.~Michalovi Krupkovi,~Ph.D., za velmi cenné a přínosné rady. Dále bych chtěl poděkovat všem mým blízkým, kteří mi po dobu vypracovávání této práce byli oporou.}
 
 %% Cesta k souboru s bibliografií pro její sazbu pomocí BibLaTeXu
 %% (zvolenou nepovinným parametrem biblatex makra
@@ -135,6 +135,9 @@
 
 %% chorvatská jména autorů, https://tex.stackexchange.com/questions/14872/croatian-serbian-letters-in-cv-problem
 \usepackage[T1]{fontenc}
+
+%% zalamování URL, https://tex.stackexchange.com/questions/298851/linebreak-in-long-url-breakurl-wont-break-it/298856
+%%\usepackage[anythingbreaks]{breakurl}
 
 %% česká sazba bibtexu, https://tex.stackexchange.com/questions/194830/biber-locale-does-not-match-system-language-nor-biblatex-language
 %\usepackage[czech]{babel}
@@ -204,11 +207,11 @@ Tato práce tedy prokázala, že fuzzy a pravděpodobnostní automaty nacházej�
 
 Na druhou stranu, použití těchto modelů je spjato s~některými dalšími problémy. V~drivé většině případů je nutné provést vhodné předzpracování dat, které výrazně ovlivňuje podobu použitého automatu. Stejnětak, samotný automat obvykle nedokáže dostatečně pružně pracovat s~reálnými vstupy a je třeba jej upravit např. deformováním nebo strojovým učením.
 
-Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi, je časová složitost jejich výpočtu. Již při prováděných experimentech na relativně malých datech se ukázalo, že $1$ výpočet na běžném počítači mnohdy překročí jednu sekundu. Pro použití v~praxi je tak obvykle nutné provést značné optimalizace. To často vede ke vzniku kompletně nového modelu, jehož je fuzzy automat pouze základní myšlenkou.
+Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi, je časová složitost jejich výpočtu. Již při prováděných experimentech na relativně malých datech se ukázalo, že $1$ výpočet na běžném počítači může trvat i jednu sekundu. Pro použití v~praxi je tak obvykle nutné provést značné optimalizace. To často vede ke vzniku kompletně nového modelu, jehož je fuzzy automat pouze základní myšlenkou.
 
 Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle \uv{bojuje} s~korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná ve vyšším stupni, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
 
-Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta značnou část z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
+Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, bylo vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou strojovým učením. To značnou část z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
 \end{kiconclusions}
 
 \begin{kiconclusions}[english]
@@ -216,13 +219,13 @@ The main task of this thesis was to show that fuzzy and probabilistic automata c
 
 This thesis have prooved that fuzzy and probabilistic automata can be used to solve various problems. In many cases fuzzy or probabilistic automata makes such solution much easier or more clear.
 
-On the other hand, using of theese models is linked with some further problems. In the most of cases is necessarily to perform data preprocessing, which strongly affects the resulting automaton. Moreover, the automata itself mostly cannot precisely work with the real-world inputs, so the automaton has to be somehow modified, for instance by deformation or machine learning.
+On the other hand, using of theese models is linked with some further problems. In the most cases it is necessary to perform data preprocessing, which strongly affects the resulting automaton. Moreover, the automata itself mostly cannot precisely work with the real-world inputs, so the automaton has to be somehow modified, for instance by deformation or machine learning.
 
-Another circumstance, which makes application of fuzzy automata much more complicated, is the time complexity of their computation. Yet during the experiments within this thesis and on quite small data, was shown that one computation on common computer often exceed one second. There are required some optimalisations to make this model usable. In many cases this leads to completely new model, which's the fuzzy automaton just a basic idea.
+Another circumstance, which makes application of fuzzy automata much more complicated, is the time complexity of their computation. Yet during the experiments within this thesis and on quite small data, it was shown that one computation on common computer can exceed one second. There are required some optimalisations to make this model usable. In many cases this leads to completely new model, which's the fuzzy automaton just a basic idea.
 
-While for the longer inputs the automaton challenges the computation time, for the short ones automaton usually faces correctness of results. The automaton often incorrectly accepts short input string with higher degree, because automaton have not enough time to ``escape'' to state, which may reject the string.
+While for the longer inputs the automaton challenges the computation time, for the short ones automaton usually faces correctness of results. The automaton often incorrectly accepts short input string with higher degree, because automaton have not enough ``time'' to ``escape'' to state, which might reject it.
 
-However, there is obvious increase of interrest of applications of fuzzy and probabilistic automata. Just during the work on this thesis have been released a few more publications (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) about applications of fuzzy automata. However, by the author's opinion, the usage of fuzzy and probabilistic automata will be in the future more and more bounded by increasing popularity of artifical intelligence. The artifical intelligence can solve many of presented problems more simply, but in less elegant way.
+However, there is obvious increase of interrest of applications of fuzzy and probabilistic automata. Just during the work on this thesis it have been released a few more publications (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) about applications of fuzzy automata. However, by the author's opinion, the usage of fuzzy and probabilistic automata will be in the future more and more bounded by increasing popularity of machine learning. The machine learning can solve many of presented problems more simply, but in less elegant way.
 \end{kiconclusions}
 
 %% Přílohy obsahu textu práce, za makrem \appendix.
@@ -232,7 +235,7 @@ However, there is obvious increase of interrest of applications of fuzzy and pro
 %% práce!
 \section{Obsah přiloženého CD} \label{sec:ObsahCD}
 
-Přiložené CD je tvořeno následujícími soubory a adresáři:
+Přiložené CD obsahuje následující soubory a adresáře:
 \begin{description}
 
 \item[\texttt{README.txt}] \hfill \\
@@ -242,7 +245,7 @@ Přiložené CD je tvořeno následujícími soubory a adresáři:
   Adresář se zdrojovými soubory tohoto textu. Obsahuje plný text práce, veškeré obrázky a databázi referencí. Dále obsahuje distribuci stylů \verb|kidiplom| a Makefile pro vysázení práce do formátu PDF.
 
 \item[\texttt{src/}] \hfill \\
-  Zdrojové kódy aplikace \verb|fapapp| implementující vybrané aplikace. Adresář dále obsahuje programátorskou dokumentaci a testovací data. 
+  Zdrojové kódy aplikace \verb|fapapp| implementující vybrané aplikace. Adresář také obsahuje testovací data. 
   
 \item[\texttt{run/}] \hfill \\
   Adresář se sestavenými JAR soubory aplikace \verb|fapapp| včetně pomocných skriptů pro snažší spouštění.
@@ -263,7 +266,10 @@ Přiložené CD je tvořeno následujícími soubory a adresáři:
 \nocite{*}
 
 %% Vlastní sazba bibliografie při použití BibLaTeXu.
+%% sloppypar, https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+\begin{sloppypar}
 \printbibliography
+\end{sloppypar}
 
 %% Bibliografie, včetně sazby, při nepoužití BibLaTeXu.
 % \begin{thebibliography}{9}

@@ -2127,14 +2127,8 @@
       \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{https://sites.google.com/site/novaiso690/}}
+      \field{howpublished}{Dostupné online na \url{https://sites.google.com/site/novaiso690/}, cit. 5.~5.~2018}
       \field{title}{Nová citační norma ČSN ISO 690:2011}
-      \verb{urlraw}
-      \verb https://sites.google.com/site/novaiso690/
-      \endverb
-      \verb{url}
-      \verb https://sites.google.com/site/novaiso690/
-      \endverb
     \endentry
     \entry{MukRay-StaSplMerProbFiStaAuSigRepAna}{article}{}
       \name{author}{2}{}{%
@@ -2945,33 +2939,6 @@
       \field{title}{Hybrid Fuzzy-Boolean Automata for Ontological Controllers}
       \field{year}{1998}
     \endentry
-    \entry{GraFod-FuzAutIntHybConSys}{article}{}
-      \name{author}{2}{}{%
-        {{hash=335779675ae98c93cc6aa35f2a5c4200}{%
-           family={Grantner},
-           familyi={G\bibinitperiod},
-           given={Janos\bibnamedelima L.},
-           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=42d29925423c754e812dfb5a253e9558}{%
-           family={Fodor},
-           familyi={F\bibinitperiod},
-           given={George},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \strng{fullhash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \strng{bibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \strng{authorbibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \strng{authornamehash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \strng{authorfullhash}{fe8c916b576f7e3d137b08ba13b16f57}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE International Conference on fuzzy systems}
-      \field{title}{Fuzzy Automaton for Intelligent Hybrid Control Systems}
-      \field{year}{2002}
-    \endentry
     \entry{AlAhHep+-ModUrbGroDynUsCelAutGIS}{article}{}
       \name{author}{4}{}{%
         {{hash=992df9c0ca459648ce0c80aa69ed8ad3}{%
@@ -3005,7 +2972,7 @@
       \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Dostupné online na \url{https://pdfs.semanticscholar.org/6e2a/c1dbea43cd06b4f7bab26f3f04ce6816908b.pdf}}
+      \field{note}{Dostupné online na \footnotesize{\url{https://pdfs.semanticscholar.org/6e2a/c1dbea43cd06b4f7bab26f3f04ce6816908b.pdf}}}
       \field{title}{Modeling Urban Growth Dynamics using Cellular Automata and GIS}
       \field{year}{2008}
     \endentry
@@ -3395,7 +3362,7 @@
     \entry{web-Lenna}{misc}{}
       \name{author}{1}{}{%
         {{hash=91e5f9f56096fe3cd2cead79518a0885}{%
-           family={Wikipedie},
+           family={{Wikipedie}},
            familyi={W\bibinitperiod}}}%
       }
       \strng{namehash}{91e5f9f56096fe3cd2cead79518a0885}
@@ -3408,14 +3375,8 @@
       \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{https://en.wikipedia.org/wiki/Lenna}}
+      \field{howpublished}{Dostupné online na \url{https://en.wikipedia.org/wiki/Lenna}, cit. 5.~5.~2018}
       \field{title}{Lenna}
-      \verb{urlraw}
-      \verb https://en.wikipedia.org/wiki/Lenna
-      \endverb
-      \verb{url}
-      \verb https://en.wikipedia.org/wiki/Lenna
-      \endverb
     \endentry
     \entry{MaiAgg-StuComVarImDetEdTec}{article}{}
       \name{author}{2}{}{%
@@ -3927,7 +3888,7 @@
     \entry{web-Folikul}{misc}{}
       \name{author}{1}{}{%
         {{hash=5401bcac5968aac29cb6bfb258e50aa2}{%
-           family={slovniky.cz},
+           family={{slovniky.cz}},
            familyi={s\bibinitperiod}}}%
       }
       \strng{namehash}{5401bcac5968aac29cb6bfb258e50aa2}
@@ -3940,14 +3901,8 @@
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{http://lekarske.slovniky.cz/pojem/folikul}}
+      \field{howpublished}{Dostupné online na \url{http://lekarske.slovniky.cz/pojem/folikul}, cit. 5.~5.~2018}
       \field{title}{folikul}
-      \verb{urlraw}
-      \verb http://lekarske.slovniky.cz/pojem/folikul
-      \endverb
-      \verb{url}
-      \verb http://lekarske.slovniky.cz/pojem/folikul
-      \endverb
     \endentry
     \entry{PatPal-FuzGraSynRecSkeMatXra}{article}{}
       \name{author}{2}{}{%
@@ -4064,30 +4019,22 @@
     \endentry
     \entry{web-Maven}{misc}{}
       \name{author}{1}{}{%
-        {{hash=ffe4cf17ca8c1f982178700c0396c583}{%
-           family={Foundation},
-           familyi={F\bibinitperiod},
-           given={The\bibnamedelimb Apache\bibnamedelima Software},
-           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=591fd05c2b7efba60bf8751a931f7c94}{%
+           family={{The Apache Software Foundation}},
+           familyi={T\bibinitperiod}}}%
       }
-      \strng{namehash}{ffe4cf17ca8c1f982178700c0396c583}
-      \strng{fullhash}{ffe4cf17ca8c1f982178700c0396c583}
-      \strng{bibnamehash}{ffe4cf17ca8c1f982178700c0396c583}
-      \strng{authorbibnamehash}{ffe4cf17ca8c1f982178700c0396c583}
-      \strng{authornamehash}{ffe4cf17ca8c1f982178700c0396c583}
-      \strng{authorfullhash}{ffe4cf17ca8c1f982178700c0396c583}
+      \strng{namehash}{591fd05c2b7efba60bf8751a931f7c94}
+      \strng{fullhash}{591fd05c2b7efba60bf8751a931f7c94}
+      \strng{bibnamehash}{591fd05c2b7efba60bf8751a931f7c94}
+      \strng{authorbibnamehash}{591fd05c2b7efba60bf8751a931f7c94}
+      \strng{authornamehash}{591fd05c2b7efba60bf8751a931f7c94}
+      \strng{authorfullhash}{591fd05c2b7efba60bf8751a931f7c94}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{https://maven.apache.org}}
+      \field{howpublished}{Dostupné online na \url{https://maven.apache.org}, cit. 5.5.2018}
       \field{title}{Apache Maven project}
-      \verb{urlraw}
-      \verb https://maven.apache.org
-      \endverb
-      \verb{url}
-      \verb https://maven.apache.org
-      \endverb
     \endentry
     \entry{web-IrisDataset}{misc}{}
       \name{author}{1}{}{%
@@ -4107,41 +4054,54 @@
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Iris}}
+      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Iris}, cit. 5.~5.~2018}
       \field{title}{Iris Data Set}
-      \verb{urlraw}
-      \verb https://archive.ics.uci.edu/ml/datasets/Iris
-      \endverb
-      \verb{url}
-      \verb https://archive.ics.uci.edu/ml/datasets/Iris
-      \endverb
     \endentry
     \entry{web-FlagsDataset}{misc}{}
       \name{author}{1}{}{%
-        {{hash=09237b68d7915b7ccf7b55e1ed58e16f}{%
-           family={Publishers},
-           familyi={P\bibinitperiod},
-           given={Collins},
-           giveni={C\bibinitperiod}}}%
+        {{hash=3e1988bf6d43569126d63abab6c0608b}{%
+           family={{Collins Publishers}},
+           familyi={C\bibinitperiod}}}%
       }
-      \strng{namehash}{09237b68d7915b7ccf7b55e1ed58e16f}
-      \strng{fullhash}{09237b68d7915b7ccf7b55e1ed58e16f}
-      \strng{bibnamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
-      \strng{authorbibnamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
-      \strng{authornamehash}{09237b68d7915b7ccf7b55e1ed58e16f}
-      \strng{authorfullhash}{09237b68d7915b7ccf7b55e1ed58e16f}
+      \strng{namehash}{3e1988bf6d43569126d63abab6c0608b}
+      \strng{fullhash}{3e1988bf6d43569126d63abab6c0608b}
+      \strng{bibnamehash}{3e1988bf6d43569126d63abab6c0608b}
+      \strng{authorbibnamehash}{3e1988bf6d43569126d63abab6c0608b}
+      \strng{authornamehash}{3e1988bf6d43569126d63abab6c0608b}
+      \strng{authorfullhash}{3e1988bf6d43569126d63abab6c0608b}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Flags}}
+      \field{howpublished}{Dostupné online na \url{https://archive.ics.uci.edu/ml/datasets/Flags}, cit. 5.~5.~2018}
       \field{title}{Flags Data Set}
-      \verb{urlraw}
-      \verb https://archive.ics.uci.edu/ml/datasets/Flags
-      \endverb
-      \verb{url}
-      \verb https://archive.ics.uci.edu/ml/datasets/Flags
-      \endverb
+    \endentry
+    \entry{GraFod-FuzAutIntHybConSys}{article}{}
+      \name{author}{2}{}{%
+        {{hash=335779675ae98c93cc6aa35f2a5c4200}{%
+           family={Grantner},
+           familyi={G\bibinitperiod},
+           given={Janos\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=42d29925423c754e812dfb5a253e9558}{%
+           family={Fodor},
+           familyi={F\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{fullhash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{bibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authorbibnamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authornamehash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \strng{authorfullhash}{fe8c916b576f7e3d137b08ba13b16f57}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE International Conference on fuzzy systems}
+      \field{title}{Fuzzy Automaton for Intelligent Hybrid Control Systems}
+      \field{year}{2002}
     \endentry
   \enddatalist
 \endrefsection

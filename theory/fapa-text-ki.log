@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Debian) (preloaded format=pdflatex 2018.4.29)  5 MAY 2018 03:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Debian) (preloaded format=pdflatex 2018.4.29)  6 MAY 2018 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,23 +906,23 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./fapa-text-ki.aux (./fapa-text.aux))
 \openout1 = `fapa-text-ki.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 180.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 183.
+LaTeX Font Info:    ... okay on input line 183.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 183.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -956,7 +956,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 180.
+Package hyperref Info: Link coloring ON on input line 183.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -966,9 +966,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 180.
-LaTeX Info: Redefining \pageref on input line 180.
-LaTeX Info: Redefining \nameref on input line 180.
+LaTeX Info: Redefining \ref on input line 183.
+LaTeX Info: Redefining \pageref on input line 183.
+LaTeX Info: Redefining \nameref on input line 183.
 \c@lstlisting=\count339
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Data encoding 'utf8' specified.
@@ -979,8 +979,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'fapa-text-ki.bbl' found.
 
 (./fapa-text-ki.bbl)
-Package biblatex Info: Reference section=0 on input line 180.
-Package biblatex Info: Reference segment=0 on input line 180.
+Package biblatex Info: Reference section=0 on input line 183.
+Package biblatex Info: Reference segment=0 on input line 183.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1017,60 +1017,60 @@ Package biblatex Info: Reference segment=0 on input line 180.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 180.
+(lastpage)             ! on input line 183.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 <graphics/kititle-cz-nofont.pdf, id=4, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 185
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 188
 .
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
 <graphics/UP_znak.pdf, id=5, 101.59215pt x 101.59215pt>
 File: graphics/UP_znak.pdf Graphic file (type pdf)
 <use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 185.
+Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 188.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 185.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 188.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 185.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 188.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 185
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 188
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 185
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 188
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 185.
+(Font)              <12> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 185.
+(Font)              <8> on input line 188.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 185.
-LaTeX Font Info:    Try loading font information for U+msa on input line 185.
+(Font)              <6> on input line 188.
+LaTeX Font Info:    Try loading font information for U+msa on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 185.
+LaTeX Font Info:    Try loading font information for U+msb on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 185.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1079,12 +1079,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./graphics/kititle-cz-nofo
 nt.pdf> <./graphics/UP_znak.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 185.
+(Font)              <10.95> on input line 188.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.185 \maketitle
+l.188 \maketitle
                  [1] [2
 
 ] [3
@@ -1110,18 +1110,13 @@ l.185 \maketitle
 \openout2 = `fapa-text.aux'.
 
  (./fapa-text.tex
-Overfull \hbox (10.1173pt too wide) in paragraph at lines 23--24
-\T1/lmr/m/n/12 mno-ºi-nami. Ob-dobn¥, prav-d¥-po-dob-nostní au-to-maty spo-jují
- te-o-rii au-to-mat· s prav-
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 43.
-[8
+ [8
 
 
 ]
@@ -1132,7 +1127,8 @@ put line 52.
  [9]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 119.
- [10] [11] [12]
+ [10]
+[11] [12]
 Package hyperref Info: bookmark level for unknown note defaults to 0 on input l
 ine 187.
 File: mpimg-charts0.mps Graphic file (type mps)
@@ -1276,7 +1272,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-1.eps>
 (epstopdf)                    size: 134831 bytes
 (epstopdf)             Output file: <genimg-game-of-life-1-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-05-05 03:44:11
+(epstopdf)                    date: 2018-05-06 22:40:29
 (epstopdf)                    size: 23676 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-1-eps-
 converted-to.pdf genimg-game-of-life-1.eps>
@@ -1293,7 +1289,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-2.eps>
 (epstopdf)                    size: 109721 bytes
 (epstopdf)             Output file: <genimg-game-of-life-2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-05-05 03:44:12
+(epstopdf)                    date: 2018-05-06 22:40:30
 (epstopdf)                    size: 20413 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-2-eps-
 converted-to.pdf genimg-game-of-life-2.eps>
@@ -1310,7 +1306,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-3.eps>
 (epstopdf)                    size: 103820 bytes
 (epstopdf)             Output file: <genimg-game-of-life-3-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-05-05 03:44:13
+(epstopdf)                    date: 2018-05-06 22:40:31
 (epstopdf)                    size: 19455 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-3-eps-
 converted-to.pdf genimg-game-of-life-3.eps>
@@ -1327,7 +1323,7 @@ Package epstopdf Info: Source file: <genimg-game-of-life-4.eps>
 (epstopdf)                    size: 53636 bytes
 (epstopdf)             Output file: <genimg-game-of-life-4-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2018-05-05 03:44:14
+(epstopdf)                    date: 2018-05-06 22:40:32
 (epstopdf)                    size: 11798 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-game-of-life-4-eps-
 converted-to.pdf genimg-game-of-life-4.eps>
@@ -1426,18 +1422,18 @@ Package epstopdf Info: Source file: <genimg-chess-emos-screens.eps>
 (epstopdf)                    size: 287911 bytes
 (epstopdf)             Output file: <genimg-chess-emos-screens-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-05-05 03:44:18
+(epstopdf)                    date: 2018-05-06 22:40:36
 (epstopdf)                    size: 96164 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-chess-emos-screens-
 eps-converted-to.pdf genimg-chess-emos-screens.eps>
-(epstopdf)             \includegraphics on input line 1245.
+(epstopdf)             \includegraphics on input line 1246.
 Package epstopdf Info: Output file is already uptodate.
 <genimg-chess-emos-screens-eps-converted-to.pdf, id=869, 451.6875pt x 158.5925p
 t>
 File: genimg-chess-emos-screens-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-chess-emos-screens-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-chess-emos-screens-eps-converted-to.pdf  used o
-n input line 1245.
+n input line 1246.
 (pdftex.def)             Requested size: 409.50119pt x 143.78941pt.
  [47 <./genimg-chess-emos-screens-eps-converted-to.pdf>] [48]
 Package epstopdf Info: Source file: <genimg-urban-growt-transitions-1.eps>
@@ -1445,125 +1441,126 @@ Package epstopdf Info: Source file: <genimg-urban-growt-transitions-1.eps>
 (epstopdf)                    size: 34731 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-1-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:20
+(epstopdf)                    date: 2018-05-06 22:40:37
 (epstopdf)                    size: 17344 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-1-eps-converted-to.pdf genimg-urban-growt-transitions-1.eps>
-(epstopdf)             \includegraphics on input line 1309.
+(epstopdf)             \includegraphics on input line 1308.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-1-eps-converted-to.pdf, id=926, 238.8925pt x 66
+<genimg-urban-growt-transitions-1-eps-converted-to.pdf, id=923, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-1-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use genimg-urban-growt-transitions-1-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-transitions-1-eps-converted-to.pdf 
- used on input line 1309.
+ used on input line 1308.
 (pdftex.def)             Requested size: 368.54857pt x 102.20947pt.
 Package epstopdf Info: Source file: <genimg-urban-growt-transitions-2.eps>
 (epstopdf)                    date: 2018-05-04 23:44:21
 (epstopdf)                    size: 40948 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-2-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:21
+(epstopdf)                    date: 2018-05-06 22:40:38
 (epstopdf)                    size: 17618 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-2-eps-converted-to.pdf genimg-urban-growt-transitions-2.eps>
-(epstopdf)             \includegraphics on input line 1314.
+(epstopdf)             \includegraphics on input line 1313.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-2-eps-converted-to.pdf, id=927, 238.8925pt x 66
+<genimg-urban-growt-transitions-2-eps-converted-to.pdf, id=924, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-2-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use genimg-urban-growt-transitions-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-transitions-2-eps-converted-to.pdf 
- used on input line 1314.
+ used on input line 1313.
 (pdftex.def)             Requested size: 368.54857pt x 102.20947pt.
 Package epstopdf Info: Source file: <genimg-urban-growt-transitions-3.eps>
 (epstopdf)                    date: 2018-05-04 23:44:32
 (epstopdf)                    size: 34733 bytes
 (epstopdf)             Output file: <genimg-urban-growt-transitions-3-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:22
+(epstopdf)                    date: 2018-05-06 22:40:39
 (epstopdf)                    size: 17661 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-transit
 ions-3-eps-converted-to.pdf genimg-urban-growt-transitions-3.eps>
-(epstopdf)             \includegraphics on input line 1319.
+(epstopdf)             \includegraphics on input line 1318.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-transitions-3-eps-converted-to.pdf, id=928, 238.8925pt x 66
+<genimg-urban-growt-transitions-3-eps-converted-to.pdf, id=925, 238.8925pt x 66
 .2475pt>
 File: genimg-urban-growt-transitions-3-eps-converted-to.pdf Graphic file (type 
 pdf)
 <use genimg-urban-growt-transitions-3-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-transitions-3-eps-converted-to.pdf 
- used on input line 1319.
+ used on input line 1318.
 (pdftex.def)             Requested size: 368.54857pt x 102.20947pt.
 Package epstopdf Info: Source file: <genimg-urban-growt-city-1.eps>
 (epstopdf)                    date: 2017-08-13 23:00:51
 (epstopdf)                    size: 3840124 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-1-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-05-05 03:44:27
-(epstopdf)                    size: 338563 bytes
+(epstopdf)                    date: 2018-05-06 22:40:44
+(epstopdf)                    size: 338565 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-1-
 eps-converted-to.pdf genimg-urban-growt-city-1.eps>
-(epstopdf)             \includegraphics on input line 1328.
+(epstopdf)             \includegraphics on input line 1327.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-city-1-eps-converted-to.pdf, id=931, 563.10374pt x 252.945p
+<genimg-urban-growt-city-1-eps-converted-to.pdf, id=928, 563.10374pt x 252.945p
 t>
 File: genimg-urban-growt-city-1-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-urban-growt-city-1-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-city-1-eps-converted-to.pdf  used o
-n input line 1328.
+n input line 1327.
 (pdftex.def)             Requested size: 409.50119pt x 183.94972pt.
 Package epstopdf Info: Source file: <genimg-urban-growt-city-2.eps>
 (epstopdf)                    date: 2017-08-13 23:11:53
 (epstopdf)                    size: 2578822 bytes
 (epstopdf)             Output file: <genimg-urban-growt-city-2-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2018-05-05 03:44:31
+(epstopdf)                    date: 2018-05-06 22:40:48
 (epstopdf)                    size: 215473 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-urban-growt-city-2-
 eps-converted-to.pdf genimg-urban-growt-city-2.eps>
-(epstopdf)             \includegraphics on input line 1333.
+(epstopdf)             \includegraphics on input line 1332.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-urban-growt-city-2-eps-converted-to.pdf, id=932, 563.10374pt x 256.96pt
+<genimg-urban-growt-city-2-eps-converted-to.pdf, id=929, 563.10374pt x 256.96pt
 >
 File: genimg-urban-growt-city-2-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-urban-growt-city-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-urban-growt-city-2-eps-converted-to.pdf  used o
-n input line 1333.
+n input line 1332.
 (pdftex.def)             Requested size: 409.50119pt x 186.86955pt.
  [49] [50 <./genimg-urban-growt-transitions-1-eps-converted-to.pdf> <./genimg-u
 rban-growt-transitions-2-eps-converted-to.pdf> <./genimg-urban-growt-transition
 s-3-eps-converted-to.pdf>] [51 <./genimg-urban-growt-city-1-eps-converted-to.pd
 f> <./genimg-urban-growt-city-2-eps-converted-to.pdf>]
-[52]
 Package epstopdf Info: Source file: <genimg-filters.eps>
 (epstopdf)                    date: 2018-05-05 00:05:13
 (epstopdf)                    size: 105161 bytes
 (epstopdf)             Output file: <genimg-filters-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:32
+(epstopdf)                    date: 2018-05-06 22:40:49
 (epstopdf)                    size: 33165 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-filters-eps-convert
 ed-to.pdf genimg-filters.eps>
-(epstopdf)             \includegraphics on input line 1388.
+(epstopdf)             \includegraphics on input line 1387.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-filters-eps-converted-to.pdf, id=985, 281.05pt x 75.28125pt>
+<genimg-filters-eps-converted-to.pdf, id=977, 281.05pt x 75.28125pt>
 File: genimg-filters-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-filters-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-filters-eps-converted-to.pdf  used on input lin
-e 1388.
+e 1387.
 (pdftex.def)             Requested size: 409.50119pt x 109.69373pt.
+
+[52]
 File: mpimg-rest4.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest4.mps)
 File: mpimg-rest5.mps Graphic file (type mps)
  [MP to PDF] (./mpimg-rest5.mps)
-Underfull \hbox (badness 4144) in paragraph at lines 1407--1407
+Underfull \hbox (badness 4144) in paragraph at lines 1406--1406
 []\T1/lmr/m/n/10.95 (b) |Ukázka hrany pro-chá-ze-jící
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 1407--1407
+Underfull \hbox (badness 2189) in paragraph at lines 1406--1406
 \T1/lmr/m/n/10.95 bu¬-kou. Ve sm¥ru $\OML/lmm/m/it/10.95 H$ \T1/lmr/m/n/10.95 (
 £er-vené
  []
@@ -1573,17 +1570,17 @@ Package epstopdf Info: Source file: <genimg-noises.eps>
 (epstopdf)                    date: 2018-05-05 00:12:53
 (epstopdf)                    size: 56906 bytes
 (epstopdf)             Output file: <genimg-noises-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:34
+(epstopdf)                    date: 2018-05-06 22:40:50
 (epstopdf)                    size: 31368 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-noises-eps-converte
 d-to.pdf genimg-noises.eps>
-(epstopdf)             \includegraphics on input line 1427.
+(epstopdf)             \includegraphics on input line 1426.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-noises-eps-converted-to.pdf, id=1012, 276.03125pt x 75.28125pt>
+<genimg-noises-eps-converted-to.pdf, id=1009, 276.03125pt x 75.28125pt>
 File: genimg-noises-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-noises-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-noises-eps-converted-to.pdf  used on input line
- 1427.
+ 1426.
 (pdftex.def)             Requested size: 409.50119pt x 111.69362pt.
  [54 <./genimg-noises-eps-converted-to.pdf>]
 File: mpimg-rest6.mps Graphic file (type mps)
@@ -1595,7 +1592,7 @@ Overfull \hbox (1.82079pt too wide) in paragraph at lines 1457--1458
  []
 
 
-Overfull \hbox (4.88448pt too wide) in paragraph at lines 1465--1466
+Overfull \hbox (4.88448pt too wide) in paragraph at lines 1466--1467
 []\T1/lmr/m/n/12 Obdobným zp·-so-bem m·-ºeme po-psat r·zné dal²í pri-mi-tivní g
 e-o-me-t-rické tvary.
  []
@@ -1605,66 +1602,59 @@ Package epstopdf Info: Source file: <genimg-follicles-1.eps>
 (epstopdf)                    date: 2017-08-24 20:01:51
 (epstopdf)                    size: 34492 bytes
 (epstopdf)             Output file: <genimg-follicles-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:36
+(epstopdf)                    date: 2018-05-06 22:40:52
 (epstopdf)                    size: 27064 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-1-eps-con
 verted-to.pdf genimg-follicles-1.eps>
-(epstopdf)             \includegraphics on input line 1534.
+(epstopdf)             \includegraphics on input line 1535.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-follicles-1-eps-converted-to.pdf, id=1080, 281.05pt x 62.2325pt>
+<genimg-follicles-1-eps-converted-to.pdf, id=1077, 281.05pt x 62.2325pt>
 File: genimg-follicles-1-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-follicles-1-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-follicles-1-eps-converted-to.pdf  used on input
- line 1534.
+ line 1535.
 (pdftex.def)             Requested size: 409.50119pt x 90.68016pt.
 Package epstopdf Info: Source file: <genimg-follicles-2.eps>
 (epstopdf)                    date: 2017-08-24 20:02:17
 (epstopdf)                    size: 4635 bytes
 (epstopdf)             Output file: <genimg-follicles-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-05 03:44:36
+(epstopdf)                    date: 2018-05-06 22:40:53
 (epstopdf)                    size: 4226 bytes
 (epstopdf)             Command: <repstopdf --outfile=genimg-follicles-2-eps-con
 verted-to.pdf genimg-follicles-2.eps>
-(epstopdf)             \includegraphics on input line 1539.
+(epstopdf)             \includegraphics on input line 1540.
 Package epstopdf Info: Output file is already uptodate.
-<genimg-follicles-2-eps-converted-to.pdf, id=1081, 281.05pt x 60.225pt>
+<genimg-follicles-2-eps-converted-to.pdf, id=1078, 281.05pt x 60.225pt>
 File: genimg-follicles-2-eps-converted-to.pdf Graphic file (type pdf)
 <use genimg-follicles-2-eps-converted-to.pdf>
 Package pdftex.def Info: genimg-follicles-2-eps-converted-to.pdf  used on input
- line 1539.
+ line 1540.
 (pdftex.def)             Requested size: 409.50119pt x 87.75497pt.
  [58]
-Overfull \hbox (10.39764pt too wide) in paragraph at lines 1569--1570
+Overfull \hbox (10.39764pt too wide) in paragraph at lines 1570--1571
 [][]\T1/pcr/m/n/12 fuzzy-tree-automata []\T1/lmr/m/n/12 (fuzzy tree au-to-mat) 
 a [][]\T1/pcr/m/n/12 cellular-fuzzy-automata
  []
 
 [59 <./genimg-follicles-1-eps-converted-to.pdf> <./genimg-follicles-2-eps-conve
-rted-to.pdf>]
-Overfull \hbox (54.28569pt too wide) in paragraph at lines 1583--1584
-[][]\T1/lmr/m/n/12 7.3[][]. Re-a-li-zuje ji t°ída [][]\T1/pcr/m/n/12 TyposCorre
-cter []\T1/lmr/m/n/12 a spou²tí se po-mocí t°ídy [][]\T1/pcr/m/n/12 TyposCorrec
-terApp[]\T1/lmr/m/n/12 .
- []
-
-[60]
-<genimg-handwritrec-screen.png, id=1131, 739.76375pt x 475.7775pt>
+rted-to.pdf>] [60]
+<genimg-handwritrec-screen.png, id=1128, 739.76375pt x 475.7775pt>
 File: genimg-handwritrec-screen.png Graphic file (type png)
 <use genimg-handwritrec-screen.png>
-Package pdftex.def Info: genimg-handwritrec-screen.png  used on input line 1620
+Package pdftex.def Info: genimg-handwritrec-screen.png  used on input line 1621
 .
 (pdftex.def)             Requested size: 327.60219pt x 210.69305pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1625.
+(hyperref)                removing `math shift' on input line 1626.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1625.
+(hyperref)                removing `math shift' on input line 1626.
 
 [61 <./genimg-handwritrec-screen.png>]
-Overfull \hbox (4.7603pt too wide) in paragraph at lines 1638--1639
+Overfull \hbox (4.7603pt too wide) in paragraph at lines 1639--1640
 [][]\T1/pcr/m/n/12 ConvolutionalCFA []\T1/lmr/m/n/12 im-ple-men-tuje au-to-mat 
 re-a-li-zu-jící obec-nou kon-vo-luci. T°ída
  []
@@ -1676,7 +1666,7 @@ re-a-li-zu-jící obec-nou kon-vo-luci. T°ída
 
 ]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 238.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 241.
  [66
 
 ]
@@ -1717,9 +1707,14 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (12.10776pt too wide) in paragraph at lines 267--267
-[]\T1/lmr/m/n/12 ANDREJKOVÁ, Gab-riela; AL-MA-RIMI, Ab-du-lwa-hed; MA-HMOUD, As
-maa.
+Underfull \hbox (badness 2680) in paragraph at lines 272--272
+[]\T1/lmr/m/n/12 ANDREJKOVÁ, Gab-riela; AL-MA-RIMI, Ab-du-lwa-hed; MA-HMOUD,
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 272--272
+\T1/lmr/m/n/12 Asmaa. Ap-pro-xi-mate Pat-tern Matching using Fuzzy Lo-gic. \T1/
+lmr/m/it/12 CEUR
  []
 
 
@@ -1957,12 +1952,6 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (3.67448pt too wide) in paragraph at lines 267--267
-[]\T1/lmr/m/n/12 MOHRI, Me-hryar; PE-RE-IRA, Fer-nando; RI-LEY, Mi-chael. Wei-g
-h-ted finite-
- []
-
-
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
@@ -1989,12 +1978,6 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
-
-
-Overfull \hbox (164.85773pt too wide) in paragraph at lines 267--267
-\T1/lmr/m/n/12 na [][]https://sites.google.com/site/novaiso690/[][]]. Do-stupné
- také z: [][]https://sites.google.com/site/novaiso690/[][]. 
- []
 
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
@@ -2010,19 +1993,13 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (0.32076pt too wide) in paragraph at lines 267--267
-[]\T1/lmr/m/n/12 BAILADOR, Gon-zalo; TRI-VIÑO, Gra-cián. Pat-tern re-co-gni-tio
-n using tem-
- []
-
-
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (4.01825pt too wide) in paragraph at lines 267--267
+Underfull \hbox (badness 1859) in paragraph at lines 272--272
 []\T1/lmr/m/n/12 KEMPF, Ro-land; ADAMY, Jür-gen. Sequen-tial pat-tern re-co-gni
--tion employ-
+-tion
  []
 
 
@@ -2083,53 +2060,56 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (9.18307pt too wide) in paragraph at lines 267--267
-\T1/lmr/m/n/12 MU-ÑOZ, Ra-fael. UMCC_DLSI_Prob: A Pro-ba-bi-lis-tic Au-to-mata 
-for Aspect
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+[]\T1/lmr/m/n/12 AL-AHMADI, Kha-lid; HEP-PEN-STALL, Ali-son; SEE, Linda;
  []
 
 
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\T1/lmr/m/n/12 HOGG, Jim. Mo-de-ling Ur-ban Growth Dy-na-mics using
+ []
 
 
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
+\T1/lmr/m/n/12 Cellu-lar Au-to-mata and GIS. 2008. Do-stupné on-line na
+ []
 
 [73]
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
-
-
-Overfull \hbox (183.06508pt too wide) in paragraph at lines 267--267
-\T1/lmr/m/n/12 2008. Do-stupné on-line na [][]https://pdfs.semanticscholar.org/
-6e2a/c1dbea43cd06b4f7bab26f3f04ce6816908b.pdf[][]. 
- []
 
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
@@ -2185,13 +2165,9 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Overfull \hbox (35.99811pt too wide) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
 []\T1/lmr/m/n/12 WIKIPEDIE. \T1/lmr/m/it/12 Lenna \T1/lmr/m/n/12 [Do-stupné on-
-line na [][]https://en.wikipedia.org/wiki/Lenna[][]].
+line na
  []
 
 
@@ -2227,10 +2203,14 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (3.43118pt too wide) in paragraph at lines 267--267
+Underfull \hbox (badness 2096) in paragraph at lines 272--272
 []\T1/lmr/m/n/12 ZLATNIK, Da-niel; STEI-NER, Be-a-t-rice; SCHWEI-T-ZER, Ger-har
-d. Finite-
+d.
  []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
 
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
@@ -2266,13 +2246,9 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Overfull \hbox (71.95634pt too wide) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
 []\T1/lmr/m/n/12 SLOVNIKY.CZ. \T1/lmr/m/it/12 fo-li-kul \T1/lmr/m/n/12 [Do-stup
-né on-line na [][]http://lekarske.slovniky.cz/pojem/folikul[][]].
+né on-line na
  []
 
 
@@ -2292,29 +2268,17 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (2.99373pt too wide) in paragraph at lines 267--267
-[]\T1/lmr/m/n/12 ALVAREZ-ALVAREZ, Al-berto; TRI-VINO, Gra-cian. Com-pre-hensi-b
-le mo-
- []
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
 
 
 Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (35.08722pt too wide) in paragraph at lines 267--267
-\T1/lmr/m/n/12 on-line na [][]https://maven.apache.org[][]]. Do-stupné také z: 
-[][]https://maven.apache.org[][]. 
- []
-
-
-Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
-(biblatex)                Please use '\mkdaterangeiso'.
-
-
-Overfull \hbox (106.80888pt too wide) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
 []\T1/lmr/m/n/12 FISHER, R.A. \T1/lmr/m/it/12 Iris Data Set \T1/lmr/m/n/12 [Do-
-stupné on-line na [][]https://archive.ics.uci.edu/ml/datasets/Iris[][]].
+stupné on-line na
  []
 
 
@@ -2322,30 +2286,33 @@ Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (172.32881pt too wide) in paragraph at lines 267--267
-[]\T1/lmr/m/n/12 PUBLISHERS, Col-lins. \T1/lmr/m/it/12 Flags Data Set \T1/lmr/m
-/n/12 [Do-stupné on-line na [][]https://archive.ics.uci.edu/ml/datasets/Flags[]
-[]].
+Underfull \hbox (badness 4713) in paragraph at lines 272--272
+[]\T1/lmr/m/n/12 COLLINS PU-B-LISHERS. \T1/lmr/m/it/12 Flags Data Set \T1/lmr/m
+/n/12 [Do-stupné on-line na
  []
+
+
+Package biblatex Warning: '\mkdaterangeedtf' is deprecated.
+(biblatex)                Please use '\mkdaterangeiso'.
 
 
 AED: lastpage setting LastPage
 [76]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 280.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 286.
  (./fapa-text-ki.aux (./fapa-text.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 280.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 286.
 Package logreq Info: Writing requests to 'fapa-text-ki.run.xml'.
 \openout1 = `fapa-text-ki.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 286.
  ) 
 Here is how much of TeX's memory you used:
- 24358 strings out of 493979
- 396927 string characters out of 6160469
- 901710 words of memory out of 5000000
- 27085 multiletter control sequences out of 15000+600000
+ 24357 strings out of 493979
+ 396911 string characters out of 6160469
+ 901610 words of memory out of 5000000
+ 27084 multiletter control sequences out of 15000+600000
  116218 words of font info for 98 fonts, out of 8000000 for 9000
  360 hyphenation exceptions out of 8191
  55i,18n,52p,2610b,2873s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2375,10 +2342,10 @@ fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on fapa-text-ki.pdf (77 pages, 1603747 bytes).
+Output written on fapa-text-ki.pdf (77 pages, 1603144 bytes).
 PDF statistics:
- 1715 PDF objects out of 1728 (max. 8388607)
- 1543 compressed objects within 16 object streams
+ 1707 PDF objects out of 1728 (max. 8388607)
+ 1535 compressed objects within 16 object streams
  464 named destinations out of 1000 (max. 500000)
  790 words of extra memory for PDF output out of 10000 (max. 10000000)
 

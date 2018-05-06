@@ -137,7 +137,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {11.1}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\v r}et\IeC {\v e}zc\IeC {\r u} DNA}{56}{subsection.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.2}Biologick\IeC {\'e} simulace}{57}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.2}Biologick\IeC {\'e} simulace}{56}{subsection.11.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {11.3}Anal\IeC {\'y}za zdravotn\IeC {\'\i }ho stavu pacienta}{57}{subsection.11.3}
 \defcounter {refsection}{0}\relax 
@@ -153,7 +153,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {12.3}Rozpozn\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } ru\IeC {\v c}n\IeC {\v e} psan\IeC {\'e}ho textu}{61}{subsection.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.4}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{62}{subsection.12.4}
+\contentsline {subsection}{\numberline {12.4}Detekce \IeC {\'u}pln\IeC {\'y}ch $m$-\IeC {\'a}rn\IeC {\'\i }ch strom\IeC {\r u}}{61}{subsection.12.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {12.5}Simulace spot\IeC {\v r}eby elektrick\IeC {\'e}ho produdu}{62}{subsection.12.5}
 \defcounter {refsection}{0}\relax 
