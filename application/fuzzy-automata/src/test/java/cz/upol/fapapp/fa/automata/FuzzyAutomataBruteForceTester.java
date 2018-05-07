@@ -14,6 +14,15 @@ import cz.upol.fapapp.core.ling.Alphabet;
 import cz.upol.fapapp.core.ling.Symbol;
 import cz.upol.fapapp.core.ling.Word;
 
+/**
+ * An test (in fact just test results analysis) utility. Perfroms run of fuzzy
+ * automata of all words over given alhabet and given lengths. Prints "nice"
+ * table with resulting degrees of various variants of input automata
+ * (minimised, determinised, whatever).
+ * 
+ * @author martin
+ *
+ */
 public class FuzzyAutomataBruteForceTester {
 
 	private final PrintStream out;
