@@ -1,0 +1,8 @@
+type:
+	word
+
+alphabet:
+	a, b
+
+word:
+	b a

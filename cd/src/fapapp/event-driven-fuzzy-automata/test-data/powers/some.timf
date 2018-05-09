@@ -1,0 +1,29 @@
+type:
+	power consumption computation data
+
+melt:
+	100.0
+
+devices:
+	fan	is	warm	if	consumes	600.0
+	fan	is	off	if	consumes	0.0
+	fan	is	hot	if	consumes	900.0
+	fan	is	cold	if	consumes	100.0
+	lamp	is	off	if	consumes	0.0
+	lamp	is	on	if	consumes	50.0
+	tv	is	standby	if	consumes	20.0
+	tv	is	off	if	consumes	0.0
+	tv	is	on	if	consumes	300.0
+
+changes:
+	decrease	if	-200.0
+	increase	if	+200.0
+	no-change	if	 0.0
+
+initial:
+	lamp	is	off
+	fan	is	off
+	tv	is	off
+
+consumptions:
+	10.0	230.0	480.0

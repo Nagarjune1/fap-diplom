@@ -1,0 +1,27 @@
+type:
+	fuzzy automaton
+
+alphabet:
+	d	dl	dr	l	r	u	ul	ur
+
+states:
+	q_0	q_2	q_1	q_4	q_3	q_6	q_5	q_8	q_10	q_7	q_9
+
+transition function:
+	q_9	l	q_10	1.0
+	q_0	l	q_1	1.0
+	q_3	dr	q_4	1.0
+	q_8	dl	q_9	1.0
+	q_1	dl	q_2	1.0
+	q_2	d	q_3	1.0
+	q_5	ur	q_6	1.0
+	q_7	d	q_8	1.0
+	q_6	u	q_7	1.0
+	q_4	r	q_5	1.0
+
+initial states:
+	q_0/1.0	q_2/0.0	q_1/0.0	q_4/0.0	q_3/0.0	q_6/0.0	q_5/0.0	q_10/0.0	q_8/0.0	q_7/0.0	q_9/0.0
+
+final states:
+	q_0/0.0	q_2/0.0	q_1/0.0	q_4/0.0	q_3/0.0	q_6/0.0	q_5/0.0	q_10/1.0	q_8/0.0	q_7/0.0	q_9/0.0
+

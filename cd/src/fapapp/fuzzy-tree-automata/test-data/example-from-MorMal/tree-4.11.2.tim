@@ -1,0 +1,22 @@
+type:
+	tree
+
+nonterminals:
+	A
+
+terminals:
+	a
+	
+tree:
+	A (
+		a
+		a
+		A (
+			a
+			a
+			a
+		)
+	)
+
+# or equivalentelly:
+#	A ( a a A ( a a a ) )

@@ -1,0 +1,22 @@
+type:
+	fuzzy automaton
+
+alphabet:
+	a, b
+
+states:
+	q_0, q_1, q_2, q_3, q_4, q_5
+
+transition function:
+	q_0		a	q_1		0.9
+	q_1		a	q_2		0.8
+	q_0		a	q_3		0.9
+	q_3		a	q_4		0.8
+	q_0		b	q_5		0.7
+	q_5		b	q_0		0.6
+	
+initial states:
+	q_0/1.0
+
+final states:
+	q_2/1.0,	q_4/1.0,	q_5/0.5,	q_0/0.4

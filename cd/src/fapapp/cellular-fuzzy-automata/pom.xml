@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cz.upol</groupId>
+		<artifactId>fapapp</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>cellular-fuzzy-automaton</artifactId>
+	<name>Cellular fuzzy automaton</name>
+	<description>Implementation of Cellular fuzzy automaton</description>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>cz.upol</groupId>
+			<artifactId>core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- https://github.com/javafx-maven-plugin/javafx-maven-plugin -->
+			<plugin>
+				<groupId>com.zenjava</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>8.8.3</version>
+				<configuration>
+					<mainClass>cz.upol.fapapp.cfa.mains.CFASimulatorApp</mainClass>
+				</configuration>
+				<!-- 
+				<executions>
+					<execution>
+						<id>create-jfxjar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				 -->
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

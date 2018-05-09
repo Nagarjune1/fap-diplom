@@ -1,0 +1,56 @@
+type:
+	power consumption computation data
+
+melt:
+	50.0
+
+devices:
+	lamp			is off				if consumes		0.0
+	lamp			is on				if consumes		200.0
+	laptop			is off				if consumes		0.0
+	laptop			is suspended		if consumes		5.0
+	laptop			is energy-saving	if consumes		40.0
+	laptop			is fully-powered	if consumes		100.0
+	vacuum-cleaner	is off				if consumes		0.0
+	vacuum-cleaner	is half-power		if consumes		300.0
+	vacuum-cleaner	is full-power		if consumes		750.0
+	microwave		is standby			if consumes		9.0
+	microwave		is heating			if consumes		300.0
+	microwave		is grilling			if consumes		800.0
+	hairdryer		is off				if consumes		0.0
+	hairdryer		is blowing-cold		if consumes		80.0
+	hairdryer		is blowing-hot		if consumes		400.0
+	kitten			is doing-nothing	if consumes		0.0
+
+changes:
+	big-power-decrease		if	-600.0
+	power-decrease			if	-400.0
+	small-power-decrease	if	-200.0
+	no-power-change			if	0.0
+	small-power-increase	if	+200.0
+	power-increase			if	+400.0
+	big-power-increase		if	+600.0
+
+initial:
+	lamp			is	on
+	laptop			is	energy-saving
+	vacuum-cleaner	is	off
+	microwave		is	standby
+	hairdryer		is	blowing-hot
+	kitten			is	doing-nothing
+
+consumptions:
+	300.0
+	250.0
+	280.0
+	800.0
+	745.0
+	620.0
+	220.0
+	240.0
+	80.0
+	43.0
+	18.0
+	46.0
+	130.0
+	0.0

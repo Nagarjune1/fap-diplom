@@ -1,0 +1,300 @@
+%%%  Ukázkový text a dokumentace stylu pro text závěrečné (bakalářské a
+%%%  diplomové) práce na KI PřF UP v Olomouci
+%%%  Copyright (C) 2012 Martin Rotter, <rotter.martinos@gmail.com>
+%%%  Copyright (C) 2014 Jan Outrata, <jan.outrata@upol.cz>
+
+
+%%  Pro získání PDF souboru dokumentu je třeba tento zdrojový text v
+%%  LaTeXu přeložit (dvakrát) programem pdfLaTeX.
+
+%%  V případě použití programu BibLaTeX pro tvorbu seznamu literatury
+%%  je poté ještě třeba spustit program Biber s parametrem jméno
+%%  souboru zdrojového textu bez přípony a následně opět (dvakrát)
+%%  přeložit zdrojový text programem pdfLaTeX.
+
+%%  Postup získání Postscriptového souboru je popsán v dokumentaci.
+
+
+%%  Třída dokumentu implementující styl pro závěrečnou práci. Vybrané
+%%  nepovinné parametry (ostatní v dokumentaci):
+
+%%  'master' pro sazbu diplomové práce, jinak se sází bakalářská práce
+
+%%  'field=kód' pro Váš studijní obor, kódy pro diplomovou práci 'uvt'
+%%  pro Učitelství výpočetní techniky pro střední školy a 'binf' pro
+%%  Bioinformatiku, jinak je výchozí Informatika, a pro bakalářskou
+%%  práci 'ainfk' pro Aplikovanou informatiku v kombinované formě,
+%%  'inf' pro Informatiku, 'infv' pro Informatiku pro vzdělávání a
+%%  'binf' pro Bioinfomatiku, jinak je výchozí Aplikovaná informatika
+%%  v prezenční formě
+
+%%  'printversion' pro sazbu verze pro tisk (nebarevné logo a odkazy,
+%%  odkazy s uvedením adresy za odkazem, ne odkazy do rejstříku),
+%%  jinak verze pro prohlížeč
+
+%%  'biblatex' pro zapnutí podpory pro sazbu bibliografie pomocí
+%%  BibLaTeXu, jinak je výchozí sazba v prostředí thebibliography
+
+%%  'language=jazyk' pro jazyk práce, jazyky english pro anglický,
+%%  slovak pro slovenský, jinak je výchozí czech pro český
+
+%%  'font=sans' pro bezpatkový font (Iwona Light), jinak výchozí
+%%  patkový (Latin Modern)
+
+\documentclass[
+  master,
+  field=inf,
+%  printversion,
+  biblatex=true,
+  language=czech,
+  theorems=false,
+  sourcecodes=false,
+  glossaries=false,
+  index=false,
+]{kidiplom}
+
+%% Informace pro úvodní strany. V jazyku práce (pokud není v komentáři
+%% uvedeno česky) a anglicky. Uveďte všechny, u kterých není v
+%% komentáři uvedeno, že jsou volitelné. Při neuvedení se použijí
+%% výchozí texty. Text pro jiný než nastavený jazyk práce (nepovinným
+%% parametrem language makra \documentclass, výchozí český) se zadává
+%% použitím makra s uvedením jazyka jako nepovinného parametru.
+
+%% Název práce, česky a anglicky. Měl by se vysázet na jeden řádek.
+\title{Aplikace fuzzy a pravděpodobnostních automatů}
+\title[english]{Applications of fuzzy and probabilistic automata}
+
+%% Volitelný podnázev práce, česky a anglicky. Měl by se vysázet na
+%% jeden řádek. Výchozí je prázdný.
+%\subtitle{}
+%\subtitle[english]{}
+
+%% Jméno autora práce. Makro nemá nepovinný parametr pro uvedení
+%% jazyka.
+\author{Bc.~Martin~Jašek}
+
+%% Jméno vedoucího práce (včetně titulů). Makro nemá nepovinný
+%% parametr pro uvedení jazyka.
+\supervisor{doc.~RNDr.~Michal Krupka,~Ph.D.}
+
+%% Volitelný rok odevzdání práce. Výchozí je aktuální (kalendářní)
+%% rok. Makro nemá nepovinný parametr pro uvedení jazyka.
+%\yearofsubmit{\the\year}
+
+%% Anotace práce, včetně anglické (obvykle překlad z jazyka
+%% práce). Jeden odstavec!
+\annotation{Fuzzy a pravděpodobnostní automaty jsou poměrně moderní výpočetní modely. Tato práce se zabývá jejich možným uplatněním v praxi. Práce prezentuje značné množství oblastí, kde nacházejí tyto modely uplatnění, a to včetně konkrétních příkladů jejich aplikací. Součástí práce je software, který některé aplikace implementuje.}
+
+\annotation[english]{Fuzzy and probabilistic automata are quite modern computational models. This thesis is about their possible practical applications. Thesis presents considerable amount of domains, where theese models find usage, so with the particular examples of their applications. This thesis also includes software, which some of such applications implements.}
+
+%% Klíčová slova práce, včetně anglických. Oddělená (obvykle) středníkem.
+\keywords{automaty; fuzzy množiny; pravděpodobnostní počet; aplikace}
+\keywords[english]{automata; fuzzy sets; probability; applications}
+
+%% Volitelná specifikace příloh textu práce, i anglicky. Výchozí je '1
+%% CD/DVD'.
+%\supplements{jedno kulaté placaté CD/DVD s malou kulatou dírou uprostřed}
+%\supplements[english]{one round flat CD/DVD with a small round hole in the middle}
+
+%% Volitelné poděkování. Stručné! Výchozí je prázdné. Makro nemá
+%% nepovinný parametr pro uvedení jazyka.
+\thanks{Chtěl bych poděkovat vedoucímu práce, doc.~RNDr.~Michalovi Krupkovi,~Ph.D., za velmi cenné a přínosné rady. Dále bych chtěl poděkovat všem svým blízkým, kteří mi po dobu vypracovávání této práce byli oporou.}
+
+%% Cesta k souboru s bibliografií pro její sazbu pomocí BibLaTeXu
+%% (zvolenou nepovinným parametrem biblatex makra
+%% \documentclass). Použijte pouze při této sazbě, ne při (výchozí)
+%% sazbě v prostředí thebibliography.
+\bibliography{resources.bib}
+
+%% Další dodatečné styly (balíky) potřebné pro sazbu vlastního textu
+%% práce.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% různé matematické package
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+%% číslovaný cases
+\usepackage[subnum]{cases}
+
+%% colspan a rowspan v tabulkách
+\usepackage{multirow}
+
+
+%% subfigures, https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Subfloats
+\usepackage{subcaption}
+
+%% zobrazování labelů, http://tex.stackexchange.com/a/361157
+%\usepackage{showlabels}
+
+%% číslování řádků, https://texblog.org/2012/02/08/adding-line-numbers-to-documents/
+%\usepackage{lineno}
+
+%% chorvatská jména autorů, https://tex.stackexchange.com/questions/14872/croatian-serbian-letters-in-cv-problem
+\usepackage[T1]{fontenc}
+
+%% česká sazba bibtexu, https://tex.stackexchange.com/questions/194830/biber-locale-does-not-match-system-language-nor-biblatex-language
+%\usepackage[czech]{babel}
+
+%% https://tex.stackexchange.com/questions/4465/put-a-slash-through-a-word?rq=1
+%% \usepackage{cancel}
+
+%% \verb , https://tex.stackexchange.com/questions/2790/when-should-one-use-verb-and-when-texttt
+%\usepackage{verbatim}
+
+%Definice, věta, důkaz!
+%\newtheorem{definition}{Definice}
+%\newtheorem{theorem}{Věta}
+\newtheorem*{notation*}{Značení} %\TODO{nahrazeno 'notation'}
+\newtheorem{notation}{Značení}
+\newtheorem{note}{Poznámka}
+%\newtheorem{example}{Příklad}
+
+
+\numberwithin{definition}{section}
+\numberwithin{theorem}{section}
+%\numberwithin{notation}{section}
+\numberwithin{note}{section}
+\numberwithin{example}{section}
+
+
+%Ostatní makra
+\newcommand{\TODO}[1]{ } 	%\textit{\small(zde bude doplněno: #1)}} 
+\newcommand{\RLY}{?? }
+
+\newcommand{\lattL}{\mathbb{L}}
+\newcommand{\fsubsets}[1]{\mathcal{F}(#1)}
+
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\str}[1]{{\textit{#1}}}
+\newcommand{\regex}[1]{{\ttfamily#1}}
+\newcommand{\ifthen}{\textsc{If--Then} }
+
+\newcommand{\impl}[2]{{\ttfamily#1/}{\ttfamily test/data/}{\ttfamily#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%% Sazba úvodních stran -- titulní, s bibliografickými údaji, s
+%% anotací a klíčovými slovy, s poděkováním a prohlášením, s obsahem a
+%% se seznamy obrázků, tabulek, vět a zdrojových kódů (pokud jejich
+%% sazba není vypnutá).
+\maketitle
+
+%% -------------------------------------------------------------------
+
+\include{fapa-text}
+%% -------------------------------------------------------------------
+
+%% Vlastní text závěrečné práce. Pro povinné závěry, před přílohami,
+%% použijte prostředí kiconclusions. Povinná je i příloha s obsahem
+%% přiloženého CD/DVD.
+
+%% Závěry práce. V jazyce práce a anglicky. Text pro jiný než
+%% nastavený jazyk práce (nepovinným parametrem language makra
+%% \documentclass, výchozí český) se zadává použitím makra s uvedením
+%% jazyka jako nepovinného parametru.
+\begin{kiconclusions}
+Úkolem této práce bylo ukázat, že fuzzy a pravděpodobnostní automaty mohou najít uplatnění v~praxi. V~rámci této práce bylo nastudováno více než $200$ publikací, ve kterých bylo vyhledáno značné množství praktických aplikací těchto modelů.
+
+Tato práce tedy prokázala, že fuzzy a pravděpodobnostní automaty nacházejí uplatnění pro řešení různých problémů. V~mnoha případech fuzzy či pravděpodobnostní automaty značně zjednodušují či zpřehledňují řešení patřičného problému.
+
+Na druhou stranu, použití těchto modelů je spjato s~některými dalšími problémy. V~drivé většině případů je nutné provést vhodné předzpracování dat, které výrazně ovlivňuje podobu použitého automatu. Stejnětak, samotný automat obvykle nedokáže dostatečně pružně pracovat s~reálnými vstupy a je třeba jej upravit např. deformováním nebo strojovým učením.
+
+Dalším faktorem, který výrazně komplikuje nasazení fuzzy automatů v~praxi, je časová složitost jejich výpočtu. Již při prováděných experimentech na relativně malých datech se ukázalo, že $1$ výpočet na běžném počítači mnohdy překročí jednu sekundu. Pro použití v~praxi je tak obvykle nutné provést značné optimalizace. To často vede ke vzniku kompletně nového modelu, jehož je fuzzy automat pouze základní myšlenkou.
+
+Zatímco při delších vstupních řetězcích automat trpí dlouhým časem výpočtu, při krátých pak naopak automat obvykle \uv{bojuje} s~korektností výsledků. Stává se, že automat chybně krátký řetězec rozpozná ve vyšším stupni, protože automat \uv{nestihne} přejít do stavu, který by jej zamítal.
+
+Přes to všechno je patrný rostoucí zájem o~uplatnění fuzzy a pravděpodobnostních automatů. Jen za dobu, kdy tato práce vznikala, byla vydáno několik dalších publikací (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) věnující se aplikaci fuzzy automatů. Dle autorova názoru však využití fuzzy a pravděpodobnostních automatů bude v~budoucnu utlačováno stále vyšší popularitou umělé inteligence. Ta většinu z~představených problémů dokáže řešit mnohdy i jednouššeji, ovšem na úkor elegance řešení.
+\end{kiconclusions}
+
+\begin{kiconclusions}[english]
+The main task of this thesis was to show, that fuzzy and probabilistic automata can be used in practice. Within this thesis have been read over $200$ publications, where have been found many of practical applications of such models.
+
+This thesis have prooved that fuzzy and probabilistic automata can be used to solve various problems. In many cases fuzzy or probabilistic automata makes such solution much easier or more clear.
+
+On the other hand, using of theese models is linked with some further problems. In the most of cases is necessarily to perform data preprocessing, which strongly affects the resulting automaton. Moreover, the automata itself mostly cannot precisely work with the real-world inputs, so the automaton has to be somehow modified, for instance by deformation or machine learning.
+
+Another circumstance, which makes application of fuzzy automata much more complicated, is the time complexity of their computation. Yet during the experiments within this thesis and on quite small data was shown, that one computation of common computer often exceed one second. There are required some optimalisations to make this model usable. In many cases this leads to completely new model, which's the fuzzy automaton just a basic idea.
+
+While for the longer inputs the automaton challenges the computation time, for the short ones automaton usually faces correctness of results. The automaton often incorrectly accepts short input string with higher degree, because automaton have not enough time to ``escape'' to state, which may reject the string.
+
+However, there is obvious increase of interrest of applications of fuzzy and probabilistic automata. Just during the work on this thesis have been released a few more publications (\cite{MukRay-StaSplMerProbFiStaAuSigRepAna, ManPra-PriPatDetUsFiStMaFuzTra, Jia+-ExHeaSimMetBasIntHumTheMod, GupRah-CliMonUsFuzSys, CamMerNun-UsFuzAutDiagPrHeaPro}) about applications of fuzzy automata. However, by the author's opinion, the usage of fuzzy and probabilistic automata will be in the future more and more bounded by still increasing popularity of artifical intelligence. The Artifical intelligence can solve most of presented problems in many cases simplier, but in less elegant way.
+\end{kiconclusions}
+
+%% Přílohy obsahu textu práce, za makrem \appendix.
+\appendix
+
+%% Obsah přiloženého CD/DVD. Poslední příloha. Upravte podle vlastní
+%% práce!
+\section{Obsah přiloženého CD/DVD} \label{sec:ObsahCD}
+
+
+
+\begin{description}
+
+\item[\texttt{bin/}] \hfill \\
+  Instalátor \textsc{Instalator} programu, popř.~program
+  \textsc{Program}, spustitelné přímo z~CD/DVD. / Kompletní adresářová
+  struktura webové aplikace \textsc{Webovka} (v~ZIP archivu) pro
+  zkopírování na webový server. Adresář obsahuje i~všechny runtime
+  knihovny a~další soubory potřebné pro bezproblémový běh instalátoru
+  a~programu z~CD/DVD / pro bezproblémový provoz webové aplikace na
+  webovém serveru.
+
+\item[\texttt{doc/}] \hfill \\
+  Text práce ve formátu PDF, vytvořený s~použitím závazného stylu KI
+  PřF UP v~Olomouci pro závěrečné práce, včetně všech příloh,
+  a~všechny soubory potřebné pro bezproblémové vygenerování PDF
+  dokumentu textu (v~ZIP archivu), tj.~zdrojový text textu, vložené
+  obrázky, apod.
+
+\item[\texttt{src/}] \hfill \\
+  Kompletní zdrojové texty programu \textsc{Program} / webové aplikace
+  \textsc{Webovka} se všemi potřebnými (příp.~převzatými) zdrojovými
+  texty, knihovnami a~dalšími soubory potřebnými pro bezproblémové
+  vytvoření spustitelných verzí programu / adresářové struktury pro
+  zkopírování na webový server.
+
+\item[\texttt{readme.txt}] \hfill \\
+  Instrukce pro instalaci a~spuštění programu \textsc{Program}, včetně
+  všech požadavků pro jeho bezproblémový provoz. / Instrukce pro
+  nasazení webové aplikace \textsc{Webovka} na webový server, včetně
+  všech požadavků pro její bezproblémový provoz, a~webová adresa, na
+  které je aplikace nasazena pro účel testování při tvorbě posudků
+  práce a~pro účel obhajoby práce.
+
+\end{description}
+
+%% -------------------------------------------------------------------
+
+%% Sazba volitelného seznamu zkratek, za přílohami.
+%\printglossary
+
+%% Sazba povinné bibliografie, za přílohami (případně i za seznamem
+%% zkratek). Při použití BibLaTeXu použijte makro
+%% \printbibliography. jinak prostředí thebibliography. Ne obojí!
+
+%% Sazba i v textu necitovaných zdrojů, při použití
+%% BibLaTeXu. Volitelné.
+\nocite{*}
+
+%% Vlastní sazba bibliografie při použití BibLaTeXu.
+\printbibliography
+
+%% Bibliografie, včetně sazby, při nepoužití BibLaTeXu.
+% \begin{thebibliography}{9}
+%\bibitem{kniha2} \uppercase{Hawke}, Paul. NanoHttpd: Light-weight HTTP server designed for embedding in other applications. GitHub [online]. 2014-05-12. [cit. 2014-12-06]. Dostupné z: \url{https://github.com/NanoHttpd/nanohttpd}
+%
+%\bibitem{jeske13} \uppercase{Jeske}, David; \uppercase{Novák}, Josef. Simple HTTP Server in \csharp: Threaded synchronous HTTP Server abstract class, to respond to HTTP requests. CodeProject: For those who code [online]. 2014-05-24. [cit. 2014-12-06]. Dostupné z: \url{http://www.codeproject.com/Articles/137979/Simple-HTTP-Server-in-C}
+%
+%\bibitem{uzis2012} \uppercase{ÚSTAV ZDRAVOTNICKÝCH INFORMACÍ A STATISTIKY ČR}. Lékaři, zubní lékaři a farmaceuti 2012 [online]. Praha 2, Palackého náměstí 4: Ústav zdravotnických informací a statistiky ČR, 2012 [cit. 2014-12-06]. ISBN 978-80-7472-089-5. Dostupné z: \url{http://www.uzis.cz/publikace/lekari-zubni-lekari-farmaceuti-2012}
+% \end{thebibliography}
+
+%% Sazba volitelného rejstříku, za bibliografií.
+%\printindex
+
+\end{document}

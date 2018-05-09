@@ -1,0 +1,31 @@
+type:
+	tree
+
+nonterminals:
+	I
+
+terminals:
+	o
+	
+tree:
+	I (
+		o
+		I (
+			o
+			o
+			o
+			o
+		)
+		I (
+			o
+			o
+			I (
+				o
+				o
+				o
+				o
+			)
+			o
+		)
+		o
+	)

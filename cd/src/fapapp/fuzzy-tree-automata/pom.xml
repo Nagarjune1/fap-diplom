@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cz.upol</groupId>
+		<artifactId>fapapp</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>fuzzy-tree-automaton</artifactId>
+
+	<name>Fuzzy tree automaton</name>
+	<description>Module implementing fuzzy tree automaton</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>cz.upol</groupId>
+			<artifactId>core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

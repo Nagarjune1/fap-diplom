@@ -1,0 +1,23 @@
+type:
+	power consumption computation data
+
+melt:
+	20.0
+
+devices:
+	A is a1 if consumes 0.0
+	A is a2 if consumes 12.0
+	B is b1 if consumes 0.0
+	B is b2 if consumes 34.0
+
+changes:
+	decrease	if	-20.0
+	increase	if	+20.0
+	no-change	if	0.0
+
+initial:
+	A is a1
+	B is b1
+
+consumptions:
+	29.0 45.0
