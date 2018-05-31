@@ -1,0 +1,3 @@
+echo Running Hanwritten text recognition app ...
+
+java -cp "core.jar;fa.jar" "cz.upol.fapapp.fa.mains.HandwrittenTextGuiApp" --debug A-0a.timf A-0b.timf A-1a.timf A-1b.timf A-2a.timf A-2b.timf A-3a.timf A-3b.timf A-3c.timf A-4a.timf A-4b.timf A-5a.timf A-5b.timf A-6a.timf A-6b.timf A-7a.timf A-7b.timf A-8a.timf A-8b.timf A-9a.timf A-9b.timf

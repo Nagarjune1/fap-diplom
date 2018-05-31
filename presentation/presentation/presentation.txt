@@ -1,0 +1,105 @@
+author=Martin Jašek
+title=Aplikace fuzzy a pravděpodobnostních automatů
+date=31. května 2018
+institute=UPOL
+
+\mode<presentation> {
+  \usetheme{Rochester}
+  \usecolortheme{whale}
+}
+
+# Úvod
+	fuzzy automaty kombinují automaty a fuzzy množiny
+	obdobně pravděpodobnostní automaty
+	neurčitost $\Rightarrow$ reálný svět
+
+# Fuzzy automat
+\begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
+ Nedeterministický fuzzy automat $\mathbf{A}$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times 2^Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
+\end{definition}
+
+#
+\centering 
+\includegraphics{fa-example}
+
+%TODO výpočet
+
+#Deformace automatu
+\centering
+\includegraphics[width=0.9\textwidth]{deformed}
+
+%TODO metodika?
+
+#Detekce a korekce překlepů
+\centering
+\begin{tabular}{|l|l|}
+ \hline
+ vstup 			&	výstup	\\
+ \hline
+ februacy	 	& february	\\
+ jaruanry		& january		\\
+ devmber		 	& december	\\
+ october			& october		\\
+ asdbril			& april			\\
+ maj					& march			\\
+ jana				& may				\\
+ poctober		& october		\\
+ asauguszt		& august		\\
+ mnobmvmert	& november 	\\
+ \hline
+\end{tabular}
+
+%\begin{tabular}{|l||l|l|l|l|l|l|l|l|l|}
+%  \hline
+%  vstup 	& februacy & jaruanry & devmber  & october & asdbril	\\\hline
+%  výstup 	& february & january  & december & october & april	\\\hline
+%  \hline
+%  vstup 	& maj   & jana & poctober & asauguszt  & mnobmvmert	\\\hline
+%  výstup	& march & may  & october  & august     & november	\\\hline
+%\end{tabular}
+
+#Rozpoznávání ručně psaného textu
+\centering
+\includegraphics{handwritten-principle}
+
+#Ukázka aplikace
+\centering
+\includegraphics[width=0.9\textwidth]{handwritten-screen}
+
+#Rozpoznávání složených geometrických tvarů
+\centering
+\includegraphics{composite-shape}
+
+#Odstranění šumu
+\centering
+\includegraphics{noises-my}
+\vfill \pause
+\includegraphics{noises-cited}
+
+\let\thefootnote\relax\footnote[1]{SADEGHI, Sana; REZVANIAN, Alireza; KAMRANI, Ebrahim. An efficient method for impulse noise reduction from images using fuzzy cellular Automata. \textit{International Journal of Electronics and Communications.} 2012.}
+
+#Monitorování elektrických sítí
+\centering
+\includegraphics{electrics}
+
+#Metoda lisování dat
+	mějme tabulku záznamů (tzv. trénovací množinu) $(x_1, \dots x_n, y) \in T \subseteq \{0, 1\}^{n+1}$
+	označme $\mathcal{L}_y$ množinu řetězců $x_1 \dots x_n$ takových, že $(x_1, \dots x_n, y) \in T$
+	sestavme fuzzy automat $\mathbf{A}$ rozpoznávající $\mathcal{L}_y$
+	fuzzy minimalizací automatu $\mathbf{A}$ s parametrem $0 \leq \delta \leq 1$ obdržíme automat $\mathbf{A}'$
+	automat $\mathbf{A}'$ slouží jako model klasifikující sekvence $(x_1 \dots x_n)$
+
+#Závěr
+	fuzzy automaty nacházejí uplatnění v praxi
+	zájem o ně roste v posledních letech
+	přinášejí elegantní řešení
+	často je nutná složitá příprava dat
+	složitost vs. správnost
+
+#
+\begin{center}
+\huge{Děkuji za pozornost}
+\vfill
+\includegraphics{bye}
+\end{center}
+
