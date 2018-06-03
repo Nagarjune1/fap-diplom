@@ -1,0 +1,79 @@
+type:
+	fuzzy automaton
+
+alphabet:
+	d	dl	dr	l	r	u	ul	ur
+
+states:
+	q_0	q_2	q_1	q_3	q'_5	q'_4	q'_6
+
+transition function:
+	q_2	ur	q_2	0.1
+	q_2	ur	q_3	0.0
+	q_1	r	q'_5	0.6
+	q_1	ul	q_1	0.1
+	q_1	ul	q_2	0.0
+	q_0	ur	q_0	0.1
+	q_0	ur	q_1	0.0
+	q_0	l	q_0	0.1
+	q_3	r	q_3	0.1
+	q_0	l	q_1	0.7
+	q_1	r	q_1	0.1
+	q_1	r	q_2	1.0
+	q_0	d	q_0	0.1
+	q_0	d	q_1	0.7
+	q_0	dl	q'_4	0.6
+	q_3	ul	q_3	0.1
+	q_2	l	q_2	0.1
+	q_2	l	q_3	0.1
+	q_3	d	q_3	0.1
+	q_1	d	q_1	0.1
+	q_1	d	q_2	0.1
+	q_1	u	q_1	0.1
+	q_2	d	q'_6	0.6
+	q_0	dl	q_0	0.1
+	q_3	dr	q_3	0.1
+	q_0	dl	q_1	1.0
+	q_3	u	q_3	0.1
+	q_1	u	q_2	0.0
+	q_2	dl	q_2	0.1
+	q_2	dl	q_3	0.7
+	q_1	dr	q_1	0.1
+	q_1	dr	q_2	0.7
+	q_1	ur	q_2	0.7
+	q_0	ul	q_0	0.1
+	q_3	ur	q_3	0.1
+	q_0	ul	q_1	0.1
+	q_2	ul	q_2	0.1
+	q_3	dl	q_3	0.1
+	q'_6	d	q_3	0.6
+	q_1	ur	q_1	0.1
+	q_2	r	q_2	0.1
+	q_2	r	q_3	0.1
+	q_0	r	q_0	0.1
+	q_0	r	q_1	0.0
+	q_2	ul	q_3	0.0
+	q_3	l	q_3	0.1
+	q_1	l	q_1	0.1
+	q_1	l	q_2	0.0
+	q_2	d	q_2	0.1
+	q_2	d	q_3	1.0
+	q_0	u	q_1	0.0
+	q_0	u	q_0	0.1
+	q'_4	dl	q_1	0.6
+	q_2	dr	q_2	0.1
+	q_2	dr	q_3	0.7
+	q_2	u	q_3	0.0
+	q_1	dl	q_1	0.1
+	q_1	dl	q_2	0.0
+	q_2	u	q_2	0.1
+	q'_5	r	q_2	0.6
+	q_0	dr	q_0	0.1
+	q_0	dr	q_1	0.1
+
+initial states:
+	q_0/1.0	q_2/0.0	q_1/0.0	q_3/0.0	q'_5/0.0	q'_4/0.0	q'_6/0.0
+
+final states:
+	q_0/0.0	q_2/0.0	q_1/0.0	q_3/1.0	q'_5/0.0	q'_4/0.0	q'_6/0.0
+

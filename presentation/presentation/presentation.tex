@@ -2,7 +2,7 @@
 %% Martin Jašek, UPOL
 %% 31. května 2018, 
 %%
-%% Vygenerováno programem plain2beamer 1.2
+%% Vygenerováno programem plain2beamer 2.1.1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{beamer}
 \usepackage[czech]{babel}
@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 1 - Úvodní slajd
+\begin{frame}	%% Slajd 1
 	\titlepage
 \end{frame}
 
@@ -37,9 +37,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}	%% Slajd 4 - Fuzzy automat
 \frametitle{Fuzzy automat}
+\vfill
 \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
- Nedeterministický fuzzy automat $\mathbf{A}$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times 2^Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
+ Nedeterministický fuzzy automat $\mathbf{A}$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
 \end{definition}
+\pause
+\vfill
+fuzzy automat deterministický/nedeterminisický, s výstupem, fuzzy stavový stroj, událostmi řízený, fuzzy tree automat, buněčný
+\vfill
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,19 +52,64 @@
 \frametitle{}
 \centering 
 \includegraphics{fa-example}
-%TODO výpočet
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 6 - Deformace automatu
+\begin{frame}	%% Slajd 6 - Výpočet fuzzy automatu
+\frametitle{Výpočet fuzzy automatu}
+\centering
+\includegraphics{computation0}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}	%% Slajd 7 - Deformace automatu
 \frametitle{Deformace automatu}
 \centering
 \includegraphics[width=0.9\textwidth]{deformed}
-%TODO metodika?
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 7 - Detekce a korekce překlepů
+\begin{frame}	%% Slajd 8 - Aplikace
+\frametitle{Aplikace}
+\begin{itemize}
+	\item[~] Rozpoznávání textových dat
+	\begin{itemize}
+		\item podobnost řetězců, překlepy, přirozený jazyk
+	\end{itemize}
+\end{itemize}
+\hfill
+\begin{itemize}
+	\item[~] Rozpoznávání netextových dat
+	\begin{itemize}
+		\item signály, ručně psaný text, fuzzy programy
+	\end{itemize}
+\end{itemize}
+\hfill
+\begin{itemize}
+	\item[~] Modelování, simulace
+	\begin{itemize}
+		\item automobilismus, hry, průmysl, městský růst
+	\end{itemize}
+\end{itemize}
+\hfill
+\begin{itemize}
+	\item[~] Zpracování obrazu
+	\begin{itemize}
+		\item konvoluce, šum, složené geometrické tvary
+	\end{itemize}
+\end{itemize}
+\hfill
+\begin{itemize}
+	\item[~] Biologie, medicína
+	\begin{itemize}
+		\item DNA, simulace, analýza zdravotního stavu
+	\end{itemize}
+\end{itemize}
+\hfill
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}	%% Slajd 9 - Detekce a korekce překlepů
 \frametitle{Detekce a korekce překlepů}
 \centering
 \begin{tabular}{|l|l|}
@@ -89,68 +139,70 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 8 - Rozpoznávání ručně psaného textu
+\begin{frame}	%% Slajd 10 - Rozpoznávání ručně psaného textu
 \frametitle{Rozpoznávání ručně psaného textu}
 \centering
 \includegraphics{handwritten-principle}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 9 - Ukázka aplikace
+\begin{frame}	%% Slajd 11 - Ukázka aplikace
 \frametitle{Ukázka aplikace}
 \centering
 \includegraphics[width=0.9\textwidth]{handwritten-screen}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 10 - Rozpoznávání složených geometrických tvarů
+\begin{frame}	%% Slajd 12 - Rozpoznávání složených geometrických tvarů
 \frametitle{Rozpoznávání složených geometrických tvarů}
 \centering
 \includegraphics{composite-shape}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 11 - Odstranění šumu
+\begin{frame}	%% Slajd 13 - Odstranění šumu
 \frametitle{Odstranění šumu}
 \centering
 \includegraphics{noises-my}
 \vfill \pause
 \includegraphics{noises-cited}
-\let\thefootnote\relax\footnote[1]{SADEGHI, Sana; REZVANIAN, Alireza; KAMRANI, Ebrahim. An efficient method for impulse noise reduction from images using fuzzy cellular Automata. \textit{International Journal of Electronics and Communications.} 2012.}
+\let\thefootnote\relax\footnote[1]{SADEGHI et al. An efficient method for impulse noise reduction from images using fuzzy cellular Automata. \textit{International Journal of Electronics and Communications.} 2012.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 12 - Monitorování elektrických sítí
+\begin{frame}	%% Slajd 14 - Monitorování elektrických sítí
 \frametitle{Monitorování elektrických sítí}
 \centering
 \includegraphics{electrics}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 13 - Metoda lisování dat
+\begin{frame}	%% Slajd 15 - Metoda lisování dat
 \frametitle{Metoda lisování dat}
 \begin{itemize}
-	\item mějme tabulku záznamů (tzv. trénovací množinu) $(x_1, \dots x_n, y) \in T \subseteq \{0, 1\}^{n+1}$
+	\item mějme tabulku $T \subseteq \{0, 1\}^{n+1}$ záznamů (tzv. trénovací množinu) $(x_1, \dots x_n, y) \in T$
 	\item označme $\mathcal{L}_y$ množinu řetězců $x_1 \dots x_n$ takových, že $(x_1, \dots x_n, y) \in T$
-	\item sestavme fuzzy automat $\mathbf{A}$ rozpoznávající $\mathcal{L}_y$
+	\item označme $\mathcal{L}_y'$ fuzzy jazyk obsahující všechny $w \in \mathcal{L}_y$ v jednotkovém stupni
+	\item sestavme fuzzy automat $\mathbf{A}$ rozpoznávající $\mathcal{L}_y'$
 	\item fuzzy minimalizací automatu $\mathbf{A}$ s parametrem $0 \leq \delta \leq 1$ obdržíme automat $\mathbf{A}'$
 	\item automat $\mathbf{A}'$ slouží jako model klasifikující sekvence $(x_1 \dots x_n)$
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 14 - Závěr
+\begin{frame}	%% Slajd 16 - Závěr
 \frametitle{Závěr}
 \begin{itemize}
 	\item fuzzy automaty nacházejí uplatnění v praxi
+	\item zájem o ně roste v posledních letech
 	\item přinášejí elegantní řešení
-	\item často je nutná složitá příprava dat
+	\item často jen základní myšlenka
 	\item složitost vs. správnost
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}	%% Slajd 15 - 
+\begin{frame}	%% Slajd 17 - 
 \frametitle{}
 \begin{center}
 \huge{Děkuji za pozornost}

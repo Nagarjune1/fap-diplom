@@ -1,0 +1,133 @@
+type:
+	fuzzy automaton
+
+alphabet:
+	d	dl	dr	l	r	u	ul	ur
+
+states:
+	q_0	q_2	q'_12	q_1	q'_11	q_4	q_3	q_6	q_5	q'_10	q'_9	q'_8	q'_7
+
+transition function:
+	q_2	ur	q_2	0.1
+	q_2	ur	q_3	0.1
+	q_1	r	q'_9	0.6
+	q_4	dl	q_4	0.1
+	q_4	dl	q_5	1.0
+	q_5	r	q'_11	0.6
+	q_1	r	q_1	0.1
+	q_1	r	q_2	1.0
+	q_4	dl	q'_10	0.6
+	q_3	ul	q_3	0.1
+	q_6	ur	q_6	0.1
+	q_3	ul	q_4	0.0
+	q_5	r	q_6	1.0
+	q_2	l	q_2	0.1
+	q_2	l	q_3	0.0
+	q_5	r	q_5	0.1
+	q_3	d	q_3	0.1
+	q_3	d	q_4	1.0
+	q_3	u	q_4	0.0
+	q_0	dl	q_0	0.1
+	q_3	dr	q_3	0.1
+	q_3	dr	q_4	0.7
+	q_0	dl	q_1	0.0
+	q_3	u	q_3	0.1
+	q_0	ul	q_0	0.1
+	q_3	ur	q_3	0.1
+	q_3	ur	q_4	0.0
+	q_0	ul	q_1	0.0
+	q'_9	r	q_2	0.6
+	q_5	dl	q_5	0.1
+	q_5	dl	q_6	0.0
+	q_2	r	q_2	0.1
+	q_2	r	q_3	0.7
+	q_2	dr	q'_7	0.6
+	q_3	l	q_3	0.1
+	q_3	l	q_4	0.1
+	q_4	ul	q_4	0.1
+	q_6	r	q_6	0.1
+	q_4	ul	q_5	0.1
+	q_4	d	q_4	0.1
+	q_4	d	q_5	0.7
+	q_0	u	q_1	0.0
+	q'_7	dr	q_3	0.6
+	q_0	u	q_0	0.1
+	q_4	u	q_5	0.0
+	q_4	u	q_4	0.1
+	q_1	dl	q_1	0.1
+	q_4	dr	q_4	0.1
+	q_1	dl	q_2	0.0
+	q_4	dr	q_5	0.1
+	q_0	dr	q_0	0.1
+	q_0	dr	q_1	0.1
+	q_1	ul	q_1	0.1
+	q_4	ur	q_4	0.1
+	q_1	ul	q_2	0.0
+	q_4	ur	q_5	0.0
+	q_0	ur	q_0	0.1
+	q_0	ur	q_1	1.0
+	q_6	dl	q_6	0.1
+	q_0	l	q_0	0.1
+	q_3	r	q_3	0.1
+	q_3	r	q_4	0.1
+	q_0	l	q_1	0.0
+	q_0	d	q_0	0.1
+	q_4	l	q_4	0.1
+	q_4	l	q_5	0.7
+	q_0	d	q_1	0.0
+	q_5	ul	q_5	0.1
+	q_5	ul	q_6	0.0
+	q_0	ur	q'_12	0.6
+	q_5	l	q_6	0.0
+	q'_10	dl	q_5	0.6
+	q_1	d	q_1	0.1
+	q_1	d	q_2	0.1
+	q_5	l	q_5	0.1
+	q_1	u	q_1	0.1
+	q'_12	ur	q_1	0.6
+	q_5	d	q_6	0.1
+	q_5	d	q_5	0.1
+	q_5	u	q_5	0.1
+	q_1	u	q_2	0.0
+	q_2	dl	q_2	0.1
+	q_5	dr	q_5	0.1
+	q_2	dl	q_3	0.1
+	q_5	dr	q_6	0.7
+	q'_11	r	q_6	0.6
+	q_1	dr	q_1	0.1
+	q_1	dr	q_2	0.7
+	q_5	u	q_6	0.0
+	q_1	ur	q_2	0.7
+	q_2	ul	q_2	0.1
+	q_5	ur	q_5	0.1
+	q'_8	d	q_4	0.6
+	q_3	dl	q_3	0.1
+	q_6	dr	q_6	0.1
+	q_3	dl	q_4	0.7
+	q_1	ur	q_1	0.1
+	q_0	r	q_0	0.1
+	q_0	r	q_1	0.7
+	q_2	ul	q_3	0.0
+	q_5	ur	q_6	0.7
+	q_4	r	q_5	0.0
+	q_1	l	q_1	0.1
+	q_1	l	q_2	0.0
+	q_4	r	q_4	0.1
+	q_6	ul	q_6	0.1
+	q_2	d	q_2	0.1
+	q_2	d	q_3	0.7
+	q_6	l	q_6	0.1
+	q_6	d	q_6	0.1
+	q_2	dr	q_2	0.1
+	q_2	dr	q_3	1.0
+	q_2	u	q_3	0.0
+	q_3	d	q'_8	0.6
+	q_2	u	q_2	0.1
+	q_6	u	q_6	0.1
+
+initial states:
+	q_0/1.0	q_2/0.0	q'_12/0.0	q_1/0.0	q'_11/0.0	q_4/0.0	q_3/0.0	q_6/0.0	q_5/0.0	q'_10/0.0	q'_9/0.0	q'_8/0.0	q'_7/0.0
+
+final states:
+	q_0/0.0	q_2/0.0	q'_12/0.0	q_1/0.0	q'_11/0.0	q_4/0.0	q_3/0.0	q_6/1.0	q_5/0.0	q'_10/0.0	q'_9/0.0	q'_8/0.0	q'_7/0.0
+

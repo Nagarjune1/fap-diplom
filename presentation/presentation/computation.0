@@ -1,0 +1,94 @@
+%!PS
+%%BoundingBox: 34 -146 206 -34 
+%%HiResBoundingBox: 34.65 -145.35 205.35 -34.65 
+%%Creator: MetaPost 2.00
+%%CreationDate: 2018.06.03:1918
+%%Pages: 1
+%*Font: cmmi10 9.96265 9.96265 3d:80000000000008
+%*Font: cmr7 6.97385 6.97385 30:e
+%*Font: cmr10 9.96265 9.96265 31:8
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0 0 setrgbcolor 0 0.7 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 0 setlinejoin 10 setmiterlimit
+newpath 85 -60 moveto
+85 -46.19308 73.80692 -35 60 -35 curveto
+46.19308 -35 35 -46.19308 35 -60 curveto
+35 -73.80692 46.19308 -85 60 -85 curveto
+73.80692 -85 85 -73.80692 85 -60 curveto closepath stroke
+50.56024 -62.49065 moveto
+(q) cmmi10 9.96265 fshow
+55.00764 -63.98505 moveto
+(0) cmr7 6.97385 fshow
+59.47704 -62.49065 moveto
+(=) cmmi10 9.96265 fshow
+64.45844 -62.49065 moveto
+(1) cmr10 9.96265 fshow
+newpath 145 -60 moveto
+145 -46.19308 133.80692 -35 120 -35 curveto
+106.19308 -35 95 -46.19308 95 -60 curveto
+95 -73.80692 106.19308 -85 120 -85 curveto
+133.80692 -85 145 -73.80692 145 -60 curveto closepath stroke
+110.56024 -62.49065 moveto
+(q) cmmi10 9.96265 fshow
+115.00764 -63.98505 moveto
+(1) cmr7 6.97385 fshow
+119.47704 -62.49065 moveto
+(=) cmmi10 9.96265 fshow
+124.45844 -62.49065 moveto
+(1) cmr10 9.96265 fshow
+newpath 205 -60 moveto
+205 -46.19308 193.80692 -35 180 -35 curveto
+166.19308 -35 155 -46.19308 155 -60 curveto
+155 -73.80692 166.19308 -85 180 -85 curveto
+193.80692 -85 205 -73.80692 205 -60 curveto closepath stroke
+170.56024 -62.49065 moveto
+(q) cmmi10 9.96265 fshow
+175.00764 -63.98505 moveto
+(2) cmr7 6.97385 fshow
+179.47704 -62.49065 moveto
+(=) cmmi10 9.96265 fshow
+184.45844 -62.49065 moveto
+(1) cmr10 9.96265 fshow
+newpath 85 -120 moveto
+85 -106.19308 73.80692 -95 60 -95 curveto
+46.19308 -95 35 -106.19308 35 -120 curveto
+35 -133.80692 46.19308 -145 60 -145 curveto
+73.80692 -145 85 -133.80692 85 -120 curveto closepath stroke
+50.56024 -122.49065 moveto
+(q) cmmi10 9.96265 fshow
+55.00764 -123.98505 moveto
+(0) cmr7 6.97385 fshow
+59.47704 -122.49065 moveto
+(=) cmmi10 9.96265 fshow
+64.45844 -122.49065 moveto
+(1) cmr10 9.96265 fshow
+newpath 145 -120 moveto
+145 -106.19308 133.80692 -95 120 -95 curveto
+106.19308 -95 95 -106.19308 95 -120 curveto
+95 -133.80692 106.19308 -145 120 -145 curveto
+133.80692 -145 145 -133.80692 145 -120 curveto closepath stroke
+110.56024 -122.49065 moveto
+(q) cmmi10 9.96265 fshow
+115.00764 -123.98505 moveto
+(1) cmr7 6.97385 fshow
+119.47704 -122.49065 moveto
+(=) cmmi10 9.96265 fshow
+124.45844 -122.49065 moveto
+(1) cmr10 9.96265 fshow
+newpath 205 -120 moveto
+205 -106.19308 193.80692 -95 180 -95 curveto
+166.19308 -95 155 -106.19308 155 -120 curveto
+155 -133.80692 166.19308 -145 180 -145 curveto
+193.80692 -145 205 -133.80692 205 -120 curveto closepath stroke
+170.56024 -122.49065 moveto
+(q) cmmi10 9.96265 fshow
+175.00764 -123.98505 moveto
+(2) cmr7 6.97385 fshow
+179.47704 -122.49065 moveto
+(=) cmmi10 9.96265 fshow
+184.45844 -122.49065 moveto
+(1) cmr10 9.96265 fshow
+showpage
+%%EOF

@@ -9,26 +9,49 @@ institute=UPOL
 }
 
 # Úvod
-	fuzzy automaty kombinují automaty a fuzzy množiny
-	obdobně pravděpodobnostní automaty
-	neurčitost $\Rightarrow$ reálný svět
+	- fuzzy automaty kombinují automaty a fuzzy množiny
+	- obdobně pravděpodobnostní automaty
+	- neurčitost $\Rightarrow$ reálný svět
 
 # Fuzzy automat
+\vfill
 \begin{definition}[Nedeterministický fuzzy automat]\label{def-ZaklDefNedFuzzAut}
- Nedeterministický fuzzy automat $\mathbf{A}$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times 2^Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
+ Nedeterministický fuzzy automat $\mathbf{A}$ je pětice $(Q, \Sigma, \mu, \sigma, \eta)$, kde $Q$ je konečná množina stavů, $\Sigma$ je abeceda, $\mu$ je fuzzy přechodová funkce (fuzzy relace $Q \times \Sigma \times Q \rightarrow [0, 1]$) a $\sigma$ a $\eta$ jsou po řadě fuzzy množiny nad $Q$ počátačních, resp. koncových stavů.
 \end{definition}
+
+\pause
+\vfill
+fuzzy automat deterministický/nedeterminisický, s výstupem, fuzzy stavový stroj, událostmi řízený, fuzzy tree automat, buněčný
+\vfill
 
 #
 \centering 
 \includegraphics{fa-example}
 
-%TODO výpočet
+# Výpočet fuzzy automatu
+\centering
+\includegraphics{computation0}
 
 #Deformace automatu
 \centering
 \includegraphics[width=0.9\textwidth]{deformed}
 
-%TODO metodika?
+#Aplikace
+	~ Rozpoznávání textových dat
+		- podobnost řetězců, překlepy, přirozený jazyk
+\hfill
+	~ Rozpoznávání netextových dat
+		- signály, ručně psaný text, fuzzy programy
+\hfill
+	~ Modelování, simulace
+		- automobilismus, hry, průmysl, městský růst
+\hfill
+	~ Zpracování obrazu
+		- konvoluce, šum, složené geometrické tvary
+\hfill
+	~ Biologie, medicína
+		- DNA, simulace, analýza zdravotního stavu
+\hfill
 
 #Detekce a korekce překlepů
 \centering
@@ -76,25 +99,26 @@ institute=UPOL
 \vfill \pause
 \includegraphics{noises-cited}
 
-\let\thefootnote\relax\footnote[1]{SADEGHI, Sana; REZVANIAN, Alireza; KAMRANI, Ebrahim. An efficient method for impulse noise reduction from images using fuzzy cellular Automata. \textit{International Journal of Electronics and Communications.} 2012.}
+\let\thefootnote\relax\footnote[1]{SADEGHI et al. An efficient method for impulse noise reduction from images using fuzzy cellular Automata. \textit{International Journal of Electronics and Communications.} 2012.}
 
 #Monitorování elektrických sítí
 \centering
 \includegraphics{electrics}
 
 #Metoda lisování dat
-	mějme tabulku záznamů (tzv. trénovací množinu) $(x_1, \dots x_n, y) \in T \subseteq \{0, 1\}^{n+1}$
-	označme $\mathcal{L}_y$ množinu řetězců $x_1 \dots x_n$ takových, že $(x_1, \dots x_n, y) \in T$
-	sestavme fuzzy automat $\mathbf{A}$ rozpoznávající $\mathcal{L}_y$
-	fuzzy minimalizací automatu $\mathbf{A}$ s parametrem $0 \leq \delta \leq 1$ obdržíme automat $\mathbf{A}'$
-	automat $\mathbf{A}'$ slouží jako model klasifikující sekvence $(x_1 \dots x_n)$
+	- mějme tabulku $T \subseteq \{0, 1\}^{n+1}$ záznamů (tzv. trénovací množinu) $(x_1, \dots x_n, y) \in T$
+	- označme $\mathcal{L}_y$ množinu řetězců $x_1 \dots x_n$ takových, že $(x_1, \dots x_n, y) \in T$
+	- označme $\mathcal{L}_y'$ fuzzy jazyk obsahující všechny $w \in \mathcal{L}_y$ v jednotkovém stupni
+	- sestavme fuzzy automat $\mathbf{A}$ rozpoznávající $\mathcal{L}_y'$
+	- fuzzy minimalizací automatu $\mathbf{A}$ s parametrem $0 \leq \delta \leq 1$ obdržíme automat $\mathbf{A}'$
+	- automat $\mathbf{A}'$ slouží jako model klasifikující sekvence $(x_1 \dots x_n)$
 
 #Závěr
-	fuzzy automaty nacházejí uplatnění v praxi
-	zájem o ně roste v posledních letech
-	přinášejí elegantní řešení
-	často je nutná složitá příprava dat
-	složitost vs. správnost
+	- fuzzy automaty nacházejí uplatnění v praxi
+	- zájem o ně roste v posledních letech
+	- přinášejí elegantní řešení
+	- často jen základní myšlenka
+	- složitost vs. správnost
 
 #
 \begin{center}
